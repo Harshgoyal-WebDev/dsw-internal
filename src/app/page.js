@@ -2,11 +2,13 @@
 import { fadeIn, fadeUp, headingAnim, lineAnim, paraAnim } from "@/Components/Animations/gsapAnimations";
 import About from "@/Components/Homepage/About";
 import Blogs from "@/Components/Homepage/Blogs";
+import Brochure from "@/Components/Homepage/Brochure";
 import Business from "@/Components/Homepage/Business";
 import Clients from "@/Components/Homepage/Clients";
 import Clients2 from "@/Components/Homepage/Clients2";
 import Connects from "@/Components/Homepage/Connects";
 import EnterpriseAI from "@/Components/Homepage/EnterpriseAI";
+import Difference from "@/Components/Homepage/Difference";
 import FAQs from "@/Components/Homepage/FAQs";
 import Hero from "@/Components/Homepage/Hero";
 import Insuraince from "@/Components/Homepage/Insuraince";
@@ -14,6 +16,7 @@ import Recognized from "@/Components/Homepage/Recognized";
 import Security from "@/Components/Homepage/Security";
 import SuccessStories from "@/Components/Homepage/SuccessStories";
 import Testimonials from "@/Components/Homepage/Testimonials";
+import Tour from "@/Components/Homepage/Tour";
 import TurbochargeG from "@/Components/Homepage/TurboChargeG";
 import UnifyAi from "@/Components/Homepage/UnifyAi";
 import WhyUnify from "@/Components/Homepage/WhyUnify";
@@ -48,6 +51,9 @@ export default function Home() {
         <TurbochargeG />
         <About/>
         <Insuraince />
+        <Tour/>
+        <Difference/>
+        <Brochure/>
         <UnifyAi />
         <WhyUnify /> */}
         <EnterpriseAI/>

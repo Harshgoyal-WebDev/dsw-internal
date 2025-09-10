@@ -28,6 +28,7 @@ export function headingAnim() {
                     trigger: headingWord,
                     start: 'top 85%', 
                     lazy: true,
+              
                   },
               });
           })

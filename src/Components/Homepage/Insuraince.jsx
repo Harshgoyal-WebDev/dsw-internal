@@ -53,7 +53,7 @@ const Insuraince = () => {
                         duration: 1.2,
                         ease: 'power2.out',
                     },
-                    i * 0.5
+                    i * 0.2
                 );
             });
         }, sectionRef);
@@ -63,9 +63,9 @@ const Insuraince = () => {
 
     return (
         <section className="w-screen h-full py-[7%] overflow-hidden" ref={sectionRef}>
-            <div className="w-full space-y-[5vw]">
+            <div className="w-full space-y-[10vw]">
                 <div className="text-center gap-y-[2.5vw] w-[65%] mx-auto flex flex-col items-center">
-                    <h2 className="title-2">
+                    <h2 className="title-2 headingAnim">
                         Introducing insurAInce — Purpose-Built AI platform for Insurance Enterprises​
                     </h2>
                     <p data-para-anim className="text-[#CACACA] w-[70%]">
@@ -78,7 +78,7 @@ const Insuraince = () => {
                         <div
                             key={index}
                             ref={(el) => (cardRefs.current[index] = el)}
-                            className="w-[20%] opacity-0"
+                            className="w-[22%] opacity-0"
                         >
                             <Card data={data} spanRef={(el) => (spanRefs.current[index] = el)} />
                         </div>
@@ -111,7 +111,7 @@ const Card = ({ data, spanRef }) => {
                     className="absolute top-0 left-0 h-full bg-primary-1 w-full scale-x-0 origin-left"
                 />
                 <span
-                    className="absolute top-0 left-0 h-full bg-primary-1 w-full scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500"
+                    className="absolute top-0 left-0 h-full bg-primary-2 w-full scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500"
                 />
             </div>
         </div>
@@ -121,22 +121,22 @@ const Card = ({ data, spanRef }) => {
 const content = [
     {
         title: 'Built with Insurance DNA​',
-        desc: 'Bring use cases into production in as little as 3-4 weeks.',
+        desc: '25+ proven AI use cases and 300+ ready-to-deploy GenAI agents.​',
         icon: '/assets/images/homepage/insuraince-icon-1.svg',
     },
     {
         title: 'One Platform, Infinite Use Cases ​',
-        desc: 'Enterprise-grade infrastructure that offers complete control over deployment, monitoring, and retraining.',
+        desc: 'Go live with your insurance AI/ML use cases in days and GenAI in just a few hours!​',
         icon: '/assets/images/homepage/insuraince-icon-2.svg',
     },
     {
         title: 'Fast-Track Your AI Rollout​',
-        desc: 'Enterprise-grade infrastructure that offers complete control over deployment, monitoring, and retraining.',
+        desc: 'A single, intuitive platform with in-built tools to drive cost efficiency, predictability, and scalable AI delivery.​',
         icon: '/assets/images/homepage/insuraince-icon-3.svg',
     },
     {
         title: 'Flexible Deployment, Zero Vendor Lock-In​',
-        desc: 'Stay at the forefront of technology with a solution that seamlessly integrates with the latest advancements in AI and data science.',
+        desc: 'Deploy on-prem or any cloud — with seamless integration into your existing infrastructure.​',
         icon: '/assets/images/homepage/insuraince-icon-4.svg',
     },
 ];
