@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import PrimaryButton from "../Button/PrimaryButton";
 import WhiteButton from "../Button/WhiteButton";
 import { motion } from "motion/react";
-import Gradient from "./Gradient";
+// import Gradient from "./Gradient";
 import gsap from "gsap";
 import { SplitInLine, SplitInLineOnly } from "../splitTextUtils";
 import ShaderComp from "../BgShader/ShaderComp";
@@ -52,8 +52,8 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="h-[70vw] w-screen relative bg-transparent" id="hero">
-      <div className="flex flex-col items-center justify-start w-full h-full pt-[15vw] relative z-[10]">
+    <section className="h-[70vw] w-screen relative bg-background" id="hero">
+      <div className="flex flex-col items-center justify-start w-full h-full pt-[18vw] relative z-[10]">
         <div className="w-[70%] text-center space-y-6 pb-5">
           <h1 ref={heading} className="text-[5.2vw] font-head leading-[1.2] heroHeadAnim text-[#E8E8E8]">
             Launch AI use cases in days. GenAI in hours.​
@@ -86,8 +86,8 @@ const Hero = () => {
       <motion.div initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: "easeOut" }} className="w-screen h-[120vh] absolute bottom-[10%] left-0 right-0 z-[-2]">
         <Gradient />
       </motion.div> */}
-      <div className="absolute top-0 left-0 h-screen w-screen">
-        <ShaderComp color={"#111EB5"}/>
+      <div className="absolute top-[30%] left-0 h-screen w-screen">
+        <ShaderComp color={"0x1726FD"}/>
 
       </div>
     

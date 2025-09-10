@@ -1,9 +1,10 @@
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
-import { SplitInLine } from "@/components/splitTextUtils";
+// import { SplitInLine } from "@/components/splitTextUtils";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import PrimaryButton from "../Button/PrimaryButton";
+import { SplitInLine } from "../splitTextUtils";
 gsap.registerPlugin(ScrollTrigger);
 
 const TurbochargeG = () => {
@@ -189,7 +190,7 @@ const TurbochargeG = () => {
   }, []);
 
   return (
-    <section id="turbo" className="w-screen h-full bg-[#070707]">
+    <section id="turbo" className="w-screen h-full bg-background">
       <div className="flex flex-col items-center p-10 w-full">
         <div className="w-[70%] text-center space-y-15 py-15">
           <div

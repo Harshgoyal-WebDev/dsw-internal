@@ -195,7 +195,7 @@ const MovingGradientShader = ({
 
   return (
     <mesh ref={meshRef} scale={1} position={[0, 0.5, 0]}>
-      <planeGeometry args={[viewport.width * 1.3, viewport.height * 1.55]} />
+      <planeGeometry args={[viewport.width * 1.3, viewport.height * 0.9]} />
       <shaderMaterial
         ref={materialRef}
         toneMapped={false}
@@ -218,8 +218,8 @@ const ShaderComp = ({ color }) => {
           lowerBoundaryBase={0.2}
           lowerFadeSoftness={0.1}
           upperWaveFreq={9.0}
-          upperWaveAmp={0.05}
-          upperWaveSpeed={-0.7}
+          upperWaveAmp={0.1}
+          upperWaveSpeed={0.7}
           topBoundaryBase={0.7}
           topFadeSoftness={0.1}
           color={color}

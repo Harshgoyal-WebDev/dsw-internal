@@ -1,40 +1,14 @@
 /* eslint-disable react-hooks/rules-of-hooks */
+"use client"
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { SplitInLineWord, SplitInLine} from "./splitTextUtils";
+import { SplitInLine} from "../splitTextUtils";
 import { useEffect } from "react";
 // import { useRouter } from "next/router";
 
 
 gsap.registerPlugin(ScrollTrigger);
 
-// export function headingBlur() {
-//     useEffect(()=>{
-//         const ctx = gsap.context(()=>{
-//             const headingAnim = document.querySelectorAll(".headinganim");
-//             headingAnim.forEach((headingAnim)=>{
-//                 SplitInLineWord(headingAnim);
-//                 const headingWord = headingAnim.querySelectorAll(".word");
-//                 gsap.from(headingWord,{
-//                     scrollTrigger: {
-//                         trigger: headingWord,
-//                         start: 'top 90%', 
-                        
-                
-//                       },
-//                       opacity: 0,
-//                       yPercent:20,
-//                       filter: 'blur(8px)',
-//                       stagger:0.08,
-//                       duration:1
-//                 });
-//             })
-//         });
-        
-//         return () => ctx.revert();
-//     },[]);
-        
-// }
 export function headingAnim() {
   // const router = useRouter();
   useEffect(()=>{
