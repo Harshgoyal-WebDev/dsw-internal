@@ -5,7 +5,8 @@ import FooterCTA from "./FooterCta";
 import { Links, NavLink, SocialLinks } from "../Header/NavLink";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import { useEffect, useRef } from "react";
+import { Suspense, useEffect, useRef } from "react";
+import ShaderComp from "../BgShader/ShaderComp";
 gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
@@ -30,7 +31,12 @@ const Footer = () => {
         <>
             <FooterCTA />
             <footer className="relative overflow-hidden px-20 pt-[15vw]" id="footer" ref={footerRef}>
-                <Image src="/assets/images/footer-bg.svg" width={1920} height={900} alt="Footer Background" loading="lazy" className="absolute -bottom-20 left-0 right-0 w-full" />
+                {/* <Image src="/assets/images/footer-bg.svg" width={1920} height={900} alt="Footer Background" loading="lazy" className="absolute -bottom-20 left-0 right-0 w-full" /> */}
+                 <div className="absolute top-[30%] left-0 h-screen w-screen">
+        <Suspense>
+          <ShaderComp color={"0x1726FD"} />
+        </Suspense>
+      </div>
                 <div className="relative z-[1]">
                     <div className="rounded-3xl bg-black/20 border border-white/30 backdrop-blur-2xl px-12 py-12 flex justify-between" ref={footerGlassRef}>
                         {/* Logo and Contact Info */}
@@ -75,7 +81,7 @@ const Footer = () => {
                                 <ul className="flex gap-4">
                                     {SocialLinks.map((link, index) => (
                                         <li key={index} className="group">
-                                            <Link href={link.href} aria-label={link.label} className="rounded-full  block p-2.5 border overflow-hidden bg-black/10  group-hover:bg-white transition-all duration-500 ease group-hover:scale-[0.95]">
+                                            <Link href={link.href} aria-label={link.label} className="rounded-full  block p-2.5 border overflow-hidden bg-white/10  group-hover:bg-white transition-all duration-500 ease group-hover:scale-[0.95]">
                                                 <div className="w-5 h-5 flex items-center justify-center text-white group-hover:text-black transition-all duration-500 ease " dangerouslySetInnerHTML={{__html: link.icon}}/>
                                             </Link>
                                         </li>

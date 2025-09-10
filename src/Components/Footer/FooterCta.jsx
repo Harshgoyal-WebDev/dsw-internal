@@ -65,8 +65,8 @@ const FooterCTA = () => {
     return (
         <div ref={containerRef} className="px-20 flex items-center justify-between h-[80vh] w-screen overflow-hidden">
             <div className="w-1/2">
-                <h5 className="text-[5.2vw] leading-[1.2] font-head mb-3 headingAnim text-white-200">Ready to Transform Your AI Strategy?</h5>
-                <p data-para-anim className="text-white-300 w-4/5 mb-12">Discover how UnifyAI can accelerate your AI/ML and GenAI initiatives with seamless deployment, scalability, and security.</p>
+                <h2 className="title-1 leading-[1.2] font-head mb-3 headingAnim text-white-200">Take a lightning tour of the Enterprise AI Platform </h2>
+                <p data-para-anim className="text-[#CACACA]  mb-12">Discover how UnifyAI can accelerate your AI/ML and GenAI initiatives with seamless deployment, scalability, and security.</p>
                 <div className="flex gap-6">
                     <div className="fadeup">
                         <PrimaryButton text="Book a Demo" href="#" />
@@ -101,19 +101,19 @@ const FooterCTA = () => {
                         </defs>
                     </svg>
                 </div>
-                {/* <motion.div
-                    style={{ x: image1X, y: image1Y }}
+                <div
+                    
                     className="absolute w-[45%] top-[15%] left-[20%] rounded-2xl border border-white/30 overflow-hidden"
                 >
-                    <Image src={Image1} alt="Image1" loading="lazy" placeholder="blur" className="w-full h-full object-cover" />
-                </motion.div>
+                    <Image src={"/assets/images/homepage/footer-cta-1.png"} alt="Image1"   width={348} height={312} className="w-full h-full object-cover" />
+                </div>
 
-                <motion.div
-                    style={{ x: image1X, y: image1Y }}
+                <div
+                    
                     className="absolute  w-[40%] bottom-[10%] left-[45%] rounded-2xl  border border-white/30 overflow-hidden "
                 >
-                    <Image src={Image2} alt="Image2" loading="lazy" placeholder="blur" className="w-full h-full object-cover" />
-                </motion.div> */}
+                    <Image src={"/assets/images/homepage/footer-cta-2.png"} alt="Image2"   width={313} height={272} className="w-full h-full object-cover" />
+                </div>
             </div>
         </div>
     )

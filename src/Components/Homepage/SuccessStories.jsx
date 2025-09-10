@@ -15,7 +15,7 @@ const SuccessStories = () => {
     return (
         <>
 
-            <section id='success-stories' className='h-full py-[7vw] px-[5vw] w-screen bg-radial from-[#081B57]  to-[#01030F]'>
+            <section id='success-stories' className='h-full py-[7vw] px-[5vw] w-screen background-radial'>
                 <div className='w-full h-full'>
                     <div className='w-full flex items-end justify-between'>
                         <div className="space-y-5 mt-10 w-[35%] ">

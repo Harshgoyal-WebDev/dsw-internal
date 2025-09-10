@@ -62,7 +62,6 @@ export default function Home() {
         <Clients2/>
         <SuccessStories/>
         <Blogs/>
-
       </Layout>
     </>
   );
