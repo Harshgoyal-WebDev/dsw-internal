@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Gradient from "./Homepage/Gradient";
-import Image from "next/image";
+// import Image from "next/image";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -60,7 +60,7 @@ const Loader = () => {
     >
 
       <div className="w-fit h-fit flex sequence-container relative z-[2] font-head font-medium">
-        <div className="flex w-[10vw] overflow-hidden">
+        <div className="flex w-[9.5vw] overflow-hidden">
           <div className="flex w-fit translate-x-[-80%] number-container">
             <span>9</span>
             <span>7</span>
@@ -70,7 +70,7 @@ const Loader = () => {
           </div>
         </div>
 
-        <div className="flex w-[10vw] overflow-hidden">
+        <div className="flex w-[9.5vw] overflow-hidden">
           <div className="flex w-fit translate-x-[-80%] number-container">
             <span>9</span>
             <span>7</span>

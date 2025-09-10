@@ -45,9 +45,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <Loader /> */}
+      <Loader />
       <Layout>
-        {/* <Hero />
+        <Hero />
         <TurbochargeG />
         <About/>
         <Insuraince />
@@ -55,21 +55,14 @@ export default function Home() {
         <Difference/>
         <Brochure/>
         <UnifyAi />
-        <WhyUnify /> */}
+        <WhyUnify />
         <EnterpriseAI/>
         <Recognized/>
         <Connects/>
         <Clients2/>
         <SuccessStories/>
         <Blogs/>
-        {/*<Insuraince />*/}
-        {/* <Business /> */}
-        {/* <Security /> */}
-        {/* <Connects /> */}
-        {/* <Clients /> */}
-        {/* <Testimonials /> */}
-        {/* <Blogs /> */}
-        {/* <FAQs /> */}
+
       </Layout>
     </>
   );

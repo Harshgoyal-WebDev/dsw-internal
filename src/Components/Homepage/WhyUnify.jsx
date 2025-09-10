@@ -4,7 +4,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
 import WhiteButton from "../Button/WhiteButton";
-import PrimaryButton from "../Button/PrimaryButton";
+// import PrimaryButton from "../Button/PrimaryButton";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -54,7 +54,7 @@ const WhyUnify = () => {
           );
           svgCircleRefs.current.forEach((circle, i) => {
             gsap.to(circle, {
-              fill: i === activeIndex ?  "#f16b0d" :"#FFFFFF" ,
+              fill: i === activeIndex ?  "#1626FD" :"#FFFFFF" ,
               duration: 0.3,
             });
           });
@@ -72,7 +72,7 @@ const WhyUnify = () => {
     });
     gsap.set(contentRefs.current[0], { opacity: 1, y: 0, zIndex: 1 });
     svgCircleRefs.current.forEach((circle, i) => {
-      gsap.set(circle, { fill: i === 0 ? "#FFFFFF" : "#f16b0d" });
+      gsap.set(circle, { fill: i === 0 ? "#FFFFFF" : "#1626FD" });
     });
 
     for (let i = 1; i < contentRefs.current.length; i++) {
@@ -154,20 +154,11 @@ const WhyUnify = () => {
 
   return (
     <section
-      className="h-full w-screen relative  bg-white z-[10]"
+      className="h-full w-screen relative  bg-[#f8f8f8] z-[10]"
       ref={sectionRef}
       id="WhyUnify"
     >
-      {/* Gradient Background Layer */}
-      {/* <div className="absolute top-0 left-0 h-full w-screen z-0 pointer-events-none bg-white !text-black gradientClassBackground">
-        <Image
-          src="/assets/images/homepage/black-svg.svg"
-          alt="black svg section break"
-          width={1920}
-          height={500}
-          className="absolute bottom-[-1px] left-0 right-0 z-10"
-        />
-      </div> */}
+     
 
       <div className="flex flex-col items-center w-full py-[7vw] space-y-30 px-10 relative z-[2]">
         <div className="space-y-24 w-full">
@@ -177,8 +168,8 @@ const WhyUnify = () => {
 
           <div className="w-full flex items-start justify-between">
             {/* Left: SVG navigation with progress indicator */}
-            <div className="flex w-[15%] gap-5">
-              <div className="py-4">
+            <div className="flex w-[20%] gap-5">
+              <div >
                 <svg
                   width="16"
                   height="319"
@@ -200,7 +191,7 @@ const WhyUnify = () => {
                     y1="7.56641"
                     x2="8.08082"
                     y2="310.975"
-                    stroke="#f16b0d"
+                    stroke="#1626FD"
                     strokeWidth="1"
                     ref={progressLineRef}
                   />
@@ -208,41 +199,41 @@ const WhyUnify = () => {
                     cx="7.5808"
                     cy="7.56615"
                     r="6.5681"
-                    fill="#f16b0d"
-                    stroke="#f16b0d"
+                    fill="#1626FD"
+                    stroke="#1626FD"
                     ref={addToCircleRefs}
                   />
                   <circle
                     cx="7.5808"
                     cy="108.702"
                     r="7.0681"
-                    fill="#f16b0d"
-                    stroke="#f16b0d"
+                    fill="#1626FD"
+                    stroke="#1626FD"
                     ref={addToCircleRefs}
                   />
                   <circle
                     cx="7.5808"
                     cy="209.838"
                     r="7.0681"
-                    fill="#f16b0d"
-                    stroke="#f16b0d"
+                    fill="#1626FD"
+                    stroke="#1626FD"
                     ref={addToCircleRefs}
                   />
                   <circle
                     cx="7.5808"
                     cy="310.975"
                     r="7.0681"
-                    fill="#f16b0d"
-                    stroke="#f16b0d"
+                    fill="#1626FD"
+                    stroke="#1626FD"
                     ref={addToCircleRefs}
                   />
                 </svg>
               </div>
-              <div className="text-black space-y-14 content-p font-light">
+              <div className="text-black space-y-[3.3vw] content-p font-light">
                 <p>End-to-End AI Lifecycle Management</p>
-                <p>Multi-Model AI Support</p>
-                <p>Seamless Enterprise Integration</p>
-                <p>Scalable Infrastructure</p>
+                <p className="w-[45%]">Multi-Model AI Support</p>
+                <p >Seamless <br/>Enterprise Integration</p>
+                <p className="w-[45%]">Scalable Infrastructure</p>
               </div>
             </div>
 

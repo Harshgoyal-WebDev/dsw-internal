@@ -35,9 +35,8 @@ const Hero = () => {
 
   useEffect(() => {
     SplitInLineOnly(heading.current);
-    SplitInLine(para.current);
     const lines = heading.current.querySelectorAll(".line");
-    const paraLines = para.current.querySelectorAll(".line-internal");
+    // const heroEl = 
     gsap.fromTo(
       lines,
       {
@@ -51,13 +50,14 @@ const Hero = () => {
         ease: "power2.out",
       }
     );
-    gsap.from(paraLines, {
-      yPercent: 150,
-      delay: 4.5,
-      duration: 1.2,
-      stagger: 0.05,
-      ease: "power3.out",
-    });
+    // gsap.from(paraLines, {
+    //   yPercent: 150,
+    //   delay: 4.5,
+    //   duration: 1.2,
+    //   stagger: 0.05,
+    //   ease: "power3.out",
+    // });
+    // gsap.from(".")
   }, []);
 
   return (
@@ -72,12 +72,12 @@ const Hero = () => {
           </h1>
           <p
             ref={para}
-            className="text-[#CACACA] w-full mx-auto overflow-hidden heroParaAnim"
+            className="text-[#CACACA] w-full mx-auto overflow-hidden"
           >
             The enterprise platform built for speed and scale.​ Go from pilot to
             production – faster and smarter with DSW UnifyAI​
           </p>
-          <div className="flex items-center justify-center gap-6 mt-10">
+          <div className="flex items-center justify-center gap-6 mt-10 ">
             {[
               { Component: PrimaryButton, text: "Start Walkthrough" },
               { Component: WhiteButton, text: "Schedule a Call" },
@@ -88,7 +88,7 @@ const Hero = () => {
                 animate={{
                   opacity: 1,
                   y: 0,
-                  transition: { duration: 1, delay: 2.4 },
+                  transition: { duration: 1, delay: 4.8 },
                 }}
               >
                 <Component href="#" text={text} />

@@ -4,7 +4,7 @@
   --background: #030815;
   --foreground: #f1f1f1;
   --blue:#111EB5;
-  --primary-1: #175CFE;
+  --primary-1: #1626FD;
   --primary-2: #f16b0d;
   --primary-3: #e61216;
   --white-200: #f8f8f8;
@@ -114,4 +114,21 @@ h1,h2,h3,h4 {
 .background-glass{
 background: linear-gradient(90.17deg, rgba(255, 255, 255, 0.06) 0.01%, rgba(255, 255, 255, 0.06) 99.99%);
 
+}
+
+.unifyblock {
+  /* base color (shows through as gradient fades out) */
+  background-color: #030815;
+
+  /* gradient opacity controlled by --grad-o */
+  --grad-o: 1;
+  background-image:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(8, 27, 87, var(--grad-o)) 0%,
+      rgba(3, 8, 21, var(--grad-o)) 40%,
+      rgba(3, 8, 21, var(--grad-o)) 100%
+    );
+  background-repeat: no-repeat;
+  background-size: cover;
 }
