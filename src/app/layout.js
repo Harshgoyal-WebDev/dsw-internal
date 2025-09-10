@@ -28,7 +28,7 @@ const neumontreal = localFont({
 });
 
 export const metadata = {
-  title: "DSW",
+  title: "Data Science Wizards",
   description: "Data Science Wizards",
 };
 

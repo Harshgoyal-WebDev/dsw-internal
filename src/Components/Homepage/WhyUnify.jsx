@@ -169,7 +169,7 @@ const WhyUnify = () => {
         />
       </div> */}
 
-      <div className="flex flex-col items-center w-full py-30 space-y-30 px-10 relative z-[2]">
+      <div className="flex flex-col items-center w-full py-[7vw] space-y-30 px-10 relative z-[2]">
         <div className="space-y-24 w-full">
           <h3 className="text-[5.2vw] text-primary-1 text-center font-light headingAnim">
             Why Choose UnifyAI?

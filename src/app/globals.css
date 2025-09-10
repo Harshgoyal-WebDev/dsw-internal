@@ -91,3 +91,23 @@ h2 {
 .buttonSplit:hover .single-letter {
   transform: translate(0px, -1.5em);
 }
+
+
+.marquee {
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100vw; /* or your desired width */
+}
+.marquee__track {
+  display: flex;
+  animation: marquee 10s linear infinite;
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.background-glass{
+background: linear-gradient(90.17deg, rgba(255, 255, 255, 0.06) 0.01%, rgba(255, 255, 255, 0.06) 99.99%);
+
+}

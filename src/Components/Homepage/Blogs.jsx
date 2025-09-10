@@ -18,9 +18,9 @@ const BlogCard = ({ title, date, img }) => {
           <Image src={img} width={531} height={510} alt='blog-1' className='object-cover h-[20vw] w-[31vw] group-hover:scale-[1.1] transition-all duration-500 ease' />
         </div>
         <div className='space-y-5 px-5'>
-          <p className='text-[1.245vw] font-medium text-[#E8E8E8] leading-[1.5]'>
+          <p className=' font-medium text-[#E8E8E8] leading-[1.5]'>
             <span className='under-multi pb-0.5'>{title}</span></p>
-          <p className='text-[1.145vw] font-medium text-[#E8E8E8]'>{date}</p>
+          <p className='text-[1.145vw] font-medium text-[#909090]'>{date}</p>
         </div>
         <div
           className={`h-13 w-13 absolute top-6 right-6 rounded-full flex items-center justify-center transition-all duration-700 border  border-white/50 text-white  group-hover:text-black group-hover:bg-white ease`}
@@ -77,7 +77,7 @@ const Blogs = () => {
       <div className='h-full w-full flex items-start justify-between pl-15'>
         <div className='w-1/2 space-y-10'>
           <h2 className='text-[5.2vw] leading-[1.2] w-[90%] headingAnim font-head text-white-200'>Stay Ahead with AI Insights</h2>
-          <p data-para-anim className='content-p text-[#CACACA] w-[72%]'>Stay informed with expert insights, industry updates, and real-world use cases from UnifyAI. Whether you&apos;re looking for the latest in Generative AI, AI governance, or enterprise AI adoption, we&apos;ve got you covered.</p>
+          <p className='text-[#CACACA] w-[72%] leading-[1.4]'>stay informed with expert insights, industry updates, and real-world use cases from UnifyAI. Whether you&apos;re looking for the latest in Generative AI, AI governance, or enterprise AI adoption, we&apos;ve got you covered.</p>
           <div className='fadeUp'>
             <PrimaryButton text={"Know More"} href={"#"} />
           </div>

@@ -4,11 +4,15 @@ import About from "@/Components/Homepage/About";
 import Blogs from "@/Components/Homepage/Blogs";
 import Business from "@/Components/Homepage/Business";
 import Clients from "@/Components/Homepage/Clients";
+import Clients2 from "@/Components/Homepage/Clients2";
 import Connects from "@/Components/Homepage/Connects";
+import EnterpriseAI from "@/Components/Homepage/EnterpriseAI";
 import FAQs from "@/Components/Homepage/FAQs";
 import Hero from "@/Components/Homepage/Hero";
 import Insuraince from "@/Components/Homepage/Insuraince";
+import Recognized from "@/Components/Homepage/Recognized";
 import Security from "@/Components/Homepage/Security";
+import SuccessStories from "@/Components/Homepage/SuccessStories";
 import Testimonials from "@/Components/Homepage/Testimonials";
 import TurbochargeG from "@/Components/Homepage/TurboChargeG";
 import UnifyAi from "@/Components/Homepage/UnifyAi";
@@ -40,19 +44,26 @@ export default function Home() {
       </Head>
       {/* <Loader /> */}
       <Layout>
-        <Hero />
+        {/* <Hero />
         <TurbochargeG />
         <About/>
         <Insuraince />
         <UnifyAi />
-        <WhyUnify />
-        <Business />
-        <Security />
-        <Connects />
-        <Clients />
-        <Testimonials />
-        <Blogs />
-        <FAQs />
+        <WhyUnify /> */}
+        <EnterpriseAI/>
+        <Recognized/>
+        <Connects/>
+        <Clients2/>
+        <SuccessStories/>
+        <Blogs/>
+        {/*<Insuraince />*/}
+        {/* <Business /> */}
+        {/* <Security /> */}
+        {/* <Connects /> */}
+        {/* <Clients /> */}
+        {/* <Testimonials /> */}
+        {/* <Blogs /> */}
+        {/* <FAQs /> */}
       </Layout>
     </>
   );

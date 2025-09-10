@@ -160,7 +160,7 @@ const Business = () => {
   return (
     <section className="h-full w-screen py-10 ">
       <div className="py-10 w-full">
-        <div className="w-[52%] space-y-8 px-15">
+        <div className="w-[52%] space-y-8 px-[5vw]">
           <h2 className="text-[5.2vw] font-head leading-[1.2] headingAnim text-white-200">
             AI That Works for Your Business
           </h2>
