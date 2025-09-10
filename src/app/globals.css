@@ -119,6 +119,14 @@ background: linear-gradient(90.17deg, rgba(255, 255, 255, 0.06) 0.01%, rgba(255,
   background: radial-gradient(43.88% 47.7% at 48.03% 50%, #081B57 0%, #01030F 100%) 
 
 }
+.background-radial{
+  background: radial-gradient(43.88% 47.7% at 48.03% 50%, #081B57 0%, #01030F 100%) 
+
+}
+.background-radial{
+  background: radial-gradient(43.88% 47.7% at 48.03% 50%, #081B57 0%, #01030F 100%) 
+
+}
 .unifyblock {
   /* base color (shows through as gradient fades out) */
   background-color: #030815;

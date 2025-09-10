@@ -17,41 +17,41 @@ const EnterpriseAI = () => {
           </p>
         </div>
 
-      <div className='w-full h-full flex items-stretch justify-between relative'>
-  <div className='h-full w-[18vw] border border-[#59595980] background-glass rounded-[2vw] px-[3vw] py-[2.5vw]'>
+      <div className='w-full h-full flex relative'>
+  <div className='h-fit w-[18vw] border border-[#59595980] background-glass rounded-[2vw] px-[3vw] py-[2.5vw]'>
     <p className='text-[#CACACA] leading-[1.5]'>
       Your All-in-One Playground to Simplify and Accelerate End-to-End AI/ML Use Cases
     </p>
   </div>
-  <div className='h-[50vw] flex-1'>
-    <Image src={"/assets/images/homepage/enterprise-ai-shape.png"} height={920} width={767} alt='enterprise-ai'/>
+  <div className='h-[45vw] w-auto flex-1'>
+    <Image src={"/assets/images/homepage/enterprise-ai-shape.png"} height={920} width={767} alt='enterprise-ai' className='h-full w-full object-contain'/>
   </div>
-  <div className='h-full w-[19vw] border border-[#59595980] background-glass rounded-[2vw] px-[3vw] py-[2.5vw] self-end ml-auto'>
+  <div className='h-fit w-[19vw] border border-[#59595980] background-glass rounded-[2vw] px-[3vw] py-[2.5vw] self-end ml-auto '>
     <p className='text-[#CACACA] leading-[1.5]'>
       An In-built Playground for Rapid and Efficient GenAI Use Case Development
     </p>
   </div>
 
 <div>
-  <div className='absolute top-[25%] left-[73%]'>
+  <div className='absolute top-[18%] left-[67%]'>
     <p className='text-[#E8E8E8]'>Presentation Layer</p>
   </div>
-  <div className='absolute top-[40%] left-[73%]'>
+  <div className='absolute top-[30%] left-[67%]'>
     <p className='text-[#E8E8E8]'>Use Cases</p>
   </div>
-  <div className='absolute top-[53%] left-[73%]'>
+  <div className='absolute top-[42%] left-[67%]'>
     <p className='text-[#E8E8E8]'>Gen AI Studio</p>
   </div>
-  <div className='absolute top-[53%] left-[22%] text-right'>
+  <div className='absolute top-[42%] left-[28%] text-right'>
     <p className='text-[#E8E8E8]'>AI Studio</p>
   </div>
-  <div className='absolute top-[63%] left-[21%] text-right'>
+  <div className='absolute top-[50%] left-[27%] text-right'>
     <p className='text-[#E8E8E8]'>InsurAInce</p>
   </div>
-  <div className='absolute top-[73%] left-[23%] text-right'>
+  <div className='absolute top-[58%] left-[29%] text-right'>
     <p className='text-[#E8E8E8]'>UnifyAI</p>
   </div>
-  <div className='absolute top-[83%] left-[13%] text-right'>
+  <div className='absolute top-[68%] left-[18%] text-right'>
     <p className='text-[#E8E8E8]'>Infra: On-Premise/Cloud</p>
   </div>
   </div>

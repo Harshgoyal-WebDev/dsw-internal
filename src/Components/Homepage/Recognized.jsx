@@ -6,15 +6,15 @@ const AwardItem=({img, title , year})=>{
     return (
         <>
         <div
-        className="flex-shrink-0 flex items-center justify-center gap-[1vw] w-[30vw]"
-        
+        className="flex-shrink-0 flex items-center justify-center gap-[1vw] w-[30vw]" 
       >
-        <div>
+        <div className='w-[7vw] h-auto'>
           <Image
             src={img}
             height={146}
             width={128}
-            alt={title}
+            alt={title} 
+            className='h-full w-full'
           />
         </div>
         <div className="space-y-[1vw]">
@@ -31,7 +31,7 @@ const Recognized = () => {
             id='recognized'
             className="h-full w-screen py-[7vw] px-[5vw] relative overflow-hidden"
         >
-            <div className="w-full h-full flex flex-col items-center justify-center relative z-[2] space-y-[7vw]">
+            <div className="w-full h-full flex flex-col items-center justify-center relative z-[2] space-y-[3vw]">
                 <div className="text-center  space-y-5 mt-10">
                     <h3 className="title-2 !leading-[1.35] headingAnim text-[#E8E8E8]">
                         Recognized for real-world AI enterprise impact
@@ -41,18 +41,18 @@ const Recognized = () => {
                     </p>
                 </div>
 
-                <div className='w-full flex items-center justify-between'>
-                    <div>
-                        <Image src={"/assets/images/homepage/security-1.png"} height={178} width={178} alt='soc' />
+                <div className='w-full flex items-center justify-between px-[5vw] mt-[3vw]'>
+                    <div className='h-[10vw] w-[10vw]'>
+                        <Image src={"/assets/images/homepage/security-1.png"} height={178} width={178} alt='soc' className='h-full w-full object-contain' />
                     </div>
-                    <div>
-                        <Image src={"/assets/images/homepage/security-2.png"} height={178} width={178} alt='iso' />
+                    <div className='h-[10vw] w-[10vw]'>
+                        <Image src={"/assets/images/homepage/security-2.png"} height={178} width={178} alt='iso' className='h-full w-full object-contain'/>
                     </div>
-                    <div>
-                        <Image src={"/assets/images/homepage/security-3.png"} height={178} width={178} alt='hipaa' />
+                    <div className='h-[10vw] w-[10vw]'>
+                        <Image src={"/assets/images/homepage/security-3.png"} height={178} width={178} alt='hipaa' className='h-full w-full object-contain'/>
                     </div>
-                    <div>
-                        <Image src={"/assets/images/homepage/security-4.png"} height={178} width={681} alt='hipaa' />
+                    <div className='h-[10vw] w-[35vw]'>
+                        <Image src={"/assets/images/homepage/security-4.png"} height={178} width={681} alt='hipaa' className='h-full w-full object-contain'/>
                     </div>
 
                 </div>
@@ -73,7 +73,7 @@ const Recognized = () => {
 
                 </div> */}
 
-             <div className="relative w-screen overflow-hidden mt-[3vw]">
+             <div className="relative w-screen overflow-hidden ">
   {/* <div className="marquee flex items-center will-change-transform">
     {[...awards, ...awards].map((item, index) => (
       
