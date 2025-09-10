@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+:root {
+  --background: #030815;
+  --foreground: #f1f1f1;
+  --primary-1: #111eb5;
+  --primary-2: #f16b0d;
+  --primary-3: #e61216;
+  --white-200: #f8f8f8;
+  --white-300: #cacaca;
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --default-ease: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@theme inline {
+  --font-head: var(--font-display);
+  --font-body: var(--font-body);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary-1: var(--primary-1);
+  --color-primary-2: var(--primary-2);
+  --color-primary-3: var(--primary-3);
+  --color-white-200: var(--white-200);
+  --color-white-300: var(--white-300);
+  --ease-default-ease: var(--default-ease);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--white-200);
+  font-family: var(--font-body);
+  font-size: 1.15vw;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  width: 100vw;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  font-family: var(--font-display);
+}
+.title-1 {
+  font-size: 5.2vw;
+  line-height: 1.2;
+}
+
+.headingAnim .line .line-internal {
+  mask-size: 500% 100%;
+  mask-image: linear-gradient(
+    150deg,
+    #e8e8e8 33.3%,
+    rgba(255, 255, 255, 0) 66.6%
+  );
+}
+.turbo-headingAnim .line .line-internal {
+  mask-size: 500% 100%;
+  mask-image: linear-gradient(
+    150deg,
+    #e8e8e8 33.3%,
+    rgba(255, 255, 255, 0) 66.6%
+  );
+}
+
+.heroHeadAnim .line {
+  mask-size: 500% 100%;
+  mask-image: linear-gradient(
+    150deg,
+    #e8e8e8 33.3%,
+    rgba(255, 255, 255, 0) 66.6%
+  );
+}
+
+/* Button Text Shadow */
+.buttonTextShadow {
+  text-shadow: 0 1.5em currentColor;
+}
+
+.buttonSplit .single-letter {
+  transition: transform 1s var(--default-ease);
+}
+
+.buttonSplit:hover .single-letter {
+  transform: translate(0px, -1.5em);
+}
