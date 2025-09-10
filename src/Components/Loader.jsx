@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
-import Gradient from "./Homepage/Gradient";
+import React, { Suspense, useEffect, useState } from "react";
+// import Gradient from "./Homepage/Gradient";
 // import Image from "next/image";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import ShaderComp from "./BgShader/ShaderComp";
 gsap.registerPlugin(ScrollTrigger);
 
 const Loader = () => {
@@ -81,12 +82,16 @@ const Loader = () => {
         </div>
       </div>
       <div className="loader-gradient opacity-0 relative z-[1] h-screen translate-y-[10%]">
-        <div
+        {/* <div
           className="w-screen h-[120vh] absolute bottom-[23%] left-0 right-0 z-[-2]"
         >
           <Gradient />
-        </div>
-
+        </div> */}
+        <div className="absolute top-[-5%] left-0 h-screen w-screen">
+        <Suspense>
+          <ShaderComp color={"0x1726FD"} />
+        </Suspense>
+      </div>
 
       </div>
     </div>

@@ -315,7 +315,7 @@ const WhyUnify = () => {
             >
               Skip
               <span>
-                <Image src={"/assets/icons/skip-icon.svg"} height={10} width={10} alt="skip-icon"/>
+                <Image src={"/assets/icons/skip-icon.svg"} height={10} width={10} alt="skip-icon" className="invert"/>
               </span>
             </button>
           </div>

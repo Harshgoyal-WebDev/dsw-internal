@@ -66,7 +66,7 @@ const Header = () => {
       <motion.header
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeOut", delay: 7.5 }}
+        transition={{ duration: 1, ease: "easeOut", delay: 6 }}
         className={`text-white px-4 fixed top-0 left-0 z-[999] pointer-events-none`} >
         <div className={`flex items-center justify-between py-6 px-12 w-screen transition-transform duration-500 pointer-events-auto ${isHidden ? "-translate-y-full" : "translate-y-0"}`} ref={headerRef} >
           <Link href={"/"}>

@@ -2,10 +2,10 @@ import React, { Suspense, useEffect, useRef } from "react";
 import PrimaryButton from "../Button/PrimaryButton";
 import WhiteButton from "../Button/WhiteButton";
 import { motion } from "motion/react";
-// import Gradient from "./Gradient";
 import gsap from "gsap";
-import { SplitInLine, SplitInLineOnly } from "../splitTextUtils";
+import {  SplitInLineOnly } from "../splitTextUtils";
 import ShaderComp from "../BgShader/ShaderComp";
+import { SplitText } from "gsap/SplitText";
 
 const lineCount = 4;
 
@@ -31,12 +31,15 @@ const AnimatedLine = ({ delay }) => (
 
 const Hero = () => {
   const heading = useRef(null);
-  const para = useRef(null);
 
   useEffect(() => {
     SplitInLineOnly(heading.current);
     const lines = heading.current.querySelectorAll(".line");
-    // const heroEl = 
+    const heroPara = document.querySelector(".heroPara")
+    const heroEl = new SplitText(heroPara,{
+      type:"lines",
+      mask:"lines"
+    })
     gsap.fromTo(
       lines,
       {
@@ -50,19 +53,19 @@ const Hero = () => {
         ease: "power2.out",
       }
     );
-    // gsap.from(paraLines, {
-    //   yPercent: 150,
-    //   delay: 4.5,
-    //   duration: 1.2,
-    //   stagger: 0.05,
-    //   ease: "power3.out",
-    // });
+    gsap.from(heroEl.lines, {
+      yPercent: 150,
+      delay: 5.2,
+      duration: 1.2,
+      stagger: 0.04,
+      ease: "power3.out",
+    });
     // gsap.from(".")
   }, []);
 
   return (
     <section className="h-[70vw] w-screen relative bg-background" id="hero">
-      <div className="flex flex-col items-center justify-start w-full h-full pt-[18vw] relative z-[12]">
+      <div className="flex flex-col items-center justify-start w-full h-full pt-[30vh] relative z-[12]">
         <div className="w-[70%] text-center space-y-6 pb-5">
           <h1
             ref={heading}
@@ -71,8 +74,8 @@ const Hero = () => {
             Launch AI use cases in days. GenAI in hours.​
           </h1>
           <p
-            ref={para}
-            className="text-[#CACACA] w-full mx-auto overflow-hidden"
+           
+            className="text-[#CACACA] w-full mx-auto overflow-hidden heroPara"
           >
             The enterprise platform built for speed and scale.​ Go from pilot to
             production – faster and smarter with DSW UnifyAI​
@@ -88,7 +91,7 @@ const Hero = () => {
                 animate={{
                   opacity: 1,
                   y: 0,
-                  transition: { duration: 1, delay: 4.8 },
+                  transition: { duration: 1, delay: 5.8 },
                 }}
               >
                 <Component href="#" text={text} />
