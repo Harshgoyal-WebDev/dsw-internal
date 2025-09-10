@@ -1,5 +1,6 @@
 "use client"
 import { fadeIn, fadeUp, headingAnim, lineAnim, paraAnim } from "@/Components/Animations/gsapAnimations";
+import About from "@/Components/Homepage/About";
 import Blogs from "@/Components/Homepage/Blogs";
 import Business from "@/Components/Homepage/Business";
 import Clients from "@/Components/Homepage/Clients";
@@ -41,9 +42,10 @@ export default function Home() {
       <Layout>
         <Hero />
         <TurbochargeG />
+        <About/>
+        <Insuraince />
         <UnifyAi />
         <WhyUnify />
-        <Insuraince />
         <Business />
         <Security />
         <Connects />

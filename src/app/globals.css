@@ -3,7 +3,7 @@
 :root {
   --background: #030815;
   --foreground: #f1f1f1;
-  --primary-1: #111eb5;
+  --primary-1: #175CFE;
   --primary-2: #f16b0d;
   --primary-3: #e61216;
   --white-200: #f8f8f8;
@@ -41,8 +41,15 @@ body {
 h1 {
   font-family: var(--font-display);
 }
+h2 {
+  font-family: var(--font-display);
+}
 .title-1 {
   font-size: 5.2vw;
+  line-height: 1.2;
+}
+.title-2 {
+  font-size: 3.4vw;
   line-height: 1.2;
 }
 

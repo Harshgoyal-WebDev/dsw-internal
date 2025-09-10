@@ -1,63 +1,11 @@
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
-// import { SplitInLine } from "@/components/splitTextUtils";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import PrimaryButton from "../Button/PrimaryButton";
-import { SplitInLine } from "../splitTextUtils";
 gsap.registerPlugin(ScrollTrigger);
 
 const TurbochargeG = () => {
   const turboChargeContainer = useRef(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const headingAnim = document.querySelectorAll(".turbo-headingAnim");
-      headingAnim.forEach((headingAnim) => {
-        SplitInLine(headingAnim);
-        const headingWord = headingAnim.querySelectorAll(".line-internal");
-        gsap.fromTo(
-          headingWord,
-          {
-            maskPosition: "100% 100%",
-          },
-          {
-            maskPosition: "0% 100%",
-            stagger: 0.5,
-            duration: 5.5,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: "#turbo",
-              start: "+800 95%",
-              end: "+1000 top",
-              scrub: true,
-              lazy: true,
-            },
-          }
-        );
-      });
-
-      const paraAnimations = document.querySelectorAll(".turbo-para-anim");
-      paraAnimations.forEach((paraAnimation) => {
-        SplitInLine(paraAnimation);
-        const paraLine = paraAnimation.querySelectorAll(".line-internal");
-        gsap.from(paraLine, {
-          scrollTrigger: {
-            trigger: paraAnimation,
-            trigger: "#turbo",
-            start: "+800 55%",
-            end: "+1100 55%",
-            scrub: true,
-          },
-          duration: 1.2,
-          yPercent: 100,
-          stagger: 0.07,
-          ease: "power3.out",
-        });
-      });
-    });
-    return () => ctx.revert();
-  }, []);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -71,17 +19,7 @@ const TurbochargeG = () => {
           end: "+=800 bottom",
         },
       });
-      gsap.from(".turbo-button", {
-        opacity: 0,
-        yPercent: 40,
-        duration: 1,
-        scrollTrigger: {
-          trigger: "#turbo",
-          start: "+1000 80%",
-          end: "+1200 80%",
-          scrub: 1,
-        },
-      });
+     
       gsap.from(".base-img", {
         scale: 0.3,
         opacity: 0.1,
@@ -133,16 +71,7 @@ const TurbochargeG = () => {
           "<"
         );
 
-      gsap.to(".turbo-content", {
-        opacity: 0,
-        duration: 1,
-        scrollTrigger: {
-          trigger: "#turbo",
-          start: "bottom top",
-          end: "200% top",
-          scrub: true,
-        },
-      });
+    
 
       bl.from(".img-1", {
         rotateX: 45,
@@ -191,7 +120,8 @@ const TurbochargeG = () => {
 
   return (
     <section id="turbo" className="w-screen h-full bg-background">
-      <div className="flex flex-col items-center p-10 w-full">
+      <div className="flex flex-col items-center p-10 w-full space-y-[3vw]">
+        <h2 className="title-1 headingAnim">Unifying AI and Business ​</h2>
         <div className="w-[70%] text-center space-y-15 py-15">
           <div
             className="w-full h-fit rounded-[1vw] relative  perspective-[800px]"
@@ -252,23 +182,7 @@ const TurbochargeG = () => {
             </div>
           </div>
 
-          <div className="space-y-10 turbo-content">
-            <h2 className="text-[5.2vw] font-head leading-[1.2] turbo-headingAnim text-white-200">
-              Turbocharge Your AI/ML Use Cases in 3-4 weeks and GenAI in 2-4
-              hours
-            </h2>
-            <p className="text-[#CACACA] w-[80%] content-p mx-auto turbo-para-anim">
-              Unleash the power of AI and Generative AI with UnifyAI – the
-              enterprise-ready platform designed to streamline, scale, and
-              deploy AI solutions seamlessly. Whether you're leveraging AI for
-              automation, predictive analytics, or fraud detection, UnifyAI
-              accelerates your journey from prototype to production with
-              unmatched speed and efficiency.
-            </p>
-            <div className="turbo-button">
-              <PrimaryButton text={"Know More"} href={"#"} />
-            </div>
-          </div>
+        
         </div>
       </div>
     </section>
