@@ -13,6 +13,7 @@ export const NavLink = ({ text, href, className="" }) => {
 }
 
 export const Links = [
+    { text: "Home", href: "#" },
     { text: "Product", href: "#" },
     { text: "Solutions", href: "#" },
     { text: "About Us", href: "#" },

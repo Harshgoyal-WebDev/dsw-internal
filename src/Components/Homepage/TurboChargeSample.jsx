@@ -1,12 +1,12 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
-
-import { SplitInLine, SplitInLineWord } from "@/components/splitTextUtils";
+// import { SplitInLine, SplitInLineWord } from "@/components/splitTextUtils";
 
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import PrimaryButton from "../Button/PrimaryButton";
+import { SplitInLine } from "../splitTextUtils";
 gsap.registerPlugin(ScrollTrigger);
 const TurbochargeSample = () => {
   const turboChargeContainer = useRef(null);

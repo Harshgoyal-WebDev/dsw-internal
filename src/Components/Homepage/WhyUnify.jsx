@@ -4,7 +4,6 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
 import WhiteButton from "../Button/WhiteButton";
-// import PrimaryButton from "../Button/PrimaryButton";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -166,7 +165,7 @@ const WhyUnify = () => {
             Why Choose UnifyAI?
           </h3>
 
-          <div className="w-full flex items-start justify-between">
+          <div className="w-full flex items-start justify-between fadeup">
             {/* Left: SVG navigation with progress indicator */}
             <div className="flex w-[20%] gap-5">
               <div >
