@@ -64,12 +64,12 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="h-[70vw] w-screen relative bg-background" id="hero">
-      <div className="flex flex-col items-center justify-start w-full h-full pt-[30vh] relative z-[12]">
-        <div className="w-[70%] text-center space-y-6 pb-5">
+    <section className="h-[70vw] w-screen relative bg-background max-sm:h-screen max-sm:px-[7vw]" id="hero">
+      <div className="flex flex-col items-center justify-start w-full h-full pt-[30vh] relative z-[12] max-sm:pt-[15vh]">
+        <div className="w-[70%] text-center space-y-6 pb-5 max-sm:w-[90%]">
           <h1
             ref={heading}
-            className="text-[5.2vw] font-head leading-[1.2] heroHeadAnim text-[#E8E8E8]"
+            className="title-1 font-head heroHeadAnim text-[#E8E8E8]"
           >
             Launch AI use cases in days. GenAI in hours.​
           </h1>
@@ -80,7 +80,7 @@ const Hero = () => {
             The enterprise platform built for speed and scale.​ Go from pilot to
             production – faster and smarter with DSW UnifyAI​
           </p>
-          <div className="flex items-center justify-center gap-6 mt-10 ">
+          <div className="flex items-center justify-center gap-6 mt-10 max-sm:flex-col max-sm:gap-[5vw]">
             {[
               { Component: PrimaryButton, text: "Start Walkthrough" },
               { Component: WhiteButton, text: "Schedule a Call" },
@@ -94,7 +94,7 @@ const Hero = () => {
                   transition: { duration: 1, delay: 5.8 },
                 }}
               >
-                <Component href="#" text={text} />
+                <Component href="#" text={text} className="max-sm:w-[65vw]" />
               </motion.div>
             ))}
           </div>
@@ -107,7 +107,7 @@ const Hero = () => {
           <AnimatedLine key={i} delay={5+(i * 0.2)} />
         ))}
       </div>
-      <div className="absolute top-[30%] left-0 h-screen w-screen">
+      <div className="absolute top-[30%] left-0 h-screen w-screen max-sm:hidden">
         <Suspense>
           <ShaderComp color={"0x1726FD"} />
         </Suspense>
