@@ -58,7 +58,7 @@ export default function WhyUnifyMobile({ allowMultiple = false }) {
   return (
     <section ref={sectionRef} className="px-[7vw] max-sm:py-[15%] w-full h-fit bg-[#F8F8F8] relative max-md:py-[7%] hidden max-md:block text-[#111111]" id="WhyUnify">
       <div className="h-[5vh] relative w-full">
-<h3 className="title-2 text-primary-1 text-center font-light headingAnim">
+<h3 className="title-2 text-primary-1 font-light headingAnim">
             Why DSW UnifyAI is the OS for AI?
           </h3>
         <div className="absolute top-[10%] left-1/2 -translate-x-1/2 flex gap-2 z-30  border border-[#E2EFFF] rounded-full overflow-hidden p-0.5">
@@ -97,8 +97,8 @@ title,para,link,isOpen, onToggle
           aria-expanded={isOpen}
           className="relative cursor-pointer w-full h-full max-sm:pt-[5vw] max-sm:pb-[7vw] flex items-start justify-between max-md:pt-[3vw] max-md:pb-[5vw]"
         >
-          <div className="w-full flex justify-between pr-[5%]">
-            <h3 className="max-sm:text-[6.5vw] font-display capitalize max-md:text-[5.5vw] text-left">
+          <div className="w-full flex justify-between ">
+            <h3 className="max-sm:text-[6.8vw] font-display capitalize max-md:text-[5.5vw] text-left w-[90%]">
               {title}
             </h3>
              <div

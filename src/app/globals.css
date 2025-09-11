@@ -243,6 +243,26 @@ background: linear-gradient(90.17deg, rgba(255, 255, 255, 0.01) 0.01%, rgba(255,
   animation-delay: 0.2s;
 }
 
+.under-multi {
+  text-decoration: none;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0, 0)),
+    linear-gradient(#ffffff, #ffffff);
+  background-size:
+    100% 0px,
+    0% 1px;
+  background-position:
+    100% 100%,
+    0 100%;
+  background-repeat: no-repeat, no-repeat;
+  transition: all 1s ease-out;
+}
+
+.under-multi-parent:hover .under-multi {
+  background-size:
+    100% 0px,
+    100% 1px;
+}
+
 
 @media (max-width:542px) {
   .title-1 {

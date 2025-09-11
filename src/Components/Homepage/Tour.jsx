@@ -1,5 +1,6 @@
+'use client'
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PrimaryButton from "../Button/PrimaryButton";
 import Copy from "../Animations/Copy";
@@ -10,6 +11,14 @@ const Tour = () => {
   const handleTabClick = (tabId) => {
     setActiveTab(tabId);
   };
+  const [isMobile, setIsMobile] = useState(false);
+
+useEffect(() => {
+  const checkMobile = () => setIsMobile(window.innerWidth < 640);
+  checkMobile();
+  window.addEventListener('resize', checkMobile);
+  return () => window.removeEventListener('resize', checkMobile);
+}, []);
 
   return (
     <section className="w-screen h-fit px-[5vw] py-[7%] max-sm:px-[7vw] max-sm:py-[15%]" id="tour">
@@ -29,7 +38,7 @@ const Tour = () => {
             <motion.div
               className="w-[13vw] h-full rounded-full bg-blue-1 thumb-button max-sm:w-[40vw]"
               animate={{
-                x: activeTab === "aiStudio" ? 0 : "13vw",
+                x: activeTab === "aiStudio" ? 0 : (isMobile ? "40vw" : "13vw"),
               }}
               transition={{
                 type: "spring",

@@ -59,7 +59,7 @@ const KeepScrolling = () => {
       clearTimeout(timeout);
       timeout = setTimeout(() => {
         setScrolling(false);
-      }, 7000); // adjust delay as needed
+      }, 100); // adjust delay as needed
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -71,15 +71,15 @@ const KeepScrolling = () => {
   }, []);
 
   return (
-    <div className="fixed bottom-10 right-10 z-[99] pointer-events-none ">
-      <div className="text-[1vw] h-fit relative overflow-hidden flex gap-[1vw] scrolling">
+    <div className="fixed bottom-10 right-10 z-[99] pointer-events-none max-sm:right-5">
+      <div className="text-[1vw] h-fit relative overflow-hidden flex gap-[1vw] scrolling max-sm:text-[3vw]">
         <div className="scroll-content flex gap-[1vw]">
           <span className={`inline-block shimmer`}>
             Keep scrolling to discover more
           </span>
-          <div className="flex flex-col gap-[0.5vw] w-fit h-[1vw] -translate-y-[100%] arrow-container">
-            <Image src="/assets/icons/arrow-left.svg" width={20} height={20} className={`h-[1vw] w-[1vw] -rotate-90 opacity-80 relative z-10 ${scrolling ? "hidden" : "translate-y-0"}`} alt="Previous" />
-            <Image src="/assets/icons/arrow-left.svg" width={20} height={20} className={`h-[1vw] w-[1vw] -rotate-90 opacity-80 relative z-10 `} alt="Previous" />
+          <div className="flex flex-col gap-[0.5vw] w-fit h-[1vw] -translate-y-[100%] arrow-container max-sm:h-[2.7vw]  overflow-hidden ">
+            <Image src="/assets/icons/arrow-left.svg" width={20} height={20} className={`h-[1vw] w-[1vw] -rotate-90 opacity-80 relative z-10 max-sm:h-[2vw] max-sm:w-[2vw] ${scrolling ? "hidden" : "translate-y-0 max-sm:translate-y-[50%]"}`} alt="Previous" />
+            <Image src="/assets/icons/arrow-left.svg" width={20} height={20} className={`h-[1vw] w-[1vw] -rotate-90 opacity-80 relative z-10 max-sm:h-[2vw] max-sm:w-[2vw]`} alt="Previous" />
           </div>
         </div>
       </div>

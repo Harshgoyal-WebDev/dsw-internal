@@ -50,15 +50,15 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Data Science Wizards</title>
+        <title>DSW UnifyAI – Enterprise AI Platform for Insurance</title>
         <meta
           name="description"
-          content="Unify AI - Turbocharge your business with AI"
+          content="Launch AI use cases in days and GenAI in hours with DSW UnifyAI - insurance-domain trained, compliant, scalable, and vendor-lock-in free."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Loader />
+      {/* <Loader /> */}
       <Layout>
         <Hero />
         <TurbochargeG />
@@ -70,6 +70,7 @@ export default function Home() {
         <Brochure />
         <UnifyAi />
         <WhyUnify />
+        {/* in this component the data is Different in mobile and desktop */}
         <WhyUnifyMobile />
         <EnterpriseAI />
         <Recognized />

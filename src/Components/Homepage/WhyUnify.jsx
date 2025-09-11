@@ -418,7 +418,7 @@ const WhyUnify = () => {
                 </p>
                 <WhiteButton
                   circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
-                  text="Start Free Trial"
+                  text="Know More"
                   href="#"
                   className="border-primary-1 border text-primary-1 bg-transparent hover:text-primary-1 hover:bg-transparent"
                 />
@@ -470,7 +470,6 @@ const WhyUnify = () => {
 
 export default WhyUnify;
 
-// (optional) data if you need it elsewhere
 export const data = [
   {
     list: "End-to-End AI Lifecycle Management",

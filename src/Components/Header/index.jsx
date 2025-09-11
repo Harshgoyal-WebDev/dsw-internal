@@ -65,8 +65,10 @@ const Header = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut", delay: 6 }}
         className={`text-white px-4 fixed top-0 left-0 z-[999] pointer-events-none max-sm:px-0`} >
-        <div className={`flex items-center justify-between py-6 px-12 w-screen transition-transform duration-500 pointer-events-auto max-sm:px-[7vw] ${isHidden ? "-translate-y-full" : "translate-y-0"}`} ref={headerRef} >
+        {/* <div className={`flex items-center justify-between py-6 px-12 w-screen transition-transform duration-500 pointer-events-auto max-sm:px-[7vw] max-sm:justify-endz ${isHidden ? "-translate-y-full" : "translate-y-0"}`} ref={headerRef} >
           <Logo variant="header" className="dsw-logo max-sm:!w-[25vw] max-sm:h-auto" />
+
+          
           
           <div className="border rounded-4xl bg-stone-900/30 backdrop-blur-sm border-white/20 ml-[4vw] max-sm:hidden">
             <ul className="flex items-center justify-between px-12 py-4.5 gap-12 text-[1.145vw]">
@@ -81,8 +83,18 @@ const Header = () => {
               ))}
             </ul>
           </div>
-          <div className="hidden max-sm:block">
-
+         <div
+            className="hidden max-sm:flex max-sm:flex-col gap-[1.5vw] w-[8vw] relative z-[150] max-md:flex max-md:flex-col max-md:w-[4.5vw] max-md:gap-[1vw] max-sm:w-[7vw]"
+          >
+            <div
+              className={`w-full h-[2.5px] rounded-full line-1 transition-all duration-500 origin-center ham-mobile bg-gradient-to-r from-[#F16B0D] to-[#E61216]`}
+            />
+            <div
+              className={`w-full h-[2.5px] bg-primary rounded-full line-2 transition-all duration-500 ham-mobile bg-gradient-to-r from-[#F16B0D] to-[#E61216]`}
+            />
+            <div
+              className={`w-full h-[2.5px] bg-primary rounded-full line-3 transition-all duration-500 origin-center ham-mobile bg-gradient-to-r from-[#F16B0D] to-[#E61216]`}
+            />
           </div>
           <div>
             <PrimaryButton 
@@ -91,7 +103,39 @@ const Header = () => {
               className="primary-button max-sm:hidden" 
             />
           </div>
-        </div>
+        </div> */}
+        <div className={`flex items-center justify-between py-6 px-12 w-screen transition-transform duration-500 pointer-events-auto max-sm:px-[7vw] max-sm:w-screen ${isHidden ? "-translate-y-full" : "translate-y-0"}`} ref={headerRef}>
+  <Logo variant="header" className="dsw-logo max-sm:!w-[25vw] max-sm:h-auto" />
+
+
+  <div className="border rounded-4xl bg-stone-900/30 backdrop-blur-sm border-white/20 ml-[4vw] max-sm:hidden">
+    <ul className="flex items-center justify-between px-12 py-4.5 gap-12 text-[1.145vw]">
+      {NAVIGATION.map((link) => (
+        <li key={link.id} className="text-[#E8E8E8]">
+          <NavigationLink 
+            text={link.text} 
+            href={link.href}
+            variant="default" 
+          />
+        </li>
+      ))}
+    </ul>
+  </div>
+
+ 
+  <div className="hidden max-sm:flex max-sm:flex-col gap-[1.5vw] w-[8vw] relative z-[150] max-md:flex max-md:flex-col max-md:w-[4.5vw] max-md:gap-[1vw] max-sm:w-[7vw]">
+    <div className={`w-full h-[2.5px] rounded-full line-1 transition-all duration-500 origin-center ham-mobile bg-gradient-to-r from-[#F16B0D] to-[#E61216]`} />
+    <div className={`w-full h-[2.5px] bg-primary rounded-full line-2 transition-all duration-500 ham-mobile bg-gradient-to-r from-[#F16B0D] to-[#E61216]`} />
+    <div className={`w-full h-[2.5px] bg-primary rounded-full line-3 transition-all duration-500 origin-center ham-mobile bg-gradient-to-r from-[#F16B0D] to-[#E61216]`} />
+  </div>
+
+
+  <PrimaryButton 
+    text={CTA_BUTTONS.primary.text} 
+    href={CTA_BUTTONS.primary.href} 
+    className="primary-button max-sm:hidden" 
+  />
+</div>
       </motion.header>
     </>
   );

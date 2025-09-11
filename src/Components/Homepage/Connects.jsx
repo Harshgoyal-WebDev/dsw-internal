@@ -143,7 +143,7 @@ const Connects = () => {
       <div className="w-screen h-[25vw] bg-gradient-to-t from-transparent to-[#030815] absolute top-0 z-[1]" />
       <div className="w-screen h-[10vw] bg-gradient-to-b from-transparent to-[#030815] absolute bottom-0 z-[1]" />
       <div></div>
-      <div className="h-screen w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[-1] flex items-center justify-center">
+      <div className="h-screen w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[-1] flex items-center justify-center max-sm:translate-y-[-40%]">
         <div className="relative w-full h-full flex items-center justify-center">
           <div className="absolute connect-circle-1" ref={circle3} >
             <svg

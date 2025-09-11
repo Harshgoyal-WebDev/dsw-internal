@@ -18,19 +18,33 @@ export default function About() {
     const CIRC = 351.59; 
 
     gsap.set('.ring', { strokeDasharray: CIRC, strokeDashoffset: CIRC });
+    gsap.set('.about-id', { opacity: 0, y: 20 });
 
     document.querySelectorAll('.about-item').forEach((row) => {
       const ring = row.querySelector('.ring');
-      if (!ring) return;
-      gsap.to(ring, {
-        strokeDashoffset: 0,
-        duration: 1,
-        ease: 'power2.out',
+      const idElement = row.querySelector('.about-id');
+      if (!ring || !idElement) return;
+
+      const tl = gsap.timeline({
         scrollTrigger: {
           trigger: row,
-          start: 'top 80%',
+          start: '10% 80%',
         },
       });
+
+      // Animate the border (slower)
+      tl.to(ring, {
+        strokeDashoffset: 0,
+        duration: 3, 
+        ease: 'power2.out',
+      })
+      
+      .to(idElement, {
+        opacity: 1,
+        y: 0,
+        duration: 1.5,
+        ease: 'power2.out',
+      }, 0.3); 
     });
   }, []);
 
@@ -60,9 +74,9 @@ export default function About() {
                       transform="rotate(-90 60 60)"
                     />
                   </svg>
-                  <Copy delay={0.2}>
-                  <p className="text-primary-1 text-[1.5vw] font-head relative z-[1] max-sm:text-[4.2vw]">{id}</p>
-                  </Copy>
+                  
+                  <p className="about-id text-primary-1 text-[1.5vw] font-head relative z-[1] max-sm:text-[4.2vw]">{id}</p>
+                
                 </div>
               </div>
 

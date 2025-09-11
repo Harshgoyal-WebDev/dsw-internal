@@ -3,8 +3,8 @@ import "./globals.css";
 import { fontVariables } from "@/styles/fonts";
 
 export const metadata = {
-  title: "Data Science Wizards",
-  description: "Data Science Wizards",
+  title: "DSW UnifyAI – Enterprise AI Platform for Insurance",
+  description: "Launch AI use cases in days and GenAI in hours with DSW UnifyAI - insurance-domain trained, compliant, scalable, and vendor-lock-in free.",
 };
 
 export default function RootLayout({ children }) {
