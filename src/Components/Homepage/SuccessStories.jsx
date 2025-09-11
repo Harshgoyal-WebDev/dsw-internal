@@ -10,11 +10,11 @@ const SuccessStories = () => {
     return (
         <>
 
-            <section id='success-stories' className='h-full py-[7vw] px-[5vw] w-screen background-radial'>
+            <section id='success-stories' className='h-full py-[7vw] px-[5vw] w-screen background-radial max-sm:px-[7vw]'>
                 <div className='w-full h-full'>
                     <div className='w-full flex items-end justify-between max-sm:flex-col max-sm:items-start max-sm:gap-[10vw]'>
                         <div className="space-y-5 mt-10 w-[35%] max-sm:w-full">
-                            <h3 className="title-2 w-[85%] leading-[1.2] headingAnim text-[#E8E8E8] max-sm:w-[80%]">
+                            <h3 className="title-2 w-[85%] leading-[1.2] headingAnim text-[#E8E8E8] max-sm:w-[90%]">
                                 View Our Success Stories
                             </h3>
                             <Copy>

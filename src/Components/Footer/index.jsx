@@ -9,25 +9,26 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { Suspense, useEffect, useRef } from "react";
 import ShaderComp from "../BgShader/ShaderComp";
+import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
     const footerRef = useRef(null);
     const footerGlassRef = useRef(null);
-    useEffect(() => {
-        gsap.from(footerGlassRef.current, {
-            // scale:1.1,
-            opacity: 0,
-            yPercent: 40,
-            ease: "power3.out",
-            scrollTrigger: {
-                trigger: footerRef.current,
-                start: "top 60%",
-                end: "bottom 60%",
-                scrub: 0.25,
-            }
-        })
-    })
+    // useEffect(() => {
+    //     gsap.from(footerGlassRef.current, {
+    //         // scale:1.1,
+    //         opacity: 0,
+    //         yPercent: 40,
+    //         ease: "power3.out",
+    //         scrollTrigger: {
+    //             trigger: footerRef.current,
+    //             start: "top 60%",
+    //             end: "bottom 60%",
+    //             scrub: 0.25,
+    //         }
+    //     })
+    // })
 
     return (
         <>
@@ -37,12 +38,17 @@ const Footer = () => {
                     <Suspense>
                         <ShaderComp color={"0x1726FD"} />
                     </Suspense>
+                    
                 </div>
-                <div className="relative z-[1]">
+                 <div className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-sm:block">
+                        <Image src={"/assets/images/homepage/gradient-mobile.png"} alt="bg-gradient" className="w-full h-full object-cover" width={600} height={1080}/>
+                
+                      </div>
+                <div className="relative z-[20]">
                     <div className="rounded-[2.2vw] background-glass-diff border border-white/30 px-12 py-[5%] flex justify-between max-sm:px-[0vw] max-sm:py-[15%] max-sm:rounded-[5vw] max-sm:flex-col max-sm:items-center max-sm:justify-center max-sm:text-center" ref={footerGlassRef}>
                         {/* Logo and Contact Info */}
                         <div className="flex flex-col justify-between items-start gap-24 footer-content max-sm:pb-[15vw] max-sm:items-center max-sm:justify-center">
-                            <Logo variant="footer" />
+                            <Logo variant="footer" className="w-fit max-sm:ml-[15vw]" />
                             <ContactInfo variant="footer" />
                         </div>
 

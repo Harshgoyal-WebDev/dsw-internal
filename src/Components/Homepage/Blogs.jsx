@@ -65,7 +65,7 @@ const Blogs = () => {
     }
   };
   return (
-    <section ref={blogsRef} className='h-full w-screen py-20 my-30 relative max-sm:px-[7vw] max-sm:py-[15vw]'>
+    <section ref={blogsRef} className='h-full w-screen py-20 my-30 relative max-sm:px-[7vw] max-sm:py-[15vw] overflow-hidden'>
       <div className='h-full w-full flex items-start justify-between pl-15 max-sm:flex-col max-sm:pl-0'>
         <div className='w-1/2 space-y-10 max-sm:w-full'>
           <h2 className='title-2 leading-[1.2] w-[90%] headingAnim font-head text-white-200'>Stay Ahead with AI Insights</h2>
@@ -97,7 +97,7 @@ const Blogs = () => {
       spaceBetween: 40,
     },
     1440: {
-      slidesPerView: 2.5,
+      slidesPerView: 1.8,
       spaceBetween: 50,
     },
   }}

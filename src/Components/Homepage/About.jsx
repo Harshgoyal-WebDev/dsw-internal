@@ -60,7 +60,7 @@ export default function About() {
                       transform="rotate(-90 60 60)"
                     />
                   </svg>
-                  <Copy delay={0.5}>
+                  <Copy delay={0.2}>
                   <p className="text-primary-1 text-[1.5vw] font-head relative z-[1] max-sm:text-[4.2vw]">{id}</p>
                   </Copy>
                 </div>

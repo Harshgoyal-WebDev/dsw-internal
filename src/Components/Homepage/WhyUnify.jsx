@@ -1,5 +1,7 @@
+"use client";
+
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
@@ -44,106 +46,164 @@ const WhyUnify = () => {
     }
   };
 
-  useEffect(() => {
-    timelineRef.current = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "10% 10%",
-        end: "+=2000",
-        scrub: 1,
-        // markers:true,
-        // pin: true,
-        // Snap by number of steps
-        snap: 1 / (contentRefs.current.length - 1),
-        onUpdate: (self) => {
-          const totalSteps = contentRefs.current.length;
-          const activeIndex = Math.min(
-            totalSteps - 1,
-            Math.floor(self.progress * totalSteps)
+  useLayoutEffect(() => {
+    if (!sectionRef.current) return;
+
+    const rafId = requestAnimationFrame(() => {
+      // if the section is hidden via CSS (e.g., responsive), skip setup
+      const isHidden = () => {
+        const el = sectionRef.current;
+        if (!el) return true;
+        const style = window.getComputedStyle(el);
+        return style.display === "none" || style.visibility === "hidden";
+      };
+      if (isHidden()) return;
+
+      const ctx = gsap.context(() => {
+        // build timeline after DOM is ready/rendered
+        timelineRef.current = gsap.timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "10% 10%",
+            end: "+=2000",
+            scrub: 1,
+            snap:
+              contentRefs.current.length > 1
+                ? 1 / (contentRefs.current.length - 1)
+                : false,
+            // markers: true,
+            onUpdate: (self) => {
+              const totalSteps = contentRefs.current.length;
+              const activeIndex = Math.min(
+                totalSteps - 1,
+                Math.floor(self.progress * totalSteps)
+              );
+
+              // update circles
+              svgCircleRefs.current.forEach((circle, i) => {
+                gsap.to(circle, {
+                  fill: i === activeIndex ? "#1626FD" : "#f8f8f8",
+                  duration: 0.3,
+                });
+              });
+
+              // update tags
+              tagRefs.current.forEach((tag, i) => {
+                gsap.to(tag, {
+                  color: i === activeIndex ? "#1626FD" : "rgba(0,0,0,0.5)",
+                  duration: 0.3,
+                });
+              });
+            },
+          },
+        });
+
+        // ----- SAFE LENGTH -----
+        const lineEl = progressLineRef.current;
+
+        const safeGetTotalLength = () => {
+          if (!lineEl) return 0;
+          try {
+            if (typeof lineEl.getTotalLength === "function") {
+              // can still throw if element is considered "non-rendered"
+              const len = lineEl.getTotalLength();
+              if (Number.isFinite(len) && len > 0) return len;
+            }
+          } catch (_) {
+            // fall through to manual calc
+          }
+          // fallback for <line> elements
+          const x1 = parseFloat(lineEl.getAttribute("x1") || "0");
+          const y1 = parseFloat(lineEl.getAttribute("y1") || "0");
+          const x2 = parseFloat(lineEl.getAttribute("x2") || "0");
+          const y2 = parseFloat(lineEl.getAttribute("y2") || "0");
+          return Math.hypot(x2 - x1, y2 - y1);
+        };
+
+        const totalLength = safeGetTotalLength();
+        const steps = Math.max(1, contentRefs.current.length - 1);
+        const segmentLength = totalLength / steps;
+
+        if (lineEl && totalLength > 0) {
+          gsap.set(lineEl, {
+            strokeDasharray: totalLength,
+            strokeDashoffset: totalLength,
+          });
+        }
+
+        // initial content state
+        if (contentRefs.current[0]) {
+          gsap.set(contentRefs.current[0], { opacity: 1, y: 0, zIndex: 1 });
+        }
+
+        // initial circles
+        svgCircleRefs.current.forEach((circle, i) => {
+          gsap.set(circle, { fill: i === 0 ? "#1626FD" : "#f8f8f8" });
+        });
+
+        // initial tags
+        tagRefs.current.forEach((tag, i) => {
+          gsap.set(tag, { color: i === 0 ? "#1626FD" : "rgba(0,0,0,0.5)" });
+        });
+
+        // timeline steps
+        for (let i = 1; i < contentRefs.current.length; i++) {
+          const currentOffset = totalLength - segmentLength * i;
+
+          if (lineEl && totalLength > 0) {
+            timelineRef.current.to(lineEl, {
+              strokeDashoffset: currentOffset,
+              duration: 1,
+              ease: "none",
+            });
+          }
+
+          timelineRef.current.to(
+            contentRefs.current[i - 1],
+            {
+              opacity: 0,
+              y: -50,
+              zIndex: 0,
+              duration: 0.5,
+              ease: "power2.inOut",
+            },
+            "<"
           );
 
-          // update circles (keep your existing behavior)
-          svgCircleRefs.current.forEach((circle, i) => {
-            gsap.to(circle, {
-              fill: i === activeIndex ? "#1626FD" : "#f8f8f8",
-              duration: 0.3,
-            });
-          });
+          timelineRef.current.fromTo(
+            contentRefs.current[i],
+            { opacity: 0, y: 50, zIndex: 0 },
+            {
+              opacity: 1,
+              zIndex: 2,
+              y: 0,
+              duration: 0.5,
+              ease: "power2.inOut",
+              delay: 0.5,
+            },
+            "<"
+          );
+        }
+      }, sectionRef);
 
-          // update tags: active -> #1626FD, inactive -> black/50
-          tagRefs.current.forEach((tag, i) => {
-            gsap.to(tag, {
-              color: i === activeIndex ? "#1626FD" : "rgba(0,0,0,0.5)",
-              duration: 0.3,
-            });
-          });
-        },
-      },
+      // cleanup for gsap context/timeline
+      const cleanupGsap = () => {
+        ctx.revert();
+        if (timelineRef.current) {
+          timelineRef.current.scrollTrigger?.kill();
+          timelineRef.current.kill();
+          timelineRef.current = null;
+        }
+      };
+
+      // store cleanup on the ref so we can call it in the returned cleanup below
+      sectionRef.current.__cleanupGsap = cleanupGsap;
     });
 
-    const totalLength = progressLineRef.current.getTotalLength();
-    const segments = contentRefs.current.length - 1;
-    const segmentLength = totalLength / segments;
-
-    gsap.set(progressLineRef.current, {
-      strokeDasharray: totalLength,
-      strokeDashoffset: totalLength,
-    });
-
-    // initial content state
-    gsap.set(contentRefs.current[0], { opacity: 1, y: 0, zIndex: 1 });
-
-    // initial circles (leave as in your code)
-    svgCircleRefs.current.forEach((circle, i) => {
-      gsap.set(circle, { fill: i === 0 ? "#1626FD" : "#f8f8f8" });
-    });
-
-    // initial tags: first active
-    tagRefs.current.forEach((tag, i) => {
-      gsap.set(tag, { color: i === 0 ? "#1626FD" : "rgba(0,0,0,0.5)" });
-    });
-
-    for (let i = 1; i < contentRefs.current.length; i++) {
-      const currentOffset = totalLength - segmentLength * i;
-
-      timelineRef.current.to(progressLineRef.current, {
-        strokeDashoffset: currentOffset,
-        duration: 1,
-        ease: "none",
-      });
-
-      timelineRef.current.to(
-        contentRefs.current[i - 1],
-        {
-          opacity: 0,
-          y: -50,
-          zIndex: 0,
-          duration: 0.5,
-          ease: "power2.inOut",
-        },
-        "<"
-      );
-
-      timelineRef.current.fromTo(
-        contentRefs.current[i],
-        { opacity: 0, y: 50, zIndex: 0 },
-        {
-          opacity: 1,
-          zIndex: 2,
-          y: 0,
-          duration: 0.5,
-          ease: "power2.inOut",
-          delay: 0.5,
-        },
-        "<"
-      );
-    }
-
+    // global cleanup for rAF + gsap
     return () => {
-      if (timelineRef.current) {
-        timelineRef.current.scrollTrigger.kill();
-        timelineRef.current.kill();
-      }
+      cancelAnimationFrame(rafId);
+      sectionRef.current?.__cleanupGsap?.();
     };
   }, []);
 
@@ -163,24 +223,10 @@ const WhyUnify = () => {
     };
   }, []);
 
-  // const handleSkip = () => {
-  //   if (timelineRef.current) {
-  //     const st = timelineRef.current.scrollTrigger;
-  //     gsap.to(window, {
-  //       scrollTo: { y: st.end, autoKill: true },
-  //       duration: 1,
-  //       onComplete: () => {
-  //         timelineRef.current.progress(1);
-  //       },
-  //     });
-  //   }
-  // };
- 
-const handleSkip = () => {
-        const next = document.getElementById("enterpriseAI");
-        if (next) next.scrollIntoView({ behavior: "smooth" });
-      };
-
+  const handleSkip = () => {
+    const next = document.getElementById("enterpriseAI");
+    if (next) next.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <section
@@ -205,6 +251,7 @@ const handleSkip = () => {
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
+                  {/* static gray line */}
                   <line
                     x1="8.08081"
                     y1="7.56641"
@@ -214,6 +261,7 @@ const handleSkip = () => {
                     strokeOpacity="0.46"
                     strokeWidth="1"
                   />
+                  {/* animated blue progress line */}
                   <line
                     x1="8.08081"
                     y1="7.56641"
@@ -267,7 +315,7 @@ const handleSkip = () => {
                   Multi-Model AI Support
                 </p>
                 <p className="tags" ref={addToTagRefs}>
-                  Seamless <br/> Enterprise Integration
+                  Seamless <br /> Enterprise Integration
                 </p>
                 <p className="w-[45%] tags" ref={addToTagRefs}>
                   Scalable Infrastructure
@@ -299,12 +347,16 @@ const handleSkip = () => {
 
             {/* Right: Content Blocks */}
             <div className="w-[40vw] relative">
-              <div ref={addToContentRefs} className="step-block absolute top-20 left-0">
+              <div
+                ref={addToContentRefs}
+                className="step-block absolute top-20 left-0"
+              >
                 <p className="text-[2.6vw] text-black font-head leading-[1.2]">
                   The Freedom to Own AI
                 </p>
                 <p className="text-black content-p w-[88%] py-8">
-                  The power of OpenAI, but entirely inside your infrastructure with your data, your compliance, and your governance.
+                  The power of OpenAI, but entirely inside your infrastructure
+                  with your data, your compliance, and your governance.
                 </p>
                 <WhiteButton
                   circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
@@ -314,12 +366,16 @@ const handleSkip = () => {
                 />
               </div>
 
-              <div ref={addToContentRefs} className="step-block absolute top-20 left-0">
+              <div
+                ref={addToContentRefs}
+                className="step-block absolute top-20 left-0"
+              >
                 <p className="text-[2.6vw] text-black font-head leading-[1.2]">
                   Unified AI Lifecycle
                 </p>
                 <p className="text-black content-p w-[88%] py-8">
-                 One platform for the full journey from data to deployment to continuous learning, eliminating silos and execution gaps.
+                  One platform for the full journey from data to deployment to
+                  continuous learning, eliminating silos and execution gaps.
                 </p>
                 <WhiteButton
                   circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
@@ -329,12 +385,16 @@ const handleSkip = () => {
                 />
               </div>
 
-              <div ref={addToContentRefs} className="step-block absolute top-20 left-0">
+              <div
+                ref={addToContentRefs}
+                className="step-block absolute top-20 left-0"
+              >
                 <p className="text-[2.6vw] text-black font-head leading-[1.2]">
                   Governance by Design
                 </p>
                 <p className="text-black content-p w-[88%] py-8">
-                 Security, compliance, and trust baked in with role-based access, explainability, audit trails, and approval workflows.
+                  Security, compliance, and trust baked in with role-based
+                  access, explainability, audit trails, and approval workflows.
                 </p>
                 <WhiteButton
                   circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
@@ -344,12 +404,17 @@ const handleSkip = () => {
                 />
               </div>
 
-              <div ref={addToContentRefs} className="step-block absolute top-10 left-0">
+              <div
+                ref={addToContentRefs}
+                className="step-block absolute top-10 left-0"
+              >
                 <p className="text-[2.6vw] text-black font-head leading-[1.2]">
-                 Sector-Agnostic, Vertically Accelerated
+                  Sector-Agnostic, Vertically Accelerated
                 </p>
                 <p className="text-black content-p w-[88%] py-8">
-                  Supports enterprises across industries, combining a sector-agnostic core with domain-focused accelerators to deliver impact at scale.
+                  Supports enterprises across industries, combining a
+                  sector-agnostic core with domain-focused accelerators to
+                  deliver impact at scale.
                 </p>
                 <WhiteButton
                   circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
@@ -367,34 +432,34 @@ const handleSkip = () => {
               onClick={handleSkip}
             >
               Skip
-               <div className="-rotate-90 text-black flex items-center justify-center gap-0 w-[0.8vw] h-full max-sm:w-[3vw]">
-                            <svg
-                                className="arrow primera next"
-                                width="8"
-                                height="15"
-                                viewBox="0 0 8 15"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M7.50293 14.46L2.50293 7.45996L7.50293 0.459961H5.05293L0.0529289 7.45996L5.05293 14.46H7.50293Z"
-                                    fill="currentColor"
-                                />
-                            </svg>
-                            <svg
-                                className="arrow segunda next"
-                                width="8"
-                                height="15"
-                                viewBox="0 0 8 15"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M7.50293 14.46L2.50293 7.45996L7.50293 0.459961H5.05293L0.0529289 7.45996L5.05293 14.46H7.50293Z"
-                                    fill="currentColor"
-                                />
-                            </svg>
-                        </div>
+              <div className="-rotate-90 text-black flex items-center justify-center gap-0 w-[0.8vw] h-full max-sm:w-[3vw]">
+                <svg
+                  className="arrow primera next"
+                  width="8"
+                  height="15"
+                  viewBox="0 0 8 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7.50293 14.46L2.50293 7.45996L7.50293 0.459961H5.05293L0.0529289 7.45996L5.05293 14.46H7.50293Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <svg
+                  className="arrow segunda next"
+                  width="8"
+                  height="15"
+                  viewBox="0 0 8 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7.50293 14.46L2.50293 7.45996L7.50293 0.459961H5.05293L0.0529289 7.45996L5.05293 14.46H7.50293Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
             </button>
           </div>
         </div>
@@ -405,29 +470,34 @@ const handleSkip = () => {
 
 export default WhyUnify;
 
-const data=[
+// (optional) data if you need it elsewhere
+export const data = [
   {
-    list:"End-to-End AI Lifecycle Management",
-    title:"The Freedom to Own AI",
-    para:"The power of OpenAI, but entirely inside your infrastructure with your data, your compliance, and your governance.",
-    link:"#",
+    list: "End-to-End AI Lifecycle Management",
+    title: "The Freedom to Own AI",
+    para:
+      "The power of OpenAI, but entirely inside your infrastructure with your data, your compliance, and your governance.",
+    link: "#",
   },
   {
-    list:"Multi-Model AI Support",
-    title:"Unified AI Lifecycle",
-    para:"One platform for the full journey from data to deployment to continuous learning, eliminating silos and execution gaps.",
-    link:"#",
+    list: "Multi-Model AI Support",
+    title: "Unified AI Lifecycle",
+    para:
+      "One platform for the full journey from data to deployment to continuous learning, eliminating silos and execution gaps.",
+    link: "#",
   },
   {
-    list:"Seamless Enterprise Integration",
-    title:"Governance by Design",
-    para:"Security, compliance, and trust baked in with role-based access, explainability, audit trails, and approval workflows.",
-    link:"#",
+    list: "Seamless Enterprise Integration",
+    title: "Governance by Design",
+    para:
+      "Security, compliance, and trust baked in with role-based access, explainability, audit trails, and approval workflows.",
+    link: "#",
   },
   {
-    list:"Scalable Infrastructure",
-    title:"Sector-Agnostic, Vertically Accelerated",
-    para:"Supports enterprises across industries, combining a sector-agnostic core with domain-focused accelerators to deliver impact at scale.",
-    link:"#",
+    list: "Scalable Infrastructure",
+    title: "Sector-Agnostic, Vertically Accelerated",
+    para:
+      "Supports enterprises across industries, combining a sector-agnostic core with domain-focused accelerators to deliver impact at scale.",
+    link: "#",
   },
-]
+];

@@ -1,5 +1,11 @@
-"use client"
-import { fadeIn, fadeUp, headingAnim, lineAnim, paraAnim } from "@/Components/Animations/gsapAnimations";
+"use client";
+import {
+  fadeIn,
+  fadeUp,
+  headingAnim,
+  lineAnim,
+  paraAnim,
+} from "@/Components/Animations/gsapAnimations";
 import About from "@/Components/Homepage/About";
 import Blogs from "@/Components/Homepage/Blogs";
 import Brochure from "@/Components/Homepage/Brochure";
@@ -18,7 +24,7 @@ import Layout from "@/Components/Layout";
 // import Loader from "@/Components/Loader";
 import { initSplit } from "@/Components/splitTextUtils";
 import Head from "next/head";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Faqs from "@/Components/Homepage/FAQs";
 import Clients from "@/Components/Homepage/Clients";
 import Loader from "@/Components/Loader";
@@ -30,39 +36,48 @@ export default function Home() {
   fadeUp();
   fadeIn();
   lineAnim();
+  const [mob, setMob] = useState(false);
 
   useEffect(() => {
     initSplit();
+    if (globalThis.innerWidth > 1024) {
+      setMob(false);
+    } else {
+      setMob(true);
+    }
   }, []);
 
   return (
     <>
       <Head>
         <title>Data Science Wizards</title>
-        <meta name="description" content="Unify AI - Turbocharge your business with AI" />
+        <meta
+          name="description"
+          content="Unify AI - Turbocharge your business with AI"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <Loader /> */}
+      <Loader />
       <Layout>
         <Hero />
         <TurbochargeG />
-        <About/>
+        <About />
         <Insuraince />
-        <Tour/>
-        <Difference/>
+        <Tour />
+        <Difference />
         {/* in this component the data is Different in mobile and desktop */}
-        <Brochure/>
+        <Brochure />
         <UnifyAi />
-        {/* <WhyUnify />  */}
-        <WhyUnifyMobile/>
-        <EnterpriseAI/>
-        <Recognized/>
-        <Connects/>
-        <Clients/>
-        <SuccessStories/>
-        <Blogs/>
-        <Faqs/>
+        <WhyUnify />
+        <WhyUnifyMobile />
+        <EnterpriseAI />
+        <Recognized />
+        <Connects />
+        <Clients />
+        <SuccessStories />
+        <Blogs />
+        <Faqs />
       </Layout>
     </>
   );

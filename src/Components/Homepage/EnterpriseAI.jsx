@@ -62,8 +62,8 @@ const EnterpriseAI = () => {
       id="enterpriseAI"
       className="h-full w-screen py-[7vw] px-[5vw] relative overflow-hidden max-sm:px-[7vw] max-sm:py-[15vw] "
     >
-      <div className="w-full h-full flex flex-col items-center justify-center relative z-[2] space-y-[5vw] ">
-        <div className="text-center  space-y-5 mt-10 flex flex-col items-center justify-center max-sm:text-left">
+      <div className="w-full h-full flex flex-col items-center justify-center relative z-[2] space-y-[5vw] max-sm:items-start max-sm: ">
+        <div className="text-center  space-y-5 mt-10 flex flex-col items-center justify-center max-sm:text-left max-sm:items-start">
           <h3 className="title-1 leading-[1.2] headingAnim text-[#1626FD] enterprise-title ">
             Built to Orchestrate Enterprise AI
           </h3>
@@ -84,7 +84,7 @@ const EnterpriseAI = () => {
               AI/ML Use Cases
             </p>
           </div>
-          <div className="h-[45vw] w-auto flex-1 max-sm:h-[125vw] max-sm:static max-sm:order-[0] max-sm:scale-[1.2]">
+          <div className="h-[45vw] w-auto flex-1 max-sm:h-auto max-sm:static max-sm:order-[0] max-sm:scale-[1.2] max-sm:mt-[20vw] max-sm:w-[120%] max-sm:translate-x-[-2%]">
             <Image
               src={"/assets/images/homepage/enterprise-ai-shape.svg"}
               height={920}
@@ -101,40 +101,40 @@ const EnterpriseAI = () => {
           </div>
 
           <div>
-            <div className="absolute top-[21%] left-[67%] max-sm:top-[40%] max-sm:left-[5%]">
+            <div className="absolute top-[21%] left-[67%] max-sm:top-[45%] max-sm:left-0">
               <Copy>
                 <p className="text-[#E8E8E8] text-[1vw] max-sm:text-[3.5vw]">Presentation Layer</p>
               </Copy>
             </div>
-            <div className="absolute top-[32%] left-[67%] max-sm:left-[5%] max-sm:top-[48%]">
+            <div className="absolute top-[32%] left-[67%] max-sm:left-0 max-sm:top-[50%]">
               <Copy>
                 <p className="text-[#E8E8E8] text-[1vw] max-sm:text-[3.5vw]">Use Cases</p>
               </Copy>
             </div>
-            <div className="absolute top-[42%] left-[67%] max-sm:left-[70%] max-sm:top-[52%]">
+            <div className="absolute top-[42%] left-[67%] max-sm:left-[70%] max-sm:top-[54%]">
               <Copy>
                 <p className="text-[#E8E8E8] text-[1vw] max-sm:text-[3.5vw]">Gen AI Studio</p>
               </Copy>
             </div>
-            <div className="absolute top-[42%] left-[28%] text-right max-sm:left-[5%] max-sm:top-[52%]">
+            <div className="absolute top-[42%] left-[28%] text-right max-sm:left-0 max-sm:top-[54%]">
               <Copy>
                 <p className="text-[#E8E8E8] text-[1vw] max-sm:text-[3.5vw]">AI Studio</p>
               </Copy>
             </div>
-            <div className="absolute top-[50%] left-[27%] text-right max-sm:left-[5%] max-sm:top-[54.5%]">
+            <div className="absolute top-[50%] left-[27%] text-right max-sm:left-0 max-sm:top-[58%]">
               <Copy>
                 <p className="text-[#E8E8E8] text-[1vw] max-sm:text-[3.5vw]">InsurAInce</p>
               </Copy>
             </div>
-            <div className="absolute top-[58%] left-[29%] text-right max-sm:left-[5%] max-sm:top-[58%]">
+            <div className="absolute top-[58%] left-[29%] text-right max-sm:left-0 max-sm:top-[62%]">
               <Copy>
                 <p className="text-[#E8E8E8] text-[1vw] max-sm:text-[3.5vw]">UnifyAI</p>
               </Copy>
             </div>
-            <div className="absolute top-[68%] left-[19.5%] text-right max-sm:left-[5%] max-sm:top-[62%] max-sm:w-[20%]">
+            <div className="absolute top-[68%] left-[19.5%] text-right max-sm:left-0 max-sm:top-[66%] max-sm:w-[30%] max-sm:text-left">
               <Copy>
                 <p className="text-[#E8E8E8] text-[1vw] max-sm:text-[3.5vw]">
-                  Infra: On-Premise/Cloud
+                  Infra: On - Premise/Cloud
                 </p>
               </Copy>
             </div>

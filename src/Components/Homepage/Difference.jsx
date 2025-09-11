@@ -5,7 +5,7 @@ import Image from "next/image";
 const Difference = () => {
   return (
     <section
-      className="w-screen h-fit py-[7%] px-[5vw] relative max-sm:px-0 max-sm:py-[15%] overflow-hidden "
+      className="w-screen h-fit py-[7%] px-[5vw] relative max-sm:px-0 max-sm:py-[15%] max-sm:overflow-hidden "
       id="difference"
     >
       <h2 className="title-2 headingAnim max-sm:!text-[12vw] max-sm:pl-[7vw] max-sm:w-[90%]  text-center mb-[7vw] max-sm:text-left max-sm:justify-start max-sm:mb-[20vw]">

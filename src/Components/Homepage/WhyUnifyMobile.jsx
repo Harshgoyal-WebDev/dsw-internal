@@ -56,7 +56,7 @@ export default function WhyUnifyMobile({ allowMultiple = false }) {
   }, [openIndexes]);
 
   return (
-    <section ref={sectionRef} className="px-[7vw] max-sm:py-[15%] w-full h-fit bg-[#F8F8F8] relative max-md:py-[7%] hidden max-md:block text-[#111111]">
+    <section ref={sectionRef} className="px-[7vw] max-sm:py-[15%] w-full h-fit bg-[#F8F8F8] relative max-md:py-[7%] hidden max-md:block text-[#111111]" id="WhyUnify">
       <div className="h-[5vh] relative w-full">
 <h3 className="title-2 text-primary-1 text-center font-light headingAnim">
             Why DSW UnifyAI is the OS for AI?
