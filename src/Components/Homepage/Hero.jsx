@@ -17,7 +17,7 @@ const AnimatedLine = ({ delay }) => (
   >
     <motion.span
       initial={{ y: 0 }}
-      animate={{ y: "48vw" }}
+      animate={{ y: "100vh" }}
       transition={{
         duration: 1.2,
         delay,
@@ -104,7 +104,7 @@ const Hero = () => {
       {/* Animated Vertical Lines */}
       <div className="w-screen h-[55vw] absolute top-0 left-0 z-[10] flex justify-center gap-[22vw]">
         {[...Array(lineCount)].map((_, i) => (
-          <AnimatedLine key={i} delay={i * 0.2} />
+          <AnimatedLine key={i} delay={5+(i * 0.2)} />
         ))}
       </div>
       <div className="absolute top-[30%] left-0 h-screen w-screen">

@@ -7,7 +7,7 @@
   --primary-1: #1626FD;
   --primary-2: #f16b0d;
   --primary-3: #e61216;
-  --white-200: #f8f8f8;
+  --white-200: #e8e8e8;
   --white-300: #cacaca;
   --font-display: var(--font-display);
   --font-body: var(--font-body);
@@ -115,31 +115,64 @@ h1,h2,h3,h4 {
 background: linear-gradient(90.17deg, rgba(255, 255, 255, 0.06) 0.01%, rgba(255, 255, 255, 0.06) 99.99%);
 
 }
-.background-radial{
-  background: radial-gradient(43.88% 47.7% at 48.03% 50%, #081B57 0%, #01030F 100%) 
+.background-glass-diff{
+background: linear-gradient(90.17deg, rgba(255, 255, 255, 0.01) 0.01%, rgba(255, 255, 255, 0.08) 99.99%);
 
 }
 .background-radial{
-  background: radial-gradient(43.88% 47.7% at 48.03% 50%, #081B57 0%, #01030F 100%) 
+  background: radial-gradient(43.88% 47.7% at 48.03% 50%, #081B57 0%, #030815 100%) 
 
 }
-.background-radial{
-  background: radial-gradient(43.88% 47.7% at 48.03% 50%, #081B57 0%, #01030F 100%) 
 
-}
 .unifyblock {
-  /* base color (shows through as gradient fades out) */
-  background-color: #030815;
+  /* initial gradient colors */
+  --c1: #081b57;   /* "from" */
+  --c2: #030815;   /* "via" */
+  --c3: #030815;   /* "to" */
 
-  /* gradient opacity controlled by --grad-o */
-  --grad-o: 1;
-  background-image:
-    radial-gradient(
-      circle at 50% 50%,
-      rgba(8, 27, 87, var(--grad-o)) 0%,
-      rgba(3, 8, 21, var(--grad-o)) 40%,
-      rgba(3, 8, 21, var(--grad-o)) 100%
-    );
-  background-repeat: no-repeat;
-  background-size: cover;
+  /* initial radial size */
+  --rx: 40%; /* x-radius */
+  --ry: 40%; /* y-radius */
+
+  background-image: radial-gradient(
+    var(--rx) var(--ry) at 50% 50%,
+    var(--c1) 0%,
+    var(--c2) 55%,
+    var(--c3) 100%
+  );
+
+  background-color: transparent !important;
+}
+
+.shimmer {
+  color: transparent;
+  background-image: linear-gradient(90deg, #ffffff70 0%, rgb(255, 255, 255) 25%, #ffffff70 50%);
+  background-size: 250% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-position: 100% 0%;
+  animation: shimmerAnimation 3s linear infinite;
+  animation-delay: 2s;
+}
+
+@keyframes shimmerAnimation{
+  0% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: -90% 0%;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #F16B0D, #E61216); /* gradient from top to bottom */
+  border-radius: 8px;
 }

@@ -15,12 +15,13 @@ import TurbochargeG from "@/Components/Homepage/TurboChargeG";
 import UnifyAi from "@/Components/Homepage/UnifyAi";
 import WhyUnify from "@/Components/Homepage/WhyUnify";
 import Layout from "@/Components/Layout";
-import Loader from "@/Components/Loader";
+// import Loader from "@/Components/Loader";
 import { initSplit } from "@/Components/splitTextUtils";
 import Head from "next/head";
 import { useEffect } from "react";
 import Faqs from "@/Components/Homepage/FAQs";
 import Clients from "@/Components/Homepage/Clients";
+import Loader from "@/Components/Loader";
 
 export default function Home() {
   headingAnim();
@@ -41,7 +42,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <Loader /> */}
+      <Loader />
       <Layout>
         <Hero />
         <TurbochargeG />

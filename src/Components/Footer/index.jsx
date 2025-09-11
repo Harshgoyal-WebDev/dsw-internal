@@ -38,7 +38,7 @@ const Footer = () => {
         </Suspense>
       </div>
                 <div className="relative z-[1]">
-                    <div className="rounded-3xl bg-black/20 border border-white/30 backdrop-blur-2xl px-12 py-12 flex justify-between" ref={footerGlassRef}>
+                    <div className="rounded-[2.2vw] background-glass-diff border border-white/30 px-12 py-[5%] flex justify-between" ref={footerGlassRef}>
                         {/* Logo and Contact Info */}
                        
                         <div className="flex flex-col justify-between items-start gap-24 footer-content">

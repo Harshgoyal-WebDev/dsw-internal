@@ -2,41 +2,79 @@
 import React from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PrimaryButton from "../Button/PrimaryButton";
 import Copy from "../Animations/Copy";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const UnifyAi = () => {
   useGSAP(() => {
+    // existing title animations
     gsap.from(".unify-title", {
       scale: 0.2,
       yPercent: 300,
       ease: "none",
       scrollTrigger: {
         trigger: "#unifyAi",
-        start: "top 50%",
-        end: "20% 50%",
+        start: "top bottom",
+        end: "17% 50%",
         scrub: true,
-        // markers:true,
       },
     });
+
     gsap.fromTo(
       ".unify-title",
-      {
-        scale: 1,
-      },
+      { scale: 1 },
       {
         scale: 80,
         xPercent: -220,
         ease: "power1.in",
         scrollTrigger: {
           trigger: "#unifyAi",
-          start: "20% 50%",
+          start: "34% bottom",
           end: "85% 50%",
           scrub: true,
-          // markers: true,
         },
       }
     );
+
+    // gradient transition timeline (3 stages)
+    gsap.to(".unifyblock", {
+      "--c1": "#f8f8f8",
+      "--c2": "#f8f8f8",
+      // "--c3": "#030815",
+      scrollTrigger: {
+        trigger: "#unifyAi",
+        start: "55% 50%",
+        end: "65% 50%",
+        scrub: true,
+      },
+    });
+
+    // Stage 2 -> Stage 3 (final white-out)
+    gsap.to(".unifyblock", {
+      "--c3": "#f8f8f8",
+      scrollTrigger: {
+        trigger: "#unifyAi",
+        start: "55% 50%",
+        end: "70% 50%",
+        scrub: true,
+      },
+    });
+
+    // Radius expansion (can overlap above)
+    gsap.to(".unifyblock", {
+      "--rx": "90%",
+      "--ry": "120%",
+      scrollTrigger: {
+        trigger: "#unifyAi",
+        start: "55% 50%",
+        end: "75% 50%",
+        scrub: true,
+      },
+    });
+   
     gsap
       .timeline({
         scrollTrigger: {
@@ -44,42 +82,41 @@ const UnifyAi = () => {
           start: "55% 50%",
           end: "70% 50%",
           scrub: true,
-          // markers: true,
         },
       })
-      .to(".unifyContainer", { backgroundColor: "#f8f8f8" }, 0)
-      .to(".unifyblock", { "--grad-o": 0, backgroundColor: "#f8f8f8" }, 0);
+      .to(".unifyContainer", { backgroundColor: "#f8f8f8" }, 0);
   });
+
   return (
     <section
       className="w-screen h-[300vh] relative unifyContainer"
       id="unifyAi"
     >
-      <div className="w-full h-screen sticky top-0 flex justify-center items-center bg-radial from-[#081B57] via-[#030815]  to-[#030815] unifyblock">
+      {/* remove Tailwind gradient utilities here; keep only layout classes */}
+      <div className="w-full h-screen sticky top-0 flex justify-center items-center unifyblock">
         <h2 className="text-[6vw] unify-title text-[#f8f8f8]">
           Powered by DSW UnifyAI
         </h2>
       </div>
+
       <div className="w-screen h-fit absolute bottom-0 flex flex-col py-[7%] items-center gap-[3.5vw]">
         <h2 className="title-1 text-primary-1 headingAnim">
-          One Platform. Infinite Possibilities.{" "}
+          One Platform. Infinite Possibilities.
         </h2>
         <Copy>
           <p className="text-center w-[40%] text-[#111111]">
-            AI is everywhere. But it’s not working everywhere. Why?  ​ Because
-            AI and business still operate in silos.​ DSW UnifyAI changes
-            that. ​The intelligent layer between your data, teams, and
-            production — turning isolated models into living business
-            processes. ​
+            AI is everywhere. But it’s not working everywhere. Why? Because AI
+            and business still operate in silos. DSW UnifyAI changes that. The
+            intelligent layer between your data, teams, and production — turning
+            isolated models into living business processes.
           </p>
         </Copy>
         <div className="fadeup">
-        <PrimaryButton
-          className="!bg-gradient-to-r !from-[#041035] !to-[#1727FF]"
-          href={"/"}
-          text={"Book a demo"}
-        />
-
+          <PrimaryButton
+            className="!bg-gradient-to-r !from-[#041035] !to-[#1727FF]"
+            href={"/"}
+            text={"Book a demo"}
+          />
         </div>
       </div>
     </section>

@@ -112,11 +112,11 @@ const Connects = () => {
             className="relative flex items-center justify-center w-[20vw] h-[20vw] "
           >
             <div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-stone-800/60 h-[15vw] w-[15vw] z-[-1] origin-center"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#202530] h-[15vw] w-[15vw] z-[-1] origin-center"
               ref={circle1}
             />
             <div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-stone-800/40 h-[20vw] w-[20vw] z-[-2] origin-center"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#121723] h-[20vw] w-[20vw] z-[-2] origin-center"
               ref={circle2}
             />
             <Image
@@ -148,7 +148,7 @@ const Connects = () => {
           </div>
         </div>
       </div>
-      <div className="w-screen h-[35vw] bg-gradient-to-t from-transparent to-[#030815] absolute top-0 z-[1]" />
+      <div className="w-screen h-[25vw] bg-gradient-to-t from-transparent to-[#030815] absolute top-0 z-[1]" />
       <div className="w-screen h-[10vw] bg-gradient-to-b from-transparent to-[#030815] absolute bottom-0 z-[1]" />
       <div></div>
       <div className="h-screen w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[-1] flex items-center justify-center">

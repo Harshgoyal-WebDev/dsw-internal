@@ -56,7 +56,7 @@ const Loader = () => {
   })
   return (
     <div
-      className={`w-screen h-screen fixed top-0 left-0 z-[9999] bg-black text-[17vw] overflow-hidden ${hidden ? "hidden" : ""}`}
+      className={`w-screen h-screen fixed top-0 left-0 z-[9999] bg-background text-[17vw] overflow-hidden ${hidden ? "hidden" : ""}`}
       id="loader"
     >
 

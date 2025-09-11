@@ -4,7 +4,7 @@ const About = () => {
   return (
     <section className="w-screen px-[5vw] py-[7%]" id="about">
       <div className="w-full flex flex-col items-center justify-center gap-y-[5vw]">
-        <h2 className="title-2 headingAnim">Make AI Operational, Not Experimental ​</h2>
+        <h2 className="title-2 headingAnim text-[#E8E8E8]">Make AI Operational, Not Experimental ​</h2>
         <div className="w-[37%] flex flex-col gap-[2.5vw]">
           <div className="w-full flex gap-[3.2vw] items-center fadeup">
             <div className="w-[15%]">

@@ -67,12 +67,12 @@ const Insuraince = () => {
     gsap.from(".insuraince-cards",{
         yPercent:40,
         opacity:0,
-        stagger:0.08,
+        stagger:0.1,
         duration:2,
         ease:"power3.out",
         scrollTrigger:{
             trigger:".insuraince-cards",
-            start:"top 70%",
+            start:"top 80%",
 
 
         }
@@ -85,7 +85,7 @@ const Insuraince = () => {
       className="w-screen h-full py-[7%] overflow-hidden"
       ref={sectionRef}
     >
-      <div className="w-full space-y-[10vw]">
+      <div className="w-full space-y-[7.5vw]">
         <div className="text-center gap-y-[2.5vw] w-[65%] mx-auto flex flex-col items-center">
           <h2 className="title-2 headingAnim">
             Introducing insurAInce — Purpose-Built AI platform for Insurance
