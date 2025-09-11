@@ -105,10 +105,8 @@ const UnifyAi = () => {
         </h2>
         <Copy>
           <p className="text-center w-[40%] text-[#111111]">
-            AI is everywhere. But it’s not working everywhere. Why? Because AI
-            and business still operate in silos. DSW UnifyAI changes that. The
-            intelligent layer between your data, teams, and production — turning
-            isolated models into living business processes.
+            AI is everywhere. But it&apos;s not working everywhere. Why?​
+Because AI and business still operate in silos. DSW UnifyAI changes that. ​The intelligent layer between your data, teams, and production — turning isolated models into living business processes.
           </p>
         </Copy>
         <div className="fadeup">

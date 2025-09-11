@@ -9,12 +9,14 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { NextButton, PreviousButton } from '../Button/SliderButtons';
 import ArrowButton from '../Button/ArrowButton';
 import Copy from '../Animations/Copy';
+import Link from 'next/link';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const BlogCard = ({ title, date, img }) => {
   return (
     <>
+    <Link href={"#"}>
       <div className='rounded-3xl group border-[0.25px] border-stone-600 pb-4 bg-white/5 space-y-8 overflow-hidden group cursor-pointer under-multi-parent'>
         <div className='w-full h-full overflow-hidden rounded-3xl '>
           <Image src={img} width={531} height={510} alt='blog-1' className='object-cover h-[20vw] w-[31vw] group-hover:scale-[1.1] transition-all duration-500 ease-out' />
@@ -25,9 +27,10 @@ const BlogCard = ({ title, date, img }) => {
           <p className='text-[1.145vw] font-medium text-[#909090]'>{date}</p>
         </div>
          <div className="h-[3vw] w-[3vw] absolute top-6 right-6 bg-white/20 rounded-full group-hover:!bg-white group-hover:text-[#111111] transition-all duration-500 ease-out">
-                                   <ArrowButton link={"#"}/>
+                                   <ArrowButton/>
                                    </div>
       </div>
+      </Link>
     </>
   )
 }

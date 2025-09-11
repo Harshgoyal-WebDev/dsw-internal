@@ -136,10 +136,10 @@ const Card = ({ data, spanRef }) => {
         </h4>
         <p className="text-white-300 content-p h-28">{data.desc}</p>
       </div>
-      <div className="relative w-full h-[1px] bg-[#616161]">
+      <div className="relative w-full h-[0.5px] bg-[#CACACA75] opacity-[0.5] group-hover:opacity-[1] transition-all duration-500">
         <span
           ref={spanRef}
-          className="absolute top-0 left-0 h-full bg-primary-1 w-full scale-x-0 origin-left"
+          className="absolute top-0 left-0 h-full bg-[#CACACA75] w-full scale-x-0 origin-left "
         />
         <span className="absolute top-0 left-0 h-full bg-primary-2 w-full scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500" />
       </div>

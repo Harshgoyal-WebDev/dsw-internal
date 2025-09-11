@@ -72,7 +72,7 @@ const LinkCard = ({ title, link, width }) => {
 
                             <div className="flex-1 flex items-start justify-end">
                                  <div className="h-[3vw] w-[3vw] background-glass rounded-full">
-                                   <ArrowButton link={"#"}/>
+                                   <ArrowButton/>
                                    </div>
                             </div>
                         </div>

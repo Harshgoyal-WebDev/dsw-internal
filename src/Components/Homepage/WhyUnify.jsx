@@ -185,8 +185,8 @@ const WhyUnify = () => {
     >
       <div className="flex flex-col items-center w-full pb-[7vw] space-y-30 px-10 sticky h-screen top-[10%] z-[2]">
         <div className="space-y-24 w-full">
-          <h3 className="text-[5.2vw] text-primary-1 text-center font-light headingAnim">
-            Why Choose UnifyAI?
+          <h3 className="title-2 text-primary-1 text-center font-light headingAnim">
+            Why DSW UnifyAI is the OS for AI?
           </h3>
 
           <div className="w-full flex items-start justify-between fadeup">
@@ -262,8 +262,7 @@ const WhyUnify = () => {
                   Multi-Model AI Support
                 </p>
                 <p className="tags" ref={addToTagRefs}>
-                  Seamless <br />
-                  Enterprise Integration
+                  Seamless <br/> Enterprise Integration
                 </p>
                 <p className="w-[45%] tags" ref={addToTagRefs}>
                   Scalable Infrastructure
@@ -295,13 +294,42 @@ const WhyUnify = () => {
 
             {/* Right: Content Blocks */}
             <div className="w-[40vw] relative">
-              <div ref={addToContentRefs} className="step-block absolute top-0 left-0">
+              <div ref={addToContentRefs} className="step-block absolute top-20 left-0">
                 <p className="text-[2.6vw] text-black font-head leading-[1.2]">
-                  End-to-End AI Lifecycle Management - From Model Training to Production Deployment
+                  The Freedom to Own AI
                 </p>
                 <p className="text-black content-p w-[88%] py-8">
-                  UnifyAI provides a complete AI development ecosystem, allowing
-                  businesses to build, test, optimize, and deploy AI/ML models seamlessly.
+                  The power of OpenAI, but entirely inside your infrastructure with your data, your compliance, and your governance.
+                </p>
+                <WhiteButton
+                  circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
+                  text="Know More"
+                  href="#"
+                  className="border-primary-1 border text-primary-1 bg-transparent hover:text-primary-1 hover:bg-transparent"
+                />
+              </div>
+
+              <div ref={addToContentRefs} className="step-block absolute top-20 left-0">
+                <p className="text-[2.6vw] text-black font-head leading-[1.2]">
+                  Unified AI Lifecycle
+                </p>
+                <p className="text-black content-p w-[88%] py-8">
+                 One platform for the full journey from data to deployment to continuous learning, eliminating silos and execution gaps.
+                </p>
+                <WhiteButton
+                  circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
+                  text="Know More"
+                  href="#"
+                  className="border-primary-1 border text-primary-1 bg-transparent hover:text-primary-1 hover:bg-transparent"
+                />
+              </div>
+
+              <div ref={addToContentRefs} className="step-block absolute top-20 left-0">
+                <p className="text-[2.6vw] text-black font-head leading-[1.2]">
+                  Governance by Design
+                </p>
+                <p className="text-black content-p w-[88%] py-8">
+                 Security, compliance, and trust baked in with role-based access, explainability, audit trails, and approval workflows.
                 </p>
                 <WhiteButton
                   circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
@@ -313,43 +341,10 @@ const WhyUnify = () => {
 
               <div ref={addToContentRefs} className="step-block absolute top-10 left-0">
                 <p className="text-[2.6vw] text-black font-head leading-[1.2]">
-                  Multi-Model AI Support
+                 Sector-Agnostic, Vertically Accelerated
                 </p>
                 <p className="text-black content-p w-[88%] py-8">
-                  UnifyAI provides a complete AI development ecosystem, allowing
-                  businesses to build, test, optimize, and deploy AI/ML models seamlessly.
-                </p>
-                <WhiteButton
-                  circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
-                  text="Know More"
-                  href="#"
-                  className="border-primary-1 border text-primary-1 bg-transparent hover:text-primary-1 hover:bg-transparent"
-                />
-              </div>
-
-              <div ref={addToContentRefs} className="step-block absolute top-10 left-0">
-                <p className="text-[2.6vw] text-black font-head leading-[1.2]">
-                  Seamless Enterprise Integration
-                </p>
-                <p className="text-black content-p w-[88%] py-8">
-                  UnifyAI provides a complete AI development ecosystem, allowing
-                  businesses to build, test, optimize, and deploy AI/ML models seamlessly.
-                </p>
-                <WhiteButton
-                  circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
-                  text="Know More"
-                  href="#"
-                  className="border-primary-1 border text-primary-1 bg-transparent hover:text-primary-1 hover:bg-transparent"
-                />
-              </div>
-
-              <div ref={addToContentRefs} className="step-block absolute top-10 left-0">
-                <p className="text-[2.6vw] text-black font-head leading-[1.2]">
-                  Scalable Infrastructure
-                </p>
-                <p className="text-black content-p w-[88%] py-8">
-                  UnifyAI provides a complete AI development ecosystem, allowing
-                  businesses to build, test, optimize, and deploy AI/ML models seamlessly.
+                  Supports enterprises across industries, combining a sector-agnostic core with domain-focused accelerators to deliver impact at scale.
                 </p>
                 <WhiteButton
                   circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
