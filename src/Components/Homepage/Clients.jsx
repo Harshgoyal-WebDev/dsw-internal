@@ -1,206 +1,140 @@
-import Image from 'next/image'
-import React, { useEffect, useRef } from 'react'
-import gsap from 'gsap'
-import ScrollTrigger from 'gsap/dist/ScrollTrigger'
+"use client";
+import Image from "next/image";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import React, { useEffect, useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import { SplitText } from "gsap/SplitText";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-const Clients = () => {
-    const sectionRef = useRef(null);
-  const imageRefs = useRef([]);
+export default function Clients() {
+  const container = useRef(null);
+  const gridRef = useRef(null);
+  useGSAP(
+    () => {
+      // const ctx = gsap.context(() => {
+      const grid = gridRef.current;
+      const gridItems = grid.querySelectorAll(".grid__item");
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const tlZ = gsap.timeline({
+      const timeline = gsap.timeline({
+        defaults: { ease: "none" },
         scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top top',
-          end: '+90% top',
-          scrub: true,
-          pin:true,
-          // markers:true
-        },
-      });
-
-   const tmove = gsap.timeline({
-    scrollTrigger:{
-      trigger:sectionRef.current,
-      // markers:true,
-      start:"top bottom",
-      end:"+150% top",
-      scrub:true
-    }
-   })
-      tmove.fromTo(
-        imageRefs.current,
-        {
-          transform: 'translateZ(-1000px)',
-          delay: -0.8,
-         
-        },
-        {
-          transform: 'translateZ(500px)',
-          // scale:0.4,
-          stagger:0.03,
-          ease: 'none',
-        }
-      );
-      const tlBlur = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 70%',
-          end: '+90% top',
+          trigger: container.current,
+          start: "top 50%",
+          end: "bottom top",
           scrub: true,
           // markers:true,
-       
         },
       });
-  
-      tlBlur.from(
-        imageRefs.current,
-        {
-          delay:-0.5,
-          stagger: { each: 0.1, from: 'random' },
-          filter: 'blur(15px)',
-          opacity:0,
-        }
-        
-      )
-      .to(imageRefs.current,{
-        // delay: -0.5,
-        stagger: { each: 0.1, from: 'random' },
-        filter: 'blur(15px)',
-        opacity:0,
+    if(globalThis.innerWidth>1024){
+      gsap.set(gridItems, {
+        transformOrigin: "0% 0%",
+        opacity: 0,
+        x: () => gsap.utils.random(-200, 200),
+        y: () => gsap.utils.random(-200, 200),
+        filter: "blur(5px)",
+        z: () => gsap.utils.random(4000, 3000),
+      });
 
-      })
-    
-    }, sectionRef);
-  
+    }
+    else{
+        gsap.set(gridItems, {
+        transformOrigin: "0% 0%",
+        opacity: 0,
+        x: () => gsap.utils.random(-100, 100),
+        y: () => gsap.utils.random(-400, 400),
+        filter: "blur(5px)",
+        z: () => gsap.utils.random(4000, 3000),
+      });
+
+
+    }
+
+      gridItems.forEach((item, index) =>
+        timeline
+          .to(item, {
+            z: 0,
+            opacity: 1,
+            filter: "blur(0px)",
+            duration: 1.5,
+            delay: index * -0.8,
+          })
+          .to(
+            item,
+            {
+              filter: "blur(5px)",
+              opacity: 0,
+              z: -2000,
+              duration: 3.5,
+            },
+            ">"
+          )
+      );
+    },
+    { scope: container.current }
+  );
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.to("#solution-clients,#solution-industries", {
+        scrollTrigger: {
+          trigger: "#solution-industries",
+          start: "top 50%",
+          end: "bottom 50%",
+        },
+      });
+      
+    });
     return () => ctx.revert();
   }, []);
-  
-  
-
   return (
-    <section ref={sectionRef} className='py-20 w-screen h-screen relative overflow-hidden'>
-        <div className='w-full h-full flex items-center justify-center' style={{ perspective: '1000px', transformStyle: 'preserve-3d', }}>
-            <div className='w-[60%] py-10'>
-            <h2 className='font-head text-[5.2vw] leading-[1.2] text-center headingAnim text-white-200'>Trusted by Innovators, <br/>
-            Built for Industry Disruptors.</h2>
-            </div>
-            {imageData.map((img, index) => (
-      <div
-        key={index}
-        ref={el => imageRefs.current[index] = el}
-        className={`absolute ${img.style} !scale-[0.9]`}
-      >
-        <Image
-          quality={100}
-          src={img.src}
-          height={img.height}
-          width={img.width}
-          alt={img.alt}
-        />
-      </div>
-    ))}
-            
-
-        </div>
-
-    </section>
-  )
+    <>
+     <section
+             ref={container}
+             id="clientblur"
+             className="relative w-screen h-[400vh]  text-center"
+           >
+             <div className="sticky w-full top-0 h-screen flex items-center justify-center">
+               <h3 className="title-2 w-[45%]  flex flex-col items-center gap-[1vw] max-sm:text-[11vw] max-sm:w-[90%] text-[#E8E8E8]">
+                 Trusted by Innovators, Built for Industry Disruptors.
+               </h3>
+             </div>
+             <div className="left-0 sticky mt-[-100vh] top-0 z-20 h-screen w-screen overflow-hidden flex items-center justify-center">
+               <div
+                 ref={gridRef}
+                 className="grid grid-cols-5 gap-[1vw] perspective-[5000px]"
+               >
+                 {logos.map((item, index) => (
+                   <div key={index} className="grid__item">
+                     <Image
+                       className="w-[14vw] h-auto max-sm:scale-[3]"
+                       src={item}
+                       alt={item}
+                       width={200}
+                       height={100}
+                       quality={100}
+                     />
+                   </div>
+                 ))}
+               </div>
+             </div>
+           </section>
+    </>
+  );
 }
 
-export default Clients
+const logos = [
 
-const imageData = [
-  {
-    src: "/assets/images/manipal.png",
-    alt: "manipal",
-    height: 145,
-    width: 276,
-    style: "top-5 left-10 " ,
-  },
-  {
-    src: "/assets/images/edgeverve.png",
-    alt: "edgeverve",
-    height: 150,
-    width: 290,
-    style: "top-2 left-[40vw] ",
-  },
-  {
-    src: "/assets/images/sodexo.png",
-    alt: "sodexo",
-    height: 89,
-    width: 277,
-    style: "top-5 right-30 ",
-  },
-  {
-    src: "/assets/images/canara.png",
-    alt: "canara",
-    height: 65,
-    width: 218,
-    style: "bottom-0 -right-20 ",
-  },
-  {
-    src: "/assets/images/bon-prix.png",
-    alt: "bon-prix",
-    height: 102,
-    width: 111,
-    style: "bottom-[-5vw] right-[43vw] ", 
-  },
-  {
-    src: "/assets/images/ciek.png",
-    alt: "ciek",
-    height: 68,
-    width: 216,
-    style: "bottom-4 left-20 ",
-  },
-  {
-    src: "/assets/images/manipal.png",
-    alt: "manipal",
-    height: 145,
-    width: 276,
-    style: "bottom-[-10vw] right-[15vw]  ",
-
-  },
-  {
-    src: "/assets/images/edgeverve.png",
-    alt: "edgeverve",
-    height: 150,
-    width: 290,
-    style: "bottom-[-10vw] left-[25vw] ", 
-
-  },
-  {
-    src: "/assets/images/sodexo.png",
-    alt: "sodexo",
-    height: 89,
-    width: 277,
-    style: "bottom-[10vw] left-[-20vw] ",
-
-  },
-  {
-    src: "/assets/images/canara.png",
-    alt: "canara",
-    height: 65,
-    width: 218,
-    style: "top-[-10vw] left-[20vw] ",
-  },
-  {
-    src: "/assets/images/bon-prix.png",
-    alt: "bon-prix",
-    height: 102,
-    width: 111,
-    style: "top-0 right-[15vw] ",
-
-  },
-  {
-    src: "/assets/images/ciek.png",
-    alt: "ciek",
-    height: 68,
-    width: 216,
-    style: "bottom-[20vw] right-[-30vw] ",
-
-  },
+  "/assets/images/manipal.png",
+  "/assets/images/edgeverve.png",
+  "/assets/images/sodexo.png",
+  "/assets/images/canara.png",
+  "/assets/images/bon-prix.png",
+  "/assets/images/ciek.png",
+  "/assets/images/manipal.png",
+  "/assets/images/edgeverve.png",
+  "/assets/images/sodexo.png",
+  "/assets/images/canara.png",
+  "/assets/images/bon-prix.png",
+  "/assets/images/ciek.png",
 ];

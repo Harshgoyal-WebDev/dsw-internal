@@ -1,16 +1,10 @@
 import React from 'react'
 import PrimaryButton from '../Button/PrimaryButton'
 import Image from 'next/image'
+import Link from 'next/link'
+import SpotlightCard from './SpotlightCard/SpotLightCard'
+import ArrowButton from '../Button/ArrowButton'
 
-const Card = () => {
-    return (
-        <>
-            <div className='h-[20vw] w-[28vw] rounded-[2vw] border-[0.82px] border-[#88888880] background-glass px-[2vw] py-[2vw] '>
-
-            </div>
-        </>
-    )
-}
 const SuccessStories = () => {
     return (
         <>
@@ -32,168 +26,23 @@ const SuccessStories = () => {
                         </div>
                     </div>
 
-                    <div className='w-full h-full grid grid-cols-3 gap-x-[3vw] gap-[1.5vw] mt-[5vw] pr-[5vw]'>
-
-    
-    <div className='h-[20vw] w-[28vw] rounded-[2vw] border-[0.82px] border-[#88888880] background-glass px-[2vw] py-[2vw] cursor-pointer'>
-<div className="h-full w-full flex">
-  
-  <div className="w-[70%] flex items-end">
-    <p className="text-[1.565vw] text-[#F1F1F1] leading-[1.3]">Streamlining Operations with ERP Integration</p>
-  </div>
-
-  {/* right side (icon at top right) */}
-  <div className="flex-1 flex items-start justify-end">
-    <div className="rounded-full h-[3vw] w-[3vw] border-[0.82px] border-[#88888880] flex items-center justify-center">
-      <Image
-        src={"/assets/icons/arrow-right.svg"}
-        height={20}
-        width={20}
-        alt="arrow"
-        className="-rotate-45"
-      />
-    </div>
-  </div>
-</div>
-
-        </div>
+                    <div className='w-full h-full grid grid-cols-3 gap-y-[1.2vw] gap-x-[1vw] mt-[5vw]'>
 
 
- <div className='h-[20vw] w-[28vw] rounded-[2vw] border-[0.82px] border-[#88888880] background-glass overflow-hidden group transition-all duration-300 ease'>
-<div className='w-full h-full '>
-    <Image src={"/assets/images/homepage/success-img.png"} height={459} width={568} alt='success- stories' className='object-cover h-full w-full scale-[1.05] group-hover:scale-[1] transition-all duration-300 ease'/>
+                        <LinkCard title={"Streamlining Operations with ERP Integration"} link={"#"} width={"w-[70%]"} />
+                        <ImageCard img={"/assets/images/homepage/success-img.png"} />
+                        <TestimonialCard message={"With DSW's insurance-specific solutions on top of its robust AI platform, we’ve been able to move use cases into production quickly. ​"} img={"/assets/images/homepage/ritesh-rathod.png"} name={"Ritesh Rathod"} designation={"Chief Strategy and Data Officer, Canara HSBC"} />
 
-</div>
-        </div>
+                        <ImageCard img={"/assets/images/homepage/success-img.png"} />
+                        <TestimonialCard message={"DSW UnifyAl simplified our data-driven approach, enabling easy development of Al-powered use cases.​ ​"} img={"/assets/images/homepage/ritesh-rathod.png"} name={"Stefano Bonfa"} designation={"Director, OxSDE, Europe ​"} />
+                        <LinkCard title={"90% Drop in Manual Effort​"} link={"#"} width={"w-[50%]"}/>
 
-        
-<div className='h-[20vw] w-[28vw] rounded-[2vw] border-[0.82px] border-[#88888880] background-glass px-[2vw] py-[2vw] '>
-    <div className='w-full h-full flex flex-col justify-between'>
-        <div>
-            <p className='text-[#E8E8E8]'>With DSW's insurance-specific solutions on top of its robust AI platform, we&apos;ve been able to move use cases into production quickly.​</p>
-        </div>
-        <div className='flex items-center justify-center gap-[1vw]'>
-            <div className='h-[5vw] w-[5vw] rounded-full overflow-hidden relative'>
-<Image src={"/assets/images/homepage/ritesh-rathod.png"} fill alt='ritesh rathod' className='h-full w-full object-cover'/>
-            </div>
-            <div className='w-[90%] space-y-[0.8vw]'>
-                <p className='font-display text-[1.565vw] text-[#E8E8E8]'>Ritesh Rathod</p>
-                <p className='text-[#CACACA] font-medium'>Chief Strategy and Data Officer, Canara HSBC​</p>
-            </div>
-
-        </div>
-
-    </div>
-
-        </div>
-
-        
- <div className='h-[20vw] w-[28vw] rounded-[2vw] border-[0.82px] border-[#88888880] background-glass overflow-hidden group transition-all duration-300 ease'>
-<div className='w-full h-full '>
-    <Image src={"/assets/images/homepage/success-img.png"} height={459} width={568} alt='success- stories' className='object-cover h-full w-full scale-[1.05] group-hover:scale-[1] transition-all duration-300 ease'/>
-
-</div>
-        </div>
-
-        
-<div className='h-[20vw] w-[28vw] rounded-[2vw] border-[0.82px] border-[#88888880] background-glass px-[2vw] py-[2vw] '>
-    <div className='w-full h-full flex flex-col justify-between'>
-        <div>
-            <p className='text-[#E8E8E8]'>DSW UnifyAl simplified our data-driven approach, enabling easy development of Al-powered use cases.​​</p>
-        </div>
-        <div className='flex items-center justify-center gap-[1vw]'>
-            <div className='h-[5vw] w-[5vw] rounded-full overflow-hidden relative'>
-<Image src={"/assets/images/homepage/ritesh-rathod.png"} fill alt='ritesh rathod' className='h-full w-full object-cover'/>
-            </div>
-            <div className='w-[90%] space-y-[0.8vw]'>
-                <p className='font-display text-[1.565vw] text-[#E8E8E8]'>Stefano Bonfa</p>
-                <p className='text-[#CACACA] font-medium'>Director, OxSDE, Europe ​​</p>
-            </div>
-
-        </div>
-
-    </div>
-
-        </div>
+                        <TestimonialCard message={"With advanced capabilities of the platform's GenAI Studio, Castler’s escrow services became smarter, more efficient - enabling faster, secure, scalable solutions for our BFSI clients.​​"} img={"/assets/images/homepage/ritesh-rathod.png"} name={"Ritesh Tiwari"} designation={"Chief Product Officer Castler​"} />
+                        <LinkCard title={"3x faster time-to-production"} link={"#"} width={"w-[50%]"} />
+                        <ImageCard img={"/assets/images/homepage/success-img.png"} />
 
 
-<div className='h-[20vw] w-[28vw] rounded-[2vw] border-[0.82px] border-[#88888880] background-glass px-[2vw] py-[2vw] cursor-pointer'>
-<div className="h-full w-full flex">
-  
-  <div className="w-[50%] flex items-end">
-    <p className="text-[1.565vw] text-[#F1F1F1] leading-[1.3] font-display">90% Drop <br/> in Manual Effort​</p>
-  </div>
-
-  {/* right side (icon at top right) */}
-  <div className="flex-1 flex items-start justify-end">
-    <div className="rounded-full h-[3vw] w-[3vw] border-[0.82px] border-[#88888880] flex items-center justify-center">
-      <Image
-        src={"/assets/icons/arrow-right.svg"}
-        height={20}
-        width={20}
-        alt="arrow"
-        className="-rotate-45"
-      />
-    </div>
-  </div>
-</div>
-
-        </div>
-
-        
-<div className='h-[20vw] w-[28vw] rounded-[2vw] border-[0.82px] border-[#88888880] background-glass px-[2vw] py-[2vw] '>
-    <div className='w-full h-full flex flex-col justify-between'>
-        <div>
-            <p className='text-[#E8E8E8]'>With advanced capabilities of the platform's GenAI Studio, Castler’s escrow services became smarter, more efficient - enabling faster, secure, scalable solutions for our BFSI clients.​​</p>
-        </div>
-        <div className='flex items-center justify-center gap-[1vw]'>
-            <div className='h-[5vw] w-[5vw] rounded-full overflow-hidden relative'>
-<Image src={"/assets/images/homepage/ritesh-rathod.png"} fill alt='ritesh rathod' className='h-full w-full object-cover'/>
-            </div>
-            <div className='w-[90%] space-y-[0.8vw]'>
-                <p className='font-display text-[1.565vw] text-[#E8E8E8]'>Ritesh Tiwari</p>
-                <p className='text-[#CACACA] font-medium'>Chief Product Officer, ​Castler​​</p>
-            </div>
-
-        </div>
-
-    </div>
-
-        </div>
-
-
-<div className='h-[20vw] w-[28vw] rounded-[2vw] border-[0.82px] border-[#88888880] background-glass px-[2vw] py-[2vw] cursor-pointer'>
-<div className="h-full w-full flex">
-  
-  <div className="w-760%] flex items-end">
-    <p className="text-[1.565vw] text-[#F1F1F1] leading-[1.3] font-display">3x faster <br/> time-to-production</p>
-  </div>
-
-  {/* right side (icon at top right) */}
-  <div className="flex-1 flex items-start justify-end">
-    <div className="rounded-full h-[3vw] w-[3vw] border-[0.82px] border-[#88888880] flex items-center justify-center">
-      <Image
-        src={"/assets/icons/arrow-right.svg"}
-        height={20}
-        width={20}
-        alt="arrow"
-        className="-rotate-45"
-      />
-    </div>
-  </div>
-</div>
-
-        </div>
-
-        
- <div className='h-[20vw] w-[28vw] rounded-[2vw] border-[0.82px] border-[#88888880] background-glass overflow-hidden group transition-all duration-300 ease'>
-<div className='w-full h-full '>
-    <Image src={"/assets/images/homepage/success-img.png"} height={459} width={568} alt='success- stories' className='object-cover h-full w-full scale-[1.05] group-hover:scale-[1] transition-all duration-300 ease'/>
-
-</div>
-        </div>
-
-</div>
+                    </div>
 
 
                 </div>
@@ -203,3 +52,77 @@ const SuccessStories = () => {
 }
 
 export default SuccessStories
+
+
+
+const LinkCard = ({ title, link, width }) => {
+    return (
+        <>
+            <SpotlightCard>
+                <Link href={link}>
+                    <div className='h-[20vw] group w-full background-glass cursor-pointer pl-[2.5vw] pr-[3vw] pb-[2.5vw] pt-[1.5vw]'>
+                        <div className="h-full w-full flex z-[10] relative">
+
+                            <div className={`${width} flex items-end`}>
+                                <p className="text-[1.565vw] text-[#E8E8E8] leading-[1.3] !font-display">{title}</p>
+                            </div>
+
+                            <div className="flex-1 flex items-start justify-end">
+                                {/* <div className="rounded-full h-[3vw] w-[3vw] border-[0.82px] border-[#88888880] flex items-center justify-center background-glass">
+                                    <Image
+                                        src={"/assets/icons/arrow-right.svg"}
+                                        height={20}
+                                        width={20}
+                                        alt="arrow"
+                                        className="-rotate-45"
+                                    />
+                                </div> */}
+                                 <div className="h-[3vw] w-[3vw]">
+                                   <ArrowButton link={"#"}/>
+                                   </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </Link>
+            </SpotlightCard>
+        </>
+    )
+}
+
+const ImageCard = ({ img }) => {
+    return (
+        <>
+            <div className='h-[20vw] w-full rounded-[2vw] border-[0.82px] border-[#88888880] background-glass overflow-hidden group transition-all duration-500 ease-linear'>
+                <div className='w-full h-full '>
+                    <Image src={img} height={459} width={568} alt='success- stories' className='object-cover h-full w-full scale-[1.05] group-hover:scale-[1] transition-all duration-300 ease' />
+                </div>
+            </div>
+        </>
+    )
+}
+
+const TestimonialCard = ({ message, img, name, designation }) => {
+    return (
+        <>
+            <SpotlightCard>
+                <div className='h-[20vw] w-full  background-glass px-[2vw] py-[2vw]'>
+                    <div className='w-full h-full flex flex-col justify-between z-[10] relative'>
+                        <div>
+                            <p className='text-[#E8E8E8]'>{message}</p>
+                        </div>
+                        <div className='flex items-center justify-center gap-[1vw]'>
+                            <div className='h-[5vw] w-[5vw] rounded-full overflow-hidden relative'>
+                                <Image src={img} fill alt='ritesh rathod' className='h-full w-full object-cover' />
+                            </div>
+                            <div className='w-[78%] space-y-[0.3vw]'>
+                                <p className='!font-display text-[1.565vw] text-[#E8E8E8]'>{name}</p>
+                                <p className='text-[#CACACA] font-medium'>{designation}​</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </SpotlightCard>
+        </>
+    )
+}
