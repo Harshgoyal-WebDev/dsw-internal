@@ -184,7 +184,7 @@ const handleSkip = () => {
 
   return (
     <section
-      className="h-[400vh] w-screen relative bg-[#f8f8f8] z-[10]"
+      className="h-[400vh] w-screen relative bg-[#f8f8f8] z-[10] max-md:hidden"
       ref={sectionRef}
       id="WhyUnify"
     >
@@ -404,3 +404,30 @@ const handleSkip = () => {
 };
 
 export default WhyUnify;
+
+const data=[
+  {
+    list:"End-to-End AI Lifecycle Management",
+    title:"The Freedom to Own AI",
+    para:"The power of OpenAI, but entirely inside your infrastructure with your data, your compliance, and your governance.",
+    link:"#",
+  },
+  {
+    list:"Multi-Model AI Support",
+    title:"Unified AI Lifecycle",
+    para:"One platform for the full journey from data to deployment to continuous learning, eliminating silos and execution gaps.",
+    link:"#",
+  },
+  {
+    list:"Seamless Enterprise Integration",
+    title:"Governance by Design",
+    para:"Security, compliance, and trust baked in with role-based access, explainability, audit trails, and approval workflows.",
+    link:"#",
+  },
+  {
+    list:"Scalable Infrastructure",
+    title:"Sector-Agnostic, Vertically Accelerated",
+    para:"Supports enterprises across industries, combining a sector-agnostic core with domain-focused accelerators to deliver impact at scale.",
+    link:"#",
+  },
+]

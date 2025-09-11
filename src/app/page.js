@@ -22,6 +22,7 @@ import { useEffect } from "react";
 import Faqs from "@/Components/Homepage/FAQs";
 import Clients from "@/Components/Homepage/Clients";
 import Loader from "@/Components/Loader";
+import WhyUnifyMobile from "@/Components/Homepage/WhyUnifyMobile";
 
 export default function Home() {
   headingAnim();
@@ -42,7 +43,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Loader />
+      {/* <Loader /> */}
       <Layout>
         <Hero />
         <TurbochargeG />
@@ -53,7 +54,8 @@ export default function Home() {
         {/* in this component the data is Different in mobile and desktop */}
         <Brochure/>
         <UnifyAi />
-        <WhyUnify /> 
+        {/* <WhyUnify />  */}
+        <WhyUnifyMobile/>
         <EnterpriseAI/>
         <Recognized/>
         <Connects/>
