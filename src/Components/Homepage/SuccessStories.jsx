@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import SpotlightCard from './SpotlightCard/SpotLightCard'
 import ArrowButton from '../Button/ArrowButton'
+import Copy from '../Animations/Copy'
 
 const SuccessStories = () => {
     return (
@@ -16,13 +17,15 @@ const SuccessStories = () => {
                             <h3 className="title-2 w-[85%] leading-[1.2] headingAnim text-[#E8E8E8]">
                                 View Our Success Stories
                             </h3>
-                            <p className=" text-[#CACACA] w-[99%] leading-[1.5]">
+                            <Copy>
+                            <p className=" text-[#CACACA] leading-[1.5]">
                                 Explore how we&apos;ve helped businesses like yours achieve success with innovative technology solutions.
                             </p>
-                        </div>
-                        <div className=''>
-                            <PrimaryButton text={"View All"} href="#" />
 
+                            </Copy>
+                        </div>
+                        <div className='fadeup'>
+                            <PrimaryButton text={"View All"} href="#" />
                         </div>
                     </div>
 

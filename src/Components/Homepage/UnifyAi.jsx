@@ -99,7 +99,7 @@ const UnifyAi = () => {
         </h2>
       </div>
 
-      <div className="w-screen h-fit absolute bottom-0 flex flex-col py-[7%] items-center gap-[3.5vw]">
+      <div className="w-screen h-fit absolute bottom-0 flex flex-col py-[15%] items-center gap-[3.5vw]">
         <h2 className="title-1 text-primary-1 headingAnim">
           One Platform. Infinite Possibilities.
         </h2>

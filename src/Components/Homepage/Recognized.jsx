@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
+import Copy from '../Animations/Copy'
 
 
 const AwardItem=({img, title , year})=>{
@@ -36,12 +37,14 @@ const Recognized = () => {
                     <h3 className="title-2 !leading-[1.35] headingAnim text-[#E8E8E8]">
                         Recognized for real-world AI enterprise impact
                     </h3>
+                    <Copy>
                     <p className=" text-[#CACACA] w-[60%] mx-auto leading-[1.5]">
                         Trusted by enterprises. Validated by the world&apos;s leading benchmarks
                     </p>
+                    </Copy>
                 </div>
 
-                <div className='w-full flex items-center justify-between px-[5vw] mt-[3vw]'>
+                <div className='w-full flex items-center justify-between px-[5vw] mt-[3vw] fadeup'>
                     <div className='h-[10vw] w-[10vw]'>
                         <Image src={"/assets/images/homepage/security-1.png"} height={178} width={178} alt='soc' className='h-full w-full object-contain' />
                     </div>
@@ -81,7 +84,7 @@ const Recognized = () => {
   </div> */}
 </div>
 
-<div className="marquee">
+<div className="marquee fadeup">
   <div className="marquee__track">
     {awards.map((item, index) => <AwardItem key={index} img={item.img} title={item.title} year={item.year} />)}
     {awards.map((item, index) => <AwardItem key={index} img={item.img} title={item.title} year={item.year}/>)}

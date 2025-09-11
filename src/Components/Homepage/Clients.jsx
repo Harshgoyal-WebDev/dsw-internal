@@ -21,7 +21,7 @@ export default function Clients() {
         defaults: { ease: "none" },
         scrollTrigger: {
           trigger: container.current,
-          start: "top 50%",
+          start: "top 10%",
           end: "bottom top",
           scrub: true,
           // markers:true,
@@ -95,7 +95,7 @@ export default function Clients() {
              className="relative w-screen h-[400vh]  text-center"
            >
              <div className="sticky w-full top-0 h-screen flex items-center justify-center">
-               <h3 className="title-2 w-[45%]  flex flex-col items-center gap-[1vw] max-sm:text-[11vw] max-sm:w-[90%] text-[#E8E8E8]">
+               <h3 className="title-2 w-[40%] max-sm:text-[11vw] max-sm:w-[90%] text-[#E8E8E8] headingAnim">
                  Trusted by Innovators, Built for Industry Disruptors.
                </h3>
              </div>
@@ -133,8 +133,6 @@ const logos = [
   "/assets/images/ciek.png",
   "/assets/images/manipal.png",
   "/assets/images/edgeverve.png",
-  "/assets/images/sodexo.png",
-  "/assets/images/canara.png",
-  "/assets/images/bon-prix.png",
-  "/assets/images/ciek.png",
+ 
+
 ];

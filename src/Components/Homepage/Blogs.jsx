@@ -8,6 +8,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { NextButton, PreviousButton } from '../Button/SliderButtons';
 import ArrowButton from '../Button/ArrowButton';
+import Copy from '../Animations/Copy';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -65,8 +66,10 @@ const Blogs = () => {
       <div className='h-full w-full flex items-start justify-between pl-15'>
         <div className='w-1/2 space-y-10'>
           <h2 className='text-[5.2vw] leading-[1.2] w-[90%] headingAnim font-head text-white-200'>Stay Ahead with AI Insights</h2>
+          <Copy>
           <p className='text-[#CACACA] w-[72%] leading-[1.4]'>stay informed with expert insights, industry updates, and real-world use cases from UnifyAI. Whether you&apos;re looking for the latest in Generative AI, AI governance, or enterprise AI adoption, we&apos;ve got you covered.</p>
-          <div className='fadeUp'>
+          </Copy>
+          <div className='fadeup'>
             <PrimaryButton text={"Know More"} href={"#"} />
           </div>
         </div>

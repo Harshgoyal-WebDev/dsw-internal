@@ -31,7 +31,7 @@ export default function Faqs({ allowMultiple = false, content }) {
     >
       <div className="flex flex-col items-center gap-[5vw] max-sm:gap-[10vw] max-md:justify-center max-sm:items-start">
         
-          <h2 className="w-[68%] text-center !leading-[1.15] title-1 max-sm:text-[11vw] max-sm:w-full max-sm:text-left">
+          <h2 className="w-[68%] text-center !leading-[1.15] title-1 max-sm:text-[11vw] max-sm:w-full max-sm:text-left headingAnim">
             Frequently Asked Questions
           </h2>
         
@@ -53,61 +53,9 @@ export default function Faqs({ allowMultiple = false, content }) {
 }
 
 function AccordionItem({ question, answer, isOpen, onToggle }) {
-  const coverRef = useRef();
-
-//   const handleMouseLeave = (e) => {
-//     const rect = e.currentTarget.getBoundingClientRect();
-//     const midpoint = rect.top + rect.height / 2;
-//     if (e.clientY <= midpoint) {
-//       gsap.set(coverRef.current, {
-//         transformOrigin: "top",
-//       });
-
-//       gsap.to(coverRef.current, {
-//         scaleY: 0,
-//         duration: 0.3,
-//         ease: "power2.out",
-//       });
-//     } else {
-//       gsap.set(coverRef.current, {
-//         transformOrigin: "bottom",
-//       });
-
-//       gsap.to(coverRef.current, {
-//         scaleY: 0,
-//         duration: 0.3,
-//         ease: "power2.out",
-//       });
-//     }
-//   };
-//   const handleMouseEnter = (e) => {
-//     const rect = e.currentTarget.getBoundingClientRect();
-//     const midpoint = rect.top + rect.height / 2;
-//     if (e.clientY <= midpoint) {
-//       gsap.set(coverRef.current, {
-//         transformOrigin: "top",
-//       });
-
-//       gsap.to(coverRef.current, {
-//         scaleY: 1,
-//         duration: 0.3,
-//         ease: "power2.out",
-//       });
-//     } else {
-//       gsap.set(coverRef.current, {
-//         transformOrigin: "bottom",
-//       });
-
-//       gsap.to(coverRef.current, {
-//         scaleY: 1,
-//         duration: 0.3,
-//         ease: "power2.out",
-//       });
-//     }
-//   };
 
   return (
-    <div className="w-full group  overflow-hidden relative z-[10] faq-tab fadeupanim accordion-block group">
+    <div className="w-full group  overflow-hidden relative z-[10] faq-tab fadeupanim accordion-block group fadeup">
       <div className="w-full mr-auto relative">
         <div className="absolute bottom-0 left-0 w-full h-[0.5px] bg-[#88888880] opacity-[0.5]"></div>
         <div className="absolute bottom-0 left-0 w-full h-[0.5px] bg-primary-2 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700"></div>

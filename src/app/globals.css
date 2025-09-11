@@ -176,3 +176,38 @@ background: linear-gradient(90.17deg, rgba(255, 255, 255, 0.01) 0.01%, rgba(255,
   background: linear-gradient(to bottom, #F16B0D, #E61216); /* gradient from top to bottom */
   border-radius: 8px;
 }
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+@keyframes connectripple {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+
+.circle-1,
+.circle-2,
+.circle-3 {
+  transform-origin: center;
+  animation: ripple 5s linear infinite;
+}
+.connect-circle-1,
+.connect-circle-2,
+.connect-circle-3 {
+  transform-origin: center;
+  animation: connectripple 5s linear infinite;
+}
