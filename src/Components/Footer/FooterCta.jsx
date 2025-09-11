@@ -63,11 +63,11 @@ const FooterCTA = () => {
     const image1Y = useTransform(smoothY, (v) => v * 20);
 
     return (
-        <div ref={containerRef} className="px-20 flex items-center justify-between h-[80vh] w-screen overflow-hidden">
-            <div className="w-1/2">
-                <h2 className="title-1 leading-[1.2] font-head mb-3 headingAnim text-white-200">Take a lightning tour of the Enterprise AI Platform </h2>
+        <div ref={containerRef} className="px-20 flex items-center justify-between h-[80vh] w-screen overflow-hidden max-sm:flex-col-reverse max-sm:px-[7vw] max-sm:h-full max-sm:py-[15vw] ">
+            <div className="w-1/2 max-sm:!w-[90%] max-sm:text-center max-sm:mt-[5vw]">
+                <h2 className="title-1 leading-[1.2] font-head mb-3 headingAnim text-white-200 max-sm:!text-[10vw] max-sm:mb-[7vw]">Take a lightning tour of the Enterprise AI Platform </h2>
                 <p data-para-anim className="text-[#CACACA]  mb-12">Discover how UnifyAI can accelerate your AI/ML and GenAI initiatives with seamless deployment, scalability, and security.</p>
-                <div className="flex gap-6">
+                <div className="flex gap-6 max-sm:flex-col">
                     <div className="fadeup">
                         <PrimaryButton text="Book a Demo" href="#" />
                     </div>
@@ -76,7 +76,7 @@ const FooterCTA = () => {
                     </div>
                 </div>
             </div>
-            <div className="relative w-1/2 h-[50vw]">
+            <div className="relative w-1/2 h-[50vw] max-sm:w-full max-sm:h-[110vw]">
                 <div
                     className="absolute top-1/2 -translate-y-1/2 right-0 -z-10"
 
@@ -103,30 +103,17 @@ const FooterCTA = () => {
                 </div>
                  <motion.div
                     style={{ x: image1X, y: image1Y }}
-                    className="absolute w-[45%] top-[15%] left-[20%] rounded-2xl border border-white/30 overflow-hidden"
+                    className="absolute w-[45%] top-[15%] left-[20%] rounded-2xl border border-white/30 overflow-hidden max-sm:w-[55%] max-sm:top-0 max-sm:left-[10%]"
                 >
                     <Image src={"/assets/images/homepage/footer-cta-1.png"} alt="Image1"  width={348} height={312} loading="lazy"  className="w-full h-full object-cover" />
                 </motion.div>
 
                 <motion.div
                     style={{ x: image1X, y: image1Y }}
-                    className="absolute  w-[40%] bottom-[10%] left-[45%] rounded-2xl  border border-white/30 overflow-hidden "
+                    className="absolute  w-[40%] bottom-[10%] left-[45%] rounded-2xl  border border-white/30 overflow-hidden max-sm:w-[55%] max-sm:left-[35%]"
                 >
                     <Image src={"/assets/images/homepage/footer-cta-2.png"} alt="Image2"  width={313} height={272} loading="lazy"  className="w-full h-full object-cover" />
                 </motion.div>
-                {/* <div
-                    
-                    className="absolute w-[45%] top-[15%] left-[20%] rounded-2xl border border-white/30 overflow-hidden"
-                >
-                    <Image src={"/assets/images/homepage/footer-cta-1.png"} alt="Image1"   width={348} height={312} className="w-full h-full object-cover" />
-                </div>
-
-                <div
-                    
-                    className="absolute  w-[40%] bottom-[10%] left-[45%] rounded-2xl  border border-white/30 overflow-hidden "
-                >
-                    <Image src={"/assets/images/homepage/footer-cta-2.png"} alt="Image2"   width={313} height={272} className="w-full h-full object-cover" />
-                </div> */}
             </div>
         </div>
     )

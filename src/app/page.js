@@ -53,7 +53,7 @@ export default function Home() {
         {/* in this component the data is Different in mobile and desktop */}
         <Brochure/>
         <UnifyAi />
-        <WhyUnify />
+        <WhyUnify /> 
         <EnterpriseAI/>
         <Recognized/>
         <Connects/>

@@ -45,21 +45,21 @@ const Recognized = () => {
                 </div>
 
                 <div className='w-full flex items-center justify-between px-[5vw] mt-[3vw] fadeup max-sm:flex-wrap max-sm:mt-[6vw] max-sm:gap-y-[5vw] '>
-                    <div className='h-[10vw] w-[10vw] max-sm:h-[20vw] max-sm:w-[20vw]'>
+                    <div className='h-[10vw] w-[10vw] max-sm:h-[22vw] max-sm:w-[22vw]'>
                         <Image src={"/assets/images/homepage/security-1.png"} height={178} width={178} alt='soc' className='h-full w-full object-contain' />
                     </div>
-                    <div className='h-[10vw] w-[10vw] max-sm:h-[20vw] max-sm:w-[20vw]'>
+                    <div className='h-[10vw] w-[10vw] max-sm:h-[22vw] max-sm:w-[22vw]'>
                         <Image src={"/assets/images/homepage/security-2.png"} height={178} width={178} alt='iso' className='h-full w-full object-contain'/>
                     </div>
-                    <div className='h-[10vw] w-[10vw] max-sm:h-[20vw] max-sm:w-[20vw]'>
+                    <div className='h-[10vw] w-[10vw] max-sm:h-[22vw] max-sm:w-[22vw]'>
                         <Image src={"/assets/images/homepage/security-3.png"} height={178} width={178} alt='hipaa' className='h-full w-full object-contain'/>
                     </div>
-                    <div className='h-[10vw] w-[35vw] max-sm:h-[30vw] max-sm:w-[80vw]'>
+                    <div className='h-[10vw] w-[35vw] max-sm:h-[30vw] max-sm:w-[90vw]'>
                         <Image src={"/assets/images/homepage/security-4.png"} height={178} width={681} alt='hipaa' className='h-full w-full object-contain'/>
                     </div>
 
                 </div>
-<div className="marquee fadeup">
+<div className="marquee fadeup max-sm:my-[7vw]">
   <div className="marquee__track">
     {awards.map((item, index) => <AwardItem key={index} img={item.img} title={item.title} year={item.year} />)}
     {awards.map((item, index) => <AwardItem key={index} img={item.img} title={item.title} year={item.year}/>)}

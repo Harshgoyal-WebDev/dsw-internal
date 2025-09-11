@@ -37,7 +37,7 @@ export const SocialLink = ({
         <Icon 
           name={icon} 
           className={iconVariantClass}
-          size="w-5 h-5"
+          size="w-5 h-5 max-sm:h-8 max-sm:w-8"
         />
       </div>
     </Link>

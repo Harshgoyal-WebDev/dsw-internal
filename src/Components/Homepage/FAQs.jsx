@@ -31,7 +31,7 @@ export default function Faqs({ allowMultiple = false, content }) {
     >
       <div className="flex flex-col items-center gap-[5vw] max-sm:gap-[10vw] max-md:justify-center max-sm:items-start">
         
-          <h2 className="w-[68%] text-center !leading-[1.15] title-1 max-sm:text-[11vw] max-sm:w-full max-sm:text-left headingAnim">
+          <h2 className="title-2 w-[68%] text-center !leading-[1.15] title-1 max-sm:text-[11vw] max-sm:w-full max-sm:text-left headingAnim ">
             Frequently Asked Questions
           </h2>
         
@@ -67,12 +67,12 @@ function AccordionItem({ question, answer, isOpen, onToggle }) {
               aria-expanded={isOpen}
               className="cursor-pointer w-full h-full py-[2.5vw] flex items-center justify-between max-sm:pb-[7vw]"
             >
-              <h4 className="text-[1.2vw] font-medium text-left leading-[1.2] max-sm:text-[4.5vw] max-sm:w-[70%] max-md:text-[3vw] max-md:w-[80%]">
+              <h4 className="text-[1.2vw] font-medium text-left leading-[1.2] max-sm:text-[4.5vw] max-sm:w-[70%] max-md:text-[3vw] max-md:w-[80%] max-sm:leading-[1.5]">
                 {question}
               </h4>
               <div
             //   style={{ transitionTimingFunction: "cubic-bezier(0.625, 0.05, 0, 1)" }}
-                className={` h-auto relative duration-500 max-sm:w-[8vw] rounded-full border-[1.5px]  p-[2vw]  transition-all  ease-out ${ isOpen ? "border-[#030815] bg-gradient-to-br from-[#F16B0D] to-[#E61216]" :" background-glass border-[#88888880]"}`}
+                className={` h-auto relative duration-500 max-sm:w-[15vw] rounded-full border-[1.5px]  p-[2vw]  transition-all  ease-out max-sm:p-[7vw] ${ isOpen ? "border-[#030815] bg-gradient-to-br from-[#F16B0D] to-[#E61216]" :" background-glass border-[#88888880]"}`}
               >
                 <span className={`w-[1.5vw] rounded-full h-[2px] bg-[#ffffff] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-300 transform-origin-center max-sm:w-[5vw] max-sm:h-[1.5px] ${
                     isOpen ? "rotate-0" : "-rotate-90"

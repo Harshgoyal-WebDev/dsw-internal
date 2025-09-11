@@ -32,23 +32,22 @@ const Footer = () => {
     return (
         <>
             <FooterCTA />
-            <footer className="relative overflow-hidden px-20 pt-[15vw]" id="footer" ref={footerRef}>
-                {/* <Image src="/assets/images/footer-bg.svg" width={1920} height={900} alt="Footer Background" loading="lazy" className="absolute -bottom-20 left-0 right-0 w-full" /> */}
-                <div className="absolute top-[30%] left-0 h-screen w-screen">
+            <footer className="relative overflow-hidden px-20 pt-[15vw] max-sm:px-[7vw]" id="footer" ref={footerRef}>
+                <div className="absolute top-[30%] left-0 h-screen w-screen max-sm:hidden">
                     <Suspense>
                         <ShaderComp color={"0x1726FD"} />
                     </Suspense>
                 </div>
                 <div className="relative z-[1]">
-                    <div className="rounded-[2.2vw] background-glass-diff border border-white/30 px-12 py-[5%] flex justify-between" ref={footerGlassRef}>
+                    <div className="rounded-[2.2vw] background-glass-diff border border-white/30 px-12 py-[5%] flex justify-between max-sm:px-[0vw] max-sm:py-[15%] max-sm:rounded-[5vw] max-sm:flex-col max-sm:items-center max-sm:justify-center max-sm:text-center" ref={footerGlassRef}>
                         {/* Logo and Contact Info */}
-                        <div className="flex flex-col justify-between items-start gap-24 footer-content">
+                        <div className="flex flex-col justify-between items-start gap-24 footer-content max-sm:pb-[15vw] max-sm:items-center max-sm:justify-center">
                             <Logo variant="footer" />
                             <ContactInfo variant="footer" />
                         </div>
 
 
-                        <div className="flex justify-between w-1/2 ml-auto gap-10 footer-content">
+                        <div className="flex justify-between w-1/2 ml-auto gap-10 footer-content max-sm:flex-col max-sm:w-full">
                             {/* Navigation Links */}
                             <div>
                                 <h6 className="mb-5 text-foreground content-p">NAVIGATION</h6>
@@ -66,11 +65,11 @@ const Footer = () => {
                             </div>
 
                             {/* Newsletter Subscription */}
-                            <div className="flex flex-col justify-between w-3/5">
+                            <div className="flex flex-col justify-between w-3/5 max-sm:w-full">
                                 <Newsletter />
 
                                 {/* Social Media Links */}
-                                <ul className="flex gap-4">
+                                <ul className="flex gap-4 max-sm:items-center max-sm:justify-center max-sm:mt-[15vw]">
                                     {SOCIAL_LINKS.map((link) => (
                                         <li key={link.id} className="group">
                                             <SocialLink
@@ -85,7 +84,7 @@ const Footer = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="flex justify-between py-8 pt-12 text-lg text-foreground">
+                    <div className="flex justify-between py-8 pt-12 text-lg text-foreground max-sm:flex-col max-sm:text-center">
                         <p>Copyright © {SITE_CONFIG.name} {SITE_CONFIG.copyright.year}</p>
                         <p>
                             {SITE_CONFIG.copyright.credits.text}{" "}

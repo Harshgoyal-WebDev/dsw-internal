@@ -12,7 +12,7 @@ export const Logo = ({
 }) => {
   const variants = {
     default: "w-[7vw] h-[5vw] object-contain",
-    footer: "w-2/3",
+    footer: "w-2/3 max-sm:w-4/5",
     header: "w-[7vw] h-[5vw] object-contain max-sm:w-[25vw] max-sm:h-auto",
     mobile: "w-[25vw] h-auto object-contain"
   };
