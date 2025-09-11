@@ -60,7 +60,7 @@ const LinkCard = ({ title, link, width }) => {
         <>
             <SpotlightCard>
                 <Link href={link}>
-                    <div className='h-[20vw] group w-full background-glass cursor-pointer pl-[2.5vw] pr-[3vw] pb-[2.5vw] pt-[1.5vw]'>
+                    <div className='h-[20vw] group w-full background-glass cursor-pointer pl-[2.5vw] pr-[1.5vw] pb-[2.5vw] pt-[1.5vw]'>
                         <div className="h-full w-full flex z-[10] relative">
 
                             <div className={`${width} flex items-end`}>
@@ -68,16 +68,7 @@ const LinkCard = ({ title, link, width }) => {
                             </div>
 
                             <div className="flex-1 flex items-start justify-end">
-                                {/* <div className="rounded-full h-[3vw] w-[3vw] border-[0.82px] border-[#88888880] flex items-center justify-center background-glass">
-                                    <Image
-                                        src={"/assets/icons/arrow-right.svg"}
-                                        height={20}
-                                        width={20}
-                                        alt="arrow"
-                                        className="-rotate-45"
-                                    />
-                                </div> */}
-                                 <div className="h-[3vw] w-[3vw]">
+                                 <div className="h-[3vw] w-[3vw] background-glass rounded-full">
                                    <ArrowButton link={"#"}/>
                                    </div>
                             </div>
