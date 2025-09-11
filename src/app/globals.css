@@ -240,3 +240,22 @@ background: linear-gradient(90.17deg, rgba(255, 255, 255, 0.01) 0.01%, rgba(255,
 .round:hover .arrow.segunda {
   animation-delay: 0.2s;
 }
+
+
+@media (max-width:542px) {
+  .title-1 {
+  font-size: 14vw;
+}
+.title-2 {
+  font-size: 3.4vw;
+}
+.title-3{
+  font-size: 2.2vw;
+}
+  body {
+
+  font-size: 4.2vw;
+  line-height: 1.6;
+  
+}
+}
