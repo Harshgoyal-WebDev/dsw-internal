@@ -66,7 +66,9 @@ export default function About() {
                 </div>
               </div>
 
-              <p className={`text-[1.5vw] ${width} max-sm:text-[4.2vw]`}>{text}</p>
+             <Copy>
+              <p className={`text-[1.5vw] ${width} max-sm:text-[4.2vw] `}>{text}</p>
+             </Copy>
             </div>
           ))}
         </div>
