@@ -259,4 +259,24 @@ background: linear-gradient(90.17deg, rgba(255, 255, 255, 0.01) 0.01%, rgba(255,
   line-height: 1.6;
   
 }
+
+.unifyblock {
+  /* initial gradient colors */
+  --c1: #081b57;   /* "from" */
+  --c2: #030815;   /* "via" */
+  --c3: #030815;   /* "to" */
+
+  /* initial radial size */
+  --rx: 60%; /* x-radius */
+  --ry: 60%; /* y-radius */
+
+  background-image: radial-gradient(
+    var(--rx) var(--ry) at 50% 50%,
+    var(--c1) 0%,
+    var(--c2) 55%,
+    var(--c3) 100%
+  );
+
+  background-color: transparent !important;
+}
 }

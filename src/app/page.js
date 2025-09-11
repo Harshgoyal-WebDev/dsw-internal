@@ -50,6 +50,7 @@ export default function Home() {
         <Insuraince />
         <Tour/>
         <Difference/>
+        {/* in this component the data is Different in mobile and desktop */}
         <Brochure/>
         <UnifyAi />
         <WhyUnify />

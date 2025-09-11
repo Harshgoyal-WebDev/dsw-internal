@@ -5,13 +5,13 @@ import Image from "next/image";
 const Difference = () => {
   return (
     <section
-      className="w-screen h-fit py-[7%] px-[5vw] relative max-sm:px-0 max-sm:py-[15%] "
+      className="w-screen h-fit py-[7%] px-[5vw] relative max-sm:px-0 max-sm:py-[15%] overflow-hidden "
       id="difference"
     >
-      <h2 className="title-2 headingAnim max-sm:!text-[12vw] max-sm:pl-[7vw] max-sm:w-[80%]  text-center mb-[7vw] max-sm:text-left max-sm:justify-start max-sm:mb-[20vw]">
+      <h2 className="title-2 headingAnim max-sm:!text-[12vw] max-sm:pl-[7vw] max-sm:w-[90%]  text-center mb-[7vw] max-sm:text-left max-sm:justify-start max-sm:mb-[20vw]">
         Why insurAInce is Different? 
       </h2>
-      <div className="w-full max-sm:w-screen max-sm:overflow-hidden max-sm:overflow-x-scroll max-sm:pb-[10%] ">
+      <div className="w-full max-sm:w-screen max-sm:overflow-hidden max-sm:overflow-x-scroll max-sm:pb-[10%] relative z-[20] ">
         <div className="w-full flex flex-col justify-center items-center gap-[4.5vw] relative z-[2] max-sm:items-start max-sm:w-[170vw] max-sm:px-[7vw]">
           <div className="w-full flex justify-center gap-[1vw] max-sm:gap-[10vw]">
             <div className="w-[40%]  max-sm:w-[50%] space-y-[2.5vw] max-sm:space-y-[12vw]">
@@ -37,7 +37,7 @@ const Difference = () => {
               </div>
             </div>
             <div className="w-[40%]  max-sm:w-[50%] space-y-[2.5vw] max-sm:space-y-[21vw]">
-              <h3 className="text-center title-3 headingAnim text-[#f1f1f1]">
+              <h3 className="text-center title-3 headingAnim text-[#f1f1f1] max-sm:text-left">
                 InsurAInce
               </h3>
               <div className="w-full flex-col flex gap-[0.5vw] max-sm:gap-[3vw]">
@@ -67,7 +67,7 @@ const Difference = () => {
           <ShaderComp color={"0x1726FD"} />
         </Suspense>
       </div>
-        <div className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-sm:block">
+        <div className="w-screen h-screen absolute top-0 z-[10] left-0 hidden max-sm:block">
               <Image src={"/assets/images/homepage/gradient-mobile.png"} alt="bg-gradient" className="w-full h-full object-cover" width={600} height={1080}/>
       
             </div>

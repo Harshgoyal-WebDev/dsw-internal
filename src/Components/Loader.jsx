@@ -1,9 +1,8 @@
 import React, { Suspense, useEffect, useState } from "react";
-// import Gradient from "./Homepage/Gradient";
-// import Image from "next/image";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import ShaderComp from "./BgShader/ShaderComp";
+import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger);
 
 const Loader = () => {
@@ -87,11 +86,14 @@ const Loader = () => {
         >
           <Gradient />
         </div> */}
-        <div className="absolute top-[-5%] left-0 h-screen w-screen">
+        <div className="absolute top-[-5%] left-0 h-screen w-screen max-sm:hidden">
         <Suspense>
           <ShaderComp color={"0x1726FD"} />
         </Suspense>
       </div>
+       <div className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-sm:block">
+              <Image src={"/assets/images/homepage/gradient-mobile.png"} alt="bg-gradient" className="w-full h-full object-cover" width={600} height={1080}/>
+            </div>
 
       </div>
     </div>

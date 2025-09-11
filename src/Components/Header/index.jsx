@@ -66,7 +66,7 @@ const Header = () => {
         transition={{ duration: 1, ease: "easeOut", delay: 6 }}
         className={`text-white px-4 fixed top-0 left-0 z-[999] pointer-events-none max-sm:px-0`} >
         <div className={`flex items-center justify-between py-6 px-12 w-screen transition-transform duration-500 pointer-events-auto max-sm:px-[7vw] ${isHidden ? "-translate-y-full" : "translate-y-0"}`} ref={headerRef} >
-          <Logo variant="header" className="dsw-logo max-sm:w-[25vw] max-sm:h-auto" />
+          <Logo variant="header" className="dsw-logo max-sm:!w-[25vw] max-sm:h-auto" />
           
           <div className="border rounded-4xl bg-stone-900/30 backdrop-blur-sm border-white/20 ml-[4vw] max-sm:hidden">
             <ul className="flex items-center justify-between px-12 py-4.5 gap-12 text-[1.145vw]">
