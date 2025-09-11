@@ -6,6 +6,7 @@ import gsap from "gsap";
 import {  SplitInLineOnly } from "../splitTextUtils";
 import ShaderComp from "../BgShader/ShaderComp";
 import { SplitText } from "gsap/SplitText";
+import Image from "next/image";
 
 const lineCount = 4;
 
@@ -66,7 +67,7 @@ const Hero = () => {
   return (
     <section className="h-[70vw] w-screen relative bg-background max-sm:h-screen max-sm:px-[7vw]" id="hero">
       <div className="flex flex-col items-center justify-start w-full h-full pt-[30vh] relative z-[12] max-sm:pt-[15vh]">
-        <div className="w-[70%] text-center space-y-6 pb-5 max-sm:w-[90%]">
+        <div className="w-[70%] text-center space-y-6 pb-5 max-sm:w-[90%] max-sm:space-y-[12vw]">
           <h1
             ref={heading}
             className="title-1 font-head heroHeadAnim text-[#E8E8E8]"
@@ -94,7 +95,7 @@ const Hero = () => {
                   transition: { duration: 1, delay: 5.8 },
                 }}
               >
-                <Component href="#" text={text} className="max-sm:w-[65vw]" />
+                <Component href="#" text={text} className="max-sm:min-w-[60vw]" />
               </motion.div>
             ))}
           </div>
@@ -102,7 +103,7 @@ const Hero = () => {
       </div>
 
       {/* Animated Vertical Lines */}
-      <div className="w-screen h-[55vw] absolute top-0 left-0 z-[10] flex justify-center gap-[22vw]">
+      <div className="w-screen h-[55vw] absolute top-0 left-0 z-[10] flex justify-center gap-[22vw] max-sm:hidden">
         {[...Array(lineCount)].map((_, i) => (
           <AnimatedLine key={i} delay={5+(i * 0.2)} />
         ))}
@@ -111,6 +112,10 @@ const Hero = () => {
         <Suspense>
           <ShaderComp color={"0x1726FD"} />
         </Suspense>
+      </div>
+      <div className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-sm:block">
+        <Image src={"/assets/images/homepage/gradient-mobile.png"} alt="bg-gradient" className="w-full h-full object-cover" width={600} height={1080}/>
+
       </div>
     </section>
   );

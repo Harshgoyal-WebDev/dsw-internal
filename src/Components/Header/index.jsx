@@ -81,7 +81,9 @@ const Header = () => {
               ))}
             </ul>
           </div>
-          
+          <div className="hidden max-sm:block">
+
+          </div>
           <div>
             <PrimaryButton 
               text={CTA_BUTTONS.primary.text} 

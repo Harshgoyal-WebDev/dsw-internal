@@ -12,8 +12,8 @@ const Tour = () => {
   };
 
   return (
-    <section className="w-screen h-fit px-[5vw] py-[7%]" id="tour">
-      <div className="w-full flex flex-col gap-[2vw] items-center">
+    <section className="w-screen h-fit px-[5vw] py-[7%] max-sm:px-[7vw] max-sm:py-[15%]" id="tour">
+      <div className="w-full flex flex-col gap-[2vw] items-center max-sm:gap-[4vw]">
         <h2 className="title-2 headingAnim">Take a Lightning Tour</h2>
         <Copy>
           <p className="text-[#CACACA]">
@@ -23,11 +23,11 @@ const Tour = () => {
         </Copy>
 
         {/* Tab Switcher */}
-        <div className="w-fit flex rounded-full border-blue-1 border p-[0.2vw] !text-[1.15vw] fadeup relative">
+        <div className="w-fit flex rounded-full border-blue-1 border p-[0.2vw] !text-[1.15vw] fadeup relative max-sm:mt-[10vw] max-sm:!text-[4.2vw] max-sm:p-[0.5vw]">
           {/* Thumb Track */}
-          <div className="w-full h-[90%] absolute thumb-track">
+          <div className="w-full h-[90%] absolute thumb-track max-sm:h-[92%]">
             <motion.div
-              className="w-[13vw] h-full rounded-full bg-blue-1 thumb-button"
+              className="w-[13vw] h-full rounded-full bg-blue-1 thumb-button max-sm:w-[40vw]"
               animate={{
                 x: activeTab === "aiStudio" ? 0 : "13vw",
               }}
@@ -41,7 +41,7 @@ const Tour = () => {
 
           {/* AI Studio Tab */}
           <motion.div
-            className="w-[13vw] px-[1.5vw] py-[1vw] flex items-center justify-center relative z-[2] cursor-pointer"
+            className="w-[13vw] px-[1.5vw] py-[1vw] flex items-center justify-center relative z-[2] cursor-pointer max-sm:w-[40vw] max-sm:py-[3vw]"
             id="aiStudio"
             onClick={() => handleTabClick("aiStudio")}
           >
@@ -57,7 +57,7 @@ const Tour = () => {
 
           {/* GenAI Studio Tab */}
           <motion.div
-            className="w-[13vw] px-[1.5vw] py-[1vw] flex items-center justify-center relative z-[2] cursor-pointer"
+            className="w-[13vw] px-[1.5vw] py-[1vw] flex items-center justify-center relative z-[2] cursor-pointer max-sm:w-[40vw] max-sm:py-[3vw]"
             id="genStudio"
             onClick={() => handleTabClick("genStudio")}
             transition={{
@@ -77,7 +77,7 @@ const Tour = () => {
         </div>
 
         {/* Content Containers */}
-        <div className="w-[80%] h-[30vw] relative fadeup mt-[5vw]">
+        <div className="w-[80%] h-[30vw] relative fadeup mt-[5vw] max-sm:w-full max-sm:h-[60vw] max-sm:mt-[12vw]">
           <AnimatePresence mode="wait">
             {/* AI Studio Container */}
             {activeTab === "aiStudio" && (

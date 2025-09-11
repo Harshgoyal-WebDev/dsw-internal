@@ -119,12 +119,12 @@ const TurbochargeG = () => {
   }, []);
 
   return (
-    <section id="turbo" className="w-screen h-full bg-background">
-      <div className="flex flex-col items-center p-10 w-full space-y-[3vw]">
-        <h2 className="title-1 headingAnim text-[#E8E8E8]">Unifying AI and Business ​</h2>
-        <div className="w-[70%] text-center space-y-15 py-15">
+    <section id="turbo" className="w-screen h-full bg-background max-sm:relative max-sm:z-[12] max-sm:bg-transparent">
+      <div className="flex flex-col items-center p-10 w-full space-y-[3vw] max-sm:px-[7vw]">
+        <h2 className="title-1 headingAnim text-[#E8E8E8] max-sm:!text-[10vw] max-sm:text-center">Unifying AI and Business ​</h2>
+        <div className="w-[70%] text-center space-y-15 py-15 max-sm:w-full">
           <div
-            className="w-full h-fit rounded-[1vw] relative  perspective-[800px]"
+            className="w-full h-fit rounded-[1vw] relative  perspective-[800px] max-sm:hidden"
             ref={turboChargeContainer}
           >
             {/* Base background image */}
@@ -181,6 +181,7 @@ const TurbochargeG = () => {
               />
             </div>
           </div>
+          <Image src={"/assets/images/homepage/dashboard-mob.png"} alt="dashboard-mobile" className="w-full h-full object-cover fadeup hidden max-sm:block" width={600} height={400}/>
 
         
         </div>

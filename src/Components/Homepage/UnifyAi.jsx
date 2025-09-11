@@ -93,7 +93,7 @@ const UnifyAi = () => {
       id="unifyAi"
     >
       {/* remove Tailwind gradient utilities here; keep only layout classes */}
-      <div className="w-full h-screen sticky top-0 flex justify-center items-center unifyblock">
+      <div className="w-full h-screen sticky top-0 flex justify-center items-center unifyblock max-sm:overflow-hidden">
         <h2 className="text-[6vw] unify-title text-[#f8f8f8]">
           Powered by DSW UnifyAI
         </h2>
