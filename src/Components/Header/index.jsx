@@ -12,6 +12,7 @@ const Header = () => {
   const [unify , setUnify] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const headerRef = useRef();
+  
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
