@@ -163,19 +163,24 @@ const WhyUnify = () => {
     };
   }, []);
 
-  // Handler for the skip button using ScrollToPlugin to move to the last snap.
-  const handleSkip = () => {
-    if (timelineRef.current) {
-      const st = timelineRef.current.scrollTrigger;
-      gsap.to(window, {
-        scrollTo: { y: st.end, autoKill: true },
-        duration: 1,
-        onComplete: () => {
-          timelineRef.current.progress(1);
-        },
-      });
-    }
-  };
+  // const handleSkip = () => {
+  //   if (timelineRef.current) {
+  //     const st = timelineRef.current.scrollTrigger;
+  //     gsap.to(window, {
+  //       scrollTo: { y: st.end, autoKill: true },
+  //       duration: 1,
+  //       onComplete: () => {
+  //         timelineRef.current.progress(1);
+  //       },
+  //     });
+  //   }
+  // };
+ 
+const handleSkip = () => {
+        const next = document.getElementById("enterpriseAI");
+        if (next) next.scrollIntoView({ behavior: "smooth" });
+      };
+
 
   return (
     <section
@@ -356,22 +361,40 @@ const WhyUnify = () => {
             </div>
           </div>
 
-          {/* Skip Button triggers scroll to the last snap */}
           <div className="mt-10 flex justify-center absolute right-10 bottom-50">
             <button
-              className="px-6 py-2 rounded-full flex items-center cursor-pointer gap-2 text-black font-light hover:scale-95 text-[1vw] transition duration-500"
+              className="round px-6 py-2 rounded-full flex items-center cursor-pointer gap-2 text-black font-light hover:scale-95 text-[1vw] transition duration-500"
               onClick={handleSkip}
             >
               Skip
-              <span>
-                <Image
-                  src={"/assets/icons/skip-icon.svg"}
-                  height={10}
-                  width={10}
-                  alt="skip-icon"
-                  className="invert"
-                />
-              </span>
+               <div className="-rotate-90 text-black flex items-center justify-center gap-0 w-[0.8vw] h-full max-sm:w-[3vw]">
+                            <svg
+                                className="arrow primera next"
+                                width="8"
+                                height="15"
+                                viewBox="0 0 8 15"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M7.50293 14.46L2.50293 7.45996L7.50293 0.459961H5.05293L0.0529289 7.45996L5.05293 14.46H7.50293Z"
+                                    fill="currentColor"
+                                />
+                            </svg>
+                            <svg
+                                className="arrow segunda next"
+                                width="8"
+                                height="15"
+                                viewBox="0 0 8 15"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M7.50293 14.46L2.50293 7.45996L7.50293 0.459961H5.05293L0.0529289 7.45996L5.05293 14.46H7.50293Z"
+                                    fill="currentColor"
+                                />
+                            </svg>
+                        </div>
             </button>
           </div>
         </div>

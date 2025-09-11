@@ -101,7 +101,20 @@ const FooterCTA = () => {
                         </defs>
                     </svg>
                 </div>
-                <div
+                 <motion.div
+                    style={{ x: image1X, y: image1Y }}
+                    className="absolute w-[45%] top-[15%] left-[20%] rounded-2xl border border-white/30 overflow-hidden"
+                >
+                    <Image src={"/assets/images/homepage/footer-cta-1.png"} alt="Image1"  width={348} height={312} loading="lazy"  className="w-full h-full object-cover" />
+                </motion.div>
+
+                <motion.div
+                    style={{ x: image1X, y: image1Y }}
+                    className="absolute  w-[40%] bottom-[10%] left-[45%] rounded-2xl  border border-white/30 overflow-hidden "
+                >
+                    <Image src={"/assets/images/homepage/footer-cta-2.png"} alt="Image2"  width={313} height={272} loading="lazy"  className="w-full h-full object-cover" />
+                </motion.div>
+                {/* <div
                     
                     className="absolute w-[45%] top-[15%] left-[20%] rounded-2xl border border-white/30 overflow-hidden"
                 >
@@ -113,7 +126,7 @@ const FooterCTA = () => {
                     className="absolute  w-[40%] bottom-[10%] left-[45%] rounded-2xl  border border-white/30 overflow-hidden "
                 >
                     <Image src={"/assets/images/homepage/footer-cta-2.png"} alt="Image2"   width={313} height={272} className="w-full h-full object-cover" />
-                </div>
+                </div> */}
             </div>
         </div>
     )

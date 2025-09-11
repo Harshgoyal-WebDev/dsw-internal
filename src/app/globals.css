@@ -211,3 +211,32 @@ background: linear-gradient(90.17deg, rgba(255, 255, 255, 0.01) 0.01%, rgba(255,
   transform-origin: center;
   animation: connectripple 5s linear infinite;
 }
+
+@keyframes bounceAlpha {
+  0% {
+    opacity: 1;
+    transform: translateX(0px) scale(1);
+  }
+  25% {
+    opacity: 0;
+    transform: translateX(-10px) scale(0.9);
+  }
+  26% {
+    opacity: 0;
+    transform: translateX(10px) scale(0.9);
+  }
+  55% {
+    opacity: 1;
+    transform: translateX(0px) scale(1);
+  }
+}
+
+.round:hover .arrow {
+  animation-name: bounceAlpha;
+  animation-duration: 1.4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.round:hover .arrow.segunda {
+  animation-delay: 0.2s;
+}
