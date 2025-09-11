@@ -17,16 +17,16 @@ const BlogCard = ({ title, date, img }) => {
   return (
     <>
     <Link href={"#"}>
-      <div className='rounded-3xl group border-[0.25px] border-stone-600 pb-4 bg-white/5 space-y-8 overflow-hidden group cursor-pointer under-multi-parent'>
+      <div className='rounded-3xl group border-[0.25px] border-stone-600 pb-4 bg-white/5 space-y-8 overflow-hidden group cursor-pointer under-multi-parent max-sm:pb-0'>
         <div className='w-full h-full overflow-hidden rounded-3xl '>
-          <Image src={img} width={531} height={510} alt='blog-1' className='object-cover h-[20vw] w-[31vw] group-hover:scale-[1.1] transition-all duration-500 ease-out' />
+          <Image src={img} width={531} height={510} alt='blog-1' className='object-cover h-[20vw] w-[31vw] group-hover:scale-[1.1] transition-all duration-500 ease-out max-sm:w-full max-sm:h-[60vw]' />
         </div>
         <div className='space-y-5 px-5'>
           <p className=' font-medium text-[#E8E8E8] leading-[1.5]'>
             <span className='under-multi pb-0.5'>{title}</span></p>
-          <p className='text-[1.145vw] font-medium text-[#909090]'>{date}</p>
+          <p className='text-[1.145vw] font-medium text-[#909090] max-sm:text-[3vw]'>{date}</p>
         </div>
-         <div className="h-[3vw] w-[3vw] absolute top-6 right-6 bg-white/20 rounded-full group-hover:!bg-white group-hover:text-[#111111] transition-all duration-500 ease-out">
+         <div className="h-[3vw] w-[3vw] absolute top-6 right-6 bg-white/20 rounded-full group-hover:!bg-white group-hover:text-[#111111] transition-all duration-500 ease-out max-sm:h-[15vw] max-sm:w-[15vw]">
                                    <ArrowButton/>
                                    </div>
       </div>
@@ -65,27 +65,45 @@ const Blogs = () => {
     }
   };
   return (
-    <section ref={blogsRef} className='h-full w-screen py-20 my-30 relative'>
-      <div className='h-full w-full flex items-start justify-between pl-15'>
-        <div className='w-1/2 space-y-10'>
-          <h2 className='text-[5.2vw] leading-[1.2] w-[90%] headingAnim font-head text-white-200'>Stay Ahead with AI Insights</h2>
+    <section ref={blogsRef} className='h-full w-screen py-20 my-30 relative max-sm:px-[7vw] max-sm:py-[15vw]'>
+      <div className='h-full w-full flex items-start justify-between pl-15 max-sm:flex-col max-sm:pl-0'>
+        <div className='w-1/2 space-y-10 max-sm:w-full'>
+          <h2 className='title-2 leading-[1.2] w-[90%] headingAnim font-head text-white-200'>Stay Ahead with AI Insights</h2>
           <Copy>
-          <p className='text-[#CACACA] w-[72%] leading-[1.4]'>stay informed with expert insights, industry updates, and real-world use cases from UnifyAI. Whether you&apos;re looking for the latest in Generative AI, AI governance, or enterprise AI adoption, we&apos;ve got you covered.</p>
+          <p className='text-[#CACACA] w-[72%] leading-[1.4] max-sm:w-full'>stay informed with expert insights, industry updates, and real-world use cases from UnifyAI. Whether you&apos;re looking for the latest in Generative AI, AI governance, or enterprise AI adoption, we&apos;ve got you covered.</p>
           </Copy>
           <div className='fadeup'>
             <PrimaryButton text={"Know More"} href={"#"} />
           </div>
         </div>
-        <div className='w-[50%] text-white'>
+        <div className='w-[50%] text-white max-sm:w-full max-sm:mt-[10vw]'>
           <Swiper
             slidesPerView={1.8}
             className="mySwiper swiper-container"
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             spaceBetween={50}
             speed={1000}
+            breakpoints={{
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    640: {
+      slidesPerView: 1.2,
+      spaceBetween: 30,
+    },
+    1024: {
+      slidesPerView: 1.8,
+      spaceBetween: 40,
+    },
+    1440: {
+      slidesPerView: 2.5,
+      spaceBetween: 50,
+    },
+  }}
           >
             {BlogsData.map((blog) => (
-              <SwiperSlide className='w-[26vw] h-full pr-1'>
+              <SwiperSlide className='w-[26vw] h-full pr-1 max-sm:w-full'>
                 <BlogCard
                   key={blog.id}
                   title={blog.title}
@@ -96,7 +114,7 @@ const Blogs = () => {
             ))}
           </Swiper>
 
-          <div className='flex gap-6 mt-6'>
+          <div className='flex gap-6 mt-6 max-sm:mt-10 max-sm:items-center max-sm:justify-center'>
             <PreviousButton onClick={handlePrev} />
             <NextButton onClick={handleNext} />
           </div>

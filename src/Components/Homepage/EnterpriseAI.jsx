@@ -60,14 +60,14 @@ const EnterpriseAI = () => {
 
     <section
       id="enterpriseAI"
-      className="h-full w-screen py-[7vw] px-[5vw] relative overflow-hidden "
+      className="h-full w-screen py-[7vw] px-[5vw] relative overflow-hidden max-sm:px-[7vw] max-sm:py-[15vw]"
     >
       <div className="w-full h-full flex flex-col items-center justify-center relative z-[2] space-y-[5vw] ">
-        <div className="text-center  space-y-5 mt-10 flex flex-col items-center justify-center">
-          <h3 className="title-1 leading-[1.2] headingAnim text-[#1626FD] enterprise-title">
+        <div className="text-center  space-y-5 mt-10 flex flex-col items-center justify-center max-sm:text-left">
+          <h3 className="title-1 leading-[1.2] headingAnim text-[#1626FD] enterprise-title ">
             Built to Orchestrate Enterprise AI
           </h3>
-          <div className="w-[70%] flex justify-center text-[#111111] enterprise-content">
+          <div className="w-[70%] flex justify-center text-[#111111] enterprise-content max-sm:w-full">
             <Copy>
             <p>
               From insurance to banking, retail, and more - UnifyAI is the backbone for enterprises <br/> that want to build, deploy, and scale AI
@@ -77,14 +77,14 @@ const EnterpriseAI = () => {
           </div>
         </div>
 
-        <div className="w-full h-full flex relative items-center justify-center">
-          <div className="h-fit w-[20%] border border-[#59595980] background-glass rounded-[2vw] px-[2.5vw] py-[2.5vw] fadeup absolute left-[5%] top-[5%]">
+        <div className="w-full h-full flex relative items-center justify-center max-sm:static">
+          <div className="h-fit w-[20%] border border-[#59595980] background-glass rounded-[2vw] px-[2.5vw] py-[2.5vw] fadeup absolute left-[5%] top-[5%] max-sm:w-[90%] max-sm:top-[90%] max-sm:left-1/2  max-sm:-translate-x-1/2 max-sm:px-[5vw] max-sm:py-[6vw]">
             <p className="text-[#CACACA] leading-[1.5]">
               Your All-in-One Playground to Simplify and Accelerate End-to-End
               AI/ML Use Cases
             </p>
           </div>
-          <div className="h-[45vw] w-auto flex-1">
+          <div className="h-[45vw] w-auto flex-1 max-sm:h-[105vw]">
             <Image
               src={"/assets/images/homepage/enterprise-ai-shape.svg"}
               height={920}
@@ -93,7 +93,7 @@ const EnterpriseAI = () => {
               className="h-full w-full object-contain"
             />
           </div>
-          <div className="h-fit w-[20%] border border-[#59595980] background-glass rounded-[2vw] px-[2.5vw] py-[2.5vw] self-end ml-auto fadeup absolute bottom-[20%] right-[3%] ">
+          <div className="h-fit w-[20%] border border-[#59595980] background-glass rounded-[2vw] px-[2.5vw] py-[2.5vw] self-end ml-auto fadeup absolute bottom-[20%] right-[3%]  max-sm:w-[90%] max-sm:top-[120%] max-sm:left-1/2  max-sm:-translate-x-1/2 max-sm:right-[7%] max-sm:px-[5vw] max-sm:py-[6vw]">
             <p className="text-[#CACACA] leading-[1.5]">
               An In-built Playground for Rapid and Efficient GenAI Use Case
               Development
@@ -103,7 +103,7 @@ const EnterpriseAI = () => {
           <div>
             <div className="absolute top-[21%] left-[67%]">
               <Copy>
-                <p className="text-[#E8E8E8] text-[1vw]">Presentation Layer</p>
+                <p className="text-[#E8E8E8] text-[1vw] max-sm:text-[3.5vw]">Presentation Layer</p>
               </Copy>
             </div>
             <div className="absolute top-[32%] left-[67%]">

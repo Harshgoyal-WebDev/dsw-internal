@@ -69,18 +69,10 @@ const Connects = () => {
   return (
     <section
       ref={sectionRef}
-      className="h-screen w-screen py-[7vw] px-[5vw] relative overflow-hidden"
+      className="h-screen w-screen py-[7vw] px-[5vw] relative overflow-hidden max-sm:px-[7vw] max-sm:py-[15vw] max-sm:h-full"
     >
       <div className="w-full h-full flex flex-col items-center justify-center relative z-[2]">
-        {/* <div className="text-center w-[40%] space-y-5 mt-10">
-          <h3 className="text-[5.2vw] leading-[1.2] headingAnim text-white-200">
-            Connects with Your Platform
-          </h3>
-          <p data-para-anim className="text-[1.145vw] text-[#CACACA]">
-            UnifyAI connects with the platforms you already use.
-          </p>
-        </div> */}
-        <div className="w-full flex items-center justify-center gap-20 py-20">
+        <div className="w-full flex items-center justify-center gap-20 py-20 max-sm:flex-col max-sm:gap-25">
           <div>
             <Image
               src="/assets/images/azure-logo.png"
@@ -109,14 +101,14 @@ const Connects = () => {
             />
           </div>
           <div
-            className="relative flex items-center justify-center w-[20vw] h-[20vw] "
+            className="relative flex items-center justify-center w-[20vw] h-[20vw] max-sm:h-[30vw] max-sm:w-[30vw] max-sm:mb-[5vw]"
           >
             <div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#202530] h-[15vw] w-[15vw] z-[-1] origin-center"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#202530] h-[15vw] w-[15vw] z-[-1] origin-center max-sm:h-[40vw] max-sm:w-[40vw]"
               ref={circle1}
             />
             <div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#121723] h-[20vw] w-[20vw] z-[-2] origin-center"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#121723] h-[20vw] w-[20vw] z-[-2] origin-center max-sm:h-[60vw] max-sm:w-[60vw]"
               ref={circle2}
             />
             <Image
