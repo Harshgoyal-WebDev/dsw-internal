@@ -21,7 +21,7 @@ const Loader = () => {
         }).to(
           ".number-container",
           {
-            xPercent: i * 20,
+            xPercent: i * 19.9,
             duration: 1,
             ease: "power3.inOut",
           },
@@ -61,8 +61,8 @@ const Loader = () => {
     >
 
       <div className="w-fit h-fit flex sequence-container relative z-[2] font-head font-medium">
-        <div className="flex w-[9.5vw] overflow-hidden">
-          <div className="flex w-fit translate-x-[-80%] number-container">
+        <div className="flex w-[10vw] overflow-hidden">
+          <div className="flex w-fit translate-x-[-79%] number-container gap-[0.2vw]">
             <span>9</span>
             <span>7</span>
             <span>5</span>
@@ -71,8 +71,8 @@ const Loader = () => {
           </div>
         </div>
 
-        <div className="flex w-[9.5vw] overflow-hidden">
-          <div className="flex w-fit translate-x-[-80%] number-container">
+        <div className="flex w-[10vw] overflow-hidden">
+          <div className="flex w-fit translate-x-[-79%] number-container gap-[0.2vw]">
             <span>9</span>
             <span>7</span>
             <span>9</span>
