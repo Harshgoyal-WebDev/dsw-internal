@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { SITE_CONFIG } from "@/constants/siteConfig";
-import siteLogo from "../../../public/dsw-logo.png";
 
 // Reusable Logo Component
 export const Logo = ({ 
@@ -14,7 +13,7 @@ export const Logo = ({
   const variants = {
     default: "w-[8vw] h-[5vw] object-contain",
     footer: "w-[15vw] max-sm:w-auto max-sm:h-[30vw]",
-    header: "w-[8vw] h-[5vw] object-contain max-sm:w-[25vw] max-sm:h-auto",
+    header: "w-[8vw] h-auto object-contain max-sm:w-[25vw] max-sm:h-auto",
     mobile: "w-[25vw] h-auto object-contain"
   };
 
@@ -33,8 +32,7 @@ export const Logo = ({
   return (
     <Link href={href} className={className}>
       <Image
-        src={siteLogo}
-        placeholder="blur"
+        src={SITE_CONFIG.logo}
         width={width || dimensions.width}
         height={height || dimensions.height}
         alt={`${SITE_CONFIG.name} logo`}
