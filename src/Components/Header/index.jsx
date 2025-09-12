@@ -77,7 +77,7 @@ const Header = () => {
         <div className={`flex items-center justify-between px-[4vw] py-6 w-full transition-transform duration-500 pointer-events-auto max-sm:px-[7vw] max-sm:bg-stone-900/30 max-sm:backdrop-blur-sm ${isHidden ? "-translate-y-full" : "translate-y-0"}`} ref={headerRef}>
           <Logo variant="header" className="dsw-logo" />
           <div className="border rounded-full bg-stone-900/30 backdrop-blur-sm border-white/20 ml-[4vw] max-sm:hidden">
-            <ul className="flex items-center justify-between px-[2.5vw] py-[1.5vw] gap-[1.5vw] text-[1.145vw]">
+            <ul className="flex items-center justify-between px-[2.5vw] py-[1.5vw] gap-[2.5vw] text-[1.145vw]">
               {NAVIGATION.map((link) => (
                 <li key={link.id} className="text-[#E8E8E8]">
                   <NavigationLink
