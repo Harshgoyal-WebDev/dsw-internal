@@ -4,30 +4,25 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import React, { useEffect, useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import { SplitText } from "gsap/SplitText";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export default function Clients() {
   const container = useRef(null);
   const gridRef = useRef(null);
-  useGSAP(
-    () => {
-      // const ctx = gsap.context(() => {
-      const grid = gridRef.current;
-      const gridItems = grid.querySelectorAll(".grid__item");
-
-      const timeline = gsap.timeline({
-        defaults: { ease: "none" },
-        scrollTrigger: {
-          trigger: container.current,
-          start: "top 10%",
-          end: "bottom top",
-          scrub: true,
-          // markers:true,
-        },
-      });
-    if(globalThis.innerWidth>1024){
+  useGSAP(() => {
+    const grid = gridRef.current;
+    const gridItems = grid.querySelectorAll(".grid__item");
+    const timeline = gsap.timeline({
+      defaults: { ease: "none" },
+      scrollTrigger: {
+        trigger: container.current,
+        start: "top 10%",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+    if (globalThis.innerWidth > 1024) {
       gsap.set(gridItems, {
         transformOrigin: "0% 0%",
         opacity: 0,
@@ -38,8 +33,8 @@ export default function Clients() {
       });
 
     }
-    else{
-        gsap.set(gridItems, {
+    else {
+      gsap.set(gridItems, {
         transformOrigin: "0% 0%",
         opacity: 0,
         x: () => gsap.utils.random(-100, 100),
@@ -47,33 +42,32 @@ export default function Clients() {
         filter: "blur(5px)",
         z: () => gsap.utils.random(4000, 3000),
       });
-
-
     }
 
-      gridItems.forEach((item, index) =>
-        timeline
-          .to(item, {
-            z: 0,
-            opacity: 1,
-            filter: "blur(0px)",
-            duration: 1.5,
-            delay: index * -0.8,
-          })
-          .to(
-            item,
-            {
-              filter: "blur(5px)",
-              opacity: 0,
-              z: -2000,
-              duration: 3.5,
-            },
-            ">"
-          )
-      );
-    },
+    gridItems.forEach((item, index) =>
+      timeline
+        .to(item, {
+          z: 0,
+          opacity: 1,
+          filter: "blur(0px)",
+          duration: 1.5,
+          delay: index * -0.8,
+        })
+        .to(
+          item,
+          {
+            filter: "blur(5px)",
+            opacity: 0,
+            z: -2000,
+            duration: 3.5,
+          },
+          ">"
+        )
+    );
+  },
     { scope: container.current }
   );
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.to("#solution-clients,#solution-industries", {
@@ -83,56 +77,52 @@ export default function Clients() {
           end: "bottom 50%",
         },
       });
-      
+
     });
     return () => ctx.revert();
   }, []);
+
   return (
     <>
-     <section
-             ref={container}
-             id="clientblur"
-             className="relative w-screen h-[400vh]  text-center"
-           >
-             <div className="sticky w-full top-0 h-screen flex items-center justify-center">
-               <h3 className="title-2 w-[40%] max-sm:text-[11vw] max-sm:w-[90%] text-[#E8E8E8] headingAnim">
-                 Trusted by Innovators, Built for Industry Disruptors.
-               </h3>
-             </div>
-             <div className="left-0 sticky mt-[-100vh] top-0 z-20 h-screen w-screen overflow-hidden flex items-center justify-center">
-               <div
-                 ref={gridRef}
-                 className="grid grid-cols-5 gap-[1vw] perspective-[5000px]"
-               >
-                 {logos.map((item, index) => (
-                   <div key={index} className="grid__item">
-                     <Image
-                       className="w-[14vw] h-auto max-sm:scale-[3]"
-                       src={item}
-                       alt="client-logo"
-                       width={200}
-                       height={100}
-                       quality={90}
-                     />
-                   </div>
-                 ))}
-               </div>
-             </div>
-           </section>
+      <section
+        ref={container}
+        id="clientblur"
+        className="relative w-screen h-[400vh] text-center"
+      >
+        <div className="sticky w-full top-0 h-screen flex items-center justify-center">
+          <h3 className="title-2 w-[40%] max-sm:text-[11vw] max-sm:w-[90%] text-[#E8E8E8] headingAnim">
+            Trusted by Innovators, Built for Industry Disruptors.
+          </h3>
+        </div>
+        <div className="left-0 sticky mt-[-100vh] top-0 z-20 h-screen w-screen overflow-hidden flex items-center justify-center">
+          <div
+            ref={gridRef}
+            className="grid grid-cols-4 gap-[1vw] perspective-[5000px]"
+          >
+            {logos.map((item, index) => (
+              <div key={index} className="grid__item">
+                <Image
+                  className="w-[20vw] h-auto max-sm:scale-[3] brightness-200"
+                  src={item}
+                  alt="client-logo"
+                  width={200}
+                  height={100}
+                  quality={90}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }
 
 const logos = [
-
-  "/assets/images/manipal.png",
-  "/assets/images/edgeverve.png",
-  "/assets/images/sodexo.png",
-  "/assets/images/canara.png",
-  "/assets/images/bon-prix.png",
-  "/assets/images/ciek.png",
-  "/assets/images/manipal.png",
-  "/assets/images/edgeverve.png",
- 
-
+  "/assets/images/clients/manipal-cigna.png",
+  "/assets/images/clients/edgeverve.png",
+  "/assets/images/clients/sodexo.png",
+  "/assets/images/clients/canara-hsbc.png",
+  "/assets/images/clients/bonprix.png",
+  "/assets/images/clients/ciek.png",
 ];
