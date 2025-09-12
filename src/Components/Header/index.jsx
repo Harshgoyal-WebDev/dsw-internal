@@ -96,12 +96,12 @@ const Header = () => {
               setOpenMobileMenu((prev) => !prev);
             }}>
               <div className={`w-full h-[2.5px] rounded-full line-1 transition-all duration-500 origin-center ham-mobile bg-gradient-to-r from-[#F16B0D] to-[#E61216] ${openMobileMenu
-                  ? "rotate-45 max-sm:translate-y-[7px] max-md:translate-y-[10px] !bg-primary"
+                  ? " !bg-primary"
                   : "bg-primary"
                 }`} />
-              <div className={`w-full h-[2.5px] bg-primary rounded-full line-2 transition-all duration-500 ham-mobile bg-gradient-to-r from-[#F16B0D] to-[#E61216] ${openMobileMenu ? "opacity-0 bg-white" : "bg-primary"}`} />
+              <div className={`w-full h-[2.5px] bg-primary rounded-full line-2 transition-all duration-500 ham-mobile bg-gradient-to-r from-[#F16B0D] to-[#E61216] ${openMobileMenu ? "" : "bg-primary"}`} />
               <div className={`w-full h-[2.5px] bg-primary rounded-full line-3 transition-all duration-500 origin-center ham-mobile bg-gradient-to-r from-[#F16B0D] to-[#E61216] ${openMobileMenu
-                  ? "-rotate-45 max-sm:-translate-y-[6px] max-md:-translate-y-[10px] !bg-primary"
+                  ? " !bg-primary"
                   : "bg-primary"
                 }`} />
             </div>
