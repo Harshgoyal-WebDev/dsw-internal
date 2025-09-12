@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { useEffect, useRef } from 'react';
 import { ReactLenis } from 'lenis/react';
 
-const LenisSmoothScroll = ({ children }) => {
+const LenisSmoothScroll = () => {
   const lenisRef = useRef(null);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const LenisSmoothScroll = ({ children }) => {
     return () => gsap.ticker.remove(update)
   }, []);
 
-  return <ReactLenis root options={{ autoRaf: false }} ref={lenisRef}>{children}</ReactLenis>
+  return <ReactLenis root options={{ autoRaf: false }} ref={lenisRef} />
 }
 
 export default LenisSmoothScroll;

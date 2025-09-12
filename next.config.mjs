@@ -88,6 +88,7 @@ const nextConfig = {
   images: {
     formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 31536000, // 1 year
+    qualities: [75, 90, 100], // Support quality levels used in the app
   },
   
   // Compression

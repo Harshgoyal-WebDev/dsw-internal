@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://datasciencewizards.ai/sitemap.xml
+Sitemap: https://dsw-internal.vercel.app/sitemap.xml
 
 # Disallow crawling of admin or private areas (if any)
 # Disallow: /admin

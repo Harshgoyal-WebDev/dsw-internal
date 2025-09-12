@@ -112,7 +112,7 @@ export default function Clients() {
                        alt="client-logo"
                        width={200}
                        height={100}
-                       quality={100}
+                       quality={90}
                      />
                    </div>
                  ))}

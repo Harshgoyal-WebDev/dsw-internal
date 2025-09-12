@@ -1,6 +1,6 @@
 // Next.js Metadata Configuration
 export const siteMetadata = {
-  metadataBase: new URL('https://datasciencewizards.ai'),
+  metadataBase: new URL('https://dsw-internal.vercel.app'),
   title: "DSW UnifyAI – Enterprise AI Platform for Insurance",
   description: "Launch AI use cases in days and GenAI in hours with DSW UnifyAI - insurance-domain trained, compliant, scalable, and vendor-lock-in free.",
   applicationName: "Data Science Wizards UnifyAI",
@@ -48,7 +48,7 @@ export const siteMetadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://datasciencewizards.ai",
+    url: "https://dsw-internal.vercel.app",
     siteName: "Data Science Wizards UnifyAI",
     title: "DSW UnifyAI – Enterprise AI Platform for Insurance",
     description: "Launch AI use cases in days and GenAI in hours with DSW UnifyAI - insurance-domain trained, compliant, scalable, and vendor-lock-in free.",
@@ -70,13 +70,9 @@ export const siteMetadata = {
     images: ["/assets/seo/homepage-og.jpg"],
   },
 
-  // Additional meta tags
+  // Additional meta tags (removing duplicates that are already covered by appleWebApp)
   other: {
     "mobile-web-app-capable": "yes",
-    "apple-mobile-web-app-capable": "yes",
-    "apple-mobile-web-app-status-bar-style": "black-translucent",
-    "apple-mobile-web-app-title": "Data Science Wizards UnifyAI",
-    "application-name": "Data Science Wizards UnifyAI",
     "msapplication-TileColor": "#030815",
     "msapplication-config": "/favicons/browserconfig.xml",
   },
