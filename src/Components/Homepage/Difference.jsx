@@ -36,7 +36,7 @@ const useStackedCardsAnimation = (triggerRef, cardsRef, options = {}) => {
 
     const tl = gsap.timeline({
       defaults: {
-        ease: 'none',
+        ease: 'power2.out',
       },
       scrollTrigger: {
         trigger: triggerRef.current,
@@ -118,19 +118,19 @@ const Difference = () => {
                 Traditional AI Platforms
               </h3>
               <div className="w-full flex-col flex gap-[0.5vw] max-sm:gap-[3vw]" ref={cardsRef1}>
-                <div className="stacked-card w-full text-[#cacaca] text-center h-[10.5vh] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start ">
+                <div className="stacked-card w-full text-[#cacaca] text-center h-[10.5vh] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px] fadeup">
                   Generic, one-size-fits-all 
                 </div>
-                <div className="stacked-card w-full text-[#cacaca] text-center h-[10.5vh] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start">
+                <div className="stacked-card w-full text-[#cacaca] text-center h-[10.5vh] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px]">
                   Long time to deploy 
                 </div>
-                <div className="stacked-card w-full text-[#cacaca] text-center h-[10.5vh] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start">
+                <div className="stacked-card w-full text-[#cacaca] text-center h-[10.5vh] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px]">
                   Retrofitted Compliance 
                 </div>
-                <div className="stacked-card w-full text-[#cacaca] text-center h-[10.5vh] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start">
+                <div className="stacked-card w-full text-[#cacaca] text-center h-[10.5vh] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px]">
                   Scattered stack
                 </div>
-                <div className="stacked-card w-full text-[#cacaca] text-center h-[10.5vh] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start">
+                <div className="stacked-card w-full text-[#cacaca] text-center h-[10.5vh] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px]">
                   High cost - every use case starts from scratch
                 </div>
               </div>
@@ -140,19 +140,19 @@ const Difference = () => {
                 InsurAInce
               </h3>
               <div className="w-full flex-col flex gap-[0.5vw] max-sm:gap-[3vw]">
-                <div className="stacked-card w-full text-[#cacaca] text-center h-[10.5vh] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start">
+                <div className="stacked-card w-full text-[#cacaca] text-center h-[10.5vh] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px]  fadeup">
                   Insurance-first, domain-trained 
                 </div>
-                <div className=" stacked-card w-full text-[#cacaca] text-center h-[10.5vh] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start">
+                <div className=" stacked-card w-full text-[#cacaca] text-center h-[10.5vh] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px]">
                   30 days or less for AI, hours for GenAI 
                 </div>
-                <div className="stacked-card w-full text-[#cacaca] text-center h-[10.5vh] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start">
+                <div className="stacked-card w-full text-[#cacaca] text-center h-[10.5vh] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px]">
                   Built-in Compliance (SOC 2, ISO, HIPAA, GDPR compliant) ​
                 </div>
-                <div className="stacked-card w-full text-[#cacaca] text-center h-[10.5vh] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start">
+                <div className="stacked-card w-full text-[#cacaca] text-center h-[10.5vh] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px]">
                   Unified AI platform, no vendor lock-in  
                 </div>
-                <div className="stacked-card w-full text-[#cacaca] text-center h-[10.5vh] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start">
+                <div className="stacked-card w-full text-[#cacaca] text-center h-[10.5vh] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px]">
                   Pipelines, features, and models are reused intelligently –
                   reducing cost with every use case 
                 </div>
@@ -167,7 +167,7 @@ const Difference = () => {
         </Suspense>
       </div>
       <div className="w-screen h-screen absolute top-0 z-[10] left-0 hidden max-sm:block">
-        <Image src={"/assets/images/homepage/gradient-mobile.png"} alt="bg-gradient" className="w-full h-full object-cover" width={600} height={1080}/>
+        <Image src={"/assets/images/homepage/gradient-mobile.png"} alt="shader-bg-mobile" className="w-full h-full object-cover" width={600} height={1080}/>
       </div>
     </section>
   );

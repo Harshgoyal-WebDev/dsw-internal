@@ -104,8 +104,8 @@ title,para,link,isOpen, onToggle
              <div
               className={`max-sm:w-[13vw] max-sm:h-[12vw] relative flex items-center justify-center max-sm:rounded-[3vw] transition-all duration-500 max-md:w-[9vw] max-md:h-[8vw] max-md:rounded-[1.5vw] rotate-45`}
             >
-              <span className={` absolute block  w-[1.5px] max-sm:h-[5.5vw] transition-all duration-500 max-md:h-[4vw] rotate-45 bg-[#DADADA]`} />
-              <span className={` absolute block  w-[1.5px] max-sm:h-[5.5vw] transition-all duration-500 max-md:h-[4vw] ${isOpen ? "rotate-[45deg] bg-[#DADADA]" : "rotate-[135deg] bg-[#DADADA]"}`} />
+              <span className={` absolute block  w-[1.5px] max-sm:h-[5.5vw] transition-all duration-500 max-md:h-[4vw] rotate-45 bg-[#848484]`} />
+              <span className={` absolute block  w-[1.5px] max-sm:h-[5.5vw] transition-all duration-500 max-md:h-[4vw] ${isOpen ? "rotate-[45deg] bg-[#848484]" : "rotate-[135deg] bg-[#848484]"}`} />
             </div>
           </div>
         </button>
@@ -131,7 +131,7 @@ title,para,link,isOpen, onToggle
                                   height={390}
                                   width={382}
                                   className="h-[14vw] w-[16vw] object-contain max-sm:h-[35vw] max-sm:w-[40vw]"
-                                  alt="why unify image 1"
+                                  alt="unify-ai-graph"
                                 />
                               </div>
                               <div className="rounded-2xl overflow-hidden h-fit w-fit ml-[25vw]">
@@ -140,7 +140,7 @@ title,para,link,isOpen, onToggle
                                   height={247}
                                   width={283}
                                   className="h-[13vw] w-[15vw] object-contain max-sm:h-[35vw] max-sm:w-[40vw]"
-                                  alt="dashboard"
+                                  alt="unify-ai-dashboard"
                                 />
                               </div>
                             </div>

@@ -61,8 +61,8 @@ export default SuccessStories
 const LinkCard = ({ title, link, width }) => {
     return (
         <>
-            <SpotlightCard>
-                <Link href={link}>
+            <SpotlightCard className='fadeup'>
+                <Link href={link} >
                     <div className='h-[20vw] group w-full background-glass cursor-pointer pl-[2.5vw] pr-[1.5vw] pb-[2.5vw] pt-[1.5vw] max-sm:h-[55vw] max-sm:pl-[5vw] max-sm:pb-[5vw] max-sm:pr-[3vw] max-sm:pt-[3vw]'>
                         <div className="h-full w-full flex z-[10] relative">
 
@@ -87,9 +87,9 @@ const LinkCard = ({ title, link, width }) => {
 const ImageCard = ({ img }) => {
     return (
         <>
-            <div className='h-[20vw] w-full rounded-[2vw] border-[0.82px] border-[#88888880] background-glass overflow-hidden group transition-all duration-500 ease-linear max-sm:h-[55vw] max-sm:rounded-[5vw]'>
+            <div className='h-[20vw] w-full rounded-[2vw] border-[0.82px] border-[#88888880] background-glass overflow-hidden group transition-all duration-500 ease-linear max-sm:h-[55vw] max-sm:rounded-[5vw] fadeup'>
                 <div className='w-full h-full '>
-                    <Image src={img} height={459} width={568} alt='success- stories' className='object-cover h-full w-full scale-[1.05] group-hover:scale-[1] transition-all duration-300 ease' />
+                    <Image src={img} height={459} width={568} alt='success-stories-placeholder-img' className='object-cover h-full w-full scale-[1.05] group-hover:scale-[1] transition-all duration-300 ease' />
                 </div>
             </div>
         </>
@@ -99,15 +99,15 @@ const ImageCard = ({ img }) => {
 const TestimonialCard = ({ message, img, name, designation }) => {
     return (
         <>
-            <SpotlightCard>
-                <div className='h-[20vw] w-full  background-glass px-[2vw] py-[2vw] max-sm:h-[85vw] max-sm:px-[7vw] max-sm:py-[8vw]'>
+            <SpotlightCard className='fadeup'>
+                <div className='h-[20vw] w-full  background-glass px-[2vw] py-[2vw] max-sm:h-[85vw] max-sm:px-[7vw] max-sm:py-[8vw] '>
                     <div className='w-full h-full flex flex-col justify-between z-[10] relative'>
                         <div>
                             <p className='text-[#E8E8E8]'>{message}</p>
                         </div>
                         <div className='flex items-center justify-center gap-[1vw] max-sm:gap-[5vw]'>
                             <div className='h-[5vw] w-[5vw] rounded-full overflow-hidden relative max-sm:h-[20vw] max-sm:w-[20vw]'>
-                                <Image src={img} fill alt='ritesh rathod' className='h-full w-full object-cover' />
+                                <Image src={img} fill alt={name} className='h-full w-full object-cover' />
                             </div>
                             <div className='w-[78%] space-y-[0.3vw] max-sm:w-[70%]'>
                                 <p className='!font-display text-[1.565vw] text-[#E8E8E8] max-sm:text-[5.5vw]'>{name}</p>

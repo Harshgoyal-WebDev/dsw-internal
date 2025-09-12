@@ -331,7 +331,7 @@ const WhyUnify = () => {
                   height={390}
                   width={382}
                   className="h-[14vw] w-[16vw] object-cover"
-                  alt="why unify image 1"
+                  alt="unify-ai-graph"
                 />
               </div>
               <div className="rounded-2xl overflow-hidden h-fit w-fit ml-[7vw]">
@@ -340,7 +340,7 @@ const WhyUnify = () => {
                   height={247}
                   width={283}
                   className="h-[13vw] w-[15vw] object-cover"
-                  alt="dashboard"
+                  alt="unify-ai-dashboard"
                 />
               </div>
             </div>
@@ -426,7 +426,7 @@ const WhyUnify = () => {
             </div>
           </div>
 
-          <div className="mt-10 flex justify-center absolute right-10 bottom-50">
+          <div className="mt-10 flex justify-center absolute right-10 bottom-50 fadeup">
             <button
               className="round px-6 py-2 rounded-full flex items-center cursor-pointer gap-2 text-black font-light hover:scale-95 text-[1vw] transition duration-500"
               onClick={handleSkip}

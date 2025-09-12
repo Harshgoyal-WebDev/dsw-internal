@@ -254,7 +254,7 @@ background: linear-gradient(90.17deg, rgba(255, 255, 255, 0.01) 0.01%, rgba(255,
     100% 100%,
     0 100%;
   background-repeat: no-repeat, no-repeat;
-  transition: all 1s ease-out;
+  transition: all 0.5s ease-out;
 }
 
 .under-multi-parent:hover .under-multi {

@@ -134,7 +134,7 @@ const TurbochargeG = () => {
               width={1500}
               height={900}
               className="w-full h-full object-contain base-img"
-              alt="base"
+              alt="unify-ai-dashboard-base"
             />
 
             {/* Dashboard Image with perspective */}
@@ -144,7 +144,7 @@ const TurbochargeG = () => {
                 width={120}
                 height={900}
                 className="w-full h-full object-contain"
-                alt="dashboard"
+                alt="unify-ai-dashboard"
               />
             </div>
 
@@ -155,7 +155,7 @@ const TurbochargeG = () => {
                 width={500}
                 height={800}
                 className="w-full h-full object-contain"
-                alt="graph"
+                alt="unify-ai-dashboard-graph"
               />
             </div>
 
@@ -166,7 +166,7 @@ const TurbochargeG = () => {
                 width={500}
                 height={900}
                 className="w-full h-full object-contain"
-                alt="details"
+                alt="unify-ai-dashboard-details"
               />
             </div>
 
@@ -177,11 +177,11 @@ const TurbochargeG = () => {
                 width={200}
                 height={700}
                 className="w-[19vw] h-[35vw] object-contain"
-                alt="ratings"
+                alt="unify-ai-dashboard-ratings"
               />
             </div>
           </div>
-          <Image src={"/assets/images/homepage/dashboard-mob.png"} alt="dashboard-mobile" className="w-full h-full object-cover fadeup hidden max-sm:block" width={600} height={400}/>
+          <Image src={"/assets/images/homepage/dashboard-mob.png"} alt="unify-ai-dashboard-mobile" className="w-full h-full object-cover fadeup hidden max-sm:block" width={600} height={400}/>
 
         
         </div>

@@ -6,12 +6,28 @@ import Logo from "../UI/Logo";
 import { NAVIGATION, CTA_BUTTONS } from "@/constants/siteConfig";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import { usePathname } from "next/navigation";
+import { useLenis } from "lenis/react";
+
 gsap.registerPlugin(ScrollTrigger);
+
+
 const Header = () => {
   const [isHidden, setIsHidden] = useState(false);
   const [unify , setUnify] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const headerRef = useRef();
+    const lenis = useLenis();
+  const pathname = usePathname();
+
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+
+    if (lenis) {
+      lenis.scrollTo(0, { immediate: true });
+    }
+  }, [lenis, pathname]);
   
   useEffect(() => {
     const handleScroll = () => {
@@ -104,7 +120,7 @@ const Header = () => {
             />
           </div>
         </div> */}
-        <div className={`flex items-center justify-between py-6 px-12 w-screen transition-transform duration-500 pointer-events-auto max-sm:px-[7vw] max-sm:w-screen ${isHidden ? "-translate-y-full" : "translate-y-0"}`} ref={headerRef}>
+        <div className={`flex items-center justify-between py-6 px-12 w-screen transition-transform duration-500 pointer-events-auto max-sm:px-[7vw] max-sm:w-screen max-sm:bg-stone-900/30 max-sm:backdrop-blur-sm ${isHidden ? "-translate-y-full" : "translate-y-0"}`} ref={headerRef}>
   <Logo variant="header" className="dsw-logo max-sm:!w-[25vw] max-sm:h-auto" />
 
 

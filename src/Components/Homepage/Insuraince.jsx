@@ -151,21 +151,21 @@ const content = [
   {
     title: "Built with Insurance DNA​",
     desc: "25+ proven AI use cases and 300+ ready-to-deploy GenAI agents.​",
-    icon: "/assets/images/homepage/insuraince-icon-1.svg",
+    icon: "/assets/icons/insurance-dna-icon.svg",
   },
   {
     title: "One Platform, Infinite Use Cases ​",
     desc: "Go live with your insurance AI/ML use cases in days and GenAI in just a few hours!​",
-    icon: "/assets/images/homepage/insuraince-icon-2.svg",
+    icon: "/assets/icons/one-platform-icon.svg",
   },
   {
     title: "Fast-Track Your AI Rollout​",
     desc: "A single, intuitive platform with in-built tools to drive cost efficiency, predictability, and scalable AI delivery.​",
-    icon: "/assets/images/homepage/insuraince-icon-3.svg",
+    icon: "/assets/icons/fast-track-icon.svg",
   },
   {
     title: "Flexible Deployment, Zero Vendor Lock-In​",
     desc: "Deploy on-prem or any cloud — with seamless integration into your existing infrastructure.​",
-    icon: "/assets/images/homepage/insuraince-icon-4.svg",
+    icon: "/assets/icons/flexible-deployment-icon.svg",
   },
 ];

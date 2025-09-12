@@ -19,7 +19,7 @@ const BlogCard = ({ title, date, img }) => {
     <Link href={"#"}>
       <div className='rounded-3xl group border-[0.25px] border-stone-600 pb-4 bg-white/5 space-y-8 overflow-hidden group cursor-pointer under-multi-parent max-sm:pb-0'>
         <div className='w-full h-full overflow-hidden rounded-3xl '>
-          <Image src={img} width={531} height={510} alt='blog-1' className='object-cover h-[20vw] w-[31vw] group-hover:scale-[1.1] transition-all duration-500 ease-out max-sm:w-full max-sm:h-[60vw]' />
+          <Image src={img} width={531} height={510} alt={title} className='object-cover h-[20vw] w-[31vw] group-hover:scale-[1.1] transition-all duration-500 ease-out max-sm:w-full max-sm:h-[60vw]' />
         </div>
         <div className='space-y-5 px-5'>
           <p className=' font-medium text-[#E8E8E8] leading-[1.5]'>
@@ -47,7 +47,9 @@ const Blogs = () => {
         ease: 'power3.out',
         scrollTrigger: {
           trigger: blogsRef.current,
-          start: 'top 80%',
+          start: '10% 80%',
+          // markers:true,
+          // scrub:true
         },
       });
     }

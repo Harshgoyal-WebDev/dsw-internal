@@ -109,7 +109,7 @@ export default function Clients() {
                      <Image
                        className="w-[14vw] h-auto max-sm:scale-[3]"
                        src={item}
-                       alt={item}
+                       alt="client-logo"
                        width={200}
                        height={100}
                        quality={100}
