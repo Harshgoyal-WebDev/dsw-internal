@@ -159,7 +159,7 @@ const BrochureCard = ({ title, list, listTitle }) => {
               {title}
 
             </h3>
-            <h4 className="text-[9vw] mt-[7vw]">
+            <h4 className="text-[9vw] mt-[7vw] max-sm:mb-[4vw]">
             {listTitle}
             </h4>
             <ul className="space-y-[1vw] list-disc pl-[5vw]">

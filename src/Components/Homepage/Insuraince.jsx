@@ -132,7 +132,7 @@ const Card = ({ data, spanRef }) => {
           alt={data.title}
           className="w-[5vw] h-[5vw] object-contain max-sm:w-[20vw] max-sm:h-[20vw]"
         />
-        <h4 className="text-[2vw] text-white-200 leading-[1.25] max-sm:text-[7.5vw] max-sm:w-[70%] max-sm:text-center">
+        <h4 className="text-[2vw] text-white-200 leading-[1.25] max-sm:text-[7.5vw] max-sm:w-[72%] max-sm:text-center max-sm:h-fit">
           {data.title}
         </h4>
         <p className="text-white-300 content-p h-28 max-sm:w-[80%] max-sm:text-center max-sm:h-auto">{data.desc}</p>

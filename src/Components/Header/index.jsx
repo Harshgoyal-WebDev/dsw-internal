@@ -70,6 +70,7 @@ const Header = () => {
 
   return (
     <>
+    <div className="w-screen overflow-hidden h-screen fixed top-0 z-[900] pointer-events-none">
       <motion.header
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -115,12 +116,15 @@ const Header = () => {
           </div>
         </div>
       </motion.header>
+      
             <MobileMenu
               openMobileMenu={openMobileMenu}
               setOpenMobileMenu={setOpenMobileMenu}
               lenis={lenis}
               pathname={pathname}
             />
+
+    </div>
     </>
   );
 };

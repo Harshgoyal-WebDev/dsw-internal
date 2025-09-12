@@ -72,7 +72,7 @@ function AccordionItem({ question, answer, isOpen, onToggle }) {
               </h4>
               <div
             //   style={{ transitionTimingFunction: "cubic-bezier(0.625, 0.05, 0, 1)" }}
-                className={` h-auto relative duration-500 max-sm:w-[15vw] rounded-full border-[1.5px]  p-[2vw]  transition-all  ease-out max-sm:p-[7vw] ${ isOpen ? "border-[#030815] bg-gradient-to-br from-[#F16B0D] to-[#E61216]" :" background-glass border-[#88888880]"}`}
+                className={` h-auto relative duration-500 max-sm:w-[12vw] rounded-full border-[1.5px]  p-[2vw]  transition-all  ease-out max-sm:p-[6vw] ${ isOpen ? "border-[#030815] bg-gradient-to-br from-[#F16B0D] to-[#E61216]" :" background-glass border-[#88888880]"}`}
               >
                 <span className={`w-[1.5vw] rounded-full h-[2px] bg-[#ffffff] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-300 transform-origin-center max-sm:w-[5vw] max-sm:h-[1.5px] ${
                     isOpen ? "rotate-0" : "-rotate-90"

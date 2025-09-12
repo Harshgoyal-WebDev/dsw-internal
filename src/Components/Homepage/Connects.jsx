@@ -73,14 +73,14 @@ const Connects = () => {
       className="h-screen w-screen py-[7vw] px-[5vw] relative overflow-hidden max-sm:px-[7vw] max-sm:py-[15vw] max-sm:h-full"
     >
       <div className="w-full h-full flex flex-col items-center justify-center relative z-[2]">
-        <div className="w-full flex items-center justify-center gap-20 py-20 max-sm:flex-col max-sm:gap-25">
+        <div className="w-full flex items-center justify-center gap-20 py-20 max-sm:flex-col max-sm:gap-[20vw]">
           <div>
             <Image
               src="/assets/icons/azure-logo.svg"
               height={49}
               width={171}
               alt="azure-logo"
-              className="fadein"
+              className="fadein max-sm:w-[40vw]"
             />
           </div>
           <div>
@@ -89,7 +89,7 @@ const Connects = () => {
               height={51}
               width={131}
               alt="intel-logo"
-              className="fadein"
+              className="fadein max-sm:w-[30vw]"
             />
           </div>
           <div>
@@ -98,7 +98,7 @@ const Connects = () => {
               height={136}
               width={136}
               alt="IBM-logo"
-              className="fadein"
+              className="fadein max-sm:w-[30vw] max-sm:mt-[-8vw]"
             />
           </div>
           <div
@@ -127,7 +127,7 @@ const Connects = () => {
               height={68}
               width={183}
               alt="amazon-logo"
-              className="fadein"
+              className="fadein max-sm:w-[40vw] max-sm:mt-[5vw]"
             />
           </div>
           <div>
@@ -136,7 +136,7 @@ const Connects = () => {
               height={58}
               width={335}
               alt="google-logo"
-              className="fadein"
+              className="fadein max-sm:w-[65vw]"
             />
           </div>
         </div>
