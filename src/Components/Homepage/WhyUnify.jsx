@@ -359,10 +359,11 @@ const WhyUnify = () => {
                   with your data, your compliance, and your governance.
                 </p>
                 <WhiteButton
+                  background="border-primary-1 border bg-transparent hover:bg-transparent"
                   circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
                   text="Know More"
                   href="#"
-                  className="border-primary-1 border text-primary-1 bg-transparent hover:text-primary-1 hover:bg-transparent"
+                  className="hover:text-primary-1 text-primary-1"
                 />
               </div>
 
@@ -378,10 +379,11 @@ const WhyUnify = () => {
                   continuous learning, eliminating silos and execution gaps.
                 </p>
                 <WhiteButton
+                  background="border-primary-1 border bg-transparent hover:bg-transparent"
                   circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
                   text="Know More"
                   href="#"
-                  className="border-primary-1 border text-primary-1 bg-transparent hover:text-primary-1 hover:bg-transparent"
+                  className="hover:text-primary-1 text-primary-1"
                 />
               </div>
 
@@ -397,10 +399,11 @@ const WhyUnify = () => {
                   access, explainability, audit trails, and approval workflows.
                 </p>
                 <WhiteButton
+                  background="border-primary-1 border bg-transparent hover:bg-transparent"
                   circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
                   text="Know More"
                   href="#"
-                  className="border-primary-1 border text-primary-1 bg-transparent hover:text-primary-1 hover:bg-transparent"
+                  className="hover:text-primary-1 text-primary-1"
                 />
               </div>
 
@@ -417,10 +420,11 @@ const WhyUnify = () => {
                   deliver impact at scale.
                 </p>
                 <WhiteButton
+                  background="border-primary-1 border bg-transparent hover:bg-transparent"
                   circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
                   text="Know More"
                   href="#"
-                  className="border-primary-1 border text-primary-1 bg-transparent hover:text-primary-1 hover:bg-transparent"
+                  className="hover:text-primary-1 text-primary-1"
                 />
               </div>
             </div>
