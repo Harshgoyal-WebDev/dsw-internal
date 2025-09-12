@@ -57,8 +57,8 @@ function AccordionItem({ question, answer, isOpen, onToggle }) {
   return (
     <div className="w-full group  overflow-hidden relative z-[10] faq-tab fadeupanim accordion-block group fadeup">
       <div className="w-full mr-auto relative">
-        <div className="absolute bottom-0 left-0 w-full h-[0.5px] bg-[#88888880] opacity-[0.5]"></div>
-        <div className="absolute bottom-0 left-0 w-full h-[0.5px] bg-primary-2 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700"></div>
+        <div className="absolute bottom-0 left-0 w-full h-[1px] bg-[#88888880] opacity-[0.5]"></div>
+        <div className="absolute bottom-0 left-0 w-full h-[1px] bg-primary-2 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700"></div>
 
         <div className="inset-0 w-full relative">
           <div className="relative w-full h-full z-10 px-[3vw] max-sm:rounded-[2.5vw] content mix-blend-difference duration-300 max-sm:px-0">
