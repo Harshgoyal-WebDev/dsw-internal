@@ -1,16 +1,17 @@
+"use client"
 import React, { Suspense, useEffect, useRef } from "react";
 import PrimaryButton from "../Button/PrimaryButton";
 import WhiteButton from "../Button/WhiteButton";
 import { motion } from "motion/react";
 import gsap from "gsap";
-import {  SplitInLineOnly } from "../splitTextUtils";
-// import ShaderComp from "../BgShader/ShaderComp";
+import {  initSplit, SplitInLineOnly } from "../splitTextUtils";
 import { SplitText } from "gsap/SplitText";
 import Image from "next/image";
 import dynamic from "next/dynamic";
+import { fadeIn, fadeUp, headingAnim, lineAnim, paraAnim } from "@/Components/Animations/gsapAnimations";
 
 const DynamicShaderComp = dynamic(() => import("../BgShader/ShaderComp"), {
-  ssr: false,
+  ssr: true,
 });
 
 const lineCount = 4;
@@ -38,7 +39,14 @@ const AnimatedLine = ({ delay }) => (
 const Hero = () => {
   const heading = useRef(null);
 
+  headingAnim();
+  paraAnim();
+  fadeUp();
+  fadeIn();
+  lineAnim();
+
   useEffect(() => {
+    initSplit();
     SplitInLineOnly(heading.current);
     const lines = heading.current.querySelectorAll(".line");
     const heroPara = document.querySelector(".heroPara")

@@ -3,7 +3,7 @@ import { fontClassNames } from "@/styles/fonts";
 // Site-wide configuration and data
 export const SITE_CONFIG = {
   name: "Data Science Wizards",
-  logo: "/dsw-logo.svg",
+  logo: "/dsw-logo.png",
   description: "Data Science Wizards - AI Solutions",
   fonts: fontClassNames, // Make fonts available globally
   

@@ -1,3 +1,4 @@
+'use client'
 import React, { useRef } from "react";
 import TiltedCard from "../Animations/TiltedCard";
 import PrimaryButton from "../Button/PrimaryButton";

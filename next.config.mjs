@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Fix workspace root warning
+  outputFileTracingRoot: process.cwd(),
+  
   // Package import optimizations
   experimental: {
     optimizePackageImports: ['gsap', 'three', '@react-three/fiber', 'swiper', 'lenis'],
