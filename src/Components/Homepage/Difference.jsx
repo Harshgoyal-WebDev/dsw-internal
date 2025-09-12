@@ -1,10 +1,14 @@
 'use client'
 import React, { Suspense } from "react";
-import ShaderComp from "../BgShader/ShaderComp";
 import Image from "next/image";
 import { useEffect, useRef} from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import dynamic from "next/dynamic";
+
+const DynamicShaderComp = dynamic(() => import("../BgShader/ShaderComp"), {
+    ssr: true,
+});
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -163,7 +167,7 @@ const Difference = () => {
       </div>
       <div className="absolute top-[30%] left-0 h-screen w-screen max-sm:hidden">
         <Suspense>
-          <ShaderComp color={"0x1726FD"} />
+          <DynamicShaderComp color={"0x1726FD"} />
         </Suspense>
       </div>
       <div className="w-screen h-screen absolute top-0 z-[10] left-0 hidden max-sm:block">

@@ -1,4 +1,3 @@
-'use client'
 import Newsletter from "./Newsletter";
 import FooterCTA from "./FooterCta";
 import NavigationLink from "../UI/NavigationLink";
@@ -6,45 +5,30 @@ import SocialLink from "../UI/SocialLink";
 import ContactInfo from "../UI/ContactInfo";
 import Logo from "../UI/Logo";
 import { NAVIGATION, SOCIAL_LINKS, SITE_CONFIG } from "@/constants/siteConfig";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import { Suspense, useEffect, useRef } from "react";
-import ShaderComp from "../BgShader/ShaderComp";
+import { Suspense } from "react";
 import Image from "next/image";
-gsap.registerPlugin(ScrollTrigger);
+import dynamic from "next/dynamic";
+
+const DynamicShaderComp = dynamic(() => import("../BgShader/ShaderComp"), {
+    ssr: true,
+});
 
 const Footer = () => {
-    const footerRef = useRef(null);
-    const footerGlassRef = useRef(null);
-    // useEffect(() => {
-    //     gsap.from(footerGlassRef.current, {
-    //         // scale:1.1,
-    //         opacity: 0,
-    //         yPercent: 40,
-    //         ease: "power3.out",
-    //         scrollTrigger: {
-    //             trigger: footerRef.current,
-    //             start: "top 60%",
-    //             end: "bottom 60%",
-    //             scrub: 0.25,
-    //         }
-    //     })
-    // })
 
     return (
         <>
             <FooterCTA />
-            <footer className="relative overflow-hidden px-20 pt-[15vw] max-sm:px-[7vw]" id="footer" ref={footerRef}>
+            <footer className="relative overflow-hidden px-20 pt-[15vw] max-sm:px-[7vw]" id="footer">
                 <div className="absolute top-[30%] left-0 h-screen w-screen max-sm:hidden">
                     <Suspense>
-                        <ShaderComp color={"0x1726FD"} />
+                        <DynamicShaderComp color={"0x1726FD"} />
                     </Suspense>
                 </div>
                 <div className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-sm:block">
                     <Image src={"/assets/images/homepage/gradient-mobile.png"} alt="bg-gradient" className="w-full h-full object-cover" width={600} height={1080} />
                 </div>
                 <div className="relative z-[20]">
-                    <div className="rounded-[2.2vw] background-glass-diff border border-white/30 px-12 py-[5%] flex justify-between max-sm:px-[0vw] max-sm:py-[15%] max-sm:rounded-[5vw] max-sm:flex-col max-sm:items-center max-sm:justify-center max-sm:text-center" ref={footerGlassRef}>
+                    <div className="rounded-[2.2vw] background-glass-diff border border-white/30 px-12 py-[5%] flex justify-between max-sm:px-[0vw] max-sm:py-[15%] max-sm:rounded-[5vw] max-sm:flex-col max-sm:items-center max-sm:justify-center max-sm:text-center">
                         {/* Logo and Contact Info */}
                         <div className="flex flex-col justify-between items-start gap-24 max-sm:gap-18 footer-content max-sm:pb-[15vw] max-sm:items-center max-sm:justify-center">
                             <Logo variant="footer" className="w-fit" />
