@@ -9,6 +9,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { usePathname } from "next/navigation";
 import { useLenis } from "lenis/react";
+import MobileMenu from "./MobileMenu";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,6 +20,10 @@ const Header = () => {
   const headerRef = useRef();
   const lenis = useLenis();
   const pathname = usePathname();
+  const [openMobileMenu, setOpenMobileMenu] = useState(false);
+
+
+
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
@@ -87,17 +92,39 @@ const Header = () => {
               ))}
             </ul>
           </div>
-          <div className="hidden max-sm:flex max-sm:flex-col gap-[1.5vw] w-[8vw] relative z-[150] max-md:flex max-md:flex-col max-md:w-[4.5vw] max-md:gap-[1vw] max-sm:w-[7vw]">
-            <div className={`w-full h-[2.5px] rounded-full line-1 transition-all duration-500 origin-center ham-mobile bg-gradient-to-r from-[#F16B0D] to-[#E61216]`} />
-            <div className={`w-full h-[2.5px] bg-primary rounded-full line-2 transition-all duration-500 ham-mobile bg-gradient-to-r from-[#F16B0D] to-[#E61216]`} />
-            <div className={`w-full h-[2.5px] bg-primary rounded-full line-3 transition-all duration-500 origin-center ham-mobile bg-gradient-to-r from-[#F16B0D] to-[#E61216]`} />
-          </div>
-          <PrimaryButton
-            text={CTA_BUTTONS.primary.text}
-            href={CTA_BUTTONS.primary.href}
-            className="primary-button max-sm:hidden"
+<div className={`flex items-center justify-between  w-screen transition-transform duration-500 pointer-events-auto  `}>
+ 
+  <div className="hidden max-sm:flex max-sm:flex-col gap-[1.5vw] w-[8vw] relative z-[150] max-md:flex max-md:flex-col max-md:w-[4.5vw] max-md:gap-[1vw] max-sm:w-[7vw]" onClick={() => {
+              setOpenMobileMenu((prev) => !prev);
+            }}>
+    <div className={`w-full h-[2.5px] rounded-full line-1 transition-all duration-500 origin-center ham-mobile bg-gradient-to-r from-[#F16B0D] to-[#E61216] ${
+                openMobileMenu
+                  ? "rotate-45 max-sm:translate-y-[7px] max-md:translate-y-[10px] !bg-primary"
+                  : "bg-primary"
+              }`}/>
+    <div className={`w-full h-[2.5px] bg-primary rounded-full line-2 transition-all duration-500 ham-mobile bg-gradient-to-r from-[#F16B0D] to-[#E61216] ${openMobileMenu ? "opacity-0 bg-white" : "bg-primary"}`} />
+    <div className={`w-full h-[2.5px] bg-primary rounded-full line-3 transition-all duration-500 origin-center ham-mobile bg-gradient-to-r from-[#F16B0D] to-[#E61216] ${
+                openMobileMenu
+                  ? "-rotate-45 max-sm:-translate-y-[6px] max-md:-translate-y-[10px] !bg-primary"
+                  : "bg-primary"
+              }`} />
+  </div>
+<MobileMenu
+            openMobileMenu={openMobileMenu}
+            setOpenMobileMenu={setOpenMobileMenu}
+            lenis={lenis}
+            pathname={pathname}
           />
-        </div>
+</div>
+          <div>
+            <PrimaryButton 
+              text={CTA_BUTTONS.primary.text} 
+              href={CTA_BUTTONS.primary.href} 
+              className="primary-button max-sm:hidden" 
+            />
+          </div>
+        </div> 
+        
       </motion.header>
     </>
   );
