@@ -101,7 +101,7 @@ const Brochure = () => {
         <div className="h-fit text-white max-sm:w-full max-sm:mt-[10vw] hidden max-sm:block fadeup">
           <Swiper
             slidesPerView={1.8}
-            className="mySwiper swiper-container !opacity-100 !translate-x-[-50px]"
+            className=" !opacity-100 "
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             spaceBetween={50}
             speed={1000}
@@ -152,8 +152,9 @@ const BrochureCard = ({ title, list, listTitle }) => {
   return (
     <>
       {/* <Link href={"#"}> */}
-        <div className="bg-gradient-to-r from-[#09183e] to-[#1626FD] h-fit rounded-[6.5vw] border border-white/40 py-[10%] px-[7vw]">
-          <div className="w-full flex flex-col gap-[3vw]">
+        <div className="bg-gradient-to-r from-[#09183e] to-[#1626FD] h-[70vh] rounded-[6.5vw] border border-white/40 py-[10%] px-[7vw]">
+          <div className="w-full h-full flex flex-col gap-[3vw] justify-between">
+            <div>
             <h3 className="text-[5vw]">
               {title}
 
@@ -169,6 +170,7 @@ const BrochureCard = ({ title, list, listTitle }) => {
                 ))
               }
             </ul>
+            </div>
             <div className="mt-[7vw]">
             <PrimaryButton text={"Download PDF"} href={"/"} className="max-sm:w-[50vw]" />
 

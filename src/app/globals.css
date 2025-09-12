@@ -287,8 +287,8 @@ background: linear-gradient(90.17deg, rgba(255, 255, 255, 0.01) 0.01%, rgba(255,
   --c3: #030815;   /* "to" */
 
   /* initial radial size */
-  --rx: 60%; /* x-radius */
-  --ry: 60%; /* y-radius */
+  --rx: 120%; /* x-radius */
+  --ry: 85%; /* y-radius */
 
   background-image: radial-gradient(
     var(--rx) var(--ry) at 50% 50%,
@@ -299,4 +299,13 @@ background: linear-gradient(90.17deg, rgba(255, 255, 255, 0.01) 0.01%, rgba(255,
 
   background-color: transparent !important;
 }
+::-webkit-scrollbar-thumb {
+  background: #FFFFFF66 !important;
+  border-radius: 20px;
+  
+}
+::-webkit-scrollbar-track {
+  background: #FFFFFF33;
+}
+
 }

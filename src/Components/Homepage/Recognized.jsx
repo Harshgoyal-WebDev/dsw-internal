@@ -46,13 +46,13 @@ const Recognized = () => {
 
                 <div className='w-full flex items-center justify-between px-[5vw] mt-[3vw] fadeup max-sm:flex-wrap max-sm:mt-[6vw] max-sm:gap-y-[5vw] '>
                     <div className='h-[10vw] w-[10vw] max-sm:h-[22vw] max-sm:w-[22vw]'>
-                        <Image src={"/assets/images/homepage/soc-compliant.png"} height={178} width={178} alt='soc-compliant' className='h-full w-full object-contain' />
+                        <Image src={"/assets/images/homepage/soc-complaint-2.png"} height={178} width={178} alt='soc-compliant' className='h-full w-full object-contain' />
                     </div>
                     <div className='h-[10vw] w-[10vw] max-sm:h-[22vw] max-sm:w-[22vw]'>
-                        <Image src={"/assets/images/homepage/iso-certified.png"} height={178} width={178} alt='iso-certified' className='h-full w-full object-contain'/>
+                        <Image src={"/assets/images/homepage/iso-certified-2.png"} height={178} width={178} alt='iso-certified' className='h-full w-full object-contain'/>
                     </div>
                     <div className='h-[10vw] w-[10vw] max-sm:h-[22vw] max-sm:w-[22vw]'>
-                        <Image src={"/assets/images/homepage/hipaa-compliant.png"} height={178} width={178} alt='hipaa-compliant' className='h-full w-full object-contain'/>
+                        <Image src={"/assets/images/homepage/hipaa-compliant-2.png"} height={178} width={178} alt='hipaa-compliant' className='h-full w-full object-contain scale-[1.12]'/>
                     </div>
                     <div className='h-[10vw] w-[35vw] max-sm:h-[30vw] max-sm:w-[90vw]'>
                         <Image src={"/assets/images/homepage/f6s-top-company.png"} height={178} width={681} alt='f6s-top-company' className='h-full w-full object-contain'/>

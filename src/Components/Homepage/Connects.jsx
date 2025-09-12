@@ -76,7 +76,7 @@ const Connects = () => {
         <div className="w-full flex items-center justify-center gap-20 py-20 max-sm:flex-col max-sm:gap-25">
           <div>
             <Image
-              src="/assets/images/azure-logo.png"
+              src="/assets/icons/azure-logo.svg"
               height={49}
               width={171}
               alt="azure-logo"
@@ -85,7 +85,7 @@ const Connects = () => {
           </div>
           <div>
             <Image
-              src="/assets/images/Intel-logo-final.png"
+              src="/assets/icons/intel-logo.svg"
               height={51}
               width={131}
               alt="intel-logo"
@@ -94,7 +94,7 @@ const Connects = () => {
           </div>
           <div>
             <Image
-              src="/assets/images/IBM-logo.png"
+              src="/assets/icons/IBM-logo.svg"
               height={136}
               width={136}
               alt="IBM-logo"
@@ -113,7 +113,7 @@ const Connects = () => {
               ref={circle2}
             />
             <Image
-              src="/assets/images/unify.png"
+              src="/assets/icons/unify-ai.svg"
               height={65}
               width={150}
               alt="unify-logo"
@@ -123,7 +123,7 @@ const Connects = () => {
 
           <div>
             <Image
-              src="/assets/images/amazon-logo.png"
+              src="/assets/icons/amazon-web-services.svg"
               height={68}
               width={183}
               alt="amazon-logo"
@@ -132,7 +132,7 @@ const Connects = () => {
           </div>
           <div>
             <Image
-              src="/assets/images/google-logo.png"
+              src="/assets/icons/google-cloud.svg"
               height={58}
               width={335}
               alt="google-logo"

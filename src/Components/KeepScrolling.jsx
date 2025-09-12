@@ -50,7 +50,6 @@ const KeepScrolling = () => {
     return () => ctx.revert()
   }, [])
 
-  // Detect scroll and footer visibility
   useEffect(() => {
     let timeout;
 
@@ -61,21 +60,16 @@ const KeepScrolling = () => {
         setScrolling(false);
       }, 7000);
 
-      // Check if footer-cta is visible
       const footerCta = document.getElementById('footer-cta');
       if (footerCta) {
         const rect = footerCta.getBoundingClientRect();
         const windowHeight = window.innerHeight;
-        
-        // Element is visible if any part of it is in the viewport
         const isVisible = rect.top < windowHeight && rect.bottom > 0;
         setIsFooterVisible(isVisible);
       }
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    // Initial check
     handleScroll();
 
     return () => {
@@ -83,8 +77,6 @@ const KeepScrolling = () => {
       clearTimeout(timeout);
     };
   }, []);
-
-  // Hide component when footer is visible OR when user is actively scrolling
   if (isFooterVisible || scrolling) {
     return null;
   }
