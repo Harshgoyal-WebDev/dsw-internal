@@ -27,8 +27,7 @@ const SubmenuNavigation = ({
             link: "/products",
             links: [
                 { href: "/", text: "UnifyAI" },
-                { href: "/", text: "InsurAInce" },
-               
+                { href: "/", text: "InsurAInce" },   
             ],
         },
     };
@@ -85,8 +84,8 @@ const SubmenuNavigation = ({
                 <div
                     className={`overflow-hidden transition-all ease-none duration-700 mb-[4vw] ${
                         openSection === submenuSection.title
-                            ? "max-h-[80vw] opacity-100"
-                            : "max-h-0 opacity-0"
+                            ? "max-h-[80vw] h-[30vw] opacity-100"
+                            : "max-h-0 h-0 opacity-0"
                     }`}
                 >
                     <ul className="max-sm:text-[4.5vw] max-md:text-[3.5vw] py-[5vw] pl-4 flex flex-col items-start justify-center max-sm:gap-[1.5vw] max-md:gap-[1vw] list-disc !font-display">
@@ -108,7 +107,7 @@ const SubmenuNavigation = ({
                         ))}
                     </ul>
                 </div>
-                <div className="w-full bg-[#E8E8E8] h-[0.5px]"></div>
+                <div className="w-full bg-[#e8e8e8c5] h-[1px]"></div>
             </div>
         </div>
     );

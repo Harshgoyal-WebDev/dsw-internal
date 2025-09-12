@@ -12,10 +12,10 @@ gsap.registerPlugin(ScrollTrigger)
 const useStackedCardsAnimation = (triggerRef, cardsRef, options = {}) => {
   const { 
     startTrigger = '20% center',
-    endTrigger = 'bottom bottom',
+    endTrigger = '150% center',
     initialScaleReduction = 0.05,
     animationScaleReduction = 0.05,
-    markers = false 
+    markers = true 
   } = options;
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const useStackedCardsAnimation = (triggerRef, cardsRef, options = {}) => {
       zIndex: (i) => totalCards - i,
       yPercent: (i) => -i * 99, 
       scale: (i) => 1 - i * initialScaleReduction,
-      opacity: (i) => i === 0 ? 1 : 0 // First card visible, rest hidden
+      opacity: (i) => i === 0 ? 0 : 0 // First card visible, rest hidden
     });
 
     const tl = gsap.timeline({
@@ -40,15 +40,15 @@ const useStackedCardsAnimation = (triggerRef, cardsRef, options = {}) => {
       },
       scrollTrigger: {
         trigger: triggerRef.current,
-        start: startTrigger,   
-        end: endTrigger, 
+        start: "20% center",   
+        end: "80% center", 
         scrub: true,
-        markers: markers
+        // markers: true
       },
     });
 
     // Create animation sequence for each card (starting from the second card)
-    for (let i = 1; i < totalCards; i++) {
+    for (let i = 0; i < totalCards; i++) {
       const timePosition = (i - 1) * 0.5; // Stagger the animations
       
       // Animate current card to full visibility and position
@@ -56,7 +56,7 @@ const useStackedCardsAnimation = (triggerRef, cardsRef, options = {}) => {
         yPercent: 0,
         scale: 1,
         opacity: 1,
-        duration: 0.5
+        duration: 1
       }, timePosition);
 
       // Animate previous cards to make room
@@ -118,7 +118,7 @@ const Difference = () => {
                 Traditional AI Platforms
               </h3>
               <div className="w-full flex-col flex gap-[0.5vw] max-sm:gap-[3vw]" ref={cardsRef1}>
-                <div className="stacked-card w-full text-[#cacaca] text-center h-[10.5vh] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px] fadeup">
+                <div className="stacked-card w-full text-[#cacaca] text-center h-[10.5vh] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px] ">
                   Generic, one-size-fits-all 
                 </div>
                 <div className="stacked-card w-full text-[#cacaca] text-center h-[10.5vh] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px]">
@@ -140,7 +140,7 @@ const Difference = () => {
                 InsurAInce
               </h3>
               <div className="w-full flex-col flex gap-[0.5vw] max-sm:gap-[3vw]">
-                <div className="stacked-card w-full text-[#cacaca] text-center h-[10.5vh] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px]  fadeup">
+                <div className="stacked-card w-full text-[#cacaca] text-center h-[10.5vh] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px]  ">
                   Insurance-first, domain-trained 
                 </div>
                 <div className=" stacked-card w-full text-[#cacaca] text-center h-[10.5vh] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px]">

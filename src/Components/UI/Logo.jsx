@@ -11,7 +11,7 @@ export const Logo = ({
   height
 }) => {
   const variants = {
-    default: "w-[8vw] h-[5vw] object-contain",
+    default: "w-[20vw] h-auto object-contain",
     footer: "w-[15vw] max-sm:w-auto max-sm:h-[30vw]",
     header: "w-[8vw] h-auto object-contain max-sm:w-[25vw] max-sm:h-auto",
     mobile: "w-[25vw] h-auto object-contain"

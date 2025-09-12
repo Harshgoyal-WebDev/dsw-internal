@@ -1,4 +1,4 @@
-'use client'
+"use client"
 import React, { Suspense, useEffect, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
@@ -12,41 +12,57 @@ const Loader = () => {
   useEffect(() => {
     if(lenis){
       lenis.stop()
+
       const ctx = gsap.context(() => {
         const tl = gsap.timeline();
         const steps = 5; // Number of animation steps (and iterations)
-  
-        for (let i = 1; i <= steps; i++) {
-          tl.to(".sequence-container", {
-            xPercent: i * 100,
-            ease: "power3.inOut",
-            duration: 1,
-          }).to(
-            ".number-container",
-            {
-              xPercent: i * 19.9,
-              duration: 1,
-              ease: "power3.inOut",
-            },
-            "<"
-          );
-        }
+       if(globalThis.innerWidth>1024){
+         for (let i = 1; i <= steps; i++) {
+           tl.to(".sequence-container", {
+             xPercent: i * 100,
+             ease: "power3.inOut",
+             duration: 1,
+           }).to(
+             ".number-container",
+             {
+               xPercent: i * 19.9,
+               duration: 1,
+               ease: "power3.inOut",
+             },
+             "<"
+           );
+         }
+
+       }
+       else{
+         for (let i = 1; i <= steps; i++) {
+           tl.to(".sequence-container", {
+             xPercent: i * 60,
+             ease: "power3.inOut",
+             duration: 1,
+           }).to(
+             ".number-container",
+             {
+               xPercent: i * 19.9,
+               duration: 1,
+               ease: "power3.inOut",
+             },
+             "<"
+           );
+         }
+
+       }
         tl.to("#loader", {
           opacity: 0,
-  
           filter: "blur(20px)",
           // duration:4,
-  
           onComplete: () => {
             setIsHidden(true)
             lenis.start()
           }
         })
-  
       });
-  
       return () => ctx.revert();
-
     }
   }, [lenis]);
   useEffect(() => {
@@ -64,7 +80,7 @@ const Loader = () => {
     else{
        const ctx = gsap.context(() => {
         gsap.to(".loader-gradient", {
-          yPercent: -22,
+          yPercent: -28,
           duration: 2,
           delay:0.2,
           opacity: 1
@@ -76,12 +92,12 @@ const Loader = () => {
   })
   return (
     <div
-      className={`w-screen h-screen fixed top-0 left-0 z-[9999] bg-background text-[17vw] overflow-hidden ${hidden ? "hidden" : ""}`}
+      className={`w-screen h-screen fixed top-0 left-0 z-[9999] bg-background text-[17vw] overflow-hidden max-sm:text-[25vw] ${hidden ? "hidden" : ""}`}
       id="loader"
     >
 
       <div className="w-fit h-fit flex sequence-container relative z-[2] font-head font-medium">
-        <div className="flex w-[10vw] overflow-hidden">
+        <div className="flex w-[10vw] overflow-hidden max-sm:w-[14.5vw]">
           <div className="flex w-fit translate-x-[-79%] number-container gap-[0.2vw]">
             <span>9</span>
             <span>7</span>
@@ -91,7 +107,7 @@ const Loader = () => {
           </div>
         </div>
 
-        <div className="flex w-[10vw] overflow-hidden">
+        <div className="flex w-[10vw] overflow-hidden max-sm:w-[14.5vw]">
           <div className="flex w-fit translate-x-[-79%] number-container gap-[0.2vw]">
             <span>9</span>
             <span>7</span>

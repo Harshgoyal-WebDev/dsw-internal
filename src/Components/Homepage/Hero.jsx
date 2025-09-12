@@ -20,7 +20,7 @@ const AnimatedLine = ({ delay }) => (
   <motion.div
     initial={{ scaleY: 0 }}
     animate={{ scaleY: 1, transition: { duration: 1.2, delay } }}
-    className="w-[0.1px] h-full bg-gradient-to-b from-white/15 to-transparent origin-top overflow-y-hidden"
+    className="w-[0.5px] h-full bg-gradient-to-b from-white/20 to-transparent origin-top overflow-y-hidden"
   >
     <motion.span
       initial={{ y: 0 }}
@@ -129,6 +129,9 @@ const Hero = () => {
       <div className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-sm:block">
         <Image src={"/assets/images/homepage/gradient-mobile.png"} alt="shader-gradient-mobile" className="w-full h-full object-cover" width={600} height={1080}/>
       </div>
+      {/* <div className="w-screen h-screen absolute z-[20] bg-black/10 backdrop-blur-lg top-0 left-0">
+
+      </div> */}
     </section>
   );
 };

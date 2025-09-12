@@ -11,12 +11,14 @@ export const viewport = siteViewport;
 export default function RootLayout({ children }) {
   return (
     <>
-      <LenisSmoothScroll />
+      <LenisSmoothScroll>
+
       <html lang="en">
         <body className={`${fontVariables.combined} antialiased`}>
           {children}
         </body>
       </html>
+      </LenisSmoothScroll>
     </>
   );
 }
