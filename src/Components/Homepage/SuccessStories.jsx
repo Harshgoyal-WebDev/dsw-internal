@@ -87,9 +87,9 @@ const LinkCard = ({ title, link, width }) => {
 const ImageCard = ({ img }) => {
     return (
         <>
-            <div className='h-[20vw] w-full rounded-[2vw] border-[0.82px] border-[#88888880] background-glass overflow-hidden group transition-all duration-500 ease-linear max-sm:h-[55vw] max-sm:rounded-[5vw] fadeup'>
+            <div className='h-[20vw] w-full rounded-[2vw] border-[0.82px] border-[#88888880] background-glass overflow-hidden group transition-all duration-500 ease-out max-sm:h-[55vw] max-sm:rounded-[5vw] fadeup'>
                 <div className='w-full h-full '>
-                    <Image src={img} height={459} width={568} alt='success-stories-placeholder-img' className='object-cover h-full w-full scale-[1.05] group-hover:scale-[1] transition-all duration-300 ease' />
+                    <Image src={img} height={459} width={568} alt='success-stories-placeholder-img' className='object-cover h-full w-full scale-[1.05] group-hover:scale-[1] transition-all duration-500 ease-out' />
                 </div>
             </div>
         </>

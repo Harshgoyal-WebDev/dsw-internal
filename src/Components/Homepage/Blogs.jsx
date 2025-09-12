@@ -18,13 +18,13 @@ const BlogCard = ({ title, date, img }) => {
   return (
     <>
     <Link href={"#"}>
-      <div className='rounded-3xl group border-[0.25px] border-stone-600 pb-4 bg-white/5 space-y-8 overflow-hidden group cursor-pointer under-multi-parent max-sm:pb-0'>
+      <div className='rounded-3xl group border-[0.25px] border-stone-600 pb-4 bg-white/5 space-y-8 overflow-hidden group cursor-pointer max-sm:pb-0'>
         <div className='w-full h-full overflow-hidden rounded-3xl '>
-          <Image src={img} width={531} height={510} alt={title} className='object-cover h-[20vw] w-[31vw] group-hover:scale-[1.1] transition-all duration-500 ease-out max-sm:w-full max-sm:h-[60vw]' />
+          <Image src={img} width={531} height={510} alt={title} className='object-cover h-[20vw] w-[31vw] group-hover:scale-[1.05] transition-all duration-500 ease-out max-sm:w-full max-sm:h-[60vw]' />
         </div>
         <div className='space-y-5 px-5'>
           <p className=' font-medium text-[#E8E8E8] leading-[1.5]'>
-            <span className='under-multi pb-0.5'>{title}</span></p>
+            <span className=' pb-0.5'>{title}</span></p>
           <p className='text-[1.145vw] font-medium text-[#909090] max-sm:text-[3vw]'>{date}</p>
         </div>
          <div className="h-[3vw] w-[3vw] absolute top-6 right-6 bg-white/20 rounded-full group-hover:!bg-white group-hover:text-[#111111] transition-all duration-500 ease-out max-sm:h-[15vw] max-sm:w-[15vw]">
@@ -117,7 +117,7 @@ const Blogs = () => {
             ))}
           </Swiper>
 
-          <div className='flex gap-6 mt-6 max-sm:mt-10 max-sm:items-center max-sm:justify-center'>
+          <div className='flex gap-6 mt-12 max-sm:mt-10 max-sm:items-center max-sm:justify-center'>
             <PreviousButton onClick={handlePrev} />
             <NextButton onClick={handleNext} />
           </div>
