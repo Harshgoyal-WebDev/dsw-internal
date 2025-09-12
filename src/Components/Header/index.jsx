@@ -6,7 +6,7 @@ import Logo from "../UI/Logo";
 import { NAVIGATION, CTA_BUTTONS } from "@/constants/siteConfig";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 const Header = () => {
   const [isHidden, setIsHidden] = useState(false);
   const [unify , setUnify] = useState(false);

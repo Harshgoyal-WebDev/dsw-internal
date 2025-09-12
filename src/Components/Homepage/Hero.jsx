@@ -4,9 +4,14 @@ import WhiteButton from "../Button/WhiteButton";
 import { motion } from "motion/react";
 import gsap from "gsap";
 import {  SplitInLineOnly } from "../splitTextUtils";
-import ShaderComp from "../BgShader/ShaderComp";
+// import ShaderComp from "../BgShader/ShaderComp";
 import { SplitText } from "gsap/SplitText";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+
+const DynamicShaderComp = dynamic(() => import("../BgShader/ShaderComp"), {
+  ssr: false,
+});
 
 const lineCount = 4;
 
@@ -110,12 +115,11 @@ const Hero = () => {
       </div>
       <div className="absolute top-[30%] left-0 h-screen w-screen max-sm:hidden">
         <Suspense>
-          <ShaderComp color={"0x1726FD"} />
+          <DynamicShaderComp color={"0x1726FD"} />
         </Suspense>
       </div>
       <div className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-sm:block">
         <Image src={"/assets/images/homepage/gradient-mobile.png"} alt="bg-gradient" className="w-full h-full object-cover" width={600} height={1080}/>
-
       </div>
     </section>
   );

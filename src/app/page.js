@@ -21,7 +21,6 @@ import TurbochargeG from "@/Components/Homepage/TurboChargeG";
 import UnifyAi from "@/Components/Homepage/UnifyAi";
 import WhyUnify from "@/Components/Homepage/WhyUnify";
 import Layout from "@/Components/Layout";
-// import Loader from "@/Components/Loader";
 import { initSplit } from "@/Components/splitTextUtils";
 import Head from "next/head";
 import { useEffect, useState } from "react";
