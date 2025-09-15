@@ -61,7 +61,7 @@ const Hero = () => {
      <div className='w-screen relative  h-screen flex justify-center items-center '>
         <div className='flex flex-col items-center gap-[1vw] px-[8vw]'>
 
-            <h1 className='font-normal'>Enterprise AI Platform for Insurance</h1>
+            <h1 className='font-normal text-[5.5vw]'>Enterprise AI Platform for Insurance</h1>
             <Image src='/assets/icons/insurAlnce/Insur/insur-logo.png' width={500} height={500} alt='insur-logo' className='h-[2.5vw] w-fit' />
 
             <p className='text-center text-offwhite text-[1.3vw] leading-[1.3] pt-[1vw] px-[2vw]'>

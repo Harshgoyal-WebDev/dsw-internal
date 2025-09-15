@@ -8,11 +8,11 @@ export const About = () => {
             <div className='flex flex-col gap-[1.5vw] px-[4vw] w-[90%] '>
 
             <div className='w-[18vw] h-fit self-start'>
-                <Image src='/assets/icons/insurAlnce/about-img-1.png' height={500} width={500} className='h-full w-full object-cover rounded-[1vw] border border-neutral-600' alt='about-img' />
+                <Image src='/assets/images/footer/image-1.png' height={500} width={500} className='h-full w-full object-cover rounded-[1vw] border border-neutral-600' alt='about-img' />
             </div>
 
              <div className='w-[16.5vw] h-fit self-end'>
-                <Image src='/assets/icons/insurAlnce/about-img-1.png' height={500} width={500} className='h-full w-full object-cover rounded-[1vw] border border-neutral-600' alt='about-img' />
+                <Image src='/assets/images/footer/image-2.png' height={500} width={500} className='h-full w-full object-cover rounded-[1vw] border border-neutral-600' alt='about-img' />
             </div>
             </div>
 

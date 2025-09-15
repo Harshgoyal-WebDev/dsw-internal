@@ -65,6 +65,6 @@ const footerCTAData={
   btnLink1:"/#",
   btnText2:"Schedule a Call",
   btnLink2:"/#",
-  img1:"/assets/images/footer/image-1.png",
+  img1:"a",
   img2:"/assets/images/footer/image-2.png"
 }

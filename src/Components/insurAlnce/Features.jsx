@@ -59,24 +59,22 @@ const Features = () => {
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-
            
             ScrollTrigger.create({
             trigger: featuresRef.current,
-  start: 'top top',
-  end: 'bottom top',
-  pin: true,
-//   markers: true,
-});
-            
+            start: 'top top',
+            end: 'bottom top',
+            pin: true,
+            //   markers: true,
+            });          
             gsap.to(cardsContainerRef.current, {
-                x:'-65vw',
+                x:'-15vw',
                 ease:'none',
                 scrollTrigger: {
                     trigger:featuresRef.current,
                     start:'-30% top',
                     end: 'bottom top',
-                    scrub:1,
+                    scrub:true,
                     markers:false,
                 }
             })
@@ -101,7 +99,7 @@ const Features = () => {
             <div className='w-full overflow-x-hidden '>
                 <div
   ref={cardsContainerRef}
-  className="flex gap-[2vw] pl-[48vw] min-w-max"
+  className="flex gap-[2vw] translate-x-[60vw] min-w-max"
 >
   {cardsData.map((card, index) => (
     <Card key={index} srcc={card.src} content={card.content} />

@@ -13,7 +13,6 @@ import FAQs from "@/Components/insurAlnce/FAQ";
 
 import Layout from "@/Components/Layout";
 
-
 export default function Home() {
   return (
     <>
@@ -30,7 +29,6 @@ export default function Home() {
       <CustomerQuotes />
       <FutureScope />
       <FAQs />
-      
       </Layout>
     </>
   );
