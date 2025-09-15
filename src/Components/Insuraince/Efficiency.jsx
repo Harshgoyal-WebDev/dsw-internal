@@ -9,7 +9,6 @@ const Efficiency = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
  
-      
       const tl= gsap.timeline({
         scrollTrigger: {
           trigger:'#efficiency-container',
@@ -49,7 +48,7 @@ const Efficiency = () => {
   const DaysRd = ["0", "4","7", "0"];
 
   return (
-    <div id="efficiency-container" className="container h-fit">
+    <section id="efficiency-container" className="container h-fit">
       <div className="space-y-[3vw]">
       <h2 className="title-1 text-white-200 text-center">
         Built for the Complexity
@@ -204,7 +203,7 @@ const Efficiency = () => {
           </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

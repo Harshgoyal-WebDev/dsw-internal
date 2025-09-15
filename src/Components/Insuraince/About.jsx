@@ -99,8 +99,9 @@ export default function About() {
                     <Image src={"/assets/images/footer/image-2.png"} alt="Image2"  width={313} height={272} loading="lazy"  className="w-full h-full object-cover" />
                 </motion.div>
             </div>
-              <div className="w-[60%] max-sm:!w-[90%] max-sm:text-center max-sm:mt-[5vw] space-y-[4vw]">
-                <h2 className="title-2 leading-[1.2] font-head  headingAnim text-white-200 max-sm:!text-[10vw] max-sm:mb-[7vw]">One Platform. Built with Insurance DNA. Unified AI and GenAI.</h2>
+              <div className="w-[60%] max-sm:!w-[90%] max-sm:text-center max-sm:mt-[5vw] space-y-[2vw]">
+                <h2 className="title-2 text-nowrap leading-[1.2] font-head  headingAnim text-white-200 max-sm:!text-[10vw] max-sm:mb-[7vw]">One Platform. Built with Insurance
+                    <br /> DNA. Unified AI and GenAI.</h2>
                 <div>
                 <Copy>
                 <p className="text-white-300 w-[93%]">The pressure to modernize is high, but most insurers still struggle to move from pilot projects to production-ready AI. Long development cycles, fragmented tools, and rising compliance risks make AI adoption complex, expensive, and slow. </p>

@@ -47,7 +47,7 @@ const Capabilities = () => {
             insurAInce gives you over 300 prebuilt GenAI agents that are
             designed for real insurance workflows. 
           </p>
-          <p className="text-white-300 text-[1.3vw] font-display">
+          <p className="text-white-300 text-[1.2vw] font-display">
             Key Capabilities: 
           </p>
 

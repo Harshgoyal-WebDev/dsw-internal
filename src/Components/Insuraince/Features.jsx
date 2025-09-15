@@ -58,9 +58,9 @@ const Features = () => {
 
 
     return (
-        <section ref={featuresRef} id='features-section' className='bg-primary h-fit flex flex-col  relative container !pr-0'>
-            <div className=' w-[47%] space-y-[2vw]'>
-               <h2 className='title-2 w-[100%] py-[1vw] text-white-200'>
+        <section ref={featuresRef} id='features-section' className='bg-primary h-fit flex flex-col  relative container !px-0'>
+            <div className='w-[47%] pl-[5vw] space-y-[1vw]'>
+               <h2 className='title-2 w-[100%] text-white-200'>
                     The Unified AI Platform Built for Insurance Enterprises
                 </h2>
 
@@ -69,7 +69,7 @@ const Features = () => {
                  </p>
             </div>
             
-            <div className='w-full overflow-x-hidden '>
+            <div className='w-full overflow-x-hidden pt-[2vw]'>
                 <div
   ref={cardsContainerRef}
   className="flex gap-[2vw] translate-x-[60vw] min-w-max"

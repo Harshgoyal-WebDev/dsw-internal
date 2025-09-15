@@ -81,22 +81,23 @@ const Hero = () => {
   return (
     <section className="h-[70vw] w-screen relative bg-background max-sm:h-screen max-sm:px-[7vw]" id="hero">
       <div className="flex flex-col items-center justify-start w-full h-full pt-[30vh] relative z-[12] max-sm:pt-[15vh]">
-        <div className="flex items-center justify-center flex-col w-[80%] text-center gap-[3vw] pb-5 max-sm:w-[90%] max-sm:space-y-[12vw]">
+        <div className="flex items-center justify-center flex-col w-[80%] text-center gap-[2.5vw] pb-5 max-sm:w-[90%] max-sm:space-y-[12vw]">
           <h1
             ref={heading}
             className="title-1 font-head heroHeadAnim text-white-200"
           >
            Enterprise AI Platform for Insurance
           </h1>
+          <div className=" h-auto w-[16vw]">
+            <Image src={"/assets/icons/insuraince/insuraince.svg"} height={46} width={297} alt="insuraince" className="h-full w-full object-cover"/>
+          </div>
           <p
             className={`text-white-300 w-full mx-auto overflow-hidden heroPara`}
           >
            Purpose-Built, Proven, and Production-Ready . InsurAInce is the enterprise AI platform designed for insurers to build GenAI agents in hours, deploy AI use cases in days, and scale confidently with compliance, speed, and accuracy – all through your policy lifecycle. 
           </p>
-          <div className=" h-auto w-[20vw]">
-            <Image src={"/assets/icons/insuraince/insuraince.svg"} height={46} width={297} alt="insuraince" className="h-full w-full object-cover"/>
-          </div>
-          <div className="flex items-center justify-center gap-6 mt-10 max-sm:flex-col max-sm:gap-[5vw]">
+          
+          <div className="flex items-center justify-center gap-6 mt-2 max-sm:flex-col max-sm:gap-[5vw]">
             {[
               { Component: PrimaryButton, text: "Explore the Platform ", link: "/#" },
               { Component: WhiteButton, text: "Book a demo", link: "/#"},
