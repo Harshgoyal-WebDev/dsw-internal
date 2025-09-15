@@ -30,27 +30,27 @@ const usecaseLayer = [
   const capabilities = [
     {
       name: "Data Integration Toolkit",
-      src: "/assets/icons/presentationLayer/left/smartEDATop.svg",
+      src: "/assets/icons/presentationLayer/left/dataIntegration.svg",
     },
     {
       name: "Feature Store",
-      src: "/assets/icons/presentationLayer/left/featureCraft.svg",
+      src: "/assets/icons/presentationLayer/left/featureStore.svg",
     },
     {
       name: "Model Development",
-      src: "/assets/icons/presentationLayer/left/modelCraft.svg",
+      src: "/assets/icons/presentationLayer/left/modelDevelopment.svg",
     },
     {
       name: "SmartEDA",
-      src: "/assets/icons/presentationLayer/left/smartEDATop.svg",
+      src: "/assets/icons/presentationLayer/left/smartEDA.svg",
     },
     {
       name: "Model Management & Monitoring",
-      src: "/assets/icons/presentationLayer/left/featureCraft.svg",
+      src: "/assets/icons/presentationLayer/left/modelManagemnt.svg",
     },
     {
       name: "Feedback Loop",
-      src: "/assets/icons/presentationLayer/left/modelCraft.svg",
+      src: "/assets/icons/presentationLayer/left/feedbackLoop.svg",
     },
   ];
 
@@ -108,7 +108,7 @@ export default function PresentationLayer() {
   
   const ToolItem = ({ tool }) => (
     <div className="flex items-center w-[15%] justify-center flex-col space-y-[1vw] text-center text-secondaryWhite h-auto">
-      <div className="w-[4.5vw] h-auto">
+      <div className="w-[5vw] h-auto">
         <Image
           width={100}
           height={100}
@@ -117,12 +117,12 @@ export default function PresentationLayer() {
           alt={tool.name}
         />
       </div>
-      <p className="text-content">{tool.name}</p>
+      <p className="">{tool.name}</p>
     </div>
   );
 
   return (
-    <section className="h-fit flex-col fadeup gap-[.8vw] w-[95%] mx-auto items-center justify-center containerPadding text-center flex">
+    <section id="presentationLayer" className="h-fit container flex-col fadeup gap-[.8vw] w-[100%] mx-auto items-center justify-center text-center flex">
       <div className="sub-text-content  w-full py-[1vw] bg-white/2 border-white/20 rounded-full border">
         <p>Presentation Layer</p>
       </div>
