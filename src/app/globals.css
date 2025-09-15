@@ -11,9 +11,7 @@
   --white-300: #cacaca;
   --light-blue: #041035;
   --dark-blue: #1727FF;
-  --text-12: 1.2vw;
-  --text-5: 5vw;
-  --text-30: 3vw;
+ 
   --font-display: var(--font-display);
   --font-body: var(--font-body);
   --default-ease: cubic-bezier(0.19, 1, 0.22, 1);
@@ -33,10 +31,6 @@
   --ease-default-ease: var(--default-ease);
   --color-light-blue: var(--light-blue);
   --color-dark-blue: var(--dark-blue);
-  --text-12: var(--text-12);
-  --text-5: var(--text-5);
-  --text-30: var(--text-5);
-  --text-51: var(--text-5);
 }
 
 body {
@@ -61,11 +55,7 @@ h1,h2,h3,h4 {
   margin-right: auto;
 }
 
-h1 {
-  font-size: 5.5vw;
-  color: #E8E8E8;
-  font-weight: 350;
-}
+
 
 .title-1 {
   font-size: 5.2vw;
