@@ -1,10 +1,9 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect } from "react";
-import { fadeUp } from "../Animations/gsapAnimations";
 
-export default function PresentationLayer() {
-  const usecaseLayer = [
+
+const usecaseLayer = [
     "Customer Persistency",
     "Fraud Detection",
     "Demand Forecasting",
@@ -105,8 +104,8 @@ export default function PresentationLayer() {
     },
   ];
 
-  fadeUp();
-
+export default function PresentationLayer() {
+  
   const ToolItem = ({ tool }) => (
     <div className="flex items-center w-[15%] justify-center flex-col space-y-[1vw] text-center text-secondaryWhite h-auto">
       <div className="w-[4.5vw] h-auto">

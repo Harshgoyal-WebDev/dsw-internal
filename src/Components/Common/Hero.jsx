@@ -4,7 +4,7 @@ import PrimaryButton from "../Button/PrimaryButton";
 import WhiteButton from "../Button/WhiteButton";
 import { motion } from "motion/react";
 import gsap from "gsap";
-import {  initSplit, SplitInLineOnly } from "../splitTextUtils";
+import { initSplit, SplitInLineOnly } from "../splitTextUtils";
 import { SplitText } from "gsap/SplitText";
 import Image from "next/image";
 import dynamic from "next/dynamic";
@@ -37,7 +37,7 @@ const AnimatedLine = ({ delay }) => (
   </motion.div>
 );
 
-const Hero = () => {
+const Hero = ({ heroData }) => {
   const heading = useRef(null);
 
   headingAnim();
@@ -51,10 +51,13 @@ const Hero = () => {
     SplitInLineOnly(heading.current);
     const lines = heading.current.querySelectorAll(".line");
     const heroPara = document.querySelector(".heroPara")
-    const heroEl = new SplitText(heroPara,{
-      type:"lines",
-      mask:"lines"
+    const heroEl = new SplitText(heroPara, {
+      type: "lines",
+      mask: "lines"
     })
+
+    const delayLines = heroData.homepage ? 4.5 : 0.7;
+    const delayPara = heroData.homepage ? 5.2 : 1.5;
     gsap.fromTo(
       lines,
       {
@@ -62,7 +65,7 @@ const Hero = () => {
       },
       {
         maskPosition: "0% 100%",
-        delay: 4.5,
+        delay: delayLines,
         stagger: 0.2,
         duration: 7,
         ease: "power2.out",
@@ -70,7 +73,7 @@ const Hero = () => {
     );
     gsap.from(heroEl.lines, {
       yPercent: 150,
-      delay: 5.2,
+      delay: delayPara,
       duration: 1.2,
       stagger: 0.04,
       ease: "power3.out",
@@ -86,19 +89,17 @@ const Hero = () => {
             ref={heading}
             className="title-1 font-head heroHeadAnim text-[#E8E8E8]"
           >
-            Launch AI use cases in days. GenAI in hours.​
+            {heroData.heading}
           </h1>
           <p
-           
-            className="text-[#CACACA] w-full mx-auto overflow-hidden heroPara"
+            className={`text-[#CACACA] w-full mx-auto overflow-hidden heroPara ${heroData.paraClass}`}
           >
-            The enterprise platform built for speed and scale.​ Go from pilot to
-            production – faster and smarter with DSW UnifyAI​
+            {heroData.para}
           </p>
           <div className="flex items-center justify-center gap-6 mt-10 max-sm:flex-col max-sm:gap-[5vw]">
             {[
-              { Component: PrimaryButton, text: "Start Walkthrough" },
-              { Component: WhiteButton, text: "Schedule a Call" },
+              { Component: PrimaryButton, text: heroData.btnText1, link: heroData.link1 },
+              { Component: WhiteButton, text: heroData.btnText2, link: heroData.link2 },
             ].map(({ Component, text }, index) => (
               <motion.div
                 key={text}
@@ -106,7 +107,10 @@ const Hero = () => {
                 animate={{
                   opacity: 1,
                   y: 0,
-                  transition: { duration: 1, delay: 5.8 },
+                  transition: {
+                    duration: 1,
+                    delay: heroData.homepage ? 5.8 : 1.7,
+                  }
                 }}
               >
                 <Component href="#" text={text} className="max-sm:min-w-[60vw]" />
@@ -119,7 +123,7 @@ const Hero = () => {
       {/* Animated Vertical Lines */}
       <div className="w-screen h-[55vw] absolute top-0 left-0 z-[10] flex justify-center gap-[22vw] max-sm:hidden">
         {[...Array(lineCount)].map((_, i) => (
-          <AnimatedLine key={i} delay={5+(i * 0.2)} />
+          <AnimatedLine key={i} delay={5 + (i * 0.2)} />
         ))}
       </div>
       <div className="absolute top-[30%] left-0 h-screen w-screen max-sm:hidden">
@@ -128,7 +132,7 @@ const Hero = () => {
         </Suspense>
       </div>
       <div className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-sm:block">
-        <Image src={heroGradient} placeholder="blur" alt="shader-gradient-mobile" className="w-full h-full object-cover" width={600} height={1080}/>
+        <Image src={heroGradient} placeholder="blur" alt="shader-gradient-mobile" className="w-full h-full object-cover" width={600} height={1080} />
       </div>
     </section>
   );

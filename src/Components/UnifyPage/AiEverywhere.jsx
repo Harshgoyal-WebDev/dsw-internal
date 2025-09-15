@@ -1,67 +1,80 @@
 import Image from "next/image";
 import React from "react";
+import Copy from "../Animations/Copy";
 
 export default function AiEverywhere() {
   return (
-    <div className="min-h-screen h-fit flex flex-col items-center justify-between gap-[5vw] py-[5vw] px-[4vw] w-full">
-      <div className="w-[95%] pb-[7vw] h-full">
-        <p className="font-Neue text-[2.5vw] pt-[8vw] tracking-[0.08rem] font-normal leading-[1.4] text-center ">
+    <>
+    <section className="h-full w-screen container">
+    <div className="flex flex-col items-center justify-between space-y-[10vw] w-full">
+      <div className="  h-full">
+        <Copy>
+        <p className="!font-head text-[2.8vw]  font-normal leading-[1.4] text-center text-white-200">
           Even today, most enterprises struggle to move from pilot to
           production. Complex tech stacks, long timelines, and compliance risks
-          slow things down. DSW UnifyAI solves this.{" "}
+          slow things down. DSW UnifyAI solves this.
         </p>
+        </Copy>
       </div>
-      <div className="flex h-full items-end gap-[5vw] justify-between">
-        <p className="w-[50%] font-Neue text-[2.5vw] flex h-fit flex-col  tracking-[0.08rem] font-normal">
-          AI is Everywhere.
-          <span className="block"> But Operational AI is Rare.</span>
+      <div className="space-y-[7vw]">
+      <div className="flex h-full items-center gap-[5vw] justify-between">
+        <p className="w-[45%] font-head text-[2.8vw] flex flex-col">
+          AI is Everywhere.<br/>
+          But Operational AI is Rare.
         </p>
-        <p className="w-[65%] text-content text-secondaryWhite ">
+        
+        <p className="w-[65%] text-white-300">
           Most enterprises face the same hurdles: siloed teams, long development
           cycles, integration nightmares, and governance concerns. UnifyAI is
           more than a platform. It's a full-stack AI engine to help teams build,
           deploy, and scale faster — for real outcomes. 
         </p>
+        
       </div>
-      <div className="h-[40vh] flex items-center justify-between w-full">
-        {[
-          {
-            src: "/assets/icons/ai-everywhere/1.svg",
-            alt: "1",
-            text: "Go live 50% faster"
-          },
-          {
-            src: "/assets/icons/ai-everywhere/2.svg",
-            alt: "2",
-            text: "Cut AI/GenAI deployment costs by up to 60%"
-          },
-          {
-            src: "/assets/icons/ai-everywhere/3.svg",
-            alt: "3",
-            text: "Ensure enterprise-grade privacy, compliance and observability"
-          },
-          {
-            src: "/assets/icons/ai-everywhere/4.svg",
-            alt: "4",
-            text: "Deploy across AWS, Azure, GCP, or your private cloud or on-prem"
-          }
-        ].map((card, index) => (
-          <div key={index} className="flex items-start justify-center flex-col gap-[1vw] w-[20%]">
-            <div className="w-[6vw] h-auto">
-              <Image
-                src={card.src}
-                alt={card.alt}
-                width={100}
-                height={100}
-                className="h-full w-full object-contain"
-              />
+      <div className=" flex items-center justify-between w-full">
+        {cardsData.map((card, index) => (
+          <div key={index} className="space-y-[2vw] w-[20vw]">
+            <div className="w-full h-full">
+             <Image
+                       src={card.src}
+                       height={98}
+                       width={98}
+                       alt={card.alt}
+                       className="w-[5vw] h-[5vw] object-contain max-sm:w-[20vw] max-sm:h-[20vw]"
+                     />
             </div>
-            <p className="text-content text-secondaryWhite">
+            <p className="text-content text-white-300">
               {card.text}
             </p>
           </div>
         ))}
       </div>
+      </div>
     </div>
+    </section>
+    </>
   );
 }
+
+const cardsData=[
+          {
+            src: "/assets/icons/fast-track-icon.svg",
+            alt: "Fase track icon",
+            text: "Go live 50% faster"
+          },
+          {
+            src: "/assets/icons/gen-ai-deployment-icon.svg",
+            alt: "Gen AI Deployement icon",
+            text: "Cut AI/GenAI deployment costs by up to 60%"
+          },
+          {
+            src: "/assets/icons/enterprise-grade-privacy-icon.svg",
+            alt: "enterprise grade privacy",
+            text: "Ensure enterprise-grade privacy, compliance and observability"
+          },
+          {
+            src: "/assets/icons/deploy-icon.svg",
+            alt: "deploy icon",
+            text: "Deploy across AWS, Azure, GCP, or your private cloud or on-prem"
+          }
+]

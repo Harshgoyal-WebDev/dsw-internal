@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import PrimaryButton from "../Button/PrimaryButton";
 import Copy from "../Animations/Copy";
 
-const Tour = () => {
+const Tour = ({heading,para}) => {
   const [activeTab, setActiveTab] = useState("aiStudio");
 
   const handleTabClick = (tabId) => {
@@ -39,11 +39,10 @@ useEffect(() => {
   return (
     <section className="w-screen h-fit container" id="tour">
       <div className="w-full flex flex-col gap-[2vw] items-center max-sm:gap-[4vw]">
-        <h2 className="title-2 headingAnim">Take a Lightning Tour</h2>
+        <h2 className="title-2 headingAnim w-[40%] text-center">{heading}</h2>
         <Copy>
           <p className="text-[#CACACA]">
-            Your OS for AI- not just for today's use cases, but for tomorrow's
-            vision.
+            {para}
           </p>
         </Copy>
 

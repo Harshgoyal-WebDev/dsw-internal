@@ -123,8 +123,8 @@ export default function Usecase() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col gap-[7vw] items-center justify-center h-fit w-full py-[5vw] px-[4vw]">
-      <p className="sub-text-heading2 w-[45%] text-center">
+    <div className="min-h-screen flex flex-col gap-[7vw] items-center justify-center h-fit w-full container">
+      <p className="title-2 w-[45%] text-center">
         Supercharge Your AI and GenAI Use Cases
       </p>
       <div className="w-[100%] relative overflow-hidden border border-[#595959]/50 rounded-[2.5vw] h-[85vh]">

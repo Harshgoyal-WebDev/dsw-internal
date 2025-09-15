@@ -1,6 +1,6 @@
 'use client'
 import Newsletter from "./Newsletter";
-import FooterCTA from "../../../public/assets/icons/FooterCta";
+import FooterCTA from "../Common/FooterCta";
 import NavigationLink from "../UI/NavigationLink";
 import SocialLink from "../UI/SocialLink";
 import ContactInfo from "../UI/ContactInfo";
@@ -18,7 +18,6 @@ const Footer = () => {
 
     return (
         <>
-            <FooterCTA />
             <footer className="relative overflow-hidden container !pb-0" id="footer">
                 <div className="absolute top-[30%] left-0 h-screen w-screen max-sm:hidden">
                     <Suspense>
