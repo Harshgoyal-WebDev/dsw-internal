@@ -29,47 +29,41 @@ const PlatformCapabilities = () => {
   },[])
 
   return (
-    <div id='plat-cap-container' className='w-screen h-fit containerr bg-primary'>
+    <section id='plat-cap-container' className='w-screen h-fit container '>
 
-         <h2 className='small-heading text-center'>
+         <h2 className='text-[2.8vw] font-head  text-center'>
             Platform Capabilities</h2>
 
         <div className='flex justify-center items-center flex-col  w-full gap-[1vw] pt-[2vw] '>
 
-
-        
             <div className='w-[34vw] h-[11vw] border z-[0] bg-white/5 backdrop-blur-[2vw] border-gray-800 rounded-[2vw] flex justify-center gap-[2.5vw] items-center  '>
 
-            <div className='h-[5vw] w-[5.5vw]'>
-              <Image src='/assets/icons/insurAlnce/code-setting.svg' width={300} height={300} className='h-full w-full object-cover' alt='cap-logo' />
+            <div className='h-[5.5vw] w-[5.5vw]'>
+              <Image src='/assets/icons/insuraince/code-setting.svg' width={300} height={300} className='h-full w-full ' alt='cap-logo' />
               </div>
-              <p className='pfont w-[20vw] '>
+              <p className='text-white-300 w-[20vw] '>
                 No-code model training and deployment
               </p>
 
             </div>
 
-
-
              <div className='w-[34vw] h-[11vw] relative z-[2] cap-cards translate-y-[-12vw] border bg-white/5 backdrop-blur-[2vw] border-gray-800 rounded-[2vw] flex justify-center gap-[2.5vw] items-center  '>
 
-            <div className='h-[5vw] w-[5.5vw]'>
-              <Image src='/assets/icons/insurAlnce/monitor.svg' width={300} height={300} className='h-full w-full object-cover' alt='cap-logo' />
+            <div className='h-[5.5vw] w-[5.5vw]'>
+              <Image src='/assets/icons/insuraince/monitor.svg' width={300} height={300} className='h-full w-full ' alt='cap-logo' />
               </div>
-              <p className='pfont w-[20vw] '>
+              <p className='text-white-300 w-[20vw] '>
                 Integrated monitoring for drift, accuracy, and performance
               </p>
 
             </div>
 
-
-
              <div className='w-[34vw] h-[11vw] border z-[4] cap-cards bg-white/5 translate-y-[-12vw] backdrop-blur-[2vw] border-gray-800 rounded-[2vw] flex justify-center gap-[2.5vw] items-center '>
 
-            <div className='h-[5vw] w-[5.5vw]'>
-              <Image src='/assets/icons/insurAlnce/one-click-deploy.svg' width={300} height={300} className='h-full w-full object-cover' alt='cap-logo' />
+            <div className='h-[5.5vw] w-[5.5vw]'>
+              <Image src='/assets/icons/insuraince/one-click-deploy.svg' width={300} height={300} className='h-full w-full ' alt='cap-logo' />
               </div>
-              <p className='pfont w-[20vw] '>
+              <p className='text-white-300 w-[20vw] '>
                 Feature stores, model comparison, and one-click deployment
               </p>
 
@@ -77,7 +71,7 @@ const PlatformCapabilities = () => {
           
         </div>
 
-    </div>
+    </section>
   )
 }
 

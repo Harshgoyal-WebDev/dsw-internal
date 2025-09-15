@@ -15,7 +15,7 @@ const Card = ({srcc, content}) => {
             <Image src={srcc} height={300} width={300} alt='card-svg' className='w-full group-hover:brightness-0 h-full object-cover' />
         </div>
         <div className='pt-[3vw]'>
-            <p className='font-display pfont'>
+            <p className='text-white-300'>
                 {content}
             </p>
         </div>
@@ -24,33 +24,6 @@ const Card = ({srcc, content}) => {
     )
 }
 
-const cardsData = [
-  {
-    src: "/assets/icons/insurAlnce/brain-setting.svg",
-    content:
-      "25+ pre-built AI/ML use cases purpose-built for underwriting, claims, and fraud detection ",
-  },
-  {
-    src: "/assets/icons/insurAlnce/genAI-agents.svg",
-    content:
-      "300+ GenAI agents with agentic orchestration. Built, deployed, and managed using RAG, MCP, and A2A protocols. ",
-  },
-  {
-    src: "/assets/icons/insurAlnce/code-setting.svg",
-    content:
-      "Modular, low-code AI Studio for building, deploying, and monitoring models at scale ",
-  },
-  {
-    src: "/assets/icons/insurAlnce/AI.svg",
-    content:
-      "GenAI Studio for creating compliant, enterprise-ready GenAI agents in hours ",
-  },
-  {
-    src: "/assets/icons/insurAlnce/deployment.svg",
-    content:
-      "Deployment options that suit your enterprise: on-prem, cloud, or hybrid infrastructure ",
-  },
-];
 
 
 const Features = () => {
@@ -85,13 +58,13 @@ const Features = () => {
 
 
     return (
-        <div ref={featuresRef} id='features-section' className='bg-primary h-fit flex flex-col py-[6vw]  relative'>
-            <div className='pl-[4vw] w-[47%] '>
-               <h2 className='text-[#F1F1F1] w-[100%] py-[1vw]  small-heading'>
+        <section ref={featuresRef} id='features-section' className='bg-primary h-fit flex flex-col  relative container !pr-0'>
+            <div className=' w-[47%] space-y-[2vw]'>
+               <h2 className='title-2 w-[100%] py-[1vw] text-white-200'>
                     The Unified AI Platform Built for Insurance Enterprises
                 </h2>
 
-                 <p className='content tracking-wider py-[2vw] leading-[1.5] w-[80%]'>
+                 <p className='text-white-300 w-[80%]'>
                     insurAInce brings together everything insurers need to rapidly operationalize AI and GenAI — all on one secure, enterprise-grade platform. 
                  </p>
             </div>
@@ -107,8 +80,37 @@ const Features = () => {
 </div>
 
             </div>
-        </div>
+        </section>
     )
 }
 
 export default Features
+
+
+const cardsData = [
+  {
+    src: "/assets/icons/insuraince/brain-setting.svg",
+    content:
+      "25+ pre-built AI/ML use cases purpose-built for underwriting, claims, and fraud detection ",
+  },
+  {
+    src: "/assets/icons/insuraince/genAI-agents.svg",
+    content:
+      "300+ GenAI agents with agentic orchestration. Built, deployed, and managed using RAG, MCP, and A2A protocols. ",
+  },
+  {
+    src: "/assets/icons/insuraince/code-setting.svg",
+    content:
+      "Modular, low-code AI Studio for building, deploying, and monitoring models at scale ",
+  },
+  {
+    src: "/assets/icons/insuraince/AI.svg",
+    content:
+      "GenAI Studio for creating compliant, enterprise-ready GenAI agents in hours ",
+  },
+  {
+    src: "/assets/icons/insuraince/deployment.svg",
+    content:
+      "Deployment options that suit your enterprise: on-prem, cloud, or hybrid infrastructure ",
+  },
+];

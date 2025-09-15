@@ -3,19 +3,15 @@ import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import Image from 'next/image';
 
-const ExpandablePanels = () => {
-  const [activePanel, setActivePanel] = useState(2); 
-  const panelsRef = useRef([]);
-  const contentRef = useRef([]);
 
-  const panelsData = [
+const panelsData = [
     {
       title: "Mr. Ritesh Rathod",
       name: "Mr. Ritesh Rathod",
       position: "Senior Data Analyst",
       company: "Tech Solutions",
       description: "Expert in data visualization and business intelligence with extensive experience in transforming complex datasets into actionable insights.",
-      logo: "/assets/icons/insurAlnce/customer-logo-1.svg"
+      logo: "/assets/icons/insuraince/customer-logo-1.svg"
     },
     {
       title: "Mr. Stefano Bonfa",
@@ -23,7 +19,7 @@ const ExpandablePanels = () => {
       position: "Lead Data Engineer", 
       company: "Data Corp",
       description: "Specialized in building robust data pipelines and implementing machine learning solutions for enterprise-level applications.",
-      logo: "/assets/icons/insurAlnce/customer-logo-1.svg"
+      logo: "/assets/icons/insuraince/customer-logo-1.svg"
     },
     {
       title: "Mr. Neeraj Kulkarni",
@@ -31,7 +27,7 @@ const ExpandablePanels = () => {
       position: "President / Chief Data Scientist",
       company: "CIEK Solutions",
       description: "Great expertise and analytical diligence by DSW UnifyAI in developing an end-to-end data pipeline - making analytical insights available in the form of interactive, advanced dashboards",
-      logo: "/assets/icons/insurAlnce/customer-logo-1.svg"
+      logo: "/assets/icons/insuraince/customer-logo-1.svg"
     },
     {
       title: "Mr. Ritesh Tiwari",
@@ -39,9 +35,14 @@ const ExpandablePanels = () => {
       position: "AI Solutions Architect",
       company: "AI Innovations",
       description: "Pioneer in artificial intelligence and machine learning implementations, focusing on scalable AI solutions for modern businesses.",
-      logo: "/assets/icons/insurAlnce/customer-logo-1.svg"
+      logo: "/assets/icons/insuraince/customer-logo-1.svg"
     }
   ];
+
+const ExpandablePanels = () => {
+  const [activePanel, setActivePanel] = useState(2); 
+  const panelsRef = useRef([]);
+  const contentRef = useRef([]);
 
   useEffect(() => {
     panelsRef.current.forEach((panel, index) => {
@@ -77,13 +78,12 @@ const ExpandablePanels = () => {
   };
 
   return (
-    <div className="containerr h-fit bg-[radial-gradient(ellipse_45%_45%,_#081B57,_#01030F)]">
-         <h2 className='small-heading text-center pb-[5vw]'>
+    <section className="container h-fit background-radial">
+         <h2 className='title-2 text-white-200 text-center pb-[5vw]'>
             Real Customer Quotes
         </h2>
         <div className='flex items-center justify-center'>
 
-     
       <div className="flex w-full h-[80vh] px-[4vw] overflow-hidden ">
         {panelsData.map((panel, index) => (
           <div
@@ -101,7 +101,7 @@ const ExpandablePanels = () => {
             <div className={`absolute inset-0 flex flex-col py-[1vw] items-center justify-between  transition-opacity duration-500 ${
               activePanel === index ? 'opacity-0 pointer-events-none' : 'opacity-90'
             }`}>
-                <Image src='/assets/icons/insurAlnce/plus.svg' width={200} height={200} className='w-[2vw] h-[2vw]' alt='plus-icon' />
+                <Image src='/assets/icons/insuraince/plus.svg' width={200} height={200} className='w-[2vw] h-[2vw]' alt='plus-icon' />
               <h3 className="text-white text-[2vw] pl-[15vw] transform -rotate-90 whitespace-nowrap">
                 {panel.title}
               </h3>
@@ -115,17 +115,17 @@ const ExpandablePanels = () => {
               }`}
             >
               <div className="flex flex-col gap-[10vw] justify-center items-start">
-                 <p className="text-12 leading-relaxed text-start text-white/90  w-[38vw]">
+                 <p className="text-12 leading-relaxed text-start text-white-200  w-[38vw]">
                   {panel.description}
                 </p>
                 <div>
-                <h2 className="text-[2vw] text-start text-[#F16B0D]  leading-tight">
+                <h2 className="title-3 text-start text-primary-2 leading-tight">
                   {panel.name}
                 </h2>
-                <p className="text-[1.2vw] text-start text-white/90 ">
+                <p className=" text-start text-white-200 ">
                   {panel.position}
                 </p>
-                <p className="text-base text-start text-white/80 ">
+                <p className=" text-start text-white-200 ">
                   {panel.company}
                 </p>
                
@@ -141,7 +141,7 @@ const ExpandablePanels = () => {
         ))}
       </div>
          </div>
-    </div>
+    </section>
   );
 };
 

@@ -21,15 +21,15 @@ const Card = ({ src, content }) => {
 
 const cardsData = [
   {
-    src: "/assets/icons/insurAlnce/AI.svg",
+    src: "/assets/icons/insuraince/AI.svg",
     content: "Unified GenAI and AI Studios for faster development",
   },
   {
-    src: "/assets/icons/insurAlnce/verified.svg",
+    src: "/assets/icons/insuraince/verified.svg",
     content: "ISO 42001, ISO 27001, SOC 2, HIPAA certified and GDPR compliant",
   },
   {
-    src: "/assets/icons/insurAlnce/alert.svg",
+    src: "/assets/icons/insuraince/alert.svg",
     content: "Real-time dashboards and alerts for continuous oversight",
   },
   {
@@ -37,20 +37,20 @@ const cardsData = [
     content: "Cloud or on-prem deployment with no vendor lock-in",
   },
   {
-    src: "/assets/icons/insurAlnce/cost.svg",
+    src: "/assets/icons/insuraince/cost.svg",
     content: "Predictable scaling with lower cost per use case",
   },
 ];
 
 const Outcomes = () => {
   return (
-    <div className="w-screen h-fit containerr space-y-[1vw]">
-      <h2 className="flex flex-col small-heading">
-        <span>One Platform. </span>
-        <span>AI and GenAI Working Together.</span>
+    <section className="w-screen h-fit container space-y-[1vw]">
+      <h2 className="text-[2.8vw] text-white-200">
+        <span className="block">One Platform. </span>
+        <span className="block">AI and GenAI Working Together.</span>
       </h2>
 
-      <p className="w-[40%] content ">
+      <p className="w-[40%] text-white-300">
         One secure platform. Many powerful outcomes.
         <br />
         Whether you're deploying fraud models or launching a GenAI assistant for
@@ -67,7 +67,7 @@ const Outcomes = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
