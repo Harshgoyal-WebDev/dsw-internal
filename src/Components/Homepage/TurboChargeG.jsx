@@ -10,7 +10,7 @@ const TurbochargeG = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-   
+
       const bl = gsap.timeline({
         scrollTrigger: {
           trigger: "#turbo",
@@ -20,7 +20,7 @@ const TurbochargeG = () => {
           end: "+=800 bottom",
         },
       });
-     
+
       gsap.from(".base-img", {
         scale: 0.3,
         opacity: 0.1,
@@ -34,8 +34,8 @@ const TurbochargeG = () => {
       bl.from(".turbo-img", {
         opacity: 0,
         duration: 0.5,
-      
-      
+
+
       });
       bl.from(".img-1", {
         yPercent: -40,
@@ -72,7 +72,7 @@ const TurbochargeG = () => {
           "<"
         );
 
-    
+
 
       bl.from(".img-1", {
         rotateX: 45,
@@ -131,7 +131,7 @@ const TurbochargeG = () => {
             {/* Base background image */}
 
             <Image
-              src={"/assets/images/turbo-charge-base.png"}
+              src={"/assets/images/homepage/turbocharge/turbo-charge-base.png"}
               width={1500}
               height={900}
               className="w-full h-full object-contain base-img"
@@ -141,7 +141,7 @@ const TurbochargeG = () => {
             {/* Dashboard Image with perspective */}
             <div className="absolute top-0 w-[8.8vw] left-0 z-[1] rounded-[0.5vw] overflow-hidden img-1 turbo-img">
               <Image
-                src={"/assets/images/turbo-charge-dsahboard.png"}
+                src={"/assets/images/homepage/turbocharge/turbo-charge-sidebar.png"}
                 width={120}
                 height={900}
                 className="w-full h-full object-contain"
@@ -152,7 +152,7 @@ const TurbochargeG = () => {
             {/* Graph Image */}
             <div className="absolute w-[37vw] top-[10%] left-[15%] z-[1] img-2 turbo-img">
               <Image
-                src={"/assets/images/turbo-charge-graph.png"}
+                src={"/assets/images/homepage/turbocharge/turbo-charge-graph.png"}
                 width={500}
                 height={800}
                 className="w-full h-full object-contain"
@@ -163,7 +163,7 @@ const TurbochargeG = () => {
             {/* Details Image */}
             <div className="absolute w-[37vw] bottom-[7%] left-[15%] z-[1] img-3 turbo-img">
               <Image
-                src={"/assets/images/turbo-charge-details.png"}
+                src={"/assets/images/homepage/turbocharge/turbo-charge-details.png"}
                 width={500}
                 height={900}
                 className="w-full h-full object-contain"
@@ -174,7 +174,7 @@ const TurbochargeG = () => {
             {/* Ratings Image */}
             <div className="absolute right-0 top-[7%] z-[1] img-4 turbo-img">
               <Image
-                src={"/assets/images/turbo-charge-ratings.png"}
+                src={"/assets/images/homepage/turbocharge/turbo-charge-ratings.png"}
                 width={200}
                 height={700}
                 className="w-[19vw] h-[35vw] object-contain"
@@ -182,9 +182,9 @@ const TurbochargeG = () => {
               />
             </div>
           </div>
-          <Image src={"/assets/images/homepage/dashboard-mob.png"} alt="unify-ai-dashboard-mobile" className="w-full h-full object-cover fadeup hidden max-sm:block" width={600} height={400}/>
+          <Image src={"/assets/images/homepage/turbocharge/dashboard-mob.png"} alt="unify-ai-dashboard-mobile" className="w-full h-full object-cover fadeup hidden max-sm:block" width={600} height={400} />
 
-        
+
         </div>
       </div>
     </section>

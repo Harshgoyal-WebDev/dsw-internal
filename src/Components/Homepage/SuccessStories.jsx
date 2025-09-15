@@ -10,7 +10,7 @@ const SuccessStories = () => {
     return (
         <>
 
-            <section id='success-stories' className='h-full py-[7vw] px-[5vw] w-screen background-radial max-sm:px-[7vw]'>
+            <section id='success-stories' className='h-full  w-screen background-radial container'>
                 <div className='w-full h-full'>
                     <div className='w-full flex items-end justify-between max-sm:flex-col max-sm:items-start max-sm:gap-[10vw]'>
                         <div className="space-y-5 mt-10 w-[35%] max-sm:w-full">
@@ -33,16 +33,16 @@ const SuccessStories = () => {
 
 
                         <LinkCard title={"Streamlining Operations with ERP Integration"} link={"#"} width={"w-[70%] max-sm:w-[80%]"} />
-                        <ImageCard img={"/assets/images/homepage/success-img.png"} />
-                        <TestimonialCard message={"With DSW's insurance-specific solutions on top of its robust AI platform, we’ve been able to move use cases into production quickly. ​"} img={"/assets/images/homepage/ritesh-rathod.png"} name={"Ritesh Rathod"} designation={"Chief Strategy and Data Officer, Canara HSBC"} />
+                        <ImageCard img={"/assets/images/homepage/success-stories/success-img.png"} />
+                        <TestimonialCard message={"With DSW's insurance-specific solutions on top of its robust AI platform, we’ve been able to move use cases into production quickly. ​"} img={"/assets/images/homepage/success-stories/ritesh-rathod.png"} name={"Ritesh Rathod"} designation={"Chief Strategy and Data Officer, Canara HSBC"} />
 
-                        <ImageCard img={"/assets/images/homepage/success-img.png"} />
-                        <TestimonialCard message={"DSW UnifyAl simplified our data-driven approach, enabling easy development of Al-powered use cases.​ ​"} img={"/assets/images/homepage/ritesh-rathod.png"} name={"Stefano Bonfa"} designation={"Director, OxSDE, Europe ​"} />
+                        <ImageCard img={"/assets/images/homepage/success-stories/success-img.png"} />
+                        <TestimonialCard message={"DSW UnifyAl simplified our data-driven approach, enabling easy development of Al-powered use cases.​ ​"} img={"/assets/images/homepage/success-stories/ritesh-rathod.png"} name={"Stefano Bonfa"} designation={"Director, OxSDE, Europe ​"} />
                         <LinkCard title={"90% Drop in Manual Effort​"} link={"#"} width={"w-[50%]"}/>
 
-                        <TestimonialCard message={"With advanced capabilities of the platform's GenAI Studio, Castler’s escrow services became smarter, more efficient - enabling faster, secure, scalable solutions for our BFSI clients.​​"} img={"/assets/images/homepage/ritesh-rathod.png"} name={"Ritesh Tiwari"} designation={"Chief Product Officer Castler​"} />
+                        <TestimonialCard message={"With advanced capabilities of the platform's GenAI Studio, Castler’s escrow services became smarter, more efficient - enabling faster, secure, scalable solutions for our BFSI clients.​​"} img={"/assets/images/homepage/success-stories/ritesh-rathod.png"} name={"Ritesh Tiwari"} designation={"Chief Product Officer Castler​"} />
                         <LinkCard title={"3x faster time-to-production"} link={"#"} width={"w-[50%]"} />
-                        <ImageCard img={"/assets/images/homepage/success-img.png"} />
+                        <ImageCard img={"/assets/images/homepage/success-stories/success-img.png"} />
 
 
                     </div>

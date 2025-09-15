@@ -12,7 +12,7 @@ const DynamicShaderComp = dynamic(() => import("../BgShader/ShaderComp"), {
 
 gsap.registerPlugin(ScrollTrigger)
 
-// Reusable hook for stacked card animation
+
 const useStackedCardsAnimation = (triggerRef, cardsRef, options = {}) => {
   const { 
     startTrigger = '20% center',
@@ -30,7 +30,7 @@ const useStackedCardsAnimation = (triggerRef, cardsRef, options = {}) => {
 
     if (totalCards === 0) return;
 
-    // Initial setup - cards stacked with decreasing z-index, scale, and opacity 0 for all except first
+   
     gsap.set(cards, {
       zIndex: (i) => totalCards - i,
       yPercent: (i) => -i * 99, 
@@ -107,7 +107,7 @@ const Difference = () => {
 
   return (
     <section
-      className="w-screen h-fit py-[7%] px-[5vw] relative max-sm:px-0 max-sm:py-[15%] max-sm:overflow-hidden "
+      className="w-screen h-fit  relative max-sm:!px-0 container max-sm:overflow-hidden "
       id="difference" 
       ref={sectionRef}
     >
@@ -167,7 +167,7 @@ const Difference = () => {
       </div>
       <div className="absolute top-[30%] left-0 h-screen w-screen max-sm:hidden">
         <Suspense>
-          <DynamicShaderComp color={"0x1726FD"} />
+          <DynamicShaderComp/>
         </Suspense>
       </div>
       <div className="w-screen h-screen absolute top-0 z-[10] left-0 hidden max-sm:block">

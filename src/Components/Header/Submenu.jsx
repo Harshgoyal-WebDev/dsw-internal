@@ -15,9 +15,9 @@ const SubmenuNavigation = ({
             title: "Resources",
             link: "/resources",
             links: [
-                { href: "/", text: "Resources 1" },
-                { href: "/", text: "Resources 2" },
-                { href: "/", text: "Resources 3" },
+                { href: "/", text: "Blogs" },
+                { href: "/", text: "News" },
+                { href: "/", text: "Articles" },
                 // { href: "/", text: "Resources 4" },
                 // { href: "/", text: "Resources 5" },
             ],

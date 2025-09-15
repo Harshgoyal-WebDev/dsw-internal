@@ -1,7 +1,7 @@
 'use client'
 import Image from "next/image";
-import PrimaryButton from "../Button/PrimaryButton";
-import WhiteButton from "../Button/WhiteButton";
+import PrimaryButton from "../../../src/Components/Button/PrimaryButton";
+import WhiteButton from "../../../src/Components/Button/WhiteButton";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
@@ -62,7 +62,7 @@ const FooterCTA = () => {
     const image1Y = useTransform(smoothY, (v) => v * 20);
 
     return (
-        <div ref={containerRef} className="px-20 flex items-center justify-between h-[80vh] w-screen overflow-hidden max-sm:flex-col-reverse max-sm:px-[7vw] max-sm:h-full max-sm:py-[15vw] " id="footer-cta">
+        <div ref={containerRef} className="flex items-center justify-between h-[80vh] w-screen overflow-hidden max-sm:flex-col-reverse  max-sm:h-full container " id="footer-cta">
             <div className="w-1/2 max-sm:!w-[90%] max-sm:text-center max-sm:mt-[5vw]">
                 <h2 className="title-1 leading-[1.2] font-head mb-3 headingAnim text-white-200 max-sm:!text-[10vw] max-sm:mb-[7vw]">Take a lightning tour of the Enterprise AI Platform </h2>
                 <p data-para-anim className="text-[#CACACA]  mb-12">Discover how UnifyAI can accelerate your AI/ML and GenAI initiatives with seamless deployment, scalability, and security.</p>
@@ -101,14 +101,14 @@ const FooterCTA = () => {
                     style={{ x: image1X, y: image1Y }}
                     className="absolute w-[40%] top-[20%] left-[20%] rounded-2xl border border-white/30 overflow-hidden max-sm:w-[50%] max-sm:top-[5%] max-sm:left-[10%] fadeup "
                 >
-                    <Image src={"/assets/images/homepage/footer-cta-1.png"} alt="Image1"  width={348} height={312} loading="lazy"  className="w-full h-full object-cover" />
+                    <Image src={"/assets/images/footer/image-1.png"} alt="Image1"  width={348} height={312} loading="lazy"  className="w-full h-full object-cover" />
                 </motion.div>
 
                 <motion.div
                     style={{ x: image1X, y: image1Y }}
                     className="absolute  w-[35%] bottom-[18%] left-[45%] rounded-2xl  border border-white/30 overflow-hidden max-sm:w-[50%] max-sm:left-[35%] fadeup"
-                >
-                    <Image src={"/assets/images/homepage/footer-cta-2.png"} alt="Image2"  width={313} height={272} loading="lazy"  className="w-full h-full object-cover" />
+             >
+                    <Image src={"/assets/images/footer/image-2.png"} alt="Image2"  width={313} height={272} loading="lazy"  className="w-full h-full object-cover" />
                 </motion.div>
             </div>
         </div>

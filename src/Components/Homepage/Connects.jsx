@@ -70,7 +70,7 @@ const Connects = () => {
   return (
     <section
       ref={sectionRef}
-      className="h-screen w-screen py-[7vw] px-[5vw] relative overflow-hidden max-sm:px-[7vw] max-sm:py-[15vw] max-sm:h-full"
+      className="h-screen w-screen relative overflow-hidden  max-sm:h-full container"
     >
       <div className="w-full h-full flex flex-col items-center justify-center relative z-[2]">
         <div className="w-full flex items-center justify-center gap-20 py-20 max-sm:flex-col max-sm:gap-[20vw]">

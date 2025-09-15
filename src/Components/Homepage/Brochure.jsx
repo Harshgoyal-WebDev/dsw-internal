@@ -6,6 +6,7 @@ import { NextButton, PreviousButton } from "../Button/SliderButtons";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
+import WhiteButton from "../Button/WhiteButton";
 
 const Brochure = () => {
    const swiperRef = useRef(null);
@@ -22,7 +23,7 @@ const Brochure = () => {
   };
   return (
     <section
-      className="w-screen h-fit py-[7%] px-[5vw] max-sm:px-[7vw] max-sm:py-[15vw]"
+      className="w-screen h-fit container"
       id="brochure"
     >
       <div className="w-full flex flex-col items-center justify-center gap-[5vw] max-sm:gap-[10vw]">
@@ -58,7 +59,13 @@ const Brochure = () => {
                   </ul>
                 </div>
                 <div>
-                  <PrimaryButton href={"/"} text={"Download PDF"} />
+                <WhiteButton
+                  background="border-primary-2 border bg-transparent hover:bg-transparent"
+                  circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
+                  text="Download PDF"
+                  href="#"
+                  className="hover:text-primary-2 text-primary-2"
+                />
                 </div>
               </div>
             }
@@ -92,7 +99,13 @@ const Brochure = () => {
                   </ul>
                 </div>
                 <div>
-                  <PrimaryButton href={"/"} text={"Download PDF"} />
+                 <WhiteButton
+                  background="border-primary-2 border bg-transparent hover:bg-transparent"
+                  circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
+                  text="Download PDF"
+                  href="#"
+                  className="hover:text-primary-2 text-primary-2"
+                />
                 </div>
               </div>
             }
@@ -172,7 +185,13 @@ const BrochureCard = ({ title, list, listTitle }) => {
             </ul>
             </div>
             <div className="mt-[7vw]">
-            <PrimaryButton text={"Download PDF"} href={"/"} className="max-sm:w-[50vw]" />
+          <WhiteButton
+                  background="border-primary-2 border bg-transparent hover:bg-transparent"
+                  circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
+                  text="Download PDF"
+                  href="#"
+                  className="hover:text-primary-2 text-primary-2"
+                />
 
             </div>
 

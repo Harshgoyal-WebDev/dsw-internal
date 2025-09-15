@@ -11,6 +11,22 @@ const Tour = () => {
   const handleTabClick = (tabId) => {
     setActiveTab(tabId);
   };
+//   const [activeTab, setActiveTab] = useState("aiStudio");
+// const [visibleTab, setVisibleTab] = useState("aiStudio"); // this controls rendering
+// const [isAnimating, setIsAnimating] = useState(false);
+
+// const handleTabClick = (tabId) => {
+//   if (tabId === activeTab || isAnimating) return;
+//   setIsAnimating(true);
+
+//   // Start exit animation, then change tab
+//   setTimeout(() => {
+//     setActiveTab(tabId);
+//     setVisibleTab(tabId);
+//     setIsAnimating(false);
+//   }, 800); 
+// };
+
   const [isMobile, setIsMobile] = useState(false);
 
 useEffect(() => {
@@ -21,7 +37,7 @@ useEffect(() => {
 }, []);
 
   return (
-    <section className="w-screen h-fit px-[5vw] py-[7%] max-sm:px-[7vw] max-sm:py-[15%]" id="tour">
+    <section className="w-screen h-fit container" id="tour">
       <div className="w-full flex flex-col gap-[2vw] items-center max-sm:gap-[4vw]">
         <h2 className="title-2 headingAnim">Take a Lightning Tour</h2>
         <Copy>
@@ -88,7 +104,7 @@ useEffect(() => {
         {/* Content Containers */}
         <div className="w-[80%] h-[30vw] relative fadeup mt-[5vw] max-sm:w-full max-sm:h-[60vw] max-sm:mt-[12vw]">
           <AnimatePresence mode="wait">
-            {/* AI Studio Container */}
+           
             {activeTab === "aiStudio" && (
               <motion.div
                 key="aiStudio"
@@ -136,7 +152,7 @@ useEffect(() => {
               </motion.div>
             )}
 
-            {/* GenAI Studio Container */}
+           
             {activeTab === "genStudio" && (
               <motion.div
                 key="genStudio"
@@ -185,6 +201,61 @@ useEffect(() => {
             )}
           </AnimatePresence>
         </div>
+        {/* <div className="w-[80%] h-[30vw] relative fadeup mt-[5vw] max-sm:w-full max-sm:h-[60vw] max-sm:mt-[12vw]">
+  <motion.div
+    className="w-full h-full absolute top-0 left-0 aiStudio-container"
+    animate={{
+      opacity: visibleTab === "aiStudio" ? 1 : 0,
+      scale: visibleTab === "aiStudio" ? 1 : 0.5,
+      pointerEvents: activeTab === "aiStudio" ? "auto" : "none",
+      zIndex: visibleTab === "aiStudio" ? 10 : 1,
+    }}
+    transition={{ duration: 0.8, ease: "easeInOut" }}
+  >
+    <Image
+      src={"/assets/images/homepage/tour-img.png"}
+      alt="AI Studio tour image"
+      className="w-full h-full object-cover rounded-lg"
+      width={900}
+      height={400}
+    />
+    <div className="w-full h-full absolute top-0 left-0 flex justify-center items-center">
+      <PrimaryButton
+        text={"Experience AI Studio"}
+        className=""
+        href={"/ai-studio"}
+      />
+    </div>
+  </motion.div>
+
+  <motion.div
+    className="w-full h-full absolute top-0 left-0 genStudio-container"
+    animate={{
+      opacity: visibleTab === "genStudio" ? 1 : 0,
+      scale: visibleTab === "genStudio" ? 1 : 0.5,
+      pointerEvents: activeTab === "genStudio" ? "auto" : "none",
+      zIndex: visibleTab === "genStudio" ? 10 : 1,
+    }}
+    transition={{ duration: 0.8, ease: "easeInOut" }}
+  >
+    <Image
+      src={"/assets/images/homepage/tour-img.png"}
+      alt="GenAI Studio tour image"
+      className="w-full h-full object-cover rounded-lg"
+      width={900}
+      height={400}
+    />
+    <div className="w-full h-full absolute top-0 left-0 flex justify-center items-center">
+      <PrimaryButton
+        text={"Explore GenAI Studio"}
+        className=""
+        href={"/genai-studio"}
+      />
+    </div>
+  </motion.div>
+</div> */}
+
+
       </div>
     </section>
   );

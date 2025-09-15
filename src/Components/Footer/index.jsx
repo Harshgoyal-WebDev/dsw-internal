@@ -1,6 +1,6 @@
 'use client'
 import Newsletter from "./Newsletter";
-import FooterCTA from "./FooterCta";
+import FooterCTA from "../../../public/assets/icons/FooterCta";
 import NavigationLink from "../UI/NavigationLink";
 import SocialLink from "../UI/SocialLink";
 import ContactInfo from "../UI/ContactInfo";
@@ -19,10 +19,10 @@ const Footer = () => {
     return (
         <>
             <FooterCTA />
-            <footer className="relative overflow-hidden px-20 pt-[15vw] max-sm:px-[7vw]" id="footer">
+            <footer className="relative overflow-hidden container !pb-0" id="footer">
                 <div className="absolute top-[30%] left-0 h-screen w-screen max-sm:hidden">
                     <Suspense>
-                        <DynamicShaderComp color={"0x1726FD"} />
+                        <DynamicShaderComp/>
                     </Suspense>
                 </div>
                 <div className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-sm:block">

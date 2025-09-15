@@ -124,7 +124,7 @@ const Hero = () => {
       </div>
       <div className="absolute top-[30%] left-0 h-screen w-screen max-sm:hidden">
         <Suspense>
-          <DynamicShaderComp color={"0x1726FD"} />
+          <DynamicShaderComp />
         </Suspense>
       </div>
       <div className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-sm:block">

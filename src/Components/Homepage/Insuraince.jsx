@@ -83,7 +83,7 @@ const Insuraince = () => {
   return (
     <section
     id="insuraince"
-      className="w-screen h-full py-[7%] overflow-hidden max-sm:px-[7vw] max-sm:py-[15%]"
+      className="w-screen h-full overflow-hidden container"
       ref={sectionRef}
     >
       <div className="w-full space-y-[7.5vw] max-sm:space-y-[12vw]">
@@ -100,7 +100,7 @@ const Insuraince = () => {
           </Copy>
         </div>
 
-        <div className="flex items-center justify-between px-[5vw] max-sm:px-0 max-sm:flex-col">
+        <div className="flex items-center justify-between  max-sm:flex-col">
           {content.map((data, index) => (
             <div
               key={index}

@@ -208,7 +208,7 @@ const MovingGradientShader = ({
   );
 };
 
-const ShaderComp = ({ color }) => {
+const ShaderComp = () => {
   return (
       <Canvas className="w-full h-full">
         <MovingGradientShader
@@ -222,7 +222,7 @@ const ShaderComp = ({ color }) => {
           upperWaveSpeed={0.7}
           topBoundaryBase={0.7}
           topFadeSoftness={0.1}
-          color={color}
+          color={"0x1726FD"}
         />
       </Canvas>
   

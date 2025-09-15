@@ -48,7 +48,7 @@ export default function About() {
   }, []);
 
   return (
-    <section className="w-screen px-[5vw] py-[7%] max-sm:px-[7vw]" id="about">
+    <section className="w-screen container" id="about">
       <div className="w-full flex flex-col items-center justify-center gap-y-[5vw] max-sm:gap-y-[15vw]">
         <h2 className="title-2 headingAnim text-[#E8E8E8] max-sm:text-center">
           Make AI Operational, Not Experimental

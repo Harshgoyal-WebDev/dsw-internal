@@ -113,7 +113,7 @@ const UnifyAi = () => {
         </Copy>
         <div className="fadeup">
           <PrimaryButton
-            background="!bg-gradient-to-r !from-[#041035] !to-[#1727FF]"
+            background=""
             href={"/"}
             text={"Book a demo"}
           />

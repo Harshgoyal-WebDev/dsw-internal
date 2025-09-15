@@ -69,7 +69,7 @@ export default function WhyUnifyMobile({ allowMultiple = false }) {
         </div>
       </div>
 
-      <div className="w-full space-y-[2vw] max-sm:pt-[20vw] max-md:pt-[10vw]">
+      <div className="w-full space-y-[2vw] max-sm:pt-[20vw]">
         {data.map((f, i) => (
           <Accordion
             key={i}
@@ -98,7 +98,7 @@ title,para,link,isOpen, onToggle
           className="relative cursor-pointer w-full h-full max-sm:pt-[5vw] max-sm:pb-[7vw] flex items-start justify-between max-md:pt-[3vw] max-md:pb-[5vw]"
         >
           <div className="w-full flex justify-between ">
-            <h3 className="max-sm:text-[6.8vw] font-display capitalize max-md:text-[5.5vw] text-left w-[90%]">
+            <h3 className="max-sm:text-[6.4vw] font-display capitalize max-md:text-[5.5vw] text-left w-[85%]">
               {title}
             </h3>
              <div
@@ -136,7 +136,7 @@ title,para,link,isOpen, onToggle
                               </div>
                               <div className="rounded-2xl overflow-hidden h-fit w-fit ml-[25vw]">
                                 <Image
-                                  src="/assets/images/unify-dashboard-2.png"
+                                  src="/assets/images/homepage/unify-dashboard-2.png"
                                   height={247}
                                   width={283}
                                   className="h-[13vw] w-[15vw] object-contain max-sm:h-[35vw] max-sm:w-[40vw]"
@@ -153,10 +153,11 @@ title,para,link,isOpen, onToggle
                   className='py-4 space-y-[4vw] '>{para}</div>
                 <div className="w-full mt-[5vw]">
                   <WhiteButton
-                  circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
+                  background="border-primary-2 border bg-transparent hover:bg-transparent"
+                  circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
                   text="Know More"
                   href="#"
-                  className="border-primary-1 border text-primary-1 bg-transparent hover:text-primary-1 hover:bg-transparent"
+                  className="hover:text-primary-2 text-primary-2"
                 />
                 </div>
               </div>

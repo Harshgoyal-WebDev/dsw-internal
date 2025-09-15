@@ -68,8 +68,8 @@ const Blogs = () => {
     }
   };
   return (
-    <section ref={blogsRef} className='h-full w-screen py-20 my-30 relative max-sm:px-[7vw] max-sm:pt-[20%] max-sm:pb-[15%] overflow-hidden max-sm:my-0'>
-      <div className='h-full w-full flex items-start justify-between pl-15 max-sm:flex-col max-sm:pl-0'>
+    <section ref={blogsRef} className='h-full w-screen  relative  overflow-hidden max-sm:my-0 !pr-0 container  max-sm:!pr-[7vw]'>
+      <div className='h-full w-full flex items-start justify-between  max-sm:flex-col max-sm:pl-0'>
         <div className='w-1/2 space-y-10 max-sm:w-full'>
           <h2 className='title-2 leading-[1.2] w-[90%] headingAnim font-head text-white-200'>Stay Ahead with AI Insights</h2>
           <Copy>
@@ -79,7 +79,7 @@ const Blogs = () => {
             <PrimaryButton text={"Know More"} href={"#"} />
           </div>
         </div>
-        <div className='w-[50%] text-white max-sm:w-full max-sm:mt-[10vw]'>
+        <div className='w-[50%] text-white max-sm:w-full max-sm:mt-[10vw] '>
           <Swiper
             slidesPerView={1.8}
             className="mySwiper swiper-container"
@@ -135,36 +135,36 @@ const BlogsData = [
     id: 1,
     title: "How Generative AI is Revolutionizing Insurance",
     date: "6 March, 2025",
-    img: "/assets/images/blog-1.png",
+    img: "/assets/images/homepage/blogs/blog-1.png",
   },
   {
     id: 2,
     title: "Best Practices for AI Deployment in Regulated Industries",
     date: "6 March, 2025",
-    img: "/assets/images/blog-2.png",
+    img: "/assets/images/homepage/blogs/blog-2.png",
   },
   {
     id: 3,
     title: "How Generative AI is Revolutionizing Insurance",
     date: "6 March, 2025",
-    img: "/assets/images/blog-1.png",
+    img: "/assets/images/homepage/blogs/blog-1.png",
   },
   {
     id: 4,
     title: "Best Practices for AI Deployment in Regulated Industries",
     date: "6 March, 2025",
-    img: "/assets/images/blog-2.png",
+    img: "/assets/images/homepage/blogs/blog-2.png",
   },
   {
     id: 5,
     title: "How Generative AI is Revolutionizing Insurance",
     date: "6 March, 2025",
-    img: "/assets/images/blog-1.png",
+    img: "/assets/images/homepage/blogs/blog-1.png",
   },
   {
     id: 6,
     title: "Best Practices for AI Deployment in Regulated Industries",
     date: "6 March, 2025",
-    img: "/assets/images/blog-2.png",
+    img: "/assets/images/homepage/blogs/blog-2.png",
   }
 ]

@@ -30,7 +30,7 @@ const Recognized = () => {
     return (
         <section
             id='recognized'
-            className="h-full w-screen py-[7vw] px-[5vw] relative overflow-hidden max-sm:px-[7vw] max-sm:py-[15vw]"
+            className="h-full w-screen  relative overflow-hidden container"
         >
             <div className="w-full h-full flex flex-col items-center justify-center relative z-[2] space-y-[3vw]">
                 <div className="text-center  space-y-5 mt-10 max-sm:space-y-10">
@@ -46,16 +46,16 @@ const Recognized = () => {
 
                 <div className='w-full flex items-center justify-between px-[5vw] mt-[3vw] fadeup max-sm:flex-wrap max-sm:mt-[6vw] max-sm:gap-y-[5vw] '>
                     <div className='h-[10vw] w-[10vw] max-sm:h-[22vw] max-sm:w-[22vw]'>
-                        <Image src={"/assets/images/homepage/soc-complaint-2.png"} height={178} width={178} alt='soc-compliant' className='h-full w-full object-contain' />
+                        <Image src={"/assets/images/homepage/recognized/soc-complaint-2.png"} height={178} width={178} alt='soc-compliant' className='h-full w-full object-contain' />
                     </div>
                     <div className='h-[10vw] w-[10vw] max-sm:h-[22vw] max-sm:w-[22vw]'>
-                        <Image src={"/assets/images/homepage/iso-certified-2.png"} height={178} width={178} alt='iso-certified' className='h-full w-full object-contain'/>
+                        <Image src={"/assets/images/homepage/recognized/iso-certified-2.png"} height={178} width={178} alt='iso-certified' className='h-full w-full object-contain'/>
                     </div>
                     <div className='h-[10vw] w-[10vw] max-sm:h-[22vw] max-sm:w-[22vw]'>
-                        <Image src={"/assets/images/homepage/hipaa-compliant-2.png"} height={178} width={178} alt='hipaa-compliant' className='h-full w-full object-contain scale-[1.12]'/>
+                        <Image src={"/assets/images/homepage/recognized/hipaa-compliant-2.png"} height={178} width={178} alt='hipaa-compliant' className='h-full w-full object-contain scale-[1.12]'/>
                     </div>
                     <div className='h-[10vw] w-[35vw] max-sm:h-[30vw] max-sm:w-[90vw]'>
-                        <Image src={"/assets/images/homepage/f6s-top-company.png"} height={178} width={681} alt='f6s-top-company' className='h-full w-full object-contain'/>
+                        <Image src={"/assets/images/homepage/recognized/f6s-top-company.png"} height={178} width={681} alt='f6s-top-company' className='h-full w-full object-contain'/>
                     </div>
 
                 </div>
@@ -78,22 +78,22 @@ export default Recognized
 
 const awards = [
     {
-        img: "/assets/images/homepage/top-10.png",
+        img: "/assets/images/homepage/recognized/top-10.png",
         title: "Top 10 AI Startups",
         year: "Ireland 2024"
     },
     {
-        img: "/assets/images/homepage/top-10.png",
+        img: "/assets/images/homepage/recognized/top-10.png",
         title: "Top 10 AI Startups",
         year: "Ireland 2024"
     },
     {
-        img: "/assets/images/homepage/top-10.png",
+        img: "/assets/images/homepage/recognized/top-10.png",
         title: "Top 10 AI Startups",
         year: "Ireland 2024"
     },
     {
-        img: "/assets/images/homepage/top-10.png",
+        img: "/assets/images/homepage/recognized/top-10.png",
         title: "Top 10 AI Startups",
         year: "Ireland 2024"
     },
