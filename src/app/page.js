@@ -20,7 +20,6 @@ import WhyUnifyMobile from "@/Components/Homepage/WhyUnifyMobile";
 
 export default function Home() {
 
-
   return (
     <>
       <Loader />

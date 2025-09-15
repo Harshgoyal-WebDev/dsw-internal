@@ -1,3 +1,4 @@
+'use client'
 import Newsletter from "./Newsletter";
 import FooterCTA from "./FooterCta";
 import NavigationLink from "../UI/NavigationLink";
@@ -10,7 +11,7 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 
 const DynamicShaderComp = dynamic(() => import("../BgShader/ShaderComp"), {
-    ssr: true,
+    ssr: false,
 });
 
 const Footer = () => {

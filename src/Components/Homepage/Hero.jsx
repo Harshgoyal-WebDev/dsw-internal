@@ -9,9 +9,10 @@ import { SplitText } from "gsap/SplitText";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { fadeIn, fadeUp, headingAnim, lineAnim, paraAnim } from "@/Components/Animations/gsapAnimations";
+import heroGradient from "../../../public/assets/images/homepage/gradient-mobile.png"
 
 const DynamicShaderComp = dynamic(() => import("../BgShader/ShaderComp"), {
-  ssr: true,
+  ssr: false,
 });
 
 const lineCount = 4;
@@ -127,11 +128,8 @@ const Hero = () => {
         </Suspense>
       </div>
       <div className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-sm:block">
-        <Image src={"/assets/images/homepage/gradient-mobile.png"} alt="shader-gradient-mobile" className="w-full h-full object-cover" width={600} height={1080}/>
+        <Image src={heroGradient} placeholder="blur" alt="shader-gradient-mobile" className="w-full h-full object-cover" width={600} height={1080}/>
       </div>
-      {/* <div className="w-screen h-screen absolute z-[20] bg-black/10 backdrop-blur-lg top-0 left-0">
-
-      </div> */}
     </section>
   );
 };

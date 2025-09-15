@@ -2,7 +2,7 @@
 export const siteViewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
+  maximumScale: 5,
   themeColor: "#030815",
   colorScheme: "dark",
 };

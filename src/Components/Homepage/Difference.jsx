@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import dynamic from "next/dynamic";
 
 const DynamicShaderComp = dynamic(() => import("../BgShader/ShaderComp"), {
-    ssr: true,
+    ssr: false,
 });
 
 gsap.registerPlugin(ScrollTrigger)
