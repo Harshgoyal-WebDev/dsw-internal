@@ -13,7 +13,7 @@ const Diagram = () => {
     >
       <div className="w-full h-full flex flex-col items-center justify-center relative z-[2] space-y-[5vw] max-sm:items-start max-sm: ">
         <div className="text-center  space-y-5 mt-10 flex flex-col items-center justify-center max-sm:text-left max-sm:items-start w-[75%]">
-          <h3 className="title-3 leading-[1.2] headingAnim ">
+          <h3 className="title-3  leading-[1.2] headingAnim ">
            An orchestrator that brings togethers data, models, workflows and AI agents, all in a single platform, designed to deliver business outcomes 
           </h3>
          

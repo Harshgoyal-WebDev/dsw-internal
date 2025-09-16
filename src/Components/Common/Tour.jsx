@@ -39,7 +39,7 @@ useEffect(() => {
   return (
     <section className="w-screen h-fit container" id="tour">
       <div className="w-full flex flex-col gap-[2vw] items-center max-sm:gap-[4vw]">
-        <h2 className="title-2 headingAnim w-[40%] text-center">{heading}</h2>
+        <h2 className="title-2 headingAnim w-[40%] max-sm:w-full text-center">{heading}</h2>
         <Copy>
           <p className="text-[#CACACA]">
             {para}

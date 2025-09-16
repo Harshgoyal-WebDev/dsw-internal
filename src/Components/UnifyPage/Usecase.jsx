@@ -9,15 +9,15 @@ export default function Usecase() {
     const tl = gsap.timeline();
     tl.to(".usecase-card1", {
       yPercent: 0,
-      duration: 0.5,
-      ease: "linear",
+      duration: 0.8,
+      ease: "power2.out",
     });
     tl.to(
       ".usecase-card2",
       {
         yPercent: 25,
-        duration: 0.5,
-        ease: "linear",
+        duration: 0.8,
+        ease: "power2.out",
       },
       "<"
     );
@@ -25,8 +25,8 @@ export default function Usecase() {
       ".usecase-card3",
       {
         yPercent: 0,
-        duration: 0.5,
-        ease: "linear",
+        duration: 0.8,
+        ease: "power2.out",
       },
       "<"
     );
@@ -38,11 +38,15 @@ export default function Usecase() {
   const handleSecondCard = () => {
     const tl = gsap.timeline();
 
-    tl.to(".usecase-card1", { yPercent: 0, duration: 0.5, ease: "linear" });
-    tl.to(".usecase-card2", { yPercent: 0, duration: 0.5, ease: "linear" });
+    tl.to(".usecase-card1", { yPercent: 0, duration: 0.8, ease: "power2.out" });
+    tl.to(
+      ".usecase-card2",
+      { yPercent: 0, duration: 0.8, ease: "power2.out" },
+      "<"
+    );
     tl.to(
       ".usecase-card3",
-      { yPercent: 0, duration: 0.5, ease: "linear" },
+      { yPercent: 0, duration: 0.8, ease: "power2.out" },
       "<"
     );
 
@@ -53,15 +57,15 @@ export default function Usecase() {
 
   const handleThirdCard = () => {
     const tl = gsap.timeline();
-    tl.to(".usecase-card1", { yPercent: 0, duration: 0.5, ease: "linear" });
+    tl.to(".usecase-card1", { yPercent: 0, duration: 0.8, ease: "power2.out" });
     tl.to(
       ".usecase-card2",
-      { yPercent: 0, duration: 0.5, ease: "linear" },
+      { yPercent: 0, duration: 0.8, ease: "power2.out" },
       "<"
     );
     tl.to(
       ".usecase-card3",
-      { yPercent: -25, duration: 0.5, ease: "linear" },
+      { yPercent: -25, duration: 0.8, ease: "power2.out" },
       "<"
     );
     tl.eventCallback("onUpdate", () => {
@@ -72,7 +76,7 @@ export default function Usecase() {
   const usecaseData = [
     {
       id: "001",
-      title: "AI STUDIO",
+      title: "AI Studio",
       description:
         "Build, test, deploy, and monitor AI/ML models with lightning speed using accelerated workflows",
       features: [
@@ -83,7 +87,7 @@ export default function Usecase() {
       ],
       handleClick: handleFirstCard,
       className: `usecase-card1 z-[1]`,
-      borderClass: "border-white/10",
+      borderClass: "border-white",
       iconBg: "bg-white",
       iconFill: "black",
     },
@@ -100,7 +104,7 @@ export default function Usecase() {
       ],
       handleClick: handleSecondCard,
       className: `translate-y-[25%] usecase-card2 z-[1] border-t`,
-      borderClass: "border-white/50",
+      borderClass: "border-white",
       iconBg: "bg-white",
       iconFill: "black",
     },
@@ -117,23 +121,23 @@ export default function Usecase() {
       ],
       handleClick: handleThirdCard,
       className: `translate-y-[75%] usecase-card3  z-[4]`,
-      borderClass: "border-white/10",
+      borderClass: "border-white",
       iconBg: "bg-white",
       iconFill: "black",
     },
   ];
 
   return (
-    <div className="min-h-screen container flex flex-col items-center justify-center space-y-[7vw] h-fit w-full">
+    <div className="min-h-screen max-sm:hidden container flex flex-col items-center justify-center space-y-[7vw] h-fit w-full">
       <h2 className="title-2 headingAnim w-[45%] text-center">
         Supercharge Your AI and GenAI Use Cases
       </h2>
-      <div className="w-[100%] relative overflow-hidden border border-[#595959]/50 rounded-[2.5vw] h-[85vh]">
+      <div className="w-[100%] relative text-white-200 overflow-hidden border border-[#595959]/50 rounded-[2.5vw] h-[85vh]">
         {usecaseData.map((card, index) => (
           <motion.div
             key={card.id}
             onClick={card.handleClick}
-            className={`h-full px-[4vw] py-[2vw] absolute inset-0 cursor-pointer
+            className={`h-full px-[3vw] py-[1.5vw] flex items-end flex-col absolute inset-0 pr-[8vw] cursor-pointer
                ${
                  activeCard === index
                    ? "bg-gradient-to-r from-[#041035] to-[#1727FF]"
@@ -144,54 +148,55 @@ export default function Usecase() {
               card.className
             }`}
           >
+            {/* <div className="w-full flex items-start justify-end h-full "> */}
             <div
-              className={`border-b py-[2vw] flex items-center w-full justify-between ${card.borderClass}`}
+              className={`border-b py-[2.5vw] min-h-[18.5vh] flex items-center w-[85%] justify-between ${card.borderClass}`}
             >
               <div className="space-x-[5vw] w-full flex items-center">
-                <p className="">{card.id}</p>
-                <p className="sub-text-content">{card.title}</p>
+                <p className="absolute left-[3%] top-[14%] translate-y-[-50%]">
+                  {card.id}
+                </p>
+                <p className="text-[1.5vw] ">{card.title}</p>
               </div>
-              <div className="flex items-center justify-end w-full gap-[5vw]">
-                <p className="text-content w-[70%]">{card.description}</p>
-                <motion.div
-                  className={`rounded-full cursor-pointer h-[4vw] w-[4vw] border-[#888888]/80 p-[0.5vw] border ${
+              <div className="flex items-center  text-white-200 justify-end w-full gap-[5vw]">
+                <p className="text-content w-[30vw]">{card.description}</p>
+                <div
+                  className={`rounded-full absolute right-[3%] top-[14%] translate-y-[-50%] cursor-pointer h-[4vw] w-[4vw] border-[#888888]/80 p-[0.5vw] border ${
                     activeCard == index ? card.iconBg : "bg-white/5"
-                  } flex items-center justify-center transition-colors duration-300 ease-in-out`}
-                  whileHover={{ scale: 1.1, opacity: 0.9 }}
-                  whileTap={{ scale: 0.95, opacity: 0.8 }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  } flex items-center justify-center hover:scale-110 hover:opacity-90 active:scale-95 active:opacity-80 transition-all duration-300`}
                 >
-                  <motion.div
-                    initial={{ rotate: 0, opacity: 0.8 }}
-                    animate={{
-                      rotate: activeCard == index ? 180 : 0,
-                      opacity: activeCard == index ? 1 : 0.8,
-                    }}
-                    transition={{ duration: 0.6, ease: "easeInOut" }}
+                  <div
+                    className={`transition-all duration-800 ${
+                      activeCard == index
+                        ? "rotate-180 opacity-100"
+                        : "rotate-0 opacity-100"
+                    }`}
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="2.2vw"
-                      height="2.2vw"
-                      viewBox="0 0 24 24"
-                      fill={activeCard == index ? card.iconFill : "white"}
-                      style={{
-                        transition: "fill 0.3s ease-in-out",
-                        opacity: activeCard == index ? 1 : 0.7,
-                      }}
-                    >
-                      {activeCard == index ? (
-                        <path d="M3 12C3 11.4477 3.44772 11 4 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H4C3.44772 13 3 12.5523 3 12Z" />
-                      ) : (
-                        <path d="M12 4C12.5523 4 13 4.44772 13 5V11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H13V19C13 19.5523 12.5523 20 12 20C11.4477 20 11 19.5523 11 19V13H5C4.44772 13 4 12.5523 4 12C4 11.4477 4.44772 11 5 11H11V5C11 4.44772 11.4477 4 12 4Z" />
-                      )}
-                    </svg>
-                  </motion.div>
-                </motion.div>
+                    <div className="relative w-[2.2vw] h-[2.2vw]">
+                      <span
+                        className={`w-[70%] rounded-full h-[2px] ${
+                          activeCard === index ? "bg-black" : "bg-white"
+                        } absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-800`}
+                      ></span>
+
+                      <span
+                        className={`w-[70%] rounded-full h-[2px] ${
+                          activeCard === index
+                            ? "bg-black opacity-0"
+                            : "bg-white"
+                        } absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-800 transition-all ${
+                          activeCard == index ? "rotate-0" : "rotate-90"
+                        }`}
+                      ></span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="w-full h-fit min-h-full">
-              <ul className="flex list-disc items-center gap-[5vw] py-[2vw] pl-[7vw]">
+            {/* </div> */}
+
+            <div className="w-[92%] h-fit min-h-full">
+              <ul className="flex list-disc items-center text-white-200 gap-[5vw] py-[2vw] pl-[7vw]">
                 {card.features.map((feature, i) => (
                   <li key={i}>{feature}</li>
                 ))}

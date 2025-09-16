@@ -11,6 +11,7 @@ import Usecase from '@/Components/UnifyPage/Usecase'
 import React from 'react'
 import Impact from '@/Components/UnifyPage/Impact'
 import FooterCTA from '@/Components/Common/FooterCta'
+import UsecaseMobile from '@/Components/UnifyPage/UsecaseMobile'
 
 export default function page() {
 
@@ -20,6 +21,7 @@ export default function page() {
             <AiEverywhere />
             <Tour heading={"Take a Lightning Tour of DSW UnifyAI"} para={"Your AI foundation — not just for today’s use cases, but for tomorrow’s vision. ​"} />
             <Usecase />
+            <UsecaseMobile />
             <PresentationLayer />
             <Diagram />
             <Impact />

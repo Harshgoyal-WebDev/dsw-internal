@@ -35,9 +35,9 @@ const POINTS = [
 export default function Impact() {
   useEffect(() => {
     gsap.set(".about-item", {
-      scale: 0.8,
+      scale: 0.7,
       transformOrigin: "center",
-      y: 50,
+      y: 60,
       x: 25,
       opacity: 0.45,
     });

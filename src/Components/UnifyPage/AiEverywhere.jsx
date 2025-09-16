@@ -21,11 +21,11 @@ export default function AiEverywhere() {
   });
   return (
     <>
-      <section className="h-full w-screen container">
-        <div className="flex flex-col items-center justify-between space-y-[10vw] w-full">
+      <section className="h-full z-[10] max-sm:mt-[60%] w-screen container">
+        <div className="flex flex-col items-center justify-between space-y-[10vw] max-sm:space-y-[25vw] w-full">
           <div className="  h-full">
             <Copy>
-              <p className="!font-head text-[2.8vw]  font-normal leading-[1.4] text-center text-white-200">
+              <p className="!font-head text-[2.8vw] max-sm:text-[8vw] font-normal leading-[1.4] text-center text-white-200">
                 Even today, most enterprises struggle to move from pilot to
                 production. Complex tech stacks, long timelines, and compliance
                 risks slow things down. DSW UnifyAI solves this.
@@ -33,13 +33,13 @@ export default function AiEverywhere() {
             </Copy>
           </div>
           <div className="space-y-[7vw]">
-            <div className="flex h-full items-center gap-[5vw] justify-between">
-              <p className="w-[45%] text-nowrap font-head headingAnim text-[2.8vw] ">
+            <div className="flex h-full max-sm:flex-col items-center max-sm:gap-[10vw] gap-[5vw] justify-between">
+              <p className="w-[45%]  max-sm:w-full max-sm:text-center title-3 text-nowrap font-head headingAnim text-[2.8vw] ">
                 AI is Everywhere. <br />
                 But Operational AI is Rare.
               </p>
               <Copy>
-                <p className="w-[65%] text-white-300">
+                <p className="w-[65%] max-sm:w-full max-sm:text-center text-white-300">
                   Most enterprises face the same hurdles: siloed teams, long
                   development cycles, integration nightmares, and governance
                   concerns. UnifyAI is more than a platform. It's a full-stack
@@ -48,19 +48,19 @@ export default function AiEverywhere() {
                 </p>
               </Copy>
             </div>
-            <div className=" flex items-center justify-between w-full">
+            <div className=" flex items-center max-sm:flex-col max-sm:gap-[12vw] justify-between w-full">
               {cardsData.map((card, index) => (
-                <div key={index} className="space-y-[2vw] ai-everywhere-cards w-[20vw]">
-                  <div className="w-full h-full">
+                <div key={index} className="space-y-[2vw] max-sm:space-y-[8vw] max-sm:w-full ai-everywhere-cards w-[20vw]">
+                  <div className="w-full  max-sm:flex-col max-sm:flex max-sm:items-center max-sm:justify-center h-full">
                     <Image
                       src={card.src}
                       height={98}
                       width={98}
                       alt={card.alt}
-                      className="w-[5vw] h-[5vw] object-contain max-sm:w-[20vw] max-sm:h-[20vw]"
+                      className="w-[5vw]  h-[5vw]  object-contain max-sm:w-[20vw] max-sm:h-[20vw]"
                     />
                   </div>
-                  <p className="text-content text-white-300">{card.text}</p>
+                  <p className="text-content max-sm:text-center max-sm:px-[8vw] text-white-300">{card.text}</p>
                 </div>
               ))}
             </div>
