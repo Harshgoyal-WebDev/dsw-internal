@@ -15,7 +15,7 @@ export default function Usecase() {
     tl.to(
       ".usecase-card2",
       {
-        yPercent: 25,
+        yPercent: 28,
         duration: 0.8,
         ease: "power2.out",
       },
@@ -41,7 +41,7 @@ export default function Usecase() {
     tl.to(".usecase-card1", { yPercent: 0, duration: 0.8, ease: "power2.out" });
     tl.to(
       ".usecase-card2",
-      { yPercent: 0, duration: 0.8, ease: "power2.out" },
+      { yPercent:0, duration: 0.8, ease: "power2.out" },
       "<"
     );
     tl.to(
@@ -65,7 +65,7 @@ export default function Usecase() {
     );
     tl.to(
       ".usecase-card3",
-      { yPercent: -25, duration: 0.8, ease: "power2.out" },
+      { yPercent: -28, duration: 0.8, ease: "power2.out" },
       "<"
     );
     tl.eventCallback("onUpdate", () => {
@@ -103,7 +103,7 @@ export default function Usecase() {
         "Guardrails and governance by design for safe, compliant outputs ",
       ],
       handleClick: handleSecondCard,
-      className: `translate-y-[25%] usecase-card2 z-[1] border-t`,
+      className: `translate-y-[24%] usecase-card2 z-[1] border-t`,
       borderClass: "border-white",
       iconBg: "bg-white",
       iconFill: "black",
@@ -120,7 +120,7 @@ export default function Usecase() {
         "Customizable AI agents for specific business domains",
       ],
       handleClick: handleThirdCard,
-      className: `translate-y-[75%] usecase-card3  z-[4]`,
+      className: `translate-y-[76%] usecase-card3  z-[4]`,
       borderClass: "border-white",
       iconBg: "bg-white",
       iconFill: "black",
@@ -132,7 +132,7 @@ export default function Usecase() {
       <h2 className="title-2 headingAnim w-[45%] text-center">
         Supercharge Your AI and GenAI Use Cases
       </h2>
-      <div className="w-[100%] relative text-white-200 overflow-hidden border border-[#595959]/50 rounded-[2.5vw] h-[85vh]">
+      <div className="w-[100%] relative text-white-200 overflow-hidden border border-[#595959]/50 rounded-[2.5vw] h-[75vh]">
         {usecaseData.map((card, index) => (
           <motion.div
             key={card.id}
@@ -150,10 +150,10 @@ export default function Usecase() {
           >
             {/* <div className="w-full flex items-start justify-end h-full "> */}
             <div
-              className={`border-b py-[2.5vw] min-h-[18.5vh] flex items-center w-[85%] justify-between ${card.borderClass}`}
+              className={`border-b py-[2.5vw] min-h-[15.5vh] flex items-center w-[85%] justify-between ${card.borderClass}`}
             >
               <div className="space-x-[5vw] w-full flex items-center">
-                <p className="absolute left-[3%] top-[14%] translate-y-[-50%]">
+                <p className="absolute left-[3%] top-[14.5%] translate-y-[-50%]">
                   {card.id}
                 </p>
                 <p className="text-[1.5vw] ">{card.title}</p>
@@ -161,16 +161,12 @@ export default function Usecase() {
               <div className="flex items-center  text-white-200 justify-end w-full gap-[5vw]">
                 <p className="text-content w-[30vw]">{card.description}</p>
                 <div
-                  className={`rounded-full absolute right-[3%] top-[14%] translate-y-[-50%] cursor-pointer h-[4vw] w-[4vw] border-[#888888]/80 p-[0.5vw] border ${
+                  className={`rounded-full absolute right-[3%] top-[12%] translate-y-[-50%] cursor-pointer h-[4vw] w-[4vw] border-[#888888]/80 p-[0.5vw] border ${
                     activeCard == index ? card.iconBg : "bg-white/5"
                   } flex items-center justify-center hover:scale-110 hover:opacity-90 active:scale-95 active:opacity-80 transition-all duration-300`}
                 >
                   <div
-                    className={`transition-all duration-800 ${
-                      activeCard == index
-                        ? "rotate-180 opacity-100"
-                        : "rotate-0 opacity-100"
-                    }`}
+                    className={`transition-all duration-800`}
                   >
                     <div className="relative w-[2.2vw] h-[2.2vw]">
                       <span
@@ -182,10 +178,10 @@ export default function Usecase() {
                       <span
                         className={`w-[70%] rounded-full h-[2px] ${
                           activeCard === index
-                            ? "bg-black opacity-0"
+                            ? "bg-black"
                             : "bg-white"
                         } absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-800 transition-all ${
-                          activeCard == index ? "rotate-0" : "rotate-90"
+                          activeCard == index ? "rotate-0" : "-rotate-90"
                         }`}
                       ></span>
                     </div>

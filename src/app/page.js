@@ -29,7 +29,7 @@ export default function Home() {
         <TurbochargeG />
         <About />
         <Insuraince />
-        <Tour heading={"Take a Lightning Tour"} para={"Your OS for AI- not just for today's use cases, but for tomorrow's vision."}/>
+        <Tour heading={"Take a Lightning Tour"} para={"Your OS for AI- not just for today's use cases, but for tomorrow's vision."} img={'/assets/images/homepage/tour-img.png'}/>
         <Difference />
         <Brochure />
         <UnifyAi />

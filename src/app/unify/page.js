@@ -19,7 +19,7 @@ export default function page() {
         <Layout>
             <Hero heroData={heroData} />
             <AiEverywhere />
-            <Tour heading={"Take a Lightning Tour of DSW UnifyAI"} para={"Your AI foundation — not just for today’s use cases, but for tomorrow’s vision. ​"} />
+            <Tour overlay={true} heading={"Take a Lightning Tour of DSW UnifyAI"} para={"Your AI foundation — not just for today’s use cases, but for tomorrow’s vision.​"} img={'/assets/images/unify/tour.png'} />
             <Usecase />
             <UsecaseMobile />
             <PresentationLayer />

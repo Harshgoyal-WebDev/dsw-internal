@@ -33,13 +33,13 @@ export default function AiEverywhere() {
             </Copy>
           </div>
           <div className="space-y-[7vw]">
-            <div className="flex h-full max-sm:flex-col items-center max-sm:gap-[10vw] gap-[5vw] justify-between">
+            <div className="flex h-full max-sm:flex-col items-center max-sm:gap-[10vw] gap-[12vw] justify-between">
               <p className="w-[45%]  max-sm:w-full max-sm:text-center title-3 text-nowrap font-head headingAnim text-[2.8vw] ">
                 AI is Everywhere. <br />
                 But Operational AI is Rare.
               </p>
               <Copy>
-                <p className="w-[65%] max-sm:w-full max-sm:text-center text-white-300">
+                <p className="w-full max-sm:w-full max-sm:text-center text-white-300">
                   Most enterprises face the same hurdles: siloed teams, long
                   development cycles, integration nightmares, and governance
                   concerns. UnifyAI is more than a platform. It's a full-stack
@@ -50,7 +50,7 @@ export default function AiEverywhere() {
             </div>
             <div className=" flex items-center max-sm:flex-col max-sm:gap-[12vw] justify-between w-full">
               {cardsData.map((card, index) => (
-                <div key={index} className="space-y-[2vw] max-sm:space-y-[8vw] max-sm:w-full ai-everywhere-cards w-[20vw]">
+                <div key={index} className="space-y-[2vw] max-sm:space-y-[8vw] max-sm:w-full ai-everywhere-cards w-[20%]">
                   <div className="w-full  max-sm:flex-col max-sm:flex max-sm:items-center max-sm:justify-center h-full">
                     <Image
                       src={card.src}
