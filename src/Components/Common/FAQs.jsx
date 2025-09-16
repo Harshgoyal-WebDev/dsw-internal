@@ -31,7 +31,7 @@ export default function Faqs({ allowMultiple = false, content }) {
     >
       <div className="flex flex-col items-center gap-[5vw] max-sm:gap-[10vw] max-md:justify-center max-sm:items-start">
         
-          <h2 className="title-2 w-[68%] text-center !leading-[1.15] title-1 max-sm:text-[11vw] max-sm:w-full max-sm:text-left headingAnim ">
+          <h2 className="title-1 w-[68%] text-center !leading-[1.15] title-1 max-sm:text-[11vw] max-sm:w-full max-sm:text-left headingAnim ">
             Frequently Asked Questions
           </h2>
         

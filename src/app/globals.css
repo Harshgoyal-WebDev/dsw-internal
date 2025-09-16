@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
 
 :root {
   --background: #030815;
@@ -11,8 +13,7 @@
   --white-300: #cacaca;
   --light-blue: #041035;
   --dark-blue: #1727FF;
- 
-  --font-display: var(--font-display);
+    --font-display: var(--font-display);
   --font-body: var(--font-body);
   --default-ease: cubic-bezier(0.19, 1, 0.22, 1);
 }
@@ -29,6 +30,9 @@
   --color-white-200: var(--white-200);
   --color-white-300: var(--white-300);
   --ease-default-ease: var(--default-ease);
+  --color-light-blue: var(--light-blue);
+  --color-dark-blue: var(--dark-blue);
+    --ease-default-ease: var(--default-ease);
   --color-light-blue: var(--light-blue);
   --color-dark-blue: var(--dark-blue);
 }
@@ -54,7 +58,6 @@ h1,h2,h3,h4 {
   margin-left: auto;
   margin-right: auto;
 }
-
 
 .title-1 {
   font-size: 5.2vw;
@@ -108,21 +111,35 @@ h1,h2,h3,h4 {
   transform: translate(0px, -1.5em);
 }
 
-
 .marquee {
   display: flex;
   white-space: nowrap;
   overflow: hidden;
-  width: 100vw; /* or your desired width */
+  width: 100vw; 
 }
+
 .marquee__track {
   display: flex;
   animation: marquee 10s linear infinite;
+  min-width: 200%; /* Added for consistency */
 }
+
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+
+.marquee__track_reverse {
+  display: flex;
+  animation: marquee-reverse 10s linear infinite;
+  min-width: 200%;
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); } /* Start from left */
+  100% { transform: translateX(0); }   /* End at center */
+}
+
 .background-glass{
 background: linear-gradient(90.17deg, rgba(255, 255, 255, 0.06) 0.01%, rgba(255, 255, 255, 0.06) 99.99%);
 
@@ -212,7 +229,6 @@ background: linear-gradient(90.17deg, rgba(255, 255, 255, 0.01) 0.01%, rgba(255,
   }
 }
 
-
 .circle-1,
 .circle-2,
 .circle-3 {
@@ -275,7 +291,6 @@ background: linear-gradient(90.17deg, rgba(255, 255, 255, 0.01) 0.01%, rgba(255,
     100% 1px;
 }
 
-
 @media (max-width:542px) {
   .title-1 {
   font-size: 14vw;
@@ -319,10 +334,12 @@ background: linear-gradient(90.17deg, rgba(255, 255, 255, 0.01) 0.01%, rgba(255,
 ::-webkit-scrollbar-thumb {
   background: #FFFFFF66 !important;
   border-radius: 20px;
-  
+
 }
 ::-webkit-scrollbar-track {
   background: #FFFFFF33;
 }
 
 }
+
+

@@ -74,7 +74,7 @@ const Header = () => {
       <motion.header
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeOut", delay: 6 }}
+        transition={{ duration: 1, ease: "easeOut",delay: pathname === '/' ? 6 : 1  }}
         className={`text-white w-screen fixed top-0 left-0 z-[900] pointer-events-none`} >
         <div className={`flex items-center justify-between px-[4vw] py-6 w-full transition-transform duration-500 pointer-events-auto max-sm:px-[7vw] max-sm:bg-transparent max-sm:py-[3vw] max-sm:pt-[5vw] max-sm:backdrop-blur-sm ${isHidden ? "-translate-y-full" : "translate-y-0"}`} ref={headerRef}>
           <Logo variant="header" className="dsw-logo" />

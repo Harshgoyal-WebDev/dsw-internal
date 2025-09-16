@@ -123,7 +123,7 @@ const Hero = ({ heroData }) => {
       {/* Animated Vertical Lines */}
       <div className="w-screen h-[55vw] absolute top-0 left-0 z-[10] flex justify-center gap-[22vw] max-sm:hidden">
         {[...Array(lineCount)].map((_, i) => (
-          <AnimatedLine key={i} delay={5 + (i * 0.2)} />
+          <AnimatedLine key={i} delay={heroData.homepage ? 5 + (i * 0.2) : 0.5 + (i * 0.2)} />
         ))}
       </div>
       <div className="absolute top-[30%] left-0 h-screen w-screen max-sm:hidden">
