@@ -67,7 +67,7 @@ const Outcomes = () => {
 
       <div className="flex justify-end w-full pt-[3vw]">
         <div className="w-[65%]">
-          <div className="grid grid-cols-3 gap-y-[4.5vw] gap-x-[2vw] w-full">
+          <div className="grid grid-cols-3 gap-y-[7vw] gap-x-[2vw] w-full">
             {cardsData.map((card, index) => (
               <Card key={index} src={card.src} content={card.content} />
             ))}
