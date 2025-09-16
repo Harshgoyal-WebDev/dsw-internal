@@ -78,8 +78,8 @@ const ExpandablePanels = () => {
   };
 
   return (
-    <section className="container h-fit background-radial">
-         <h2 className='title-2 text-white-200 text-center pb-[5vw]'>
+    <section className="container h-fit background-radial space-y-[5vw]">
+         <h2 className='title-2 text-white-200 text-center headingAnim'>
             Real Customer Quotes
         </h2>
         <div className='flex items-center justify-center'>
@@ -102,7 +102,7 @@ const ExpandablePanels = () => {
               activePanel === index ? 'opacity-0 pointer-events-none' : 'opacity-90'
             }`}>
                 <Image src='/assets/icons/insuraince/plus.svg' width={200} height={200} className='w-[2vw] h-[2vw]' alt='plus-icon' />
-              <h3 className="text-white text-[2vw] pl-[15vw] transform -rotate-90 whitespace-nowrap">
+              <h3 className="text-white text-[2vw] font-display pl-[15vw] transform -rotate-90 whitespace-nowrap">
                 {panel.title}
               </h3>
             </div>
@@ -115,17 +115,17 @@ const ExpandablePanels = () => {
               }`}
             >
               <div className="flex flex-col gap-[10vw] justify-center items-start">
-                 <p className="text-12 leading-relaxed text-start text-white-200  w-[38vw]">
+                 <p className="text-12 leading-relaxed font-display text-start text-white-300  w-[38vw]">
                   {panel.description}
                 </p>
                 <div>
-                <h2 className="title-3 text-start text-primary-2 leading-tight">
+                <h2 className="title-3 font-display text-start text-primary-2 leading-tight">
                   {panel.name}
                 </h2>
-                <p className=" text-start text-white-200 ">
+                <p className=" text-start text-white-300 ">
                   {panel.position}
                 </p>
-                <p className=" text-start text-white-200 ">
+                <p className=" text-start text-white-300 ">
                   {panel.company}
                 </p>
                

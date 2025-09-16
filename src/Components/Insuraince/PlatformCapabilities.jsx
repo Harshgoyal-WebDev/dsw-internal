@@ -2,7 +2,8 @@
 import Image from 'next/image'
 import React, {useEffect} from 'react'
 import gsap from 'gsap'
-import ScrollTrigger from 'gsap/dist/ScrollTrigger'
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import Copy from "../Animations/Copy";
 gsap.registerPlugin(ScrollTrigger);
 
 const PlatformCapabilities = () => {
@@ -31,7 +32,7 @@ const PlatformCapabilities = () => {
   return (
     <section id='plat-cap-container' className='w-screen h-fit container '>
 
-         <h2 className='text-[2.8vw] font-head  text-center'>
+         <h2 className='text-[2.8vw] font-head  text-center headingAnim'>
             Platform Capabilities</h2>
 
         <div className='flex justify-center items-center flex-col  w-full gap-[1vw] pt-[2vw] '>

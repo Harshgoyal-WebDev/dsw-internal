@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Copy from "../Animations/Copy";
 
 const capabilities = [
   {
@@ -28,53 +29,59 @@ const Capabilities = () => {
   return (
     <section className="h-full container">
       <div className="w-[90%]">
-      <h2 className="title-1 ">
-        Turn Common Insurance Tasks into Intelligent Agents 
-      </h2>
+        <h2 className="title-1 headingAnim">
+          Turn Common Insurance Tasks into Intelligent Agents 
+        </h2>
       </div>
 
       <div className="flex justify-between pt-[4vw]">
         <div className="w-[45%]">
-          <p className="text-white-200 text-[2.5vw] leading-[1.35] font-head">
-            These aren’t chatbots. They’re intelligent teammates for your
-            operations. 
-          </p>
+          <Copy>
+            <p className="text-white-200 text-[2.5vw] leading-[1.35] font-head">
+              These aren’t chatbots. They’re intelligent teammates for your
+              operations. 
+            </p>
+          </Copy>
         </div>
 
         <div className="w-[50%]">
-          <p className="text-white-300">
-            From claim status queries to automated underwriting support,
-            insurAInce gives you over 300 prebuilt GenAI agents that are
-            designed for real insurance workflows. 
-          </p>
-          <p className="text-white-300 text-[1.2vw] font-display">
-            Key Capabilities: 
-          </p>
+          <Copy>
+            <p className="text-white-300">
+              From claim status queries to automated underwriting support,
+              insurAInce gives you over 300 prebuilt GenAI agents that are
+              designed for real insurance workflows. 
+            </p>
+            <p className="text-white-300 text-[1.2vw] font-display">
+              Key Capabilities: 
+            </p>
+          </Copy>
 
           <div>
-            <div className="flex flex-col gap-[2.7vw] pt-[4vw]">
+            <div className="flex flex-col gap-[4.5vw] pt-[4vw]">
               {capabilities.map((cap) => (
-                <div
-                  key={cap.id}
-                  className="flex items-start justify-start gap-[4vw] border-t border-[#59595980] pt-[2vw] "
-                >
-                  <p className="text-white text-[1vw] font-display">
-                    {cap.id}
-                  </p>
+                <div key={cap.id} className="relative group ">
+                  <div className="w-full h-[0.1vw] bg-[#59595980] absolute top-[-40%] mb-[2vw] lineDraw" />
+                  <div className="absolute top-[-40%] w-full h-[1px] bg-primary-2 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700"></div>
 
-                  <div className="w-[5.5vw] h-[5.5vw]">
-                    <Image
-                      src={cap.src}
-                      alt={`capibility-${cap.id}`}
-                      width={40}
-                      height={40}
-                      className="object-contain h-full w-full"
-                    />
+                  <div className="flex items-start justify-start gap-[5vw]">
+                    <p className="text-white text-[1vw] font-display">
+                      {cap.id}
+                    </p>
+
+                    <div className="w-[5.5vw] h-[5.5vw]">
+                      <Image
+                        src={cap.src}
+                        alt={`capibility-${cap.id}`}
+                        width={40}
+                        height={40}
+                        className="object-contain h-full w-full"
+                      />
+                    </div>
+
+                    <Copy>
+                      <p className="text-white-300 max-w-[28vw]">{cap.text}</p>
+                    </Copy>
                   </div>
-
-                  <p className="text-white-300 max-w-[28vw]">
-                    {cap.text}
-                  </p>
                 </div>
               ))}
             </div>

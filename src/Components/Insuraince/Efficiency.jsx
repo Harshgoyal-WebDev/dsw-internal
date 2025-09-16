@@ -3,6 +3,7 @@ import React, {useEffect} from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
+import Copy from "../Animations/Copy";
 
 const Efficiency = () => {
 
@@ -14,23 +15,20 @@ const Efficiency = () => {
           trigger:'#efficiency-container',
           start:'top 30%',
           markers:false,
-          // scrub:true,
         }
       })
-
       
         tl.to('.left-timer', {
-            y:'-18vh',
+            yPercent: -77,
             // ease: 'power1.out',
             duration:1.2,
         })
         .to('.right-timer', {
-            y:'-18vh',
+            yPercent: -77,
             // ease: 'power1.out',
             duration:1.2,
             delay:0.2,
         },'<')
-      
     })
     return () => ctx.revert()
   },[])
@@ -48,159 +46,166 @@ const Efficiency = () => {
   const DaysRd = ["0", "4","7", "0"];
 
   return (
-    <section id="efficiency-container" className="container h-fit">
-      <div className="space-y-[3vw]">
-      <h2 className="title-1 text-white-200 text-center">
+    <section id="efficiency-container" className="container h-fit space-y-[8vw]">
+      <div className="space-y-[2vw]">
+      <h2 className="title-1 text-white-200 text-center headingAnim">
         Built for the Complexity
         <br />
         of the Insurance Industry 
       </h2>
+
+      <Copy>                
       <p className="text-center text-white-300">
         insurAInce is proven across diverse insurance environments to
         <br />
         drive speed, efficiency, and accuracy where it counts the most. 
       </p>
+                </Copy>
       </div>
 
-      <div className="w-full flex justify-between items-start pt-[5vw]">
+      <div className="w-full flex justify-between items-start">
         {/* Stat 1 */}
         <div className="flex flex-col items-start gap-[1vw] w-[20%]">
-          <div className="overflow-hidden h-[10vh] w-fit items-center flex justify-start">
-            <div className="w-fit flex flex-col items-center justify-center left-timer translate-y-[20vh]">
+          <div className="overflow-hidden  h-[10vh] w-fit items-center flex justify-start">
+            <div className="w-fit flex flex-col items-center justify-center left-timer translate-y-[38%]">
 
 
             {TimeLd.map((digit, idx) => (
               <p
-              key={idx} className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-body ">
+              key={idx} className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-display ">
                       {digit}
                   </p>
             ))}
             </div>
 
-            <div className="w-fit flex  flex-col items-center right-timer justify-center translate-y-[20vh]">
+            <div className="w-fit flex  flex-col items-center right-timer justify-center translate-y-[38%]">
               {TimeRd.map((digit, idx) => (
               <p
-              key={idx} className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-body ">
+              key={idx} className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-display ">
                       {digit}
                   </p>
             ))}
             </div>
             <div>
 
-            <p className="bg-gradient-to-r font-body mt-[0.8vw] from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-display">
+            <p className="bg-gradient-to-r font-display from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-display">
                 %
             </p>
             </div>
           </div>
 
          
-
+              <Copy>                
           <p className="tracking-wider text-white-300 leading-[1.4]">
             faster time to market for AI and GenAI use cases
           </p>
+                        </Copy>
          
         </div>
 
         {/* Stat 2 */}
         <div className="flex flex-col items-start gap-[1vw] w-[20%] ">
            <div className="overflow-hidden h-[10vh]  w-fit items-center flex justify-start">
-            <div className="w-fit flex flex-col items-center justify-center left-timer translate-y-[20vh]">
-
+            <div className="w-fit flex flex-col items-center justify-center left-timer translate-y-[38%]">
 
             {TCOLd.map((digit, idx) => (
               <p
-              key={idx} className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-body ">
+              key={idx} className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-display ">
                       {digit}
                   </p>
             ))}
             </div>
 
-            <div className="w-fit flex  flex-col items-center right-timer justify-center translate-y-[20vh]">
+            <div className="w-fit flex  flex-col items-center right-timer justify-center translate-y-[38%]">
               {TCORd.map((digit, idx) => (
               <p
-              key={idx} className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-body ">
+              key={idx} className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-display ">
                       {digit}
                   </p>
             ))}
             </div>
             <div>
 
-            <p className="bg-gradient-to-r font-body mt-[0.8vw] from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-display">
+            <p className="bg-gradient-to-r font-display  from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-display">
                 %
             </p>
             </div>
           </div>
+
+          <Copy>                
           <p className="tracking-wider text-white-300 leading-[1.4]">
             reduction in TCO
           </p>
+                    </Copy>
         </div>
 
         {/* Stat 3 */}
         <div className="flex flex-col items-start gap-[1vw] w-[20%]">
           <div className="overflow-hidden h-[10vh]  w-fit items-center flex justify-start">
-            <div className="w-fit flex flex-col items-center justify-center left-timer translate-y-[20vh]">
+            <div className="w-fit flex flex-col items-center justify-center left-timer translate-y-[38%]">
 
 
             {TaskLd.map((digit, idx) => (
               <p
-              key={idx} className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-body ">
+              key={idx} className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-display ">
                       {digit}
                   </p>
             ))}
             </div>
 
-            <div className="w-fit flex  flex-col items-center right-timer justify-center translate-y-[20vh]">
+            <div className="w-fit flex  flex-col items-center right-timer justify-center translate-y-[38%]">
               {TaskRd.map((digit, idx) => (
               <p
-              key={idx} className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-body ">
+              key={idx} className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-display ">
                       {digit}
                   </p>
             ))}
             </div>
             <div>
 
-            <p className="bg-gradient-to-r font-body mt-[0.8vw] from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-display">
+            <p className="bg-gradient-to-r font-display from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-display">
                 %
             </p>
             </div>
           </div>
+          <Copy>                
           <p className="text-white-300 leading-[1.4] tracking-wider">
             drop in manual tasks across claims and servicing
           </p>
+                    </Copy>
         </div>
 
         {/* Stat 4 */}
         <div className="flex flex-col items-start gap-[1vw] w-[20%]">
           <div className="overflow-hidden h-[10vh]  w-fit items-center flex justify-start">
-            <div className="w-fit flex flex-col items-center justify-center left-timer translate-y-[20vh]">
+            <div className="w-fit flex flex-col items-center justify-center left-timer translate-y-[38%]">
 
 
             {DaysLd.map((digit, idx) => (
               <p
-              key={idx} className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-body ">
+              key={idx} className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-display ">
                       {digit}
                   </p>
             ))}
             </div>
 
-            <div className="w-fit flex  flex-col items-center right-timer justify-center translate-y-[20vh]">
+            <div className="w-fit flex  flex-col items-center right-timer justify-center translate-y-[38%]">
               {DaysRd.map((digit, idx) => (
               <p
-              key={idx} className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-body ">
+              key={idx} className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-display ">
                       {digit}
                   </p>
             ))}
             </div>
             <div>
 
-            {/* <p className="bg-gradient-to-r font-body mt-[0.8vw] from-[#F16B0D] to-[#E61216] bg-clip-text text-transparent text-[4.2vw] font-display">
-                %
-            </p> */}
             </div>
           </div>
+          <Copy>                
           <p className="text-white-300 tracking-wider leading-[1.4]">
             days or less to go live with AI use cases & GenAI in hours
           </p>
+                    </Copy>
         </div>
       </div>
     </section>

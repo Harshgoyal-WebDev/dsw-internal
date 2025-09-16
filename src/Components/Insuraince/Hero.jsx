@@ -75,6 +75,14 @@ const Hero = () => {
       stagger: 0.04,
       ease: "power3.out",
     });
+    gsap.fromTo('.hero-img', {
+      yPercent:100,
+      opacity:0,
+    } , {
+      opacity:1,
+      yPercent:0,
+      delay:1.7,
+    })
     // gsap.from(".")
   }, []);
 
@@ -88,8 +96,8 @@ const Hero = () => {
           >
            Enterprise AI Platform for Insurance
           </h1>
-          <div className=" h-auto w-[16vw]">
-            <Image src={"/assets/icons/insuraince/insuraince.svg"} height={46} width={297} alt="insuraince" className="h-full w-full object-cover"/>
+          <div className=" h-auto w-[16vw] hero-img">
+            <Image src={"/assets/icons/insuraince/insuraince.svg"} height={46} width={297} alt="insuraince" className="h-full w-full object-cover fadeUp"/>
           </div>
           <p
             className={`text-white-300 w-full mx-auto overflow-hidden heroPara`}
