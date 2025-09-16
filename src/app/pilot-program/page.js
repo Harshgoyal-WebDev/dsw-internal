@@ -16,7 +16,7 @@ const page = () => {
         <AIPilots/>
         <Transform/>
         <InsidePilotProgram/>
-        <PilotProgramForm/>
+        {/* <PilotProgramForm/> */}
     </Layout>
     </>
   )
