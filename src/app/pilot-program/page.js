@@ -11,11 +11,11 @@ const page = () => {
   return (
     <>
     <Layout>
-        {/* <Hero heroData={heroData}/>
+        <Hero heroData={heroData}/>
         <Production/>
         <AIPilots/>
         <Transform/>
-        <InsidePilotProgram/> */}
+        <InsidePilotProgram/>
         <PilotProgramForm/>
     </Layout>
     </>
