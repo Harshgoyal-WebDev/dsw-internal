@@ -21,7 +21,7 @@ const InsidePilotProgram = () => {
           </div>
 
           {/* GRID VERSION */}
-          <div className='w-full h-full max-sm:overflow-x-scroll'>
+          <div className='w-full h-full max-sm:overflow-x-scroll flex items-center justify-center'>
           <div className='h-[40vw] w-[80vw] max-sm:w-[300vw] max-sm:h-[120vw] fadeup background-glass rounded-[2vw] border border-[#88888880]  py-[3vw] pb-[4vw] px-[3vw]'>
             <div className="grid grid-cols-[1fr_1.2fr_1.8fr] border-collpase w-full h-full  border-t-0 border-l-0">
               {/* Header Row */}
