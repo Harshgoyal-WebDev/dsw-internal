@@ -40,17 +40,50 @@ const Card = ({ srcc, content, isActive, onHover }) => {
   );
 };
 
+const MobileCard = ({srcc, content}) => {
+
+  return (
+
+    <div className="h-[33vh] mx-auto background-glass border border-[#88888880] py-[5vw] w-[80vw] rounded-[6vw] flex flex-col gap-[5vw] items-start justify-center px-[5vw]">
+
+        <div className="w-[25vw] h-auto">
+          <Image src={srcc} width={400} height={400} className="w-full h-auto" />
+        </div>
+
+        <p>
+          {content}
+        </p>
+  </div>
+  )
+}
+
 const Features = () => {
+
   const featuresRef = useRef(null);
   const cardsContainerRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setIsMobile(window.innerWidth <= 768);
+
+      const handleResize = () => {
+        setIsMobile(window.innerWidth <= 768);
+      };
+
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
 
   useEffect(() => {
   const ctx = gsap.context(() => {
     const cards = gsap.utils.toArray(".card");
 
-    // horizontal scrolling of container
-    const horizAnim = gsap.to(cardsContainerRef.current, {
+    if(!isMobile)
+    {
+      const horizAnim = gsap.to(cardsContainerRef.current, {
       x: "-22vw",
       ease: "none",
       scrollTrigger: {
@@ -61,8 +94,7 @@ const Features = () => {
         // markers: true,
       },
     });
-
-    cards.forEach((card, i) => {
+     cards.forEach((card, i) => {
       gsap.fromTo(
         card,
         { rotateY: 65, 
@@ -83,8 +115,11 @@ const Features = () => {
             // markers: true,
           },
         }
+      
       );
     });
+    }
+   
   }, featuresRef);
 
   return () => ctx.revert();
@@ -92,17 +127,17 @@ const Features = () => {
 
   return (
     <section id="features-section"
-        ref={featuresRef} className="h-[200vh] w-full relative">
+        ref={featuresRef} className="h-[200vh] max-sm:h-full w-full relative">
       <div
-        className="bg-primary features-div sticky top-0 h-fit flex flex-col container !px-0"
+        className="bg-primary features-div sticky max-sm:relative top-0 h-fit flex flex-col container !px-0"
       >
-        <div className="w-[47%] pl-[5vw] space-y-[1vw]">
-          <h2 className="title-2 headingAnim w-[100%] text-white-200">
+        <div className="w-[47%] max-sm:w-[90%] pl-[5vw] max-sm:pl-0  max-sm:mx-auto space-y-[1vw] max-sm:space-y-[6vw]">
+          <h2 className="title-2 headingAnim w-[100%] max-sm:text-center text-white-200">
             The Unified AI Platform Built for Insurance Enterprises
           </h2>
 
           <Copy>
-            <p className="text-white-300 w-[80%]">
+            <p className="text-white-300 w-[80%] max-sm:text-center max-sm:w-[100%]">
               insurAInce brings together everything insurers need to rapidly
               operationalize AI and GenAI — all on one secure, enterprise-grade
               platform.
@@ -110,7 +145,7 @@ const Features = () => {
           </Copy>
         </div>
 
-        <div className="w-full overflow-x-hidden  pb-[1.2vw] pt-[4vw]">
+        <div className="w-full overflow-x-hidden max-sm:hidden block  pb-[1.2vw] pt-[4vw]">
           <div
             ref={cardsContainerRef}
             className="flex gap-[2vw] translate-x-[100vw] min-w-max"
@@ -125,9 +160,20 @@ const Features = () => {
             ))}
           </div>
         </div>
+
+        <div className="hidden max-sm:block w-full max-sm:pt-[15vw]">
+          <div className="flex flex-col gap-[8vw] mx-auto">
+
+            {cardsData.map((card, index) => (
+              <MobileCard key={index}
+                    srcc={card.src}
+                    content={card.content}
+              />
+            ))}
+          </div>
+        </div>
         </div>
       </section>
-    
   );
 };
 

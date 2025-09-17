@@ -104,7 +104,7 @@ export default function About() {
                     <br /> DNA. Unified AI and GenAI.</h2>
                 <div className="space-y-[0.5vw]">
                 <Copy>
-                <p className="text-white-300 w-[90%]">The pressure to modernize is high, but most insurers still struggle to move from pilot projects to production-ready AI. Long development cycles, fragmented tools, and rising compliance risks make AI adoption complex, expensive, and slow. </p>
+                <p className="text-white-300 w-[90%] max-sm:py-[10vh]">The pressure to modernize is high, but most insurers still struggle to move from pilot projects to production-ready AI. Long development cycles, fragmented tools, and rising compliance risks make AI adoption complex, expensive, and slow. </p>
                 </Copy>
                 <Copy>
                 <p className="text-white-300 w-[93%]">insurAInce solves this. Built from the ground up for insurance, it lets you deploy real-world AI and GenAI use cases faster, securely, and at scale. All on a unified platform. No more fragmented AI, just fast and real outcomes.  </p>

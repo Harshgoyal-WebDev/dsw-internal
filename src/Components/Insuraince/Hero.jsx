@@ -90,14 +90,14 @@ const Hero = () => {
   return (
     <section className="h-[70vw] w-screen relative bg-background max-sm:h-screen max-sm:px-[7vw]" id="hero">
       <div className="flex flex-col items-center justify-start w-full h-full pt-[30vh] relative z-[12] max-sm:pt-[15vh]">
-        <div className="flex items-center justify-center flex-col w-[80%] text-center gap-[2.5vw] pb-5 max-sm:w-[90%] max-sm:space-y-[12vw]">
+        <div className="flex items-center justify-center flex-col w-[80%] text-center gap-[2.5vw] pb-5 max-sm:w-[90%] max-sm:space-y-[8vw]">
           <h1
             ref={heading}
             className="title-1 font-head heroHeadAnim text-white-200"
           >
            Enterprise AI Platform for Insurance
           </h1>
-          <div className=" h-auto w-[16vw] hero-img">
+          <div className=" h-auto w-[16vw] max-sm:w-[60vw] hero-img">
             <Image src={"/assets/icons/insuraince/insuraince.svg"} height={46} width={297} alt="insuraince" className="h-full w-full object-cover fadeUp"/>
           </div>
           <p

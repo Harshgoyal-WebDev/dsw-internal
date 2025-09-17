@@ -1,6 +1,11 @@
-import React from "react";
+'use client';
+import React, {useState, useRef} from "react";
 import Image from "next/image";
 import Copy from "../Animations/Copy";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
 
 const capabilities = [
   {
@@ -26,25 +31,41 @@ const capabilities = [
 ];
 
 const Capabilities = () => {
+
+  const swiperRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handlePrev = () => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slidePrev();
+    }
+  };
+
+  const handleNext = () => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slideNext();
+    }
+  };
+
   return (
     <section className="h-full container">
-      <div className="w-[90%]">
-        <h2 className="title-1 headingAnim">
+      <div className="w-[90%] max-sm:w-[100%] ">
+        <h2 className="title-1 headingAnim max-sm:text-center">
           Turn Common Insurance Tasks into Intelligent Agents 
         </h2>
       </div>
 
-      <div className="flex justify-between pt-[4vw]">
-        <div className="w-[45%]">
+      <div className="flex justify-between max-sm:flex-col pt-[4vw] max-sm:pt-[10vw]">
+        <div className="w-[45%] max-sm:w-[100%]">
           <Copy>
-            <p className="text-white-200 text-[2.5vw] leading-[1.35] font-head">
+            <p className="text-white-200 text-[2.5vw] max-sm:text-center max-sm:text-[7vw] leading-[1.35] font-head">
               These aren’t chatbots. They’re intelligent teammates for your
               operations. 
             </p>
           </Copy>
         </div>
 
-        <div className="w-[50%]">
+        <div className="w-[50%] max-sm:hidden">
           <Copy>
             <p className="text-white-300">
               From claim status queries to automated underwriting support,
@@ -56,7 +77,7 @@ const Capabilities = () => {
             </p>
           </Copy>
 
-          <div>
+          <div className="">
             <div className="flex flex-col gap-[4.5vw] pt-[4vw]">
               {capabilities.map((cap) => (
                 <div key={cap.id} className="relative group ">
@@ -85,6 +106,77 @@ const Capabilities = () => {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+
+            <div className="hidden max-sm:block swiperr pt-[10vw]">
+          <Swiper
+            ref={swiperRef}
+            modules={[Navigation]}
+            spaceBetween={20}
+            slidesPerView={1}
+            onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+            className="w-full"
+          >
+            {capabilities.map((cap, index) => (
+              <SwiperSlide key={index}>
+                <div className="flex gap-[8vw] mt-[8vw] w-full items-center justify-center flex-col">
+                  <p className="text-white-300 text-[4vw]">{cap.id}</p>
+                  <div className="w-[30%] h-auto relative">
+                    <Image
+                      src={cap.src}
+                      height={200}
+                      width={200}
+                      className="object-contain h-full w-full"
+                      alt={`capability-${cap.id}`}
+                    />
+                  </div>
+                  <p className="text-center text-[4.3vw] text-white-300">{cap.text}</p>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          {/* Mobile Nav Buttons */}
+          <div className="w-full hidden max-sm:flex h-full mt-[15vw]  gap-[4vw] items-center justify-center">
+            <div
+              className={`w-[15vw] p-[5vw] btns flex items-center justify-center rounded-full h-[15vw]  rotate-180 bg-black/10 border border-white/50 ${activeIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
+              onClick={activeIndex !== 0 ? handlePrev : undefined}
+            >
+              <svg
+                className=""
+                width="25"
+                height="18"
+                viewBox="0 0 25 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15.8041 1.24555C15.3098 1.73981 15.3186 2.52533 15.8041 3.01076L20.7378 7.94454L1.51466 7.94454C0.826224 7.94454 0.270181 8.50058 0.270182 9.18901C0.270181 9.87745 0.826224 10.4335 1.51466 10.4335L20.7378 10.4335L15.8041 15.3673C15.3186 15.8527 15.3186 16.647 15.8041 17.1325C16.2895 17.6179 17.0838 17.6179 17.5693 17.1325L24.6301 10.0716C25.1156 9.58619 25.1156 8.79184 24.6301 8.30641L17.5693 1.24555C17.0838 0.760117 16.2895 0.760117 15.8041 1.24555Z"
+                  fill="currentColor"
+                  className={`fill-current duration-300 `}
+                />
+              </svg>
+            </div>
+            <div
+              className={`w-[15vw] cursor-pointer p-[5vw] btns flex items-center justify-center rounded-full h-[15vw] bg-black/10 border border-white/50 ${activeIndex === 3 ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
+              onClick={activeIndex !== 3 ? handleNext : undefined}
+            >
+              <svg
+                className=""
+                width="25"
+                height="18"
+                viewBox="0 0 25 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15.8041 1.24555C15.3098 1.73981 15.3186 2.52533 15.8041 3.01076L20.7378 7.94454L1.51466 7.94454C0.826224 7.94454 0.270181 8.50058 0.270182 9.18901C0.270181 9.87745 0.826224 10.4335 1.51466 10.4335L20.7378 10.4335L15.8041 15.3673C15.3186 15.8527 15.3186 16.647 15.8041 17.1325C16.2895 17.6179 17.0838 17.6179 17.5693 17.1325L24.6301 10.0716C25.1156 9.58619 25.1156 8.79184 24.6301 8.30641L17.5693 1.24555C17.0838 0.760117 16.2895 0.760117 15.8041 1.24555Z"
+                  fill="currentColor"
+                  className={`fill-current duration-300 `}
+                />
+              </svg>
             </div>
           </div>
         </div>
