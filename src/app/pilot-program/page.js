@@ -1,4 +1,4 @@
-import Hero from '@/Components/Common/Hero'
+ import Hero from '@/Components/Common/Hero'
 import Layout from '@/Components/Layout'
 import AIPilots from '@/Components/PilotProgram/AIPilots'
 import PilotProgramForm from '@/Components/PilotProgram/PilotProgramForm'
