@@ -76,14 +76,15 @@ const Hero = () => {
       ease: "power3.out",
     });
     gsap.fromTo('.hero-img', {
-      yPercent:100,
+      yPercent:80,
       opacity:0,
     } , {
       opacity:1,
       yPercent:0,
-      delay:1.7,
+      duration:1,
+      delay:1.9,
     })
-    // gsap.from(".")
+
   }, []);
 
   return (

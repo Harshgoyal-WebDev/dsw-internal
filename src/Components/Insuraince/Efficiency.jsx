@@ -19,12 +19,12 @@ const Efficiency = () => {
       })
       
         tl.to('.left-timer', {
-            yPercent: -77,
+            yPercent: -75,
             // ease: 'power1.out',
             duration:1.2,
         })
         .to('.right-timer', {
-            yPercent: -77,
+            yPercent: -75,
             // ease: 'power1.out',
             duration:1.2,
             delay:0.2,
@@ -72,7 +72,7 @@ const Efficiency = () => {
 
             {TimeLd.map((digit, idx) => (
               <p
-              key={idx} className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-display ">
+              key={idx} className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.4vw] font-head ">
                       {digit}
                   </p>
             ))}
@@ -81,14 +81,14 @@ const Efficiency = () => {
             <div className="w-fit flex  flex-col items-center right-timer justify-center translate-y-[38%]">
               {TimeRd.map((digit, idx) => (
               <p
-              key={idx} className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-display ">
+              key={idx} className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.4vw] font-head ">
                       {digit}
                   </p>
             ))}
             </div>
             <div>
 
-            <p className="bg-gradient-to-r font-display from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-display">
+            <p className="bg-gradient-to-r font-head from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.4vw] ">
                 %
             </p>
             </div>
@@ -110,7 +110,7 @@ const Efficiency = () => {
 
             {TCOLd.map((digit, idx) => (
               <p
-              key={idx} className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-display ">
+              key={idx} className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.4vw] font-head ">
                       {digit}
                   </p>
             ))}
@@ -119,14 +119,14 @@ const Efficiency = () => {
             <div className="w-fit flex  flex-col items-center right-timer justify-center translate-y-[38%]">
               {TCORd.map((digit, idx) => (
               <p
-              key={idx} className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-display ">
+              key={idx} className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.4vw] font-head ">
                       {digit}
                   </p>
             ))}
             </div>
             <div>
 
-            <p className="bg-gradient-to-r font-display  from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-display">
+            <p className="bg-gradient-to-r font-head  from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.4vw] ">
                 %
             </p>
             </div>
@@ -147,7 +147,7 @@ const Efficiency = () => {
 
             {TaskLd.map((digit, idx) => (
               <p
-              key={idx} className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-display ">
+              key={idx} className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.4vw] font-head ">
                       {digit}
                   </p>
             ))}
@@ -156,14 +156,14 @@ const Efficiency = () => {
             <div className="w-fit flex  flex-col items-center right-timer justify-center translate-y-[38%]">
               {TaskRd.map((digit, idx) => (
               <p
-              key={idx} className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-display ">
+              key={idx} className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.4vw] font-head ">
                       {digit}
                   </p>
             ))}
             </div>
             <div>
 
-            <p className="bg-gradient-to-r font-display from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-display">
+            <p className="bg-gradient-to-r font-head from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.4vw] ">
                 %
             </p>
             </div>
@@ -183,7 +183,7 @@ const Efficiency = () => {
 
             {DaysLd.map((digit, idx) => (
               <p
-              key={idx} className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-display ">
+              key={idx} className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.4vw] font-head ">
                       {digit}
                   </p>
             ))}
@@ -192,7 +192,7 @@ const Efficiency = () => {
             <div className="w-fit flex  flex-col items-center right-timer justify-center translate-y-[38%]">
               {DaysRd.map((digit, idx) => (
               <p
-              key={idx} className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.2vw] font-display ">
+              key={idx} className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.4vw] font-head ">
                       {digit}
                   </p>
             ))}

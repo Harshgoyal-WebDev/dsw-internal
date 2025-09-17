@@ -1,26 +1,35 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Copy from "../Animations/Copy";
 gsap.registerPlugin(ScrollTrigger);
 
-const Card = ({ srcc, content }) => {
+const Card = ({ srcc, content, isActive, onHover }) => {
   return (
     <div
-      className="card h-[45vh] backdrop-blur-lg cursor-pointer group transition-all duration-500 
-      bg-white/10 hover:bg-gradient-to-r hover:from-light-blue hover:to-dark-blue 
-      w-[20vw] rounded-[2vw] py-[2vw] px-[2vw] flex-shrink-0"
+      onMouseEnter={onHover}
+      className="card relative border border-[#88888880] h-[40vh] cursor-pointer w-[20vw] rounded-[2vw] py-[2vw] px-[2vw] overflow-hidden group"
     >
-      <div className="h-full w-full">
+     <div className="absolute inset-0 background-glass transition-opacity duration-500" />
+
+      <div
+        className={`absolute inset-0 bg-gradient-to-r from-light-blue to-dark-blue transition-opacity ease-in-out duration-500 ${
+          isActive ? "opacity-100" : "opacity-0"
+        }`}
+      />
+
+      <div className="relative h-full w-full">
         <div className="w-[5.2vw]">
           <Image
             src={srcc}
             height={300}
             width={300}
             alt="card-svg"
-            className="w-full group-hover:brightness-0 group-hover:invert transition h-full object-cover"
+            className={`w-full h-full object-cover transition duration-500 ${
+              isActive ? "brightness-0 invert" : ""
+            }`}
           />
         </div>
         <div className="pt-[3vw]">
@@ -34,6 +43,7 @@ const Card = ({ srcc, content }) => {
 const Features = () => {
   const featuresRef = useRef(null);
   const cardsContainerRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
   const ctx = gsap.context(() => {
@@ -41,11 +51,11 @@ const Features = () => {
 
     // horizontal scrolling of container
     const horizAnim = gsap.to(cardsContainerRef.current, {
-      x: "-55vw",
+      x: "-22vw",
       ease: "none",
       scrollTrigger: {
         trigger: featuresRef.current,
-        start: "top top",
+        start: "top 50%",
         end: "70% top",
         scrub: true,
         // markers: true,
@@ -55,18 +65,20 @@ const Features = () => {
     cards.forEach((card, i) => {
       gsap.fromTo(
         card,
-        { rotateY: 90, opacity: 0, transformPerspective: 900 },
+        { rotateY: 65, 
+          opacity: 0, 
+          transformPerspective: 900 },
         {
           rotateY: 0,
           opacity: 1,
-          duration: 0.5,
-          ease: "power1.out",
+          duration: 1.5,
+          ease: "none",
           scrollTrigger: {
             containerAnimation: horizAnim, // <-- tie to horizontal scroll
             trigger: card,
             scrub:true,
             start: "left 95%", 
-            end: "100% 105%",
+            end: "140% 90%",
             toggleActions: "play none none reverse",
             // markers: true,
           },
@@ -78,11 +90,9 @@ const Features = () => {
   return () => ctx.revert();
 }, []);
 
-
-
   return (
     <section id="features-section"
-        ref={featuresRef} className="h-[350vh] w-full relative">
+        ref={featuresRef} className="h-[200vh] w-full relative">
       <div
         className="bg-primary features-div sticky top-0 h-fit flex flex-col container !px-0"
       >
@@ -100,13 +110,18 @@ const Features = () => {
           </Copy>
         </div>
 
-        <div className="w-full overflow-x-hidden pt-[2vw]">
+        <div className="w-full overflow-x-hidden  pb-[1.2vw] pt-[4vw]">
           <div
             ref={cardsContainerRef}
             className="flex gap-[2vw] translate-x-[100vw] min-w-max"
           >
             {cardsData.map((card, index) => (
-              <Card key={index} srcc={card.src} content={card.content} />
+              <Card key={index} 
+                srcc={card.src} 
+                content={card.content}
+                isActive={activeIndex === index}
+                onHover={() => setActiveIndex(index)}
+              />
             ))}
           </div>
         </div>

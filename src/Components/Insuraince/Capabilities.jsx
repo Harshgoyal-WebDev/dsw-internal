@@ -51,7 +51,7 @@ const Capabilities = () => {
               insurAInce gives you over 300 prebuilt GenAI agents that are
               designed for real insurance workflows. 
             </p>
-            <p className="text-white-300 text-[1.2vw] font-display">
+            <p className="text-white-300 text-[1.2vw] py-[2.5vw] font-display">
               Key Capabilities: 
             </p>
           </Copy>
@@ -60,27 +60,28 @@ const Capabilities = () => {
             <div className="flex flex-col gap-[4.5vw] pt-[4vw]">
               {capabilities.map((cap) => (
                 <div key={cap.id} className="relative group ">
-                  <div className="w-full h-[0.1vw] bg-[#59595980] absolute top-[-40%] mb-[2vw] lineDraw" />
-                  <div className="absolute top-[-40%] w-full h-[1px] bg-primary-2 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700"></div>
+                  <div className="w-full h-[0.1vw]  bg-[#59595980] absolute top-[-40%] mb-[2vw] lineDraw" />
 
-                  <div className="flex items-start justify-start gap-[5vw]">
+                  <div className="flex items-start fadeup justify-start gap-[5vw]">
+                  
+
                     <p className="text-white text-[1vw] font-display">
                       {cap.id}
                     </p>
-
-                    <div className="w-[5.5vw] h-[5.5vw]">
+                    <div className="w-[5.5vw]  h-[5.5vw]">
                       <Image
                         src={cap.src}
                         alt={`capibility-${cap.id}`}
                         width={40}
                         height={40}
                         className="object-contain h-full w-full"
-                      />
+                        />
                     </div>
+                     
 
-                    <Copy>
+                    
                       <p className="text-white-300 max-w-[28vw]">{cap.text}</p>
-                    </Copy>
+                  
                   </div>
                 </div>
               ))}

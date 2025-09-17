@@ -4,21 +4,22 @@ import Copy from "../Animations/Copy";
 
 const Card = ({ src, content }) => {
   return (
-    <div className="flex flex-col gap-[2vw] w-[16vw] relative group min-h-[20vh]">
-       <div className="absolute bottom-[-15%] w-full h-[1px] bg-primary-2 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700"></div>
-      <div className="w-fit h-[5.2vw]">
+    <div className="flex flex-col gap-[2vw] w-[16vw] relative group min-h-[20vh] fadeup">
+       <div className="absolute z-[2] bottom-[-15%] w-full h-[1px] bg-primary-2 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700"></div>
+
+      <div className="w-fit h-[5vw]">
         <Image
           src={src}
           alt="card-icon"
           width={60}
           height={60}
-          className="h-full w-full object-cover"
-        />
+          className="h-full w-auto object-cover"
+          />
       </div>
-      <Copy>                
+                       
       <p className="text-white-300 text-12 font-display">{content}</p>
-                </Copy>
-      <div className="w-full absolute bottom-[-15%] h-[1px] lineDraw bg-foreground/30 mt-auto" />
+             
+      <div className="w-full absolute z-[0] bottom-[-15%] h-[1px] lineDraw bg-foreground/30 mt-auto" />
     </div>
   );
 };
