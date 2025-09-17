@@ -120,7 +120,7 @@ export default function PilotForm() {
                       placeholder="Name*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw] mobile:text-[4.5vw] tablet:text-[2.2vw] bg-white/10 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA]"
+                        className="placeholder:text-[1.15vw] pl-[2vw] bg-white/10 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-sm:pl-[5vw]"
                       />
                     </FormControl>
                     <FormMessage />
@@ -142,7 +142,7 @@ export default function PilotForm() {
                       placeholder="Business Email*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw] mobile:text-[4.5vw] tablet:text-[2.2vw] bg-white/10 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA]"
+                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/10 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-sm:pl-[5vw]"
                       />
                     </FormControl>
                     <FormMessage />
@@ -162,7 +162,7 @@ export default function PilotForm() {
                       placeholder="Designation*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw] mobile:text-[4.5vw] tablet:text-[2.2vw] bg-white/10 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA]"
+                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/10 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-sm:pl-[5vw]"
                       />
                     </FormControl>
                     <FormMessage />
@@ -183,7 +183,7 @@ export default function PilotForm() {
                       placeholder="Company Name*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw] mobile:text-[4.5vw] tablet:text-[2.2vw] bg-white/10  border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA]"
+                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/10  border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-sm:pl-[5vw]"
                       />
                     </FormControl>
                     <FormMessage />
@@ -206,7 +206,7 @@ export default function PilotForm() {
                         defaultCountry="IN"
                         international
                         {...field}
-                        className="placeholder:text-[1.15vw] placeholder:text-[#CACACA]  mobile:text-[4.5vw] tablet:text-[2.2vw] "
+                        className="placeholder:text-[1.15vw] placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] "
                       />
                     </FormControl>
                     <FormMessage />
@@ -228,7 +228,7 @@ export default function PilotForm() {
                       placeholder="Message"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw] mobile:text-[4.5vw] tablet:text-[2.2vw] bg-white/10 border !border-[#B0B0B080] rounded-[2vw] placeholder:text-[#CACACA]"
+                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/10 border !border-[#B0B0B080] rounded-[2vw] placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-sm:pl-[5vw]"
                       />
                     </FormControl>
                     <FormMessage />
@@ -243,8 +243,8 @@ export default function PilotForm() {
               render={({ field }) => (
                 <FormItem className="">
                   <div className="flex items-center justify-center gap-3 tablet:gap-1">
-                    <Checkbox aria-label="checkbox" checked={field.value} onCheckedChange={field.onChange} className="mobile:mt-[2vw] tablet:mt-[2vw] cursor-pointer" />
-                    <label className="text-[1.15vw] mt-2  text-[#CACACA] mobile:text-[1rem] tablet:text-[2vw] tablet:px-[3vw]">I agree to <a href="/" className="border-b border-[#CACACA]">Privacy Policy </a> and <a href="/" className="border-b border-[#CACACA]">Terms and Conditions</a>.</label>
+                    <Checkbox aria-label="checkbox" checked={field.value} onCheckedChange={field.onChange} className="mobile:mt-[2vw] tablet:mt-[2vw] cursor-pointer max-sm:rounded-[0.5vw]" />
+                    <label className="text-[1.15vw] mt-2  text-[#CACACA] max-sm:text-[3.5vw] max-sm:mt-5">I agree to <a href="/" className="border-b border-[#CACACA]">Privacy Policy </a> and <a href="/" className="border-b border-[#CACACA]">Terms and Conditions</a>.</label>
                   </div>
                   <FormMessage />
                 </FormItem>
@@ -254,7 +254,7 @@ export default function PilotForm() {
 
               <Button 
               // type="submit"
-                aria-label="submit form" className="cursor-pointer mt-[2vw] pb-[3vw] max-sm:mt-[10vw] max-md:mt-[8vw]">
+                aria-label="submit form" className="cursor-pointer mt-[2vw] pb-[3vw] max-sm:mt-[10vw] max-sm:pb-[8vw] max-md:mt-[8vw]">
                  <div  className={` relative inline-flex items-center h-[4vw] min-w-[10vw] px-[2vw] gap-3 rounded-full overflow-hidden text-white-200 group max-sm:h-fit max-sm:py-[4vw] max-sm:px-[6vw] max-sm:min-w-[30vw] max-sm:gap-[4vw] `}>
       <span className={`bg-foreground rounded-full h-2 w-2 max-sm:w-[2.5vw] max-sm:h-[2.5vw] z-[1] `}></span>
       <div className="overflow-clip leading-[1.4] mt-[-4px] max-sm:mt-0 z-[1]">

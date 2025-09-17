@@ -18,7 +18,7 @@ const page = () => {
         <AIPilots/>
         <Transform/>
         <InsidePilotProgram/>
-        <PilotProgramForm/>
+        {/* <PilotProgramForm/> */}
         <Faqs />
         <FooterCTA footerCTAData={footerCTAData}/>
     </Layout>

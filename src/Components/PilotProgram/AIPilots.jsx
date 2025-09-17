@@ -97,8 +97,10 @@ const AIPilots = () => {
               {data.map((card, index) => (
                 <SwiperSlide key={index}>
                   <div className="flex gap-[8vw] mt-[8vw] w-full items-center justify-center flex-col">
+                    <Copy>
                     <p className="text-white-300 text-[4vw]">{card.id}</p>
-                    <div className="w-[30%] h-auto relative">
+                    </Copy>
+                    <div className="w-[30%] h-auto relative fadeup">
                       <Image
                         src={card.icon}
                         height={200}
@@ -108,8 +110,12 @@ const AIPilots = () => {
                       />
                     </div>
                     <div className="space-y-[5vw] w-full">
+                      <Copy>
                       <p className="text-center">{card.title}</p>
+                      </Copy>
+                      <Copy>
                       <p className="text-center text-white-300">{card.para}</p>
+                      </Copy>
                     </div>
                   </div>
                 </SwiperSlide>

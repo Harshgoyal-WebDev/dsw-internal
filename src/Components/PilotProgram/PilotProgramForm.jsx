@@ -18,7 +18,7 @@ const PilotProgramForm = () => {
               </Copy>
             </div>
           </div>
-          <div className='w-[45%] mt-[15vw] max-md:w-[100%] max-sm:w-full'>
+          <div className='w-[45%] mt-[15vw] max-md:w-[100%] max-sm:w-full max-sm:mt-0'>
             <PilotForm/>
           </div>
         </div>

@@ -82,7 +82,7 @@ const CountrySelect = ({ disabled, value: selectedCountry, options: countryList,
         <Button
           type="button"
           variant="outline"
-          className="flex justify-between h-[4vw] border shadow-none px-[4vw] pb-2 mobile:pb-0 focus:z-10  max-md:h-[10vw] w-[20%] mr-[1.5vw] max-sm:hidden  bg-white/10  !border-[#B0B0B080] rounded-full cursor-pointer"
+          className="flex justify-between h-[4vw] border shadow-none px-[4vw] pb-2 mobile:pb-0 focus:z-10  max-md:h-[10vw] w-[20%] mr-[1.5vw]  bg-white/10  !border-[#B0B0B080] rounded-full cursor-pointer"
           disabled={disabled}
         >
           <FlagComponent country={selectedCountry} countryName={selectedCountry} />
