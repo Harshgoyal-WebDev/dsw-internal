@@ -134,7 +134,7 @@ const ProductionCard = ({ className, title, para }) => {
   return (
     <div
       ref={cardRef}
-      className={`group relative rounded-[2vw] h-[22vw] w-[35vw] p-[4vw] border border-[#59595980] overflow-hidden cursor-pointer ${className} w-[80vw] h-[40vw]`}
+      className={`group relative rounded-[2vw] h-[22vw] w-[35vw] p-[4vw] border border-[#59595980] overflow-hidden cursor-pointer ${className} max-sm:w-[80vw] hmax-sm:-[40vw]`}
     >
       {/* Gradient Background */}
       <div 
