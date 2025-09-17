@@ -40,14 +40,27 @@ const ProductionCard = ({ className, title, para }) => {
   const gradientRef = useRef(null);
   const overlayRef = useRef(null);
   const splitTextRef = useRef(null);
+  const isMobile = useRef(false);
 
   useEffect(() => {
+    // Check if we're on mobile
+    isMobile.current = window.innerWidth <= 768;
+    
     const card = cardRef.current;
     const paraElement = paraRef.current;
     const titleElement = titleRef.current;
     const gradient = gradientRef.current;
     const overlay = overlayRef.current;
   
+    if (isMobile.current) {
+      gsap.set(paraElement, { y: 0, opacity: 1 });
+      gsap.set(gradient, { opacity: 1 });
+      gsap.set(overlay, { opacity: 0 });
+      gsap.set(titleElement, { y: 0 });
+      return; 
+    }
+    
+    // Desktop behavior
     gsap.set(paraElement, { y: 30, opacity: 0 });
     gsap.set(gradient, { opacity: 0 });
 
@@ -134,32 +147,32 @@ const ProductionCard = ({ className, title, para }) => {
   return (
     <div
       ref={cardRef}
-      className={`group relative rounded-[2vw] h-[22vw] w-[35vw] p-[4vw] border border-[#59595980] overflow-hidden cursor-pointer ${className} max-sm:w-[80vw] hmax-sm:-[40vw]`}
+      className={`group relative rounded-[2vw] h-[22vw]  w-[35vw] p-[4vw] border border-[#59595980] overflow-hidden max-sm:p-[8vw] cursor-pointer ${className} max-sm:w-[85vw] max-sm:h-[30vh] max-sm:rounded-[5vw]`}
     >
       {/* Gradient Background */}
       <div 
         ref={gradientRef}
-        className="absolute inset-0 bg-gradient-to-r from-[#041035] to-[#1727FF] rounded-[2vw]" 
+        className="absolute inset-0 bg-gradient-to-r from-[#041035] to-[#1727FF] rounded-[2vw] max-sm:opacity-100" 
       />
       
       {/* Overlay */}
       <div 
         ref={overlayRef}
-        className="absolute inset-0 background-glass rounded-[2vw] backdrop-blur-sm z-[5]" 
+        className="absolute inset-0 background-glass rounded-[2vw] backdrop-blur-sm z-[5] max-sm:opacity-0" 
       />
       
       {/* Content */}
-      <div className="relative z-10 h-full">
+      <div className="relative max-sm:flex max-sm:items-start max-sm:justify-between max-sm:flex-col z-10 h-full">
         <div 
           ref={titleRef}
-          className="absolute left-0 bottom-0 !leading-[1.2] text-white text-[2.8vw] font-head w-[80%]"
+          className="absolute left-0 max-sm:w-full max-sm:relative  bottom-0 !leading-[1.2] text-white text-[2.8vw] font-head w-[80%] max-sm:text-[8vw] max-sm:-translate-y-[120px]"
         >
           {title}
         </div>
-        <div className="absolute left-0 right-[1vw] bottom-0 overflow-hidden">
+        <div className="absolute max-sm:relative left-0 right-[1vw] bottom-0 overflow-hidden">
           <p 
             ref={paraRef}
-            className="text-white text-[1.2vw] leading-[1.4]"
+            className="text-white text-[1.2vw] leading-[1.4] max-sm:text-[4.2vw] max-sm:opacity-100"
           >
             {para}
           </p>
@@ -238,7 +251,7 @@ if(globalThis.innerWidth>1024){
 
                 </div>
 
-                <div ref={containerRef} className=' flex gap-[3vw] max-sm:flex-col'>
+                <div ref={containerRef} className=' flex max-sm:mt-[15vw] gap-[3vw] max-sm:flex-col'>
                     <div className='space-y-[3vw]'>
                     <ProductionCard className={"production-card-left"} title={"Accelerated Deployment"} para={"Move from concept to production in weeks for AI and in hours for GenAI — with enterprise-grade readiness from day one."}/>
                     <ProductionCard className={"production-card-left"} title={"Scalable, Unified Platform"} para={"Simplify adoption with an end-to-end platform that brings data, models, and governance together in one place."}/>

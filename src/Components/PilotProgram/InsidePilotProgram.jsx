@@ -21,17 +21,17 @@ const InsidePilotProgram = () => {
           </div>
 
           {/* GRID VERSION */}
-          <div className='w-full h-full max-sm:overflow-x-scroll flex items-center justify-center'>
-          <div className='h-[40vw] w-[80vw] max-sm:w-[300vw] max-sm:h-[120vw] fadeup background-glass rounded-[2vw] border border-[#88888880]  py-[3vw] pb-[4vw] px-[3vw]'>
+          <div className='w-full max-sm:w-[300vw]  mt-[10vw] h-full max-sm:overflow-x-scroll flex items-center justify-center'>
+          <div className='h-[40vw] w-[80vw] max-sm:translate-x-[38%] max-sm:w-full max-sm:h-[120vw] fadeup background-glass rounded-[2vw] border border-[#88888880]  py-[3vw] pb-[4vw] px-[3vw]'>
             <div className="grid grid-cols-[1fr_1.2fr_1.8fr] border-collpase w-full h-full  border-t-0 border-l-0">
               {/* Header Row */}
-              <div className="text-[2.5vw] font-head text-[#F26B0D] font-normal border border-[#59595980] border-t-0 border-l-0 pb-[1vw]">
+              <div className="text-[2.5vw] font-head text-[#F26B0D] font-normal border border-[#59595980] border-t-0 border-l-0 pb-[1vw] max-sm:text-[6vw]">
                 Features
               </div>
-              <div className="text-[2.5vw] font-head text-white-200 font-normal border border-[#59595980] border-l-0 border-t-0 pl-[2vw] pb-[1vw]">
+              <div className="text-[2.5vw] font-head text-white-200 font-normal border border-[#59595980] border-l-0 border-t-0 pl-[2vw] pb-[1vw] max-sm:text-[6vw]">
                 Pilot Program
               </div>
-              <div className="text-[2.5vw] font-head text-white-200 font-normal border-b border-[#59595980]  pl-[2vw] pb-[1vw] ">
+              <div className="text-[2.5vw] font-head text-white-200 font-normal border-b border-[#59595980]  max-sm:text-[6vw] pl-[2vw] pb-[1vw] ">
                 Post Pilot Subscription
               </div>
 
