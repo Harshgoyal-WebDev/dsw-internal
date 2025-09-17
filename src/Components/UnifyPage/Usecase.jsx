@@ -132,7 +132,7 @@ export default function Usecase() {
       <h2 className="title-2 headingAnim w-[45%] text-center">
         Supercharge Your AI and GenAI Use Cases
       </h2>
-      <div className="w-[100%] relative text-white-200 overflow-hidden border border-[#595959]/50 rounded-[2.5vw] h-[75vh]">
+      <div className="w-[100%] fadeup relative text-white-200 overflow-hidden border border-[#595959]/50 rounded-[2.5vw] h-[75vh]">
         {usecaseData.map((card, index) => (
           <motion.div
             key={card.id}
@@ -150,8 +150,10 @@ export default function Usecase() {
           >
             {/* <div className="w-full flex items-start justify-end h-full "> */}
             <div
-              className={`border-b py-[2.5vw] min-h-[15.5vh] flex items-center w-[85%] justify-between ${card.borderClass}`}
+              className={`py-[2.5vw] min-h-[15.5vh] flex items-center w-[85%] justify-between ${card.borderClass}`}
             >
+              <span className="w-[75%] h-[1.2px] rounded-full bg-white absolute top-[25%]"></span>
+              
               <div className="space-x-[5vw] w-full flex items-center">
                 <p className="absolute left-[3%] top-[14.5%] translate-y-[-50%]">
                   {card.id}

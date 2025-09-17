@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import PrimaryButton from "../Button/PrimaryButton";
 import Copy from "../Animations/Copy";
 
-const Tour = ({heading,para, img, overlay = false}) => {
+const Tour = ({heading,para}) => {
   const [activeTab, setActiveTab] = useState("aiStudio");
 
   const handleTabClick = (tabId) => {
@@ -128,16 +128,14 @@ useEffect(() => {
                   ease: "easeInOut",
                 }}
               >
-                <div className="relative w-full h-full">
                   <Image
-                    src={img}
+                    src={'/assets/images/homepage/tour-img.png'}
                     alt="AI Studio tour image"
                     className="w-full h-full object-cover rounded-lg"
                     width={900}
                     height={400}
                   />
-                  {overlay && <div className="absolute inset-0 bg-black/80 bg-opacity-40 rounded-lg"></div>}
-                </div>
+                
 
                 <motion.div
                   className="w-full h-full absolute top-0 left-0 flex justify-center items-center"
@@ -179,16 +177,14 @@ useEffect(() => {
                   ease: "easeInOut",
                 }}
               >
-                <div className="relative w-full h-full">
                   <Image
-                    src={img}
+                    src={'/assets/images/homepage/tour-img.png'}
                     alt="GenAI Studio tour image"
                     className="w-full h-full object-cover rounded-lg"
                     width={900}
                     height={400}
                   />
-                  {overlay && <div className="absolute inset-0 bg-black/80 bg-opacity-40 rounded-lg"></div>}
-                </div>
+                
 
                 <motion.div
                   className="w-full h-full absolute top-0 left-0 flex justify-center items-center"

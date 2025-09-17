@@ -146,7 +146,7 @@ function Accordion({ title, para, link, features, isOpen, onToggle, id }) {
             >
               <div className="w-full flex flex-col max-sm:gap-[2vw] max-sm:pb-[10vw] max-md:items-center max-md:pb-[5vw] max-md:gap-[3vw]">
                 <div className="py-4 space-y-[4vw]  text-white-200 ">{para}</div>
-                <div className="w-full flex text-white-200 flex-col">
+                <div className="w-full flex text-white-200 mt-[5vw] flex-col">
                   <ul className="list-disc pl-[5vw] ">
                     {features &&
                       features.map((feature, index) => (

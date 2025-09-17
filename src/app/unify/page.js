@@ -19,7 +19,7 @@ export default function page() {
         <Layout>
             <Hero heroData={heroData} />
             <AiEverywhere />
-            <Tour overlay={true} heading={"Take a Lightning Tour of DSW UnifyAI"} para={"Your AI foundation — not just for today’s use cases, but for tomorrow’s vision.​"} img={'/assets/images/unify/tour.png'} />
+            <Tour heading={"Take a Lightning Tour of DSW UnifyAI"} para={"Your AI foundation — not just for today’s use cases, but for tomorrow’s vision.​"} />
             <Usecase />
             <UsecaseMobile />
             <PresentationLayer />
@@ -35,7 +35,7 @@ export default function page() {
 const heroData = {
     heading: "The Operating System for Enterprise AI ",
     para: "Deploy AI use cases in 30 days, GenAI in a few hours! ​",
-    paraClass: "text-[2.8vw]",
+    paraClass: "text-[2.5vw] max-sm:text-[4vw]",
     link1: "/#",
     btnText1: "Start Walkthrough",
     link2: "/#",

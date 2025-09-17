@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Copy from "../Animations/Copy";
@@ -33,6 +33,20 @@ const POINTS = [
 ];
 
 export default function Impact() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setIsMobile(window.innerWidth <= 768);
+
+      const handleResize = () => {
+        setIsMobile(window.innerWidth <= 768);
+      };
+
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
   useEffect(() => {
     gsap.set(".about-item", {
       scale: 0.7,
@@ -46,7 +60,7 @@ export default function Impact() {
       const masterTl = gsap.timeline({
         scrollTrigger: {
           trigger: item,
-          start: "10% 115%",
+          start: isMobile ? "20% 180%" : "10% 115%",
           end: "150%",
           scrub: true,
         },
@@ -119,14 +133,11 @@ export default function Impact() {
                 </div>
               </div>
               <div className="space-y-[1.2vw]">
-                <Copy>
-                  <p className="text-[1.5vw] max-sm:text-[4.2vw] text-white-200">
-                    {title}
-                  </p>
-                </Copy>
-                <Copy>
-                  <p className="text-white-300">{text}</p>
-                </Copy>
+                <p className="text-[1.5vw] max-sm:text-[4.2vw] text-white-200">
+                  {title}
+                </p>
+
+                <p className="text-white-300">{text}</p>
               </div>
             </div>
           ))}

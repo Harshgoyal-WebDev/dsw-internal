@@ -9,11 +9,11 @@ const Diagram = () => {
   return (
 
     <section
-      className="h-full w-screen relative overflow-hidden container"
+      className="h-full w-screen background-radial relative overflow-hidden container"
     >
       <div className="w-full h-full flex flex-col items-center justify-center relative z-[2] space-y-[5vw] max-sm:items-start max-sm: ">
-        <div className="text-center  space-y-5 mt-10 flex flex-col items-center justify-center max-sm:text-left max-sm:items-start w-[75%]">
-          <h3 className="title-3  leading-[1.2] headingAnim ">
+        <div className="text-center max-sm:w-full space-y-5 mt-10 flex flex-col items-center justify-center max-sm:text-left max-sm:items-start w-[75%]">
+          <h3 className="text-[2.2vw] max-sm:text-[5vw] max-sm:w-full leading-[1.2] headingAnim ">
            An orchestrator that brings togethers data, models, workflows and AI agents, all in a single platform, designed to deliver business outcomes 
           </h3>
          
@@ -40,38 +40,38 @@ const Diagram = () => {
             </p>
           </div>
 
-          <div>
-            <div className="absolute top-[21%] left-[67%] max-sm:top-[45%] max-sm:left-0">
+          <div className="">
+            <div className="absolute top-[21%] left-[67%] max-sm:top-[33%] max-sm:left-0">
               <Copy>
                 <p className="text-white-200 text-[1vw] max-sm:text-[3.5vw]">Presentation Layer</p>
               </Copy>
             </div>
-            <div className="absolute top-[32%] left-[67%] max-sm:left-0 max-sm:top-[50%]">
+            <div className="absolute top-[32%] left-[67%] max-sm:left-0 max-sm:top-[38%]">
               <Copy>
                 <p className="text-white-200 text-[1vw] max-sm:text-[3.5vw]">Use Cases</p>
               </Copy>
             </div>
-            <div className="absolute top-[42%] left-[67%] max-sm:left-[70%] max-sm:top-[54%]">
+            <div className="absolute top-[42%] left-[67%] max-sm:left-[70%] max-sm:top-[45%]">
               <Copy>
                 <p className="text-white-200 text-[1vw] max-sm:text-[3.5vw]">Gen AI Studio</p>
               </Copy>
             </div>
-            <div className="absolute top-[42%] left-[28%] text-right max-sm:left-0 max-sm:top-[54%]">
+            <div className="absolute top-[42%] left-[28%] text-right max-sm:left-0 max-sm:top-[43%]">
               <Copy>
                 <p className="text-white-200 text-[1vw] max-sm:text-[3.5vw]">AI Studio</p>
               </Copy>
             </div>
-            <div className="absolute top-[50%] left-[27%] text-right max-sm:left-0 max-sm:top-[58%]">
+            <div className="absolute top-[50%] left-[27%] text-right max-sm:left-0 max-sm:top-[48%]">
               <Copy>
                 <p className="text-white-200 text-[1vw] max-sm:text-[3.5vw]">InsurAInce</p>
               </Copy>
             </div>
-            <div className="absolute top-[58%] left-[29%] text-right max-sm:left-0 max-sm:top-[62%]">
+            <div className="absolute top-[58%] left-[29%] text-right max-sm:left-0 max-sm:top-[53%]">
               <Copy>
                 <p className="text-white-200 text-[1vw] max-sm:text-[3.5vw]">UnifyAI</p>
               </Copy>
             </div>
-            <div className="absolute top-[68%] left-[19.5%] text-right max-sm:left-0 max-sm:top-[66%] max-sm:w-[30%] max-sm:text-left">
+            <div className="absolute top-[68%] left-[19.5%] text-right max-sm:left-0 max-sm:top-[58%] max-sm:w-[30%] max-sm:text-left">
               <Copy>
                 <p className="text-white-200 text-[1vw] max-sm:text-[3.5vw]">
                   Infra: On - Premise/Cloud

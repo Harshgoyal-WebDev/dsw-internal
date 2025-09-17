@@ -32,7 +32,7 @@ export default function AiEverywhere() {
               </p>
             </Copy>
           </div>
-          <div className="space-y-[7vw]">
+          <div className="space-y-[7vw] max-sm:space-y-[20vw]">
             <div className="flex h-full max-sm:flex-col items-center max-sm:gap-[10vw] gap-[12vw] justify-between">
               <p className="w-[45%]  max-sm:w-full max-sm:text-center title-3 text-nowrap font-head headingAnim text-[2.8vw] ">
                 AI is Everywhere. <br />
@@ -48,16 +48,16 @@ export default function AiEverywhere() {
                 </p>
               </Copy>
             </div>
-            <div className=" flex items-center max-sm:flex-col max-sm:gap-[12vw] justify-between w-full">
+            <div className=" flex items-start max-sm:flex-col max-sm:gap-[12vw] justify-between w-full">
               {cardsData.map((card, index) => (
-                <div key={index} className="space-y-[2vw] max-sm:space-y-[8vw] max-sm:w-full ai-everywhere-cards w-[20%]">
+                <div key={index} className="space-y-[2vw] max-sm:space-y-[8vw] max-sm:w-full ai-everywhere-cards w-[21.5%]">
                   <div className="w-full  max-sm:flex-col max-sm:flex max-sm:items-center max-sm:justify-center h-full">
                     <Image
                       src={card.src}
                       height={98}
                       width={98}
                       alt={card.alt}
-                      className="w-[5vw]  h-[5vw]  object-contain max-sm:w-[20vw] max-sm:h-[20vw]"
+                      className="w-[5vw]  h-[5vw]  object-contain max-sm:w-[22vw] max-sm:h-[22vw]"
                     />
                   </div>
                   <p className="text-content max-sm:text-center max-sm:px-[8vw] text-white-300">{card.text}</p>
