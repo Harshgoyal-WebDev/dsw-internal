@@ -84,7 +84,7 @@ const ExpandablePanels = () => {
         </h2>
         <div className='flex items-center justify-center'>
 
-      <div className="flex w-full h-[65vh] px-[10vw] overflow-hidden ">
+      <div className="flex w-full px-[10vw] h-[65vh] overflow-hidden ">
         {panelsData.map((panel, index) => (
           <div
             key={index}
