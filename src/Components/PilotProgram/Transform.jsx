@@ -7,7 +7,7 @@ const AwardItem=({img, title})=>{
     return (
         <>
         <div
-        className="flex-shrink-0 flex items-center justify-center gap-[1vw] w-[25vw] max-sm:w-[70vw] max-sm:gap-[2vw]" 
+        className="flex-shrink-0 flex items-center justify-center gap-[1vw] w-[25vw] max-sm:w-[75vw] max-sm:gap-[2vw]" 
       >
         <div className='w-[5.5vw] h-auto max-sm:w-[20vw]'>
           <Image
@@ -45,8 +45,8 @@ const Transform= () => {
                 </div>
 
 
-   <div className='space-y-[7vw]'>         
-<div className="marquee fadeup  max-sm:my-[7vw] gap-[3vw]">
+   <div className='space-y-[7vw] max-sm:space-y-[10vw]'>         
+<div className="marquee fadeup  max-sm:my-[10vw] gap-[3vw]">
   <div className="marquee__track">
     {awards1.map((item, index) => <AwardItem key={index} img={item.img} title={item.title} year={item.year} />)}
     {awards1.map((item, index) => <AwardItem key={index} img={item.img} title={item.title} year={item.year}/>)}
@@ -54,7 +54,7 @@ const Transform= () => {
 </div>
 
                 
-<div className="marquee fadeup  max-sm:my-[7vw] gap-[3vw]">
+<div className="marquee fadeup  max-sm:my-[10vw] gap-[3vw]">
   <div className="marquee__track_reverse">
     {awards2.map((item, index) => <AwardItem key={index} img={item.img} title={item.title} year={item.year} />)}
     {awards2.map((item, index) => <AwardItem key={index} img={item.img} title={item.title} year={item.year}/>)}

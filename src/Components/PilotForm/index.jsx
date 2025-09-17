@@ -53,49 +53,49 @@ export default function PilotForm() {
   const [notsubmitted, setIsNotSubmitted] = useState(false);
 
 
-  const onSubmit = async (data) => {
-    // if (!domainsLoaded) {
-    //   form.setError("email", { type: "manual", message: "Please wait until the page is fully loaded." });
-    //   return;
-    // }
+  // const onSubmit = async (data) => {
+  //   // if (!domainsLoaded) {
+  //   //   form.setError("email", { type: "manual", message: "Please wait until the page is fully loaded." });
+  //   //   return;
+  //   // }
 
-    // const emailDomain = data.email.split("@")[1]?.toLowerCase();
-    // if (!emailDomain || blockedDomains.includes(emailDomain)) {
-    //   form.setError("email", { type: "manual", message: "Enter a business email." });
-    //   return;
-    // }
+  //   // const emailDomain = data.email.split("@")[1]?.toLowerCase();
+  //   // if (!emailDomain || blockedDomains.includes(emailDomain)) {
+  //   //   form.setError("email", { type: "manual", message: "Enter a business email." });
+  //   //   return;
+  //   // }
 
-    setIsLoading(true);
+  //   setIsLoading(true);
 
-    const formattedData = {
-      ...data
-    };
+  //   const formattedData = {
+  //     ...data
+  //   };
 
-    // console.log(data);
+  //   // console.log(data);
 
-    try {
-      const res = await fetch("/api/pilotform", {
-        method: "POST",
-        body: JSON.stringify(formattedData),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+  //   try {
+  //     const res = await fetch("/api/pilotform", {
+  //       method: "POST",
+  //       body: JSON.stringify(formattedData),
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //     });
 
-      if (!res.ok) throw new Error("Failed to send message");
+  //     if (!res.ok) throw new Error("Failed to send message");
 
-      setIsSubmitted(true);
-      setTimeout(() => setIsSubmitted(false), 7000);
-      // console.log(data)
-      form.reset();
-    } catch (error) {
-      setIsNotSubmitted(true);
-      setTimeout(() => setIsNotSubmitted(false), 7000);
-      console.error(error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  //     setIsSubmitted(true);
+  //     setTimeout(() => setIsSubmitted(false), 7000);
+  //     // console.log(data)
+  //     form.reset();
+  //   } catch (error) {
+  //     setIsNotSubmitted(true);
+  //     setTimeout(() => setIsNotSubmitted(false), 7000);
+  //     console.error(error);
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
 
   return (
     <section className="mobile:pt-0 overflow-hidden" id="formoem">
@@ -105,7 +105,7 @@ export default function PilotForm() {
             <form
               autoComplete="off"
               className="space-y-[1vw] max-sm:space-y-[7vw] max-md:space-y-[4vw] tablet:space-y-[5vw]  mobile:pt-[5vw]"
-              onSubmit={handleSubmit(onSubmit)}
+              // onSubmit={handleSubmit(onSubmit)}
             >
               <FormField
                 control={control}
@@ -120,7 +120,7 @@ export default function PilotForm() {
                       placeholder="Name*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw] mobile:text-[4.5vw] tablet:text-[2.2vw] bg-white/10 border !border-[#B0B0B080] rounded-full "
+                        className="placeholder:text-[1.15vw] pl-[2vw] mobile:text-[4.5vw] tablet:text-[2.2vw] bg-white/10 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA]"
                       />
                     </FormControl>
                     <FormMessage />
@@ -142,7 +142,7 @@ export default function PilotForm() {
                       placeholder="Business Email*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw] mobile:text-[4.5vw] tablet:text-[2.2vw] bg-white/10 border !border-[#B0B0B080] rounded-full"
+                        className="placeholder:text-[1.15vw] pl-[2vw] mobile:text-[4.5vw] tablet:text-[2.2vw] bg-white/10 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA]"
                       />
                     </FormControl>
                     <FormMessage />
@@ -162,7 +162,7 @@ export default function PilotForm() {
                       placeholder="Designation*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw] mobile:text-[4.5vw] tablet:text-[2.2vw] bg-white/10 border !border-[#B0B0B080] rounded-full"
+                        className="placeholder:text-[1.15vw] pl-[2vw] mobile:text-[4.5vw] tablet:text-[2.2vw] bg-white/10 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA]"
                       />
                     </FormControl>
                     <FormMessage />
@@ -183,7 +183,7 @@ export default function PilotForm() {
                       placeholder="Company Name*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw] mobile:text-[4.5vw] tablet:text-[2.2vw] bg-white/10  border !border-[#B0B0B080] rounded-full"
+                        className="placeholder:text-[1.15vw] pl-[2vw] mobile:text-[4.5vw] tablet:text-[2.2vw] bg-white/10  border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA]"
                       />
                     </FormControl>
                     <FormMessage />
@@ -206,7 +206,7 @@ export default function PilotForm() {
                         defaultCountry="IN"
                         international
                         {...field}
-                        className="placeholder:text-[1.15vw]   mobile:text-[4.5vw] tablet:text-[2.2vw] "
+                        className="placeholder:text-[1.15vw] placeholder:text-[#CACACA]  mobile:text-[4.5vw] tablet:text-[2.2vw] "
                       />
                     </FormControl>
                     <FormMessage />
@@ -228,7 +228,7 @@ export default function PilotForm() {
                       placeholder="Message"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw] mobile:text-[4.5vw] tablet:text-[2.2vw] bg-white/10 border !border-[#B0B0B080] rounded-[2vw]"
+                        className="placeholder:text-[1.15vw] pl-[2vw] mobile:text-[4.5vw] tablet:text-[2.2vw] bg-white/10 border !border-[#B0B0B080] rounded-[2vw] placeholder:text-[#CACACA]"
                       />
                     </FormControl>
                     <FormMessage />
@@ -241,10 +241,10 @@ export default function PilotForm() {
               control={control}
               name="terms"
               render={({ field }) => (
-                <FormItem className="space-y-2">
+                <FormItem className="">
                   <div className="flex items-center justify-center gap-3 tablet:gap-1">
-                    <Checkbox aria-label="checkbox" checked={field.value} onCheckedChange={field.onChange} className="mobile:mt-[2vw] tablet:mt-[2vw]" />
-                    <label className="text-[1.15vw] text-[#CACACA] capitalize mobile:text-[1rem] tablet:text-[2vw] tablet:px-[3vw]">I agree to Privacy Policy and Terms and Conditions.</label>
+                    <Checkbox aria-label="checkbox" checked={field.value} onCheckedChange={field.onChange} className="mobile:mt-[2vw] tablet:mt-[2vw] cursor-pointer" />
+                    <label className="text-[1.15vw] mt-2  text-[#CACACA] mobile:text-[1rem] tablet:text-[2vw] tablet:px-[3vw]">I agree to <a href="/" className="border-b border-[#CACACA]">Privacy Policy </a> and <a href="/" className="border-b border-[#CACACA]">Terms and Conditions</a>.</label>
                   </div>
                   <FormMessage />
                 </FormItem>
@@ -252,7 +252,8 @@ export default function PilotForm() {
             />
           </div>
 
-              <Button type="submit"
+              <Button 
+              // type="submit"
                 aria-label="submit form" className="cursor-pointer mt-[2vw] pb-[3vw] max-sm:mt-[10vw] max-md:mt-[8vw]">
                  <div  className={` relative inline-flex items-center h-[4vw] min-w-[10vw] px-[2vw] gap-3 rounded-full overflow-hidden text-white-200 group max-sm:h-fit max-sm:py-[4vw] max-sm:px-[6vw] max-sm:min-w-[30vw] max-sm:gap-[4vw] `}>
       <span className={`bg-foreground rounded-full h-2 w-2 max-sm:w-[2.5vw] max-sm:h-[2.5vw] z-[1] `}></span>

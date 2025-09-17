@@ -47,12 +47,8 @@ const ProductionCard = ({ className, title, para }) => {
     const titleElement = titleRef.current;
     const gradient = gradientRef.current;
     const overlay = overlayRef.current;
-
-    splitTextRef.current = new SplitText(paraElement, { type: "lines" });
-    const lines = splitTextRef.current.lines;
-
   
-    gsap.set(lines, { y: 30, opacity: 0 });
+    gsap.set(paraElement, { y: 30, opacity: 0 });
     gsap.set(gradient, { opacity: 0 });
 
     let isHovered = false;
@@ -66,25 +62,24 @@ const ProductionCard = ({ className, title, para }) => {
       }
 
   
-      gsap.killTweensOf([gradient, overlay, titleElement, lines]);
+      gsap.killTweensOf([gradient, overlay, titleElement, paraElement]);
      
       gsap.to(gradient, { opacity: 1, duration: 0.5, ease: "power3.out" });
       gsap.to(overlay, { opacity: 0, duration: 0.5, ease: "power3.out" });
     
       gsap.to(titleElement, { 
         y: -120, 
-        duration: 0.5, 
+        duration: 0.8, 
         ease: "power3.out", 
         delay: 0.1 
       });
       
       
-      gsap.to(lines, {
+      gsap.to(paraElement, {
         y: 0,
         opacity: 1,
         duration: 0.5,
         ease: "power3.out",
-        stagger: 0.05, 
         delay: 0.3
       });
     };
@@ -96,7 +91,7 @@ const ProductionCard = ({ className, title, para }) => {
       timeoutId = setTimeout(() => {
         if (!isHovered) {
           // Kill any existing animations
-          gsap.killTweensOf([gradient, overlay, titleElement, lines]);
+          gsap.killTweensOf([gradient, overlay, titleElement, paraElement]);
           
           // Reverse animations
           gsap.to(gradient, { opacity: 0, duration: 0.4, ease: "power3.out" });
@@ -104,11 +99,11 @@ const ProductionCard = ({ className, title, para }) => {
           
           gsap.to(titleElement, { 
             y: 0, 
-            duration: 0.4, 
+            duration: 0.8, 
             ease: "power3.out" 
           });
           
-          gsap.to(lines, {
+          gsap.to(paraElement, {
             y: 30,
             opacity: 0,
             duration: 0.5,
@@ -129,7 +124,7 @@ const ProductionCard = ({ className, title, para }) => {
       }
       card.removeEventListener('mouseenter', handleMouseEnter);
       card.removeEventListener('mouseleave', handleMouseLeave);
-      gsap.killTweensOf([gradient, overlay, titleElement, lines]);
+      gsap.killTweensOf([gradient, overlay, titleElement, paraElement]);
       if (splitTextRef.current) {
         splitTextRef.current.revert();
       }
@@ -139,7 +134,7 @@ const ProductionCard = ({ className, title, para }) => {
   return (
     <div
       ref={cardRef}
-      className={`group relative rounded-[2vw] h-[22vw] w-[35vw] p-[4vw] border border-[#59595980] overflow-hidden cursor-pointer ${className}`}
+      className={`group relative rounded-[2vw] h-[22vw] w-[35vw] p-[4vw] border border-[#59595980] overflow-hidden cursor-pointer ${className} w-[80vw] h-[40vw]`}
     >
       {/* Gradient Background */}
       <div 
@@ -178,6 +173,7 @@ const ProductionCard = ({ className, title, para }) => {
 const Production = () => {
     const containerRef = useRef(null);
 
+    
 useGSAP(()=>{
 
       const div1 = containerRef.current.querySelectorAll(".production-card-left");
@@ -192,7 +188,7 @@ useGSAP(()=>{
                 scrub: true,
             },
         });
-
+if(globalThis.innerWidth>1024){
         tl.from(div1, {
             xPercent: -100,
             yPercent: 50,
@@ -207,25 +203,42 @@ useGSAP(()=>{
             duration: 1,
             stagger: 0.5,
         }, "-=1");
+      }
+      else{
+         tl.from(div1, {
+            xPercent: -100,
+            yPercent: 50,
+            rotateZ: "-60deg",
+            duration: 1,
+            stagger: 0.5,
+        });
+        tl.from(div2, {
+            xPercent: 100,
+            yPercent: 50,
+            rotateZ: "60deg",
+            duration: 1,
+            stagger: 0.5,
+        }, "-=1");
+      }
         })
-
+      
   return (
     <>
     <section className='h-full w-full relative z-[20]'>
         <div className='container h-full w-full'>
             <div className='w-full space-y-[5vw] flex flex-col items-center justify-center'>
-                <div className='flex flex-col items-center justify-center text-center  gap-[2vw] w-[70%] mx-auto max-sm:w-full max-sm:mx-0 max-sm:gap-[5vw]'>
-                    <h2 className='title-1 headingAnim text-white-200'>Production Pilot: Experience the AI Platform. See Results. Commit with Certainty. </h2>
+                <div className='flex flex-col items-center justify-center text-center  gap-[2vw] w-[70%] mx-auto max-sm:w-full max-sm:mx-0 max-sm:gap-[10vw]'>
+                    <h2 className='text-[5vw] leading-[1.2] headingAnim text-white-200 max-sm:!text-[10vw]'>Production Pilot: Experience the AI Platform. See Results. Commit with Certainty.</h2>
                     <Copy>
-                        <h3 className='text-[2.5vw] text-white-200 w-[80%] max-sm:text-[5vw] max-sm:w-full'>Accelerate AI and GenAI deployment in record time, swiftly and at scale. </h3>
+                        <h3 className='text-[2.5vw] text-white-200 w-[80%] leading-[1.2] max-sm:text-[7.5vw] max-sm:w-full'>Accelerate AI and GenAI deployment in record time, swiftly and at scale.</h3>
                     </Copy>
                     <Copy>
-                        <p className='text-white-300 w-[90%]'>Sign up for the UnifyAI Production Pilot — your low-risk, structured path to validating and deploying AI and GenAI use cases across core business functions, no matter the industry sector.  </p>
+                        <p className='text-white-300 w-[90%]'>Sign up for the UnifyAI Production Pilot — your low-risk, structured path to validating and deploying AI and GenAI use cases across core business functions, no matter the industry sector.</p>
                     </Copy>
 
                 </div>
 
-                <div ref={containerRef} className=' flex gap-[3vw]'>
+                <div ref={containerRef} className=' flex gap-[3vw] max-sm:flex-col'>
                     <div className='space-y-[3vw]'>
                     <ProductionCard className={"production-card-left"} title={"Accelerated Deployment"} para={"Move from concept to production in weeks for AI and in hours for GenAI — with enterprise-grade readiness from day one."}/>
                     <ProductionCard className={"production-card-left"} title={"Scalable, Unified Platform"} para={"Simplify adoption with an end-to-end platform that brings data, models, and governance together in one place."}/>
