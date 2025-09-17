@@ -39,12 +39,12 @@ PhoneInput.displayName = "PhoneInput";
 
 const InputComponent = React.forwardRef(({ className, ...props }, ref) => (
   <>
-    <div  className="relative w-full h-full overflow-hidden">
+    <div  className="relative w-full h-full overflow-hidden ">
       <input
         ref={ref}
         data-slot="input"
         className={cn(
-          "file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-[3.4vw] max-sm:h-[12vw] max-md:h-[10vw] w-full min-w-0  bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm !background-glass border !border-[#B0B0B080] rounded-full",
+          "file:text-foreground placeholder:text-muted-foreground selection:bg-primary  selection:text-primary-foreground dark:bg-input/30 border-input flex h-[3.4vw] max-sm:h-[12vw] max-md:h-[10vw] w-full min-w-0   px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm border !border-[#B0B0B080] rounded-full bg-white/30",
           "",
           "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-white",
           className
@@ -82,7 +82,7 @@ const CountrySelect = ({ disabled, value: selectedCountry, options: countryList,
         <Button
           type="button"
           variant="outline"
-          className="flex justify-between h-[3.4vw] border shadow-none px-[2vw] pb-2 mobile:pb-0 focus:z-10  max-md:h-[10vw] w-[15%] mr-[1.5vw] max-sm:hidden !background-glass  !border-[#B0B0B080] rounded-full"
+          className="flex justify-between h-[3.4vw] border shadow-none px-[2vw] pb-2 mobile:pb-0 focus:z-10  max-md:h-[10vw] w-[15%] mr-[1.5vw] max-sm:hidden   !border-[#B0B0B080] rounded-full"
           disabled={disabled}
         >
           <FlagComponent country={selectedCountry} countryName={selectedCountry} />
@@ -147,7 +147,7 @@ const CountrySelect = ({ disabled, value: selectedCountry, options: countryList,
 const FlagComponent = ({ country, countryName }) => {
   const Flag = flags[country];
   return (
-    <span className="flex h-6 w-8 overflow-hidden  [&_svg:not([class*='size-'])]:size-full ">
+    <span className="flex h-6 w-8 overflow-hidden   [&_svg:not([class*='size-'])]:size-full ">
       {Flag ? <Flag title={countryName} /> : null}
     </span>
   );

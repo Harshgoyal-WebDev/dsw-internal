@@ -84,7 +84,7 @@ const Hero = ({ heroData }) => {
   return (
     <section className="h-[70vw] w-screen relative bg-background max-sm:h-screen max-sm:px-[7vw]" id="hero">
       <div className="flex flex-col items-center justify-start w-full h-full pt-[30vh] relative z-[12] max-sm:pt-[15vh]">
-        <div className="w-[70%] text-center space-y-6 pb-5 max-sm:w-[90%] max-sm:space-y-[12vw]">
+        <div className="w-[70%] text-center space-y-6 pb-5 max-sm:w-[100%] max-sm:space-y-[12vw]">
           <h1
             ref={heading}
             className="title-1 font-head heroHeadAnim text-[#E8E8E8]"

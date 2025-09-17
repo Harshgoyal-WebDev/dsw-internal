@@ -6,6 +6,8 @@ import InsidePilotProgram from '@/Components/PilotProgram/InsidePilotProgram'
 import Production from '@/Components/PilotProgram/Production'
 import Transform from '@/Components/PilotProgram/Transform'
 import React from 'react'
+import FooterCTA from '@/Components/Common/FooterCta'
+import Faqs from '@/Components/Common/FAQs'
 
 const page = () => {
   return (
@@ -16,7 +18,9 @@ const page = () => {
         <AIPilots/>
         <Transform/>
         <InsidePilotProgram/>
-        {/* <PilotProgramForm/> */}
+        <PilotProgramForm/>
+        <Faqs />
+        <FooterCTA footerCTAData={footerCTAData}/>
     </Layout>
     </>
   )
@@ -33,4 +37,15 @@ const heroData= {
   link2:"/#",
   btnText2:"Schedule a Call",
   homepage:false
+}
+
+const footerCTAData={
+  heading:"Test drive the purpose-built insurance AI platform  ​",
+  para:"",
+  btnText1:"Book a demo",
+  btnLink1:"/#",
+  btnText2:"Schedule a Call",
+  btnLink2:"/#",
+  img1:"/assets/images/footer/image-1.png",
+  img2:"/assets/images/footer/image-2.png"
 }

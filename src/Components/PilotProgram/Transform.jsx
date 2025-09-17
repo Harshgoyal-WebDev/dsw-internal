@@ -9,7 +9,7 @@ const AwardItem=({img, title})=>{
         <div
         className="flex-shrink-0 flex items-center justify-center gap-[1vw] w-[25vw] max-sm:w-[70vw] max-sm:gap-[2vw]" 
       >
-        <div className='w-[6vw] h-auto max-sm:w-[20vw]'>
+        <div className='w-[5.5vw] h-auto max-sm:w-[20vw]'>
           <Image
             src={img}
             height={146}
@@ -32,7 +32,7 @@ const Transform= () => {
             id='transform'
             className="h-full w-screen  relative overflow-hidden container"
         >
-            <div className="w-full h-full flex flex-col items-center justify-center relative z-[2] space-y-[3vw]">
+            <div className="w-full h-full flex flex-col items-center justify-center relative z-[2] gap-[10vw]">
                 <div className="text-center  space-y-5 mt-10 max-sm:space-y-10">
                     <h3 className="title-2 !leading-[1.35] headingAnim text-[#E8E8E8] max-sm:!leading-[1.2]">
                        Transform and scale your enterprise operations
@@ -44,8 +44,9 @@ const Transform= () => {
                     </Copy>
                 </div>
 
-                
-<div className="marquee fadeup mt-[3vw] max-sm:my-[7vw] gap-[3vw]">
+
+   <div className='space-y-[7vw]'>         
+<div className="marquee fadeup  max-sm:my-[7vw] gap-[3vw]">
   <div className="marquee__track">
     {awards1.map((item, index) => <AwardItem key={index} img={item.img} title={item.title} year={item.year} />)}
     {awards1.map((item, index) => <AwardItem key={index} img={item.img} title={item.title} year={item.year}/>)}
@@ -53,11 +54,12 @@ const Transform= () => {
 </div>
 
                 
-<div className="marquee fadeup mt-[3vw] max-sm:my-[7vw] gap-[3vw]">
+<div className="marquee fadeup  max-sm:my-[7vw] gap-[3vw]">
   <div className="marquee__track_reverse">
     {awards2.map((item, index) => <AwardItem key={index} img={item.img} title={item.title} year={item.year} />)}
     {awards2.map((item, index) => <AwardItem key={index} img={item.img} title={item.title} year={item.year}/>)}
   </div>
+  </div>    
 </div>
 
 

@@ -125,7 +125,7 @@ h1,h2,h3,h4 {
 
 @keyframes marquee {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  100% { transform: translateX(-52%); }
 }
 
 .marquee__track_reverse {
@@ -135,8 +135,8 @@ h1,h2,h3,h4 {
 }
 
 @keyframes marquee-reverse {
-  0% { transform: translateX(-50%); } /* Start from left */
-  100% { transform: translateX(0); }   /* End at center */
+  0% { transform: translateX(-50%); } 
+  100% { transform: translateX(0); } 
 }
 
 .background-glass{

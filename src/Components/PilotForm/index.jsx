@@ -1,291 +1,287 @@
-// /* eslint-disable no-unused-vars */
-// "use client"
-// import { zodResolver } from "@hookform/resolvers/zod"
-// import { useForm } from "react-hook-form"
-// import { z } from "zod"
-// import { Button } from "@/components/ui/button"
-// import { Textarea } from "@/components/ui/textarea";
-// import { Checkbox } from "@/components/ui/checkbox";
+/* eslint-disable no-unused-vars */
+"use client"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import { z } from "zod"
+import { Button } from "@/components/ui/button"
+import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
 
-// import {
-//   Form,
-//   FormControl,
-//   FormField,
-//   FormItem,
-//   FormLabel,
-//   FormMessage,
-// } from "@/components/ui/form"
-// import { PhoneInput } from "@/components/ui/phone-input"
-// import { Input } from "@/components/ui/input";
-// import { isValidPhoneNumber } from "react-phone-number-input"
-// import { useState } from "react"
-
-
-// const formSchema = z.object({
-//   name: z.string().min(3, { message: "Name must be at least 3 characters." }),
-//   email: z.string().email({ message: "Invalid email address." }),
-//   number: z
-//     .string()
-//     .refine(isValidPhoneNumber, { message: "Invalid phone number" }),
-//   company: z.string().min(2, { message: "Company name is required." }),
-//   message: z.string().optional(),
-// });
-
-// export default function PilotForm() {
-//   const form = useForm({
-//     resolver: zodResolver(formSchema),
-//     defaultValues: {
-//       name: "",
-//       email: "",
-//       number: "",
-//       company: "",
-//       message: "",
-//     },
-//   })
-//   const { control, handleSubmit } = form;
-//   const [isLoading, setIsLoading] = useState(false);
-//   const [submitted, setIsSubmitted] = useState(false);
-//   const [notsubmitted, setIsNotSubmitted] = useState(false);
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+} from "@/components/ui/form"
+import { PhoneInput } from "@/components/ui/phone-input"
+import { Input } from "@/components/ui/input";
+import { isValidPhoneNumber } from "react-phone-number-input"
+import { useState } from "react"
 
 
-//   const onSubmit = async (data) => {
-//     // if (!domainsLoaded) {
-//     //   form.setError("email", { type: "manual", message: "Please wait until the page is fully loaded." });
-//     //   return;
-//     // }
+const formSchema = z.object({
+  name: z.string().min(3, { message: "Name must be at least 3 characters." }),
+  email: z.string().email({ message: "Invalid email address." }),
+  number: z
+    .string()
+    .refine(isValidPhoneNumber, { message: "Invalid phone number" }),
+  designation: z.string().min(2, { message: "Designation is required." }),
+  company: z.string().min(2, { message: "Company name is required." }),
+  message: z.string().optional(),
+  terms: z.boolean().refine(val => val === true, { // Add this
+    message: "You must agree to the terms and conditions"
+  }),
+});
 
-//     // const emailDomain = data.email.split("@")[1]?.toLowerCase();
-//     // if (!emailDomain || blockedDomains.includes(emailDomain)) {
-//     //   form.setError("email", { type: "manual", message: "Enter a business email." });
-//     //   return;
-//     // }
-
-//     setIsLoading(true);
-
-//     const formattedData = {
-//       ...data
-//     };
-
-//     // console.log(data);
-
-//     try {
-//       const res = await fetch("/api/contactform", {
-//         method: "POST",
-//         body: JSON.stringify(formattedData),
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//       });
-
-//       if (!res.ok) throw new Error("Failed to send message");
-
-//       setIsSubmitted(true);
-//       setTimeout(() => setIsSubmitted(false), 7000);
-//       // console.log(data)
-//       form.reset();
-//     } catch (error) {
-//       setIsNotSubmitted(true);
-//       setTimeout(() => setIsNotSubmitted(false), 7000);
-//       console.error(error);
-//     } finally {
-//       setIsLoading(false);
-//     }
-//   };
-
-//   return (
-//     <section className="mobile:pt-0 overflow-hidden" id="formoem">
-//       <div className="w-full h-full mobile:p-0 tablet:p-[6.5vw]">
-//         <div className="w-full flex flex-col gap-[2vw] mobile:gap-[5vw] tablet:w-full mobile:px-[3vw] max-md:px-[2vw] mobile:py-[5vw]">
-//           <Form {...form} >
-//             <form
-//               autoComplete="off"
-//               className="space-y-[1vw] max-sm:space-y-[7vw] max-md:space-y-[4vw] tablet:space-y-[5vw]  mobile:pt-[5vw]"
-//               onSubmit={handleSubmit(onSubmit)}
-//             >
-//               <FormField
-//                 control={control}
-//                 name="name"
-//                 render={({ field }) => (
-//                   <FormItem>
-//                     {/* <label className="block text-sm uppercase font-medium mb-1 tablet:text-[1.2vw] mobile:text-[3.5vw]">
-//                       Full name*
-//                     </label> */}
-//                     <FormControl>
-//                       <Input
-//                       placeholder="Name*"
-//                         autoComplete="off"
-//                         {...field}
-//                         className="placeholder:text-[1.15vw] pl-[2vw] mobile:text-[4.5vw] tablet:text-[2.2vw] !background-glass border !border-[#B0B0B080] rounded-full"
-//                       />
-//                     </FormControl>
-//                     <FormMessage />
-//                   </FormItem>
-//                 )}
-//               />
+export default function PilotForm() {
+  const form = useForm({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      number: "",
+      designation:"",
+      company: "",
+      message: "",
+      terms:false
+    },
+  })
+  const { control, handleSubmit } = form;
+  const [isLoading, setIsLoading] = useState(false);
+  const [submitted, setIsSubmitted] = useState(false);
+  const [notsubmitted, setIsNotSubmitted] = useState(false);
 
 
-//               <FormField
-//                 control={control}
-//                 name="email"
-//                 render={({ field }) => (
-//                   <FormItem>
-//                     {/* <label className="block text-sm font-medium mb-1 tablet:text-[1.2vw] mobile:text-[3.5vw]">
-//                       EMAIL*
-//                     </label> */}
-//                     <FormControl>
-//                       <Input
-//                       placeholder="Business Email*"
-//                         autoComplete="off"
-//                         {...field}
-//                         className="placeholder:text-[1.15vw] pl-[2vw] mobile:text-[4.5vw] tablet:text-[2.2vw] !background-glass border !border-[#B0B0B080] rounded-full"
-//                       />
-//                     </FormControl>
-//                     <FormMessage />
-//                   </FormItem>
-//                 )}
-//               />
-//               <FormField
-//                 control={control}
-//                 name="designation"
-//                 render={({ field }) => (
-//                   <FormItem>
-//                     {/* <label className="block text-sm font-medium mb-1 tablet:text-[1.2vw] mobile:text-[3.5vw]">
-//                       COMPANY NAME*
-//                     </label> */}
-//                     <FormControl>
-//                       <Input
-//                       placeholder="Designation*"
-//                         autoComplete="off"
-//                         {...field}
-//                         className="placeholder:text-[1.15vw] pl-[2vw] mobile:text-[4.5vw] tablet:text-[2.2vw] !background-glass border !border-[#B0B0B080] rounded-full"
-//                       />
-//                     </FormControl>
-//                     <FormMessage />
-//                   </FormItem>
-//                 )}
-//               />
+  const onSubmit = async (data) => {
+    // if (!domainsLoaded) {
+    //   form.setError("email", { type: "manual", message: "Please wait until the page is fully loaded." });
+    //   return;
+    // }
 
-// <FormField
-//                 control={control}
-//                 name="company"
-//                 render={({ field }) => (
-//                   <FormItem>
-//                     {/* <label className="block text-sm font-medium mb-1 tablet:text-[1.2vw] mobile:text-[3.5vw]">
-//                       COMPANY NAME*
-//                     </label> */}
-//                     <FormControl>
-//                       <Input
-//                       placeholder="Company Name*"
-//                         autoComplete="off"
-//                         {...field}
-//                         className="placeholder:text-[1.15vw] pl-[2vw] mobile:text-[4.5vw] tablet:text-[2.2vw] !background-glass border !border-[#B0B0B080] rounded-full"
-//                       />
-//                     </FormControl>
-//                     <FormMessage />
-//                   </FormItem>
-//                 )}
-//               />
+    // const emailDomain = data.email.split("@")[1]?.toLowerCase();
+    // if (!emailDomain || blockedDomains.includes(emailDomain)) {
+    //   form.setError("email", { type: "manual", message: "Enter a business email." });
+    //   return;
+    // }
+
+    setIsLoading(true);
+
+    const formattedData = {
+      ...data
+    };
+
+    // console.log(data);
+
+    try {
+      const res = await fetch("/api/pilotform", {
+        method: "POST",
+        body: JSON.stringify(formattedData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!res.ok) throw new Error("Failed to send message");
+
+      setIsSubmitted(true);
+      setTimeout(() => setIsSubmitted(false), 7000);
+      // console.log(data)
+      form.reset();
+    } catch (error) {
+      setIsNotSubmitted(true);
+      setTimeout(() => setIsNotSubmitted(false), 7000);
+      console.error(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <section className="mobile:pt-0 overflow-hidden" id="formoem">
+      <div className="w-full h-full mobile:p-0 tablet:p-[6.5vw]">
+        <div className="w-full flex flex-col gap-[2vw] mobile:gap-[5vw] tablet:w-full mobile:px-[3vw] max-md:px-[2vw] mobile:py-[5vw]">
+          <Form {...form} >
+            <form
+              autoComplete="off"
+              className="space-y-[1vw] max-sm:space-y-[7vw] max-md:space-y-[4vw] tablet:space-y-[5vw]  mobile:pt-[5vw]"
+              onSubmit={handleSubmit(onSubmit)}
+            >
+              <FormField
+                control={control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    {/* <label className="block text-sm uppercase font-medium mb-1 tablet:text-[1.2vw] mobile:text-[3.5vw]">
+                      Full name*
+                    </label> */}
+                    <FormControl>
+                      <Input
+                      placeholder="Name*"
+                        autoComplete="off"
+                        {...field}
+                        className="placeholder:text-[1.15vw] pl-[2vw] mobile:text-[4.5vw] tablet:text-[2.2vw] bg-white/10 border !border-[#B0B0B080] rounded-full "
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
 
-//               <FormField
-//                 control={control}
-//                 name="number"
-//                 render={({ field }) => (
-//                   <FormItem>
-//                     {/* <label className="block text-sm uppercase font-medium mb-1 tablet:text-[1.2vw] mobile:text-[3.5vw]">
-//                       Phone Number*
-//                     </label> */}
-//                     <FormControl>
-//                       <PhoneInput
-//                       placeholder="Phone Number*"
-//                         defaultCountry="IN"
-//                         international
-//                         {...field}
-//                         className="placeholder:text-[1.15vw]  mobile:text-[4.5vw] tablet:text-[2.2vw] "
-//                       />
-//                     </FormControl>
-//                     <FormMessage />
-//                   </FormItem>
-//                 )}
-//               />
+              <FormField
+                control={control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    {/* <label className="block text-sm font-medium mb-1 tablet:text-[1.2vw] mobile:text-[3.5vw]">
+                      EMAIL*
+                    </label> */}
+                    <FormControl>
+                      <Input
+                      placeholder="Business Email*"
+                        autoComplete="off"
+                        {...field}
+                        className="placeholder:text-[1.15vw] pl-[2vw] mobile:text-[4.5vw] tablet:text-[2.2vw] bg-white/10 border !border-[#B0B0B080] rounded-full"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={control}
+                name="designation"
+                render={({ field }) => (
+                  <FormItem>
+                    {/* <label className="block text-sm font-medium mb-1 tablet:text-[1.2vw] mobile:text-[3.5vw]">
+                      COMPANY NAME*
+                    </label> */}
+                    <FormControl>
+                      <Input
+                      placeholder="Designation*"
+                        autoComplete="off"
+                        {...field}
+                        className="placeholder:text-[1.15vw] pl-[2vw] mobile:text-[4.5vw] tablet:text-[2.2vw] bg-white/10 border !border-[#B0B0B080] rounded-full"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+<FormField
+                control={control}
+                name="company"
+                render={({ field }) => (
+                  <FormItem>
+                    {/* <label className="block text-sm font-medium mb-1 tablet:text-[1.2vw] mobile:text-[3.5vw]">
+                      COMPANY NAME*
+                    </label> */}
+                    <FormControl>
+                      <Input
+                      placeholder="Company Name*"
+                        autoComplete="off"
+                        {...field}
+                        className="placeholder:text-[1.15vw] pl-[2vw] mobile:text-[4.5vw] tablet:text-[2.2vw] bg-white/10  border !border-[#B0B0B080] rounded-full"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+
+              <FormField
+                control={control}
+                name="number"
+                render={({ field }) => (
+                  <FormItem>
+                    {/* <label className="block text-sm uppercase font-medium mb-1 tablet:text-[1.2vw] mobile:text-[3.5vw]">
+                      Phone Number*
+                    </label> */}
+                    <FormControl>
+                      <PhoneInput
+                      placeholder="Phone Number*"
+                        defaultCountry="IN"
+                        international
+                        {...field}
+                        className="placeholder:text-[1.15vw]   mobile:text-[4.5vw] tablet:text-[2.2vw] "
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
               
-//               <FormField
-//                 control={control}
-//                 name="message"
-//                 render={({ field }) => (
-//                   <FormItem>
-//                     {/* <label className="block text-sm font-medium mb-1 tablet:text-[1.2vw] mobile:text-[3.5vw]">
-//                       MESSAGE*
-//                     </label> */}
-//                     <FormControl>
-//                       <Textarea
-//                       placeholder="Message"
-//                         autoComplete="off"
-//                         {...field}
-//                         className="placeholder:text-[1.15vw] pl-[2vw] mobile:text-[4.5vw] tablet:text-[2.2vw] !background-glass border !border-[#B0B0B080] rounded-[2vw]"
-//                       />
-//                     </FormControl>
-//                     <FormMessage />
-//                   </FormItem>
-//                 )}
-//               />
+              <FormField
+                control={control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem>
+                    {/* <label className="block text-sm font-medium mb-1 tablet:text-[1.2vw] mobile:text-[3.5vw]">
+                      MESSAGE*
+                    </label> */}
+                    <FormControl>
+                      <Textarea
+                      placeholder="Message"
+                        autoComplete="off"
+                        {...field}
+                        className="placeholder:text-[1.15vw] pl-[2vw] mobile:text-[4.5vw] tablet:text-[2.2vw] bg-white/10 border !border-[#B0B0B080] rounded-[2vw]"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
-//  <div className="w-full flex gap-[1vw] justify-start mobile:justify-start mobile:items-start mobile:gap-3 tablet:block tablet:w-4/5 ">
-//             <FormField
-//               control={control}
-//               name="terms"
-//               render={({ field }) => (
-//                 <FormItem className="space-y-2">
-//                   <div className="flex items-center justify-center gap-3 tablet:gap-1">
-//                     <Checkbox aria-label="checkbox" checked={field.value} onCheckedChange={field.onChange} className="mobile:mt-[2vw] tablet:mt-[2vw]" />
-//                     <label className="text-[1.15vw] text-[#CACACA] capitalize mobile:text-[1rem] tablet:text-[2vw] tablet:px-[3vw]">I agree to Privacy Policy and Terms and Conditions.</label>
-//                   </div>
-//                   <FormMessage />
-//                 </FormItem>
-//               )}
-//             />
-//           </div>
+ <div className="w-full flex gap-[1vw] justify-start mobile:justify-start mobile:items-start mobile:gap-3 tablet:block tablet:w-4/5 ">
+            <FormField
+              control={control}
+              name="terms"
+              render={({ field }) => (
+                <FormItem className="space-y-2">
+                  <div className="flex items-center justify-center gap-3 tablet:gap-1">
+                    <Checkbox aria-label="checkbox" checked={field.value} onCheckedChange={field.onChange} className="mobile:mt-[2vw] tablet:mt-[2vw]" />
+                    <label className="text-[1.15vw] text-[#CACACA] capitalize mobile:text-[1rem] tablet:text-[2vw] tablet:px-[3vw]">I agree to Privacy Policy and Terms and Conditions.</label>
+                  </div>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
 
-//               <Button type="submit"
-//                 aria-label="submit form" className="cursor-pointer mt-[2vw] pb-[3vw] max-sm:mt-[10vw] max-md:mt-[8vw]">
-//                  <div data-split='letters' className={`buttonSplit relative inline-flex items-center h-[4vw] min-w-[10vw] px-[2vw] gap-3 rounded-full overflow-hidden text-white-200 group max-sm:h-fit max-sm:py-[4vw] max-sm:px-[6vw] max-sm:min-w-[30vw] max-sm:gap-[4vw] `}>
-//       <span className={`bg-foreground rounded-full h-2 w-2 max-sm:w-[2.5vw] max-sm:h-[2.5vw] z-[1] `}></span>
-//       <div className="overflow-clip leading-[1.4] mt-[-4px] max-sm:mt-0 z-[1]">
-//         <p className={`text-[1.145vw] leading-[1.4] buttonTextShadow max-sm:text-[4vw] `}> {isLoading ? "Sending..." : "Submit"}</p>
-//       </div>
-//       <span className={`absolute inset-0 group-hover:scale-95 transition-transform duration-500 bg-gradient-to-r from-primary-2 to-primary-3 rounded-full`} />
-//     </div>
+              <Button type="submit"
+                aria-label="submit form" className="cursor-pointer mt-[2vw] pb-[3vw] max-sm:mt-[10vw] max-md:mt-[8vw]">
+                 <div  className={` relative inline-flex items-center h-[4vw] min-w-[10vw] px-[2vw] gap-3 rounded-full overflow-hidden text-white-200 group max-sm:h-fit max-sm:py-[4vw] max-sm:px-[6vw] max-sm:min-w-[30vw] max-sm:gap-[4vw] `}>
+      <span className={`bg-foreground rounded-full h-2 w-2 max-sm:w-[2.5vw] max-sm:h-[2.5vw] z-[1] `}></span>
+      <div className="overflow-clip leading-[1.4] mt-[-4px] max-sm:mt-0 z-[1]">
+        <p className={`text-[1.145vw] leading-[1.4] buttonTextShadow max-sm:text-[4vw] `}> {isLoading ? "Sending..." : "Submit"}</p>
+      </div>
+      <span className={`absolute inset-0 group-hover:scale-95 transition-transform duration-500 bg-gradient-to-r from-primary-2 to-primary-3 rounded-full`} />
+    </div>
  
 
-//               </Button>
-//               {submitted && (
-//                 <p className="text-white text-sm mt-2">
-//                   ✅ Form submitted successfully!
-//                 </p>
-//               )}
+              </Button>
+              {submitted && (
+                <p className="text-white text-sm mt-2">
+                  ✅ Form submitted successfully!
+                </p>
+              )}
 
-//               {notsubmitted && (
-//                 <p className="text-red-600 text-sm mt-2">
-//                   ❌ Error sending message. Please try again.
-//                 </p>
-//               )}
+              {notsubmitted && (
+                <p className="text-red-600 text-sm mt-2">
+                  ❌ Error sending message. Please try again.
+                </p>
+              )}
 
-//             </form>
-//           </Form>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
-
-import React from 'react'
-
-const index = () => {
-  return (
-    <div>index</div>
-  )
+            </form>
+          </Form>
+        </div>
+      </div>
+    </section>
+  );
 }
 
-export default index
+

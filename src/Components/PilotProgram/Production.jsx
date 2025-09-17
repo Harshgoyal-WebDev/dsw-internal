@@ -3,61 +3,178 @@ import React, { useEffect, useRef } from 'react'
 import Copy from '../Animations/Copy'
 import gsap from "gsap";
 import { useGSAP } from '@gsap/react';
+import { SplitText } from 'gsap/SplitText';
+
+gsap.registerPlugin(SplitText);
 
 
+// const ProductionCard = ({ className, title, para }) => {
+//   return (
+//     <div
+//       className={`group relative rounded-[2vw] h-[22vw] w-[35vw] p-[4vw] border border-[#59595980] overflow-hidden cursor-pointer ${className} `}
+//     >
+//       {/* Gradient Background */}
+//       <div className="absolute inset-0 bg-gradient-to-r from-[#041035] to-[#1727FF] rounded-[2vw] opacity-0 group-hover:opacity-100 transition-opacity duration-500 " />
+      
+//       {/* Overlay */}
+//       <div className="absolute inset-0 background-glass rounded-[2vw] backdrop-blur-sm transition-opacity duration-500 group-hover:opacity-0 z-[5]" />
+      
+//       {/* Content */}
+//       <div className="relative z-10 h-full">
+//         <div className="absolute left-0 bottom-0 !leading-[1.2] text-white text-[2.8vw] font-head w-[80%] transition-transform duration-500 ease-out group-hover:-translate-y-[120px] group-hover:delay-100">
+//           {title}
+//         </div>
+//         <p className="absolute left-0 right-[1vw] bottom-0 text-white text-[1.2vw] opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100 group-hover:delay-500">
+//           {para}
+//         </p>
+//       </div>
+//     </div>
+//   );
+// };
 
-const ProductionCard=({className, title, para})=>{
-    const cardRef = useRef(null);
-  const headingRef = useRef(null);
+
+const ProductionCard = ({ className, title, para }) => {
+  const cardRef = useRef(null);
   const paraRef = useRef(null);
+  const titleRef = useRef(null);
+  const gradientRef = useRef(null);
+  const overlayRef = useRef(null);
+  const splitTextRef = useRef(null);
 
   useEffect(() => {
     const card = cardRef.current;
-    const heading = headingRef.current;
-    const para = paraRef.current;
+    const paraElement = paraRef.current;
+    const titleElement = titleRef.current;
+    const gradient = gradientRef.current;
+    const overlay = overlayRef.current;
+
+    splitTextRef.current = new SplitText(paraElement, { type: "lines" });
+    const lines = splitTextRef.current.lines;
+
+  
+    gsap.set(lines, { y: 30, opacity: 0 });
+    gsap.set(gradient, { opacity: 0 });
+
+    let isHovered = false;
+    let timeoutId = null;
 
     const handleMouseEnter = () => {
-      gsap.to(heading, { y: -80, duration: 0.6, ease: 'power3.out', delay: 0.2 });
-      gsap.to(para, { autoAlpha: 1, duration: 0.6, ease: 'power3.out', delay: 0.4 });
-      gsap.to(card, { background: 'linear-gradient(to right, #041035, #1727FF)', duration: 0.3 });
+      isHovered = true;
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+      }
+
+  
+      gsap.killTweensOf([gradient, overlay, titleElement, lines]);
+     
+      gsap.to(gradient, { opacity: 1, duration: 0.5, ease: "power3.out" });
+      gsap.to(overlay, { opacity: 0, duration: 0.5, ease: "power3.out" });
+    
+      gsap.to(titleElement, { 
+        y: -120, 
+        duration: 0.5, 
+        ease: "power3.out", 
+        delay: 0.1 
+      });
+      
+      
+      gsap.to(lines, {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        ease: "power3.out",
+        stagger: 0.05, 
+        delay: 0.3
+      });
     };
 
     const handleMouseLeave = () => {
-      gsap.to(heading, { y: 0, duration: 0.5, ease: 'power3.out' });
-      gsap.to(para, { autoAlpha: 0, duration: 0.5, ease: 'power3.out' });
-      gsap.to(card, { background: 'rgba(255, 255, 255, 0.05)', duration: 0.6 });
+      isHovered = false;
+      
+      // Small delay to prevent flickering on fast mouse movements
+      timeoutId = setTimeout(() => {
+        if (!isHovered) {
+          // Kill any existing animations
+          gsap.killTweensOf([gradient, overlay, titleElement, lines]);
+          
+          // Reverse animations
+          gsap.to(gradient, { opacity: 0, duration: 0.4, ease: "power3.out" });
+          gsap.to(overlay, { opacity: 1, duration: 0.4, ease: "power3.out" });
+          
+          gsap.to(titleElement, { 
+            y: 0, 
+            duration: 0.4, 
+            ease: "power3.out" 
+          });
+          
+          gsap.to(lines, {
+            y: 30,
+            opacity: 0,
+            duration: 0.5,
+            ease: "power3.out",
+            stagger: 0.05 
+          });
+        }
+      }, 50); // 50ms delay
     };
 
     card.addEventListener('mouseenter', handleMouseEnter);
     card.addEventListener('mouseleave', handleMouseLeave);
 
+    // Cleanup
     return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
       card.removeEventListener('mouseenter', handleMouseEnter);
       card.removeEventListener('mouseleave', handleMouseLeave);
+      gsap.killTweensOf([gradient, overlay, titleElement, lines]);
+      if (splitTextRef.current) {
+        splitTextRef.current.revert();
+      }
     };
-  }, []);
+  }, [para]); 
 
   return (
     <div
       ref={cardRef}
-      className={`relative rounded-[2vw] h-[22vw] w-[35vw] p-[4vw] border border-[#59595980] overflow-hidden background-glass cursor-pointer ${className}`}
-      style={{ background: 'rgba(255, 255, 255, 0.05)' }}
+      className={`group relative rounded-[2vw] h-[22vw] w-[35vw] p-[4vw] border border-[#59595980] overflow-hidden cursor-pointer ${className}`}
     >
-      <div
-        ref={headingRef}
-        className="absolute left-[3vw] bottom-[4vw] text-white text-[2.8vw] font-head w-[80%]"
-      >
-        {title}
+      {/* Gradient Background */}
+      <div 
+        ref={gradientRef}
+        className="absolute inset-0 bg-gradient-to-r from-[#041035] to-[#1727FF] rounded-[2vw]" 
+      />
+      
+      {/* Overlay */}
+      <div 
+        ref={overlayRef}
+        className="absolute inset-0 background-glass rounded-[2vw] backdrop-blur-sm z-[5]" 
+      />
+      
+      {/* Content */}
+      <div className="relative z-10 h-full">
+        <div 
+          ref={titleRef}
+          className="absolute left-0 bottom-0 !leading-[1.2] text-white text-[2.8vw] font-head w-[80%]"
+        >
+          {title}
+        </div>
+        <div className="absolute left-0 right-[1vw] bottom-0 overflow-hidden">
+          <p 
+            ref={paraRef}
+            className="text-white text-[1.2vw] leading-[1.4]"
+          >
+            {para}
+          </p>
+        </div>
       </div>
-      <p
-        ref={paraRef}
-        className="absolute left-[3vw] right-[3vw] bottom-[4vw] text-white text-[1.2vw] opacity-0"
-      >
-       {para}
-      </p>
     </div>
   );
-}
+};
+
+
 const Production = () => {
     const containerRef = useRef(null);
 
@@ -94,13 +211,13 @@ useGSAP(()=>{
 
   return (
     <>
-    <section className=''>
+    <section className='h-full w-full relative z-[20]'>
         <div className='container h-full w-full'>
             <div className='w-full space-y-[5vw] flex flex-col items-center justify-center'>
-                <div className='flex flex-col items-center justify-center text-center  gap-[2vw] w-[70%] mx-auto'>
+                <div className='flex flex-col items-center justify-center text-center  gap-[2vw] w-[70%] mx-auto max-sm:w-full max-sm:mx-0 max-sm:gap-[5vw]'>
                     <h2 className='title-1 headingAnim text-white-200'>Production Pilot: Experience the AI Platform. See Results. Commit with Certainty. </h2>
                     <Copy>
-                        <h3 className='text-[2.5vw] text-white-200 w-[80%]'>Accelerate AI and GenAI deployment in record time, swiftly and at scale. </h3>
+                        <h3 className='text-[2.5vw] text-white-200 w-[80%] max-sm:text-[5vw] max-sm:w-full'>Accelerate AI and GenAI deployment in record time, swiftly and at scale. </h3>
                     </Copy>
                     <Copy>
                         <p className='text-white-300 w-[90%]'>Sign up for the UnifyAI Production Pilot — your low-risk, structured path to validating and deploying AI and GenAI use cases across core business functions, no matter the industry sector.  </p>
@@ -108,14 +225,14 @@ useGSAP(()=>{
 
                 </div>
 
-                <div ref={containerRef} className=' flex gap-[2vw]'>
-                    <div className='space-y-[2vw]'>
-                    <ProductionCard className={"production-card-left"} title={"Accelerated Deployment "} para={"Move from concept to production in weeks for AI and in hours for GenAI — with enterprise-grade readiness from day one. "}/>
-                    <ProductionCard className={"production-card-left"} title={"Scalable, Unified Platform"} para={"Move from concept to production in weeks for AI and in hours for GenAI — with enterprise-grade readiness from day one. "}/>
+                <div ref={containerRef} className=' flex gap-[3vw]'>
+                    <div className='space-y-[3vw]'>
+                    <ProductionCard className={"production-card-left"} title={"Accelerated Deployment"} para={"Move from concept to production in weeks for AI and in hours for GenAI — with enterprise-grade readiness from day one."}/>
+                    <ProductionCard className={"production-card-left"} title={"Scalable, Unified Platform"} para={"Simplify adoption with an end-to-end platform that brings data, models, and governance together in one place."}/>
                     </div>
-                    <div className='space-y-[2vw] mt-[5vw]'>
-                        <ProductionCard className={"production-card-right"} title={"Built-in Trust and Compliance "} para={"Move from concept to production in weeks for AI and in hours for GenAI — with enterprise-grade readiness from day one. "}/>
-                        <ProductionCard className={"production-card-right"} title={"Deploy Easily"} para={"Move from concept to production in weeks for AI and in hours for GenAI — with enterprise-grade readiness from day one. "}/>
+                    <div className='space-y-[3vw] mt-[5vw]'>
+                        <ProductionCard className={"production-card-right"} title={"Built-in Trust and Compliance"} para={"Ensure every deployment meets stringent enterprise standards with certifications including SOC II, ISO 27001, HIPAA, and GDPR."}/>
+                        <ProductionCard className={"production-card-right"} title={"Deploy Easily"} para={"Easy integration into legacy systems, deploy on cloud, on-prem or hybrid."}/>
                     </div>
                 </div>
             </div>

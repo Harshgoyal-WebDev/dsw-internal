@@ -9,14 +9,9 @@ const PilotCard=({id, icon,title,para})=>{
        <>
        
        <div className=" space-y-[2vw] relative group  max-sm:space-y-[10vw] w-[43%]">
-        <div className="relative w-full h-[0.5px] bg-[#CACACA75] opacity-[0.5] group-hover:opacity-[1] transition-all duration-500">
-               <span
-                
-                 className="absolute top-0 left-0 h-full bg-[#CACACA75] w-full scale-x-0 origin-left "
-               />
-               <span className="absolute top-0 left-0 h-full bg-primary-2 w-full scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500" />
-             </div>
-             <div className="pt-[1vw] pb-[2vw] flex gap-[4vw] items-start space-y-[3vw] max-sm:flex max-sm:flex-col max-sm:items-center max-sm:space-y-[6vw] max-sm:mt-[10vw]">
+        <span className="absolute top-0 left-0 w-full h-[1px] bg-[#59595980]  lineDraw" >
+             </span>
+             <div className="py-[2vw] flex gap-[4vw] items-start space-y-[3vw] max-sm:flex max-sm:flex-col max-sm:items-center max-sm:space-y-[6vw] max-sm:mt-[10vw] fadeup">
                 <div className='pr-[1vw]'>
                     <p>{id}</p>
                 </div>
@@ -57,7 +52,7 @@ const AIPilots = () => {
                         </p>
                         </Copy>
                     </div>
-                    <div className='h-full w-full flex flex-wrap items-center justify-between'>
+                    <div className=' w-full flex flex-col flex-wrap h-[70vw] items-start justify-between'>
 {data.map((card,index)=>(
     <PilotCard key={index} icon={card.icon} title={card.title} para={card.para} id={card.id}/>))}
                     </div>
