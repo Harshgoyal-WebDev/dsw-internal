@@ -55,15 +55,23 @@ const Hero = ({ heroData }) => {
       type: "lines",
       mask: "lines"
     })
+    // gsap.set(lines,{
+    //    maskPosition: "100% 100%",
+    // })
+    // gsap.set(heroEl.lines,{
+    //    yPercent: 100,
+    // })
 
     const delayLines = heroData.homepage ? 4.5 : 0.7;
     const delayPara = heroData.homepage ? 5.2 : 1.8;
     gsap.fromTo(
       lines,
       {
+       
         maskPosition: "100% 100%",
       },
       {
+        
         maskPosition: "0% 100%",
         delay: delayLines,
         stagger: 0.2,
@@ -75,14 +83,13 @@ const Hero = ({ heroData }) => {
       yPercent: 100,
       delay: delayPara,
       duration: 1.4,
-
       stagger: 0.04,
       ease: "power3.out",
     });
     // gsap.from(".")
   }, []);
   const ShaderRef = useRef();
-  
+   
   useEffect(() => {
     gsap.fromTo(
       ShaderRef.current, 
@@ -96,6 +103,11 @@ const Hero = ({ heroData }) => {
         ease:'power3.out'
       }
     );
+    gsap.to(".heroPara,.heroHead",{
+      opacity:1,
+      duration:0.1
+    })
+  
   }, []);
 
   return (
@@ -104,12 +116,12 @@ const Hero = ({ heroData }) => {
         <div className="w-[70%] text-center space-y-6 pb-5 max-sm:w-[100%] max-sm:space-y-[12vw]">
           <h1
             ref={heading}
-            className="title-1 font-head heroHeadAnim text-[#E8E8E8]"
+            className="title-1 font-head heroHeadAnim text-[#E8E8E8] opacity-0 heroHead"
           >
             {heroData.heading}
           </h1>
           <p
-            className={`text-[#CACACA] font-head w-full mx-auto overflow-hidden heroPara ${heroData.paraClass}`}
+            className={`text-[#CACACA] font-head w-full mx-auto overflow-hidden heroPara opacity-0 ${heroData.paraClass}`}
           >
             {heroData.para}
           </p>

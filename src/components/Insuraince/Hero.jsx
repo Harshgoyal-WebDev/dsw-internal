@@ -102,6 +102,10 @@ const Hero = () => {
         ease:'power3.out'
       }
     );
+      gsap.to(".heroPara,.heroHead",{
+      opacity:1,
+      duration:0.1
+    })
   }, []);
 
   return (
@@ -110,15 +114,15 @@ const Hero = () => {
         <div className="flex items-center justify-center flex-col w-[80%] text-center gap-[2.5vw] pb-5 max-sm:w-[90%] max-sm:space-y-[8vw]">
           <h1
             ref={heading}
-            className="title-1 font-head heroHeadAnim text-white-200"
+            className="title-1 font-head heroHeadAnim text-white-200 heroHead opacity-0"
           >
            Enterprise AI Platform for Insurance
           </h1>
-          <div className=" h-auto w-[16vw] max-sm:w-[50vw] hero-img">
+          <div className=" h-auto w-[16vw] max-sm:w-[50vw] hero-img opacity-0">
             <Image src={"/assets/icons/insuraince/insuraince.svg"} height={46} width={297} alt="insuraince" className="h-full w-full object-cover fadeUp"/>
           </div>
           <p
-            className={`text-white-300 w-full mx-auto overflow-hidden heroPara`}
+            className={`text-white-300 w-full mx-auto overflow-hidden heroPara opacity-0`}
           >
            Purpose-Built, Proven, and Production-Ready . InsurAInce is the enterprise AI platform designed for insurers to build GenAI agents in hours, deploy AI use cases in days, and scale confidently with compliance, speed, and accuracy – all through your policy lifecycle. 
           </p>

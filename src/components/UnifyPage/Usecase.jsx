@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { motion } from "framer-motion";
 
 export default function Usecase() {
-  const [activeCard, setActiveCard] = useState(1);
+  const [activeCard, setActiveCard] = useState(0);
   const handleFirstCard = () => {
     const tl = gsap.timeline();
     tl.to(".usecase-card1", {
@@ -15,7 +15,7 @@ export default function Usecase() {
     tl.to(
       ".usecase-card2",
       {
-        yPercent: 28,
+        yPercent: 0,
         duration: 0.8,
         ease: "power2.out",
       },
@@ -41,7 +41,7 @@ export default function Usecase() {
     tl.to(".usecase-card1", { yPercent: 0, duration: 0.8, ease: "power2.out" });
     tl.to(
       ".usecase-card2",
-      { yPercent:0, duration: 0.8, ease: "power2.out" },
+      { yPercent:-27, duration: 0.8, ease: "power2.out" },
       "<"
     );
     tl.to(
@@ -60,7 +60,7 @@ export default function Usecase() {
     tl.to(".usecase-card1", { yPercent: 0, duration: 0.8, ease: "power2.out" });
     tl.to(
       ".usecase-card2",
-      { yPercent: 0, duration: 0.8, ease: "power2.out" },
+      { yPercent: -27, duration: 0.8, ease: "power2.out" },
       "<"
     );
     tl.to(
@@ -103,7 +103,7 @@ export default function Usecase() {
         "Guardrails and governance by design for safe, compliant outputs ",
       ],
       handleClick: handleSecondCard,
-      className: `translate-y-[24%] usecase-card2 z-[1]`,
+      className: `translate-y-[52%] usecase-card2 z-[1]`,
       borderClass: "border-white",
       iconBg: "bg-white",
       iconFill: "black",

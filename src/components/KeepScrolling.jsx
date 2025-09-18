@@ -83,7 +83,7 @@ const KeepScrolling = () => {
 
   return (
     <div className="fixed bottom-10 right-10 z-[99] pointer-events-none max-sm:right-5 max-sm:bottom-5">
-      <div className="text-[1vw] h-fit relative overflow-hidden flex gap-[1vw] scrolling max-sm:text-[3vw]">
+      <div className="text-[1vw] h-fit relative overflow-hidden flex gap-[1vw] scrolling max-sm:text-[3vw] opacity-0">
         <div className="scroll-content flex gap-[1vw]">
           <span className={`inline-block shimmer`}>
             Keep scrolling to discover more

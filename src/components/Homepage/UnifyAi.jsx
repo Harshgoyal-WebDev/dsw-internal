@@ -38,6 +38,20 @@ const UnifyAi = () => {
         },
       }
     );
+    // const tl = gsap.timeline({scrollTrigger:{
+    //   trigger:"#unifyAi",
+    //   start:"top 50%",
+    //   end:"70% 50%",
+    //   scrub:true,
+    //   markers:true,
+    // }})
+    // tl.fromTo(".unify-title",{
+    //  scale:0.2
+    // },{
+    //  scale:50,
+    //  translateX:"-150%",
+    //  ease:"power1.in"
+    // })
 
     // gradient transition timeline (3 stages)
     gsap.to(".unifyblock", {

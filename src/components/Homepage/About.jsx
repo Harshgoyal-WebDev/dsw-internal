@@ -1,5 +1,5 @@
 'use client';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Copy from '../Animations/Copy';
@@ -13,37 +13,86 @@ const POINTS = [
 ];
 
 export default function About({aboutData}) {
+    const [isMobile, setIsMobile] = useState(false);
+  // useEffect(() => {
+  //   const CIRC = 351.59; 
+
+  //   gsap.set('.ring', { strokeDasharray: CIRC, strokeDashoffset: CIRC });
+  //   gsap.set('.about-id', { opacity: 0, y: 20 });
+
+  //   document.querySelectorAll('.about-item').forEach((row) => {
+  //     const ring = row.querySelector('.ring');
+  //     const idElement = row.querySelector('.about-id');
+  //     if (!ring || !idElement) return;
+
+  //     const tl = gsap.timeline({
+  //       scrollTrigger: {
+  //         trigger: row,
+  //         start: '10% 80%',
+  //       },
+  //     });
+
+  //     // Animate the border (slower)
+  //     tl.to(ring, {
+  //       strokeDashoffset: 0,
+  //       duration: 3, 
+  //       ease: 'power2.out',
+  //     })
+      
+  //     .to(idElement, {
+  //       opacity: 1,
+  //       y: 0,
+  //       duration: 1.5,
+  //       ease: 'power2.out',
+  //     }, 0.3); 
+  //   });
+  // }, []);
+  
+  
+    useEffect(() => {
+      if (typeof window !== "undefined") {
+        setIsMobile(window.innerWidth <= 768);
+  
+        const handleResize = () => {
+          setIsMobile(window.innerWidth <= 768);
+        };
+  
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+      }
+    }, []);
+
   useEffect(() => {
-    const CIRC = 351.59; 
+    gsap.set(".about-item", {
+      scale: 0.7,
+      transformOrigin: "center",
+      y: 60,
+      x: 25,
+      opacity: 0.45,
+    });
 
-    gsap.set('.ring', { strokeDasharray: CIRC, strokeDashoffset: CIRC });
-    gsap.set('.about-id', { opacity: 0, y: 20 });
-
-    document.querySelectorAll('.about-item').forEach((row) => {
-      const ring = row.querySelector('.ring');
-      const idElement = row.querySelector('.about-id');
-      if (!ring || !idElement) return;
-
-      const tl = gsap.timeline({
+    document.querySelectorAll(".about-item").forEach((item, index) => {
+      const masterTl = gsap.timeline({
         scrollTrigger: {
-          trigger: row,
-          start: '10% 80%',
+          trigger: item,
+          start: isMobile ? "20% 180%" : "10% bottom",
+          end: "bottom 40%",
+          scrub: true,
+          // markers:true,
         },
       });
 
-      // Animate the border (slower)
-      tl.to(ring, {
-        strokeDashoffset: 0,
-        duration: 3, 
-        ease: 'power2.out',
-      })
-      
-      .to(idElement, {
-        opacity: 1,
-        y: 0,
-        duration: 1.5,
-        ease: 'power2.out',
-      }, 0.3); 
+      masterTl.to(
+        item,
+        {
+          scale: 1,
+          y: 0,
+          x: 0,
+          opacity: 1,
+          duration: 0.8,
+        },
+        "<-.8"
+      );
     });
   }, []);
 
@@ -79,9 +128,9 @@ export default function About({aboutData}) {
                 </div>
               </div>
 
-             <Copy>
+             {/* <Copy> */}
               <p className={`text-[1.5vw] ${width} max-sm:text-[4.2vw] `}>{text}</p>
-             </Copy>
+             {/* </Copy> */}
             </div>
           ))}
         </div>
