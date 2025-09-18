@@ -8,9 +8,8 @@ import PlatformCapabilities from "@/components/Insuraince/PlatformCapabilities";
 import Outcomes from "@/components/Insuraince/Outcomes";
 import Efficiency from "@/components/Insuraince/Efficiency";
 import CustomerQuotes from "@/components/Insuraince/CustomerQuotes";
+import CustomerQuotesMobile from "@/components/Insuraince/CustomerQuotesMobile";
 import FutureScope from "@/components/Insuraince/FutureScope";
-
-
 import Layout from "@/components/Layout";
 import Faqs from "@/components/Common/FAQs";
 import FooterCTA from "@/components/Common/FooterCta";

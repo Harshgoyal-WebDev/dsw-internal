@@ -105,12 +105,14 @@ const PlatformCapabilities = () => {
       }, timePosition);
     }
   });
-}
 
   return () => {
     if (tl.scrollTrigger) tl.scrollTrigger.kill();
     tl.kill();
   };
+}
+
+  
 }, []);
 
   const handlePrev = () => {

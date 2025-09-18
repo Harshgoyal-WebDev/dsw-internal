@@ -46,7 +46,7 @@ const MobileCard = ({srcc, content}) => {
 
     <div className="h-[33vh] mx-auto background-glass border border-[#88888880] py-[5vw] w-[80vw] rounded-[6vw] flex flex-col gap-[5vw] items-start justify-center px-[5vw]">
 
-        <div className="w-[25vw] h-auto">
+        <div className="w-[22vw] h-auto">
           <Image src={srcc} alt='card-svg' width={400} height={400} className="w-full h-auto" />
         </div>
 

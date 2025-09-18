@@ -49,7 +49,7 @@ const cardsData = [
 
 const Outcomes = () => {
   return (
-    <section className="w-screen h-fit container space-y-[1vw]">
+    <section className="w-screen h-fit container space-y-[1vw] max-sm:space-y-[8vw]">
       <h2 className="text-[2.8vw] max-sm:text-[10vw] max-sm:leading-[1.2] text-white-200 headingAnim w-[50%] max-sm:w-[100%]">
         <span className="block">One Platform. </span>
         <span className="block">AI and GenAI Working Together.</span>
@@ -76,7 +76,7 @@ const Outcomes = () => {
         </div>
       </div>
 
-      <div className="hidden max-sm:block max-sm:pt-[5vh]">
+      <div className="hidden max-sm:block max-sm:pt-[3vh]">
             <div className="flex flex-col gap-[15vw] max-sm:px-[3vw]">
 
                {cardsData.map((card, index) => (

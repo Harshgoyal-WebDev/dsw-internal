@@ -50,7 +50,7 @@ const Capabilities = () => {
   return (
     <section className="h-full container">
       <div className="w-[90%] max-sm:w-[100%] ">
-        <h2 className="title-1 headingAnim max-sm:text-center">
+        <h2 className="title-1 max-sm:!text-[11.5vw] headingAnim max-sm:text-center">
           Turn Common Insurance Tasks into Intelligent Agents 
         </h2>
       </div>

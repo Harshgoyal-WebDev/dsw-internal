@@ -97,7 +97,7 @@ const Hero = () => {
           >
            Enterprise AI Platform for Insurance
           </h1>
-          <div className=" h-auto w-[16vw] max-sm:w-[60vw] hero-img">
+          <div className=" h-auto w-[16vw] max-sm:w-[50vw] hero-img">
             <Image src={"/assets/icons/insuraince/insuraince.svg"} height={46} width={297} alt="insuraince" className="h-full w-full object-cover fadeUp"/>
           </div>
           <p
