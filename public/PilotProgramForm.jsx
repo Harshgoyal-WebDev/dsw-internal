@@ -3,7 +3,13 @@ import React from 'react'
 // import Copy from '../Animations/Copy'
 // import PilotForm from '../PilotForm'
 import Copy from '@/Components/Animations/Copy'
-import PilotForm from '@/Components/PilotForm'
+import { Form, FormControl, FormField, FormItem, FormMessage } from '@/Components/ui/form'
+import { Input } from '@/Components/ui/input'
+import { PhoneInput } from '@/Components/ui/phone-input'
+import { Textarea } from '@/Components/ui/textarea'
+import { Checkbox } from '@/Components/ui/checkbox'
+import { Button } from '@/Components/ui/button'
+// import PilotForm from '@/Components/PilotForm'
 const PilotProgramForm = () => {
   return (
     <>
@@ -21,8 +27,36 @@ const PilotProgramForm = () => {
             </div>
           </div>
           <div className='w-[47%] mt-[15vw] max-md:w-[100%] max-sm:w-full max-sm:mt-0'>
-            <PilotForm/>
+            {/* <PilotForm/> */}
           </div>
+          <Form >
+            <form
+              autoComplete="off"
+              className="space-y-[1vw] max-sm:space-y-[7vw] max-md:space-y-[4vw] tablet:space-y-[5vw]  mobile:pt-[5vw]"
+            >
+              {/* <FormField
+                
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    
+                    <FormControl>
+                      <Input
+                        placeholder="Name*"
+                        autoComplete="off"
+                        {...field}
+                        className="placeholder:text-[1.15vw] pl-[2vw] bg-white/5 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-sm:pl-[5vw]"
+                      />
+                    </FormControl>
+                    <FormMessage/>
+                  </FormItem>
+                )}
+              /> */}
+
+              
+            
+            </form>
+          </Form>
         </div>
       </section>
     </>

@@ -190,9 +190,8 @@ const Production = () => {
 useGSAP(()=>{
 
       const div1 = containerRef.current.querySelectorAll(".production-card-left");
-        const div2 = containerRef.current.querySelectorAll(".production-card-right");
-
-        const tl = gsap.timeline({
+      const div2 = containerRef.current.querySelectorAll(".production-card-right");
+      const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: containerRef.current,
                 start: "top 90%",
