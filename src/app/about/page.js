@@ -1,4 +1,7 @@
 import About from '@/components/AboutPage/About'
+import Clients from '@/components/AboutPage/Clients'
+import Experts from '@/components/AboutPage/Experts'
+import Guiders from '@/components/AboutPage/Guiders'
 import Faqs from '@/components/Common/FAQs'
 import FooterCTA from '@/components/Common/FooterCta'
 import Hero from '@/components/Common/Hero'
@@ -11,9 +14,11 @@ export default function page() {
     return (
         <Layout>
             <Hero heroData={heroData} />
-            
             <About />
             <TechPartners />
+            <Clients />
+            <Experts />
+            <Guiders />
             <Recognized />
             <Faqs />
             <FooterCTA footerCTAData={footerCTAData} />

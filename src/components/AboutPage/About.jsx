@@ -29,59 +29,60 @@ const POINTS = [
 export default function About() {
   const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setIsMobile(window.innerWidth <= 768);
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     setIsMobile(window.innerWidth <= 768);
 
-      const handleResize = () => {
-        setIsMobile(window.innerWidth <= 768);
-      };
+  //     const handleResize = () => {
+  //       setIsMobile(window.innerWidth <= 768);
+  //     };
 
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }
-  }, []);
-  useEffect(() => {
-    gsap.set(".about-item", {
-      scale: 0.7,
-      transformOrigin: "center",
-      y: 60,
-      x: 25,
-      opacity: 0.45,
-    });
+  //     window.addEventListener("resize", handleResize);
+  //     return () => window.removeEventListener("resize", handleResize);
+  //   }
+  // }, []);
+  // useEffect(() => {
+  //   gsap.set(".about-item", {
+  //     scale: 0.7,
+  //     transformOrigin: "center",
+  //     y: 60,
+  //     x: 25,
+  //     opacity: 0.45,
+  //   });
 
-    document.querySelectorAll(".about-item").forEach((item, index) => {
-      const masterTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: item,
-          start: isMobile ? "20% 180%" : "10% bottom",
-          end: "bottom 40%",
-          scrub: true,
-          // markers:true,
-        },
-      });
+  //   document.querySelectorAll(".about-item").forEach((item, index) => {
+  //     const masterTl = gsap.timeline({
+  //       scrollTrigger: {
+  //         trigger: item,
+  //         start: isMobile ? "20% 180%" : "10% bottom",
+  //         end: "bottom 60%",
+  //         scrub: true,
+  //         markers:true,
+  //       },
+  //     });
 
-      masterTl.to(
-        item,
-        {
-          scale: 1,
-          y: 0,
-          x: 0,
-          opacity: 1,
-          duration: 0.8,
-        },
-        "<-.8"
-      );
-    });
-  }, []);
+  //     masterTl.to(
+  //       item,
+  //       {
+  //         scale: 1,
+  //         y: 0,
+  //         x: 0,
+  //         opacity: 1,
+  //         duration: 0.8,
+  //       },
+  //       "<-.8"
+  //     );
+  //   });
+  // }, []);
 
   return (
     <section className="w-screen container" id="about">
-      <div className="w-full flex flex-col items-center justify-center gap-y-[5vw] max-sm:gap-y-[15vw]">
-        <div className="title-3 space-y-[2vw] max-sm:space-y-[5vw]">
+      <div className="w-full flex flex-col items-center justify-center gap-y-[10vw] max-sm:gap-y-[15vw]">
+        <div className="text-[2.5vw] space-y-[2vw] max-sm:space-y-[5vw]">
           <Copy>
-            <p className="text-white-300">
-            <span className="w-[10vw] inline-block h-[2px]" />At Data Science Wizards (DSW), we believe that AI should be
+            <p className="text-white-200">
+              <span className="w-[20vw] inline-block h-[2px]" />
+              At Data Science Wizards (DSW), we believe that AI should be
               accessible, scalable, and enterprise-ready—not locked behind
               complexity. That’s why we built UnifyAI, a next-generation
               platform that simplifies the entire AI lifecycle for businesses
@@ -90,14 +91,14 @@ export default function About() {
           </Copy>
         </div>
 
-        <div className="flex flex-col gap-[4vw] max-sm:w-full max-sm:gap-[12vw]">
+        <div className="flex flex-col items-end gap-[5vw] max-sm:w-full max-sm:gap-[12vw]">
           {POINTS.map(({ id, text, width, title }) => (
             <div
               key={id}
-              className="w-full flex gap-[3.2vw] items-center about-item"
+              className="w-[58%] flex gap-[5vw] items-start about-item"
             >
               <div className="w-[15%] relative max-sm:w-[30%]">
-                <div className="relative w-[7vw] h-[7vw] flex items-center justify-center max-sm:w-[20vw] max-sm:h-[20vw]">
+                <div className="relative fadeup w-[8vw] h-[8vw] flex items-center justify-center max-sm:w-[20vw] max-sm:h-[20vw]">
                   <svg
                     viewBox="0 0 120 120"
                     className="absolute inset-0 h-full w-full"
@@ -128,12 +129,15 @@ export default function About() {
                   </p>
                 </div>
               </div>
-              <div className="space-y-[1.2vw]">
-                <p className="text-[1.5vw] uppercase max-sm:text-[4.2vw] text-white-200">
-                  {title}
-                </p>
-
-                <p className="text-white-300">{text}</p>
+              <div className="space-y-[1.8vw]">
+                <Copy>
+                  <p className="text-[1vw] w-[80%] uppercase max-sm:text-[2vw] text-white-200">
+                    {title}
+                  </p>
+                </Copy>
+                <Copy>
+                  <p className="text-white-300 w-[38vw]">{text}</p>
+                </Copy>
               </div>
             </div>
           ))}
