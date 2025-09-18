@@ -3,21 +3,14 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
-import { Checkbox } from "@/components/ui/checkbox";
-
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormMessage,
-} from "@/components/ui/form";
-import { PhoneInput } from "@/components/ui/phone-input";
-import { Input } from "@/components/ui/input";
 import { isValidPhoneNumber } from "react-phone-number-input";
 import { useState } from "react";
+import { Form, FormControl, FormField, FormItem, FormMessage } from "../UI/form";
+import { Input } from "../UI/input";
+import { PhoneInput } from "../UI/phone-input";
+import { Textarea } from "../UI/textarea";
+import { Button } from "../UI/button";
+import { Checkbox } from "../UI/checkbox";
 
 const formSchema = z.object({
   name: z.string().min(3, { message: "Name must be at least 3 characters." }),
