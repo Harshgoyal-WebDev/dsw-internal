@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import SubmenuNavigation from "./Submenu";
 import { SOCIAL_LINKS } from "@/constants/siteConfig";
-import SocialLink from "../UI/SocialLink";
+import SocialLink from "../ui/SocialLink";
 
 export default function MobileMenu({
   openMobileMenu,

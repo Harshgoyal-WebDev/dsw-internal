@@ -5,12 +5,12 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { isValidPhoneNumber } from "react-phone-number-input";
 import { useState } from "react";
-import { Form, FormControl, FormField, FormItem, FormMessage } from "../UI/form";
-import { Input } from "../UI/input";
-import { PhoneInput } from "../UI/phone-input";
-import { Textarea } from "../UI/textarea";
-import { Button } from "../UI/button";
-import { Checkbox } from "../UI/checkbox";
+import { Form, FormControl, FormField, FormItem, FormMessage } from "../ui/form";
+import { Input } from "../ui/input";
+import { PhoneInput } from "../ui/phone-input";
+import { Textarea } from "../ui/textarea";
+import { Button } from "../ui/button";
+import { Checkbox } from "../ui/checkbox";
 
 const formSchema = z.object({
   name: z.string().min(3, { message: "Name must be at least 3 characters." }),
