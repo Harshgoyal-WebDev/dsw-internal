@@ -87,6 +87,23 @@ const Hero = () => {
 
   }, []);
 
+   const ShaderRef = useRef();
+  
+  useEffect(() => {
+    gsap.fromTo(
+      ShaderRef.current, 
+      {
+        opacity: 0
+      },
+      {
+        opacity: 1,
+        duration: 3,
+        delay: 1.5,
+        ease:'power3.out'
+      }
+    );
+  }, []);
+
   return (
     <section className="h-[70vw] w-screen relative bg-background max-sm:h-screen max-sm:px-[7vw]" id="hero">
       <div className="flex flex-col items-center justify-start w-full h-full pt-[30vh] relative z-[12] max-sm:pt-[15vh]">
@@ -136,7 +153,7 @@ const Hero = () => {
           <AnimatedLine key={i} delay={5 + (i * 0.2)} />
         ))}
       </div>
-      <div className="absolute top-[30%] left-0 h-screen w-screen max-sm:hidden">
+      <div ref={ShaderRef} className="absolute top-[30%] left-0 h-screen w-screen max-sm:hidden">
         <Suspense>
           <DynamicShaderComp />
         </Suspense>

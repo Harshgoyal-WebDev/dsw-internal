@@ -28,12 +28,12 @@ export const SITE_CONFIG = {
 
 // Navigation configuration
 export const NAVIGATION = [
-  { text: "Home", href: "#", id: "home" },
+  { text: "Home", href: "/", id: "home" },
   { text: "Product", href: "#", id: "product" },
   { text: "Solutions", href: "#", id: "solutions" },
-  { text: "About Us", href: "#", id: "about" },
+  { text: "About Us", href: "/about", id: "about" },
   { text: "Resources", href: "#", id: "resources" },
-  { text: "Pilot Program", href: "#", id: "pilot" },
+  { text: "Pilot Program", href: "/pilot-program", id: "pilot" },
   { text: "Contact", href: "#", id: "contact" }
 ];
 

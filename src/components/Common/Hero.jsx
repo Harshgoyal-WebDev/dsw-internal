@@ -57,7 +57,7 @@ const Hero = ({ heroData }) => {
     })
 
     const delayLines = heroData.homepage ? 4.5 : 0.7;
-    const delayPara = heroData.homepage ? 5.2 : 1.5;
+    const delayPara = heroData.homepage ? 5.2 : 1.8;
     gsap.fromTo(
       lines,
       {
@@ -72,9 +72,10 @@ const Hero = ({ heroData }) => {
       }
     );
     gsap.from(heroEl.lines, {
-      yPercent: 150,
+      yPercent: 100,
       delay: delayPara,
-      duration: 1.2,
+      duration: 1.4,
+
       stagger: 0.04,
       ease: "power3.out",
     });
@@ -125,7 +126,7 @@ const Hero = ({ heroData }) => {
                   y: 0,
                   transition: {
                     duration: 1,
-                    delay: heroData.homepage ? 5.8 : 1.7,
+                    delay: heroData.homepage ? 5.8 : 1.8,
                   }
                 }}
               >

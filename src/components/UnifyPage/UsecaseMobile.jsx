@@ -2,7 +2,6 @@
 
 import { useLayoutEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import WhiteButton from "../Button/WhiteButton";
@@ -100,7 +99,7 @@ function Accordion({ title, para, link, features, isOpen, onToggle, id }) {
   console.log(features);
 
   return (
-    <div className={`w-full group overflow-hidden`}>
+    <div className={`w-full group overflow-hidden fadeup`}>
       <div className="w-full mr-auto  ">
         <button
           onClick={onToggle}

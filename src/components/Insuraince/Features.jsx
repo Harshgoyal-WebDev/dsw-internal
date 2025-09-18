@@ -44,7 +44,7 @@ const MobileCard = ({srcc, content}) => {
 
   return (
 
-    <div className="h-[33vh] mx-auto background-glass border border-[#88888880] py-[5vw] w-[80vw] rounded-[6vw] flex flex-col gap-[5vw] items-start justify-center px-[5vw]">
+    <div className="h-[33vh] mx-auto background-glass border border-[#88888880] py-[5vw] w-[80vw] rounded-[6vw] flex flex-col gap-[5vw] items-start justify-center px-[5vw] fadeup">
 
         <div className="w-[22vw] h-auto">
           <Image src={srcc} alt='card-svg' width={400} height={400} className="w-full h-auto" />
@@ -89,7 +89,7 @@ const Features = () => {
       scrollTrigger: {
         trigger: featuresRef.current,
         start: "top 50%",
-        end: "70% 30%",
+        end: "70% 40%",
         scrub: true,
         // markers: true,
       },
@@ -99,18 +99,20 @@ const Features = () => {
         card,
         { rotateY: 65, 
           opacity: 0, 
+          scale:0.8,
           transformPerspective: 900 },
         {
           rotateY: 0,
           opacity: 1,
+          scale:1,
           duration: 1.5,
           ease: "none",
           scrollTrigger: {
             containerAnimation: horizAnim, // <-- tie to horizontal scroll
             trigger: card,
             scrub:true,
-            start: "left 95%", 
-            end: "140% 90%",
+            start: "-100% 100%", 
+            end: "190% 90%",
             toggleActions: "play none none reverse",
             // markers: true,
           },
@@ -118,6 +120,7 @@ const Features = () => {
       
       );
     });
+    
     }
    
   }, featuresRef);
@@ -161,7 +164,7 @@ const Features = () => {
           </div>
         </div>
 
-        <div className="hidden max-sm:block w-full max-sm:pt-[15vw]">
+        <div className="hidden max-sm:block w-full max-sm:pt-[25vw]">
           <div className="flex flex-col gap-[7vw] mx-auto">
 
             {cardsData.map((card, index) => (

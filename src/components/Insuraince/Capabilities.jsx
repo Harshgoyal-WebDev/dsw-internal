@@ -121,7 +121,7 @@ const Capabilities = () => {
           >
             {capabilities.map((cap, index) => (
               <SwiperSlide key={index}>
-                <div className="flex gap-[8vw] mt-[8vw] w-full items-center justify-center flex-col">
+                <div className="flex gap-[8vw] mt-[8vw] w-full items-center justify-center flex-col fadeup">
                   <p className="text-white-300 text-[4vw]">{cap.id}</p>
                   <div className="w-[30%] h-auto relative">
                     <Image
@@ -139,9 +139,9 @@ const Capabilities = () => {
           </Swiper>
 
           {/* Mobile Nav Buttons */}
-          <div className="w-full hidden max-sm:flex h-full mt-[15vw]  gap-[4vw] items-center justify-center">
+          <div className="w-full hidden max-sm:flex h-full mt-[10vw]  gap-[4vw] items-center justify-center">
             <div
-              className={`w-[15vw] p-[5vw] btns flex items-center justify-center rounded-full h-[15vw]  rotate-180 bg-black/10 border border-white/50 ${activeIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
+              className={`w-[15vw] p-[5vw] btns flex items-center justify-center rounded-full h-[15vw]  rotate-180 bg-white/5 border border-white/20 ${activeIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
               onClick={activeIndex !== 0 ? handlePrev : undefined}
             >
               <svg
@@ -160,7 +160,7 @@ const Capabilities = () => {
               </svg>
             </div>
             <div
-              className={`w-[15vw] cursor-pointer p-[5vw] btns flex items-center justify-center rounded-full h-[15vw] bg-black/10 border border-white/50 ${activeIndex === 3 ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
+              className={`w-[15vw] cursor-pointer p-[5vw] btns flex items-center justify-center rounded-full h-[15vw] bg-white/5 border border-white/20 ${activeIndex === 3 ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
               onClick={activeIndex !== 3 ? handleNext : undefined}
             >
               <svg

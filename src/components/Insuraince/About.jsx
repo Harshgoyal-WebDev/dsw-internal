@@ -62,7 +62,7 @@ export default function About() {
     const image1Y = useTransform(smoothY, (v) => v * 20);
 
     return (
-        <div ref={containerRef} className="flex items-center  justify-between h-[80vh] w-screen overflow-hidden max-sm:flex-col  max-sm:h-full container " id="footer-cta">
+        <div ref={containerRef} className="flex items-center  justify-between h-[80vh] w-screen overflow-hidden max-sm:flex-col  max-sm:h-full container relative z-[20] " id="footer-cta">
             <div className="relative w-1/2 h-[50vw] max-sm:w-full max-sm:h-[110vw] max-sm:mt-[20vh]">
                 <div className="absolute top-1/2 -translate-y-1/2 right-0 -z-10">
                     {/* <svg className="w-[95%] ml-auto" width="778" height="778" viewBox="0 0 778 778" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -11,7 +11,7 @@ const Newsletter = () => {
                     <span className="uppercase max-sm:text-[3.5vw]">
                         Subscribe
                     </span>
-                    <Image src="/assets/icons/arrow-right.svg" alt="arrow-right" width={10} height={10} className="w-4 h-4 group-hover:-rotate-45 transition-all duration-300 ease" />
+                    <Image src="/assets/icons/arrow.svg" alt="arrow-right" width={10} height={10} className="w-4 h-4 group-hover:-rotate-45 transition-all duration-300 ease" />
                 </button>
             </form>
         </div>
