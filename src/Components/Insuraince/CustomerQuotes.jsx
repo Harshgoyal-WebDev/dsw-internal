@@ -89,7 +89,7 @@ const ExpandablePanels = () => {
           <div
             key={index}
             ref={el => panelsRef.current[index] = el}
-            className={`relative cursor-pointer transition-all duration-700 ease-out border-r border-[#EEEEEE80]/50  overflow-hidden group ${
+            className={`relative cursor-pointer transition-all duration-700 ease-out border-r border-white/30  overflow-hidden group ${
               activePanel === index 
                 ? 'flex-[3] ' 
                 : 'flex-[0.8]'

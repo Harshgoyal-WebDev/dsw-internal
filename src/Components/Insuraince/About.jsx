@@ -62,8 +62,8 @@ export default function About() {
     const image1Y = useTransform(smoothY, (v) => v * 20);
 
     return (
-        <div ref={containerRef} className="flex items-center justify-between h-[80vh] w-screen overflow-hidden max-sm:flex-col-reverse  max-sm:h-full container " id="footer-cta">
-            <div className="relative w-1/2 h-[50vw] max-sm:w-full max-sm:h-[110vw]">
+        <div ref={containerRef} className="flex items-center  justify-between h-[80vh] w-screen overflow-hidden max-sm:flex-col  max-sm:h-full container " id="footer-cta">
+            <div className="relative w-1/2 h-[50vw] max-sm:w-full max-sm:h-[110vw] max-sm:mt-[20vh]">
                 <div className="absolute top-1/2 -translate-y-1/2 right-0 -z-10">
                     {/* <svg className="w-[95%] ml-auto" width="778" height="778" viewBox="0 0 778 778" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="389.094" cy="388.916" r="388.781" stroke="url(#paint0_linear_232_8167)" strokeOpacity="0.5" strokeWidth="0.25" className="circle-1" />
@@ -99,15 +99,15 @@ export default function About() {
                     <Image src={"/assets/images/footer/image-2.png"} alt="Image2"  width={313} height={272} loading="lazy"  className="w-full h-full object-cover" />
                 </motion.div>
             </div>
-              <div className="w-[60%] max-sm:!w-[90%] max-sm:text-center max-sm:mt-[5vw] space-y-[2vw]">
-                <h2 className="title-2 text-nowrap leading-[1.2] font-head  headingAnim text-white-200 max-sm:!text-[10vw] max-sm:mb-[7vw]">One Platform. Built with Insurance
-                    <br /> DNA. Unified AI and GenAI.</h2>
+              <div className="w-[60%] max-sm:!w-[100%] max-sm:text-center  space-y-[2vw]">
+                <h2 className="title-2  max-sm:text-wrap leading-[1.2] font-head  headingAnim text-white-200 max-sm:!text-[10vw] max-sm:mb-[7vw]">One Platform. Built with Insurance
+                     DNA. Unified AI and GenAI.</h2>
                 <div className="space-y-[0.5vw]">
                 <Copy>
-                <p className="text-white-300 w-[90%] max-sm:py-[10vh]">The pressure to modernize is high, but most insurers still struggle to move from pilot projects to production-ready AI. Long development cycles, fragmented tools, and rising compliance risks make AI adoption complex, expensive, and slow. </p>
+                <p className="text-white-300 w-[90%] max-sm:w-[100%] max-sm:py-[2vh]">The pressure to modernize is high, but most insurers still struggle to move from pilot projects to production-ready AI. Long development cycles, fragmented tools, and rising compliance risks make AI adoption complex, expensive, and slow. </p>
                 </Copy>
                 <Copy>
-                <p className="text-white-300 w-[93%]">insurAInce solves this. Built from the ground up for insurance, it lets you deploy real-world AI and GenAI use cases faster, securely, and at scale. All on a unified platform. No more fragmented AI, just fast and real outcomes.  </p>
+                <p className="text-white-300 w-[93%] max-sm:w-[100%]">insurAInce solves this. Built from the ground up for insurance, it lets you deploy real-world AI and GenAI use cases faster, securely, and at scale. All on a unified platform. No more fragmented AI, just fast and real outcomes.  </p>
                </Copy>
                </div>
             </div>

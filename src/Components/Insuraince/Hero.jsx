@@ -82,7 +82,7 @@ const Hero = () => {
       opacity:1,
       yPercent:0,
       duration:1,
-      delay:1.9,
+      delay:1.5,
     })
 
   }, []);

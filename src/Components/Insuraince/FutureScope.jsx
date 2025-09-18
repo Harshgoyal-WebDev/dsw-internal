@@ -72,9 +72,9 @@ const FutureScope = () => {
         
         <div className="flex w-full justify-start">
           <div
-            className="relative w-[27vw] rounded-[2.5vw] group cursor-pointer
+            className="relative w-[27.5vw] rounded-[2.5vw] group cursor-pointer
     overflow-hidden flex flex-col border transition-opacity border-[#59595980] 
-    justify-between p-[2vw] h-[22vw] background-glass backdrop-blur-[1vw]"
+    justify-between p-[2.5vw] h-[22vw] background-glass backdrop-blur-[1vw]"
           >
             {/* gradient overlay */}
             <div
@@ -90,7 +90,7 @@ const FutureScope = () => {
         transition-all duration-500 ease-in-out
         group-hover:border-white group-hover:text-white-300 
         border-[#175CFE] text-[#175CFE] tracking-wider 
-        h-[5.2vw] w-[5.2vw] rounded-full"
+        h-[5.5vw] w-[5.5vw] rounded-full"
               >
                 01
               </p>
@@ -108,9 +108,9 @@ const FutureScope = () => {
 
         <div className="flex w-full justify-center">
           <div
-            className="relative w-[27vw] rounded-[2.5vw] group cursor-pointer
+            className="relative w-[27.5vw] rounded-[2.5vw] group cursor-pointer
     overflow-hidden flex flex-col border border-[#59595980] 
-    justify-between p-[2vw] h-[22vw] background-glass backdrop-blur-[1vw]"
+    justify-between p-[2.5vw] h-[22vw] background-glass backdrop-blur-[1vw]"
           >
             {/* gradient overlay */}
             <div
@@ -126,7 +126,7 @@ const FutureScope = () => {
         transition-all duration-500 ease-in-out
         group-hover:border-white group-hover:text-white-300 
         border-[#175CFE] text-[#175CFE] tracking-wider 
-        h-[5.2vw] w-[5.2vw] rounded-full"
+        h-[5.5vw] w-[5.5vw] rounded-full"
               >
                 02
               </p>
@@ -146,9 +146,9 @@ const FutureScope = () => {
       
         <div className="flex w-full justify-end">
           <div
-            className="relative w-[27vw] rounded-[2.5vw] group cursor-pointer
+            className="relative w-[27.5vw] rounded-[2.5vw] group cursor-pointer
     overflow-hidden flex flex-col border border-[#59595980] 
-    justify-between p-[2vw] h-[22vw] background-glass backdrop-blur-[1vw]"
+    justify-between p-[2.5vw] h-[22vw] background-glass backdrop-blur-[1vw]"
           >
             {/* gradient overlay */}
             <div
@@ -164,7 +164,7 @@ const FutureScope = () => {
         transition-all duration-500 ease-in-out
         group-hover:border-white group-hover:text-white-300 
         border-[#175CFE] text-[#175CFE] tracking-wider 
-        h-[5.2vw] w-[5.2vw] rounded-full"
+        h-[5.5vw] w-[5.5vw] rounded-full"
               >
                 03
               </p>

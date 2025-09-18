@@ -47,7 +47,7 @@ const MobileCard = ({srcc, content}) => {
     <div className="h-[33vh] mx-auto background-glass border border-[#88888880] py-[5vw] w-[80vw] rounded-[6vw] flex flex-col gap-[5vw] items-start justify-center px-[5vw]">
 
         <div className="w-[25vw] h-auto">
-          <Image src={srcc} width={400} height={400} className="w-full h-auto" />
+          <Image src={srcc} alt='card-svg' width={400} height={400} className="w-full h-auto" />
         </div>
 
         <p>
@@ -84,12 +84,12 @@ const Features = () => {
     if(!isMobile)
     {
       const horizAnim = gsap.to(cardsContainerRef.current, {
-      x: "-22vw",
+      x: "-18vw",
       ease: "none",
       scrollTrigger: {
         trigger: featuresRef.current,
         start: "top 50%",
-        end: "70% top",
+        end: "70% 30%",
         scrub: true,
         // markers: true,
       },
@@ -162,7 +162,7 @@ const Features = () => {
         </div>
 
         <div className="hidden max-sm:block w-full max-sm:pt-[15vw]">
-          <div className="flex flex-col gap-[8vw] mx-auto">
+          <div className="flex flex-col gap-[7vw] mx-auto">
 
             {cardsData.map((card, index) => (
               <MobileCard key={index}

@@ -48,8 +48,8 @@ const Results = () => {
   return (
     <section className='h-fit w-screen container space-y-[7vw]'>
 
-      <div className='flex justify-center items-center flex-col gap-[2vw]'>
-        <h2 className='title-1 text-center headingAnim'>
+      <div className='flex justify-center items-center flex-col gap-[2vw] max-sm:gap-[12vw]'>
+        <h2 className='title-1 max-sm:!text-[11.5vw]  text-center headingAnim'>
           AI That Drives Results in 
           <br />
           Underwriting, Claims, Fraud, and CX 
@@ -57,8 +57,7 @@ const Results = () => {
 
         <Copy>
 
-
-        <p className='text-white-300 text-center w-[70%]'>
+        <p className='text-white-300 text-center w-[70%] max-sm:w-[100%]'>
           Go live in 30 days with enterprise-grade models that work from day one. 
           insurAInce brings a library of ready-to-deploy AI/ML models designed 
           specifically for insurers to solve core challenges across the policy lifecycle. 
@@ -66,14 +65,14 @@ const Results = () => {
         </Copy>
       </div>
 
-      <div className='flex justify-between w-full items-center mx-auto pt-[4vw]'>
+      <div className='flex justify-between max-sm:flex-col max-sm:gap-[24vw] w-full items-center mx-auto pt-[4vw] max-sm:pt-[10vw]'>
         {results.map((result, i) => (
           <div
             key={result.id}
             ref={el => cardsRef.current[i] = el}
-            className='flex flex-col pl-[1.5vw] gap-[1vw] justify-start w-[30%] opacity-100'
+            className='flex flex-col pl-[1.5vw] gap-[1vw] justify-start max-sm:justify-center max-sm:mx-auto max-sm:items-center w-[30%] max-sm:w-[90%] opacity-100'
           >
-            <div className='w-[5.2vw] h-[5vw] mb-[1vw]'>
+            <div className='w-[5.2vw] h-[5vw] mb-[1vw] max-sm:h-[24vw] max-sm:w-[24vw]'>
               <Image
                 src={result.src}
                 width={400}
@@ -83,11 +82,11 @@ const Results = () => {
               />
             </div>
 
-            <p className='text-[2.5vw] font-head text-white-200'>
+            <p className='text-[2.5vw] font-head max-sm:text-[8vw] max-sm:py-[2vw] text-white-200'>
               {result.title}
             </p>
 
-            <p className='text-white-300'>
+            <p className='text-white-300 max-sm:text-center'>
               {result.description}
             </p>
           </div>
