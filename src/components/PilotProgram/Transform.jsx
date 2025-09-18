@@ -7,7 +7,7 @@ const AwardItem=({img, title})=>{
     return (
         <>
         <div
-        className="flex-shrink-0 flex items-center justify-center gap-[1vw] w-[25vw] max-sm:w-[75vw] max-sm:gap-[2vw]" 
+        className="flex-shrink-0 flex items-center justify-center gap-[1vw] w-[25vw] max-sm:w-[75vw] max-sm:gap-[4vw]" 
       >
         <div className='w-[5.5vw] h-auto max-sm:w-[20vw]'>
           <Image

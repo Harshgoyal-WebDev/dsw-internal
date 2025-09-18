@@ -152,13 +152,13 @@ const ProductionCard = ({ className, title, para }) => {
       {/* Gradient Background */}
       <div 
         ref={gradientRef}
-        className="absolute inset-0 bg-gradient-to-r from-[#041035] to-[#1727FF] rounded-[2vw] max-sm:opacity-100" 
+        className="absolute inset-0 bg-gradient-to-r from-[#041035] to-[#1727FF] rounded-[2vw] max-sm:opacity-0  " 
       />
       
       {/* Overlay */}
       <div 
         ref={overlayRef}
-        className="absolute inset-0 background-glass rounded-[2vw] backdrop-blur-sm z-[5] max-sm:opacity-0" 
+        className="absolute inset-0 background-glass rounded-[2vw] backdrop-blur-sm z-[5]" 
       />
       
       {/* Content */}

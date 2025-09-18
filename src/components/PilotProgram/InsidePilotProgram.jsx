@@ -10,7 +10,7 @@ const InsidePilotProgram = () => {
       >
         <div className="w-full h-full flex flex-col items-center justify-center relative z-[2] space-y-[4vw]">
           <div className="text-center mt-10 max-sm:space-y-10">
-            <h3 className="title-1 !leading-[1.35] headingAnim text-[#E8E8E8] max-sm:!leading-[1.2]">
+            <h3 className="title-1 !leading-[1.35] headingAnim text-[#E8E8E8] max-sm:!leading-[1.2] max-sm:!text-[11.5vw]">
               Inside the Pilot Program
             </h3>
             <Copy>
@@ -22,71 +22,71 @@ const InsidePilotProgram = () => {
 
           {/* GRID VERSION */}
           <div className='w-full max-sm:w-[200vw] origin-left max-sm:mr-[5vw] max-sm:mt-[10vw] h-full max-sm:overflow-x-scroll max-sm:pb-[8vw] flex items-center justify-center '>
-          <div className='h-[40vw] flex-shrink-0  w-[80vw] max-sm:translate-x-[0%] max-sm:ml-[200vw] max-sm:mr-[60vw]  max-sm:w-full max-sm:h-full fadeup background-glass rounded-[2vw] border border-[#88888880]  py-[3vw] pb-[4vw] px-[3vw]'>
+          <div className='h-[40vw] flex-shrink-0  w-[80vw] max-sm:translate-x-[0%] max-sm:ml-[180vw] max-sm:mr-[60vw]  max-sm:w-full max-sm:h-full fadeup background-glass rounded-[2vw] border border-[#88888880]  py-[3vw] pb-[4vw] px-[3vw] max-sm:px-[7vw] max-sm:py-[7vw] max-sm:rounded-[6vw]'>
             <div className="grid grid-cols-[.8fr_1.2fr_1.8fr] border-collpase w-full h-full  border-t-0 border-l-0">
               {/* Header Row */}
-              <div className="text-[2.5vw] font-head text-[#F26B0D] font-normal border border-[#59595980] border-t-0 border-l-0 pb-[1vw] max-sm:text-[6vw]">
+              <div className="text-[2.5vw] font-head text-[#F26B0D] font-normal border border-[#59595980] border-t-0 border-l-0 pb-[1vw] max-sm:pb-[4vw] max-sm:text-[6vw]">
                 Features
               </div>
-              <div className="text-[2.5vw] font-head text-white-200 font-normal border border-[#59595980] border-l-0 border-t-0 pl-[2vw] pb-[1vw] max-sm:text-[6vw]">
+              <div className="text-[2.5vw] font-head text-white-200 font-normal border border-[#59595980] border-l-0 border-t-0 pl-[2vw] pb-[1vw] max-sm:text-[6vw] max-sm:pl-[8vw]">
                 Pilot Program
               </div>
-              <div className="text-[2.5vw] font-head text-white-200 font-normal border-b border-[#59595980]  max-sm:text-[6vw] pl-[2vw] pb-[1vw] ">
+              <div className="text-[2.5vw] font-head text-white-200 font-normal border-b border-[#59595980]  max-sm:text-[6vw] pl-[2vw] pb-[1vw]  max-sm:pl-[8vw]">
                 Post Pilot Subscription
               </div>
 
               {/* Row 1 */}
-              <div className="text-[#F26B0D] border border-[#59595980] border-l-0 border-t-0 pb-[3vw] pt-[1vw]">
+              <div className="text-[#F26B0D] border border-[#59595980] border-l-0 border-t-0 pb-[3vw] pt-[1vw] max-sm:pt-[7vw]">
                 Platform Access
               </div>
-              <div className="text-white-300 border border-[#59595980] border-t-0 border-l-0  pl-[2vw] pb-[3vw] pt-[1vw]">
+              <div className="text-white-300 border border-[#59595980] border-t-0 border-l-0  pl-[2vw] pb-[3vw] pt-[1vw] max-sm:p-[7vw]">
                 Full Platform Access for 6 months
               </div>
-              <div className="text-white-300 border-b border-[#59595980] pl-[2vw] pb-[3vw] pt-[1vw]">
+              <div className="text-white-300 border-b border-[#59595980] pl-[2vw] pb-[3vw] pt-[1vw] max-sm:p-[7vw]">
                 Unlimited access with all tools and updates
               </div>
 
               {/* Row 2 */}
-              <div className="text-[#F26B0D] border border-[#59595980] border-t-0 border-l-0  pb-[2vw] pt-[1vw]">
+              <div className="text-[#F26B0D] border border-[#59595980] border-t-0 border-l-0  pb-[2vw] pt-[1vw] max-sm:pt-[7vw]">
                 Use Case Development
               </div>
-              <div className="text-white-300 border border-[#59595980]  border-t-0  border-l-0 pl-[2vw] pr-[2vw] pb-[2vw] pt-[1vw]">
+              <div className="text-white-300 border border-[#59595980]  border-t-0  border-l-0 pl-[2vw] pr-[2vw] pb-[2vw] pt-[1vw] max-sm:p-[7vw]">
                 1 Custom insurance use case built by DSW
               </div>
-              <div className="text-white-300 border-b border-[#59595980]  pl-[2vw] pb-[2vw] pt-[1vw]">
+              <div className="text-white-300 border-b border-[#59595980]  pl-[2vw] pb-[2vw] pt-[1vw] max-sm:p-[7vw]">
                 Access to 25+ pre-built AI/ML insurance use cases
               </div>
 
               {/* Row 3 */}
-              <div className="text-[#F26B0D] border border-[#59595980] border-t-0 border-l-0 pb-[2vw] pt-[1vw]">
+              <div className="text-[#F26B0D] border border-[#59595980] border-t-0 border-l-0 pb-[2vw] pt-[1vw] max-sm:pt-[7vw]">
                 In-House Development
               </div>
-              <div className="text-white-300 border border-[#59595980] border-t-0 pl-[2vw] border-l-0  pr-[2vw] pb-[2vw] pt-[1vw]">
+              <div className="text-white-300 border border-[#59595980] border-t-0 pl-[2vw] border-l-0  pr-[2vw] pb-[2vw] pt-[1vw] max-sm:p-[7vw]">
                 Build up to 4 additional use cases internally
               </div>
-              <div className="text-white-300 border-b border-[#59595980]  pl-[2vw] pb-[2vw] pt-[1vw]">
+              <div className="text-white-300 border-b border-[#59595980]  pl-[2vw] pb-[2vw] pt-[1vw] max-sm:p-[7vw]">
                 Build and scale unlimited use cases across business functions
               </div>
 
               {/* Row 4 */}
-              <div className="text-[#F26B0D] border border-[#59595980] border-t-0 border-l-0 pb-[2vw] pt-[1vw]">
+              <div className="text-[#F26B0D] border border-[#59595980] border-t-0 border-l-0 pb-[2vw] pt-[1vw] max-sm:pt-[7vw]">
                 GenAI Capabilities
               </div>
-              <div className="text-white-300 border border-[#59595980] border-t-0 pl-[2vw] border-l-0  pr-[2vw] pb-[2vw] pt-[1vw]">
+              <div className="text-white-300 border border-[#59595980] border-t-0 pl-[2vw] border-l-0  pr-[2vw] pb-[2vw] pt-[1vw] max-sm:p-[7vw]">
                 Limited GenAI workflows with pilot support
               </div>
-              <div className="text-white-300 border-b border-[#59595980] pl-[2vw] pb-[2vw] pt-[1vw]">
+              <div className="text-white-300 border-b border-[#59595980] pl-[2vw] pb-[2vw] pt-[1vw] max-sm:p-[7vw]">
                 Access to 300+ GenAI agents (e.g., fraud detection, claims triage, policy recommendations)
               </div>
 
               {/* Row 5 */}
-              <div className="text-[#F26B0D] border-r border-[#59595980] pb-[2vw] pt-[1vw]">
+              <div className="text-[#F26B0D] border-r border-[#59595980] pb-[2vw] pt-[1vw] max-sm:pt-[7vw]">
                 Support
               </div>
-              <div className="text-white-300 border-r border-[#59595980] pl-[2vw] pb-[2vw] pt-[1vw] pr-[2vw]">
+              <div className="text-white-300 border-r border-[#59595980] pl-[2vw] pb-[2vw] pt-[1vw] pr-[2vw] max-sm:p-[7vw]">
                 1 dedicated Data Scientist + 24/7 email support
               </div>
-              <div className="text-white-300   pl-[2vw] pb-[2vw] pt-[1vw]">
+              <div className="text-white-300   pl-[2vw] pb-[2vw] pt-[1vw] max-sm:p-[7vw]">
                 Continuous expert support, technical assistance, and optimization
               </div>
             </div>

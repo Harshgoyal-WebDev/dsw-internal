@@ -7,9 +7,9 @@ const PilotProgramForm = () => {
     <>
       <section className='w-screen h-full '>
         <div className='h-full w-full flex items-start justify-between  container max-md:flex-col max-sm:flex-col max-sm:gap-[15vw] max-md:gap-[10vw] max-sm:px-[5.5vw] max-md:px-[4vw]'>
-          <div className='w-1/2 max-sm:w-full max-md:w-[100%] space-y-[1.5vw] max-md:space-y-[3vw] max-sm:space-y-[3vw]'>
+          <div className='w-1/2 max-sm:w-full max-md:w-[100%] space-y-[1.5vw] max-md:space-y-[3vw] max-sm:space-y-[4.5vw]'>
            
-              <h2 className='title-1 font-head text-white-200 headingAnim'>Get started with our Pilot Program  </h2>
+              <h2 className='title-1 font-head text-white-200 headingAnim max-sm:!text-[11.5vw]'>Get started with our Pilot Program  </h2>
            
             <div className='w-[68%] max-sm:w-[85%] max-md:w-[85%]'>
               <Copy>

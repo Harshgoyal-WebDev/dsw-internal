@@ -341,6 +341,22 @@ background: linear-gradient(90.17deg, rgba(255, 255, 255, 0.01) 0.01%, rgba(255,
   background: #FFFFFF33;
 }
 
+.marquee__track {
+  display: flex;
+  /* transform: translateX(-187.5%) !important; */
+  animation: marquee 15s linear infinite;
+  min-width: 200%; /* Added for consistency */
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-187.5%); }
+}
+@keyframes marquee-reverse {
+  0% { transform: translateX(-187.5%); } 
+  100% { transform: translateX(0); } 
+}
+
 }
 
 
