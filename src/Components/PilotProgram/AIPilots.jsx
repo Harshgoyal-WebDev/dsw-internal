@@ -14,7 +14,7 @@ const PilotCard = ({ id, icon, title, para }) => {
     <>
       <div className=" space-y-[2vw] relative group  max-sm:space-y-[10vw] w-[43%]">
         <span className="absolute top-0 left-0 w-full h-[1px] bg-[#59595980]  lineDraw"></span>
-        <div className="py-[2vw] flex gap-[4vw] items-start space-y-[3vw] max-sm:flex max-sm:flex-col max-sm:items-center max-sm:space-y-[6vw] max-sm:mt-[10vw] fadeup">
+        <div className=" pt-[3vw] flex gap-[4vw] items-start space-y-[3vw] max-sm:flex max-sm:flex-col max-sm:items-center max-sm:space-y-[6vw] max-sm:mt-[10vw] fadeup">
           <div className="pr-[1vw]">
             <p>{id}</p>
           </div>
@@ -73,7 +73,7 @@ const AIPilots = () => {
               </p>
             </Copy>
           </div>
-          <div className=" w-full max-sm:hidden flex flex-col flex-wrap h-[70vw] items-start justify-between">
+          <div className=" w-full max-sm:hidden flex flex-col flex-wrap h-[64vw] gap-x-[7vw] justify-between">
             {data.map((card, index) => (
               <PilotCard
                 key={index}

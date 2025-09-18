@@ -103,7 +103,7 @@ export default function Usecase() {
         "Guardrails and governance by design for safe, compliant outputs ",
       ],
       handleClick: handleSecondCard,
-      className: `translate-y-[24%] usecase-card2 z-[1] border-t`,
+      className: `translate-y-[24%] usecase-card2 z-[1]`,
       borderClass: "border-white",
       iconBg: "bg-white",
       iconFill: "black",
@@ -132,7 +132,7 @@ export default function Usecase() {
       <h2 className="title-2 headingAnim w-[45%] text-center">
         Supercharge Your AI and GenAI Use Cases
       </h2>
-      <div className="w-[100%] fadeup relative text-white-200 overflow-hidden border border-[#595959]/50 rounded-[2.5vw] h-[75vh]">
+      <div className="w-[100%] fadeup relative text-white-200 overflow-hidden rounded-[2.5vw] h-[75vh] border-b border-white/20">
         {usecaseData.map((card, index) => (
           <motion.div
             key={card.id}
@@ -144,7 +144,7 @@ export default function Usecase() {
                    : "bg-background"
                }
             
-            w-full border border-[#595959]/50 rounded-[2.5vw] ${
+            w-full border border-white/20  rounded-[2.5vw] ${
               card.className
             }`}
           >
@@ -152,7 +152,7 @@ export default function Usecase() {
             <div
               className={`py-[2.5vw] min-h-[15.5vh] flex items-center w-[85%] justify-between ${card.borderClass}`}
             >
-              <span className="w-[75%] h-[1.2px] rounded-full bg-white absolute top-[25%]"></span>
+              <span className="w-[75%] h-[1px] rounded-full bg-white/80 absolute top-[25%]"></span>
               
               <div className="space-x-[5vw] w-full flex items-center">
                 <p className="absolute left-[3%] top-[14.5%] translate-y-[-50%]">

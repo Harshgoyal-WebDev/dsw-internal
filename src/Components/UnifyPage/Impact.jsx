@@ -60,9 +60,10 @@ export default function Impact() {
       const masterTl = gsap.timeline({
         scrollTrigger: {
           trigger: item,
-          start: isMobile ? "20% 180%" : "10% 115%",
-          end: "150%",
+          start: isMobile ? "20% 180%" : "10% bottom",
+          end: "bottom 40%",
           scrub: true,
+          // markers:true,
         },
       });
 
@@ -83,7 +84,7 @@ export default function Impact() {
   return (
     <section className="w-screen container" id="about">
       <div className="w-full flex flex-col items-center justify-center gap-y-[5vw] max-sm:gap-y-[15vw]">
-        <div className="text-center space-y-[2vw]">
+        <div className="text-center space-y-[2vw] max-sm:space-y-[5vw]">
           <h2 className="title-2 headingAnim text-white-200 max-sm:text-center">
             From Idea to Impact  
           </h2>
@@ -94,7 +95,7 @@ export default function Impact() {
           </Copy>
         </div>
 
-        <div className="flex flex-col gap-[4vw] max-sm:w-full max-sm:gap-[7vw]">
+        <div className="flex flex-col gap-[4vw] max-sm:w-full max-sm:gap-[12vw]">
           {POINTS.map(({ id, text, width, title }) => (
             <div
               key={id}

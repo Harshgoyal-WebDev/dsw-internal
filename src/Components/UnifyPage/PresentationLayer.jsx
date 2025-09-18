@@ -122,18 +122,18 @@ export default function PresentationLayer() {
   );
 
   return (
-    <section id="presentationLayer" className="h-fit container overflow-x-scroll flex-col fadeup gap-[.8vw] max-sm:gap-[4vw] w-[100%] mx-auto max-sm:items-start items-center justify-center text-center flex">
-      <div className="max-sm:w-[450vw] max-sm:py-[4vw]  w-full py-[.7vw] bg-white/2 border-white/20 text-[1.5vw] rounded-full border">
+    <section id="presentationLayer" className="h-fit container overflow-x-scroll flex-col fadeup gap-[.8vw] max-sm:gap-[4vw] w-[100%] mx-auto max-sm:items-start items-center justify-center text-center flex ">
+      <div className="max-sm:w-[450vw] max-sm:py-[4vw]  w-full py-[.7vw]  border-white/20 text-[1.5vw] rounded-full border bg-gradient-to-r from-white/0 to-white/6">
         <p className="text-[1.5vw] max-sm:text-[5vw]">Presentation Layer</p>
       </div>
 
-      <div className=" space-y-[1vw] max-sm:space-y-[4vw] max-sm:w-[450vw] px-[1vw] max-sm:px-[4vw] max-sm:py-[6vw] w-full py-[1vw] bg-white/2 border-white/20 rounded-[2vw] max-sm:rounded-[5vw] border">
+      <div className=" space-y-[1vw] max-sm:space-y-[4vw] max-sm:w-[450vw] px-[1vw] max-sm:px-[4vw] max-sm:py-[6vw] w-full py-[1vw] border-white/20 rounded-[2vw] max-sm:rounded-[5vw] border bg-gradient-to-r from-white/0 to-white/6">
         <p className="text-[1.5vw] max-sm:text-[5vw]">Use Cases</p>
         <div className="flex gap-[1vw] max-sm:gap-[4vw] items-center justify-evenly">
           {usecaseLayer.map((text, index) => (
             <p
               key={index}
-              className="w-fit py-[1vw] px-[1.6vw] max-sm:w-full text-[1vw] bg-gradient-to-l from-white/8 to bg-white/0 border-white/20 rounded-[1vw] border max-sm:py-[8vw]  max-sm:rounded-[5vw] max-sm:text-[4vw] text-white-300"
+              className="w-fit py-[1vw] px-[1.6vw] max-sm:w-full text-[1vw] bg-gradient-to-r from-white/2 to-white/8 border-white/20 rounded-[1vw] border max-sm:py-[8vw]  max-sm:rounded-[5vw] max-sm:text-[4vw] text-white-300"
             >
               {text}
             </p>
@@ -202,7 +202,7 @@ export default function PresentationLayer() {
         </div>
       </div>
 
-      <div className="max-sm:w-[450vw] max-sm:py-[3vw] max-sm:rounded-full w-full flex items-center justify-center  bg-gradient-to-l from-white/8 to bg-white/0 border-white/20 rounded-[2vw] border">
+      <div className="max-sm:w-[450vw] max-sm:py-[3vw] max-sm:rounded-full w-full flex items-center justify-center  bg-gradient-to-r from-white/0 to-white/4 border-white/20 rounded-[2vw] border">
         <div className="h-auto mt-[.5vw] max-sm:w-[25vw] w-[8vw]">
           <Image
             width={100}
