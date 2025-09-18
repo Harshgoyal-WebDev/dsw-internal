@@ -80,6 +80,22 @@ const Hero = ({ heroData }) => {
     });
     // gsap.from(".")
   }, []);
+  const ShaderRef = useRef();
+  
+  useEffect(() => {
+    gsap.fromTo(
+      ShaderRef.current, 
+      {
+        opacity: 0
+      },
+      {
+        opacity: 1,
+        duration: 3,
+        delay: 1.5,
+        ease:'power3.out'
+      }
+    );
+  }, []);
 
   return (
     <section className="h-[70vw] w-screen relative bg-background max-sm:h-screen max-sm:px-[7vw]" id="hero">
@@ -126,7 +142,7 @@ const Hero = ({ heroData }) => {
           <AnimatedLine key={i} delay={heroData.homepage ? 5 + (i * 0.2) : 0.5 + (i * 0.2)} />
         ))}
       </div>
-      <div className="absolute top-[30%] left-0 h-screen w-screen max-sm:hidden">
+      <div ref={ShaderRef} className="absolute top-[30%] left-0 h-screen w-screen max-sm:hidden">
         <Suspense>
           <DynamicShaderComp />
         </Suspense>
