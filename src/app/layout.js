@@ -1,4 +1,4 @@
-import LenisSmoothScroll from "@/Components/LenisSmoothScroll";
+import LenisSmoothScroll from "@/components/LenisSmoothScroll";
 import "./globals.css";
 import { fontVariables } from "@/styles/fonts";
 import { siteMetadata } from "@/config/metadata";

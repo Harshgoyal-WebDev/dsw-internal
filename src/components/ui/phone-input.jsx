@@ -2,7 +2,7 @@ import React from "react";
 import { CheckIcon, ChevronDown } from "lucide-react";
 import PhoneNumberInput, { getCountryCallingCode } from "react-phone-number-input";
 import flags from "react-phone-number-input/flags";
-import { Button } from "@/Components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Command,
   CommandEmpty,
@@ -10,14 +10,14 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "@/Components/ui/command";
-import { Input } from "@/Components/ui/input";
+} from "@/components/ui/command";
+import { Input } from "@/components/ui/input";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/Components/ui/popover";
-import { ScrollArea } from "@/Components/ui/scroll-area";
+} from "@/components/ui/popover";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
 
 const PhoneInput = React.forwardRef(({ className, onChange, value, ...props }, ref) => {

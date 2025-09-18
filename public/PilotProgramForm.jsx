@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
-import Copy from '@/Components/Animations/Copy'
-import PilotForm from '@/Components/PilotForm'
+import Copy from '@/components/Animations/Copy'
+import PilotForm from '@/components/PilotForm'
 const PilotProgramForm = () => {
   return (
     <>

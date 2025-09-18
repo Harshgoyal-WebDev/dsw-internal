@@ -1,13 +1,13 @@
- import Hero from '@/Components/Common/Hero'
-import Layout from '@/Components/Layout'
-import AIPilots from '@/Components/PilotProgram/AIPilots'
+ import Hero from '@/components/Common/Hero'
+import Layout from '@/components/Layout'
+import AIPilots from '@/components/PilotProgram/AIPilots'
 import PilotProgramForm from '../../../public/PilotProgramForm'
-import InsidePilotProgram from '@/Components/PilotProgram/InsidePilotProgram'
-import Production from '@/Components/PilotProgram/Production'
-import Transform from '@/Components/PilotProgram/Transform'
+import InsidePilotProgram from '@/components/PilotProgram/InsidePilotProgram'
+import Production from '@/components/PilotProgram/Production'
+import Transform from '@/components/PilotProgram/Transform'
 import React from 'react'
-import FooterCTA from '@/Components/Common/FooterCta'
-import Faqs from '@/Components/Common/FAQs'
+import FooterCTA from '@/components/Common/FooterCta'
+import Faqs from '@/components/Common/FAQs'
 
 const page = () => {
   return (

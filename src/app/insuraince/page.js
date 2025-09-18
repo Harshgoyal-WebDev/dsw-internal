@@ -1,19 +1,19 @@
 import Image from "next/image";
-import Hero from "@/Components/Insuraince/Hero";
-import About  from "@/Components/Insuraince/About";
-import Features from "@/Components/Insuraince/Features";
-import Capabilities from "@/Components/Insuraince/Capabilities";
-import Results from "@/Components/Insuraince/Results";
-import PlatformCapabilities from "@/Components/Insuraince/PlatformCapabilities";
-import Outcomes from "@/Components/Insuraince/Outcomes";
-import Efficiency from "@/Components/Insuraince/Efficiency";
-import CustomerQuotes from "@/Components/Insuraince/CustomerQuotes";
-import FutureScope from "@/Components/Insuraince/FutureScope";
+import Hero from "@/components/Insuraince/Hero";
+import About  from "@/components/Insuraince/About";
+import Features from "@/components/Insuraince/Features";
+import Capabilities from "@/components/Insuraince/Capabilities";
+import Results from "@/components/Insuraince/Results";
+import PlatformCapabilities from "@/components/Insuraince/PlatformCapabilities";
+import Outcomes from "@/components/Insuraince/Outcomes";
+import Efficiency from "@/components/Insuraince/Efficiency";
+import CustomerQuotes from "@/components/Insuraince/CustomerQuotes";
+import FutureScope from "@/components/Insuraince/FutureScope";
 
 
-import Layout from "@/Components/Layout";
-import Faqs from "@/Components/Common/FAQs";
-import FooterCTA from "@/Components/Common/FooterCta";
+import Layout from "@/components/Layout";
+import Faqs from "@/components/Common/FAQs";
+import FooterCTA from "@/components/Common/FooterCta";
 
 export default function Home() {
   return (
