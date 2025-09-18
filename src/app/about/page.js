@@ -5,12 +5,15 @@ import Hero from '@/components/Common/Hero'
 import Recognized from '@/components/Homepage/Recognized'
 import Layout from '@/components/Layout'
 import React from 'react'
+import TechPartners from '@/components/AboutPage/TechPartners'
 
 export default function page() {
     return (
         <Layout>
             <Hero heroData={heroData} />
+            
             <About />
+            <TechPartners />
             <Recognized />
             <Faqs />
             <FooterCTA footerCTAData={footerCTAData} />
