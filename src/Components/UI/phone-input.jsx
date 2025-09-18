@@ -1,8 +1,8 @@
 import React from "react";
-import { CheckIcon, ChevronDown, ChevronsDown, ChevronsUpDown } from "lucide-react";
+import { CheckIcon, ChevronDown } from "lucide-react";
 import PhoneNumberInput, { getCountryCallingCode } from "react-phone-number-input";
 import flags from "react-phone-number-input/flags";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/Components/ui/button";
 import {
   Command,
   CommandEmpty,
@@ -10,14 +10,14 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "@/components/ui/command";
-import { Input } from "@/components/ui/input";
+} from "@/Components/ui/command";
+import { Input } from "@/Components/ui/input";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
-import { ScrollArea } from "@/components/ui/scroll-area";
+} from "@/Components/ui/popover";
+import { ScrollArea } from "@/Components/ui/scroll-area";
 import { cn } from "@/lib/utils";
 
 const PhoneInput = React.forwardRef(({ className, onChange, value, ...props }, ref) => {
@@ -44,7 +44,7 @@ const InputComponent = React.forwardRef(({ className, ...props }, ref) => (
         ref={ref}
         data-slot="input"
         className={cn(
-          "file:text-foreground placeholder:text-muted-foreground selection:bg-primary  selection:text-primary-foreground dark:bg-input/30 border-input flex h-[4vw] max-sm:h-[12vw] max-md:h-[10vw] w-full min-w-0   px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm border !border-[#B0B0B080] rounded-full bg-white/10",
+          "file:text-foreground placeholder:text-muted-foreground selection:bg-primary  selection:text-primary-foreground dark:bg-input/30 border-input flex h-[4vw] max-sm:h-[12vw] max-md:h-[10vw] w-full min-w-0   px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm border !border-[#B0B0B080] rounded-full !bg-white/5",
           "",
           "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-white",
           className
@@ -82,7 +82,7 @@ const CountrySelect = ({ disabled, value: selectedCountry, options: countryList,
         <Button
           type="button"
           variant="outline"
-          className="flex justify-between h-[4vw] border shadow-none px-[4vw] pb-2 mobile:pb-0 focus:z-10  max-md:h-[10vw] w-[20%] mr-[1.5vw]  bg-white/10  !border-[#B0B0B080] rounded-full cursor-pointer"
+          className="flex justify-center gap-[1.5vw] h-[4vw] border shadow-none px-[2vw] pb-2 mobile:pb-0 focus:z-10  max-md:h-[10vw] w-[20%] mr-[0.8vw]  !bg-white/5  !border-[#B0B0B080] rounded-full cursor-pointer"
           disabled={disabled}
         >
           <FlagComponent country={selectedCountry} countryName={selectedCountry} />
@@ -94,7 +94,7 @@ const CountrySelect = ({ disabled, value: selectedCountry, options: countryList,
           />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[300px] p-0">
+      <PopoverContent className="w-[300px] p-0 bg-[#030815] border border-white/20 rounded-[1.2vw] overflow-hidden">
         <Command>
           <CommandInput
             value={searchValue}
@@ -110,7 +110,7 @@ const CountrySelect = ({ disabled, value: selectedCountry, options: countryList,
             placeholder="Search country..."
           />
           <CommandList>
-            <ScrollArea data-lenis-prevent ref={scrollAreaRef} className="h-72">
+            <ScrollArea data-lenis-prevent ref={scrollAreaRef} className="h-72 bg-[#030815]">
               <CommandEmpty>No country found.</CommandEmpty>
               <CommandGroup>
                 {countryList?.map((entry) => {
@@ -123,8 +123,8 @@ const CountrySelect = ({ disabled, value: selectedCountry, options: countryList,
                       onSelect={() => handleCountrySelect(country)}
                     >
                       <FlagComponent country={country} countryName={countryName} />
-                      <span className="flex-1 text-sm text-black">{countryName}</span>
-                      <span className="text-sm text-black">
+                      <span className="flex-1 text-sm ">{countryName}</span>
+                      <span className="text-sm">
                         +{getCountryCallingCode(country)}
                       </span>
                       <CheckIcon

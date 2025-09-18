@@ -2,8 +2,8 @@
 import PrimaryButton from "../Button/PrimaryButton";
 import { motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
-import NavigationLink from "../UI/NavigationLink";
-import Logo from "../UI/Logo";
+import NavigationLink from "../ui/NavigationLink";
+import Logo from "../ui/Logo";
 import { NAVIGATION, CTA_BUTTONS } from "@/constants/siteConfig";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";

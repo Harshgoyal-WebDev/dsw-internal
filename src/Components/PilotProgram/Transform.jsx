@@ -32,7 +32,7 @@ const Transform= () => {
             id='transform'
             className="h-full w-screen  relative overflow-hidden container"
         >
-            <div className="w-full h-full flex flex-col items-center justify-center relative z-[2] gap-[10vw]">
+            <div className="w-full h-full flex flex-col items-center justify-center relative z-[2] gap-[7.5vw]">
                 <div className="text-center  space-y-5 mt-10 max-sm:space-y-10">
                     <h3 className="title-2 !leading-[1.35] headingAnim text-[#E8E8E8] max-sm:!leading-[1.2]">
                        Transform and scale your enterprise operations
@@ -45,7 +45,7 @@ const Transform= () => {
                 </div>
 
 
-   <div className='space-y-[7vw] max-sm:space-y-[10vw]'>         
+   <div className='space-y-[5.5vw] max-sm:space-y-[10vw]'>         
 <div className="marquee fadeup  max-sm:my-[10vw] gap-[3vw]">
   <div className="marquee__track">
     {awards1.map((item, index) => <AwardItem key={index} img={item.img} title={item.title} year={item.year} />)}
