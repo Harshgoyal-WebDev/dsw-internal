@@ -119,23 +119,25 @@ h1,h2,h3,h4 {
 
 .marquee__track {
   display: flex;
-  animation: marquee 10s linear infinite;
+  /* transform: translateX(-62.5%); */
+  animation: marquee 15s linear infinite;
   min-width: 200%; /* Added for consistency */
 }
 
 @keyframes marquee {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-52%); }
+  100% { transform: translateX(-62.5%); }
 }
 
 .marquee__track_reverse {
   display: flex;
-  animation: marquee-reverse 10s linear infinite;
+  /* transform: translateX(-50%); */
+  animation: marquee-reverse 15s linear infinite;
   min-width: 200%;
 }
 
 @keyframes marquee-reverse {
-  0% { transform: translateX(-50%); } 
+  0% { transform: translateX(-62.5%); } 
   100% { transform: translateX(0); } 
 }
 

@@ -251,12 +251,12 @@ if(globalThis.innerWidth>1024){
 
                 </div>
 
-                <div ref={containerRef} className=' flex max-sm:mt-[15vw] gap-[3vw] max-sm:flex-col'>
-                    <div className='space-y-[3vw]'>
+                <div ref={containerRef} className=' flex max-sm:mt-[15vw] gap-[2.5vw] max-sm:flex-col'>
+                    <div className='space-y-[2.5vw]'>
                     <ProductionCard className={"production-card-left"} title={"Accelerated Deployment"} para={"Move from concept to production in weeks for AI and in hours for GenAI — with enterprise-grade readiness from day one."}/>
                     <ProductionCard className={"production-card-left"} title={"Scalable, Unified Platform"} para={"Simplify adoption with an end-to-end platform that brings data, models, and governance together in one place."}/>
                     </div>
-                    <div className='space-y-[3vw] mt-[5vw]'>
+                    <div className='space-y-[2.5vw] mt-[5vw]'>
                         <ProductionCard className={"production-card-right"} title={"Built-in Trust and Compliance"} para={"Ensure every deployment meets stringent enterprise standards with certifications including SOC II, ISO 27001, HIPAA, and GDPR."}/>
                         <ProductionCard className={"production-card-right"} title={"Deploy Easily"} para={"Easy integration into legacy systems, deploy on cloud, on-prem or hybrid."}/>
                     </div>

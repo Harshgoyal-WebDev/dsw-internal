@@ -8,7 +8,7 @@ const InsidePilotProgram = () => {
         id='recognized'
         className="h-full w-screen relative overflow-hidden container"
       >
-        <div className="w-full h-full flex flex-col items-center justify-center relative z-[2] space-y-[3vw]">
+        <div className="w-full h-full flex flex-col items-center justify-center relative z-[2] space-y-[4vw]">
           <div className="text-center mt-10 max-sm:space-y-10">
             <h3 className="title-1 !leading-[1.35] headingAnim text-[#E8E8E8] max-sm:!leading-[1.2]">
               Inside the Pilot Program
@@ -21,7 +21,7 @@ const InsidePilotProgram = () => {
           </div>
 
           {/* GRID VERSION */}
-          <div className='w-full max-sm:w-[200vw] origin-left max-sm:mr-[5vw]  mt-[10vw] h-full max-sm:overflow-x-scroll max-sm:pb-[8vw] flex items-center justify-center '>
+          <div className='w-full max-sm:w-[200vw] origin-left max-sm:mr-[5vw] max-sm:mt-[10vw] h-full max-sm:overflow-x-scroll max-sm:pb-[8vw] flex items-center justify-center '>
           <div className='h-[40vw] flex-shrink-0  w-[80vw] max-sm:translate-x-[0%] max-sm:ml-[200vw] max-sm:mr-[60vw]  max-sm:w-full max-sm:h-full fadeup background-glass rounded-[2vw] border border-[#88888880]  py-[3vw] pb-[4vw] px-[3vw]'>
             <div className="grid grid-cols-[.8fr_1.2fr_1.8fr] border-collpase w-full h-full  border-t-0 border-l-0">
               {/* Header Row */}
