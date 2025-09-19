@@ -64,8 +64,8 @@ const FooterCTA = ({footerCTAData}) => {
 
     return (
         <div ref={containerRef} className="flex items-center justify-between h-[80vh] w-screen overflow-hidden max-sm:flex-col-reverse  max-sm:h-full container " id="footer-cta">
-            <div className="w-[60%] max-sm:!w-[90%] max-sm:text-center max-sm:mt-[5vw]">
-                <h2 className="text-[5vw] leading-[1.2] font-head mb-3 headingAnim text-white-200 max-sm:!text-[10vw] max-sm:mb-[7vw]">{footerCTAData.heading}</h2>
+            <div className="w-[45%] max-sm:!w-full max-sm:text-center max-sm:mt-[5vw]">
+                <h2 className="text-90 font-head mb-3 headingAnim text-white-200 max-sm:mb-[7vw]">{footerCTAData.heading}</h2>
                 <Copy>
                 <p data-para-anim className="text-[#CACACA]  mb-12">{footerCTAData.para}</p>
                 </Copy>

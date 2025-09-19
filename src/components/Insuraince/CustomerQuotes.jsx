@@ -87,7 +87,7 @@ const ExpandablePanels = () => {
 
   return (
     <section className="container h-fit background-radial space-y-[8vw]">
-      <h2 className="title-2 text-white-200 text-center headingAnim">
+      <h2 className="text-60 text-white-200 text-center headingAnim">
         Real Customer Quotes
       </h2>
 
@@ -169,7 +169,7 @@ const ExpandablePanels = () => {
               className="flex justify-between items-center py-[5vw] cursor-pointer"
               onClick={() => handlePanelClick(index)}
             >
-              <h3 className={` text-[7vw] font-display duration-500  ease-in-out ${activeMobilePanel ===index ? 'text-primary-2' : 'text-white-200'}`}>
+              <h3 className={`text-40 font-display duration-500  ease-in-out ${activeMobilePanel ===index ? 'text-primary-2' : 'text-white-200'}`}>
                 {panel.title}
               </h3>
               <Image
@@ -208,13 +208,9 @@ const ExpandablePanels = () => {
                   className="h-[10vw] w-auto"
                 />
               </div>
-
               <p className="text-[3.7vw] mt-[4vw] leading-relaxed font-display text-start text-white-300 w-full mb-[4vw]">
                 {panel.description}
               </p>
-             
-
-              
             </div>
           </div>
         ))}

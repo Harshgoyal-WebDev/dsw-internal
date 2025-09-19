@@ -27,7 +27,7 @@ useEffect(() => {
       <div className="w-full flex flex-col gap-[2vw] items-center max-sm:gap-[4vw]">
         <h2 className="text-60 headingAnim w-[40%] max-sm:w-full text-center">{heading}</h2>
         <Copy>
-          <p className="text-[#CACACA]">
+          <p className="text-[#CACACA] text-center">
             {para}
           </p>
         </Copy>

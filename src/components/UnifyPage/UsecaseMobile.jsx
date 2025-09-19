@@ -71,9 +71,9 @@ export default function UsecaseMobile({ allowMultiple = false }) {
       id="WhyUnify"
     >
       <div className="h-[5vh] relative w-full">
-        <h3 className="title-3 text-center font-light headingAnim">
+        <h2 className="text-60 text-center font-light headingAnim">
           Supercharge Your AI and GenAI Use Cases  
-        </h3>
+        </h2>
       </div>
 
       <div className="w-full max-sm:pt-[20vw]">

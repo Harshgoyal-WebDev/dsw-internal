@@ -108,7 +108,7 @@ const UnifyAi = () => {
       </div>
 
       <div className="w-screen h-fit absolute bottom-0 flex flex-col py-[15%] items-center gap-[3.5vw] max-sm:px-[7vw] max-sm:gap-[8vw]">
-        <h2 className="title-1 text-primary-1 headingAnim max-sm:!text-[11vw] max-sm:text-center">
+        <h2 className="text-90 text-primary-1 headingAnim max-sm:text-center">
           One Platform. Infinite Possibilities.
         </h2>
         <Copy>

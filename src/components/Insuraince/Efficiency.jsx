@@ -93,7 +93,7 @@ const Efficiency = () => {
       className="container h-fit space-y-[8vw]"
     >
       <div className="space-y-[2vw] max-sm:space-y-[8vw]">
-        <h2 className="title-1 text-white-200 max-sm:!text-[11.5vw] text-center headingAnim">
+        <h2 className="text-90 text-white-200 text-center headingAnim">
           Built for the Complexity
           <br />
           of the Insurance Industry 

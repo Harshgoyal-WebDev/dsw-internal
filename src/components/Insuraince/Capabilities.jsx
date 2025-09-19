@@ -50,7 +50,7 @@ const Capabilities = () => {
   return (
     <section className="h-full container">
       <div className="w-[90%] max-sm:w-[100%] ">
-        <h2 className="title-1 max-sm:!text-[11.5vw] headingAnim max-sm:text-center">
+        <h2 className="text-90 headingAnim max-sm:text-center">
           Turn Common Insurance Tasks into Intelligent Agents 
         </h2>
       </div>
@@ -58,7 +58,7 @@ const Capabilities = () => {
       <div className="flex justify-between max-sm:flex-col pt-[4vw] max-sm:pt-[10vw]">
         <div className="w-[45%] max-sm:w-[100%]">
           <Copy>
-            <p className="text-white-200 text-[2.5vw] max-sm:text-center max-sm:text-[7vw] leading-[1.35] font-head">
+            <p className="text-white-200 text-50 max-sm:text-center  font-head">
               These aren’t chatbots. They’re intelligent teammates for your
               operations. 
             </p>

@@ -85,7 +85,7 @@ export default function Impact() {
     <section className="w-screen container" id="about">
       <div className="w-full flex flex-col items-center justify-center gap-y-[5vw] max-sm:gap-y-[15vw]">
         <div className="text-center space-y-[2vw] max-sm:space-y-[5vw]">
-          <h2 className="title-2 headingAnim text-white-200 max-sm:text-center">
+          <h2 className="text-60 headingAnim text-white-200 max-sm:text-center">
             From Idea to Impact  
           </h2>
           <Copy>
@@ -95,7 +95,7 @@ export default function Impact() {
           </Copy>
         </div>
 
-        <div className="flex flex-col gap-[4vw] max-sm:w-full max-sm:gap-[12vw]">
+        <div className="flex flex-col gap-[4vw] max-sm:w-full max-sm:gap-[15vw]">
           {POINTS.map(({ id, text, width, title }) => (
             <div
               key={id}

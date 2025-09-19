@@ -17,7 +17,6 @@ function usePreviousValue(value) {
 function FrozenRouter({ children }) {
     const context = useContext(LayoutRouterContext);
     const prevContext = usePreviousValue(context) || null;
-
     const segment = useSelectedLayoutSegment();
     const prevSegment = usePreviousValue(segment);
     const changed = segment !== prevSegment

@@ -49,14 +49,12 @@ const Results = () => {
     <section className='h-fit w-screen container space-y-[7vw]'>
 
       <div className='flex justify-center items-center flex-col gap-[2vw] max-sm:gap-[12vw]'>
-        <h2 className='title-1 max-sm:!text-[11.5vw]  text-center headingAnim'>
+        <h2 className='text-90  text-center headingAnim'>
           AI That Drives Results in 
           <br />
           Underwriting, Claims, Fraud, and CX 
         </h2>
-
         <Copy>
-
         <p className='text-white-300 text-center w-[70%] max-sm:w-[100%]'>
           Go live in 30 days with enterprise-grade models that work from day one. 
           insurAInce brings a library of ready-to-deploy AI/ML models designed 
@@ -82,9 +80,9 @@ const Results = () => {
               />
             </div>
 
-            <p className='text-[2.5vw] font-head max-sm:text-[8vw] max-sm:py-[2vw] text-white-200'>
+            <h4 className='text-50 font-head max-sm:py-[2vw] text-white-200'>
               {result.title}
-            </p>
+            </h4>
 
             <p className='text-white-300 max-sm:text-center'>
               {result.description}

@@ -68,8 +68,8 @@ const PlatformCapabilities = () => {
         defaults: { ease: "power2.out" },
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "20% 80%",
-          end: "80% 40%",
+          start: "20% bottom",
+          end: "80% 60%",
           scrub: true,
           // markers: true,
         },
@@ -134,7 +134,7 @@ const PlatformCapabilities = () => {
       ref={sectionRef}
       className="w-screen h-fit container "
     >
-      <h2 className="text-[2.8vw] max-sm:text-[8vw] font-head  text-center headingAnim">
+      <h2 className="text-50 font-head  text-center headingAnim">
         Platform Capabilities
       </h2>
 

@@ -10,7 +10,7 @@ const InsidePilotProgram = () => {
       >
         <div className="w-full h-full flex flex-col items-center justify-center relative z-[2] space-y-[4vw]">
           <div className="text-center mt-10 max-sm:space-y-10">
-            <h3 className="title-1 !leading-[1.35] headingAnim text-[#E8E8E8] max-sm:!leading-[1.2] max-sm:!text-[11.5vw]">
+            <h3 className="text-90 headingAnim text-[#E8E8E8]">
               Inside the Pilot Program
             </h3>
             <Copy>
@@ -25,15 +25,15 @@ const InsidePilotProgram = () => {
           <div className='h-[40vw] flex-shrink-0  w-[80vw] max-sm:translate-x-[0%] max-sm:ml-[180vw] max-sm:mr-[60vw]  max-sm:w-full max-sm:h-full fadeup background-glass rounded-[2vw] border border-[#88888880]  py-[3vw] pb-[4vw] px-[3vw] max-sm:px-[7vw] max-sm:py-[7vw] max-sm:rounded-[6vw]'>
             <div className="grid grid-cols-[.8fr_1.2fr_1.8fr] border-collpase w-full h-full  border-t-0 border-l-0">
               {/* Header Row */}
-              <div className="text-[2.5vw] font-head text-[#F26B0D] font-normal border border-[#59595980] border-t-0 border-l-0 pb-[1vw] max-sm:pb-[4vw] max-sm:text-[6vw]">
+              <h3 className="text-50 font-head text-[#F26B0D] font-normal border border-[#59595980] border-t-0 border-l-0 pb-[1vw] max-sm:pb-[4vw] max-sm:text-[6vw]">
                 Features
-              </div>
-              <div className="text-[2.5vw] font-head text-white-200 font-normal border border-[#59595980] border-l-0 border-t-0 pl-[2vw] pb-[1vw] max-sm:text-[6vw] max-sm:pl-[8vw]">
+              </h3>
+              <h3 className="text-50 font-head text-white-200 font-normal border border-[#59595980] border-l-0 border-t-0 pl-[2vw] pb-[1vw] max-sm:text-[6vw] max-sm:pl-[8vw]">
                 Pilot Program
-              </div>
-              <div className="text-[2.5vw] font-head text-white-200 font-normal border-b border-[#59595980]  max-sm:text-[6vw] pl-[2vw] pb-[1vw]  max-sm:pl-[8vw]">
+              </h3>
+              <h3 className="text-50 font-head text-white-200 font-normal border-b border-[#59595980]  max-sm:text-[6vw] pl-[2vw] pb-[1vw]  max-sm:pl-[8vw]">
                 Post Pilot Subscription
-              </div>
+              </h3>
 
               {/* Row 1 */}
               <div className="text-[#F26B0D] border border-[#59595980] border-l-0 border-t-0 pb-[3vw] pt-[1vw] max-sm:pt-[7vw]">

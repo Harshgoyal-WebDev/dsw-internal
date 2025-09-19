@@ -64,27 +64,7 @@ export default function OnePlatform() {
     return (
         <div ref={containerRef} className="flex items-center justify-between h-[80vh] w-screen overflow-hidden max-sm:flex-col  max-sm:h-full container " id="footer-cta">
             <div className="relative w-1/2 h-[50vw] max-sm:w-full max-sm:h-[110vw]">
-                {/* <div className="absolute top-1/2 -translate-y-1/2 right-0 -z-10">
-                    <svg className="w-[95%] ml-auto" width="778" height="778" viewBox="0 0 778 778" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="389.094" cy="388.916" r="388.781" stroke="url(#paint0_linear_232_8167)" strokeOpacity="0.5" strokeWidth="0.25" className="circle-1" />
-                        <circle cx="389.094" cy="388.915" r="302.668" stroke="url(#paint1_linear_232_8167)" strokeOpacity="0.5" strokeWidth="0.25" className="circle-2" />
-                        <circle cx="389.095" cy="389.237" r="210.959" stroke="url(#paint2_linear_232_8167)" strokeOpacity="0.5" strokeWidth="0.25" className="circle-3" />
-                        <defs>
-                            <linearGradient id="paint0_linear_232_8167" x1="0.188477" y1="27.2433" x2="781.305" y2="30.8303" gradientUnits="userSpaceOnUse">
-                                <stop stopColor="white" />
-                                <stop offset="1" stopColor="#999999" />
-                            </linearGradient>
-                            <linearGradient id="paint1_linear_232_8167" x1="86.3008" y1="107.325" x2="694.461" y2="110.118" gradientUnits="userSpaceOnUse">
-                                <stop stopColor="white" />
-                                <stop offset="1" stopColor="#999999" />
-                            </linearGradient>
-                            <linearGradient id="paint2_linear_232_8167" x1="178.011" y1="192.935" x2="601.973" y2="194.882" gradientUnits="userSpaceOnUse">
-                                <stop stopColor="white" />
-                                <stop offset="1" stopColor="#999999" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                </div> */}
+                
                  <motion.div
                     style={{ x: image1X, y: image1Y }}
                     className="absolute w-[40%] top-[20%] left-[20%] rounded-2xl border border-white/30 overflow-hidden max-sm:w-[50%] max-sm:top-[5%] max-sm:left-[10%] fadeup "
@@ -100,7 +80,7 @@ export default function OnePlatform() {
                 </motion.div>
             </div>
               <div className="w-[50%] max-sm:!w-[90%] max-sm:text-center max-sm:mt-[5vw] space-y-[4vw]">
-                <h2 className="title-2 leading-[1.2] max-sm:w-full font-head  headingAnim text-white-200 max-sm:!text-[9vw] max-sm:mb-[7vw]">One Platform. Many Possibilities.  </h2>
+                <h2 className="text-60 max-sm:w-full font-head  headingAnim text-white-200 max-sm:mb-[7vw]">One Platform. Many Possibilities.  </h2>
                 <div>
                 <Copy>
                 <p className="text-white-300">From GenAI agents that automate knowledge work, to AI models that power predictions, decisions, and actions — UnifyAI gives enterprises the infrastructure to lead with AI. </p>

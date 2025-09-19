@@ -4,7 +4,7 @@ import Copy from "../Animations/Copy";
 
 const Card = ({ src, content }) => {
   return (
-    <div className="flex flex-col max-sm:gap-[5vw] gap-[2vw] max-sm:w-full max-sm:h-[20vh] w-[16vw] relative group min-h-[20vh] fadeup">
+    <div className="flex flex-col max-sm:gap-[5vw] gap-[2vw] max-sm:w-full max-sm:h-fit w-[16vw] relative group min-h-[20vh] fadeup">
        <div className="absolute z-[2] bottom-[-15%] max-sm:bottom-0 w-full h-[1px] bg-primary-2 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700"></div>
 
       <div className="w-fit h-[5vw] max-sm:h-[12vh]">
@@ -19,7 +19,7 @@ const Card = ({ src, content }) => {
                        
       <p className="text-white-300 text-12 font-display">{content}</p>
              
-      <div className="w-full absolute z-[0] bottom-[-15%] h-[1px] lineDraw bg-foreground/30 mt-auto" />
+      <div className="w-full  h-[1px] lineDraw bg-foreground/30 mt-auto" />
     </div>
   );
 };
@@ -49,8 +49,8 @@ const cardsData = [
 
 const Outcomes = () => {
   return (
-    <section className="w-screen h-fit container space-y-[1vw] max-sm:space-y-[8vw]">
-      <h2 className="text-[2.8vw] max-sm:text-[10vw] max-sm:leading-[1.2] text-white-200 headingAnim w-[50%] max-sm:w-[100%]">
+    <section className="w-screen h-fit container space-y-[1.5vw] max-sm:space-y-[8vw]">
+      <h2 className="text-50  max-sm:leading-[1.2] text-white-200 headingAnim w-[50%] max-sm:w-[100%] max-sm:!text-[11.5vw]">
         <span className="block">One Platform. </span>
         <span className="block">AI and GenAI Working Together.</span>
       </h2>
@@ -77,7 +77,7 @@ const Outcomes = () => {
       </div>
 
       <div className="hidden max-sm:block max-sm:pt-[3vh]">
-            <div className="flex flex-col gap-[15vw] max-sm:px-[3vw]">
+            <div className="flex flex-col gap-[10vw]">
 
                {cardsData.map((card, index) => (
               <Card key={index} src={card.src} content={card.content} />

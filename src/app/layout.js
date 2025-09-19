@@ -15,9 +15,9 @@ export default function RootLayout({ children }) {
       <LenisSmoothScroll>
       <html lang="en">
         <body className={`${fontVariables.combined} antialiased`}>
-           <LayoutTransition>
+           {/* <LayoutTransition> */}
           {children}
-          </LayoutTransition>
+          {/* </LayoutTransition> */}
         </body>
       </html>
       </LenisSmoothScroll>

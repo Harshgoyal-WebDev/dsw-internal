@@ -90,9 +90,9 @@ export default function Clients() {
         className="relative w-screen h-[400vh] text-center"
       >
         <div className="sticky w-full top-0 h-screen flex items-center justify-center">
-          <h3 className="title-2 w-[40%] max-sm:text-[11vw] max-sm:w-[90%] text-[#E8E8E8] headingAnim">
+          <h2 className="text-60 w-[40%]  max-sm:w-[90%] text-[#E8E8E8] headingAnim">
             Trusted by Innovators, Built for Industry Disruptors.
-          </h3>
+          </h2>
         </div>
         <div className="left-0 sticky mt-[-100vh] top-0 z-20 h-screen w-screen overflow-hidden flex items-center justify-center">
           <div

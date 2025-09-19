@@ -111,7 +111,7 @@ const Difference = () => {
       id="difference" 
       ref={sectionRef}
     >
-      <h2 className="text-60 headingAnim max-sm:!text-[12vw] max-sm:pl-[7vw] max-sm:w-[90%]  text-center mb-[7vw] max-sm:text-left max-sm:justify-start max-sm:mb-[20vw]">
+      <h2 className="text-60 headingAnim max-sm:!text-[11.5vw] max-sm:pl-[7vw] max-sm:w-[90%]  text-center mb-[7vw] max-sm:text-left max-sm:justify-start max-sm:mb-[20vw]">
         Why insurAInce is Different? 
       </h2>
       <div className="w-full max-sm:w-screen max-sm:overflow-hidden max-sm:overflow-x-scroll max-sm:pb-[10%] relative z-[20] ">

@@ -22,15 +22,15 @@ export default function AiEverywhere() {
   });
   return (
     <>
-      <section className="h-full z-[10] max-sm:mt-[60%] w-screen container">
+      <section className="h-full relative z-[20] max-sm:mt-0 w-screen container">
         <div className="flex flex-col items-center justify-between space-y-[10vw] max-sm:space-y-[25vw] w-full">
           <SectionBreak text={"Even today, most enterprises struggle to move from pilot to production. Complex tech stacks, long timelines, and compliance risks slow things down. DSW UnifyAI solves this."} span={false}/>
           <div className="space-y-[7vw] max-sm:space-y-[20vw]">
             <div className="flex h-full max-sm:flex-col items-center max-sm:gap-[10vw] gap-[12vw] justify-between">
-              <p className="w-[45%]  max-sm:w-full max-sm:text-center title-3 text-nowrap font-head headingAnim text-[2.8vw] ">
-                AI is Everywhere. <br />
+              <h2 className="w-[45%]  max-sm:w-full max-sm:text-center text-50 text-nowrap font-head headingAnim  ">
+                AI is Everywhere. <br/>
                 But Operational AI is Rare.
-              </p>
+              </h2>
               <Copy>
                 <p className="w-full max-sm:w-full max-sm:text-center text-white-300">
                   Most enterprises face the same hurdles: siloed teams, long
@@ -53,7 +53,7 @@ export default function AiEverywhere() {
                       className="w-[5vw]  h-[5vw]  object-contain max-sm:w-[22vw] max-sm:h-[22vw]"
                     />
                   </div>
-                  <p className="text-content max-sm:text-center max-sm:px-[8vw] text-white-300">{card.text}</p>
+                  <p className=" max-sm:text-center max-sm:px-[8vw] text-white-300">{card.text}</p>
                 </div>
               ))}
             </div>

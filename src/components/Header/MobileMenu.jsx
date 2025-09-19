@@ -54,8 +54,7 @@ export default function MobileMenu({
               href={"/"}
               className="link-text"
               onClick={(e) => {
-                e.preventDefault();
-                navigateTo("/");
+                
                 setOpenMobileMenu(false);
                 setOpenSection(null);
               }}
@@ -74,11 +73,10 @@ export default function MobileMenu({
             />
 
             <Link
-              href={"/"}
+              href={"/about"}
               className="link-text"
               onClick={(e) => {
-                e.preventDefault();
-                navigateTo("/");
+                
                 setOpenMobileMenu(false);
                 setOpenSection(null);
               }}
@@ -95,11 +93,10 @@ export default function MobileMenu({
               type="resources"
             />
             <Link
-              href={"/"}
+              href={"/pilot-program"}
               className="link-text"
               onClick={(e) => {
-                e.preventDefault();
-                navigateTo("/");
+                
                 setOpenMobileMenu(false);
                 setOpenSection(null);
               }}
@@ -108,11 +105,10 @@ export default function MobileMenu({
             </Link>
             <span className="bg-[#e8e8e8c5] h-[1px] w-full"></span>
             <Link
-              href={"/"}
+              href={"/contact"}
               className="link-text"
               onClick={(e) => {
-                e.preventDefault();
-                navigateTo("/");
+                
                 setOpenMobileMenu(false);
                 setOpenSection(null);
               }}

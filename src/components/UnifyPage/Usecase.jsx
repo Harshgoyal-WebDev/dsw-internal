@@ -129,7 +129,7 @@ export default function Usecase() {
 
   return (
     <div className="min-h-screen max-sm:hidden container flex flex-col items-center justify-center space-y-[7vw] h-fit w-full">
-      <h2 className="title-2 headingAnim w-[45%] text-center">
+      <h2 className="text-60 headingAnim w-[45%] text-center">
         Supercharge Your AI and GenAI Use Cases
       </h2>
       <div className="w-[100%] fadeup relative text-white-200 overflow-hidden rounded-[2.5vw] h-[75vh] border-b border-white/20">
@@ -158,10 +158,10 @@ export default function Usecase() {
                 <p className="absolute left-[3%] top-[14.5%] translate-y-[-50%]">
                   {card.id}
                 </p>
-                <p className="text-[1.5vw] ">{card.title}</p>
+                <p className="text-30 ">{card.title}</p>
               </div>
               <div className="flex items-center  text-white-200 justify-end w-full gap-[5vw]">
-                <p className="text-content w-[30vw]">{card.description}</p>
+                <p className=" w-[30vw]">{card.description}</p>
                 <div
                   className={`rounded-full absolute right-[3%] top-[12%] translate-y-[-50%] cursor-pointer h-[4vw] w-[4vw] border-[#888888]/80 p-[0.5vw] border ${
                     activeCard == index ? card.iconBg : "bg-white/5"

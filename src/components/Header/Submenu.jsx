@@ -26,8 +26,8 @@ const SubmenuNavigation = ({
             title: "Products",
             link: "/products",
             links: [
-                { href: "/", text: "UnifyAI" },
-                { href: "/", text: "InsurAInce" },   
+                { href: "/unify", text: "UnifyAI" },
+                { href: "/insuraince", text: "InsurAInce" },   
             ],
         },
     };
@@ -52,8 +52,6 @@ const SubmenuNavigation = ({
                         href={submenuSection.link}
                         className=""
                         onClick={(e) => {
-                            e.preventDefault();
-                            navigateTo(submenuSection.link);
                             setOpenMobileMenu(false);
                             setOpenSection(null);
                         }}
@@ -95,8 +93,6 @@ const SubmenuNavigation = ({
                                     href={link.href}
                                     className="link-line"
                                     onClick={(e) => {
-                                        e.preventDefault();
-                                        navigateTo(link.href);
                                         setOpenMobileMenu(false);
                                         setOpenSection(null);
                                     }}

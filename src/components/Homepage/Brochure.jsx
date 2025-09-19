@@ -47,7 +47,7 @@ const Brochure = () => {
                   25+ proven AI use cases across the policy lifecycle
                 </h3>
                 <div className="w-full flex flex-col h-fit space-y-[1.5vw]">
-                  <h4 className="title-3">AI/ML</h4>
+                  <h4 className="text-50">AI/ML</h4>
                   <ul className="list-disc pl-[2vw] space-y-[0.2vw]">
                     <li>Fraud detection</li>
                     <li>​ Claims</li>
@@ -86,7 +86,7 @@ const Brochure = () => {
                   300+ ready-to-deploy GenAI agents trained on insurance data 
                 </h3>
                 <div className="w-full flex flex-col h-fit space-y-[1.5vw]">
-                  <h4 className="title-3">GenAI Agents​</h4>
+                  <h4 className="text-50">GenAI Agents​</h4>
                   <ul className="list-disc pl-[2vw] space-y-[0.2vw]">
                     <li>Sales and Marketing​</li>
                     <li>​ Underwriting​</li>

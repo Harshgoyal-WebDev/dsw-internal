@@ -267,7 +267,7 @@ const WhyUnify = () => {
     >
       <div className="flex flex-col items-center w-full pb-[7vw] space-y-30 px-10 sticky h-screen top-[10%] z-[2]">
         <div className="space-y-24 w-full">
-          <h3 className="title-2 text-primary-1 text-center font-light headingAnim">
+          <h3 className="text-60 text-primary-1 text-center font-light headingAnim">
             Why DSW UnifyAI is the OS for AI?
           </h3>
 
@@ -382,9 +382,9 @@ const WhyUnify = () => {
                 ref={addToContentRefs}
                 className="step-block absolute top-20 left-0"
               >
-                <p className="text-[2.6vw] text-black font-head leading-[1.2]">
+                <h3 className="text-50 text-black font-head ">
                   The Freedom to Own AI
-                </p>
+                </h3>
                 <p className="text-black content-p w-[88%] py-8">
                   The power of OpenAI, but entirely inside your infrastructure
                   with your data, your compliance, and your governance.
@@ -402,9 +402,9 @@ const WhyUnify = () => {
                 ref={addToContentRefs}
                 className="step-block absolute top-20 left-0"
               >
-                <p className="text-[2.6vw] text-black font-head leading-[1.2]">
+                <h3 className="text-50 text-black font-head ">
                   Unified AI Lifecycle
-                </p>
+                </h3>
                 <p className="text-black content-p w-[88%] py-8">
                   One platform for the full journey from data to deployment to
                   continuous learning, eliminating silos and execution gaps.
@@ -422,9 +422,9 @@ const WhyUnify = () => {
                 ref={addToContentRefs}
                 className="step-block absolute top-20 left-0"
               >
-                <p className="text-[2.6vw] text-black font-head leading-[1.2]">
+                <h3 className="text-50 text-black font-head ">
                   Governance by Design
-                </p>
+                </h3>
                 <p className="text-black content-p w-[88%] py-8">
                   Security, compliance, and trust baked in with role-based
                   access, explainability, audit trails, and approval workflows.
@@ -442,9 +442,9 @@ const WhyUnify = () => {
                 ref={addToContentRefs}
                 className="step-block absolute top-10 left-0"
               >
-                <p className="text-[2.6vw] text-black font-head leading-[1.2]">
+                <h3 className="text-50 text-black font-head ">
                   Sector-Agnostic, Vertically Accelerated
-                </p>
+                </h3>
                 <p className="text-black content-p w-[88%] py-8">
                   Supports enterprises across industries, combining a
                   sector-agnostic core with domain-focused accelerators to

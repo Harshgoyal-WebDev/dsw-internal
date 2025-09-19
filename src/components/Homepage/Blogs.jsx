@@ -71,7 +71,7 @@ const Blogs = () => {
     <section ref={blogsRef} className='h-full w-screen  relative  overflow-hidden max-sm:my-0 !pr-0 container  max-sm:!pr-[7vw]'>
       <div className='h-full w-full flex items-start justify-between  max-sm:flex-col max-sm:pl-0'>
         <div className='w-1/2 space-y-10 max-sm:w-full'>
-          <h2 className='title-2 leading-[1.2] w-[90%] headingAnim font-head text-white-200'>Stay Ahead with AI Insights</h2>
+          <h2 className='text-90 leading-[1.2] w-[65%] headingAnim font-head text-white-200 max-sm:w-[90%]'>Stay Ahead with AI Insights</h2>
           <Copy>
           <p className='text-[#CACACA] w-[72%] leading-[1.4] max-sm:w-full'>stay informed with expert insights, industry updates, and real-world use cases from UnifyAI. Whether you&apos;re looking for the latest in Generative AI, AI governance, or enterprise AI adoption, we&apos;ve got you covered.</p>
           </Copy>

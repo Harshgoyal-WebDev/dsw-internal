@@ -52,20 +52,20 @@ export default function PresentationLayer() {
         .from(
           AIStudioRef.current,
           {
-            rotationX: "50",
-            yPercent: -60,
+            rotationX: "60",
+            yPercent: -70,
             opacity: 0,
-            xPercent: -15,
+            xPercent: -8,
           },
           0
         )
         .from(
           GenAIStudioRef.current,
           {
-            rotationX: "50",
-            yPercent: -60,
+            rotationX: "60",
+            yPercent: -70,
             opacity: 0,
-            xPercent: 15,
+            xPercent: 8,
           },
           0
         )
@@ -144,7 +144,7 @@ export default function PresentationLayer() {
             <div className="w-full h-full">
               <p className="text-[1.5vw] max-sm:text-[5.5vw] ">AI Studio</p>
               <div className="py-[1.8vw] max-sm:py-[6vw] border-b relative border-white/20 flex justify-evenly items-center w-full pl-[5vw]">
-                <p className="text-content absolute top-1/2 max-sm:left-[-10%] max-sm:!text-[4.2vw] left-[-5%] translate-y-[-50%] rotate-[-90deg]">
+                <p className=" absolute top-1/2 max-sm:left-[-10%] max-sm:!text-[4.2vw] left-[-5%] translate-y-[-50%] rotate-[-90deg]">
                   Core Tools
                 </p>
                 {coreTools.map((tool, index) => (
@@ -155,7 +155,7 @@ export default function PresentationLayer() {
 
             <div className="w-full h-full">
               <div className="py-[1vw] max-sm:py-[6vw] flex-nowrap relative flex justify-evenly items-start w-full pl-[5vw]">
-                <p className="text-content absolute top-1/2 max-sm:left-[-10%] max-sm:!text-[4.2vw] left-[-5%] translate-y-[-50%] rotate-[-90deg]">
+                <p className=" absolute top-1/2 max-sm:left-[-10%] max-sm:!text-[4.2vw] left-[-5%] translate-y-[-50%] rotate-[-90deg]">
                   Capabilities
                 </p>
                 <div className="flex-row flex-wrap justify-center gap-x-[5vw] gap-[0.5vw] max-sm:gap-y-[4vw] flex w-full items-center">
@@ -173,7 +173,7 @@ export default function PresentationLayer() {
             <div className="w-full h-full">
               <p className="text-[1.5vw] max-sm:text-[5.5vw]">Gen AI Studio</p>
               <div className="py-[1.8vw] max-sm:py-[6vw] border-b relative border-white/20 flex justify-between max-sm:items-start items-center w-full px-[3vw] max-sm:px-0 max-sm:pr-[13vw] pr-[5vw]  max-sm:gap-[3vw]">
-                <p className="text-content absolute top-1/2 right-[-5%] max-sm:right-[-13%] translate-y-[-50%] max-sm:!text-[4.2vw] rotate-[90deg]">
+                <p className=" absolute top-1/2 right-[-5%] max-sm:right-[-13%] translate-y-[-50%] max-sm:!text-[4.2vw] rotate-[90deg]">
                   Core Tools
                 </p>
 
@@ -185,7 +185,7 @@ export default function PresentationLayer() {
 
             <div className="w-full flex items-start justify-center h-fit">
               <div className="py-[1.4vw] max-sm:w-full max-sm:py-[6vw] flex-nowrap relative flex justify-evenly items-center w-full max-sm:pr-0 pr-[5vw]">
-                <p className="text-content absolute top-1/2 max-sm:!text-[4.2vw] right-[-5%] max-sm:right-[-15%] translate-y-[-50%] rotate-[90deg]">
+                <p className=" absolute top-1/2 max-sm:!text-[4.2vw] right-[-5%] max-sm:right-[-15%] translate-y-[-50%] rotate-[90deg]">
                   Capabilities
                 </p>
                 <div className="flex-row flex-wrap max-sm:items-center max-sm:justify-center justify-center gap-x-[4vw] max-sm:gap-[4vw] gap-[2vw] max-sm:gap-y-[5vw] flex w-full max-sm:translate-x-[-8%] items-center">

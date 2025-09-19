@@ -19,7 +19,7 @@
   --text-100: 5.2vw;
   --text-90: 4.5vw;
   --text-60: 3.4vw;
-  --text-50: 2.8vw;
+  --text-50: 2.6vw;
   --text-40:2vw;
   --text-30: 1.55vw;
 }
@@ -369,8 +369,8 @@ h4 {
 
 @media (max-width: 542px) {
   :root {
-    --text-100: 14vw;
-    --text-90: 11.5vw;
+    --text-100: 12.5vw;
+    --text-90: 11vw;
     --text-60: 9vw;
     --text-50: 7.5vw;
     --text-40: 7.5vw;

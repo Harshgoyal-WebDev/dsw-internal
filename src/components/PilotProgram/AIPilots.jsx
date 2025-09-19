@@ -26,9 +26,9 @@ const PilotCard = ({ id, icon, title, para }) => {
             className="w-[5vw] h-[5vw] object-contain max-sm:w-[20vw] max-sm:h-[20vw]"
           />
           <div className="space-y-[2vw]">
-            <p className="text-[1.5vw] text-white-200 leading-[1.25] max-sm:text-[7.5vw] max-sm:w-[72%] max-sm:text-center max-sm:h-fit">
+            <h4 className="text-30 text-white-200 max-sm:!text-[7.5vw] max-sm:w-[72%] max-sm:text-center max-sm:h-fit">
               {title}
-            </p>
+            </h4>
             <p className="text-white-300 content-p h-28 max-sm:w-[80%] max-sm:text-center max-sm:h-auto">
               {para}
             </p>
@@ -63,7 +63,7 @@ const AIPilots = () => {
       >
         <div className="w-full h-full  relative z-[2] space-y-[7vw] container">
           <div className="space-y-5 mt-10 max-sm:space-y-10">
-            <h2 className="title-1 !leading-[1.35] max-sm:!text-[10vw] headingAnim text-white-200 max-sm:!leading-[1.2] max-sm:text-center">
+            <h2 className="text-90 headingAnim text-white-200 max-sm:text-center">
               AI Pilots Built for Your Industry
             </h2>
             <Copy>

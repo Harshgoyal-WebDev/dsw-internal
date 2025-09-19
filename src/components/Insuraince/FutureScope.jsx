@@ -98,14 +98,14 @@ const FutureScope = () => {
 
   return (
     <div className="container overflow-hidden future-section h-[100vh] max-sm:h-full relative max-sm:gap-[5vw] flex flex-col gap-[2.8vw] justify-center items-center">
-      <h2 className="title-1 headingAnim text-center text-white-200 max-sm:!text-[11.5vw]">
+      <h2 className="text-90 headingAnim text-center text-white-200">
         Ready for the Future
         <br />
         of Insurance AI 
       </h2>
 
       <Copy>
-        <p className="text-white-300 w-[55%] max-sm:w-[100%] text-center leading-[1.4] max-sm:px-[2vw]">
+        <p className="text-white-300 w-[55%] max-sm:w-[100%] text-center max-sm:px-[2vw]">
           insurAInce isn’t just built for today’s problems. It’s built for
           tomorrow’s scale. AI in insurance is moving beyond pilots and isolated
           use cases. insurAInce is building what’s next — an integrated
@@ -114,7 +114,7 @@ const FutureScope = () => {
       </Copy>
 
       <div className="hidden max-sm:block w-full max-sm:pt-[10vw]">
-        <div className="flex flex-col gap-[8vw]">
+        <div className="flex flex-col gap-[7vw]">
           {scope.map((card, index) => (
             <div key={index} className="">
               <MobileCard id={card.id} content={card.content} />
@@ -123,7 +123,7 @@ const FutureScope = () => {
         </div>
       </div>
 
-      <div className="absolute future-card w-[100vw] max-sm:hidden inset-0 flex px-[8vw] gap-[0.5 vw] flex-col items-start">
+      <div className="absolute future-card w-[100vw] max-sm:hidden inset-0 flex px-[8vw] gap-[0.5vw] flex-col items-start">
         <div className="flex w-full justify-start">
           <div
             className="relative w-[27.5vw] rounded-[2.5vw] group cursor-pointer

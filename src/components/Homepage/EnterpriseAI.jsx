@@ -65,13 +65,13 @@ const EnterpriseAI = () => {
     >
       <div className="w-full h-full flex flex-col items-center justify-center relative z-[2] space-y-[5vw] max-sm:items-start max-sm: ">
         <div className="text-center  space-y-5 mt-10 flex flex-col items-center justify-center max-sm:text-left max-sm:items-start">
-          <h3 className="title-1 leading-[1.2] headingAnim text-[#1626FD] enterprise-title ">
+          <h2 className="text-90 leading-[1.2] headingAnim text-[#1626FD] enterprise-title ">
             Built to Orchestrate Enterprise AI
-          </h3>
+          </h2>
           <div className="w-[70%] flex justify-center text-[#111111] enterprise-content max-sm:w-full">
             <Copy>
             <p>
-              From insurance to banking, retail, and more - UnifyAI is the backbone for enterprises <br/> that want to build, deploy, and scale AI
+              From insurance to banking, retail, and more - UnifyAI is the backbone for <br/> enterprises that want to build, deploy, and scale AI
               with speed and confidence. ​
             </p>
             </Copy>

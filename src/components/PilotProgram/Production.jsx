@@ -163,12 +163,12 @@ const ProductionCard = ({ className, title, para }) => {
       
       {/* Content */}
       <div className="relative max-sm:flex max-sm:items-start max-sm:justify-between max-sm:flex-col z-10 h-full">
-        <div 
+        <h4
           ref={titleRef}
-          className="absolute left-0 max-sm:w-full max-sm:relative  bottom-0 !leading-[1.2] text-white text-[2.8vw] font-head w-[80%] max-sm:text-[8vw] max-sm:-translate-y-[120px]"
+          className="absolute left-0 max-sm:w-full max-sm:relative  bottom-0  text-white text-50 font-head w-[80%] max-sm:-translate-y-[120px]"
         >
           {title}
-        </div>
+        </h4>
         <div className="absolute max-sm:relative left-0 right-[1vw] bottom-0 overflow-hidden">
           <p 
             ref={paraRef}
@@ -240,9 +240,9 @@ if(globalThis.innerWidth>1024){
         <div className='container h-full w-full'>
             <div className='w-full space-y-[5vw] flex flex-col items-center justify-center'>
                 <div className='flex flex-col items-center justify-center text-center  gap-[2vw] w-[70%] mx-auto max-sm:w-full max-sm:mx-0 max-sm:gap-[10vw]'>
-                    <h2 className='text-[5vw] leading-[1.2] headingAnim text-white-200 max-sm:!text-[10vw]'>Production Pilot: Experience the AI Platform. See Results. Commit with Certainty.</h2>
+                    <h2 className='text-90 headingAnim text-white-200'>Production Pilot: Experience the AI Platform. See Results. Commit with Certainty.</h2>
                     <Copy>
-                        <h3 className='text-[2.5vw] text-white-200 w-[80%] leading-[1.2] max-sm:text-[7.5vw] max-sm:w-full'>Accelerate AI and GenAI deployment in record time, swiftly and at scale.</h3>
+                        <h3 className='text-50 text-white-200 w-[80%] max-sm:w-full'>Accelerate AI and GenAI deployment in record time, swiftly and at scale.</h3>
                     </Copy>
                     <Copy>
                         <p className='text-white-300 w-[90%]'>Sign up for the UnifyAI Production Pilot — your low-risk, structured path to validating and deploying AI and GenAI use cases across core business functions, no matter the industry sector.</p>

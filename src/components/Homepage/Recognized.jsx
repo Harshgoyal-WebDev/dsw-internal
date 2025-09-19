@@ -34,9 +34,9 @@ const Recognized = () => {
         >
             <div className="w-full h-full flex flex-col items-center justify-center relative z-[2] space-y-[3vw]">
                 <div className="text-center  space-y-5 mt-10 max-sm:space-y-10">
-                    <h3 className="title-2 !leading-[1.35] headingAnim text-[#E8E8E8] max-sm:!leading-[1.2]">
+                    <h2 className="text-60  headingAnim text-[#E8E8E8]">
                         Recognized for real-world AI enterprise impact
-                    </h3>
+                    </h2>
                     <Copy>
                     <p className=" text-[#CACACA] w-[60%] mx-auto leading-[1.5] max-sm:w-full">
                         Trusted by enterprises. Validated by the world&apos;s leading benchmarks

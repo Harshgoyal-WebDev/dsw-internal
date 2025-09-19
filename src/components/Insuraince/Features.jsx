@@ -134,8 +134,8 @@ const Features = () => {
       <div
         className="bg-primary features-div sticky max-sm:relative top-0 h-fit flex flex-col container !px-0"
       >
-        <div className="w-[47%] max-sm:w-[90%] pl-[5vw] max-sm:pl-0  max-sm:mx-auto space-y-[1vw] max-sm:space-y-[6vw]">
-          <h2 className="title-2 headingAnim w-[100%] max-sm:text-center text-white-200">
+        <div className="w-[47%] max-sm:w-[90%] pl-[5vw] max-sm:pl-0  max-sm:mx-auto space-y-[1.5vw] max-sm:space-y-[6vw]">
+          <h2 className="text-60 headingAnim w-[100%] max-sm:text-center text-white-200 max-sm:!text-[11.5vw]">
             The Unified AI Platform Built for Insurance Enterprises
           </h2>
 
