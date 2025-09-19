@@ -19,7 +19,7 @@ const Card = ({ src, content }) => {
                        
       <p className="text-white-300 text-12 font-display">{content}</p>
              
-      <div className="w-full  h-[1px] lineDraw bg-foreground/30 mt-auto" />
+      <div className="w-full  h-[1px] bottom-[-15%] absolute lineDraw bg-foreground/30 mt-auto" />
     </div>
   );
 };
@@ -77,7 +77,7 @@ const Outcomes = () => {
       </div>
 
       <div className="hidden max-sm:block max-sm:pt-[3vh]">
-            <div className="flex flex-col gap-[10vw]">
+            <div className="flex flex-col gap-[14vw]">
 
                {cardsData.map((card, index) => (
               <Card key={index} src={card.src} content={card.content} />
