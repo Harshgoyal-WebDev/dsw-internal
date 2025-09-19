@@ -9,12 +9,14 @@ import Recognized from '@/components/Homepage/Recognized'
 import Layout from '@/components/Layout'
 import React from 'react'
 import TechPartners from '@/components/AboutPage/TechPartners'
+import Journey from '@/components/AboutPage/Journey'
 
 export default function page() {
     return (
         <Layout>
             <Hero heroData={heroData} />
             <About />
+            <Journey />
             <TechPartners />
             <Clients />
             <Experts />

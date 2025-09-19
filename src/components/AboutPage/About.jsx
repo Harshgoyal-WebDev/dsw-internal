@@ -80,7 +80,7 @@ export default function About() {
 
 
   return (
-    <section className="w-screen container relative z-[10]" id="about" >
+    <section className="w-screen container mt-[-5%] max-sm:mt-0 relative z-[10]" id="about" >
       <div className="w-full flex flex-col items-center justify-center gap-y-[10vw] max-sm:gap-y-[15vw]">
         <SectionBreak text={" At Data Science Wizards (DSW), we believe that AI should be accessible, scalable, and enterprise-ready—not locked behind complexity. That’s why we built UnifyAI, a next-generation platform that simplifies the entire AI lifecycle for businesses across industries."} span={true}/>
 
