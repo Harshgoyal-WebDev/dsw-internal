@@ -172,6 +172,27 @@ h4 {
   }
 }
 
+.clients-marquee {
+  display: flex;
+  white-space: nowrap;
+  width: 100vw;
+}
+
+.clients-marquee__track {
+  display: flex;
+  width: fit-content;
+  animation: clients-marquee 15s linear infinite;
+}
+
+@keyframes clients-marquee {
+  0% {
+    transform: translateX(-2%);
+  }
+  100% {
+    transform: translateX(-35.9%);
+  }
+}
+
 .background-glass {
   background: linear-gradient(
     90.17deg,
@@ -374,7 +395,7 @@ h4 {
     --text-60: 9vw;
     --text-50: 7.5vw;
     --text-40: 7.5vw;
-    --text-30: 4.5vw;
+    --text-30: 5.7vw;
   }
 
   .title-1 {

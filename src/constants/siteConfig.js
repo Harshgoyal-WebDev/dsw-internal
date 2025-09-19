@@ -34,7 +34,7 @@ export const NAVIGATION = [
   { text: "About Us", href: "/about", id: "about" },
   { text: "Resources", href: "#", id: "resources" },
   { text: "Pilot Program", href: "/pilot-program", id: "pilot" },
-  { text: "Contact", href: "#", id: "contact" }
+  { text: "Contact", href: "/contact-us", id: "contact" }
 ];
 
 // Social media links

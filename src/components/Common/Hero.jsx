@@ -125,13 +125,13 @@ const Hero = ({ heroData }) => {
           >
             {heroData.para}
           </p>
-          <div className="flex items-center justify-center gap-6 mt-10 max-sm:flex-col max-sm:gap-[5vw]">
+          <div className={`flex items-center justify-center gap-6 mt-10 max-sm:flex-col max-sm:gap-[5vw] ${heroData.hidebtn ? "hidden":"flex"}`}>
             {[
               { Component: PrimaryButton, text: heroData.btnText1, link: heroData.link1 },
               { Component: WhiteButton, text: heroData.btnText2, link: heroData.link2 },
             ].map(({ Component, text }, index) => (
               <motion.div
-                key={text}
+                key={index}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{
                   opacity: 1,

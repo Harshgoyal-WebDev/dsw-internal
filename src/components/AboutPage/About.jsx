@@ -11,7 +11,7 @@ const POINTS = [
   {
     id: "01",
     title: "About",
-    text: "We are a deep-tech AI company on a mission to empower enterprises to transform their operations, products, and customer experiences through intelligent automation, secure data science practices, and domain-specific solutions.From traditional machine learning to Generative AI and large language models (LLMs), we help organizations go from proof of concept to production in record time—with confidence, clarity, and control.",
+    text:" We are a deep-tech AI company on a mission to empower enterprises to transform their operations, products, and customer experiences through intelligent automation, secure data science practices, and domain-specific solutions.<br/>From traditional machine learning to Generative AI and large language models (LLMs), we help organizations go from proof of concept to production in record time—with confidence, clarity, and control.",
     width: "w-full",
   },
   {
@@ -84,16 +84,15 @@ export default function About() {
       <div className="w-full flex flex-col items-center justify-center gap-y-[10vw] max-sm:gap-y-[15vw]">
         <SectionBreak text={" At Data Science Wizards (DSW), we believe that AI should be accessible, scalable, and enterprise-ready—not locked behind complexity. That’s why we built UnifyAI, a next-generation platform that simplifies the entire AI lifecycle for businesses across industries."} span={true}/>
 
-        <div className="flex flex-col items-end gap-[5vw] max-sm:w-full max-sm:gap-[15vw] max-sm:items-start">
+        <div className="flex flex-col items-end gap-[5vw] max-sm:w-full max-sm:gap-[15vw] max-sm:items-start max-sm:mt-[10vw]">
           {POINTS.map(({ id, text, width, title }) => (
             <div
               key={id}
-              className="w-[58%] flex gap-[5vw] items-start about-item max-sm:w-full max-sm:flex-col"
+              className="w-[58%] flex gap-[5vw] items-start about-item max-sm:w-[98%] max-sm:flex-col"
             >
               <div className="w-[15%] relative max-sm:w-[30%]">
                 <div className="relative fadeup w-[6.5vw] h-[6.5vw] border border-[#59595980] rounded-full flex items-center justify-center max-sm:w-[18vw] max-sm:h-[18vw] max-sm:border-primary-1">
-                
-
+                  
                   <p className="about-id text-white-200 text-[1.5vw] font-head relative z-[1] max-sm:text-[4.2vw] max-sm:text-primary-1">
                     {id}
                   </p>
@@ -101,12 +100,12 @@ export default function About() {
               </div>
               <div className="space-y-[1.8vw] max-sm:space-y-[4vw]">
                 <Copy>
-                  <p className="text-[1vw] w-[80%] uppercase max-sm:text-[5vw] text-white-200 ">
+                  <h4 className=" w-[80%] uppercase max-sm:text-[5vw] text-white-200 ">
                     {title}
-                  </p>
+                  </h4>
                 </Copy>
                 <Copy>
-                  <p className="text-white-300 w-[38vw] max-sm:w-full">{text}</p>
+                  <div className="text-white-300 w-[38vw] max-sm:w-full" dangerouslySetInnerHTML={{__html:text}}/>
                 </Copy>
               </div>
             </div>

@@ -4,101 +4,56 @@ import Copy from "../Animations/Copy";
 
 const OfficeLocations = () => {
   return (
-    <section className="relative h-full  py-[7%] px-[5vw] mb-[20vh] max-sm:px-0">
+    <section className="relative h-full  container  max-sm:px-0 max-sm:space-y-[7vw]">
 
-         <h2 className='title-1 max-sm:pl-[7vw] max-sm:!text-[11.5vw] max-sm:text-left text-center headingAnim pb-[5vw] max-sm:pb-[15vw]'>
+         <h2 className='text-90  max-sm:text-left text-center headingAnim'>
             Our Office Locations
         </h2>
-      <div className="w-[100vw] h-[80vh] max-sm:h-full px-[8vw] max-sm:px-[2vw]  relative ">
+      <div className="w-[80vw] h-full max-sm:h-full  relative  fadeup mx-auto">
         <Image
-          src="/assets/images/contact/Group.png"
-          width={1000}
-          height={1000}
+          src="/assets/images/contact/location-map.png"
+          width={1565}
+          height={1043}
           alt="map"
-          className="h-full w-auto object-cover"
+          className="h-full w-full object-contain scale-[1.2]"
         />
       </div>
 
-      <div className="absolute max-sm:hidden left-[5%] bottom-[25%] w-[20%] space-y-[1vw]">
-        <p className="text-head text-[2.6vw]"> USA</p>
-
-        <p className="text-whit-300">
-          Data Science Wizards Limited, Business Centre, NCI, Mayor Street,
-          IFSC, Dublin 1, D01 K6W2
-        </p>
-      </div>
-
-      <div className="absolute max-sm:hidden left-[42%] bottom-[5%] w-[20%] space-y-[1vw]">
-        <p className="text-head text-[2.6vw]"> Ireland </p>
-
-        <p className="text-whit-300">
-          Data Science Wizards Limited, Business Centre, NCI, Mayor Street,
-          IFSC, Dublin 1, D01 K6W2
-        </p>
-      </div>
-
-      <div className="absolute max-sm:hidden right-[3%] top-[54%] w-[18%] space-y-[1vw]">
-        <p className="text-head text-[2.6vw]"> India</p>
-
-        <p className="text-whit-300">
-          707, 7th Floor, Lodha Supremus II Road No. 22, Wagle Estate, Thane -
-          West - 400604
-        </p>
-      </div>
-
-      <div className="h-[2.5vw] w-auto absolute max-sm:h-[5.5vw] bottom-[47%] max-sm:top-[28%] max-sm:left-[18%] left-[25%]">
-        <Image src='/assets/images/contact/pin.svg' className="h-full w-full object-cover" width={400} height={400} alt='pin' />
-      </div>
-
-       <div className="h-[2.5vw] w-auto absolute max-sm:h-[5.5vw] bottom-[53%] max-sm:top-[26%] max-sm:left-[40%] left-[43%]">
-        <Image src='/assets/images/contact/pin.svg' className="h-full w-full object-cover" width={400} height={400} alt='pin' />
-      </div>
-
-
-       <div className="h-[2.5vw] w-auto absolute max-sm:h-[5.5vw] bottom-[37%] max-sm:top-[32%] max-sm:right-[28%] right-[32%]">
-        <Image src='/assets/images/contact/pin.svg' className="h-full w-full object-cover" width={400} height={400} alt='pin' />
-      </div>
-
-      <div className="hidden max-sm:block max-sm:px-[7vw]  max-sm:pt-[7vw] max-sm:space-y-[9vw]">
-        <div className=" w-full space-y-[1vw] max-sm:space-y-[3vw]">
-          <Copy>
-
-        <p className="text-head text-[2.6vw] max-sm:text-[8vw]"> USA</p>
-
-        <p className="text-whit-300 ">
-          Data Science Wizards Limited, Business Centre, NCI, Mayor Street,
-          IFSC, Dublin 1, D01 K6W2
-        </p>
-          </Copy>
-      </div>
-
-      <div className=" w-full space-y-[1vw] max-sm:space-y-[3vw]">
+      <div className="absolute max-sm:static left-[5%] bottom-[25%] w-[20%] space-y-[1vw] max-sm:w-[80%]  max-sm:space-y-[3vw]">
         <Copy>
-
-        <p className="text-head text-[2.6vw] max-sm:text-[8vw]"> India</p>
-
-        <p className="text-whit-300">
-          707, 7th Floor, Lodha Supremus II Road No. 22, Wagle Estate, Thane -
-          West - 400604
-        </p>
+        <p className="text-head text-50"> USA</p>
         </Copy>
-      </div>
-
-      <div className=" w-full space-y-[1vw] max-sm:space-y-[3vw]">
-
-        <Copy>
-          
-        <p className="text-head text-[2.6vw] max-sm:text-[8vw]"> Ireland </p>
-
-        <p className="text-whit-300">
+<Copy>
+        <p className="text-white-300">
           Data Science Wizards Limited, Business Centre, NCI, Mayor Street,
           IFSC, Dublin 1, D01 K6W2
         </p>
         </Copy>
       </div>
 
+      <div className="absolute max-sm:static left-[40%] bottom-[15%] w-[20%] space-y-[1vw] max-sm:w-[80%]  max-sm:space-y-[3vw]">
+        <Copy>
+        <p className="text-head text-50"> Ireland </p>
+        </Copy>
+        <Copy>
+        <p className="text-white-300">
+          Data Science Wizards Limited, Business Centre, NCI, Mayor Street,
+          IFSC, Dublin 1, D01 K6W2
+        </p>
+        </Copy>
       </div>
 
+      <div className="absolute max-sm:static right-[3%] top-[50%] w-[18%] space-y-[1vw] max-sm:w-[80%]  max-sm:space-y-[3vw]">
+        <Copy>
+        <p className="text-head text-50"> India</p>
+        </Copy>
+<Copy>
+        <p className="text-white-300">
+          707, 7th Floor, Lodha Supremus II Road No. 22, Wagle Estate, Thane -
+          West - 400604
+        </p>
+        </Copy>      
+        </div>
 
     </section>
   );
