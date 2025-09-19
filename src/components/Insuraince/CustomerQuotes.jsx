@@ -159,7 +159,7 @@ const ExpandablePanels = () => {
       </div>
 
       {/* Mobile Accordion  */}
-      <div className="flex flex-col w-full px-[2vw] max-sm:block hidden">
+      <div className=" flex-col w-full px-[2vw] max-sm:block hidden">
         {panelsData.map((panel, index) => (
           <div
             key={index}

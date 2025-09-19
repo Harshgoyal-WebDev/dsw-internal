@@ -7,6 +7,7 @@ import "swiper/css";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Copy from "../Animations/Copy";
+import { NextButton, PreviousButton } from "../Button/SliderButtons";
 
 export default function Experts() {
   useGSAP(() => {
@@ -39,11 +40,11 @@ export default function Experts() {
 
   return (
     <section className="relative w-full h-fit space-y-[6vw] container">
-      <div className="w-full flex h-full  gap-[1vw] items-end justify-between">
-        <p className="title-1 headingAnim w-[50%]">
+      <div className="w-full flex h-full  gap-[1vw] items-end justify-between max-sm:flex-col max-sm:items-start">
+        <h2 className="title-1 headingAnim w-[50%] max-sm:w-full">
           Driven by Vision. Built by Experts.
-        </p>
-        <div className="flex gap-[1vw]">
+        </h2>
+        {/* <div className="flex gap-[1vw]">
           <div
             className={`w-[3.5vw] p-[.8vw] btns flex items-center justify-center rounded-full h-[3.5vw]  rotate-180 bg-black/10 border border-white/50 ${activeIndex === 0 ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
             onClick={activeIndex !== 0 ? handlePrev : undefined}
@@ -82,7 +83,11 @@ export default function Experts() {
               />
             </svg>
           </div>
-        </div>
+        </div> */}
+        <div className='flex gap-6 mt-12 max-sm:mt-10 max-sm:items-center max-sm:justify-center'>
+                    <PreviousButton onClick={handlePrev} />
+                    <NextButton onClick={handleNext} />
+                  </div>
       </div>
       <div className="h-fit flex items-center justify-center  w-full">
         <Swiper

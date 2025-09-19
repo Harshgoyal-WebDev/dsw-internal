@@ -4,6 +4,7 @@ import React from "react";
 import Copy from "../Animations/Copy";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import SectionBreak from "../Common/SectionBreak";
 
 export default function AiEverywhere() {
   useGSAP(() => {
@@ -23,15 +24,7 @@ export default function AiEverywhere() {
     <>
       <section className="h-full z-[10] max-sm:mt-[60%] w-screen container">
         <div className="flex flex-col items-center justify-between space-y-[10vw] max-sm:space-y-[25vw] w-full">
-          <div className="  h-full">
-            <Copy>
-              <p className="!font-head text-[2.8vw] max-sm:text-[8vw] font-normal leading-[1.4] text-center text-white-200">
-                Even today, most enterprises struggle to move from pilot to
-                production. Complex tech stacks, long timelines, and compliance
-                risks slow things down. DSW UnifyAI solves this.
-              </p>
-            </Copy>
-          </div>
+          <SectionBreak text={"Even today, most enterprises struggle to move from pilot to production. Complex tech stacks, long timelines, and compliance risks slow things down. DSW UnifyAI solves this."} span={false}/>
           <div className="space-y-[7vw] max-sm:space-y-[20vw]">
             <div className="flex h-full max-sm:flex-col items-center max-sm:gap-[10vw] gap-[12vw] justify-between">
               <p className="w-[45%]  max-sm:w-full max-sm:text-center title-3 text-nowrap font-head headingAnim text-[2.8vw] ">

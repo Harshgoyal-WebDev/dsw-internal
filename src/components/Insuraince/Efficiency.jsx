@@ -110,8 +110,8 @@ const Efficiency = () => {
 
       <div className="w-full flex justify-between items-start max-sm:hidden">
         {/* Stat 1 */}
-        <div className="flex flex-col items-start gap-[4vw] w-[20%]">
-          <div className="overflow-hidden  h-[10vh] w-fit items-center flex justify-start">
+         <div className="flex flex-col items-start gap-[1vw] w-[20%] ">
+          <div className="overflow-hidden h-[10vh]  w-fit items-center flex justify-start">
             <div className="w-fit flex flex-col items-center justify-center left-timer translate-y-[38%]">
               {TimeLd.map((digit, idx) => (
                 <p
@@ -124,7 +124,7 @@ const Efficiency = () => {
             </div>
 
             <div className="w-fit flex  flex-col items-center right-timer justify-center translate-y-[38%]">
-              {TimeRd.map((digit, idx) => (
+              {TCORd.map((digit, idx) => (
                 <p
                   key={idx}
                   className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.4vw] font-head "
@@ -134,7 +134,7 @@ const Efficiency = () => {
               ))}
             </div>
             <div>
-              <p className="bg-gradient-to-r font-head from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.4vw] ">
+              <p className="bg-gradient-to-r font-head  from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.4vw] ">
                 %
               </p>
             </div>
@@ -142,7 +142,7 @@ const Efficiency = () => {
 
           <Copy>
             <p className="tracking-wider text-white-300 leading-[1.4]">
-              faster time to market for AI and GenAI use cases
+               faster time to market for AI and GenAI use cases
             </p>
           </Copy>
         </div>

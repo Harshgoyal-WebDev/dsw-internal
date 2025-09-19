@@ -86,7 +86,7 @@ const Card = () => {
   }, [])
 
   return (
-    <div className="w-[17vw] relative bg-[#081B57] h-[20vh] flex justify-center items-center border border-white/10 rounded-[2vw] overflow-hidden">
+    <div className="w-[17vw] relative bg-[#081B57] h-[20vh] flex justify-center items-center border border-white/10 rounded-[2vw] overflow-hidden max-sm:h-[15vh] max-sm:w-[40vw] max-sm:rounded-[6vw]">
       {images.map((src, i) => (
         <div key={i} className="absolute" ref={(el) => (imgRefs.current[i] = el)}>
           <Image
@@ -94,7 +94,7 @@ const Card = () => {
             width={200}
             height={200}
             alt={`logo-${i}`}
-            className="h-[3.2vw] w-auto"
+            className="h-[3.2vw] w-auto max-sm:h-[7vw]"
           />
         </div>
       ))}
@@ -108,8 +108,8 @@ const TechPartners = () => {
 
   return (
 
-    <div className='flex justify-start items-start container'>
-        <div className='w-[40%] space-y-[2vw]'>
+    <div className='flex justify-start items-start container max-sm:flex-col'>
+        <div className='w-[40%] space-y-[2vw] max-sm:w-full max-sm:space-y-[7vw] max-sm:pb-[7vw]'>
 
            <h2 className="title-2 text-white-200  headingAnim">
         Technology
@@ -118,7 +118,7 @@ const TechPartners = () => {
       </h2>
 
         <Copy>
-                  <p className="text-white-300 w-[80%] max-sm:text-center max-sm:w-[100%]">
+                  <p className="text-white-300 w-[80%] max-sm:w-[100%]">
                    
         At Data Science Wizards, we believe that building world-class AI solutions requires more than just great ideas—it takes a powerful ecosystem. That’s why we partner with industry-leading technology providers, cloud platforms, and AI innovators to deliver secure, scalable, and future-proof solutions for our clients
       </p>
@@ -126,7 +126,7 @@ const TechPartners = () => {
 
         </div>
 
-    <div className="h-full w-[60%] grid grid-cols-3 space-x-[1vw] space-y-[1vw] ">
+    <div className="h-full w-[60%] grid grid-cols-3 space-x-[1vw] space-y-[1vw] max-sm:w-full max-sm:grid-cols-2 max-sm:space-y-[3vw] ">
        {shuffled.map((src, i) => (
            <Card key={i} startIndex={i} images={images} />
         ))}

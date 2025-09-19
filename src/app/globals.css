@@ -292,6 +292,31 @@ background: linear-gradient(90.17deg, rgba(255, 255, 255, 0.01) 0.01%, rgba(255,
     100% 1px;
 }
 
+.split__wrapper .split-chars {
+  transition: color 0.4s;
+  /* color: var(--background); */
+  color: rgba(255, 255, 255, 0.159) ;
+}
+
+.split__wrapper .split-chars.show {
+  animation: color-transition 0.5s;
+  color: var(--white-200);
+}
+
+@keyframes color-transition {
+  0% {
+    /* color: var(--background); */
+  color: rgba(255, 255, 255, 0.159) ;
+
+  }
+  30% {
+    color: var(--primary-2);
+  }
+  100% {
+    color: var(--white-200);
+  }
+}
+
 @media (max-width:542px) {
   .title-1 {
   font-size: 14vw;

@@ -21,9 +21,9 @@ export default function Guiders() {
   });
   return (
     <section className="container w-[95%] mx-auto space-y-[6.5vw]">
-      <p className="text-[4.5vw] w-full text-center headingAnim">
+      <h2 className="title-1 w-full text-center headingAnim">
         Guided by Industry Luminaries
-      </p>
+      </h2>
 
       <div className="flex w-[100%] items-start gap-[3vw] justify-between">
         {GuidersData.map((guider, index) => (

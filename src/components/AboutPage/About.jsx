@@ -1,9 +1,11 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Copy from "../Animations/Copy";
-gsap.registerPlugin(ScrollTrigger);
+import SplitText from 'gsap/SplitText';
+import SectionBreak from "../Common/SectionBreak";
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const POINTS = [
   {
@@ -75,68 +77,36 @@ export default function About() {
   //   });
   // }, []);
 
-  return (
-    <section className="w-screen container" id="about">
-      <div className="w-full flex flex-col items-center justify-center gap-y-[10vw] max-sm:gap-y-[15vw]">
-        <div className="text-[2.5vw] space-y-[2vw] max-sm:space-y-[5vw]">
-          <Copy>
-            <p className="text-white-200">
-              <span className="w-[20vw] inline-block h-[2px]" />
-              At Data Science Wizards (DSW), we believe that AI should be
-              accessible, scalable, and enterprise-ready—not locked behind
-              complexity. That’s why we built UnifyAI, a next-generation
-              platform that simplifies the entire AI lifecycle for businesses
-              across industries.
-            </p>
-          </Copy>
-        </div>
 
-        <div className="flex flex-col items-end gap-[5vw] max-sm:w-full max-sm:gap-[12vw]">
+
+  return (
+    <section className="w-screen container relative z-[10]" id="about" >
+      <div className="w-full flex flex-col items-center justify-center gap-y-[10vw] max-sm:gap-y-[15vw]">
+        <SectionBreak text={" At Data Science Wizards (DSW), we believe that AI should be accessible, scalable, and enterprise-ready—not locked behind complexity. That’s why we built UnifyAI, a next-generation platform that simplifies the entire AI lifecycle for businesses across industries."} span={true}/>
+
+        <div className="flex flex-col items-end gap-[5vw] max-sm:w-full max-sm:gap-[15vw] max-sm:items-start">
           {POINTS.map(({ id, text, width, title }) => (
             <div
               key={id}
-              className="w-[58%] flex gap-[5vw] items-start about-item"
+              className="w-[58%] flex gap-[5vw] items-start about-item max-sm:w-full max-sm:flex-col"
             >
               <div className="w-[15%] relative max-sm:w-[30%]">
-                <div className="relative fadeup w-[8vw] h-[8vw] flex items-center justify-center max-sm:w-[20vw] max-sm:h-[20vw]">
-                  <svg
-                    viewBox="0 0 120 120"
-                    className="absolute inset-0 h-full w-full"
-                  >
-                    <circle
-                      cx="60"
-                      cy="60"
-                      r="48"
-                      fill="none"
-                      stroke="rgba(139,92,246,.025)"
-                      strokeWidth="1.5"
-                    />
-                    <circle
-                      cx="60"
-                      cy="60"
-                      r="48"
-                      fill="none"
-                      stroke="currentColor"
-                      className="ring text-white-200/20"
-                      strokeWidth="1"
-                      strokeLinecap="round"
-                      transform="rotate(-90 60 60)"
-                    />
-                  </svg>
+                <div className="relative fadeup w-[6.5vw] h-[6.5vw] border border-[#59595980] rounded-full flex items-center justify-center max-sm:w-[18vw] max-sm:h-[18vw] max-sm:border-primary-1">
+                
 
-                  <p className="about-id text-white-200 text-[1.5vw] font-head relative z-[1] max-sm:text-[4.2vw]">
+                  <p className="about-id text-white-200 text-[1.5vw] font-head relative z-[1] max-sm:text-[4.2vw] max-sm:text-primary-1">
                     {id}
                   </p>
                 </div>
               </div>
-              <div className="space-y-[1.8vw]">
+              <div className="space-y-[1.8vw] max-sm:space-y-[4vw]">
                 <Copy>
-                  <p className="text-[1vw] w-[80%] uppercase max-sm:text-[2vw] text-white-200">
+                  <p className="text-[1vw] w-[80%] uppercase max-sm:text-[5vw] text-white-200 ">
                     {title}
                   </p>
                 </Copy>
                 <Copy>
-                  <p className="text-white-300 w-[38vw]">{text}</p>
+                  <p className="text-white-300 w-[38vw] max-sm:w-full">{text}</p>
                 </Copy>
               </div>
             </div>

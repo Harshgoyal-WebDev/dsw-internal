@@ -137,7 +137,7 @@ export default function Usecase() {
           <motion.div
             key={card.id}
             onClick={card.handleClick}
-            className={`h-full px-[3vw] py-[1.5vw] flex items-end flex-col absolute inset-0 pr-[8vw] cursor-pointer
+            className={`h-full px-[3vw] py-[1.5vw] flex items-end flex-col absolute inset-0 pr-[8vw] cursor-pointer group
                ${
                  activeCard === index
                    ? "bg-gradient-to-r from-[#041035] to-[#1727FF]"
@@ -150,7 +150,7 @@ export default function Usecase() {
           >
             {/* <div className="w-full flex items-start justify-end h-full "> */}
             <div
-              className={`py-[2.5vw] min-h-[15.5vh] flex items-center w-[85%] justify-between ${card.borderClass}`}
+              className={`py-[2.5vw] min-h-[15.5vh] flex items-center w-[85%] justify-between ${card.borderClass} `}
             >
               <span className="w-[75%] h-[1px] rounded-full bg-white/80 absolute top-[25%]"></span>
               
@@ -165,12 +165,14 @@ export default function Usecase() {
                 <div
                   className={`rounded-full absolute right-[3%] top-[12%] translate-y-[-50%] cursor-pointer h-[4vw] w-[4vw] border-[#888888]/80 p-[0.5vw] border ${
                     activeCard == index ? card.iconBg : "bg-white/5"
-                  } flex items-center justify-center hover:scale-110 hover:opacity-90 active:scale-95 active:opacity-80 transition-all duration-300`}
+                  } flex items-center justify-center  active:scale-95 active:opacity-80 transition-all duration-300`}
                 >
                   <div
-                    className={`transition-all duration-800`}
+                    className={`transition-all duration-800 ${
+                  activeCard === index ? "group-hover:rotate-[315deg] rotate-45" : "group-hover:rotate-[180deg]"
+                }`}
                   >
-                    <div className="relative w-[2.2vw] h-[2.2vw]">
+                    <div className={`relative w-[2.2vw] h-[2.2vw] `}>
                       <span
                         className={`w-[70%] rounded-full h-[2px] ${
                           activeCard === index ? "bg-black" : "bg-white"
@@ -183,7 +185,7 @@ export default function Usecase() {
                             ? "bg-black"
                             : "bg-white"
                         } absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-800 transition-all ${
-                          activeCard == index ? "rotate-0" : "-rotate-90"
+                          activeCard == index ? "rotate-90" : "rotate-90"
                         }`}
                       ></span>
                     </div>
