@@ -46,7 +46,7 @@ export default function Experts() {
           Driven by Vision. Built by Experts.
         </h2>
 
-        <div className='flex fadeup gap-6 mt-12 max-sm:mt-10 max-sm:items-center max-sm:justify-center max-sm:absolute max-sm:top-[90%] max-sm:right-[8%]'>
+        <div className='flex fadeup gap-6 mt-12 max-sm:mt-10 max-sm:items-center max-sm:justify-center max-sm:absolute max-sm:top-[85%] max-sm:right-[8%]'>
                     <PreviousButton onClick={handlePrev} />
                     <NextButton onClick={handleNext} />
                   </div>
