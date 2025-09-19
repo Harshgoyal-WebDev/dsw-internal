@@ -106,7 +106,7 @@ export default function PresentationLayer() {
       }}
       ref={sectionRef}
       id="presentationLayer"
-      className="h-fit container overflow-x-scroll flex-col fadeup gap-[.8vw] max-sm:gap-[3vw] w-[100%] mx-auto items-center justify-center text-center flex "
+      className="h-fit container flex-col fadeup gap-[.8vw] max-sm:gap-[3vw] w-[100%] mx-auto items-center justify-center text-center flex "
     >
       <div
         ref={presentationLayerRef}
