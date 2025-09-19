@@ -11,47 +11,41 @@ gsap.registerPlugin(ScrollTrigger);
 const UnifyAi = () => {
   useGSAP(() => {
     // existing title animations
-    gsap.from(".unify-title", {
-      scale: 0.2,
-      yPercent: 300,
-      ease: "none",
-      scrollTrigger: {
-        trigger: "#unifyAi",
-        start: "top bottom",
-        end: "17% 50%",
-        scrub: true,
-      },
-    });
-
     gsap.fromTo(
       ".unify-title",
-      { scale: 1 },
       {
-        scale: 80,
-        xPercent: -220,
+        scale: 0.2,
+      },
+      {
+        scale: 55,
+        translateX: "-150%",
         ease: "power1.in",
         scrollTrigger: {
           trigger: "#unifyAi",
-          start: "34% bottom",
-          end: "85% 50%",
+          start: "top 40%",
+          end: "70% 40%",
           scrub: true,
+          // markers:true,
         },
       }
     );
-    // const tl = gsap.timeline({scrollTrigger:{
-    //   trigger:"#unifyAi",
-    //   start:"top 50%",
-    //   end:"70% 50%",
-    //   scrub:true,
-    //   markers:true,
-    // }})
-    // tl.fromTo(".unify-title",{
-    //  scale:0.2
-    // },{
-    //  scale:50,
-    //  translateX:"-150%",
-    //  ease:"power1.in"
-    // })
+    gsap.fromTo(
+      ".unify-title",
+      {
+        yPercent: 350,
+      },
+      {
+        yPercent: 0,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: "#unifyAi",
+          start: "top 40%",
+          end: "25% 40%",
+          scrub: true,
+          // markers:true,
+        },
+      }
+    );
 
     // gradient transition timeline (3 stages)
     gsap.to(".unifyblock", {
@@ -103,7 +97,7 @@ const UnifyAi = () => {
 
   return (
     <section
-      className="w-screen h-[300vh] relative unifyContainer"
+      className="w-screen h-[400vh] relative unifyContainer"
       id="unifyAi"
     >
       {/* remove Tailwind gradient utilities here; keep only layout classes */}
@@ -126,11 +120,7 @@ const UnifyAi = () => {
           </p>
         </Copy>
         <div className="fadeup">
-          <PrimaryButton
-            background=""
-            href={"/"}
-            text={"Book a demo"}
-          />
+          <PrimaryButton background="" href={"/"} text={"Book a demo"} />
         </div>
       </div>
     </section>

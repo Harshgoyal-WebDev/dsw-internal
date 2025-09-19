@@ -88,7 +88,7 @@ const Insuraince = () => {
     >
       <div className="w-full space-y-[7.5vw] max-sm:space-y-[12vw]">
         <div className="text-center gap-y-[2.5vw] w-[65%] mx-auto flex flex-col items-center max-sm:w-full max-sm:gap-y-[10vw]">
-          <h2 className="title-2 headingAnim">
+          <h2 className="text-60 headingAnim">
             Introducing insurAInce - Purpose - Built AI platform for Insurance
             Enterprises​
           </h2>
@@ -132,7 +132,7 @@ const Card = ({ data, spanRef }) => {
           alt={data.title}
           className="w-[5vw] h-[5vw] object-contain max-sm:w-[20vw] max-sm:h-[20vw]"
         />
-        <h4 className="text-[2vw] text-white-200 leading-[1.25] max-sm:text-[7.5vw] max-sm:w-[72%] max-sm:text-center max-sm:h-fit">
+        <h4 className="text-40 text-white-200 leading-[1.25] max-sm:w-[72%] max-sm:text-center max-sm:h-fit">
           {data.title}
         </h4>
         <p className="text-white-300 content-p h-28 max-sm:w-[80%] max-sm:text-center max-sm:h-auto">{data.desc}</p>

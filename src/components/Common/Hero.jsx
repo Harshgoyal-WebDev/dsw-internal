@@ -116,7 +116,7 @@ const Hero = ({ heroData }) => {
         <div className="w-[70%] text-center space-y-6 pb-5 max-sm:w-[100%] max-sm:space-y-[12vw]">
           <h1
             ref={heading}
-            className="title-1 font-head heroHeadAnim text-[#E8E8E8] opacity-0 heroHead"
+            className="text-100 font-head heroHeadAnim text-[#E8E8E8] opacity-0 heroHead"
           >
             {heroData.heading}
           </h1>

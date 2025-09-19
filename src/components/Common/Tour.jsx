@@ -11,21 +11,7 @@ const Tour = ({heading,para}) => {
   const handleTabClick = (tabId) => {
     setActiveTab(tabId);
   };
-//   const [activeTab, setActiveTab] = useState("aiStudio");
-// const [visibleTab, setVisibleTab] = useState("aiStudio"); // this controls rendering
-// const [isAnimating, setIsAnimating] = useState(false);
 
-// const handleTabClick = (tabId) => {
-//   if (tabId === activeTab || isAnimating) return;
-//   setIsAnimating(true);
-
-//   // Start exit animation, then change tab
-//   setTimeout(() => {
-//     setActiveTab(tabId);
-//     setVisibleTab(tabId);
-//     setIsAnimating(false);
-//   }, 800); 
-// };
 
   const [isMobile, setIsMobile] = useState(false);
 
@@ -39,7 +25,7 @@ useEffect(() => {
   return (
     <section className="w-screen h-fit container" id="tour">
       <div className="w-full flex flex-col gap-[2vw] items-center max-sm:gap-[4vw]">
-        <h2 className="title-2 headingAnim w-[40%] max-sm:w-full text-center">{heading}</h2>
+        <h2 className="text-60 headingAnim w-[40%] max-sm:w-full text-center">{heading}</h2>
         <Copy>
           <p className="text-[#CACACA]">
             {para}

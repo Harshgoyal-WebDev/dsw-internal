@@ -27,8 +27,8 @@ const Brochure = () => {
       id="brochure"
     >
       <div className="w-full flex flex-col items-center justify-center gap-[5vw] max-sm:gap-[10vw]">
-        <h2 className="w-[70%] text-center title-2 headingAnim max-sm:w-full max-sm:text-left max-sm:!text-[12vw]">
-          Join the Fastest- Moving Insurers on Their AI Journey 
+        <h2 className="w-[70%] text-center text-60 headingAnim max-sm:w-full max-sm:text-left max-sm:!text-[11.5vw]">
+          Join the Fastest - Moving Insurers on Their AI Journey 
         </h2>
         <div className="w-full flex justify-center gap-[3vw] fadeup max-sm:hidden">
           <TiltedCard
@@ -43,7 +43,7 @@ const Brochure = () => {
             displayOverlayContent={true}
             overlayContent={
               <div className="w-full h-full px-[4vw] py-[4vw] flex flex-col justify-between">
-                <h3 className="text-[1.5vw] w-[85%] h-fit">
+                <h3 className="text-30 w-[85%] h-fit">
                   25+ proven AI use cases across the policy lifecycle
                 </h3>
                 <div className="w-full flex flex-col h-fit space-y-[1.5vw]">
@@ -82,7 +82,7 @@ const Brochure = () => {
             displayOverlayContent={true}
             overlayContent={
               <div className="w-full h-full px-[4vw] py-[4vw] flex flex-col justify-between">
-                <h3 className="text-[1.5vw] w-full h-fit">
+                <h3 className="text-30 w-full h-fit">
                   300+ ready-to-deploy GenAI agents trained on insurance data 
                 </h3>
                 <div className="w-full flex flex-col h-fit space-y-[1.5vw]">

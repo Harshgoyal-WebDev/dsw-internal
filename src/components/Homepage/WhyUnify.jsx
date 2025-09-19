@@ -13,106 +13,100 @@ const WhyUnify = () => {
   const sectionRef = useRef(null);
   const progressLineRef = useRef(null);
 
-  // Refs for each content block
   const contentRefs = useRef([]);
   contentRefs.current = [];
 
-  // Refs for each SVG circle (the progress indicator)
   const svgCircleRefs = useRef([]);
   svgCircleRefs.current = [];
 
-  // Refs for the left-side tags (text items)
   const tagRefs = useRef([]);
   tagRefs.current = [];
 
-  // Ref for the GSAP timeline
   const timelineRef = useRef(null);
 
+  // NEW: flag to disable snap during programmatic scrolls (tag clicks)
+  const isClickScrollingRef = useRef(false);
+
   const addToContentRefs = (el) => {
-    if (el && !contentRefs.current.includes(el)) {
-      contentRefs.current.push(el);
-    }
+    if (el && !contentRefs.current.includes(el)) contentRefs.current.push(el);
   };
-
   const addToCircleRefs = (el) => {
-    if (el && !svgCircleRefs.current.includes(el)) {
+    if (el && !svgCircleRefs.current.includes(el))
       svgCircleRefs.current.push(el);
-    }
   };
-
   const addToTagRefs = (el) => {
-    if (el && !tagRefs.current.includes(el)) {
-      tagRefs.current.push(el);
-    }
+    if (el && !tagRefs.current.includes(el)) tagRefs.current.push(el);
   };
 
   useLayoutEffect(() => {
     if (!sectionRef.current) return;
 
     const rafId = requestAnimationFrame(() => {
-      // if the section is hidden via CSS (e.g., responsive), skip setup
       const isHidden = () => {
         const el = sectionRef.current;
-        if (!el) return true;
         const style = window.getComputedStyle(el);
         return style.display === "none" || style.visibility === "hidden";
       };
       if (isHidden()) return;
 
       const ctx = gsap.context(() => {
-        // build timeline after DOM is ready/rendered
+        const steps = Math.max(1, contentRefs.current.length - 1);
+
         timelineRef.current = gsap.timeline({
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "10% 10%",
             end: "+=2000",
             scrub: 1,
-            snap:
-              contentRefs.current.length > 1
-                ? 1 / (contentRefs.current.length - 1)
-                : false,
-            // markers: true,
+            // CONDITIONAL SNAP: disable when programmatic click scrolling
+            snap: (value) => {
+              if (isClickScrollingRef.current) return value; // no snap
+              const total = contentRefs.current.length;
+              const stepCount = Math.max(1, total - 1);
+              return Math.round(value * stepCount) / stepCount;
+            },
             onUpdate: (self) => {
+              const progress = self.progress;
               const totalSteps = contentRefs.current.length;
-              const activeIndex = Math.min(
-                totalSteps - 1,
-                Math.floor(self.progress * totalSteps)
-              );
+              const stepsLocal = Math.max(1, totalSteps - 1);
 
-              // update circles
+              // Circles fill continuously with progress
               svgCircleRefs.current.forEach((circle, i) => {
+                const threshold = i / stepsLocal - 0.01; // slight bias like before
+                const isReached = progress >= threshold - 1e-6;
                 gsap.to(circle, {
-                  fill: i === activeIndex ? "#1626FD" : "#f8f8f8",
-                  duration: 0.3,
+                  fill: isReached ? "#1626FD" : "#f8f8f8",
+                  duration: 0.2,
+                  overwrite: true,
                 });
               });
 
-              // update tags
+              // Tags color when their threshold is reached (same rule as circles)
               tagRefs.current.forEach((tag, i) => {
+                const threshold = i / stepsLocal - 0.01;
+                const isReached = progress >= threshold - 1e-6;
                 gsap.to(tag, {
-                  color: i === activeIndex ? "#1626FD" : "rgba(0,0,0,0.5)",
-                  duration: 0.3,
+                  color: isReached ? "#1626FD" : "rgba(0,0,0,0.5)",
+                  duration: 0.2,
+                  overwrite: true,
                 });
+                // optional a11y state
+                tag.setAttribute("aria-pressed", isReached ? "true" : "false");
               });
             },
           },
         });
 
-        // ----- SAFE LENGTH -----
+        // --- PROGRESS LINE LENGTH (safe) ---
         const lineEl = progressLineRef.current;
-
         const safeGetTotalLength = () => {
           if (!lineEl) return 0;
           try {
             if (typeof lineEl.getTotalLength === "function") {
-              // can still throw if element is considered "non-rendered"
               const len = lineEl.getTotalLength();
               if (Number.isFinite(len) && len > 0) return len;
             }
-          } catch (_) {
-            // fall through to manual calc
-          }
-          // fallback for <line> elements
+          } catch (_) {}
           const x1 = parseFloat(lineEl.getAttribute("x1") || "0");
           const y1 = parseFloat(lineEl.getAttribute("y1") || "0");
           const x2 = parseFloat(lineEl.getAttribute("x2") || "0");
@@ -121,7 +115,6 @@ const WhyUnify = () => {
         };
 
         const totalLength = safeGetTotalLength();
-        const steps = Math.max(1, contentRefs.current.length - 1);
         const segmentLength = totalLength / steps;
 
         if (lineEl && totalLength > 0) {
@@ -131,22 +124,21 @@ const WhyUnify = () => {
           });
         }
 
-        // initial content state
+        // Initial states
         if (contentRefs.current[0]) {
           gsap.set(contentRefs.current[0], { opacity: 1, y: 0, zIndex: 1 });
         }
-
-        // initial circles
         svgCircleRefs.current.forEach((circle, i) => {
           gsap.set(circle, { fill: i === 0 ? "#1626FD" : "#f8f8f8" });
         });
-
-        // initial tags
         tagRefs.current.forEach((tag, i) => {
           gsap.set(tag, { color: i === 0 ? "#1626FD" : "rgba(0,0,0,0.5)" });
+          tag.style.cursor = "pointer";
+          tag.setAttribute("role", "button");
+          tag.setAttribute("tabIndex", "0");
         });
 
-        // timeline steps
+        // Timeline step-to-step transitions
         for (let i = 1; i < contentRefs.current.length; i++) {
           const currentOffset = totalLength - segmentLength * i;
 
@@ -184,10 +176,52 @@ const WhyUnify = () => {
             "<"
           );
         }
+
+        // TAG CLICK HANDLERS -> programmatic scroll (no snap)
+        const removeFns = [];
+        tagRefs.current.forEach((tag, i) => {
+          const onClick = () => {
+            const st = timelineRef.current?.scrollTrigger;
+            if (!st) return;
+            const start = st.start;
+            const end = st.end;
+            const stepCount = Math.max(1, contentRefs.current.length - 1);
+            const target = start + (end - start) * (i / stepCount) - 1;
+
+            isClickScrollingRef.current = true;
+            gsap.to(window, {
+              duration: 0.8,
+              ease: "power2.inOut",
+              scrollTo: target,
+              onComplete: () => {
+                // brief delay to avoid snap race
+                setTimeout(() => (isClickScrollingRef.current = false), 50);
+              },
+            });
+          };
+
+          const onKey = (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              onClick();
+            }
+          };
+
+          tag.addEventListener("click", onClick);
+          tag.addEventListener("keydown", onKey);
+          removeFns.push(() => {
+            tag.removeEventListener("click", onClick);
+            tag.removeEventListener("keydown", onKey);
+          });
+        });
+
+        // store cleanup
+        sectionRef.current.__cleanupTagHandlers = () =>
+          removeFns.forEach((f) => f());
       }, sectionRef);
 
-      // cleanup for gsap context/timeline
       const cleanupGsap = () => {
+        sectionRef.current?.__cleanupTagHandlers?.();
         ctx.revert();
         if (timelineRef.current) {
           timelineRef.current.scrollTrigger?.kill();
@@ -196,11 +230,9 @@ const WhyUnify = () => {
         }
       };
 
-      // store cleanup on the ref so we can call it in the returned cleanup below
       sectionRef.current.__cleanupGsap = cleanupGsap;
     });
 
-    // global cleanup for rAF + gsap
     return () => {
       cancelAnimationFrame(rafId);
       sectionRef.current?.__cleanupGsap?.();
@@ -217,7 +249,6 @@ const WhyUnify = () => {
       },
       yPercent: -15,
     });
-
     return () => {
       bgAnim.kill();
     };
@@ -307,7 +338,7 @@ const WhyUnify = () => {
               </div>
 
               {/* Tags */}
-              <div className="text-black/50 space-y-[3.8vw] text-[1vw] font-light">
+              <div className="text-black/50 space-y-[7vh] mt-[-0.3vh] text-[1vw] font-light">
                 <p className="tags" ref={addToTagRefs}>
                   End-to-End AI Lifecycle Management
                 </p>
@@ -478,29 +509,25 @@ export const data = [
   {
     list: "End-to-End AI Lifecycle Management",
     title: "The Freedom to Own AI",
-    para:
-      "The power of OpenAI, but entirely inside your infrastructure with your data, your compliance, and your governance.",
+    para: "The power of OpenAI, but entirely inside your infrastructure with your data, your compliance, and your governance.",
     link: "#",
   },
   {
     list: "Multi-Model AI Support",
     title: "Unified AI Lifecycle",
-    para:
-      "One platform for the full journey from data to deployment to continuous learning, eliminating silos and execution gaps.",
+    para: "One platform for the full journey from data to deployment to continuous learning, eliminating silos and execution gaps.",
     link: "#",
   },
   {
     list: "Seamless Enterprise Integration",
     title: "Governance by Design",
-    para:
-      "Security, compliance, and trust baked in with role-based access, explainability, audit trails, and approval workflows.",
+    para: "Security, compliance, and trust baked in with role-based access, explainability, audit trails, and approval workflows.",
     link: "#",
   },
   {
     list: "Scalable Infrastructure",
     title: "Sector-Agnostic, Vertically Accelerated",
-    para:
-      "Supports enterprises across industries, combining a sector-agnostic core with domain-focused accelerators to deliver impact at scale.",
+    para: "Supports enterprises across industries, combining a sector-agnostic core with domain-focused accelerators to deliver impact at scale.",
     link: "#",
   },
 ];

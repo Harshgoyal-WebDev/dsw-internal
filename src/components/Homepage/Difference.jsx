@@ -111,14 +111,14 @@ const Difference = () => {
       id="difference" 
       ref={sectionRef}
     >
-      <h2 className="title-2 headingAnim max-sm:!text-[12vw] max-sm:pl-[7vw] max-sm:w-[90%]  text-center mb-[7vw] max-sm:text-left max-sm:justify-start max-sm:mb-[20vw]">
+      <h2 className="text-60 headingAnim max-sm:!text-[12vw] max-sm:pl-[7vw] max-sm:w-[90%]  text-center mb-[7vw] max-sm:text-left max-sm:justify-start max-sm:mb-[20vw]">
         Why insurAInce is Different? 
       </h2>
       <div className="w-full max-sm:w-screen max-sm:overflow-hidden max-sm:overflow-x-scroll max-sm:pb-[10%] relative z-[20] ">
         <div className="w-full flex flex-col justify-center items-center gap-[4.5vw] relative z-[2] max-sm:items-start max-sm:w-[170vw] max-sm:px-[7vw]">
           <div className="w-full flex justify-center gap-[1vw] max-sm:gap-[10vw]">
             <div className="w-[40%]  max-sm:w-[50%] space-y-[2.5vw] max-sm:space-y-[12vw]">
-              <h3 className="text-center title-3 headingAnim text-[#f1f1f1] max-sm:w-[70%] max-sm:text-left max-sm:justify-start">
+              <h3 className="text-center text-40 headingAnim text-[#f1f1f1] max-sm:w-[70%] max-sm:text-left max-sm:justify-start">
                 Traditional AI Platforms
               </h3>
               <div className="w-full flex-col flex gap-[0.5vw] max-sm:gap-[3vw]" ref={cardsRef1}>
@@ -140,7 +140,7 @@ const Difference = () => {
               </div>
             </div>
             <div className="w-[40%]  max-sm:w-[50%] space-y-[2.5vw] max-sm:space-y-[21vw]" ref={cardsRef2}>
-              <h3 className="text-center title-3 headingAnim text-[#f1f1f1] max-sm:text-left">
+              <h3 className="text-center text-40 headingAnim text-[#f1f1f1] max-sm:text-left">
                 InsurAInce
               </h3>
               <div className="w-full flex-col flex gap-[0.5vw] max-sm:gap-[3vw]">

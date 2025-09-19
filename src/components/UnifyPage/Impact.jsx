@@ -102,32 +102,7 @@ export default function Impact() {
               className="w-full flex gap-[3.2vw] items-center about-item"
             >
               <div className="w-[15%] relative max-sm:w-[30%]">
-                <div className="relative w-[7vw] h-[7vw] flex items-center justify-center max-sm:w-[20vw] max-sm:h-[20vw]">
-                  <svg
-                    viewBox="0 0 120 120"
-                    className="absolute inset-0 h-full w-full"
-                  >
-                    <circle
-                      cx="60"
-                      cy="60"
-                      r="48"
-                      fill="none"
-                      stroke="rgba(139,92,246,.025)"
-                      strokeWidth="1.5"
-                    />
-                    <circle
-                      cx="60"
-                      cy="60"
-                      r="48"
-                      fill="none"
-                      stroke="currentColor"
-                      className="ring text-primary-1"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      transform="rotate(-90 60 60)"
-                    />
-                  </svg>
-
+                <div className="relative w-[6.5vw] h-[6.5vw] border border-primary-1 rounded-full flex items-center justify-center max-sm:w-[20vw] max-sm:h-[20vw]">
                   <p className="about-id text-primary-1 text-[1.5vw] font-head relative z-[1] max-sm:text-[4.2vw]">
                     {id}
                   </p>

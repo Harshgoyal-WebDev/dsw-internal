@@ -127,7 +127,7 @@ title,para,link,isOpen, onToggle
                 <div className="w-full flex flex-col gap-[5vw] ">
                               <div className="rounded-2xl overflow-hidden h-fit w-fit">
                                 <Image
-                                  src="/assets/images/homepage/whyunify-img-1.png"
+                                  src="/assets/images/homepage/whyunify/unify-dashboard-1.png"
                                   height={390}
                                   width={382}
                                   className="h-[14vw] w-[16vw] object-contain max-sm:h-[35vw] max-sm:w-[40vw]"
@@ -136,7 +136,7 @@ title,para,link,isOpen, onToggle
                               </div>
                               <div className="rounded-2xl overflow-hidden h-fit w-fit ml-[25vw]">
                                 <Image
-                                  src="/assets/images/homepage/unify-dashboard-2.png"
+                                  src="/assets/images/homepage/whyunify/unify-dashboard-2.png"
                                   height={247}
                                   width={283}
                                   className="h-[13vw] w-[15vw] object-contain max-sm:h-[35vw] max-sm:w-[40vw]"
