@@ -52,14 +52,14 @@ const Annoucements = () => {
 
   return (
     <section className="container" id="announcement">
-      <h2 className="text-center text-100 mb-[7vw] headingAnim">
-        Last Announcements
+      <h2 className="text-center text-90 mb-[7vw] headingAnim max-sm:mb-[15vw]">
+        Latest Announcements
       </h2>
       <div className="w-full space-y-[3vw]">
         {/* Main Announcement */}
         <div className="w-full space-y-[4vw]">
-          <div className="w-full h-fit flex gap-[4.5vw]">
-            <div className="w-[30vw] h-[23vw] rounded-[1.2vw] overflow-hidden fadeup">
+          <div className="w-full h-fit flex gap-[4.5vw] max-sm:flex-col max-sm:gap-[7vw]">
+            <div className="w-[30vw] h-[23vw] rounded-[1.2vw] overflow-hidden fadeup max-sm:w-full max-sm:h-[35vh] max-sm:border max-sm:border-white/10 max-sm:rounded-[7vw]">
               <Image
                 src={mainAnnouncement.image}
                 alt={mainAnnouncement.alt}
@@ -68,15 +68,15 @@ const Annoucements = () => {
                 height={300}
               />
             </div>
-            <div className="w-[60%] flex flex-col gap-[2.5vw] mt-[1vw]">
+            <div className="w-[60%] flex flex-col gap-[2.5vw] mt-[1vw] max-sm:w-full max-sm:gap-[5vw]">
               <Copy>
                 <h3 className="text-30">{mainAnnouncement.title}</h3>
               </Copy>
               <Copy>
-                <p>{mainAnnouncement.description}</p>
+                <p className="text-white-300">{mainAnnouncement.description}</p>
               </Copy>
 
-              <div className="flex gap-[4vw] fadeup">
+              <div className="flex gap-[4vw] fadeup max-sm:flex-wrap max-sm:gap-[7vw] max-sm:justify-between">
                 <div className="flex flex-col gap-[0.5vw]">
                   <p className="text-white/40">Category</p>
                   <p>{mainAnnouncement.category}</p>
@@ -91,7 +91,7 @@ const Annoucements = () => {
                 </div>
               </div>
 
-              <div className="w-fit fadeup">
+              <div className="w-fit fadeup max-sm:my-[10vw]">
                 <WhiteButton
                   background="border-primary-2 border bg-transparent hover:bg-transparent"
                   circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
@@ -102,31 +102,32 @@ const Annoucements = () => {
               </div>
             </div>
           </div>
-          <span className="w-full h-[1px] block bg-white/20" />
+          <span className="w-full h-[1px] block bg-white/20 lineDraw" />
         </div>
-
-        {/* Secondary Announcements */}
-        <div className="w-full flex justify-between fadeup pt-[3vw]">
-          {secondaryAnnouncements.map((item, index) => (
-            <div
-              key={index}
-              className="w-[32%] h-fit flex flex-col gap-[1.5vw]"
-            >
-              <div className="w-full h-[15vw] rounded-[1.2vw] overflow-hidden">
-                <Image
-                  src={item.image}
-                  alt={item.alt}
-                  className="w-full h-full"
-                  width={400}
-                  height={300}
-                />
+        <div className="max-sm:w-screen overflow-x-scroll max-sm:ml-[-7vw] max-sm:mt-[7vw]">
+          <div className="w-full flex justify-between fadeup pt-[3vw] max-sm:w-[270vw] max-sm:px-[7vw] max-sm:pb-[10vw] ">
+            {secondaryAnnouncements.map((item, index) => (
+              <div
+                key={index}
+                className="w-[32%] h-fit flex flex-col gap-[1.5vw] max-sm:gap-[7vw]"
+              >
+                <div className="w-full h-[15vw] rounded-[1.2vw] overflow-hidden max-sm:h-[25vh] max-sm:rounded-[4.5vw] max-sm:border max-sm:border-white/20">
+                  <Image
+                    src={item.image}
+                    alt={item.alt}
+                    className="w-full h-full"
+                    width={400}
+                    height={300}
+                  />
+                </div>
+                <h3 className="text-30">{item.title}</h3>
+                <p>{item.date}</p>
+                <LinkButton text={"Read More"} href={item.href} />
               </div>
-              <h3 className="text-30">{item.title}</h3>
-              <p>{item.date}</p>
-              <LinkButton text={"Read More"} href={item.href} />
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
+        {/* Secondary Announcements */}
       </div>
     </section>
   );

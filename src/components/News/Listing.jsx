@@ -33,7 +33,6 @@ const listingData = [
   //   {},
 ];
 const Listing = () => {
-
   useEffect(() => {
     if (globalThis.innerWidth > 0) {
       const ctx = gsap.context(() => {
@@ -58,12 +57,15 @@ const Listing = () => {
   }, []);
 
   return (
-    <section className="container relative z-[10] mt-[-60vh]" id="news-listing">
-      <div className="w-full space-y-[4.5vw]">
+    <section className="container relative z-[10] mt-[-60vh] max-sm:mt-[-40vh]" id="news-listing">
+      <div className="w-full space-y-[4.5vw] max-sm:space-y-[15vw]">
         {listingData.map((data, id) => (
-          <div key={id} className="w-full space-y-[4vw] fadeupListing">
-            <div className="w-full h-fit flex gap-[2.5vw]">
-              <div className="w-[30vw] h-[20vw] rounded-[1.2vw] overflow-hidden">
+          <div
+            key={id}
+            className="w-full space-y-[4vw] fadeupListing max-sm:space-y-[10vw]"
+          >
+            <div className="w-full h-fit flex gap-[2.5vw] max-sm:flex-col max-sm:gap-[5vw]">
+              <div className="w-[30vw] h-[20vw] rounded-[1.2vw] overflow-hidden max-sm:w-full max-sm:h-[25vh] max-sm:rounded-[4vw]">
                 <Image
                   src={data.imgSrc}
                   alt="listing images"
@@ -72,14 +74,18 @@ const Listing = () => {
                   height={300}
                 />
               </div>
-              <div className="w-[60%] flex flex-col gap-[1.5vw] mt-[2vw]">
-                <p>{data.date}</p>
-                <h3 className="text-30">{data.title}</h3>
-                <p>{data.description}</p>
-                <LinkButton href={data.link} text={"Read More"} />
+              <div className="w-[60%] flex flex-col gap-[1.5vw] mt-[2vw] max-sm:w-full max-sm:gap-[7vw]">
+                <p className="max-sm:order-3">{data.date}</p>
+                <h3 className="text-30 ordder-2">{data.title}</h3>
+                <p className="max-sm:order-1 text-white-300">{data.description}</p>
+                <LinkButton
+                  href={data.link}
+                  text={"Read More"}
+                  className="order-4"
+                />
               </div>
             </div>
-            <span className="w-full h-[1px] block bg-white/20" />
+            <span className="w-full h-[1px] block bg-white/20 lineDraw" />
           </div>
         ))}
       </div>

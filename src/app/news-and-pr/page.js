@@ -23,7 +23,7 @@ export default Page;
 const heroData = {
   heading: "In the Media​ ",
   para: "See how DSW is making waves across global tech and AI publications. Explore press features, interviews with our leadership, and industry mentions.​",
-  paraClass: "w-[60%]",
+  paraClass: "w-[60%] max-sm:w-full",
   homepage: false,
   hidebtn: true,
 };
