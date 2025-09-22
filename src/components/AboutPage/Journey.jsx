@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import SplitText from "gsap/dist/SplitText";
@@ -10,8 +10,8 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 
 export default function Journey() {
   const wholeSliderRef = useRef(null);
-
   useEffect(() => {
+
     const years = [
       "2018",
       "2019",
@@ -55,7 +55,6 @@ export default function Journey() {
         end: "+500%",
         scrub: true,
         pin: true,
-      
       },
     });
 
@@ -66,7 +65,7 @@ export default function Journey() {
       },
       {
         xPercent: -75,
-        ease:'none'
+        ease: 'none'
       }
     );
 
@@ -117,28 +116,39 @@ export default function Journey() {
     };
 
     // Create timelines for all years
-      createYearTimeline("2018", 100, 200,false,50,50);
-      createYearTimeline("2019", 80, 180,false, 50, 50);
-      createYearTimeline("2020", 280, 380,false,50,50);
-      createYearTimeline("2021", 300, 400, false,50,50);
-      createYearTimeline("2022", 520, 620,false,50,50);
-      createYearTimeline("2023", 600, 700,false,50,50);
-      createYearTimeline("2024", 820, 920,false,50,50);
-      createYearTimeline("2025", 820, 920, false,50,50);
+    createYearTimeline("2018", 50, 100, false, 50, 50);
+    createYearTimeline("2019", 80, 180, false, 50, 50);
+    createYearTimeline("2020", 280, 380, false, 50, 50);
+    createYearTimeline("2021", 300, 400, false, 50, 50);
+    createYearTimeline("2022", 520, 620, false, 50, 50);
+    createYearTimeline("2023", 600, 700, false, 50, 50);
+    createYearTimeline("2024", 820, 920, false, 50, 50);
+    createYearTimeline("2025", 820, 920, false, 50, 50);
+    
+    // Handle resize events to update animations
+    const handleResize = () => {
+      ScrollTrigger.refresh();
+    };
+    
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
    
   }, []);
 
   return (
     <section
       id="journey"
-      className="h-fit w-full max-sm:hidden overflow-x-hidden relative background-radial container"
+      className="h-fit w-full  overflow-x-hidden relative background-radial container"
     >
       <div className="h-fit relative w-full">
         <div
           ref={wholeSliderRef}
-          className="h-[60vh]  max-sm:h-[40vh] sticky top-0 flex gap-[5vw] mr-[2vw] items-center w-[300vw]"
+          className="h-[60vh]  max-sm:h-[60vh] sticky top-0 flex gap-[5vw] mr-[2vw] items-center max-sm:items-start max-sm:w-[700vw] max-sm:flex-col w-[300vw]"
         >
-          <div className="h-[100%] max-sm:w-[70vw]  journey-img w-[25vw] overflow-hidden rounded-[2vw]">
+          <div className="h-[100%] max-sm:h-[50vw] max-sm:w-[70vw]  journey-img w-[25vw] overflow-hidden rounded-[2vw]">
             <Image
               src={"/assets/images/about/journey.jpg"}
               alt="journey"
@@ -150,13 +160,13 @@ export default function Journey() {
           <div className="w-[100%] relative h-full ">
             {/* LINE */}
             <div className="w-full absolute left-0 top-[49%] tranlate-y-[-50%] flex items-center h-fit">
-              <div className="h-[.8vw] w-[.8vw] rounded-full bg-[#59595990]"></div>
+              <div className="h-[.8vw] max-sm:h-[2vw] max-sm:w-[2vw] w-[.8vw] rounded-full bg-[#59595990]"></div>
               <div className="h-[1.5px] w-[95%] rounded-full bg-[#59595980]"></div>
-              <div className="h-[.8vw] w-[.8vw] rounded-full bg-[#59595990]"></div>
+              <div className="h-[.8vw] max-sm:h-[2vw] max-sm:w-[2vw] w-[.8vw] rounded-full bg-[#59595990]"></div>
             </div>
 
-            <div className="h-1/2 flex items-center gap-[.5vw] justify-start w-full ">
-              <div className="w-[20%] h-full ">
+            <div className="h-1/2 flex items-center gap-[.5vw]  justify-start w-full ">
+              <div className="w-[20%] max-sm:pt-[5vw] h-full ">
                 <p className="title-1 headings w-[60%] headingAnim">
                   Foundations Of DSW
                 </p>
@@ -167,7 +177,7 @@ export default function Journey() {
                 {topJourneyData.map((item, index) => (
                   <div
                     key={`top-${index}`}
-                    className={`w-[18%] journey-container px-[5vw] h-full relative ${item.containerClass}`}
+                    className={`w-[18%]  max-sm:flex max-sm:flex-col max-sm:justify-center journey-container px-[5vw] h-full relative ${item.containerClass}`}
                   >
                     {/* STOPS */}
                     <div className="w-full absolute left-0 bottom-0 top-0 h-full">
@@ -192,7 +202,7 @@ export default function Journey() {
             </div>
 
             <div className="h-1/2 flex items-center justify-start w-full">
-              <div className="w-[34%] pt-[2vw] h-full">
+              <div className="w-[34%] pt-[2vw] max-sm:pt-[5vw] h-full">
                 <Copy>
                   <p className="title-2 headings w-[100%]">2018-2025</p>
                 </Copy>
@@ -202,7 +212,7 @@ export default function Journey() {
                 {bottomJourneyData.map((item, index) => (
                   <div
                     key={`bottom-${index}`}
-                    className={`w-[18%] journey-container px-[5vw] h-full relative ${item.containerClass}`}
+                    className={`w-[18%] max-sm:w-[20%]  max-sm:flex max-sm:flex-col max-sm:justify-center  journey-container px-[5vw] h-full relative ${item.containerClass}`}
                   >
                     {/* STOPS */}
                     <div className="w-full absolute left-0 bottom-0 top-0 h-full">
