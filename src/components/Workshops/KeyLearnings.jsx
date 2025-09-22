@@ -1,6 +1,5 @@
-'use client';
+"use client";
 import React from "react";
-
 
 const capabilities = [
   {
@@ -18,34 +17,31 @@ const capabilities = [
 ];
 
 const KeyLearnings = () => {
-
   return (
-    <section className="h-full container">
-    
+    <section className="h-full container ">
       <div className="flex justify-between max-sm:flex-col pt-[4vw] max-sm:pt-[10vw]">
         <div className="w-[45%] max-sm:w-[100%]">
-          
-            <h3 className="text-white-200 text-60 headingAnim max-sm:text-center  font-head">
-              Key Learning Objectives
-            </h3>
-          
+          <h3 className="text-white-200 text-60 headingAnim max-sm:text-left  font-head">
+            Key Learning Objectives
+          </h3>
         </div>
 
-      <div className="w-[40%]">
-  <div className="space-y-[2vw] w-full">
-    {capabilities.map((cap,index) => (
-      <div key={index} className="relative pb-[2vw]">
-        <ul className="list-disc space-y-[2vw] ml-[2vw]">
-          <li className="relative fadeup">
-              <p className="text-white-300 w-[80%]">{cap.text}</p>
-          </li>
-        </ul>
-        <span className="w-full h-[1px] bg-[#59595980] absolute left-0 bottom-0 lineDraw" />
-      </div>
-    ))}
-  </div>
-</div>
-
+        <div className="w-[40%] max-sm:w-full max-sm:mt-[10vw]">
+          <div className="space-y-[2vw] max-sm:space-y-[8vw] w-full">
+            {capabilities.map((cap, index) => (
+              <div key={index} className="relative max-sm:pb-[8vw] pb-[2vw]">
+                <ul className="list-disc space-y-[2vw] ml-[2vw] max-sm:ml-[4vw]">
+                  <li className="relative fadeup">
+                    <p className="text-white-300 w-[80%] max-sm:w-full">
+                      {cap.text}
+                    </p>
+                  </li>
+                </ul>
+                <span className="w-full h-[1px] bg-[#59595980] absolute left-0 bottom-0 lineDraw" />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

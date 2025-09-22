@@ -146,7 +146,7 @@ const Hero = ({ heroData }) => {
           </p>
          
         </div>
-        <div className="breadcrumbs overflow-hidden w-full flex items-start justify-start text-[1vw] text-[#CACACA]  absolute left-[5%] top-[75%] max-sm:bottom-[-20%]">
+        <div className="breadcrumbs overflow-hidden w-full flex items-start justify-start text-[1vw] text-[#CACACA] max-sm:text-[4vw] max-sm:h-fit  absolute left-[5%] top-[75%]  max-sm:top-[95%]">
           <div className="flex gap-3  breadcrumbsContainer">
             <a onClick={(e) => {
               e.preventDefault();

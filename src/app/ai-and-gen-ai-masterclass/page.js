@@ -16,7 +16,7 @@ const page = () => {
         <Hero heroData={heroData}/>
         <Features featuresData={featuresData}/>
         <KeyLearnings/>
-        <WorkshopFlow sessionsData={sessionsData} space={"space-y-[0.5vw]"}/>
+        <WorkshopFlow sessionsData={sessionsData} space={"space-y-[0.5vw] max-sm:space-y-[3vw]  "}/>
         <Outcomes outcomesData={outcomesData}/>
         <Empower heading="First Come First Basis - Limited Seats!" para="Sign-up for this No-fees Workshop | All participants earn AI Masterclass Completion Certificate." width={"w-[70%]"}/>
         <Faqs />

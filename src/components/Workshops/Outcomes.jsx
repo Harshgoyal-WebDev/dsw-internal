@@ -59,18 +59,18 @@ export default function Outcomes({outcomesData}) {
   return (
     <section className="w-screen container background-radial" id="about">
       <div className="w-full flex flex-col items-center justify-center gap-y-[5vw] max-sm:gap-y-[15vw]">
-        <div className="mx-auto w-1/2  space-y-[4vw] max-sm:space-y-[5vw]">
+        <div className="mx-auto w-1/2 max-sm:w-full space-y-[4vw] max-sm:space-y-[5vw]">
           <h2 className="text-60 headingAnim text-white-200 max-sm:text-center">
             {outcomesData.heading}
           </h2>
           <div className="space-y-[1vw]">
           <Copy>
-            <p className="text-white-300">
+            <p className="text-white-300 max-sm:text-center">
             {outcomesData.para}
             </p>
           </Copy>
           <Copy>
-            <p className="text-white-300">{outcomesData.para2}</p>
+            <p className="text-white-300 max-sm:text-center max-sm:w-full">{outcomesData.para2}</p>
           </Copy>
           </div>
         </div>
@@ -79,21 +79,21 @@ export default function Outcomes({outcomesData}) {
           {outcomesData.points.map(({ id, text, width, title }) => (
             <div
               key={id}
-              className="w-[60%] flex gap-[3.2vw] items-center about-item"
+              className="w-[60%] max-sm:w-[100%] flex gap-[3.2vw] items-center about-item"
             >
-              <div className="w-[15%] relative max-sm:w-[30%]">
+              <div className="w-[15%]  relative max-sm:w-[30%]">
                 <div className="relative w-[6.5vw] h-[6.5vw] border border-primary-1 rounded-full flex items-center justify-center max-sm:w-[20vw] max-sm:h-[20vw]">
                   <p className="about-id text-primary-1 text-[1.5vw] font-head relative z-[1] max-sm:text-[4.2vw]">
                     {id}
                   </p>
                 </div>
               </div>
-              <div className="space-y-[1.2vw]">
+              <div className="space-y-[1.2vw] max-sm:space-y-[3vw]">
                 <p className="text-30 max-sm:text-[4.2vw] text-white-200">
                   {title}
                 </p>
 
-                <p className="text-white-300 w-[90%]">{text}</p>
+                <p className="text-white-300 w-[90%] max-sm:w-full">{text}</p>
               </div>
             </div>
           ))}
