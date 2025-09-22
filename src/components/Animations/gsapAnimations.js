@@ -97,7 +97,7 @@ export function paraAnim() {
               scrollTrigger: {
                 trigger: content,
                 start: "top 90%",
-              
+                // markers:true
                 
               },
               opacity: 0,

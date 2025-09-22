@@ -121,7 +121,7 @@ const Hero = ({ heroData }) => {
             {heroData.heading}
           </h1>
           <p
-            className={`text-[#CACACA] font-head w-full mx-auto overflow-hidden heroPara opacity-0 ${heroData.paraClass}`}
+            className={`text-[#CACACA] font-head mx-auto overflow-hidden heroPara opacity-0 ${heroData.paraClass?heroData.paraClass:"w-full"}`}
           >
             {heroData.para}
           </p>
