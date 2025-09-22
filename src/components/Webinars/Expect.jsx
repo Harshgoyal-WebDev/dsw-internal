@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Copy from "../Animations/Copy";
+import { lineAnim } from "../Animations/gsapAnimations";
 gsap.registerPlugin(ScrollTrigger);
 
 const POINTS = [
@@ -40,6 +41,7 @@ const POINTS = [
 
 export default function Expect() {
   const [isMobile, setIsMobile] = useState(false);
+  // lineAnim()
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -57,7 +59,7 @@ export default function Expect() {
 
   return (
     <section className="w-screen container relative z-[10]" id="expect">
-      <div className="w-full flex flex-col items-center justify-center gap-y-[5vw] max-sm:gap-y-[15vw]">
+      <div className="w-full flex flex-col items-center justify-center gap-y-[5vw] max-sm:gap-y-[20vw]">
         <div className="text-center space-y-[2vw] max-sm:space-y-[5vw]">
           <h2 className="text-90 headingAnim text-white-200 max-sm:text-center">
             What to Expect
@@ -68,22 +70,23 @@ export default function Expect() {
           {POINTS.map(({ id, text,title}) => (
             <div
               key={id}
-              className=" flex flex-col gap-[1.2vw] items-start about-item w-[44%] fadeup max-sm:w-full max-sm:items-center max-sm:gap-y-[4vw]"
+              className=" flex flex-col gap-[1.2vw] items-start about-item w-[44%] fadeup max-sm:w-full max-sm:items-center max-sm:gap-y-[7vw]"
             >
-              <div className="w-[15%] relative max-sm:w-[30%]">
-                <div className="relative w-[6.5vw] h-[6.5vw] border border-white-200 rounded-full flex items-center justify-center max-sm:w-[20vw] max-sm:h-[20vw]">
-                  <p className="about-id text-white-200 text-[1.5vw] font-head relative z-[1] max-sm:text-[4.2vw]">
+              <div className="w-[15%] relative max-sm:w-fit">
+                <div className="relative w-[6.5vw] h-[6.5vw] border border-white-200 rounded-full flex items-center justify-center max-sm:w-[18vw] max-sm:h-[18vw]">
+                  <p className="about-id text-white-200 text-[1.5vw] font-head relative z-[1] max-sm:text-[4.2vw] max-sm:text-center">
                     {id}
                   </p>
                 </div>
               </div>
-              <div className="space-y-[1.2vw]">
-                <p className="text-30  text-primary-2">
+              <div className="space-y-[1.2vw] max-sm:space-y-[7vw]">
+                <p className="text-30  text-primary-2 max-sm:text-center">
                   {title}
                 </p>
 
-                <p className="text-white-300">{text}</p>
+                <p className="text-white-300 max-sm:text-center">{text}</p>
               </div>
+              <span className="lineDraw w-full h-[1px] bg-white/20 hidden max-sm:block mt-[5vw]"></span>
             </div>
           ))}
         </div>
