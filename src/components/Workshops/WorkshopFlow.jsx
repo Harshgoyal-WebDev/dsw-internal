@@ -46,7 +46,7 @@ export default function WorkshopFlow({ sessionsData, space }) {
           Workshop Flow & Key Sessions
         </h2>
 
-        <div className="flex fadeup gap-6 mt-12 max-sm:mt-[15vw]  max-sm:items-center max-sm:justify-center max-sm:absolute max-sm:top-[85%] max-sm:right-[8%]">
+        <div className="flex fadeup gap-6 mt-12 max-sm:mt-[15vw]  max-sm:items-center max-sm:justify-center max-sm:absolute max-sm:top-[85%] max-sm:left-[50%] max-sm:translate-x-[-50%]">
           <PreviousButton onClick={handlePrev} />
           <NextButton onClick={handleNext} />
         </div>
@@ -96,7 +96,7 @@ const SwiperCard = ({ title, list, duration, onHover, isActive, space }) => {
   return (
     <>
       <div
-        className="relative py-[3vw] max-sm:py-[8vw] max-sm:px-[8vw] rounded-[2vw] overflow-hidden w-[34vw] px-[3vw] h-[38vw] max-sm:min-h-[60vh] max-sm:h-fit max-sm:w-full max-sm:rounded-[6vw] border border-white/30 group "
+        className="relative py-[3vw] max-sm:py-[8vw] max-sm:px-[8vw] rounded-[2vw] overflow-hidden w-[34vw] px-[3vw] h-[38vw] max-sm:min-h-[70vh] max-sm:h-fit max-sm:w-full max-sm:rounded-[6vw] border border-white/30 group "
         onMouseEnter={onHover}
       >
         <div
