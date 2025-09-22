@@ -93,7 +93,7 @@ const RelatedArticles = () => {
             <NextButton onClick={handleNext} />
           </div>
         </div>
-        <div className="w-[100%] max-sm:py-[10vw] text-white  ">
+        <div className="w-[100%] max-sm:py-[15vw] text-white  ">
           <Swiper
             slidesPerView={3}
             className="mySwiper swiper-container"

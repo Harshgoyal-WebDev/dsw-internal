@@ -53,26 +53,26 @@ export default function BlogContent() {
       id="content"
       className="h-fit relative max-sm:flex-col bg-[#FEFEFE] container flex w-full"
     >
-      <Copy>
-        <h1 className="text-100 max-sm:flex hidden relative z-10 text-background">
+     
+        <h1 className="text-100 headingAnim max-sm:flex hidden relative z-10 text-background">
           How Generative AI is Transforming the Insurance Industry
         </h1>
-      </Copy>
+    
       <div className="h-fit absolute max-sm:relative max-sm:py-[15vw] max-sm:w-full w-fit">
         <div className="flex flex-wrap items-center max-sm:items-start max-sm:justify-between max-sm:flex-row-reverse gap-y-[2.5vw]">
           {stickyTop.map((item, index) => (
             <div
               key={index}
-              className="text-[1.05vw] max-sm:text-[5vw]  space-y-[.8vw] w-[50%] max-sm:w-[50%]"
+              className="text-[1.05vw] max-sm:text-[4vw]  space-y-[.8vw] w-[50%] max-sm:w-[40%]"
             >
-              <p className="text-background font-medium">{item.label}</p>
+              <p className="text-background max-sm:font-normal font-medium">{item.label}</p>
               <p className="text-[#626262]">{item.value}</p>
             </div>
           ))}
         </div>
       </div>
       <div className="space-y-[2vw]  sticky top-[15%] mt-[15vw] max-sm:hidden h-full w-[55%] pr-[8vw]">
-        <p className="text-[1.05vw] text-background  font-medium">
+        <p className="text-[1.05vw]  max-sm:text-[4vw] text-background  font-medium">
           Table of Contents
         </p>
         <div
@@ -85,9 +85,9 @@ export default function BlogContent() {
               <li
                 key={index}
                 onClick={() => handleScrollTo(item.title)}
-                className={`text-[1.05vw] cursor-pointer transition-all duration-300 hover:text-primary-2 ${
+                className={`text-[1.05vw]  max-sm:text-[4vw] cursor-pointer transition-all duration-300 hover:text-primary-2 ${
                   activeSection === item.title
-                    ? "text-primary-2 font-medium"
+                    ? "text-primary-2"
                     : "text-background"
                 }`}
               >
@@ -99,7 +99,7 @@ export default function BlogContent() {
       </div>
       <div className="h-full  w-[100%]  text-background">
         <div id="Introduction" className="w-full border-b h-full">
-          <div className="space-y-[2vw] max-sm:space-y-[8vw] pb-[3vw] max-sm:pb-[15vw] border-b">
+          <div className="space-y-[2vw] max-sm:space-y-[7vw] pb-[3vw] max-sm:pb-[15vw] border-b">
             <h2 className="text-30 font-head">Introduction</h2>
             <div>
               <p>
@@ -118,9 +118,9 @@ export default function BlogContent() {
             </div>
           </div>
           <div className="space-y-[3vw] max-sm:py-[15vw] py-[3vw]">
-            <div className="space-y-[2vw] max-sm:space-y-[8vw]">
-              <div className="flex items-center max-sm:items-start max-sm:gap-[2vw] gap-[1vw]">
-                <div className="w-[.3vw] h-[.3vw] ml-[1vw] max-sm:ml-0 max-sm:translate-y-[200%] max-sm:h-[1.5vw] max-sm:w-[1.5vw] bg-background "></div>
+            <div className="space-y-[2vw] max-sm:space-y-[7vw]">
+              <div className="flex items-center max-sm:items-start max-sm:gap-[3.5vw] gap-[1vw]">
+                <div className="w-[.3vw] h-[.3vw] ml-[1vw] max-sm:translate-y-[200%] max-sm:h-[1.5vw] max-sm:w-[1.5vw] max-sm:ml-[4vw] bg-background "></div>
                 <h2 className="text-30 font-head">What Is Generative AI?</h2>
               </div>
               <div>
@@ -136,9 +136,9 @@ export default function BlogContent() {
                 </p>
               </div>
             </div>
-            <div className="space-y-[2vw] max-sm:space-y-[8vw]">
-              <div className="flex items-center max-sm:items-start max-sm:pt-[5vw] max-sm:gap-[2vw] gap-[1vw]">
-                <div className="w-[.3vw] h-[.3vw] ml-[1vw] max-sm:ml-0 max-sm:translate-y-[200%] max-sm:h-[1.5vw] max-sm:w-[1.5vw] bg-background "></div>
+            <div className="space-y-[2vw] max-sm:space-y-[7vw]">
+              <div className="flex items-center max-sm:items-start max-sm:pt-[5vw] max-sm:gap-[3.5vw] gap-[1vw]">
+                <div className="w-[.3vw] h-[.3vw] ml-[1vw] max-sm:translate-y-[200%] max-sm:h-[1.5vw] max-sm:w-[1.5vw] max-sm:ml-[4vw] bg-background "></div>
                 <h2 className="text-30 font-head">
                   Top Use Cases of GenAI in Insurance
                 </h2>
@@ -234,9 +234,9 @@ export default function BlogContent() {
               />
             </div>
 
-            <div className="space-y-[2vw] max-sm:space-y-[8vw]">
-              <div className="flex items-center max-sm:items-start max-sm:gap-[3vw] gap-[1vw]">
-                <div className="w-[.3vw] h-[.3vw] ml-[1vw] max-sm:ml-0 max-sm:translate-y-[200%] max-sm:h-[1.5vw] max-sm:w-[1.5vw] bg-background "></div>
+            <div className="space-y-[2vw] max-sm:space-y-[7vw]">
+              <div className="flex items-center max-sm:items-start max-sm:gap-[3.5vw] gap-[1vw]">
+                <div className="w-[.3vw] h-[.3vw] ml-[1vw] max-sm:translate-y-[200%] max-sm:h-[1.5vw] max-sm:w-[1.5vw] max-sm:ml-[4vw] bg-background "></div>
                 <h2 className="text-30 font-head">
                   Addressing Compliance & Security in GenAI
                 </h2>
