@@ -23,7 +23,7 @@ export default page
 
 const heroData= {
   heading:"Explore the Future of AI, One Post at a Time​ ",
-  para:".​",
+  para:"​",
   paraClass:"",
   homepage:false,
   hidebtn:true

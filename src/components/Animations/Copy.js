@@ -81,7 +81,7 @@ export default function Copy({ children, animateOnScroll = true, delay = 0 }) {
           ...animationProps,
           scrollTrigger: {
             trigger: el,
-            start: "top 70%",
+            start: "top 85%",
             once: true,
           },
         });
