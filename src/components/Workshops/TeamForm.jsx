@@ -1,0 +1,235 @@
+/* eslint-disable no-unused-vars */
+"use client";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { isValidPhoneNumber } from "react-phone-number-input";
+import { useState } from "react";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+} from "../ui/form";
+import { Input } from "../ui/input";
+import { PhoneInput } from "../ui/phone-input";
+import { Textarea } from "../ui/textarea";
+import { Checkbox } from "../ui/checkbox";
+import { Button } from "../ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../ui/select";
+
+const formSchema = z.object({
+  name: z.string().min(3, { message: "Name must be at least 3 characters." }),
+  email: z.string().email({ message: "Invalid email address." }),
+  number: z
+    .string()
+    .refine(isValidPhoneNumber, { message: "Invalid phone number" }),
+  designation: z.string().min(2, { message: "Designation is required." }),
+  company: z.string().min(2, { message: "Company name is required." }),
+  message: z.string().optional(),
+  terms: z.boolean().refine((val) => val === true, {
+    
+   
+  }),
+});
+
+export default function TeamForm() {
+  const form = useForm({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      number: "",
+      designation: "",
+      company: "",
+      terms: false,
+    },
+  });
+  const { control, handleSubmit } = form;
+  const [isLoading, setIsLoading] = useState(false);
+  const [submitted, setIsSubmitted] = useState(false);
+  const [notsubmitted, setIsNotSubmitted] = useState(false);
+
+  return (
+    <section className="mobile:pt-0 overflow-hidden" id="formoem">
+      <div className="w-full h-full mobile:p-0 tablet:p-[6.5vw]">
+        <div className="w-full flex flex-col gap-[2vw] mobile:gap-[5vw] tablet:w-full mobile:px-0 max-md:px-[2vw] mobile:py-[5vw] fadeup">
+          <Form {...form}>
+            <form
+              autoComplete="off"
+              className="space-y-[1vw] max-sm:space-y-[4vw] max-md:space-y-[4vw]"
+              // onSubmit={handleSubmit(onSubmit)}
+            >
+              <FormField
+                control={control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        placeholder="Name*"
+                        autoComplete="off"
+                        {...field}
+                        className="placeholder:text-[1.15vw] pl-[2vw] bg-white/5 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-sm:pl-[5vw]"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        placeholder="Business Email*"
+                        autoComplete="off"
+                        {...field}
+                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/5 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-sm:pl-[5vw]"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={control}
+                name="designation"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        placeholder="Designation*"
+                        autoComplete="off"
+                        {...field}
+                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/5 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-sm:pl-[5vw]"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={control}
+                name="company"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        placeholder="Company Name*"
+                        autoComplete="off"
+                        {...field}
+                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/5  border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-sm:pl-[5vw]"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={control}
+                name="number"
+                render={({ field }) => (
+                  <FormItem>
+                    {/* <label className="block text-sm uppercase font-medium mb-1 tablet:text-[1.2vw] mobile:text-[3.5vw]">
+                      Phone Number*
+                    </label> */}
+                    <FormControl>
+                      <PhoneInput
+                        placeholder="Phone Number*"
+                        defaultCountry="IN"
+                        international
+                        {...field}
+                        className="placeholder:text-[1.15vw] placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] "
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <div className="w-full flex gap-[1vw] justify-start mobile:justify-start mobile:items-start mobile:gap-3 tablet:block tablet:w-4/5 ">
+                <FormField
+                  control={control}
+                  name="terms"
+                  render={({ field }) => (
+                    <FormItem className="">
+                      <div className="flex items-center justify-center gap-3 tablet:gap-1 pl-[0.5vw]">
+                        <Checkbox
+                          aria-label="checkbox"
+                          checked={field.value}
+                          onCheckedChange={field.onChange}
+                          className="mobile:mt-[2vw] tablet:mt-[2vw] cursor-pointer max-sm:rounded-[0.5vw]"
+                        />
+                        <label className="text-[1.15vw] mt-2  text-[#CACACA] max-sm:text-[3.5vw] max-sm:mt-5">
+                          I agree to{" "}
+                          <a href="/" className="border-b border-[#CACACA]">
+                            Privacy Policy{" "}
+                          </a>{" "}
+                          and{" "}
+                          <a href="/" className="border-b border-[#CACACA]">
+                            Terms and Conditions
+                          </a>
+                          .
+                        </label>
+                      </div>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+
+              <Button
+                // type="submit"
+                aria-label="submit form"
+                className="cursor-pointer mt-[3vw] pb-[3vw] max-sm:mt-[10vw] max-sm:pb-[8vw] max-md:mt-[8vw] px-0"
+              >
+                <div
+                  className={` relative inline-flex items-center h-[4vw] min-w-[10vw] px-[2vw] gap-3 rounded-full overflow-hidden text-white-200 group max-sm:h-fit max-sm:py-[4vw] max-sm:px-[6vw] max-sm:min-w-[30vw] max-sm:gap-[4vw] `}
+                >
+                  <span
+                    className={`bg-foreground rounded-full h-2 w-2 max-sm:w-[2.5vw] max-sm:h-[2.5vw] z-[1] `}
+                  ></span>
+                  <div className="overflow-clip leading-[1.4] mt-[-4px] max-sm:mt-0 z-[1]">
+                    <p
+                      className={`text-[1.145vw] leading-[1.4] buttonTextShadow max-sm:text-[4vw] `}
+                    >
+                      {" "}
+                      {isLoading ? "Sending..." : "Submit"}
+                    </p>
+                  </div>
+                  <span
+                    className={`absolute inset-0 group-hover:scale-95 transition-transform duration-500 bg-gradient-to-r from-primary-2 to-primary-3 rounded-full`}
+                  />
+                </div>
+              </Button>
+              {submitted && (
+                <p className="text-white text-sm mt-2">
+                  ✅ Form submitted successfully!
+                </p>
+              )}
+
+              {notsubmitted && (
+                <p className="text-red-600 text-sm mt-2">
+                  ❌ Error sending message. Please try again.
+                </p>
+              )}
+            </form>
+          </Form>
+        </div>
+      </div>
+    </section>
+  );
+}
