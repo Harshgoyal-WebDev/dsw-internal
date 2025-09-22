@@ -31,7 +31,7 @@ export default function Hero() {
           alt="Blog hero background"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b to-black/20 from-black/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-b to-black/20 from-black/90 max-sm:from-black/20"></div>
       </div>
       <h1 className="text-100 headingAnim max-sm:hidden relative z-10 text-white text-center">
         How Generative AI is Transforming the Insurance Industry

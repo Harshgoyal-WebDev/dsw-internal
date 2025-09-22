@@ -18,7 +18,7 @@ const toEmbedUrl = (url) => {
   }
 };
 
-const VideoListing = () => {
+const VideoListing = ({margin}) => {
   // Which video is targeted
   const [openIndex, setOpenIndex] = useState(null);
   const lenis = useLenis();
@@ -61,7 +61,7 @@ const VideoListing = () => {
   return (
     <>
       <section
-        className="container relative z-[20] mt-[-30vh] max-sm:mt-0"
+        className={`container relative z-[20]  max-sm:mt-0 ${margin ? "mt-[-30vh]":"mt-0"}`}
         id="video-listing"
       >
         <div className="w-full h-full flex flex-wrap justify-between gap-y-[7vw] max-sm:gap-y-[20vw]">
