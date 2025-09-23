@@ -83,17 +83,16 @@ export default function About() {
     <section className="w-screen container mt-[-5%] max-sm:mt-0 relative z-[10]" id="about" >
       <div className="w-full flex flex-col items-center justify-center gap-y-[10vw] max-sm:gap-y-[15vw]">
         <SectionBreak text={" At Data Science Wizards (DSW), we believe that AI should be accessible, scalable, and enterprise-ready—not locked behind complexity. That’s why we built UnifyAI, a next-generation platform that simplifies the entire AI lifecycle for businesses across industries."} span={true}/>
-
         <div className="flex flex-col items-end gap-[5vw] max-sm:w-full max-sm:gap-[15vw] max-sm:items-start max-sm:mt-[10vw]">
           {POINTS.map(({ id, text, width, title }) => (
             <div
               key={id}
-              className="w-[58%] flex gap-[5vw] items-start about-item max-sm:w-[98%] max-sm:flex-col"
+              className="w-[58%]  flex gap-[5vw] items-start about-item max-sm:w-[98%] max-md:w-[100%] max-sm:flex-col"
             >
               <div className="w-[15%] relative max-sm:w-[30%]">
-                <div className="relative fadeup w-[6.5vw] h-[6.5vw] border border-[#59595980] rounded-full flex items-center justify-center max-sm:w-[18vw] max-sm:h-[18vw] max-sm:border-primary-1">
+                <div className="relative fadeup w-[6.5vw] h-[6.5vw] max-md:h-[15vw] max-md:w-[15vw] border border-[#59595980] rounded-full flex items-center justify-center max-sm:w-[18vw] max-sm:h-[18vw] max-sm:border-primary-1">
                   
-                  <p className="about-id text-white-200 text-[1.5vw] font-head relative z-[1] max-sm:text-[4.2vw] max-sm:text-primary-1">
+                  <p className="about-id text-white-200 text-[1.5vw] max-md:text-[5.5vw] font-head relative z-[1] max-sm:text-[4.2vw] max-sm:text-primary-1">
                     {id}
                   </p>
                 </div>

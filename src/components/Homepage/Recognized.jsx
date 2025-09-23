@@ -79,22 +79,22 @@ export default Recognized
 const awards = [
     {
         img: "/assets/images/homepage/recognized/top-10.png",
-        title: "Top 10 AI Startups",
+        title: "1 Top 10 AI Startups",
         year: "Ireland 2024"
     },
     {
         img: "/assets/images/homepage/recognized/top-10.png",
-        title: "Top 10 AI Startups",
+        title: "2 Top 10 AI Startups",
         year: "Ireland 2024"
     },
     {
         img: "/assets/images/homepage/recognized/top-10.png",
-        title: "Top 10 AI Startups",
+        title: "3 Top 10 AI Startups",
         year: "Ireland 2024"
     },
     {
         img: "/assets/images/homepage/recognized/top-10.png",
-        title: "Top 10 AI Startups",
+        title: "4 Top 10 AI Startups",
         year: "Ireland 2024"
     },
     // {
