@@ -102,14 +102,15 @@ const FooterCTA = ({footerCTAData}) => {
                 </div>
                  <motion.div
                     style={{ x: image1X, y: image1Y }}
-                    className="absolute w-[40%] top-[20%] left-[20%] rounded-2xl border border-white/30 overflow-hidden max-sm:w-[50%] max-sm:top-[5%] max-sm:left-[10%] fadeup "
+                    className="absolute w-[40%] top-[20%] left-[20%] rounded-2xl border border-white/30 overflow-hidden max-sm:w-[50%] max-sm:top-[5%] max-md:w-[35%] max-sm:left-[10%] max-md:left-[10%]
+                    max-md:top-0 fadeup "
                 >
                     <Image src={footerCTAData.img1} alt="CTA-Image1"  width={348} height={312} loading="lazy"  className="w-full h-full object-cover" />
                 </motion.div>
 
                 <motion.div
                     style={{ x: image1X, y: image1Y }}
-                    className="absolute  w-[35%] bottom-[18%] left-[45%] rounded-2xl  border border-white/30 overflow-hidden max-sm:w-[50%] max-sm:left-[35%] fadeup"
+                    className="absolute  w-[35%] bottom-[18%] left-[45%] rounded-2xl  border border-white/30 overflow-hidden max-sm:w-[50%] max-sm:left-[35%] max-md:left-[60%] fadeup"
              >
                     <Image src={footerCTAData.img2} alt="CTA-Image2"  width={313} height={272} loading="lazy"  className="w-full h-full object-cover" />
                 </motion.div>

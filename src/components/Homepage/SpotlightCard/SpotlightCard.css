@@ -32,6 +32,14 @@
   opacity: 0.6;
 }
 
+@media (max-width:1025px) {
+
+  .card-spotlight{
+border-radius: 3.5vw;
+  border: 1px solid #88888880;
+  }
+  
+}
 @media (max-width:542px) {
 
   .card-spotlight{

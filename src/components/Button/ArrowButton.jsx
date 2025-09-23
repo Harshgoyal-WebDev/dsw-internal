@@ -7,7 +7,7 @@ const ArrowButton = () => {
     <>
       <div className="rounded-full  items-center justify-center w-full h-full  flex flex-col flex-nowrap relative overflow-hidden">
         <svg
-          className="w-[1.3vw] max-sm:w-[5vw] h-auto absolute group-hover:translate-y-[-180%] group-hover:translate-x-[120%] group-hover:scale-[0.5] duration-500 ease-in-out transition-all origin-center scale-[1] -rotate-45"
+          className="w-[1.3vw] max-sm:w-[5vw] max-md:w-[4vw] h-auto absolute group-hover:translate-y-[-180%] group-hover:translate-x-[120%] group-hover:scale-[0.5] duration-500 ease-in-out transition-all origin-center scale-[1] -rotate-45"
           width="25"
           height="18"
           viewBox="0 0 25 18"
@@ -21,7 +21,7 @@ const ArrowButton = () => {
           />
         </svg>
         <svg
-          className="w-[1.3vw] max-sm:w-[5vw] h-auto absolute translate-y-[180%] origin-center  ease-in-out  translate-x-[-120%] group-hover:translate-x-0 group-hover:translate-y-0 duration-500 transition-all scale-[0.5] group-hover:scale-[1] -rotate-45"
+          className="w-[1.3vw] max-sm:w-[5vw] max-md:w-[4vw] h-auto absolute translate-y-[180%] origin-center  ease-in-out  translate-x-[-120%] group-hover:translate-x-0 group-hover:translate-y-0 duration-500 transition-all scale-[0.5] group-hover:scale-[1] -rotate-45"
           width="25"
           height="18"
           viewBox="0 0 25 18"

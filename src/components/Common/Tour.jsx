@@ -14,13 +14,23 @@ const Tour = ({heading,para}) => {
 
 
   const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
 
-useEffect(() => {
-  const checkMobile = () => setIsMobile(window.innerWidth < 640);
-  checkMobile();
-  window.addEventListener('resize', checkMobile);
-  return () => window.removeEventListener('resize', checkMobile);
-}, []);
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 640);
+    const checkTablet = () => setIsTablet(window.innerWidth < 1025);
+    
+    checkMobile();
+    checkTablet();
+    
+    window.addEventListener('resize', checkMobile);
+    window.addEventListener('resize', checkTablet);
+    
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+      window.removeEventListener('resize', checkTablet);
+    };
+  }, []);
 
   return (
     <section className="w-screen h-fit container" id="tour">
@@ -33,13 +43,13 @@ useEffect(() => {
         </Copy>
 
         {/* Tab Switcher */}
-        <div className="w-fit flex rounded-full border-blue-1 border p-[0.2vw] !text-[1.15vw] fadeup relative max-sm:mt-[10vw] max-md:mt-[5vw]  max-sm:!text-[4.2vw] max-sm:p-[0.5vw]">
+        <div className="w-fit flex rounded-full border-blue-1 border p-[0.2vw] !text-[1.15vw] fadeup relative max-sm:mt-[10vw] max-md:mt-[5vw]  max-sm:!text-[4.2vw] max-md:!text-[2.5vw] max-md:p-[0.5vw] ">
           {/* Thumb Track */}
-          <div className="w-full h-[90%] absolute thumb-track max-sm:h-[92%]">
+          <div className="w-full h-[90%] absolute thumb-track max-md:h-[92%]">
             <motion.div
-              className="w-[13vw] h-full rounded-full bg-blue-1 thumb-button max-sm:w-[40vw]"
+              className="w-[13vw] h-full rounded-full bg-blue-1 thumb-button max-sm:w-[40vw] max-md:w-[30vw]"
               animate={{
-                x: activeTab === "aiStudio" ? 0 : (isMobile ? "40vw" : "13vw"),
+                x: activeTab === "aiStudio" ? 0 : (isMobile ? "40vw" : isTablet ? "30vw" : "13vw"),
               }}
               transition={{
                 type: "spring",
@@ -51,7 +61,7 @@ useEffect(() => {
 
           {/* AI Studio Tab */}
           <motion.div
-            className="w-[13vw] px-[1.5vw] py-[1vw] flex items-center justify-center relative z-[2] cursor-pointer max-sm:w-[40vw] max-sm:py-[3vw]"
+            className="w-[13vw] px-[1.5vw] py-[1vw] flex items-center justify-center relative z-[2] cursor-pointer max-sm:w-[40vw] max-md:w-[30vw] max-md:py-[3vw]"
             id="aiStudio"
             onClick={() => handleTabClick("aiStudio")}
           >
@@ -67,7 +77,7 @@ useEffect(() => {
 
           {/* GenAI Studio Tab */}
           <motion.div
-            className="w-[13vw] px-[1.5vw] py-[1vw] flex items-center justify-center relative z-[2] cursor-pointer max-sm:w-[40vw] max-sm:py-[3vw]"
+            className="w-[13vw] px-[1.5vw] py-[1vw] flex items-center justify-center relative z-[2] cursor-pointer max-md:w-[30vw] max-sm:w-[40vw] max-md:py-[3vw]"
             id="genStudio"
             onClick={() => handleTabClick("genStudio")}
             transition={{
