@@ -4,7 +4,7 @@ import Copy from "../Animations/Copy";
 
 const WatchOnDemand = () => {
   return (
-    <section className=" w-screen  max-sm:mt-0" id="workshops">
+    <section className=" w-screen  max-sm:mt-0 overflow-hidden" id="workshops">
       <div className=" max-sm:space-y-[5vw] w-full flex flex-col items-center justify-center">
         <div className="w-[45%] space-y-[1.5vw] max-sm:space-y-[7vw] text-center max-sm:w-full max-sm:px-[7vw]">
           <h2 className="text-90 headingAnim  max-sm:w-full ">

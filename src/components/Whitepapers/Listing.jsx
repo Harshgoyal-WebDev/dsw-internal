@@ -84,7 +84,7 @@ const Listing = () => {
   }, []);
 
   return (
-    <section className="container relative z-[10] mt-[-40vh] max-sm:mt-0" id="news-listing">
+    <section className="container relative z-[10] mt-[-10vh] max-sm:mt-0" id="news-listing">
         <div className="space-y-[7vw] max-sm:space-y-[20vw]">
         <div className="w-full space-y-[3vw] max-sm:space-y-[7vw]">
          <h2 className="text-90 headingAnim  max-sm:w-full text-center">Featured Whitepapers</h2>

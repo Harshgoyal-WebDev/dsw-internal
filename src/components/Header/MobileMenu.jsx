@@ -62,7 +62,7 @@ export default function MobileMenu({
     <>
       {/* Backdrop */}
       <div
-        className={`w-screen h-screen fixed top-0 left-0 transition-all duration-500 z-[910] ${
+        className={`w-screen h-screen overflow-hidden fixed top-0 left-0 transition-all duration-500 z-[910] ${
           openMobileMenu
             ? "opacity-100 bg-black/40 backdrop-blur-lg pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -71,7 +71,7 @@ export default function MobileMenu({
 
       {/* Drawer */}
       <div
-        className={`max-sm:w-screen max-sm:h-dvh overflow-hidden opacity-100 flex flex-col max-sm:justify-between px-[7vw] text-[#CACACA] !font-display max-sm:text-[5vw] absolute top-0 z-[911] right-0 max-sm:space-y-[5vw] max-md:py-[8vw] transition-all duration-500 origin-top-right max-md:w-[80vw] max-md:h-screen max-md:text-[4vw] max-md:space-y-[7vw] ${
+        className={`max-sm:w-screen max-sm:h-screen overflow-hidden opacity-100 flex flex-col max-sm:justify-between px-[7vw] text-[#CACACA] !font-display max-sm:text-[5vw] absolute top-0 z-[911] right-0 max-sm:space-y-[5vw] max-md:py-[8vw] transition-all duration-500 origin-top-right max-md:w-[80vw] max-md:h-screen max-md:text-[4vw] max-md:space-y-[7vw] ${
           openMobileMenu
             ? "translate-x-0 pointer-events-auto"
             : "translate-x-[100%] pointer-events-none"

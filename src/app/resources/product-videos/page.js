@@ -8,7 +8,7 @@ const Page = () => {
   return (
     <>
       <Layout>
-        <Hero heroData={heroData} />
+        <Hero heroData={heroData} breadcrumbs={true}/>
         <VideoListing/>
         <FooterCTA footerCTAData={footerCTAData} />
       </Layout>
