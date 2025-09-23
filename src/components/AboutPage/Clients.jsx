@@ -26,7 +26,7 @@ export default function Clients() {
       <div className="flex items-start fadeup justify-start clients-marquee  gap-[3vw]">
         <div className="flex items-start justify-start gap-[5vw] clients-marquee__track">
           {clientData.map((client, index) => (
-            <div key={index} className="relative w-[15vw] clients-logo max-sm:w-[45vw]">
+            <div key={index} className="relative w-[15vw] clients-logo max-sm:w-[45vw] max-md:w-[35vw]">
               <Image
                 src={client.src}
                 width={100}

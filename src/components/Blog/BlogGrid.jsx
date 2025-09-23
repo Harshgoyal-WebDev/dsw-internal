@@ -279,7 +279,7 @@ const BlogGrid = () => {
   return (
     <section className="container relative !pt-0  space-y-[7vw] h-fit  max-sm:h-[360vh]">
       {/* Grid */}
-      <div className="grid grid-cols-3 gap-[3vw] max-sm:gap-[9vw] max-sm:grid-cols-1">
+      <div className="grid grid-cols-3 max-md:grid-cols-2 gap-[3vw] max-sm:gap-[9vw] max-sm:grid-cols-1">
         {currentCards.map((card, idx) => (
           <BlogCard key={idx} {...card} />
         ))}

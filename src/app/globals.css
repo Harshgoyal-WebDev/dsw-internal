@@ -55,8 +55,8 @@
   --text-30: var(--text-30);
   --text-30--line-height: 1.2;
   --breakpoint-*: initial;
+  --breakpoint-md: 1025px;
   --breakpoint-sm: 640px;
-  --breakpoint-md: 1025px
 }
 
 body {
@@ -412,28 +412,24 @@ h4 {
     color: var(--white-200);
   }
 }
-
-@media (max-width: 542px) {
+@media (max-width: 1025px) {
   :root {
-    --text-100: 12.5vw;
-    --text-90: 11vw;
-    --text-60: 9vw;
-    --text-50: 7.5vw;
-    --text-40: 7.5vw;
-    --text-30: 5.7vw;
+    --text-100: 9.5vw;
+    --text-90: 9vw;
+    --text-60: 7vw;
+    --text-50: 6.5vw;
+    --text-40: 6vw;
+    --text-30: 3.5vw;
   }
+  .container {
+  max-width: 100%;
+  padding: 10% 7vw;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  .title-1 {
-    font-size: 14vw;
-  }
-  .title-2 {
-    font-size: 9vw;
-  }
-  .title-3 {
-    font-size: 7.5vw;
-  }
   body {
-    font-size: 4.2vw;
+    font-size: 3vw;
     line-height: 1.6;
   }
   .container {
@@ -441,6 +437,10 @@ h4 {
     padding: 15% 7vw;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .title-1 {
+    font-size: 9vw;
   }
 
   .unifyblock {
@@ -459,7 +459,6 @@ h4 {
       var(--c2) 55%,
       var(--c3) 100%
     );
-
     background-color: transparent !important;
   }
   ::-webkit-scrollbar-thumb {
@@ -473,7 +472,7 @@ h4 {
   .marquee__track {
     display: flex;
     /* transform: translateX(-187.5%) !important; */
-    animation: marquee 15s linear infinite;
+    animation: marquee 16s linear infinite;
     min-width: 200%; /* Added for consistency */
   }
 
@@ -494,24 +493,29 @@ h4 {
     }
   }
 }
-@media (max-width: 1025px) {
-  :root {
-    --text-100: 9.5vw;
-    --text-90: 9vw;
-    --text-60: 7vw;
-    --text-50: 6.5vw;
-    --text-40: 6vw;
-    --text-30: 3.5vw;
-  }
-  .container {
-  max-width: 100%;
-  padding: 10% 7vw;
-  margin-left: auto;
-  margin-right: auto;
-}
 
+
+@media (max-width: 542px) {
+  :root {
+    --text-100: 12.5vw;
+    --text-90: 11vw;
+    --text-60: 9vw;
+    --text-50: 7.5vw;
+    --text-40: 7.5vw;
+    --text-30: 5vw;
+  }
+
+  .title-1 {
+    font-size: 14vw;
+  }
+  .title-2 {
+    font-size: 9vw;
+  }
+  .title-3 {
+    font-size: 7.5vw;
+  }
   body {
-    font-size: 3vw;
+    font-size: 4.2vw;
     line-height: 1.6;
   }
   .container {

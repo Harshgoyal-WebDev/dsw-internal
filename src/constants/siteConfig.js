@@ -32,7 +32,6 @@ export const NAVIGATION = [
   { text: "Product", href: "#", id: "product" , children:[
     { text: "Unify AI", href :"/unify" , id:"products-unify"},
     { text: "Insuraince", href :"/insuraince" , id:"products-insuraince"}
-
   ]},
   { text: "Solutions", href: "#", id: "solutions" , children:[
     { text: "Solution 1", href :"/#" , id:"solution-1"},
