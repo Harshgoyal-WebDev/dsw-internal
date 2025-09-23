@@ -101,18 +101,18 @@ const UnifyAi = () => {
       id="unifyAi"
     >
       {/* remove Tailwind gradient utilities here; keep only layout classes */}
-      <div className="w-full h-screen sticky top-0 flex justify-center items-center unifyblock max-sm:overflow-hidden">
-        <h2 className="text-[6vw] unify-title text-[#f8f8f8] max-sm:text-[8vw]">
+      <div className="w-full h-screen sticky top-0 flex justify-center items-center unifyblock max-md:overflow-hidden">
+        <h2 className="text-[6vw] unify-title text-[#f8f8f8] max-md:text-[8vw]">
           Powered by DSW UnifyAI
         </h2>
       </div>
 
-      <div className="w-screen h-fit absolute bottom-0 flex flex-col py-[15%] items-center gap-[3.5vw] max-sm:px-[7vw] max-sm:gap-[8vw]">
-        <h2 className="text-90 text-primary-1 headingAnim max-sm:text-center">
+      <div className="w-screen h-fit absolute bottom-0 flex flex-col py-[15%] items-center gap-[3.5vw] max-md:px-[7vw] max-md:gap-[8vw]">
+        <h2 className="text-90 text-primary-1 headingAnim max-md:text-center">
           One Platform. Infinite Possibilities.
         </h2>
         <Copy>
-          <p className="text-center w-[40%] text-[#111111] max-sm:w-full">
+          <p className="text-center w-[40%] text-[#111111] max-md:w-full">
             AI is everywhere. But it&apos;s not working everywhere. Why?​
             Because AI and business still operate in silos. DSW UnifyAI changes
             that. ​The intelligent layer between your data, teams, and

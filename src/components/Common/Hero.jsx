@@ -159,7 +159,7 @@ const Hero = ({ heroData , breadcrumbs}) => {
                   }
                 }}
               >
-                <Component href="#" text={text} className="max-md:min-w-[60vw]" />
+                <Component href="#" text={text} className="max-md:min-w-[20vw]" />
               </motion.div>
             ))}
           </div>

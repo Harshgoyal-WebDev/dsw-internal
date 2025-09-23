@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useRef } from "react";
 import TiltedCard from "../Animations/TiltedCard";
 import PrimaryButton from "../Button/PrimaryButton";
@@ -9,8 +9,8 @@ import "swiper/css/navigation";
 import WhiteButton from "../Button/WhiteButton";
 
 const Brochure = () => {
-   const swiperRef = useRef(null);
-   const handleNext = () => {
+  const swiperRef = useRef(null);
+  const handleNext = () => {
     if (swiperRef.current) {
       swiperRef.current.slideNext();
     }
@@ -22,15 +22,12 @@ const Brochure = () => {
     }
   };
   return (
-    <section
-      className="w-screen h-fit container"
-      id="brochure"
-    >
-      <div className="w-full flex flex-col items-center justify-center gap-[5vw] max-sm:gap-[10vw]">
-        <h2 className="w-[70%] text-center text-60 headingAnim max-sm:w-full max-sm:text-left max-sm:!text-[11.5vw]">
+    <section className="w-screen h-fit container" id="brochure">
+      <div className="w-full flex flex-col items-center justify-center gap-[5vw] max-md:gap-[7vw] max-sm:gap-[10vw]">
+        <h2 className="w-[70%] text-center text-60 headingAnim max-md:w-full max-md:text-left max-md:!text-[9vw] max-sm:!text-[11.5vw]">
           Join the Fastest - Moving Insurers on Their AI Journey 
         </h2>
-        <div className="w-full flex justify-center gap-[3vw] fadeup max-sm:hidden">
+        <div className="w-full flex justify-center gap-[3vw] fadeup max-md:hidden">
           <TiltedCard
             containerHeight="40vw"
             containerWidth="33vw"
@@ -59,13 +56,13 @@ const Brochure = () => {
                   </ul>
                 </div>
                 <div>
-                <WhiteButton
-                  background="border-primary-2 border bg-transparent hover:bg-transparent"
-                  circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
-                  text="Download PDF"
-                  href="#"
-                  className="hover:text-primary-2 text-primary-2"
-                />
+                  <WhiteButton
+                    background="border-primary-2 border bg-transparent hover:bg-transparent"
+                    circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
+                    text="Download PDF"
+                    href="#"
+                    className="hover:text-primary-2 text-primary-2"
+                  />
                 </div>
               </div>
             }
@@ -99,19 +96,19 @@ const Brochure = () => {
                   </ul>
                 </div>
                 <div>
-                 <WhiteButton
-                  background="border-primary-2 border bg-transparent hover:bg-transparent"
-                  circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
-                  text="Download PDF"
-                  href="#"
-                  className="hover:text-primary-2 text-primary-2"
-                />
+                  <WhiteButton
+                    background="border-primary-2 border bg-transparent hover:bg-transparent"
+                    circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
+                    text="Download PDF"
+                    href="#"
+                    className="hover:text-primary-2 text-primary-2"
+                  />
                 </div>
               </div>
             }
           />
         </div>
-        <div className="h-fit text-white max-sm:w-full max-sm:mt-[10vw] hidden max-sm:block fadeup">
+        <div className="h-fit text-white max-md:w-full max-md:mt-[10vw] hidden max-md:block fadeup">
           <Swiper
             slidesPerView={1.8}
             className=" !opacity-100 "
@@ -124,7 +121,7 @@ const Brochure = () => {
                 spaceBetween: 20,
               },
               640: {
-                slidesPerView: 1.2,
+                slidesPerView: 1,
                 spaceBetween: 30,
               },
               1024: {
@@ -138,7 +135,7 @@ const Brochure = () => {
             }}
           >
             {BrochureData.map((data) => (
-              <SwiperSlide className=" max-sm:w-full">
+              <SwiperSlide className=" max-md:w-full">
                 <BrochureCard
                   key={data.id}
                   title={data.title}
@@ -149,7 +146,7 @@ const Brochure = () => {
             ))}
           </Swiper>
 
-          <div className="flex gap-6 mt-6 max-sm:mt-10 max-sm:items-center max-sm:justify-center">
+          <div className="flex gap-6 mt-6 max-md:mt-10 max-md:items-center max-md:justify-center">
             <PreviousButton onClick={handlePrev} />
             <NextButton onClick={handleNext} />
           </div>
@@ -165,39 +162,28 @@ const BrochureCard = ({ title, list, listTitle }) => {
   return (
     <>
       {/* <Link href={"#"}> */}
-        <div className="bg-gradient-to-r from-[#09183e] to-[#1626FD] h-[70vh] rounded-[6.5vw] border border-white/40 py-[10%] px-[7vw]">
-          <div className="w-full h-full flex flex-col gap-[3vw] justify-between">
-            <div>
-            <h3 className="text-[5vw]">
-              {title}
-
-            </h3>
-            <h4 className="text-[9vw] mt-[7vw] max-sm:mb-[4vw]">
-            {listTitle}
-            </h4>
-            <ul className="space-y-[1vw] list-disc pl-[5vw]">
-              {
-                list.map((list,id)=>(
-
-                  <li key={id}>{list}</li>
-                ))
-              }
+      <div className="bg-gradient-to-r from-[#09183e] to-[#1626FD] h-[70vh] rounded-[6.5vw] max-md:min-h-[80vh] max-sm:h-[70vh] max-md:h-fit border border-white/40 py-[10%] px-[7vw]">
+        <div className="w-full h-full flex flex-col gap-[3vw] justify-between">
+          <div>
+            <h3 className="text-30">{title}</h3>
+            <h4 className="text-60 mt-[7vw] max-md:mb-[4vw]">{listTitle}</h4>
+            <ul className="space-y-[1vw] list-disc max-md:pl-[5vw] pl-[5vw]">
+              {list.map((list, id) => (
+                <li key={id}>{list}</li>
+              ))}
             </ul>
-            </div>
-            <div className="mt-[7vw]">
-          <WhiteButton
-                  background="border-primary-2 border bg-transparent hover:bg-transparent"
-                  circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
-                  text="Download PDF"
-                  href="#"
-                  className="hover:text-primary-2 text-primary-2"
-                />
-
-            </div>
-
           </div>
-      
+          <div className="mt-[7vw]">
+            <WhiteButton
+              background="border-primary-2 border bg-transparent hover:bg-transparent"
+              circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
+              text="Download PDF"
+              href="#"
+              className="hover:text-primary-2 text-primary-2"
+            />
+          </div>
         </div>
+      </div>
       {/* </Link> */}
     </>
   );
@@ -207,13 +193,30 @@ const BrochureData = [
   {
     id: 1,
     title: "25+ proven AI use cases across the policy lifecycle",
-    listTitle:"AI/ML​",
-    list:["Fraud detection​","Claims","Underwriting​","Automation & Ops​","Regulatory and compliance​","Sales and Marketing​","CX"],
+    listTitle: "AI/ML​",
+    list: [
+      "Fraud detection​",
+      "Claims",
+      "Underwriting​",
+      "Automation & Ops​",
+      "Regulatory and compliance​",
+      "Sales and Marketing​",
+      "CX",
+    ],
   },
   {
     id: 2,
-   title: "300+ ready-to-deploy GenAI agents trained on insurance data ",
-    listTitle:"GenAI Agents​​",
-    list:["Sales and Marketing​​","Claims","Underwriting​","New Business​​","Operations​","HR​","IT","Legal & Compliance ​"],
+    title: "300+ ready-to-deploy GenAI agents trained on insurance data ",
+    listTitle: "GenAI Agents​​",
+    list: [
+      "Sales and Marketing​​",
+      "Claims",
+      "Underwriting​",
+      "New Business​​",
+      "Operations​",
+      "HR​",
+      "IT",
+      "Legal & Compliance ​",
+    ],
   },
 ];

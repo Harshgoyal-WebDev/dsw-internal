@@ -63,12 +63,12 @@ const EnterpriseAI = () => {
       id="enterpriseAI"
       className="h-full w-screen relative overflow-hidden container"
     >
-      <div className="w-full h-full flex flex-col items-center justify-center relative z-[2] space-y-[5vw] max-sm:items-start max-sm: ">
-        <div className="text-center  space-y-5 mt-10 flex flex-col items-center justify-center max-sm:text-left max-sm:items-start">
+      <div className="w-full h-full flex flex-col items-center justify-center relative z-[2] space-y-[5vw] max-md:items-start ">
+        <div className="text-center  space-y-5 mt-10 flex flex-col items-center justify-center max-md:text-left max-md:items-start">
           <h2 className="text-90 leading-[1.2] headingAnim text-[#1626FD] enterprise-title ">
             Built to Orchestrate Enterprise AI
           </h2>
-          <div className="w-[70%] flex justify-center text-[#111111] enterprise-content max-sm:w-full">
+          <div className="w-[70%] flex justify-center text-[#111111] enterprise-content max-md:w-full">
             <Copy>
             <p>
               From insurance to banking, retail, and more - UnifyAI is the backbone for <br/> enterprises that want to build, deploy, and scale AI
@@ -78,14 +78,14 @@ const EnterpriseAI = () => {
           </div>
         </div>
 
-        <div className="w-full h-full flex relative items-center justify-center max-sm:static max-sm:flex-col max-sm:gap-[5vw]">
-          <div className="h-fit w-[20%] border border-[#59595980] background-glass rounded-[2vw] px-[2.5vw] py-[2.5vw] fadeup absolute left-[5%] top-[5%] max-sm:w-full max-sm:static max-sm:px-[5vw] max-sm:py-[6vw] max-sm:rounded-[4vw] max-sm:order-[1]">
+        <div className="w-full h-full flex relative items-center justify-center max-md:static max-md:flex-col max-md:gap-[5vw]">
+          <div className="h-fit w-[20%] border border-[#59595980] background-glass rounded-[2vw] px-[2.5vw] py-[2.5vw] fadeup absolute left-[5%] top-[5%] max-md:w-full max-md:static max-md:px-[5vw] max-md:py-[6vw] max-md:rounded-[4vw] max-md:order-[1]">
             <p className="text-[#CACACA] leading-[1.5]">
               Your All-in-One Playground to Simplify and Accelerate End-to-End
               AI/ML Use Cases
             </p>
           </div>
-          <div className="h-[45vw] w-auto flex-1 max-sm:h-auto max-sm:static max-sm:order-[0] max-sm:scale-[1.2] max-sm:mt-[20vw] max-sm:w-[120%] max-sm:translate-x-[-2%]">
+          <div className="h-[45vw] w-auto flex-1 max-md:h-auto max-md:static max-md:order-[0] max-md:scale-[1.2] max-sm:mt-[20vw] max-md:mt-[10vw] max-sm:w-[120%] max-md:translate-x-[-2%]">
             <Image
               src={"/assets/images/homepage/enterprise-ai-shape.svg"}
               height={920}
@@ -94,7 +94,7 @@ const EnterpriseAI = () => {
               className="h-full w-full object-contain"
             />
           </div>
-          <div className="h-fit w-[20%] border border-[#59595980] background-glass rounded-[2vw] px-[2.5vw] py-[2.5vw] self-end ml-auto fadeup absolute bottom-[20%] right-[3%]  max-sm:w-full max-sm:static max-sm:px-[5vw] max-sm:py-[6vw] max-sm:ml-0 max-sm:rounded-[4vw] max-sm:order-[2]">
+          <div className="h-fit w-[20%] border border-[#59595980] background-glass rounded-[2vw] px-[2.5vw] py-[2.5vw] self-end ml-auto fadeup absolute bottom-[20%] right-[3%]  max-md:w-full max-md:static max-md:px-[5vw] max-md:py-[6vw] max-md:ml-0 max-md:rounded-[4vw] max-md:order-[2]">
             <p className="text-[#CACACA] leading-[1.5]">
               An In-built Playground for Rapid and Efficient GenAI Use Case
               Development
@@ -102,39 +102,39 @@ const EnterpriseAI = () => {
           </div>
 
           <div>
-            <div className="absolute top-[21%] left-[67%] max-sm:top-[45%] max-sm:left-0">
+            <div className="absolute top-[21%] left-[67%] max-md:top-[35%] max-md:left-0 max-sm:top-[45%] max-sm:left-0">
               <Copy>
-                <p className="text-[#E8E8E8] text-[1vw] max-sm:text-[3.5vw]">Presentation Layer</p>
+                <p className="text-[#E8E8E8] text-[1vw] max-md:text-[3.5vw]">Presentation Layer</p>
               </Copy>
             </div>
-            <div className="absolute top-[32%] left-[67%] max-sm:left-0 max-sm:top-[50%]">
+            <div className="absolute top-[32%] left-[67%] max-sm:left-0 max-sm:top-[50%] max-md:top-[40%] max-md:left-0">
               <Copy>
-                <p className="text-[#E8E8E8] text-[1vw] max-sm:text-[3.5vw]">Use Cases</p>
+                <p className="text-[#E8E8E8] text-[1vw] max-md:text-[3.5vw]">Use Cases</p>
               </Copy>
             </div>
-            <div className="absolute top-[42%] left-[67%] max-sm:left-[70%] max-sm:top-[54%]">
+            <div className="absolute top-[42%] left-[67%] max-sm:left-[70%] max-sm:top-[54%] max-md:top-[50%] max-md:left-[70%]">
               <Copy>
-                <p className="text-[#E8E8E8] text-[1vw] max-sm:text-[3.5vw]">Gen AI Studio</p>
+                <p className="text-[#E8E8E8] text-[1vw] max-md:text-[3.5vw]">Gen AI Studio</p>
               </Copy>
             </div>
-            <div className="absolute top-[42%] left-[28%] text-right max-sm:left-0 max-sm:top-[54%]">
+            <div className="absolute top-[42%] left-[28%] text-right max-sm:left-0 max-sm:top-[54%] max-md:top-[47%] max-md:left-0">
               <Copy>
-                <p className="text-[#E8E8E8] text-[1vw] max-sm:text-[3.5vw]">AI Studio</p>
+                <p className="text-[#E8E8E8] text-[1vw] max-md:text-[3.5vw]">AI Studio</p>
               </Copy>
             </div>
-            <div className="absolute top-[50%] left-[27%] text-right max-sm:left-0 max-sm:top-[58%]">
+            <div className="absolute top-[50%] left-[27%] text-right max-sm:left-0 max-sm:top-[58%] max-md:top-[52%] max-md:left-0">
               <Copy>
-                <p className="text-[#E8E8E8] text-[1vw] max-sm:text-[3.5vw]">InsurAInce</p>
+                <p className="text-[#E8E8E8] text-[1vw] max-md:text-[3.5vw]">InsurAInce</p>
               </Copy>
             </div>
-            <div className="absolute top-[58%] left-[29%] text-right max-sm:left-0 max-sm:top-[62%]">
+            <div className="absolute top-[58%] left-[29%] text-right max-sm:left-0 max-sm:top-[62%] max-md:top-[57%] max-md:left-0">
               <Copy>
-                <p className="text-[#E8E8E8] text-[1vw] max-sm:text-[3.5vw]">UnifyAI</p>
+                <p className="text-[#E8E8E8] text-[1vw] max-md:text-[3.5vw]">UnifyAI</p>
               </Copy>
             </div>
-            <div className="absolute top-[68%] left-[19.5%] text-right max-sm:left-0 max-sm:top-[66%] max-sm:w-[30%] max-sm:text-left">
+            <div className="absolute top-[68%] left-[19.5%] text-right max-sm:left-0 max-sm:top-[66%] max-sm:w-[30%] max-sm:text-left max-md:top-[62%] max-md:left-0">
               <Copy>
-                <p className="text-[#E8E8E8] text-[1vw] max-sm:text-[3.5vw]">
+                <p className="text-[#E8E8E8] text-[1vw] max-md:text-[3.5vw]">
                   Infra: On - Premise/Cloud
                 </p>
               </Copy>

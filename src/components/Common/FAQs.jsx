@@ -36,7 +36,7 @@ export default function Faqs({ allowMultiple = false, content }) {
           </h2>
         
         
-        <div className="w-[90%]  max-sm:w-full max-sm:space-y-[5vw] max-md:w-[90%] max-md:py-[3vw] max-md:space-y-[3vw] relative z-[10]">
+        <div className="w-[90%]  max-md:w-full max-sm:space-y-[5vw]  max-md:py-[3vw] max-md:space-y-[3vw] relative z-[10]">
           {data.map((f, i) => (
             <AccordionItem
               key={i}
@@ -72,17 +72,17 @@ function AccordionItem({ question, answer, isOpen, onToggle }) {
               </h4>
               <div
             //   style={{ transitionTimingFunction: "cubic-bezier(0.625, 0.05, 0, 1)" }}
-                className={` h-auto relative duration-500 max-sm:w-[12vw] rounded-full border-[1.5px]  p-[2vw]  transition-all  ease-out max-sm:p-[6vw] ${ isOpen ? "border-[#030815] bg-gradient-to-br from-[#F16B0D] to-[#E61216]" :" background-glass border-white/20"}  ${
+                className={` h-auto relative duration-500 max-sm:w-[12vw] rounded-full border-[1.5px]  p-[2vw]  transition-all  ease-out max-sm:p-[6vw] max-md:p-[4vw] max-md:w-[10vw] max-md:h-[10vw] ${ isOpen ? "border-[#030815] bg-gradient-to-br from-[#F16B0D] to-[#E61216]" :" background-glass border-white/20"}  ${
                   !isOpen ? "group-hover:rotate-[180deg]" : "group-hover:rotate-[315deg] rotate-[45deg]"
                 }`}
               >
-                <span className={`w-[1.5vw] rounded-full h-[2px] bg-[#ffffff] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-300 transform-origin-center max-sm:w-[5vw] max-sm:h-[1.5px] ${
+                <span className={`w-[1.5vw] rounded-full h-[2px] bg-[#ffffff] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-300 transform-origin-center max-sm:w-[5vw] max-md:w-[3vw] max-md:h-[1.5px] max-sm:h-[1.5px] ${
                     isOpen ? "rotate-90" : "rotate-90"
                   }`}></span>
 
                 <span
                
-                  className={`w-[1.5vw] rounded-full h-[2px] bg-[#ffffff] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-300 transform-origin-center max-sm:w-[5vw] max-sm:h-[1.5px] `}
+                  className={`w-[1.5vw] rounded-full h-[2px] bg-[#ffffff] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-300 transform-origin-center max-sm:w-[5vw] max-md:w-[3vw] max-sm:h-[1.5px] `}
                 ></span>
               </div>
             </button>

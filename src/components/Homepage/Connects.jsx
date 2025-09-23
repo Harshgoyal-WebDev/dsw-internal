@@ -70,10 +70,10 @@ const Connects = () => {
   return (
     <section
       ref={sectionRef}
-      className="h-screen w-screen relative overflow-hidden  max-sm:h-full container"
+      className="h-screen w-screen relative overflow-hidden  max-md:h-full container"
     >
       <div className="w-full h-full flex flex-col items-center justify-center relative z-[2]">
-        <div className="w-full flex items-center justify-center gap-20 py-20 max-sm:flex-col max-sm:gap-[20vw]">
+        <div className="w-full flex items-center justify-center gap-20 py-20 max-md:flex-col max-sm:gap-[20vw] max-md:gap-[20vw]">
           <div>
             <Image
               src="/assets/icons/azure-logo.svg"
@@ -102,14 +102,14 @@ const Connects = () => {
             />
           </div>
           <div
-            className="relative flex items-center justify-center w-[20vw] h-[20vw] max-sm:h-[30vw] max-sm:w-[30vw] max-sm:mb-[5vw]"
+            className="relative flex items-center justify-center w-[20vw] h-[20vw] max-sm:h-[30vw] max-sm:w-[30vw] max-md:mb-[5vw] max-md:w-fit max-md:h-fit"
           >
             <div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#202530] h-[15vw] w-[15vw] z-[-1] origin-center max-sm:h-[40vw] max-sm:w-[40vw]"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#202530] h-[15vw] w-[15vw] z-[-1] origin-center  max-md:w-[25vw] max-md:h-[25vw] max-sm:h-[40vw] max-sm:w-[40vw]"
               ref={circle1}
             />
             <div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#121723] h-[20vw] w-[20vw] z-[-2] origin-center max-sm:h-[60vw] max-sm:w-[60vw]"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full  max-md:w-[30vw] max-md:h-[30vw] bg-[#121723] h-[20vw] w-[20vw] z-[-2] origin-center max-sm:h-[60vw] max-sm:w-[60vw]"
               ref={circle2}
             />
             <Image
@@ -144,7 +144,7 @@ const Connects = () => {
       <div className="w-screen h-[25vw] bg-gradient-to-t from-transparent to-[#030815] absolute top-0 z-[1]" />
       <div className="w-screen h-[10vw] bg-gradient-to-b from-transparent to-[#030815] absolute bottom-0 z-[1]" />
       <div></div>
-      <div className="h-screen w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[-1] flex items-center justify-center max-sm:translate-y-[-40%]">
+      <div className="h-screen w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[-1] flex items-center justify-center max-sm:translate-y-[-40%] max-md:translate-y-[-40%]">
         <div className="relative w-full h-full flex items-center justify-center">
           <div className="absolute connect-circle-1" ref={circle3} >
             <svg
