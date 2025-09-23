@@ -11,8 +11,6 @@ const OfficeLocations = () => {
             Our Office Locations
         </h2>
         <div className="w-full">
-
-
         <WorldMap />
         </div>
       

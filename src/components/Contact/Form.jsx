@@ -29,14 +29,14 @@ const Form = () => {
             <div className="space-y-[0.3vw] text-head text-white-300 font-normal fadeup">
               <p>Phone:</p>
 
-              <p className=" cursor-pointer ">+353894015233</p>
-              <p className=" cursor-pointer">+919664056847</p>
+              <p className=" cursor-pointer link-line">+353894015233</p>
+              <p className=" cursor-pointer link-line">+919664056847</p>
             </div>
 
             <div className="text-white-300 space-y-[0.3vw] fadeup">
               <p>E-mail:</p>
 <a href="mailto:contact@datasciencewizards.ai" terget="_blank">
-              <p className=" cursor-pointer">contact@datasciencewizards.ai</p>
+              <p className=" cursor-pointer link-line">contact@datasciencewizards.ai</p>
               </a>
             </div>
 

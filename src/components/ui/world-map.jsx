@@ -45,10 +45,23 @@ export function WorldMap() {
 
   // Define connections between locations (pairs)
   const connections = [
-    { start: locations[0].coords, end: locations[1].coords }, // USA → Ireland
-    { start: locations[1].coords, end: locations[2].coords }, // Ireland → India
-    { start: locations[0].coords, end: locations[2].coords }, // USA → India
+    { start: locations[0].coords, end: locations[1].coords }, 
+    { start: locations[1].coords, end: locations[2].coords }, 
+    { start: locations[0].coords, end: locations[2].coords }, 
   ];
+
+  const pathVariants = {
+  hidden: { pathLength: 0 },
+  visible: (i) => ({
+    pathLength: 1,
+    transition: {
+      duration: 1.5,
+      delay: i * 1.2,      
+      ease: "easeInOut",
+    },
+  }),
+};
+
 
   return (
     <div className="relative w-full aspect-[2/1] rounded-lg max-sm:p-0 ">
@@ -61,9 +74,12 @@ export function WorldMap() {
       />
 
       {/* Overlay paths + markers */}
-      <svg
+      <motion.svg
         ref={svgRef}
         viewBox="0 -200 800 650"
+        initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.3 }}
         className="w-full h-full absolute inset-0 pointer-events-none select-none"
       >
         {/* Curved animated lines */}
@@ -77,17 +93,19 @@ export function WorldMap() {
       fill="none"
       stroke="url(#path-gradient)"
       strokeWidth={isMobile ? 5 : 1.5}
-      initial={{ pathLength: 0 }}
-      animate={{ pathLength: [0, 0, 1] }}
-      transition={{
-        duration: 6, 
-        times: [0, i * 0.33, (i * 0.33) + 0.33], 
-        delay: 0,
-        ease: "easeOut",
-        repeat: Infinity,
-        repeatType: "restart",
-        repeatDelay: 1.5,
-      }}
+      variants={pathVariants} // 👈 use variants
+        custom={i} 
+      // initial={{ pathLength: 0 }}
+      // animate={{ pathLength: [0, 0, 1] }}
+      // transition={{
+      //   duration: 3, 
+      //   times: [0, i * 0.33, (i * 0.33) + 0.33], 
+      //   delay: 0,
+      //   ease: "easeOut",
+      //   // repeat: Infinity,
+      //   // repeatType: "restart",
+      //   // repeatDelay: 1,
+      // }}
     />
   );
 })}
@@ -95,10 +113,10 @@ export function WorldMap() {
         {/* Gradient for line fade */}
         <defs>
           <linearGradient id="path-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="orange" stopOpacity="0" />
-            <stop offset="10%" stopColor="orange" stopOpacity="1" />
-            <stop offset="90%" stopColor="orange" stopOpacity="1" />
-            <stop offset="100%" stopColor="orange" stopOpacity="0" />
+            <stop offset="0%" stopColor="#F16B0D" stopOpacity="0" />
+            <stop offset="10%" stopColor="#F16B0D" stopOpacity="1" />
+            <stop offset="90%" stopColor="#F16B0D" stopOpacity="1" />
+            <stop offset="100%" stopColor="#F16B0D" stopOpacity="0" />
           </linearGradient>
         </defs>
 
@@ -107,13 +125,13 @@ export function WorldMap() {
           const point = projectPoint(loc.coords.lat, loc.coords.lng);
           return (
             <g key={i}>
-              <circle cx={point.x} cy={point.y}  r={isMobile ? 15 : 4} fill="#F97316" />
+              <circle cx={point.x} cy={point.y}  r={isMobile ? 15 : 4} fill="#F16B0D" />
               <circle
                 cx={point.x}
                 cy={point.y}
-                 r={isMobile ? 15 : 4}
-                fill="#F97316"
-                opacity="0.5"
+                 r={isMobile ? 15 : 10}
+                fill="#F16B0D"
+                opacity="0.8"
               >
                 <animate
                   attributeName="r"
@@ -133,7 +151,7 @@ export function WorldMap() {
             </g>
           );
         })}
-      </svg>
+      </motion.svg>
     </div>
   );
 }
