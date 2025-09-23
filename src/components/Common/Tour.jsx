@@ -25,7 +25,7 @@ useEffect(() => {
   return (
     <section className="w-screen h-fit container" id="tour">
       <div className="w-full flex flex-col gap-[2vw] items-center max-sm:gap-[4vw]">
-        <h2 className="text-60 headingAnim w-[40%] max-sm:w-full text-center">{heading}</h2>
+        <h2 className="text-60 headingAnim w-[40%] max-md:w-full text-center">{heading}</h2>
         <Copy>
           <p className="text-[#CACACA] text-center">
             {para}
@@ -33,7 +33,7 @@ useEffect(() => {
         </Copy>
 
         {/* Tab Switcher */}
-        <div className="w-fit flex rounded-full border-blue-1 border p-[0.2vw] !text-[1.15vw] fadeup relative max-sm:mt-[10vw] max-sm:!text-[4.2vw] max-sm:p-[0.5vw]">
+        <div className="w-fit flex rounded-full border-blue-1 border p-[0.2vw] !text-[1.15vw] fadeup relative max-sm:mt-[10vw] max-md:mt-[5vw]  max-sm:!text-[4.2vw] max-sm:p-[0.5vw]">
           {/* Thumb Track */}
           <div className="w-full h-[90%] absolute thumb-track max-sm:h-[92%]">
             <motion.div
@@ -87,7 +87,7 @@ useEffect(() => {
         </div>
 
         {/* Content Containers */}
-        <div className="w-[80%] h-[30vw] relative fadeup mt-[5vw] max-sm:w-full max-sm:h-[60vw] max-sm:mt-[12vw]">
+        <div className="w-[80%] h-[30vw] relative fadeup mt-[5vw] max-sm:w-full max-sm:h-[60vw] max-md:h-[40vw] max-md:w-full max-sm:mt-[12vw]">
           <AnimatePresence mode="wait">
            
             {activeTab === "aiStudio" && (

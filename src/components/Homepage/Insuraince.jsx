@@ -86,26 +86,26 @@ const Insuraince = () => {
       className="w-screen h-full overflow-hidden container"
       ref={sectionRef}
     >
-      <div className="w-full space-y-[7.5vw] max-sm:space-y-[12vw]">
-        <div className="text-center gap-y-[2.5vw] w-[65%] mx-auto flex flex-col items-center max-sm:w-full max-sm:gap-y-[10vw]">
+      <div className="w-full space-y-[7.5vw] max-md:space-y-[10vw] max-sm:space-y-[12vw]">
+        <div className="text-center gap-y-[2.5vw] w-[65%] mx-auto flex flex-col items-center max-md:w-full max-sm:gap-y-[10vw]">
           <h2 className="text-60 headingAnim">
             Introducing insurAInce - Purpose - Built AI platform for Insurance
             Enterprises​
           </h2>
           <Copy>
-            <p className="text-[#CACACA] w-[70%] max-sm:w-full">
+            <p className="text-[#CACACA] w-[70%] max-md:w-full">
               Over 75% of insurers are experimenting with AI. Fewer than 20%
               have scaled a second use case. And, insurAInce changes that. ​
             </p>
           </Copy>
         </div>
 
-        <div className="flex items-center justify-between  max-sm:flex-col">
+        <div className="flex items-center justify-between  max-md:flex-col">
           {content.map((data, index) => (
             <div
               key={index}
               ref={(el) => (cardRefs.current[index] = el)}
-              className="w-[22%] opacity-0 max-sm:w-full"
+              className="w-[22%] opacity-0 max-md:w-full"
             >
               <Card
                 data={data}
@@ -123,19 +123,19 @@ export default Insuraince;
 
 const Card = ({ data, spanRef }) => {
   return (
-    <div className="w-full space-y-[2vw] relative group insuraince-cards  max-sm:space-y-[10vw]">
-      <div className=" space-y-[3vw] max-sm:flex max-sm:flex-col max-sm:items-center max-sm:space-y-[6vw] max-sm:mt-[10vw]">
+    <div className="w-full space-y-[2vw] relative group insuraince-cards  max-sm:space-y-[10vw] max-md:space-y-[10vw]">
+      <div className=" space-y-[3vw] max-md:flex max-md:flex-col max-md:items-center max-md:space-y-[6vw]  max-md:mt-[10vw]">
         <Image
           src={data.icon}
           height={98}
           width={98}
           alt={data.title}
-          className="w-[5vw] h-[5vw] object-contain max-sm:w-[20vw] max-sm:h-[20vw]"
+          className="w-[5vw] h-[5vw] object-contain max-md:w-[15vw] max-md:h-[15vw] max-sm:w-[20vw] max-sm:h-[20vw]"
         />
-        <h4 className="text-40 text-white-200 leading-[1.25] max-sm:w-[72%] max-sm:text-center max-sm:h-fit">
+        <h4 className="text-40 text-white-200 leading-[1.25] max-md:w-[72%] max-md:text-center max-md:h-fit">
           {data.title}
         </h4>
-        <p className="text-white-300 content-p h-28 max-sm:w-[80%] max-sm:text-center max-sm:h-auto">{data.desc}</p>
+        <p className="text-white-300 content-p h-28 max-md:w-[80%] max-md:text-center max-md:h-auto">{data.desc}</p>
       </div>
       <div className="relative w-full h-[0.5px] bg-[#CACACA75] opacity-[0.5] group-hover:opacity-[1] transition-all duration-500">
         <span

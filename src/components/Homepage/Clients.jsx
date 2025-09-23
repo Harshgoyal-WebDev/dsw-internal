@@ -87,7 +87,7 @@ export default function Clients() {
       <section
         ref={container}
         id="clientblur"
-        className="relative w-screen h-[400vh] text-center"
+        className="relative w-screen max-sm:static max-md:hidden h-[400vh] text-center"
       >
         <div className="sticky w-full top-0 h-screen flex items-center justify-center">
           <h2 className="text-60 w-[40%]  max-sm:w-[90%] text-[#E8E8E8] headingAnim">

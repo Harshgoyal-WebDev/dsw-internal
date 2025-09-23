@@ -63,13 +63,13 @@ const FooterCTA = ({footerCTAData}) => {
     const image1Y = useTransform(smoothY, (v) => v * 20);
 
     return (
-        <div ref={containerRef} className="flex items-center justify-between h-[80vh] w-screen overflow-hidden max-sm:flex-col-reverse  max-sm:h-full container " id="footer-cta">
-            <div className="w-[45%] max-sm:!w-full max-sm:text-center max-sm:mt-[5vw]">
+        <div ref={containerRef} className="flex items-center justify-between h-[80vh] w-screen overflow-hidden max-md:flex-col-reverse  max-md:h-full container " id="footer-cta">
+            <div className="w-[45%] max-md:!w-full max-md:text-center max-sm:mt-[5vw]">
                 <h2 className="text-90 font-head mb-3 headingAnim text-white-200 max-sm:mb-[7vw]">{footerCTAData.heading}</h2>
                 <Copy>
                 <p data-para-anim className="text-[#CACACA]  mb-12">{footerCTAData.para}</p>
                 </Copy>
-                <div className="flex gap-6 max-sm:flex-col">
+                <div className="flex gap-6 max-md:items-center max-md:justify-center max-sm:flex-col">
                     <div className="fadeup">
                         <PrimaryButton text={footerCTAData.btnText1} href={footerCTAData.btnLink1} />
                     </div>
@@ -78,7 +78,7 @@ const FooterCTA = ({footerCTAData}) => {
                     </div>
                 </div>
             </div>
-            <div className="relative w-1/2 h-[50vw] max-sm:w-full max-sm:h-[110vw]">
+            <div className="relative w-1/2 h-[50vw] max-md:w-full max-sm:h-[110vw]">
                 <div className="absolute top-1/2 -translate-y-1/2 right-0 -z-10">
                     <svg className="w-[95%] ml-auto" width="778" height="778" viewBox="0 0 778 778" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="389.094" cy="388.916" r="388.781" stroke="url(#paint0_linear_232_8167)" strokeOpacity="0.5" strokeWidth="0.25" className="circle-1" />

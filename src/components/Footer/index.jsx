@@ -23,22 +23,22 @@ const Footer = () => {
     return (
         <>
             <footer className="relative overflow-hidden container !pb-0" id="footer">
-                <div className="absolute top-[30%] left-0 h-screen w-screen max-sm:hidden">
+                <div className="absolute top-[30%] left-0 h-screen w-screen max-md:hidden">
                     <Suspense>
                         <DynamicShaderComp/>
                     </Suspense>
                 </div>
-                <div className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-sm:block">
+                <div className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-md:block">
                     <Image src={"/assets/images/homepage/gradient-mobile.png"} alt="bg-gradient" className="w-full h-full object-cover" width={600} height={1080} />
                 </div>
                 <div className="relative z-[20]">
-                    <div className="rounded-[2.2vw] background-glass-diff border border-white/30 px-12 py-[5%] flex justify-between max-sm:px-[0vw] max-sm:py-[15%] max-sm:rounded-[5vw] max-sm:flex-col max-sm:items-center max-sm:justify-center max-sm:text-center">
+                    <div className="rounded-[2.2vw] background-glass-diff border border-white/30 px-12 py-[5%] flex justify-between max-md:px-[0vw] max-md:py-[15%] max-md:rounded-[5vw] max-md:flex-col max-md:items-center max-md:justify-center max-md:text-center">
                         {/* Logo and Contact Info */}
-                        <div className="flex flex-col justify-between items-start gap-24 max-sm:gap-18 footer-content max-sm:pb-[15vw] max-sm:items-center max-sm:justify-center">
+                        <div className="flex flex-col justify-between items-start gap-24 max-md:gap-18 footer-content max-md:pb-[15vw] max-md:items-center max-md:justify-center">
                             <Logo variant="footer" className="w-fit" />
                             <ContactInfo variant="footer" />
                         </div>
-                        <div className="flex justify-between w-1/2 ml-auto gap-10 footer-content max-sm:flex-col max-sm:w-full">
+                        <div className="flex justify-between w-1/2 ml-auto gap-10 footer-content max-md:flex-col max-md:w-full">
                             {/* Navigation Links */}
                             <div>
                                 <h6 className="mb-5 text-foreground content-p">NAVIGATION</h6>
@@ -56,10 +56,10 @@ const Footer = () => {
                             </div>
 
                             {/* Newsletter Subscription */}
-                            <div className="flex flex-col justify-between w-3/5 max-sm:w-full">
+                            <div className="flex flex-col justify-between w-3/5 max-md:w-full">
                                 <Newsletter />
                                 {/* Social Media Links */}
-                                <ul className="flex gap-4 max-sm:items-center max-sm:justify-center max-sm:mt-[15vw]">
+                                <ul className="flex gap-4 max-md:items-center max-md:justify-center max-md:mt-[15vw]">
                                     {SOCIAL_LINKS.map((link) => (
                                         <li key={link.id} className="group">
                                             <SocialLink
@@ -74,7 +74,7 @@ const Footer = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="flex justify-between py-8 pt-12 text-[1vw] max-sm:text-sm max-sm:gap-2 text-foreground max-sm:flex-col max-sm:text-center">
+                    <div className="flex justify-between py-8 pt-12 text-[1vw] max-md:text-sm max-md:gap-2 text-foreground max-md:flex-col max-md:text-center">
                         <p>Copyright © {SITE_CONFIG.name} {SITE_CONFIG.copyright.year}</p>
                         <p>
                             {SITE_CONFIG.copyright.credits.text}{" "}

@@ -41,7 +41,7 @@ export default function MobileMenu({
         }`}
       ></div>
       <div
-        className={`max-sm:w-screen max-sm:h-dvh overflow-hidden opacity-100 flex flex-col max-sm:justify-between px-[7vw] text-[#CACACA] !font-display  max-sm:text-[5vw] absolute top-0 z-[911] right-0 max-sm:space-y-[5vw] max-md:py-[8vw] transition-all duration-500 origin-top-right max-md:w-[60vw] max-md:h-screen max-md:text-[4vw] max-md:space-y-[7vw]   ${
+        className={`max-sm:w-screen max-sm:h-dvh overflow-hidden opacity-100 flex flex-col max-sm:justify-between px-[7vw] text-[#CACACA] !font-display  max-sm:text-[5vw] absolute top-0 z-[911] right-0 max-sm:space-y-[5vw] max-md:py-[8vw] transition-all duration-500 origin-top-right max-md:w-[80vw] max-md:h-screen max-md:text-[4vw] max-md:space-y-[7vw]   ${
           openMobileMenu
             ? "translate-x-0 pointer-events-auto "
             : "translate-x-[100%] pointer-events-none"

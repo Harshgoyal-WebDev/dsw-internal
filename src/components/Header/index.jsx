@@ -78,7 +78,7 @@ const Header = () => {
         className={`text-white w-screen fixed top-0 left-0 z-[900] pointer-events-none`} >
         <div className={`flex items-center justify-between px-[4vw] py-6 w-full transition-transform duration-500 pointer-events-auto max-sm:px-[7vw] max-sm:bg-transparent max-sm:py-[3vw] max-sm:pt-[5vw] max-sm:backdrop-blur-sm ${isHidden ? "-translate-y-full" : "translate-y-0"}`} ref={headerRef}>
           <Logo variant="header" className="dsw-logo" />
-          <div className="border rounded-full bg-stone-900/30 backdrop-blur-sm border-white/20 ml-[4vw] max-sm:hidden">
+          <div className="border rounded-full bg-stone-900/30 backdrop-blur-sm border-white/20 ml-[4vw]  max-md:hidden">
             <ul className="flex items-center justify-between px-[2.5vw] py-[1.5vw] gap-[3vw] text-[1.145vw]">
               {NAVIGATION.map((link) => (
                 <li key={link.id} className="text-[#E8E8E8]">
@@ -107,7 +107,7 @@ const Header = () => {
             </div>
          
           </div>
-          <div className="max-sm:hidden">
+          <div className="max-md:hidden ">
             <PrimaryButton
               text={CTA_BUTTONS.primary.text}
               href={CTA_BUTTONS.primary.href}
