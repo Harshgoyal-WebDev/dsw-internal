@@ -46,7 +46,7 @@ const Listing = () => {
             },
             opacity: 0,
             y: 50,
-            delay: id == 0 ? 2 : 0,
+            // delay: id : 0,
             ease: "power3.out",
             duration: 2,
           });
@@ -57,7 +57,7 @@ const Listing = () => {
   }, []);
 
   return (
-    <section className="container relative z-[10] mt-[-60vh] max-sm:mt-[-40vh]" id="news-listing">
+    <section className="container relative z-[10] mt-[-10vh]" id="news-listing">
       <div className="w-full space-y-[4.5vw] max-sm:space-y-[15vw]">
         {listingData.map((data, id) => (
           <div

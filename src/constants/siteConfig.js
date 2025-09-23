@@ -36,7 +36,6 @@ export const NAVIGATION = [
   { text: "Solutions", href: "#", id: "solutions" , children:[
     { text: "Solution 1", href :"/#" , id:"solution-1"},
     { text: "Solution 2", href :"#" , id:"solution-2"}
-
   ]},
   { text: "About Us", href: "/about", id: "about" },
   { text: "Resources", href: "#", id: "resources" ,children:[
@@ -44,9 +43,9 @@ export const NAVIGATION = [
     { text: "News And PR", href :"/resources/news-and-pr" , id:"resources-news"},
     { text: "Videos", href :"/resources/product-videos" , id:"resources-videos"},
     { text: "Webinars And Events", href :"/resources/webinars-and-events" , id:"resources-webinars"},
-    { text: "Workshops", href :"/#" , id:"resources-workshops"},
+    { text: "AI for insuraince workshop", href :"/resources/webinars-and-workshops/ai-for-insurance-workshop" , id:"resources-workshops"},
+    { text: "AI & GenAI masterclass", href :"/resources/webinars-and-workshops/ai-and-gen-ai-masterclass" , id:"resources-workshops"},
     { text: "Whitepapers", href :"/resources/whitepapers" , id:"resources-whitepapers"},
-
   ]},
   { text: "Pilot Program", href: "/pilot-program", id: "pilot" },
   { text: "Contact", href: "/contact-us", id: "contact" }

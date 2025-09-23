@@ -97,8 +97,14 @@ const Header = () => {
                     <li
                       key={link.id}
                       className="relative text-[#E8E8E8] dropdown-links"
-                      onMouseEnter={() => setOpenDropdown(link.id)}
-                      onMouseLeave={() => setOpenDropdown(null)}
+                       onMouseEnter={() => {
+                              setOpenDropdown(link.id);
+                              lenis.stop();
+                            }}
+                            onMouseLeave={() => {
+                              setOpenDropdown(null);
+                              lenis.start();
+                            }}
                     >
                       {/* Top-level link */}
                       <div className="flex items-center gap-3">
@@ -118,13 +124,15 @@ const Header = () => {
                           }}
                         />
                         {hasChildren && (
-                          <div>
                           <div
-                            className={`transition-transform duration-300 ${
-                              openDropdown === link.id ? "rotate-180" : ""
-                            }`}
+                          className="w-[1vw]"
+                           
                           >
-                            <div className="-rotate-90 text-[#CACACA] flex items-center justify-center gap-0 w-[0.6vw] pt-[0.2vw] h-full max-sm:w-[3vw]">
+                            <div
+                              className={` text-[#CACACA] flex items-center justify-center gap-0 w-[0.6vw] pt-[0.2vw] h-full max-sm:w-[3vw] transition-transform duration-300 ${
+                                openDropdown === link.id ? "-rotate-270" : "-rotate-90"
+                              }`}
+                            >
                               <svg
                                 className="arrow primera next"
                                 width="8"
@@ -140,13 +148,12 @@ const Header = () => {
                               </svg>
                             </div>
 
+                            <span
+                              className={`block w-full  absolute left-0 ${
+                                openDropdown === link.id ? "h-[3vw]" : "h-0"
+                              } `}
+                            />
                           </div>
-                          <span className={`block w-full  absolute left-0 ${
-                              openDropdown === link.id ? "h-[3vw]" : "h-0"
-                            } `}/>
-
-
-                            </div>
                         )}
                       </div>
 
@@ -158,8 +165,14 @@ const Header = () => {
                               ? "opacity-100"
                               : "opacity-0 pointer-events-none"
                           }`}
-                          onMouseEnter={() => setOpenDropdown(link.id)} // keep open while hovering submenu
-                          onMouseLeave={() => setOpenDropdown(null)}    // close when leaving submenu
+                          onMouseEnter={() => {
+                            setOpenDropdown(link.id);
+                            lenis.stop();
+                          }} // keep open while hovering submenu
+                          onMouseLeave={() => {
+                            setOpenDropdown(null);
+                            lenis.stop();
+                          }} // close when leaving submenu
                         >
                           <ul className="p-[1.5vw]">
                             {link.children.map((child) => (
