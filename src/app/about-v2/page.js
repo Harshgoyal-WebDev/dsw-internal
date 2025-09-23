@@ -12,6 +12,8 @@ import Journey from '@/components/AboutPage/Journey'
 import AboutV2 from '@/components/AboutPage/AboutV2'
 import Build from '@/components/AboutPage/Build'
 import Ecosystem from '@/components/AboutPage/Ecosystem'
+import Careers from '@/components/AboutPage/Careers'
+import Proof from '@/components/AboutPage/Proof'
 
 export default function page() {
     return (
@@ -19,6 +21,7 @@ export default function page() {
             <Hero heroData={heroData} />
            <AboutV2/>
            <Build/>
+           <Proof/>
             {/* <Journey />
             <TechPartners />
             <Clients /> */}
@@ -26,6 +29,7 @@ export default function page() {
             <Guiders />
             <Ecosystem/>
             {/* <Recognized /> */}
+            <Careers/>
             {/* <Faqs /> */}
             <FooterCTA footerCTAData={footerCTAData} />
         </Layout>
