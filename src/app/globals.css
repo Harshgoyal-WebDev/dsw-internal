@@ -55,8 +55,8 @@
   --text-30: var(--text-30);
   --text-30--line-height: 1.2;
   --breakpoint-*: initial;
+  --breakpoint-md: 1025px;
   --breakpoint-sm: 640px;
-  --breakpoint-md: 1025px
 }
 
 body {
@@ -390,88 +390,6 @@ h4 {
     color: var(--white-200);
   }
 }
-
-@media (max-width: 542px) {
-  :root {
-    --text-100: 12.5vw;
-    --text-90: 11vw;
-    --text-60: 9vw;
-    --text-50: 7.5vw;
-    --text-40: 7.5vw;
-    --text-30: 5.7vw;
-  }
-
-  .title-1 {
-    font-size: 14vw;
-  }
-  .title-2 {
-    font-size: 9vw;
-  }
-  .title-3 {
-    font-size: 7.5vw;
-  }
-  body {
-    font-size: 4.2vw;
-    line-height: 1.6;
-  }
-  .container {
-    max-width: 100%;
-    padding: 15% 7vw;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .unifyblock {
-    /* initial gradient colors */
-    --c1: #081b57; /* "from" */
-    --c2: #030815; /* "via" */
-    --c3: #030815; /* "to" */
-
-    /* initial radial size */
-    --rx: 120%; /* x-radius */
-    --ry: 85%; /* y-radius */
-
-    background-image: radial-gradient(
-      var(--rx) var(--ry) at 50% 50%,
-      var(--c1) 0%,
-      var(--c2) 55%,
-      var(--c3) 100%
-    );
-
-    background-color: transparent !important;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: #ffffff66 !important;
-    border-radius: 20px;
-  }
-  ::-webkit-scrollbar-track {
-    background: #ffffff33;
-  }
-
-  .marquee__track {
-    display: flex;
-    /* transform: translateX(-187.5%) !important; */
-    animation: marquee 15s linear infinite;
-    min-width: 200%; /* Added for consistency */
-  }
-
-  @keyframes marquee {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-187.5%);
-    }
-  }
-  @keyframes marquee-reverse {
-    0% {
-      transform: translateX(-187.5%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-}
 @media (max-width: 1025px) {
   :root {
     --text-100: 9.5vw;
@@ -533,6 +451,89 @@ h4 {
     display: flex;
     /* transform: translateX(-187.5%) !important; */
     animation: marquee 16s linear infinite;
+    min-width: 200%; /* Added for consistency */
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-187.5%);
+    }
+  }
+  @keyframes marquee-reverse {
+    0% {
+      transform: translateX(-187.5%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+}
+
+
+@media (max-width: 542px) {
+  :root {
+    --text-100: 12.5vw;
+    --text-90: 11vw;
+    --text-60: 9vw;
+    --text-50: 7.5vw;
+    --text-40: 7.5vw;
+    --text-30: 5vw;
+  }
+
+  .title-1 {
+    font-size: 14vw;
+  }
+  .title-2 {
+    font-size: 9vw;
+  }
+  .title-3 {
+    font-size: 7.5vw;
+  }
+  body {
+    font-size: 4.2vw;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 100%;
+    padding: 15% 7vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .unifyblock {
+    /* initial gradient colors */
+    --c1: #081b57; /* "from" */
+    --c2: #030815; /* "via" */
+    --c3: #030815; /* "to" */
+
+    /* initial radial size */
+    --rx: 120%; /* x-radius */
+    --ry: 85%; /* y-radius */
+
+    background-image: radial-gradient(
+      var(--rx) var(--ry) at 50% 50%,
+      var(--c1) 0%,
+      var(--c2) 55%,
+      var(--c3) 100%
+    );
+
+    background-color: transparent !important;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #ffffff66 !important;
+    border-radius: 20px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #ffffff33;
+  }
+
+  .marquee__track {
+    display: flex;
+    /* transform: translateX(-187.5%) !important; */
+    animation: marquee 15s linear infinite;
     min-width: 200%; /* Added for consistency */
   }
 
