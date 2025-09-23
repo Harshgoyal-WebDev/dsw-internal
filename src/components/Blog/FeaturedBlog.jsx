@@ -15,10 +15,10 @@ const FeaturedBlog = () => {
     const ctx= gsap.context(() => {
         gsap.fromTo('#featured-blog-container', {
           opacity:0,
-          yPercent: 20,
+          y: 30,
         }, {
           opacity:1,
-          yPercent:0,
+          y:0,
           delay:2,
           duration:1.5,
           // scrollTrigger: {

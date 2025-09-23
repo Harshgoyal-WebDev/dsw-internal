@@ -1,25 +1,23 @@
 import React from "react";
 import Image from "next/image";
 import Copy from "../Animations/Copy";
+import { WorldMap } from "@/components/ui/world-map";
 
 const OfficeLocations = () => {
   return (
-    <section className="relative h-full  container  max-sm:px-0 max-sm:space-y-[7vw]">
+    <section className="relative h-full  container space-y-[5vw]  max-sm:!px-[4vw] max-sm:space-y-[7vw]">
 
-         <h2 className='text-90  max-sm:text-left text-center headingAnim'>
+         <h2 className='text-90  max-sm:text-left max-sm:px-[3vw] text-center headingAnim'>
             Our Office Locations
         </h2>
-      <div className="w-[80vw] h-full max-sm:h-full  relative  fadeup mx-auto">
-        <Image
-          src="/assets/images/contact/location-map.png"
-          width={1565}
-          height={1043}
-          alt="map"
-          className="h-full w-full object-contain scale-[1.2]"
-        />
-      </div>
+        <div className="w-full">
 
-      <div className="absolute max-sm:static left-[5%] bottom-[25%] w-[20%] space-y-[1vw] max-sm:w-[80%]  max-sm:space-y-[3vw]">
+
+        <WorldMap />
+        </div>
+      
+
+      <div className="absolute max-sm:static max-sm:px-[3vw] left-[5%] bottom-[25%] w-[20%] space-y-[1vw] max-sm:w-[80%]  max-sm:space-y-[3vw]">
         <Copy>
         <p className="text-head text-50"> USA</p>
         </Copy>
@@ -31,7 +29,7 @@ const OfficeLocations = () => {
         </Copy>
       </div>
 
-      <div className="absolute max-sm:static left-[40%] bottom-[15%] w-[20%] space-y-[1vw] max-sm:w-[80%]  max-sm:space-y-[3vw]">
+      <div className="absolute max-sm:static max-sm:px-[3vw] left-[40%] bottom-[15%] w-[20%] space-y-[1vw] max-sm:w-[80%]  max-sm:space-y-[3vw]">
         <Copy>
         <p className="text-head text-50"> Ireland </p>
         </Copy>
@@ -43,7 +41,7 @@ const OfficeLocations = () => {
         </Copy>
       </div>
 
-      <div className="absolute max-sm:static right-[3%] top-[50%] w-[18%] space-y-[1vw] max-sm:w-[80%]  max-sm:space-y-[3vw]">
+      <div className="absolute max-sm:static max-sm:px-[3vw] right-[3%] top-[47%] w-[18%] space-y-[1vw] max-sm:w-[90%]  max-sm:space-y-[3vw]">
         <Copy>
         <p className="text-head text-50"> India</p>
         </Copy>
