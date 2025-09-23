@@ -41,17 +41,17 @@ export default function Experts() {
 
   return (
     <section className="relative w-full h-fit space-y-[6vw] container max-sm:h-full overflow-hidden">
-      <div className="w-full flex h-full  gap-[1vw] items-end justify-between max-sm:flex-col max-sm:items-start">
+      <div className="w-full flex h-full gap-[1vw] items-end justify-between max-sm:flex-col max-sm:items-start">
         <h2 className="text-90 headingAnim w-[45%] max-md:w-full">
           Driven by Vision. Built by Experts.
         </h2>
 
-        <div className='flex fadeup gap-6 mt-12 max-sm:mt-10 max-md:mt-[10vw] max-md:items-center max-md:justify-center max-md:absolute max-md:top-[85%] max-md:right-[8%] '>
-                    <PreviousButton onClick={handlePrev} />
-                    <NextButton onClick={handleNext} />
-                  </div>
+        <div className="flex fadeup gap-6 mt-12 max-sm:mt-10 max-md:mt-[10vw] max-md:items-center max-md:justify-center max-md:absolute max-md:top-[85%]  max-md:right-[8%] ">
+          <PreviousButton onClick={handlePrev} />
+          <NextButton onClick={handleNext} />
+        </div>
       </div>
-      <div className="h-fit flex items-center justify-center  w-full max-sm:mt-10 max-md:mt-[10vw]">
+      <div className="h-fit flex items-center justify-center  w-full max-sm:mt-10 max-md:my-[10vw]">
         <Swiper
           ref={swiperRef}
           modules={[Navigation]}
@@ -62,45 +62,49 @@ export default function Experts() {
           onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
           className="w-full !overflow-visible"
           breakpoints={{
-          640: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-            centeredSlides: false,
-          },
-          768: {
-            slidesPerView: 1,
-            spaceBetween: 40,
-            centeredSlides: false,
-          },
-          1025: {
-            slidesPerView: 4,
-            spaceBetween: 50,
-            centeredSlides: true,
-          },
-        }}
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+              centeredSlides: false,
+            },
+            768: {
+              slidesPerView: 1.7,
+              spaceBetween: 40,
+              centeredSlides: false,
+            },
+            1025: {
+              slidesPerView: 4,
+              spaceBetween: 50,
+              centeredSlides: true,
+            },
+          }}
         >
           {data.map((card, index) => (
             <SwiperSlide key={index} className="experts-cards">
               <Link href={"#"} key={index} className="w-full flex-shrink-0 ">
-                <div className="relative rounded-[1.5vw] overflow-hidden w-[95%] h-[20vw] max-md:mx-auto max-sm:h-[38vh] max-md:h-[50vh] max-sm:rounded-[6vw]">
+                <div className="relative rounded-[1.5vw] overflow-hidden w-[95%] h-[20vw] max-md:mx-auto max-sm:h-[38vh] max-md:h-[35vh] max-md:rounded-[6vw]">
                   <Image
                     src={card.src}
                     width={100}
                     height={100}
-                  
                     className="h-full w-full object-cover"
                     alt={card.name}
                   />
-                  <div
-                    className="absolute right-[4%] top-[4%] z-[5] rounded-full flex items-center justify-center  bg-gradient-to-r from-primary-2 to-primary-3 h-[2.5vw] w-[2.5vw] max-md:h-[10vw] max-md:w-[10vw]"
-                  >
-                   
-                    <Image src={"/assets/icons/linkedin.svg"} height={15} width={15} alt="linkedin"  className="h-[1vw] w-auto max-md:h-[4vw]"/>
+                  <div className="absolute right-[4%] top-[4%] z-[5] rounded-full flex items-center justify-center  bg-gradient-to-r from-primary-2 to-primary-3 h-[2.5vw] w-[2.5vw] max-md:h-[10vw] max-md:w-[10vw]">
+                    <Image
+                      src={"/assets/icons/linkedin.svg"}
+                      height={15}
+                      width={15}
+                      alt="linkedin"
+                      className="h-[1vw] w-auto max-md:h-[4vw]"
+                    />
                   </div>
                 </div>
                 <div className="space-y-[.5vw] w-full mt-[1vw] max-md:mt-[5vw] max-sm:pl-0 max-md:pl-[4vw] max-sm:space-y-[1vw] max-sm:mt-[3vw]">
                   <p className="text-30 max-md:text-[6vw]">{card.name}</p>
-                  <p className="w-[75%] font-medium max-md:text-[4vw]">{card.role}</p>
+                  <p className="w-[75%] font-medium max-md:text-[4vw]">
+                    {card.role}
+                  </p>
                 </div>
               </Link>
             </SwiperSlide>
