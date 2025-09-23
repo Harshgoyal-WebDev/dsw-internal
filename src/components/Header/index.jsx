@@ -91,7 +91,7 @@ const Header = () => {
               ))}
             </ul>
           </div> */}
-          <div className="border rounded-full bg-stone-900/30 backdrop-blur-sm border-white/20 ml-[4vw] max-sm:hidden">
+          <div className="border rounded-full bg-stone-900/30 backdrop-blur-sm border-white/20 ml-[4vw] max-md:hidden">
   <ul className="flex items-center justify-between px-[2.5vw] py-[1.5vw] gap-[3vw] text-[1.145vw]">
     {NAVIGATION.map((link) => {
       const hasChildren = Array.isArray(link.children) && link.children.length > 0;

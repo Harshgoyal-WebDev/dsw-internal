@@ -474,25 +474,22 @@ h4 {
 }
 @media (max-width: 1025px) {
   :root {
-    --text-100: 12.5vw;
+    --text-100: 9.5vw;
     --text-90: 9vw;
-    --text-60: 8vw;
-    --text-50: 7.5vw;
+    --text-60: 7vw;
+    --text-50: 6.5vw;
     --text-40: 6vw;
-    --text-30: 4vw;
+    --text-30: 3.5vw;
   }
+  .container {
+  max-width: 100%;
+  padding: 10% 7vw;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  .title-1 {
-    font-size: 14vw;
-  }
-  .title-2 {
-    font-size: 9vw;
-  }
-  .title-3 {
-    font-size: 7.5vw;
-  }
   body {
-    font-size: 4.2vw;
+    font-size: 3vw;
     line-height: 1.6;
   }
   .container {
