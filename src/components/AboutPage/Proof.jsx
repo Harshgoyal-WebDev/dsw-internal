@@ -6,7 +6,7 @@ import Image from 'next/image'
 const Proof = () => {
   return (
    <section className='h-full w-full ' id='proof'>
-    <div className='w-full h-full container space-y-[5vw]'>
+    <div className='w-full h-[135vh] container space-y-[5vw]'>
         <div className='space-y-[1.5vw] w-[40%]'>
             <h2 className='text-90'>Proof and Recognition</h2>
             <div className='flex gap-6'>

@@ -14,6 +14,7 @@ import Build from '@/components/AboutPage/Build'
 import Ecosystem from '@/components/AboutPage/Ecosystem'
 import Careers from '@/components/AboutPage/Careers'
 import Proof from '@/components/AboutPage/Proof'
+import Differently from '@/components/AboutPage/Differently'
 
 export default function page() {
     return (
@@ -22,6 +23,7 @@ export default function page() {
            <AboutV2/>
            <Build/>
            <Proof/>
+           <Differently/>
             {/* <Journey />
             <TechPartners />
             <Clients /> */}
