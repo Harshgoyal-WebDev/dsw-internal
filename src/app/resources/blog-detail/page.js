@@ -8,7 +8,7 @@ import React from 'react'
 export default function page() {
     return (
         <Layout>
-            <Hero />
+            <Hero  breadcrumbs={true}/>
             <BlogContent />
             <RelatedArticles />
             <FooterCTA footerCTAData={footerCTAData} />

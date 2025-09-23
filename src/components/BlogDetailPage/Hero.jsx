@@ -9,8 +9,11 @@ import {
   paraAnim,
 } from "../Animations/gsapAnimations";
 import { initSplit } from "../splitTextUtils";
+import gsap from "gsap";
+import { usePathname } from "next/navigation";
 
-export default function Hero() {
+
+export default function Hero({breadcrumbs}) {
   headingAnim();
   paraAnim();
   fadeUp();
@@ -18,8 +21,23 @@ export default function Hero() {
   lineAnim();
   useEffect(() => {
     initSplit();
+
+     gsap.fromTo(".breadcrumbsContainer", {
+      y: 50,
+      opacity: 0,
+    }, {
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      ease:"power3.out",
+      delay: 1.5
+    })
   }, []);
 
+  const pathname = usePathname();
+      const pathArray = pathname.split("/").filter(Boolean);
+      const createBreadcrumbName = (segment) =>
+        segment.replace(/-/g, " ").replace(/\b\w/g, (char) => char.toUpperCase());
   return (
     <section
       id="blogDetail"
@@ -36,6 +54,41 @@ export default function Hero() {
       <h1 className="text-100 headingAnim max-sm:hidden relative z-10 text-white text-center">
         How Generative AI is Transforming the Insurance Industry
       </h1>
+
+       {breadcrumbs &&  
+        <div className="breadcrumbs overflow-hidden w-full flex items-start justify-start text-[1vw] text-[#CACACA] max-sm:text-[4vw] max-sm:h-fit absolute left-[5%] bottom-[8%] max-sm:top-[95%] z-[999]">
+  <div className="flex gap-3 breadcrumbsContainer">
+    {pathArray
+      .filter((segment) => segment && segment.toLowerCase() !== "home") // skip empty & "home"
+      .map((segment, index, arr) => {
+        const href = "/" + arr.slice(0, index + 1).join("/");
+        const isLast = index === arr.length - 1;
+
+        return (
+          <div key={index} className="flex items-center gap-2">
+            {/* only render '>' if not the first item */}
+            {index > 0 && <span>&gt;</span>}
+
+            {isLast ? (
+              <span>{createBreadcrumbName(segment)}</span>
+            ) : (
+              <a
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigateTo(href);
+                }}
+                href={href}
+              >
+                {createBreadcrumbName(segment)}
+              </a>
+            )}
+          </div>
+        );
+      })}
+  </div>
+</div>
+
+        }
     </section>
   );
 }

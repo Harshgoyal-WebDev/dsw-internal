@@ -10,6 +10,8 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { fadeIn, fadeUp, headingAnim, lineAnim, paraAnim } from "@/components/Animations/gsapAnimations";
 import heroGradient from "../../../public/assets/images/homepage/gradient-mobile.png"
+import { usePathname } from "next/navigation";
+
 
 const DynamicShaderComp = dynamic(() => import("../BgShader/ShaderComp"), {
   ssr: false,
@@ -37,7 +39,7 @@ const AnimatedLine = ({ delay }) => (
   </motion.div>
 );
 
-const Hero = ({ heroData }) => {
+const Hero = ({ heroData , breadcrumbs}) => {
   const heading = useRef(null);
 
   headingAnim();
@@ -107,8 +109,23 @@ const Hero = ({ heroData }) => {
       opacity:1,
       duration:0.1
     })
+    gsap.fromTo(".breadcrumbsContainer", {
+      y: 50,
+      opacity: 0,
+    }, {
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      ease:"power3.out",
+      delay: 1.5
+    })
   
   }, []);
+
+  const pathname = usePathname();
+    const pathArray = pathname.split("/").filter(Boolean);
+    const createBreadcrumbName = (segment) =>
+      segment.replace(/-/g, " ").replace(/\b\w/g, (char) => char.toUpperCase());
 
   return (
     <section className="h-[70vw] w-screen relative bg-background max-sm:h-screen max-sm:px-[7vw]" id="hero">
@@ -148,6 +165,41 @@ const Hero = ({ heroData }) => {
           </div>
         </div>
       </div>
+      {breadcrumbs &&  
+       <div className="breadcrumbs overflow-hidden w-full flex items-start justify-start text-[1vw] text-[#CACACA] max-sm:text-[4vw] max-sm:h-fit absolute left-[5%] top-[75%] max-sm:top-[95%] z-[999]">
+  <div className="flex gap-3 breadcrumbsContainer">
+    {pathArray
+      .filter((segment) => segment && segment.toLowerCase() !== "home") // skip empty & "home"
+      .map((segment, index, arr) => {
+        const href = "/" + arr.slice(0, index + 1).join("/");
+        const isLast = index === arr.length - 1;
+
+        return (
+          <div key={index} className="flex items-center gap-2">
+            {/* only render '>' if not the first item */}
+            {index > 0 && <span>&gt;</span>}
+
+            {isLast ? (
+              <span>{createBreadcrumbName(segment)}</span>
+            ) : (
+              <a
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigateTo(href);
+                }}
+                href={href}
+              >
+                {createBreadcrumbName(segment)}
+              </a>
+            )}
+          </div>
+        );
+      })}
+  </div>
+</div>
+
+        }
+      
 
       {/* Animated Vertical Lines */}
       <div className="w-screen h-[55vw] absolute top-0 left-0 z-[10] flex justify-center gap-[22vw] max-sm:hidden">

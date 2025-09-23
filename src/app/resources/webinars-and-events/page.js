@@ -8,12 +8,11 @@ import Workshops from "@/components/Webinars/Workshops";
 import WatchOnDemand from "@/components/Webinars/WatchOn-Demand";
 
 
-
 const Page = () => {
   return (
     <>
       <Layout>
-        <Hero heroData={heroData} />
+        <Hero heroData={heroData} breadcrumbs={true}/>
        <Expect/>
        <UpcomingWebinars/>
        <Workshops/>

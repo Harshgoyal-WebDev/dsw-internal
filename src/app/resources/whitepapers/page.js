@@ -9,7 +9,7 @@ const Page = () => {
   return (
     <>
       <Layout>
-        <Hero heroData={heroData} />
+        <Hero heroData={heroData} breadcrumbs={true}/>
         <Listing/>
         <FooterCTA footerCTAData={footerCTAData} />
       </Layout>

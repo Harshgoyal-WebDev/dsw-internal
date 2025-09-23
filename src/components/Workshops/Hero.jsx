@@ -146,38 +146,38 @@ const Hero = ({ heroData }) => {
           </p>
          
         </div>
-        <div className="breadcrumbs overflow-hidden w-full flex items-start justify-start text-[1vw] text-[#CACACA] max-sm:text-[4vw] max-sm:h-fit  absolute left-[5%] top-[75%]  max-sm:top-[95%]">
-          <div className="flex gap-3 
-          breadcrumbsContainer">
-            <a onClick={(e) => {
-              e.preventDefault();
-              navigateTo('/')
-            }} href="/" className=" ">
-              Home
-            </a>
-            {pathArray.map((segment, index) => {
-              const href = "/" + pathArray.slice(0, index + 1).join("/");
-              const isLast = index === pathArray.length - 1;
-              return (
-                <div key={index} className="flex items-center gap-2 ">
-                 <span>&gt;</span>
-                  {isLast ? (
-                    <span className="">
-                      {createBreadcrumbName(segment)}
-                    </span>
-                  ) : (
-                    <a onClick={(e) => {
-                      e.preventDefault();
-                      navigateTo(href)
-                    }} href={href} className=" ">
-                      {createBreadcrumbName(segment)}
-                    </a>
-                  )}
-                </div>
-              );
-            })}
+        <div className="breadcrumbs overflow-hidden w-full flex items-start justify-start text-[1vw] text-[#CACACA] max-sm:text-[4vw] max-sm:h-fit absolute left-[5%] top-[75%] max-sm:top-[95%]">
+  <div className="flex gap-3 breadcrumbsContainer">
+    {pathArray
+      .filter((segment) => segment && segment.toLowerCase() !== "home") // skip empty & "home"
+      .map((segment, index, arr) => {
+        const href = "/" + arr.slice(0, index + 1).join("/");
+        const isLast = index === arr.length - 1;
+
+        return (
+          <div key={index} className="flex items-center gap-2">
+            {/* only render '>' if not the first item */}
+            {index > 0 && <span>&gt;</span>}
+
+            {isLast ? (
+              <span>{createBreadcrumbName(segment)}</span>
+            ) : (
+              <a
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigateTo(href);
+                }}
+                href={href}
+              >
+                {createBreadcrumbName(segment)}
+              </a>
+            )}
           </div>
-        </div>
+        );
+      })}
+  </div>
+</div>
+
       </div>
 
       {/* Animated Vertical Lines */}

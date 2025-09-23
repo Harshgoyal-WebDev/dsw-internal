@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link'; // Adjust import based on your routing library
+import Link from 'next/link'; 
 
 const SubmenuNavigation = ({ 
     openSection, 

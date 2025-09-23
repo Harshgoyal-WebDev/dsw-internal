@@ -9,7 +9,6 @@ const page = () => {
   return (
     <>
         <Layout>
-
          <Hero heroData={heroData} />
          <FeaturedBlog />
          <BlogGrid />
