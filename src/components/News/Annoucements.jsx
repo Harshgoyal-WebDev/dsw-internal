@@ -104,7 +104,7 @@ const Annoucements = () => {
           </div>
           <span className="w-full h-[1px] block bg-white/20 lineDraw" />
         </div>
-        <div className="max-sm:w-screen overflow-x-scroll max-sm:ml-[-7vw] max-sm:mt-[7vw]">
+        <div className="max-sm:w-screen max-sm:overflow-x-scroll max-sm:ml-[-7vw] max-sm:mt-[7vw]">
           <div className="w-full flex justify-between fadeup pt-[3vw] max-sm:w-[270vw] max-sm:px-[7vw] max-sm:pb-[10vw] ">
             {secondaryAnnouncements.map((item, index) => (
               <div

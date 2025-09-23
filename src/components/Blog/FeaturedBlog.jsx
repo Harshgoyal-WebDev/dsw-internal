@@ -32,7 +32,7 @@ const FeaturedBlog = () => {
   },[])
 
   return (
-    <section id='featured-blog-container' className="container opacity-0 featured-blog-img w-full !pb-[0.5vw] gap-[1.5vw] flex justify-between max-sm:gap-[3vh] mt-[-60vh] max-md:mt-0 max-sm:flex-col relative z-[20] max-sm:mt-[-60vh]">
+    <section id='featured-blog-container' className="container opacity-0 featured-blog-img w-full !pb-[0.5vw] gap-[1.5vw] flex justify-between max-sm:gap-[3vh] mt-[-10vh] max-md:mt-0 max-sm:flex-col relative z-[20]">
       <div className="w-[45%] max-md:w-[85%] max-sm:px-0 max-md:px-p2  max-sm:w-full  rounded-3xl h-[30vw] max-sm:h-[40vh] max-sm:border max-sm:border-white/30  relative group overflow-hidden">
         <Link href={"#"}>
           <div className="w-full h-full max-md:w-full   max-sm:h-full max-sm:w-full overflow-hidden rounded-3xl">
