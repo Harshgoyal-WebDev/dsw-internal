@@ -57,7 +57,6 @@ const SuccessStories = () => {
 export default SuccessStories
 
 
-
 const LinkCard = ({ title, link, width }) => {
     return (
         <>

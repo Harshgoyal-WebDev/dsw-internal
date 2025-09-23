@@ -78,12 +78,11 @@ const SectionBreak = ({text, span}) => {
   return (
 <>
  <section className="w-full" id="section-break"  ref={sectionRef}>
-      <div className="w-full flex flex-col items-center justify-center gap-y-[10vw] max-sm:gap-y-[15vw]">
+      <div className="w-full flex flex-col items-start justify-start gap-y-[10vw] max-sm:gap-y-[15vw]">
         <div className="split__wrapper  space-y-[2vw] max-sm:space-y-[5vw]">
          
-            <div className={`text-white-200 text-break font-head text-50 ${!span ? "text-center max-sm:text-center" : "text-left"} font-normal leading-[1.4]`} ref={textRef}>
-            {span ?  <span className="w-[20vw] inline-block h-[2px] max-sm:hidden" /> : <></>}
-             
+            <div className={`text-white-200 text-break font-head max-md:text-left text-50 ${!span ? "text-left max-sm:text-center" : "text-left"} font-normal leading-[1.4]`} ref={textRef}>
+            {span ?  <span className="w-[20vw] inline-block h-[2px] max-md:hidden" /> : <></>}
              {text}
             </div>
          

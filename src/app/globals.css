@@ -406,6 +406,11 @@ h4 {
   margin-right: auto;
 }
 
+  .title-3 {
+  font-size: 6.5vw;
+  /* line-height: 1.2; */
+}
+
   body {
     font-size: 3vw;
     line-height: 1.6;

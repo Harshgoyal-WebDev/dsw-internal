@@ -146,9 +146,9 @@ export default function Journey() {
       <div className="h-fit relative w-full">
         <div
           ref={wholeSliderRef}
-          className="h-[60vh]  max-sm:h-[60vh] sticky top-0 flex gap-[5vw] mr-[2vw] items-center max-sm:items-start max-sm:w-[700vw] max-sm:flex-col w-[300vw]"
+          className="h-[60vh] max-md:w-[700vw]  max-sm:h-[60vh] max-md:h-[70vh] sticky top-0 flex gap-[5vw] mr-[2vw] items-center max-md:items-start max-sm:w-[700vw] max-md:flex-col w-[300vw]"
         >
-          <div className="h-[100%] max-sm:h-[50vw] max-sm:w-[70vw]  journey-img w-[25vw] overflow-hidden rounded-[2vw]">
+          <div className="h-[100%] max-sm:h-[50vw] max-sm:w-[70vw] max-md:h-[60vh] max-md:w-[12.2%]  journey-img w-[25vw] overflow-hidden rounded-[2vw]">
             <Image
               src={"/assets/images/about/journey.jpg"}
               alt="journey"
@@ -212,7 +212,7 @@ export default function Journey() {
                 {bottomJourneyData.map((item, index) => (
                   <div
                     key={`bottom-${index}`}
-                    className={`w-[18%] max-sm:w-[20%]  max-sm:flex max-sm:flex-col max-sm:justify-center  journey-container px-[5vw] h-full relative ${item.containerClass}`}
+                    className={`w-[18%] max-md:w-[20%]  max-md:flex max-md:flex-col max-md:justify-center  journey-container px-[5vw] h-full relative ${item.containerClass}`}
                   >
                     {/* STOPS */}
                     <div className="w-full absolute left-0 bottom-0 top-0 h-full">
@@ -224,7 +224,7 @@ export default function Journey() {
                       ></div>
                     </div>
                     <div
-                      className={`space-y-[2vw] pt-[2vw] ${item.contentClass}`}
+                      className={`space-y-[2vw] pt-[2vw] max-md:pt-[7vw] ${item.contentClass}`}
                     >
                       <p className={`title-3 leading-[2] ${item.titleClass}`}>
                         {item.year} – {item.title}

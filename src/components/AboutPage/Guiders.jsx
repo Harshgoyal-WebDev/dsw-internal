@@ -39,12 +39,12 @@ export default function Guiders() {
     });
   });
   return (
-    <section className="container w-[95%] mx-auto space-y-[6.5vw] max-sm:!pt-[35vw] relative">
-      <h2 className="text-90 w-full text-center headingAnim max-sm:text-left">
+    <section className="container w-[95%] max-md:!px-0 max-sm:!px-[7vw] mx-auto space-y-[6.5vw] max-md:!pt-[35vw] relative">
+      <h2 className="text-90 w-full max-md:px-[7vw] max-sm:px-0 text-center headingAnim max-md:text-left">
         Guided by Industry Luminaries
       </h2>
 
-      <div className="flex w-[100%] items-start gap-[3vw] justify-between max-sm:hidden">
+      <div className="flex w-[100%] items-start gap-[3vw] justify-between max-md:hidden">
         {GuidersData.map((guider, index) => (
           <Link href={"/#"} key={index} className="w-full guiders-cards">
             <div
@@ -76,7 +76,7 @@ export default function Guiders() {
         ))}
       </div>
 
-      <div className="h-fit  items-center justify-center  w-full max-sm:mt-10 hidden max-sm:block">
+      <div className="h-fit  items-center justify-center  w-full max-md:mt-[7vw] max-sm:mt-10 hidden max-md:block">
         <Swiper
           ref={swiperRef}
           modules={[Navigation]}
@@ -90,7 +90,7 @@ export default function Guiders() {
               spaceBetween: 20,
             },
             768: {
-              slidesPerView: 4,
+              slidesPerView: 1.7,
               spaceBetween: 40,
             },
             1024: {
@@ -106,7 +106,7 @@ export default function Guiders() {
                 key={index}
                 className="w-full flex-shrink-0 experts-cards"
               >
-                <div className="relative rounded-[1.5vw] overflow-hidden max-sm:w-full h-[20vw] max-sm:h-[38vh] max-sm:rounded-[6vw] max-md:h-[42vh] max-md:w-[95%] max-md:mx-auto">
+                <div className="relative rounded-[1.5vw] overflow-hidden max-sm:w-full h-[20vw] max-sm:h-[38vh] max-md:rounded-[6vw] max-md:h-[38vh] max-md:w-[95%] max-md:mx-auto">
                   <Image
                     src={card.src}
                     width={100}
@@ -114,17 +114,17 @@ export default function Guiders() {
                     className="h-full w-full object-cover"
                     alt={card.name}
                   />
-                  <div className="absolute right-[4%] top-[4%] z-[5] rounded-full flex items-center justify-center  bg-gradient-to-r from-primary-2 to-primary-3 h-[2.5vw] w-[2.5vw] max-sm:h-[10vw] max-sm:w-[10vw]">
+                  <div className="absolute right-[4%] top-[4%] z-[5] rounded-full flex items-center justify-center  bg-gradient-to-r from-primary-2 to-primary-3 h-[2.5vw] w-[2.5vw] max-md:h-[10vw] max-md:w-[10vw]">
                     <Image
                       src={"/assets/icons/linkedin.svg"}
                       height={15}
                       width={15}
                       alt="linkedin"
-                      className="h-[1vw] w-auto max-sm:h-[4vw]"
+                      className="h-[1vw] w-auto max-md:h-[4vw]"
                     />
                   </div>
                 </div>
-               <div className="space-y-[.5vw] w-full mt-[1vw] max-md:mt-[5vw] max-sm:pl-0 max-md:pl-[2vw] max-sm:space-y-[1vw] max-sm:mt-[3vw]">
+               <div className="space-y-[.5vw] w-full mt-[1vw] max-md:mt-[5vw] max-md:pl-0 max-sm:pl-[2vw] max-md:space-y-[1vw] max-sm:mt-[3vw]">
                   <p className="text-30 max-md:text-[5vw]">{card.name}</p>
                   <p className="w-[75%] max-md:w-[90%]  font-medium max-md:text-[3.5vw]">{card.role}</p>
                 </div>
@@ -133,7 +133,7 @@ export default function Guiders() {
           ))}
         </Swiper>
       </div>
-      <div className=" gap-6 mt-12 max-sm:mt-10 max-sm:items-center max-sm:justify-center max-sm:absolute max-sm:top-[90%] max-sm:right-[8%] hidden max-sm:flex">
+      <div className=" gap-6 mt-12 max-md:mt-10 max-md:items-center max-md:justify-center max-md:absolute max-md:top-[90%] max-md:right-[8%] hidden max-md:flex">
         <PreviousButton onClick={handlePrev} />
         <NextButton onClick={handleNext} />
       </div>

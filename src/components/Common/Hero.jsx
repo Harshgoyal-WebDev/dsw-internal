@@ -128,9 +128,9 @@ const Hero = ({ heroData , breadcrumbs}) => {
       segment.replace(/-/g, " ").replace(/\b\w/g, (char) => char.toUpperCase());
 
   return (
-    <section className="h-[70vw] w-screen relative bg-background max-sm:h-screen max-sm:px-[7vw]" id="hero">
-      <div className="flex flex-col items-center justify-start w-full h-full pt-[30vh] relative z-[12] max-sm:pt-[15vh]">
-        <div className={`text-center space-y-6 pb-5 max-md:w-[100%] max-sm:space-y-[10vw] ${heroData.headingWidth || "w-[70%]"}`}>
+    <section className="h-[70vw] w-screen relative bg-background max-md:h-screen max-md:px-[7vw]" id="hero">
+      <div className="flex flex-col items-center justify-start w-full h-full pt-[30vh] relative z-[12] max-md:pt-[15vh]">
+        <div className={`text-center space-y-6 pb-5 max-md:w-[100%] max-md:space-y-[10vw] ${heroData.headingWidth || "w-[70%]"}`}>
           <h1
             ref={heading}
             className="text-100 font-head heroHeadAnim text-[#E8E8E8] opacity-0 heroHead"
@@ -142,7 +142,7 @@ const Hero = ({ heroData , breadcrumbs}) => {
           >
             {heroData.para}
           </p>
-          <div className={`flex items-center justify-center gap-6 mt-10 max-sm:flex-col max-sm:gap-[5vw] ${heroData.hidebtn ? "hidden":"flex"}`}>
+          <div className={`flex items-center justify-center gap-6 mt-10 max-md:flex-col max-md:gap-[5vw] ${heroData.hidebtn ? "hidden":"flex"}`}>
             {[
               { Component: PrimaryButton, text: heroData.btnText1, link: heroData.link1 },
               { Component: WhiteButton, text: heroData.btnText2, link: heroData.link2 },
@@ -159,14 +159,14 @@ const Hero = ({ heroData , breadcrumbs}) => {
                   }
                 }}
               >
-                <Component href="#" text={text} className="max-sm:min-w-[60vw]" />
+                <Component href="#" text={text} className="max-md:min-w-[60vw]" />
               </motion.div>
             ))}
           </div>
         </div>
       </div>
       {breadcrumbs &&  
-       <div className="breadcrumbs overflow-hidden w-full flex items-start justify-start text-[1vw] text-[#CACACA] max-sm:text-[4vw] max-sm:h-fit absolute left-[5%] top-[75%] max-sm:top-[95%] z-[999]">
+       <div className="breadcrumbs overflow-hidden w-full flex items-start justify-start text-[1vw] text-[#CACACA] max-md:text-[4vw] max-md:h-fit absolute left-[5%] top-[75%] max-md:top-[95%] z-[999]">
   <div className="flex gap-3 breadcrumbsContainer">
     {pathArray
       .filter((segment) => segment && segment.toLowerCase() !== "home") // skip empty & "home"
@@ -202,17 +202,17 @@ const Hero = ({ heroData , breadcrumbs}) => {
       
 
       {/* Animated Vertical Lines */}
-      <div className="w-screen h-[55vw] absolute top-0 left-0 z-[10] flex justify-center gap-[22vw] max-sm:hidden">
+      <div className="w-screen h-[55vw] absolute top-0 left-0 z-[10] flex justify-center gap-[22vw] max-md:hidden">
         {[...Array(lineCount)].map((_, i) => (
           <AnimatedLine key={i} delay={heroData.homepage ? 5 + (i * 0.2) : 0.5 + (i * 0.2)} />
         ))}
       </div>
-      <div ref={ShaderRef} className="absolute top-[30%] left-0 h-screen w-screen max-sm:hidden">
+      <div ref={ShaderRef} className="absolute top-[30%] left-0 h-screen w-screen max-md:hidden">
         <Suspense>
           <DynamicShaderComp />
         </Suspense>
       </div>
-      <div className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-sm:block">
+      <div className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-md:block">
         <Image src={heroGradient} placeholder="blur" alt="shader-gradient-mobile" className="w-full h-full object-cover" width={600} height={1080} />
       </div>
     </section>

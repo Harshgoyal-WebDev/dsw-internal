@@ -42,21 +42,21 @@ export default function Experts() {
   return (
     <section className="relative w-full h-fit space-y-[6vw] container max-sm:h-full overflow-hidden">
       <div className="w-full flex h-full  gap-[1vw] items-end justify-between max-sm:flex-col max-sm:items-start">
-        <h2 className="text-90 headingAnim w-[45%] max-sm:w-full">
+        <h2 className="text-90 headingAnim w-[45%] max-md:w-full">
           Driven by Vision. Built by Experts.
         </h2>
 
-        <div className='flex fadeup gap-6 mt-12 max-sm:mt-10 max-sm:items-center max-sm:justify-center max-sm:absolute max-sm:top-[85%] max-sm:right-[8%]'>
+        <div className='flex fadeup gap-6 mt-12 max-sm:mt-10 max-md:mt-[10vw] max-md:items-center max-md:justify-center max-md:absolute max-md:top-[85%] max-md:right-[8%] '>
                     <PreviousButton onClick={handlePrev} />
                     <NextButton onClick={handleNext} />
                   </div>
       </div>
-      <div className="h-fit flex items-center justify-center  w-full max-sm:mt-10">
+      <div className="h-fit flex items-center justify-center  w-full max-sm:mt-10 max-md:mt-[10vw]">
         <Swiper
           ref={swiperRef}
           modules={[Navigation]}
           spaceBetween={35}
-          centeredSlides={true}
+          // centeredSlides={true}
           freeMode={true}
           // slidesPerView={4}
           onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
@@ -65,14 +65,17 @@ export default function Experts() {
           640: {
             slidesPerView: 2,
             spaceBetween: 20,
+            centeredSlides: false,
           },
           768: {
-            slidesPerView: 4,
+            slidesPerView: 1,
             spaceBetween: 40,
+            centeredSlides: false,
           },
-          1024: {
+          1025: {
             slidesPerView: 4,
             spaceBetween: 50,
+            centeredSlides: true,
           },
         }}
         >
@@ -89,10 +92,10 @@ export default function Experts() {
                     alt={card.name}
                   />
                   <div
-                    className="absolute right-[4%] top-[4%] z-[5] rounded-full flex items-center justify-center  bg-gradient-to-r from-primary-2 to-primary-3 h-[2.5vw] w-[2.5vw] max-sm:h-[10vw] max-sm:w-[10vw]"
+                    className="absolute right-[4%] top-[4%] z-[5] rounded-full flex items-center justify-center  bg-gradient-to-r from-primary-2 to-primary-3 h-[2.5vw] w-[2.5vw] max-md:h-[10vw] max-md:w-[10vw]"
                   >
                    
-                    <Image src={"/assets/icons/linkedin.svg"} height={15} width={15} alt="linkedin"  className="h-[1vw] w-auto max-sm:h-[4vw]"/>
+                    <Image src={"/assets/icons/linkedin.svg"} height={15} width={15} alt="linkedin"  className="h-[1vw] w-auto max-md:h-[4vw]"/>
                   </div>
                 </div>
                 <div className="space-y-[.5vw] w-full mt-[1vw] max-md:mt-[5vw] max-sm:pl-0 max-md:pl-[4vw] max-sm:space-y-[1vw] max-sm:mt-[3vw]">
