@@ -10,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 
 export default function Journey() {
   const wholeSliderRef = useRef(null);
+  
   useEffect(() => {
 
     const years = [
@@ -141,12 +142,12 @@ export default function Journey() {
   return (
     <section
       id="journey"
-      className="h-fit w-full  overflow-x-hidden relative background-radial container"
+      className="h-[400vh] max-md:h-[470vh] max-sm:h-[400vh] w-full  overflow-x-hidden relative background-radial container"
     >
-      <div className="h-fit relative w-full">
+      <div className="h-screen w-full sticky top-0">
         <div
           ref={wholeSliderRef}
-          className="h-[60vh] max-md:w-[700vw]  max-sm:h-[60vh] max-md:h-[70vh] sticky top-0 flex gap-[5vw] mr-[2vw] items-center max-md:items-start max-sm:w-[700vw] max-md:flex-col w-[300vw]"
+          className="h-[60vh] max-md:w-[700vw]  max-sm:h-[60vh] max-md:h-[70vh]  flex gap-[5vw] mr-[2vw] items-center max-md:items-start max-sm:w-[700vw] max-md:flex-col w-[300vw]"
         >
           <div className="h-[100%] max-sm:h-[50vw] max-sm:w-[70vw] max-md:h-[60vh] max-md:w-[12.2%]  journey-img w-[25vw] overflow-hidden rounded-[2vw]">
             <Image
