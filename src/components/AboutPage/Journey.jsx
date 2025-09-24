@@ -10,6 +10,71 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 
 export default function Journey() {
   const wholeSliderRef = useRef(null);
+
+   const [isMobile, setIsMobile] = useState(false);
+    const [isTablet, setIsTablet] = useState(false);
+  
+    useEffect(() => {
+      const checkMobile = () => setIsMobile(window.innerWidth < 640);
+      const checkTablet = () => setIsTablet(window.innerWidth < 1025);
+      
+      checkMobile();
+      checkTablet();
+      
+      window.addEventListener('resize', checkMobile);
+      window.addEventListener('resize', checkTablet);
+      
+      return () => {
+        window.removeEventListener('resize', checkMobile);
+        window.removeEventListener('resize', checkTablet);
+        
+      };
+    }, []);
+
+    useEffect(() => {
+  console.log("Tablet:", isTablet);
+  console.log("Mobile:", isMobile);
+}, [isTablet, isMobile]);
+
+  useEffect(() => {
+    const ctx= gsap.context(() => {
+       const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: wholeSliderRef.current,
+        start: "top 23%",
+        end: "+500%",
+        scrub: true,
+        pin: true,
+      },
+    });
+
+   if(isTablet){
+     tl.fromTo(
+      wholeSliderRef.current,
+      {
+        xPercent: 0,
+      },
+      {
+        xPercent:-82,
+        ease: 'none'
+      }
+    );
+   }else{
+     tl.fromTo(
+      wholeSliderRef.current,
+      {
+        xPercent: 0,
+      },
+      {
+        xPercent: -75,
+        ease: 'none'
+      }
+    );
+   }
+    })
+      return () => ctx.revert()
+  },[isTablet])
+
   
   useEffect(() => {
 
@@ -49,26 +114,39 @@ export default function Journey() {
       });
     });
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: wholeSliderRef.current,
-        start: "top 23%",
-        end: "+500%",
-        scrub: true,
-        pin: true,
-      },
-    });
+  //   const tl = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: wholeSliderRef.current,
+  //       start: "top 23%",
+  //       end: "+500%",
+  //       scrub: true,
+  //       pin: true,
+  //     },
+  //   });
 
-    tl.fromTo(
-      wholeSliderRef.current,
-      {
-        xPercent: 0,
-      },
-      {
-        xPercent: -75,
-        ease: 'none'
-      }
-    );
+  //  if(isTablet){
+  //    tl.fromTo(
+  //     wholeSliderRef.current,
+  //     {
+  //       xPercent: 0,
+  //     },
+  //     {
+  //       xPercent:-90,
+  //       ease: 'none'
+  //     }
+  //   );
+  //  }else{
+  //    tl.fromTo(
+  //     wholeSliderRef.current,
+  //     {
+  //       xPercent: 0,
+  //     },
+  //     {
+  //       xPercent: -75,
+  //       ease: 'none'
+  //     }
+  //   );
+  //  }
 
     // Create a function to generate timeline for each year
     const createYearTimeline = (year, startPos, endPos, markerOptions = true, triggerPosStart, triggerPosEnd) => {
@@ -142,7 +220,7 @@ export default function Journey() {
   return (
     <section
       id="journey"
-      className="h-[400vh] max-md:h-[470vh] max-sm:h-[400vh] w-full  overflow-x-hidden relative background-radial container"
+      className="h-[400vh] max-md:h-[500vh] max-sm:h-[400vh] w-full  overflow-x-hidden relative background-radial container"
     >
       <div className="h-screen w-full sticky top-0">
         <div

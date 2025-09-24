@@ -90,7 +90,7 @@ export default function About() {
               className="w-[58%]  flex gap-[5vw] items-start about-item max-sm:w-[98%] max-md:w-[100%] max-md:flex-col"
             >
               <div className="w-[15%] relative max-sm:w-[100%]">
-                <div className="relative fadeup w-[6.5vw] h-[6.5vw] max-md:h-[10vw] max-md:w-[10vw] border border-[#59595980] rounded-full flex items-center justify-center max-sm:w-[18vw] max-sm:h-[18vw] max-sm:border-primary-1">
+                <div className="relative fadeup w-[6.5vw] h-[6.5vw] max-md:h-[12vw] max-md:w-[12vw] border border-[#59595980] rounded-full flex items-center justify-center max-sm:w-[18vw] max-sm:h-[18vw] max-sm:border-primary-1">
                   
                   <p className="about-id text-white-200 text-[1.5vw] max-md:text-[3.5vw] font-head relative z-[1] max-sm:text-[4.2vw] max-sm:text-primary-1">
                     {id}

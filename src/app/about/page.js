@@ -31,7 +31,7 @@ export default function page() {
 const heroData = {
     heading: "Building the Future of AI, One Enterprise at a Time",
     para: "We’re Data Science Wizards — a deep-tech AI company enabling businesses to move from experimentation to real-world impact with scalable, secure, and production-ready AI.​",
-    paraClass: "px-[10vw]",
+    paraClass: "",
     link1: "/#",
     btnText1: "Start Walkthrough",
     link2: "/#",

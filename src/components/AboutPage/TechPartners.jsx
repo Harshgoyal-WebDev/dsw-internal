@@ -85,7 +85,7 @@ const Card = () => {
   }, []);
 
   return (
-    <div className="w-[17vw] relative bg-[#081B57] h-[22vh] flex justify-center items-center border border-white/10 rounded-[2vw] overflow-hidden max-md:h-[18vh] max-sm:h-[15vh] max-md:w-[40vw] max-md:rounded-[4vw]">
+    <div className="w-[17vw] relative bg-[#081B57] h-[22vh] flex justify-center items-center border border-white/10 rounded-[2vw] overflow-hidden max-md:h-[20vh] max-sm:h-[15vh] max-md:w-[40vw] max-md:rounded-[4vw]">
       {images.map((src, i) => (
         <div
           key={i}

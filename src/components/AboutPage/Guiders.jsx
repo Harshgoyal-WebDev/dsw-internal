@@ -39,7 +39,7 @@ export default function Guiders({heading}) {
     });
   });
   return (
-    <section className="container w-[95%] max-md:!px-0 max-sm:!px-[7vw] mx-auto space-y-[6.5vw] max-md:!pt-[35vw] relative">
+    <section className="container w-[95%] max-md:w-full max-sm:!px-[7vw] mx-auto space-y-[6.5vw] max-md:!pt-[35vw] relative overflow-hidden">
       <h2 className="text-90 w-full max-md:px-[7vw] max-sm:px-0 text-center headingAnim max-md:text-left">
        
         {heading}
@@ -84,14 +84,14 @@ export default function Guiders({heading}) {
           spaceBetween={35}
           // slidesPerView={4}
           onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-          className="w-full"
+          className="w-full !overflow-visible"
           breakpoints={{
             640: {
               slidesPerView: 2,
               spaceBetween: 20,
             },
             768: {
-              slidesPerView: 1.7,
+              slidesPerView: 1.5,
               spaceBetween: 40,
             },
             1024: {
@@ -126,8 +126,8 @@ export default function Guiders({heading}) {
                   </div>
                 </div>
                <div className="space-y-[.5vw] w-full mt-[1vw] max-md:mt-[5vw] max-md:pl-0 max-sm:pl-[2vw] max-md:space-y-[1vw] max-sm:mt-[3vw]">
-                  <p className="text-30 max-md:text-[5vw]">{card.name}</p>
-                  <p className="w-[75%] max-md:w-[90%]  font-medium max-md:text-[3.5vw]">{card.role}</p>
+                  <p className="text-30">{card.name}</p>
+                  <p className="w-[75%] max-md:w-[90%]  font-medium ">{card.role}</p>
                 </div>
               </Link>
             </SwiperSlide>

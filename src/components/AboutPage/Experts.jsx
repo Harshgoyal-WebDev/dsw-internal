@@ -69,7 +69,7 @@ export default function Experts({heading}) {
               centeredSlides: false,
             },
             768: {
-              slidesPerView: 1.7,
+              slidesPerView: 1.5,
               spaceBetween: 40,
               centeredSlides: false,
             },
@@ -83,7 +83,7 @@ export default function Experts({heading}) {
           {data.map((card, index) => (
             <SwiperSlide key={index} className="experts-cards">
               <Link href={"#"} key={index} className="w-full flex-shrink-0 ">
-                <div className="relative rounded-[1.5vw] overflow-hidden w-[95%] h-[20vw] max-md:mx-auto max-sm:h-[38vh] max-md:h-[35vh] max-md:rounded-[6vw]">
+                <div className="relative rounded-[1.5vw] overflow-hidden w-[95%] h-[20vw] max-md:mx-auto max-sm:h-[38vh] max-md:h-[38vh] max-md:w-auto max-md:rounded-[6vw]">
                   <Image
                     src={card.src}
                     width={100}
@@ -102,8 +102,8 @@ export default function Experts({heading}) {
                   </div>
                 </div>
                 <div className="space-y-[.5vw] w-full mt-[1vw] max-md:mt-[5vw] max-sm:pl-0 max-md:pl-[4vw] max-sm:space-y-[1vw] max-sm:mt-[3vw]">
-                  <p className="text-30 max-md:text-[6vw]">{card.name}</p>
-                  <p className="w-[75%] font-medium max-md:text-[4vw]">
+                  <p className="text-30 ">{card.name}</p>
+                  <p className="w-[75%] font-medium ">
                     {card.role}
                   </p>
                 </div>
