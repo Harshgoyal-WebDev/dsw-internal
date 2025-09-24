@@ -64,7 +64,7 @@ ${
             isOpen&&title==="Resources" ? "max-h-[80vw] h-[65vw] opacity-100" : "max-h-0 h-0 opacity-0"
           }`}
         >
-          <ul className="max-sm:text-[4vw] max-md:text-[3.5vw] py-[5vw] pl-4 flex flex-col items-start justify-center max-sm:gap-[1.5vw] max-md:gap-[1vw] list-disc !font-display">
+          <ul className="max-sm:text-[4vw] max-md:text-[3.5vw] py-[5vw]  pl-4 flex flex-col items-start justify-center max-sm:gap-[1.5vw] max-md:gap-[1vw] list-disc !font-display">
             {children.map((child, idx) => {
               // Build a collision-resistant key using multiple stable fields
               const safeKey = [sectionId, child.id, child.href, child.text, idx].filter(Boolean).join("__");
