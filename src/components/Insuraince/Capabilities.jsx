@@ -49,23 +49,23 @@ const Capabilities = () => {
 
   return (
     <section className="h-full container">
-      <div className="w-[90%] max-sm:w-[100%] ">
-        <h2 className="text-90 headingAnim max-sm:text-center">
+      <div className="w-[90%] max-md:w-[100%] ">
+        <h2 className="text-90 headingAnim max-md:text-center">
           Turn Common Insurance Tasks into Intelligent Agents 
         </h2>
       </div>
 
-      <div className="flex justify-between max-sm:flex-col pt-[4vw] max-sm:pt-[10vw]">
-        <div className="w-[45%] max-sm:w-[100%]">
+      <div className="flex justify-between max-md:flex-col pt-[4vw] max-md:pt-[10vw]">
+        <div className="w-[45%] max-md:w-[100%]">
           <Copy>
-            <p className="text-white-200 text-50 max-sm:text-center  font-head">
+            <p className="text-white-200 text-50 max-md:text-center  font-head">
               These aren’t chatbots. They’re intelligent teammates for your
               operations. 
             </p>
           </Copy>
         </div>
 
-        <div className="w-[50%] max-sm:hidden">
+        <div className="w-[50%] max-md:hidden">
           <Copy>
             <p className="text-white-300">
               From claim status queries to automated underwriting support,
@@ -105,7 +105,7 @@ const Capabilities = () => {
           </div>
         </div>
 
-        <div className="hidden max-sm:block swiperr pt-[10vw]">
+        <div className="hidden max-md:block swiperr pt-[10vw]">
           <Swiper
             ref={swiperRef}
             modules={[Navigation]}

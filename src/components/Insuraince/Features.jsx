@@ -12,7 +12,7 @@ const Card = ({ srcc, content, isActive, onHover }) => {
       onMouseEnter={onHover}
       className="card relative border border-[#88888880] h-[40vh] cursor-pointer w-[20vw] rounded-[2vw] py-[2vw] px-[2vw] overflow-hidden group"
     >
-     <div className="absolute inset-0 background-glass transition-opacity duration-500" />
+      <div className="absolute inset-0 background-glass transition-opacity duration-500" />
 
       <div
         className={`absolute inset-0 bg-gradient-to-r from-light-blue to-dark-blue transition-opacity ease-in-out duration-500 ${
@@ -40,25 +40,25 @@ const Card = ({ srcc, content, isActive, onHover }) => {
   );
 };
 
-const MobileCard = ({srcc, content}) => {
-
+const MobileCard = ({ srcc, content }) => {
   return (
+    <div className="max-sm:h-[33vh] max-md:h-[44vh] mx-auto background-glass flex-shrink-0 max-md:w-[45%] border border-[#88888880] py-[5vw] max-sm:w-[80vw] rounded-[6vw] flex flex-col max-md:gap-[6vw] max-sm:gap-[5vw] items-start max-md:justify-start max-sm:justify-center px-[5vw] fadeup">
+      <div className="max-sm:w-[22vw] max-md:w-auto max-md:h-[15vw] max-sm:h-auto h-auto">
+        <Image
+          src={srcc}
+          alt="card-svg"
+          width={400}
+          height={400}
+          className="w-full max-md:h-full max-md:object-cover max-sm:h-auto"
+        />
+      </div>
 
-    <div className="h-[33vh] mx-auto background-glass border border-[#88888880] py-[5vw] w-[80vw] rounded-[6vw] flex flex-col gap-[5vw] items-start justify-center px-[5vw] fadeup">
-
-        <div className="w-[22vw] h-auto">
-          <Image src={srcc} alt='card-svg' width={400} height={400} className="w-full h-auto" />
-        </div>
-
-        <p>
-          {content}
-        </p>
-  </div>
-  )
-}
+      <p>{content}</p>
+    </div>
+  );
+};
 
 const Features = () => {
-
   const featuresRef = useRef(null);
   const cardsContainerRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -78,69 +78,63 @@ const Features = () => {
   }, []);
 
   useEffect(() => {
-  const ctx = gsap.context(() => {
-    const cards = gsap.utils.toArray(".card");
+    const ctx = gsap.context(() => {
+      const cards = gsap.utils.toArray(".card");
 
-    if(!isMobile)
-    {
-      const horizAnim = gsap.to(cardsContainerRef.current, {
-      x: "-18vw",
-      ease: "none",
-      scrollTrigger: {
-        trigger: featuresRef.current,
-        start: "top 50%",
-        end: "70% 40%",
-        scrub: true,
-        // markers: true,
-      },
-    });
-     cards.forEach((card, i) => {
-      gsap.fromTo(
-        card,
-        { rotateY: 65, 
-          opacity: 0, 
-          scale:0.8,
-          transformPerspective: 900 },
-        {
-          rotateY: 0,
-          opacity: 1,
-          scale:1,
-          duration: 1.5,
+      if (!isMobile) {
+        const horizAnim = gsap.to(cardsContainerRef.current, {
+          x: "-18vw",
           ease: "none",
           scrollTrigger: {
-            containerAnimation: horizAnim, // <-- tie to horizontal scroll
-            trigger: card,
-            scrub:true,
-            start: "-100% 100%", 
-            end: "190% 90%",
-            toggleActions: "play none none reverse",
+            trigger: featuresRef.current,
+            start: "top 50%",
+            end: "70% 40%",
+            scrub: true,
             // markers: true,
           },
-        }
-      
-      );
-    });
-    
-    }
-   
-  }, featuresRef);
+        });
+        cards.forEach((card, i) => {
+          gsap.fromTo(
+            card,
+            { rotateY: 65, opacity: 0, scale: 0.8, transformPerspective: 900 },
+            {
+              rotateY: 0,
+              opacity: 1,
+              scale: 1,
+              duration: 1.5,
+              ease: "none",
+              scrollTrigger: {
+                containerAnimation: horizAnim, // <-- tie to horizontal scroll
+                trigger: card,
+                scrub: true,
+                start: "-100% 100%",
+                end: "190% 90%",
+                toggleActions: "play none none reverse",
+                // markers: true,
+              },
+            }
+          );
+        });
+      }
+    }, featuresRef);
 
-  return () => ctx.revert();
-}, []);
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <section id="features-section"
-        ref={featuresRef} className="h-[200vh] max-sm:h-full w-full relative">
-      <div
-        className="bg-primary features-div sticky max-sm:relative top-0 h-fit flex flex-col container !px-0"
-      >
-        <div className="w-[47%] max-sm:w-[90%] pl-[5vw] max-sm:pl-0  max-sm:mx-auto space-y-[1.5vw] max-sm:space-y-[6vw]">
+    <section
+      id="features-section"
+      ref={featuresRef}
+      className="h-[200vh] max-sm:h-full w-full relative"
+    >
+      <div className="bg-primary features-div sticky max-sm:relative top-0 h-fit flex flex-col container !px-0">
+        <div className="w-[47%] max-md:w-[90%] pl-[5vw] max-sm:pl-0  max-sm:mx-auto max-md:space-y-[7vw] space-y-[1.5vw] max-sm:space-y-[6vw]">
           <h2 className="text-60 headingAnim w-[100%] max-sm:text-center text-white-200 max-sm:!text-[11.5vw]">
             The Unified AI Platform Built for Insurance Enterprises
           </h2>
 
           <Copy>
-            <p className="text-white-300 w-[80%] max-sm:text-center max-sm:w-[100%]">
+            <p className="text-white-300 w-[80%] max-sm:text-center max-md:w-[100%]">
               insurAInce brings together everything insurers need to rapidly
               operationalize AI and GenAI — all on one secure, enterprise-grade
               platform.
@@ -148,14 +142,15 @@ const Features = () => {
           </Copy>
         </div>
 
-        <div className="w-full overflow-x-hidden max-sm:hidden block  pb-[1.2vw] pt-[4vw]">
+        <div className="w-full overflow-x-hidden max-md:hidden block  pb-[1.2vw] pt-[4vw]">
           <div
             ref={cardsContainerRef}
             className="flex gap-[2vw] translate-x-[100vw] min-w-max"
           >
             {cardsData.map((card, index) => (
-              <Card key={index} 
-                srcc={card.src} 
+              <Card
+                key={index}
+                srcc={card.src}
                 content={card.content}
                 isActive={activeIndex === index}
                 onHover={() => setActiveIndex(index)}
@@ -164,19 +159,15 @@ const Features = () => {
           </div>
         </div>
 
-        <div className="hidden max-sm:block w-full max-sm:pt-[25vw]">
-          <div className="flex flex-col gap-[7vw] mx-auto">
-
+        <div className="hidden max-md:block w-full max-md:pt-[10vw] max-sm:pt-[25vw]">
+          <div className="flex max-sm:flex-col max-md:flex-wrap max-sm:px-0 max-md:px-[4vw]  gap-[7vw] mx-auto">
             {cardsData.map((card, index) => (
-              <MobileCard key={index}
-                    srcc={card.src}
-                    content={card.content}
-              />
+              <MobileCard key={index} srcc={card.src} content={card.content} />
             ))}
           </div>
         </div>
-        </div>
-      </section>
+      </div>
+    </section>
   );
 };
 

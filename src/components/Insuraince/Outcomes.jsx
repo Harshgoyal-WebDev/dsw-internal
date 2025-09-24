@@ -4,10 +4,10 @@ import Copy from "../Animations/Copy";
 
 const Card = ({ src, content }) => {
   return (
-    <div className="flex flex-col max-sm:gap-[5vw] gap-[2vw] max-sm:w-full max-sm:h-fit w-[16vw] relative group min-h-[20vh] fadeup">
+    <div className="flex flex-col max-sm:gap-[5vw] gap-[2vw] max-sm:w-full max-sm:h-fit w-[16vw] max-md:w-[40vw] relative group min-h-[20vh] fadeup">
        <div className="absolute z-[2] bottom-[-15%] max-sm:bottom-0 w-full h-[1px] bg-primary-2 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700"></div>
 
-      <div className="w-fit h-[5vw] max-sm:h-[12vh]">
+      <div className="w-fit h-[5vw] max-sm:h-[12vh] max-md:h-[12vw]">
         <Image
           src={src}
           alt="card-icon"
@@ -49,15 +49,15 @@ const cardsData = [
 
 const Outcomes = () => {
   return (
-    <section className="w-screen h-fit container space-y-[1.5vw] max-sm:space-y-[8vw]">
-      <h2 className="text-50  max-sm:leading-[1.2] text-white-200 headingAnim w-[50%] max-sm:w-[100%] max-sm:!text-[11.5vw]">
-        <span className="block">One Platform. </span>
-        <span className="block">AI and GenAI Working Together.</span>
+    <section className="w-screen h-fit container space-y-[1.5vw] max-sm:space-y-[2vw] max-md:space-y-[8vw]">
+      <h2 className="text-50  max-sm:leading-[1.2] text-white-200 headingAnim w-[50%] max-md:w-[100%] max-sm:!text-[11.5vw]">
+        <span className="block max-sm:block max-md:inline-block">One Platform. </span>
+        <span className="block max-sm:block max-md:inline-block">AI and GenAI Working Together.</span>
       </h2>
 
       <Copy>                
 
-      <p className="w-[40%] text-white-300 max-sm:w-[100%]">
+      <p className="w-[40%] text-white-300 max-md:w-[100%]">
         One secure platform. Many powerful outcomes.
         <br />
         Whether you're deploying fraud models or launching a GenAI assistant for
@@ -66,9 +66,9 @@ const Outcomes = () => {
       </p>
                 </Copy>
 
-      <div className="flex justify-end w-full pt-[3vw] max-sm:hidden">
-        <div className="w-[65%]">
-          <div className="grid grid-cols-3 gap-y-[7vw] gap-x-[2vw] w-full">
+      <div className="flex justify-end w-full pt-[3vw] max-md:pt-[7vw] max-sm:hidden">
+        <div className="w-[65%] max-md:w-[100%]">
+          <div className="grid grid-cols-3 max-md:grid-cols-2 gap-y-[7vw] gap-x-[2vw] max-md:gap-x-[5vw] max-md:gap-y-[10vw] w-full">
             {cardsData.map((card, index) => (
               <Card key={index} src={card.src} content={card.content} />
             ))}

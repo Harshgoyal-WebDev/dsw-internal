@@ -90,9 +90,9 @@ const Efficiency = () => {
   return (
     <section
       id="efficiency-container"
-      className="container h-fit space-y-[8vw]"
+      className="container h-fit space-y-[8vw] max-md:!px-0 max-sm:!px-[7vw]"
     >
-      <div className="space-y-[2vw] max-sm:space-y-[8vw]">
+      <div className="space-y-[2vw] max-sm:space-y-[8vw] max-md:space-y-[5vw]">
         <h2 className="text-90 text-white-200 text-center headingAnim">
           Built for the Complexity
           <br />
@@ -108,10 +108,173 @@ const Efficiency = () => {
         </Copy>
       </div>
 
-      <div className="w-full flex justify-between max-md:gap-y-[5vw] max-md:flex-wrap items-start max-sm:hidden">
+    <div className="hidden max-sm:hidden max-md:block max-md:w-full">
+
+    
+      
+      <div className="w-full flex justify-between gap-[2vw] px-[2vw]">
+
+        {/* STAT 1 TABLET */}
+
+         <div className="flex flex-col items-center gap-[1vw] w-[25%] ">
+          <div className="overflow-hidden h-[6.5vh]     w-fit items-center flex justify-start">
+            <div className="w-fit flex flex-col items-center justify-center left-timer translate-y-[38%]">
+              {TimeLd.map((digit, idx) => (
+                <p
+                  key={idx}
+                  className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.4vw] font-head "
+                >
+                  {digit}
+                </p>
+              ))}
+            </div>
+
+            <div className="w-fit flex  flex-col items-center right-timer justify-center translate-y-[38%]">
+              {TCORd.map((digit, idx) => (
+                <p
+                  key={idx}
+                  className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.4vw] font-head "
+                >
+                  {digit}
+                </p>
+              ))}
+            </div>
+            <div>
+              <p className="bg-gradient-to-r font-head  from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.4vw] ">
+                %
+              </p>
+            </div>
+          </div>
+
+          <Copy>
+            <p className="tracking-wider text-[2.2vw] text-center text-white-300 leading-[1.4]">
+               faster time to market for AI and GenAI use cases
+            </p>
+          </Copy>
+        </div>
+
+        {/* STAT 2 TABLET */}
+
+         <div className="flex flex-col items-center gap-[1vw] w-[25%] ">
+          <div className="overflow-hidden h-[6.5vh]    w-fit items-center flex justify-start">
+            <div className="w-fit flex flex-col items-center justify-center left-timer translate-y-[38%]">
+              {TCOLd.map((digit, idx) => (
+                <p
+                  key={idx}
+                  className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.4vw] font-head "
+                >
+                  {digit}
+                </p>
+              ))}
+            </div>
+
+            <div className="w-fit flex  flex-col items-center right-timer justify-center translate-y-[38%]">
+              {TCORd.map((digit, idx) => (
+                <p
+                  key={idx}
+                  className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.4vw] font-head "
+                >
+                  {digit}
+                </p>
+              ))}
+            </div>
+            <div>
+              <p className="bg-gradient-to-r font-head  from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.4vw] ">
+                %
+              </p>
+            </div>
+          </div>
+
+          <Copy>
+            <p className="tracking-wider text-[2.2vw] text-center text-white-300 leading-[1.4]">
+               reduction in TCO
+            </p>
+          </Copy>
+        </div>
+
+        {/* STAT 3 TABLET */}
+
+          <div className="flex flex-col items-center gap-[1vw] w-[25%] ">
+          <div className="overflow-hidden h-[6.5vh]    w-fit items-center flex justify-start">
+            <div className="w-fit flex flex-col items-center justify-center left-timer translate-y-[38%]">
+              {TaskLd.map((digit, idx) => (
+                <p
+                  key={idx}
+                  className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.4vw] font-head "
+                >
+                  {digit}
+                </p>
+              ))}
+            </div>
+
+            <div className="w-fit flex  flex-col items-center right-timer justify-center translate-y-[38%]">
+              {TaskRd.map((digit, idx) => (
+                <p
+                  key={idx}
+                  className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.4vw] font-head "
+                >
+                  {digit}
+                </p>
+              ))}
+            </div>
+            <div>
+              <p className="bg-gradient-to-r font-head  from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.4vw] ">
+                %
+              </p>
+            </div>
+          </div>
+
+          <Copy>
+            <p className="tracking-wider text-white-300 text-[2.2vw] text-center leading-[1.4]">
+               drop in manual tasks across claims and servicing 
+            </p>
+          </Copy>
+        </div>
+
+        {/* STAT 4 TABLET  */}
+
+               <div className="flex flex-col items-center gap-[1vw] w-[25%] ">
+          <div className="overflow-hidden h-[6.5vh]    w-fit items-center flex justify-start">
+            <div className="w-fit flex flex-col items-center justify-center left-timer translate-y-[38%]">
+              {DaysLd.map((digit, idx) => (
+                <p
+                  key={idx}
+                  className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.4vw] font-head "
+                >
+                  {digit}
+                </p>
+              ))}
+            </div>
+
+            <div className="w-fit flex  flex-col items-center right-timer justify-center translate-y-[38%]">
+              {DaysRd.map((digit, idx) => (
+                <p
+                  key={idx}
+                  className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.4vw] font-head "
+                >
+                  {digit}
+                </p>
+              ))}
+            </div>
+           
+          </div>
+
+          <Copy>
+            <p className="tracking-wider  text-white-300 text-[2.2vw] leading-[1.4]">
+              days or less to go live with AI use cases & GenAI in hours
+            </p>
+          </Copy>
+        </div>
+
+
+      </div>
+      </div>
+
+
+      <div className="w-full flex justify-between items-start max-md:hidden max-sm:hidden">
         {/* Stat 1 */}
-         <div className="flex flex-col max-md:items-center items-start gap-[1vw] max-md:gap-[5vw] w-[45%] ">
-          <div className="overflow-hidden h-[10vh]  w-fit items-center flex justify-start">
+         <div className="flex flex-col items-start gap-[1vw] w-[20%] ">
+          <div className="overflow-hidden h-[10vh]   w-fit items-center flex justify-start">
             <div className="w-fit flex flex-col items-center justify-center left-timer translate-y-[38%]">
               {TimeLd.map((digit, idx) => (
                 <p
@@ -256,7 +419,7 @@ const Efficiency = () => {
         </div>
       </div>
 
-      <div className="hidden max-sm:block max-sm:mt-[5vh]">
+      <div className="hidden max-md:hidden max-sm:block max-sm:mt-[5vh]">
         <div className="flex flex-col gap-[17vw]">
           {/* STAT 1  MOBILE */}
           <div className="flex flex-col items-center gap-[4vw] w-[100%]">

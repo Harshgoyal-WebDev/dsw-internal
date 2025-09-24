@@ -133,18 +133,18 @@ const PlatformCapabilities = () => {
     <section
       id="plat-cap-container"
       ref={sectionRef}
-      className="w-screen h-fit container "
+      className="w-screen h-fit container max-md:space-y-[7vw] max-sm:space-y-0"
     >
       <h2 className="text-50 font-head  text-center headingAnim">
         Platform Capabilities
       </h2>
 
       <div
-        className="flex justify-center items-center flex-col  w-full gap-[1vw] pt-[2vw] max-sm:hidden"
+        className="flex justify-center items-center flex-col  w-full max-md:gap-[3vw] gap-[1vw] pt-[2vw] max-sm:hidden"
         ref={cardsRef}
       >
-        <div className="w-[34vw] h-[11vw] border card-1 z-[4] bg-white/5 background-glass backdrop-blur-sm border-white/15 rounded-[2vw] flex justify-center gap-[2.5vw] items-center">
-          <div className="h-[5.5vw] w-[5.5vw]">
+        <div className="w-[34vw] h-[11vw] max-md:h-[17vw] max-md:w-[65vw] border card-1 z-[4] bg-white/5 background-glass backdrop-blur-sm border-white/15 rounded-[2vw] flex justify-center max-md:justify-between max-md:px-[3vw] max-md:gap-[4vw] gap-[2.5vw] items-center">
+          <div className="h-[5.5vw] w-[5.5vw] max-md:h-[7vw] max-md:w-[7vw]">
             <Image
               src="/assets/icons/insuraince/code-setting.svg"
               width={300}
@@ -153,13 +153,13 @@ const PlatformCapabilities = () => {
               alt="cap-logo"
             />
           </div>
-          <p className="text-white-300 w-[20vw]">
+          <p className="text-white-300 w-[20vw] max-md:w-[80%]">
             No-code model training and deployment
           </p>
         </div>
 
-        <div className="w-[34vw] h-[11vw] relative z-[2] cap-cards border background-glass backdrop-blur-sm border-white/15 rounded-[2vw] flex justify-center gap-[2.5vw] items-center">
-          <div className="h-[5.5vw] w-[5.5vw]">
+        <div className="w-[34vw] h-[11vw] max-md:w-[65vw] max-md:h-[17vw] relative z-[2] cap-cards border background-glass backdrop-blur-sm border-white/15 rounded-[2vw] flex justify-center max-md:justify-between max-md:px-[3vw] gap-[2.5vw] items-center"> 
+          <div className="h-[5.5vw] w-[5.5vw] max-md:h-[7vw] max-md:w-[7vw]">
             <Image
               src="/assets/icons/insuraince/monitor.svg"
               width={300}
@@ -168,13 +168,13 @@ const PlatformCapabilities = () => {
               alt="cap-logo"
             />
           </div>
-          <p className="text-white-300 w-[20vw]">
+          <p className="text-white-300 w-[20vw] max-md:w-[80%]">
             Integrated monitoring for drift, accuracy, and performance
           </p>
         </div>
 
-        <div className="w-[34vw] h-[11vw] border z-[1] cap-cards background-glass backdrop-blur-sm border-white/15 rounded-[2vw] flex justify-center gap-[2.5vw] items-center">
-          <div className="h-[5.5vw] w-[5.5vw]">
+        <div className="w-[34vw] h-[11vw] border z-[1] max-md:w-[65vw] max-md:justify-between max-md:px-[3vw] max-md:h-[17vw] cap-cards background-glass backdrop-blur-sm border-white/15 rounded-[2vw] flex justify-center gap-[2.5vw] items-center">
+          <div className="h-[5.5vw] w-[5.5vw] max-md:h-[7vw] max-md:w-[7vw]">
             <Image
               src="/assets/icons/insuraince/one-click-deploy.svg"
               width={300}
@@ -183,7 +183,7 @@ const PlatformCapabilities = () => {
               alt="cap-logo"
             />
           </div>
-          <p className="text-white-300 w-[20vw]">
+          <p className="text-white-300 w-[20vw] max-md:w-[80%]">
             Feature stores, model comparison, and one-click deployment
           </p>
         </div>
