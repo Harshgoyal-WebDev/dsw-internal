@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
+import { NextButton, PreviousButton } from "../Button/SliderButtons";
 
 const PilotCard = ({ id, icon, title, para }) => {
   return (
@@ -122,46 +123,10 @@ const AIPilots = () => {
               ))}
             </Swiper>
           </div>
-          <div className="w-full hidden max-sm:flex h-full mt-[22vw]  gap-[4vw] items-center justify-center">
-            <div
-              className={`w-[15vw] p-[5vw] btns flex items-center justify-center rounded-full h-[15vw]  rotate-180 bg-black/10 border border-white/50 ${activeIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
-              onClick={activeIndex !== 0 ? handlePrev : undefined}
-            >
-              <svg
-                className=""
-                width="25"
-                height="18"
-                viewBox="0 0 25 18"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M15.8041 1.24555C15.3098 1.73981 15.3186 2.52533 15.8041 3.01076L20.7378 7.94454L1.51466 7.94454C0.826224 7.94454 0.270181 8.50058 0.270182 9.18901C0.270181 9.87745 0.826224 10.4335 1.51466 10.4335L20.7378 10.4335L15.8041 15.3673C15.3186 15.8527 15.3186 16.647 15.8041 17.1325C16.2895 17.6179 17.0838 17.6179 17.5693 17.1325L24.6301 10.0716C25.1156 9.58619 25.1156 8.79184 24.6301 8.30641L17.5693 1.24555C17.0838 0.760117 16.2895 0.760117 15.8041 1.24555Z"
-                  fill="currentColor"
-                  className={`fill-current duration-300 `}
-                />
-              </svg>
-            </div>
-            <div
-              className={`w-[15vw] p-[5vw] btns flex items-center justify-center rounded-full h-[15vw] bg-black/10 border border-white/50 ${activeIndex === 7 ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
-              onClick={activeIndex !== 7 ? handleNext : undefined}
-            >
-              <svg
-                className=""
-                width="25"
-                height="18"
-                viewBox="0 0 25 18"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M15.8041 1.24555C15.3098 1.73981 15.3186 2.52533 15.8041 3.01076L20.7378 7.94454L1.51466 7.94454C0.826224 7.94454 0.270181 8.50058 0.270182 9.18901C0.270181 9.87745 0.826224 10.4335 1.51466 10.4335L20.7378 10.4335L15.8041 15.3673C15.3186 15.8527 15.3186 16.647 15.8041 17.1325C16.2895 17.6179 17.0838 17.6179 17.5693 17.1325L24.6301 10.0716C25.1156 9.58619 25.1156 8.79184 24.6301 8.30641L17.5693 1.24555C17.0838 0.760117 16.2895 0.760117 15.8041 1.24555Z"
-                  fill="currentColor"
-                  className={`fill-current duration-300 `}
-                />
-              </svg>
-            </div>
-          </div>
+           <div className="flex gap-6 mt-6 max-md:mt-[10vw] max-md:items-center max-md:justify-center">
+                      <PreviousButton onClick={handlePrev} />
+                      <NextButton onClick={handleNext} />
+                    </div>
         </div>
       </section>
     </>

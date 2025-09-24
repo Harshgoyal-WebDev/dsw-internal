@@ -146,7 +146,7 @@ const Brochure = () => {
             ))}
           </Swiper>
 
-          <div className="flex gap-6 mt-6 max-md:mt-10 max-md:items-center max-md:justify-center">
+          <div className="flex gap-6 mt-6 max-md:mt-[10vw] max-md:items-center max-md:justify-center">
             <PreviousButton onClick={handlePrev} />
             <NextButton onClick={handleNext} />
           </div>
@@ -162,7 +162,7 @@ const BrochureCard = ({ title, list, listTitle }) => {
   return (
     <>
       {/* <Link href={"#"}> */}
-      <div className="bg-gradient-to-r from-[#09183e] to-[#1626FD] h-[70vh] rounded-[6.5vw] max-md:min-h-[85vh] max-sm:h-[70vh] max-md:h-fit border border-white/40 py-[10%] px-[7vw]">
+      <div className="bg-gradient-to-r from-[#09183e] to-[#1626FD] h-[70vh] rounded-[6.5vw] max-md:h-[80vh] max-sm:h-[70vh]  border border-white/40 py-[10%] px-[7vw]">
         <div className="w-full h-full flex flex-col gap-[3vw] justify-between">
           <div>
             <h3 className="text-30">{title}</h3>

@@ -1,14 +1,11 @@
 "use client";
 import React, { useState, useRef } from "react";
-import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import Copy from "../Animations/Copy";
 import { NextButton, PreviousButton } from "../Button/SliderButtons";
-import Link from "next/link";
 
 export default function WorkshopFlow({ sessionsData, space }) {
   useGSAP(() => {

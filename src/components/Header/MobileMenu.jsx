@@ -78,7 +78,7 @@ export default function MobileMenu({
         }`}
       >
         <div className="h-full w-full relative z-[30] border border-white/40 rounded-[10vw] bg-white/5 flex flex-col justify-between py-[10vw] px-[7vw]">
-          <div className="w-full h-[80vh] overflow-x-hidden flex items-center mt-[7vh] ">
+          <div data-lenis-prevent className="w-full h-[80vh] overflow-x-hidden flex items-center mt-[7vh] ">
             <div className="flex w-full flex-col max-sm:gap-[4vw] items-start max-md:gap-[3vw] h-fit justify-center">
               {/* Home */}
               {homeItem && (

@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
+import { NextButton, PreviousButton } from "../Button/SliderButtons";
 gsap.registerPlugin(ScrollTrigger);
 
 const cardsData = [
@@ -218,32 +219,10 @@ const PlatformCapabilities = () => {
         </Swiper>
 
         {/* Mobile Nav Buttons */}
-        <div className="w-full hidden max-sm:flex h-full mt-[10vw]  gap-[4vw] items-center justify-center">
-          <div
-            className={`w-[15vw] p-[5vw] btns flex items-center justify-center rounded-full h-[15vw]  rotate-180 bg-white/5 border border-white/20 ${activeIndex === 0 ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
-            onClick={activeIndex !== 0 ? handlePrev : undefined}
-          >
-            <Image
-              src="/assets/icons/slider-left.svg"
-              width={200}
-              height={200}
-              className="w-[10vw] h-[10vw] text-white"
-              alt="left-button"
-            />
-          </div>
-          <div
-            className={`w-[15vw] cursor-pointer p-[5vw] btns flex items-center justify-center rounded-full h-[15vw] bg-white/5 border border-white/20 ${activeIndex === 2 ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
-            onClick={activeIndex !== 2 ? handleNext : undefined}
-          >
-            <Image
-              src="/assets/icons/slider-right.svg"
-              width={200}
-              height={200}
-              className="w-[10vw] h-[10vw] text-white"
-              alt="right-button"
-            />
-          </div>
-        </div>
+         <div className="flex gap-6 mt-6 max-md:mt-[10vw] max-md:items-center max-md:justify-center">
+                    <PreviousButton onClick={handlePrev} />
+                    <NextButton onClick={handleNext} />
+                  </div>
       </div>
     </section>
   );

@@ -114,7 +114,7 @@ const VideoListing = ({margin}) => {
       {/* Modal (mounted while animating out) */}
       {isMounted && openIndex !== null && (
         <div
-          className={"fixed inset-0 z-[999] flex items-center justify-center"}
+          className={"fixed inset-0 z-[999] flex items-center justify-center w-screen overflow-hidden"}
           aria-modal="true"
           role="dialog"
         >
@@ -148,16 +148,17 @@ const VideoListing = ({margin}) => {
           {/* Dialog */}
           <div
             className={[
-              "relative z-[101] w-[70vw] h-[90vh] flex items-center justify-center max-sm:h-[55vh] max-sm:w-[85vw]",
+              "relative z-[101] w-[70vw] h-[90vh] flex items-center justify-center max-sm:h-fit max-sm:w-[85vw]",
               "transition-all duration-500 ease-out ",
               isOpen
                 ? "opacity-100 translate-y-0 delay-200"
                 : "opacity-0 translate-y-2",
             ].join(" ")}
           >
-            <div className="w-full h-full aspect-video bg-[#050E2B] rounded-[1.8vw] overflow-hidden shadow-xl p-[2vw] space-y-[1.5vw] max-sm:rounded-[4.5vw] max-sm:p-[5vw] max-sm:space-y-[7vw]">
+            <div className="w-full h-full bg-[#050E2B] rounded-[1.8vw] overflow-hidden shadow-xl p-[2vw] space-y-[1.5vw] max-sm:rounded-[4.5vw] max-sm:p-[5vw] max-sm:space-y-[7vw] max-sm:h-fit">
+             
               <iframe
-                className="w-full h-[80%] rounded-[1.2vw] max-sm:rounded-[4.2vw] max-sm:h-[60%]"
+                className="w-full h-[80%] rounded-[1.2vw] max-sm:rounded-[4.2vw] max-sm:h-[30vh] "
                 src={toEmbedUrl(videos[openIndex].youtubeUrl)}
                 title={videos[openIndex].title}
                 allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

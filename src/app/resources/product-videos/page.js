@@ -27,12 +27,10 @@ const heroData = {
 };
 
 const footerCTAData = {
-  heading: "Take a lightning tour of the Enterprise AI Platform ",
-  para: "Discover how UnifyAI can accelerate your AI/ML and GenAI initiatives with seamless deployment, scalability, and security. ",
-  btnText1: "Book a demo",
+  heading: "Don’t Miss What’s Next ",
+  para: "New videos are added regularly as we release features, run workshops, and scale AI across new industries. ",
+  btnText1: "Subscribe to Our YouTube",
   btnLink1: "/#",
-  btnText2: "Schedule a Call",
-  btnLink2: "/#",
   img1: "/assets/images/footer/image-1.png",
   img2: "/assets/images/footer/image-2.png",
 };

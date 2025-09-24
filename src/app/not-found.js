@@ -1,54 +1,132 @@
+"use client"
 import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Copy from "@/components/Animations/Copy";
-import { Suspense } from "react";
+import { Suspense, useRef } from "react";
 import ShaderComp from "@/components/BgShader/ShaderComp";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
-
-// const DynamicShaderComp = dynamic(() => import("../BgShader/ShaderComp"), {
-//   ssr: true,
-// });
 
 export default function NotFoundPage() {
-
-    return (
-        <>
-        <Header/>
-         <section className="w-screen relative h-screen  max-sm:pb-0 bg-background overflow-hidden">
-       <div className="absolute top-0 left-0 h-full !w-full hidden max-sm:block max-md:block">
-          <Image src={"/assets/images/homepage/gradient-mobile.png"} height={852} width={393} alt="hero-bg" className="h-full w-full"/>
-        </div>
-      <div className="relative h-screen max-md:h-[80vh] max-sm:h-[80vh] max-sm:pt-[15vh] w-full flex flex-col items-center justify-center max-sm:items-start max-sm:px-[2vw]">
-       <div  className="absolute top-[30%] left-0 h-screen w-screen max-sm:hidden">
-               <Suspense>
-                 {/* <DynamicShaderComp /> */}
-                 <ShaderComp/>
-               </Suspense>
-             </div>
-       
+  const ShaderRef = useRef()
+  useGSAP(()=>{
+    gsap.set(".not-found-para",{
+      opacity:1,
+    })
+   gsap.to(".num",{
+    translateY:"-100%",
+    stagger:{from:"random",amount:1},
+    duration:1.5,
+    delay:2,
+    ease:"back.inOut",
+    repeat:-1,
+    repeatDelay:3,
+   })
+   gsap.to(".not-found-head",{
+    translateY:"0%",
+    duration:1,
+    rotate:0,
+    delay:0.5,
+    ease:"power2.out"
+   })
+    gsap.fromTo(
+      ShaderRef.current,
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 3,
+        delay: 0.5,
+        ease: "power3.out",
+      }
+    );
+    gsap.fromTo(
+      ".mobile-shader",
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 3,
+        delay: 0.5,
+        ease: "power3.out",
+      }
+    );
+    gsap.fromTo(
+      ShaderRef.current,
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 3,
+        delay: 0.5,
+        ease: "power3.out",
+      }
+    );
+  })
+  return (
+    <>
+      <Header />
+      <section className="w-screen container relative h-screen  max-sm:pb-0 bg-background overflow-hidden">
         <div
-          className={`h-fit pointer-events-none w-full pt-20 flex-col flex items-center justify-center z-[9999] text-foreground max-sm:items-start text-center max-sm:pl-[5vw] max-sm:pt-[0vw]`}
+          className={`h-full w-full flex-col flex items-center justify-center z-[99] relative text-foreground text-center`}
         >
-          <Copy delay={0.5}>
+          <div className="w-fit h-[16vw] overflow-hidden max-sm:h-[32vw] max-md:h-[22vw]">
             <h1
-              className={`text-[20vw] leading-[1.1] font-display w-[80%] max-md:w-[90%]  text-white-200 max-sm:w-[90%]`}
+              className={`text-[20vw] h-[16vw] flex flex-row  font-medium font-display w-fit  text-white-200 overflow-hidden not-found-head translate-y-[110%] rotate-[5deg] max-sm:text-[40vw] max-sm:h-[32vw] max-md:text-[27vw] max-md:h-[22vw]`}
             >
-              404
+              <div className="flex flex-col num">
+                <span className="leading-[0.8]">4</span>
+                <span  className="leading-[0.8]">4</span>
+              </div>
+              <div className="flex flex-col num">
+                <span className="leading-[0.8]">0</span>
+                <span  className="leading-[0.8]">0</span>
+              </div>
+              <div className="flex flex-col num">
+                <span className="leading-[0.8]">4</span>
+                <span  className="leading-[0.8]">4</span>
+              </div>
             </h1>
-          </Copy>
+          </div>
           <div
-            className={`w-[60%] max-md:w-[80%] pt-5 text-content-20 text-gray-2 max-sm:w-full max-md:pt-[5vw] max-sm:pt-[10vw]`}
+            className={`w-[60%] max-md:w-[80%] pt-[2vw] text-content-20 text-gray-2 max-sm:w-full max-md:pt-[5vw] max-sm:pt-[7vw]`}
           >
             <Copy delay={0.5 + 0.5}>
-              <p className="leading-[1.5] text-white-300 max-sm:text-content-20 max-sm:leading-[1.5] max-sm:pr-[5vw] max-md:text-[3vw]">
-                Go back to <Link href="/" className="link-line pointer-events-auto">Homepage!!!</Link>
+              <p className="leading-[1.5] text-white-300  max-sm:leading-[1.5] max-md:text-[3vw] max-sm:text-[4.2vw] opacity-0 not-found-para">
+                Go back to{" "}
+                <Link
+                  href="/"
+                  className="link-line pointer-events-auto pb-[1px]"
+                >
+                  Homepage!!!
+                </Link>
               </p>
             </Copy>
           </div>
         </div>
-      </div>
-    </section>
-        </>
-    )
+        <div className="absolute top-0 left-0 h-full w-screen hidden max-sm:block max-md:block mobile-shader opacity-0">
+          <Image
+            src={"/assets/images/homepage/gradient-mobile.png"}
+            height={852}
+            width={393}
+            alt="hero-bg"
+            className="h-full w-full"
+          />
+        </div>
+       
+          <div  ref={ShaderRef} className="absolute top-[30%] left-0 h-screen w-screen max-sm:hidden ">
+            <Suspense>
+              {/* <DynamicShaderComp /> */}
+              <ShaderComp />
+            </Suspense>
+          </div>
+       
+      </section>
+    </>
+  );
 }

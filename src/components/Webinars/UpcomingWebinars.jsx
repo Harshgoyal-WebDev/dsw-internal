@@ -110,7 +110,7 @@ const UpcomingWebinars = () => {
           </div>
 
           {/* Secondary Announcements */}
-          <div className="max-sm:w-screen overflow-x-scroll max-sm:ml-[-7vw] max-sm:mt-[7vw]">
+          <div className="max-sm:w-screen max-sm:overflow-x-scroll max-sm:ml-[-7vw] max-sm:mt-[7vw]">
             <div className="w-full flex justify-between fadeup pt-[3vw] max-sm:w-[270vw] max-sm:px-[7vw] max-sm:pb-[10vw] ">
               {secondaryAnnouncements.map((item, index) => (
                 <div

@@ -11,6 +11,7 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { usePathname } from "next/navigation";
 import { useLenis } from "lenis/react";
 import MobileMenu from "./MobileMenu";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -74,7 +75,7 @@ const Header = () => {
           transition={{
             duration: 1,
             ease: "easeOut",
-            delay: pathname === "/" ? 1 : 1,
+            delay: pathname === "/" ? 6 : 1,
           }}
           className="text-white w-screen fixed top-0 left-0 z-[900] pointer-events-none"
         >
@@ -88,7 +89,7 @@ const Header = () => {
             <div className="border rounded-full border-white/20 ml-[4vw] max-md:hidden relative">
               <div className="w-full h-full absolute top-0 left-0 rounded-full bg-black/10 backdrop-blur-md" />
 
-              <ul className="flex items-center justify-between px-[2.5vw] py-[1.5vw] gap-[3vw] text-[1.145vw]">
+              <ul className="flex items-center justify-between px-[2.5vw] py-[1.5vw] gap-[3vw] text-[1vw]">
                 {NAVIGATION.map((link) => {
                   const hasChildren =
                     Array.isArray(link.children) && link.children.length > 0;
@@ -97,17 +98,17 @@ const Header = () => {
                     <li
                       key={link.id}
                       className="relative text-[#E8E8E8] dropdown-links"
-                       onMouseEnter={() => {
-                              setOpenDropdown(link.id);
-                              lenis.stop();
-                            }}
-                            onMouseLeave={() => {
-                              setOpenDropdown(null);
-                              lenis.start();
-                            }}
+                      onMouseEnter={() => {
+                        setOpenDropdown(link.id);
+                        lenis.stop();
+                      }}
+                      onMouseLeave={() => {
+                        setOpenDropdown(null);
+                        lenis.start();
+                      }}
                     >
                       {/* Top-level link */}
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-[0.5vw]">
                         <NavigationLink
                           text={link.text}
                           href={link.href}
@@ -124,28 +125,23 @@ const Header = () => {
                           }}
                         />
                         {hasChildren && (
-                          <div
-                          className="w-[1vw]"
-                           
-                          >
+                          <div className="w-fit">
                             <div
-                              className={` text-[#CACACA] flex items-center justify-center gap-0 w-[0.6vw] pt-[0.2vw] h-full max-sm:w-[3vw] transition-transform duration-300 ${
-                                openDropdown === link.id ? "-rotate-270" : "-rotate-90"
+                              className={` text-[#CACACA] flex items-center justify-center gap-0 w-[0.8vw] mt-[-0.1vw] h-full max-sm:w-[3vw] transition-transform duration-300 ${
+                                openDropdown === link.id
+                                  ? "translate-y-[25%] scale-[1.05]"
+                                  : ""
                               }`}
                             >
-                              <svg
-                                className="arrow primera next"
-                                width="8"
-                                height="15"
-                                viewBox="0 0 8 15"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M7.50293 14.46L2.50293 7.45996L7.50293 0.459961H5.05293L0.0529289 7.45996L5.05293 14.46H7.50293Z"
-                                  fill="currentColor"
+                              <div className="w-[1.5vw] h-auto">
+                                <Image
+                                  src={"/assets/icons/chevron-down.svg"}
+                                  alt=""
+                                  width={20}
+                                  height={20}
+                                  className="w-full h-full object-contain"
                                 />
-                              </svg>
+                              </div>
                             </div>
 
                             <span
@@ -160,7 +156,7 @@ const Header = () => {
                       {/* Submenu */}
                       {hasChildren && (
                         <div
-                          className={`absolute top-[250%] left-[-5%] w-fit h-fit bg-black/40 backdrop-blur-sm rounded-[1.2vw] border border-white/20 transition-opacity duration-300 ${
+                          className={`absolute top-[270%] left-[-5%] w-fit h-fit bg-black/40 backdrop-blur-sm rounded-[1.2vw] border border-white/20 transition-opacity duration-300 ${
                             openDropdown === link.id
                               ? "opacity-100"
                               : "opacity-0 pointer-events-none"
