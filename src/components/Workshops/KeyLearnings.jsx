@@ -19,20 +19,20 @@ const capabilities = [
 const KeyLearnings = () => {
   return (
     <section className="h-full container ">
-      <div className="flex justify-between max-sm:flex-col pt-[4vw] max-sm:pt-[10vw]">
-        <div className="w-[45%] max-sm:w-[100%]">
-          <h3 className="text-white-200 text-60 headingAnim max-sm:text-left  font-head">
+      <div className="flex justify-between max-md:flex-col pt-[4vw] max-md:pt-[10vw]">
+        <div className="w-[45%] max-md:w-[100%]">
+          <h3 className="text-white-200 text-60 headingAnim max-md:text-left  font-head">
             Key Learning Objectives
           </h3>
         </div>
 
-        <div className="w-[40%] max-sm:w-full max-sm:mt-[10vw]">
-          <div className="space-y-[2vw] max-sm:space-y-[8vw] w-full">
+        <div className="w-[40%] max-md:w-full max-md:mt-[10vw]">
+          <div className="space-y-[2vw] max-md:space-y-[8vw] w-full">
             {capabilities.map((cap, index) => (
-              <div key={index} className="relative max-sm:pb-[8vw] pb-[2vw]">
-                <ul className="list-disc space-y-[2vw] ml-[2vw] max-sm:ml-[4vw]">
+              <div key={index} className="relative max-md:pb-[8vw] pb-[2vw]">
+                <ul className="list-disc space-y-[2vw] ml-[2vw] max-md:ml-[4vw]">
                   <li className="relative fadeup">
-                    <p className="text-white-300 w-[80%] max-sm:w-full">
+                    <p className="text-white-300 w-[80%] max-md:w-full">
                       {cap.text}
                     </p>
                   </li>

@@ -1,9 +1,9 @@
 import Faqs from '@/components/Common/FAQs'
 import FooterCTA from '@/components/Common/FooterCta'
+import Hero from '@/components/Common/Hero'
 import Layout from '@/components/Layout'
 import Empower from '@/components/Workshops/Empower'
 import Features from '@/components/Workshops/Features'
-import Hero from '@/components/Workshops/Hero'
 import KeyLearnings from '@/components/Workshops/KeyLearnings'
 import Outcomes from '@/components/Workshops/Outcomes'
 import WorkshopFlow from '@/components/Workshops/WorkshopFlow'
@@ -13,7 +13,7 @@ const page = () => {
   return (
     <>
     <Layout>
-        <Hero heroData={heroData}/>
+        <Hero breadcrumbs={true} heroData={heroData}/>
         <Features featuresData={featuresData}/>
         <KeyLearnings/>
         <WorkshopFlow sessionsData={sessionsData} space={"space-y-[0.5vw]"}/>
@@ -31,7 +31,9 @@ export default page
 const heroData={
     heading:"DeepTech AI + GenAI Hands-On Masterclass",
     para:"Led by AI architects and industry experts from Data Science Wizards (DSW), this session covers strategy, architecture, compliance, and practical implementation using our enterprise platform, UnifyAI. This intensive hands-on masterclass is designed for enterprises, innovation leaders, and technical teams who want to go beyond theory and bring AI and Generative AI into real-world production.",
-    width:"w-[70%]"
+    width:"w-[70%]",
+
+    hidebtn: true,
 }
 const featuresData=[
   {

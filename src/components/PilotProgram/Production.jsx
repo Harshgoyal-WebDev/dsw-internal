@@ -147,7 +147,7 @@ const ProductionCard = ({ className, title, para }) => {
   return (
     <div
       ref={cardRef}
-      className={`group relative rounded-[2vw] h-[22vw]  w-[35vw] p-[4vw] border border-[#59595980] overflow-hidden max-md:p-[8vw] cursor-pointer ${className} max-md:w-[85vw] max-md:h-[30vh] max-md:rounded-[5vw]`}
+      className={`group relative rounded-[2vw] h-[22vw]  w-[35vw] p-[4vw] border border-[#59595980] overflow-hidden max-md:p-[8vw] cursor-pointer ${className} max-md:w-[85vw] max-sm:h-[30vh] max-md:h-[40vh] max-md:rounded-[5vw]`}
     >
       {/* Gradient Background */}
       <div 
@@ -172,7 +172,7 @@ const ProductionCard = ({ className, title, para }) => {
         <div className="absolute max-md:relative left-0 right-[1vw] bottom-0 overflow-hidden">
           <p 
             ref={paraRef}
-            className="text-white text-[1.2vw] leading-[1.4] max-md:text-[4.2vw] max-md:opacity-100"
+            className="text-white text-[1.2vw] leading-[1.4] max-sm:text-[4.2vw] max-md:text-[3vw] max-md:opacity-100"
           >
             {para}
           </p>

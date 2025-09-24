@@ -1,9 +1,9 @@
 import Faqs from '@/components/Common/FAQs'
 import FooterCTA from '@/components/Common/FooterCta'
+import Hero from '@/components/Common/Hero'
 import Layout from '@/components/Layout'
 import Empower from '@/components/Workshops/Empower'
 import Features from '@/components/Workshops/Features'
-import Hero from '@/components/Workshops/Hero'
 import Outcomes from '@/components/Workshops/Outcomes'
 import WorkshopFlow from '@/components/Workshops/WorkshopFlow'
 import React from 'react'
@@ -12,7 +12,7 @@ const page = () => {
   return (
     <>
     <Layout>
-        <Hero heroData={heroData}/>
+        <Hero breadcrumbs={true} heroData={heroData}/>
         <Features featuresData={featuresData}/>
         <WorkshopFlow sessionsData={sessionsData} space={"space-y-[2vw]"}/>
         <Outcomes outcomesData={outcomesData}/>
@@ -29,7 +29,8 @@ export default page
 const heroData={
     heading:"Equip Your Team With Real-World AI & GenAI Skills for Insurance",
     para:"The insurance industry is evolving—and AI is no longer optional. Our hands-on workshops are designed specifically for insurers ready to unlock real value from AI, Machine Learning, and Generative AI. Led by enterprise AI experts, these sessions blend strategy, compliance, and implementation—all tailored for insurance workflows.",
-    width:"w-[75%]"
+    width:"w-[75%]",
+    hidebtn: true,
 }
 const featuresData=[
   {

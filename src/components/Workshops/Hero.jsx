@@ -130,8 +130,8 @@ const Hero = ({ heroData }) => {
     segment.replace(/-/g, " ").replace(/\b\w/g, (char) => char.toUpperCase());
 
   return (
-    <section className="h-[70vw] w-screen relative bg-background max-sm:h-screen max-sm:px-[7vw]" id="hero">
-      <div className="flex flex-col items-center justify-start w-full h-full pt-[30vh] relative z-[12] max-sm:pt-[15vh]">
+    <section className="h-[70vw] max-md:h-screen w-screen relative bg-background max-sm:h-screen max-sm:px-[7vw]" id="hero">
+      <div className="flex flex-col items-center justify-start w-full h-full pt-[30vh] relative z-[12] max-md:pt-[15vh]">
         <div className={`text-center space-y-6 pb-5 max-sm:w-[100%] max-sm:space-y-[10vw] ${heroData.width}`}>
           <h1
             ref={heading}
@@ -146,7 +146,7 @@ const Hero = ({ heroData }) => {
           </p>
          
         </div>
-        <div className="breadcrumbs overflow-hidden w-full flex items-start justify-start text-[1vw] text-[#CACACA] max-sm:text-[4vw] max-sm:h-fit absolute left-[5%] top-[75%] max-sm:top-[95%]">
+        <div className="breadcrumbs overflow-hidden w-full flex items-start justify-start text-[1vw] text-[#CACACA] max-sm:!text-[4vw] max-md:!text-[2.2vw] max-sm:h-fit absolute left-[5%] top-[75%] max-md:top-[95%] max-md:w-fit ">
   <div className="flex gap-3 breadcrumbsContainer">
     {pathArray
       .filter((segment) => segment && segment.toLowerCase() !== "home") // skip empty & "home"

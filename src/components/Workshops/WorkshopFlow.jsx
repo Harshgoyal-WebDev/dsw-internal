@@ -37,18 +37,18 @@ export default function WorkshopFlow({ sessionsData, space }) {
   };
 
   return (
-    <section className="relative w-full h-fit space-y-[6vw] container max-sm:h-full overflow-hidden">
-      <div className="w-full flex h-full  gap-[1vw] items-end justify-between max-sm:flex-col max-sm:items-start">
-        <h2 className="text-90 headingAnim max-sm:text-center w-[45%] max-sm:w-full">
+    <section className="relative w-full h-fit space-y-[6vw] container max-md:h-full overflow-hidden">
+      <div className="w-full flex h-full  gap-[1vw] items-end justify-between max-md:flex-col max-md:items-start">
+        <h2 className="text-90 headingAnim max-md:text-center w-[45%] max-md:w-full">
           Workshop Flow & Key Sessions
         </h2>
 
-        <div className="flex fadeup gap-6 mt-12 max-sm:mt-[15vw]  max-sm:items-center max-sm:justify-center max-sm:absolute max-sm:top-[85%] max-sm:left-[50%] max-sm:translate-x-[-50%]">
+        <div className="flex fadeup gap-6 mt-12 max-md:mt-[15vw]  max-md:items-center max-md:justify-center max-md:absolute max-md:top-[85%] max-md:left-[50%] max-md:translate-x-[-50%]">
           <PreviousButton onClick={handlePrev} />
           <NextButton onClick={handleNext} />
         </div>
       </div>
-      <div className="h-fit flex  items-center justify-center  w-full max-sm:my-[15vw]">
+      <div className="h-fit flex  items-center justify-center  w-full max-md:my-[15vw]">
         <Swiper
           ref={swiperRef}
           modules={[Navigation]}
@@ -62,7 +62,7 @@ export default function WorkshopFlow({ sessionsData, space }) {
               spaceBetween: 20,
             },
             768: {
-              slidesPerView: 2,
+              slidesPerView: 1,
               spaceBetween: 40,
             },
             1024: {
@@ -93,7 +93,7 @@ const SwiperCard = ({ title, list, duration, onHover, isActive, space }) => {
   return (
     <>
       <div
-        className="relative py-[3vw] max-sm:py-[8vw] max-sm:px-[8vw] rounded-[2vw] overflow-hidden w-[34vw] px-[3vw] h-[38vw] max-sm:min-h-[70vh] max-sm:h-fit max-sm:w-full max-sm:rounded-[6vw] border border-white/30 group "
+        className="relative py-[3vw] max-md:py-[8vw] max-md:px-[8vw] rounded-[2vw] overflow-hidden w-[34vw] px-[3vw] h-[38vw] max-md:min-h-[70vh] max-sm:h-fit max-md:w-full max-md:rounded-[6vw] border border-white/30 group "
         onMouseEnter={onHover}
       >
         <div
@@ -101,19 +101,19 @@ const SwiperCard = ({ title, list, duration, onHover, isActive, space }) => {
             isActive ? "opacity-100" : "opacity-0"
           }`}
         />
-        <div className="absolute right-[4%] top-[4%] z-[5] rounded-full flex items-center justify-center h-[5vw] w-[5vw] max-sm:h-[18vw] max-sm:top-[7%] max-sm:w-[18vw] border border-[#FFFFFF54]">
-          <p className="text-white-300 max-sm:text-[4vw] text-[1vw]">{duration}</p>
+        <div className="absolute right-[4%] top-[4%] z-[5] rounded-full flex items-center justify-center h-[5vw] w-[5vw] max-sm:h-[18vw] max-sm:top-[7%] max-sm:w-[18vw] max-md:w-[12vw] max-md:h-[12vw] border border-[#FFFFFF54]">
+          <p className="text-white-300 max-sm:text-[4vw] max-md:text-[3vw] text-[1vw]">{duration}</p>
         </div>
         <div className="h-full flex flex-col justify-between relative z-[10]">
-          <div className="w-[60%] max-sm:w-[80%]">
+          <div className="w-[60%] max-md:w-[80%]">
             <h3 className="text-40">{title}</h3>
           </div>
 
-          <div className="w-full  max-sm:space-y-[3vw] py-[2vw] max-sm:mt-[8vw]">
+          <div className="w-full  max-md:space-y-[3vw] py-[2vw] max-sm:mt-[8vw]">
             <ul className={`list-disc text-white-300  ${space}`}>
               {list.map((item, index) => (
                 <li key={index}>
-                  <span className="!font-medium max-sm:w-full max-sm:text-[#F1F1F1]">{item.heading} </span>{" "}
+                  <span className="!font-medium max-md:w-full max-md:text-[#F1F1F1]">{item.heading} </span>{" "}
                   {item.para}
                 </li>
               ))}
