@@ -74,7 +74,7 @@ const Footer = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="flex justify-between py-8 pt-12  text-[1vw] max-md:text-xl max-sm:text-[1vw] max-md:gap-2 text-foreground max-md:flex-col max-md:text-center">
+                    <div className="flex justify-between py-8 pt-12  text-[1vw] max-md:text-xl max-sm:text-sm max-md:gap-2 text-foreground max-md:flex-col max-md:text-center">
                         <p>Copyright © {SITE_CONFIG.name} {SITE_CONFIG.copyright.year}</p>
                         <p>
                             {SITE_CONFIG.copyright.credits.text}{" "}
