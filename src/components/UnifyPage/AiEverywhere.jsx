@@ -22,17 +22,17 @@ export default function AiEverywhere() {
   });
   return (
     <>
-      <section className="h-full relative z-[20] max-sm:mt-0 w-screen container">
-        <div className="flex flex-col items-center justify-between space-y-[10vw] max-sm:space-y-[25vw] w-full">
+      <section className="h-full relative z-[20] max-md:mt-0 w-screen container">
+        <div className="flex flex-col items-center justify-between space-y-[10vw] max-md:space-y-[25vw] w-full">
           <SectionBreak text={"Even today, most enterprises struggle to move from pilot to production. Complex tech stacks, long timelines, and compliance risks slow things down. DSW UnifyAI solves this."} span={false}/>
-          <div className="space-y-[7vw] max-sm:space-y-[20vw]">
-            <div className="flex h-full max-sm:flex-col items-center max-sm:gap-[10vw] gap-[12vw] justify-between">
-              <h2 className="w-[45%]  max-sm:w-full max-sm:text-center text-50 text-nowrap font-head headingAnim  ">
+          <div className="space-y-[7vw] max-md:space-y-[20vw]">
+            <div className="flex h-full max-md:flex-col items-center max-md:gap-[10vw] gap-[12vw] justify-between">
+              <h2 className="w-[45%]  max-md:w-full max-md:text-center text-50 text-nowrap font-head headingAnim  ">
                 AI is Everywhere. <br/>
                 But Operational AI is Rare.
               </h2>
               <Copy>
-                <p className="w-full max-sm:w-full max-sm:text-center text-white-300">
+                <p className="w-full max-md:w-full max-md:text-center text-white-300">
                   Most enterprises face the same hurdles: siloed teams, long
                   development cycles, integration nightmares, and governance
                   concerns. UnifyAI is more than a platform. It's a full-stack
@@ -41,19 +41,19 @@ export default function AiEverywhere() {
                 </p>
               </Copy>
             </div>
-            <div className=" flex items-start max-sm:flex-col max-sm:gap-[12vw] justify-between w-full">
+            <div className=" flex items-start max-md:flex-col max-md:gap-[12vw] justify-between w-full">
               {cardsData.map((card, index) => (
-                <div key={index} className="space-y-[2vw] max-sm:space-y-[8vw] max-sm:w-full ai-everywhere-cards w-[21.5%]">
-                  <div className="w-full  max-sm:flex-col max-sm:flex max-sm:items-center max-sm:justify-center h-full">
+                <div key={index} className="space-y-[2vw] max-md:space-y-[8vw] max-md:w-full ai-everywhere-cards w-[21.5%]">
+                  <div className="w-full  max-md:flex-col max-md:flex max-md:items-center max-md:justify-center h-full">
                     <Image
                       src={card.src}
                       height={98}
                       width={98}
                       alt={card.alt}
-                      className="w-[5vw]  h-[5vw]  object-contain max-sm:w-[22vw] max-sm:h-[22vw]"
+                      className="w-[5vw]  h-[5vw]  object-contain max-md:w-[22vw] max-md:h-[22vw]"
                     />
                   </div>
-                  <p className=" max-sm:text-center max-sm:px-[8vw] text-white-300">{card.text}</p>
+                  <p className=" max-md:text-center max-md:px-[8vw] text-white-300">{card.text}</p>
                 </div>
               ))}
             </div>

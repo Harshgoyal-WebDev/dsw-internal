@@ -62,25 +62,26 @@ export default function OnePlatform() {
     const image1Y = useTransform(smoothY, (v) => v * 20);
 
     return (
-        <div ref={containerRef} className="flex items-center justify-between h-[80vh] w-screen overflow-hidden max-sm:flex-col  max-sm:h-full container " id="footer-cta">
-            <div className="relative w-1/2 h-[50vw] max-sm:w-full max-sm:h-[110vw]">
+        <div ref={containerRef} className="flex items-center justify-between h-[80vh] w-screen overflow-hidden max-md:flex-col  max-md:h-full container " id="footer-cta">
+            <div className="relative w-1/2 h-[50vw] max-md:w-full max-sm:h-[110vw]">
                 
                  <motion.div
                     style={{ x: image1X, y: image1Y }}
-                    className="absolute w-[40%] top-[20%] left-[20%] rounded-2xl border border-white/30 overflow-hidden max-sm:w-[50%] max-sm:top-[5%] max-sm:left-[10%] fadeup "
+                    className="absolute w-[40%] top-[20%] left-[20%] rounded-2xl border border-white/30 overflow-hiddenmax-sm:w-[50%] max-sm:top-[5%] max-md:w-[35%] max-sm:left-[10%] max-md:left-[13.5%]
+                    max-md:top-[-18%] fadeup "
                 >
                     <Image src={"/assets/images/footer/image-1.png"} alt="Image1"  width={348} height={312} loading="lazy"  className="w-full h-full object-cover" />
                 </motion.div>
 
                 <motion.div
                     style={{ x: image1X, y: image1Y }}
-                    className="absolute  w-[35%] bottom-[18%] left-[45%] rounded-2xl  border border-white/30 overflow-hidden max-sm:w-[50%] max-sm:left-[35%] fadeup"
+                    className="absolute  w-[35%] bottom-[18%] left-[45%] rounded-2xl  border border-white/30 overflow-hidden max-sm:w-[50%] max-sm:left-[35%] max-md:left-[54%] fadeup"
              >
                     <Image src={"/assets/images/footer/image-2.png"} alt="Image2"  width={313} height={272} loading="lazy"  className="w-full h-full object-cover" />
                 </motion.div>
             </div>
-              <div className="w-[50%] max-sm:!w-[90%] max-sm:text-center max-sm:mt-[5vw] space-y-[4vw]">
-                <h2 className="text-60 max-sm:w-full font-head  headingAnim text-white-200 max-sm:mb-[7vw]">One Platform. Many Possibilities.  </h2>
+              <div className="w-[50%] max-md:!w-[90%] max-md:text-center max-md:mt-[5vw] space-y-[4vw]">
+                <h2 className="text-60 max-md:w-full font-head  headingAnim text-white-200 max-md:mb-[7vw]">One Platform. Many Possibilities.  </h2>
                 <div>
                 <Copy>
                 <p className="text-white-300">From GenAI agents that automate knowledge work, to AI models that power predictions, decisions, and actions — UnifyAI gives enterprises the infrastructure to lead with AI. </p>

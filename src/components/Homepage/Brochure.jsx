@@ -162,7 +162,7 @@ const BrochureCard = ({ title, list, listTitle }) => {
   return (
     <>
       {/* <Link href={"#"}> */}
-      <div className="bg-gradient-to-r from-[#09183e] to-[#1626FD] h-[70vh] rounded-[6.5vw] max-md:min-h-[80vh] max-sm:h-[70vh] max-md:h-fit border border-white/40 py-[10%] px-[7vw]">
+      <div className="bg-gradient-to-r from-[#09183e] to-[#1626FD] h-[70vh] rounded-[6.5vw] max-md:min-h-[85vh] max-sm:h-[70vh] max-md:h-fit border border-white/40 py-[10%] px-[7vw]">
         <div className="w-full h-full flex flex-col gap-[3vw] justify-between">
           <div>
             <h3 className="text-30">{title}</h3>

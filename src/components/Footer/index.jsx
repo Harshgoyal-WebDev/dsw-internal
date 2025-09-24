@@ -34,7 +34,7 @@ const Footer = () => {
                 <div className="relative z-[20]">
                     <div className="rounded-[2.2vw] background-glass-diff border border-white/30 px-12 py-[5%] flex justify-between max-md:px-[0vw] max-md:py-[15%] max-md:rounded-[5vw] max-md:flex-col max-md:items-center max-md:justify-center max-md:text-center">
                         {/* Logo and Contact Info */}
-                        <div className="flex flex-col justify-between items-start gap-24 max-md:gap-18 footer-content max-md:pb-[15vw] max-md:items-center max-md:justify-center">
+                        <div className="flex flex-col justify-between items-start gap-24 max-md:gap-18 footer-content max-sm:pb-[15vw] max-md:pb-[10vw] max-md:items-center max-md:justify-center">
                             <Logo variant="footer" className="w-fit" />
                             <ContactInfo variant="footer" />
                         </div>
@@ -59,7 +59,7 @@ const Footer = () => {
                             <div className="flex flex-col justify-between w-3/5 max-md:w-full">
                                 <Newsletter />
                                 {/* Social Media Links */}
-                                <ul className="flex gap-4 max-md:items-center max-md:justify-center max-md:mt-[15vw]">
+                                <ul className="flex gap-4 max-md:items-center max-md:justify-center max-md:mt-[10vw] max-sm:mt-[15vw]">
                                     {SOCIAL_LINKS.map((link) => (
                                         <li key={link.id} className="group">
                                             <SocialLink
@@ -74,7 +74,7 @@ const Footer = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="flex justify-between py-8 pt-12 text-[1vw] max-md:text-sm max-md:gap-2 text-foreground max-md:flex-col max-md:text-center">
+                    <div className="flex justify-between py-8 pt-12  text-[1vw] max-md:text-xl max-md:gap-2 text-foreground max-md:flex-col max-md:text-center">
                         <p>Copyright © {SITE_CONFIG.name} {SITE_CONFIG.copyright.year}</p>
                         <p>
                             {SITE_CONFIG.copyright.credits.text}{" "}

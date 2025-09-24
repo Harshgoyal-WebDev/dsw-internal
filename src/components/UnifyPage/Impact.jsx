@@ -28,7 +28,7 @@ const POINTS = [
     id: "04",
     title: "Govern",
     text: "Monitor usage, ensure compliance, and scale on demand ",
-    width: "w-[60%] max-sm:w-full",
+    width: "w-[60%] max-md:w-full",
   },
 ];
 
@@ -83,9 +83,9 @@ export default function Impact() {
 
   return (
     <section className="w-screen container" id="about">
-      <div className="w-full flex flex-col items-center justify-center gap-y-[5vw] max-sm:gap-y-[15vw]">
-        <div className="text-center space-y-[2vw] max-sm:space-y-[5vw]">
-          <h2 className="text-60 headingAnim text-white-200 max-sm:text-center">
+      <div className="w-full flex flex-col items-center justify-center gap-y-[5vw] max-md:gap-[10vw] max-sm:gap-y-[15vw]">
+        <div className="text-center space-y-[2vw] max-md:space-y-[5vw]">
+          <h2 className="text-60 headingAnim text-white-200 max-md:text-center">
             From Idea to Impact  
           </h2>
           <Copy>
@@ -95,21 +95,21 @@ export default function Impact() {
           </Copy>
         </div>
 
-        <div className="flex flex-col gap-[4vw] max-sm:w-full max-sm:gap-[15vw]">
+        <div className="flex flex-col gap-[4vw] max-md:w-full max-md:gap-[8vw] max-sm:gap-[15vw]">
           {POINTS.map(({ id, text, width, title }) => (
             <div
               key={id}
               className="w-full flex gap-[3.2vw] items-center about-item"
             >
-              <div className="w-[15%] relative max-sm:w-[30%]">
-                <div className="relative w-[6.5vw] h-[6.5vw] border border-primary-1 rounded-full flex items-center justify-center max-sm:w-[20vw] max-sm:h-[20vw]">
-                  <p className="about-id text-primary-1 text-[1.5vw] font-head relative z-[1] max-sm:text-[4.2vw]">
+              <div className="w-[15%] relative max-md:w-[30%]">
+                <div className="relative w-[6.5vw] h-[6.5vw] border border-primary-1 rounded-full flex items-center justify-center max-sm:w-[20vw] max-sm:h-[20vw] max-md:w-[15vw] max-md:h-[15vw]">
+                  <p className="about-id text-primary-1 text-[1.5vw] font-head relative z-[1] max-md:text-[4.2vw]">
                     {id}
                   </p>
                 </div>
               </div>
               <div className="space-y-[1.2vw]">
-                <p className="text-[1.5vw] max-sm:text-[4.2vw] text-white-200">
+                <p className="text-[1.5vw] max-md:text-[4.2vw] text-white-200">
                   {title}
                 </p>
 

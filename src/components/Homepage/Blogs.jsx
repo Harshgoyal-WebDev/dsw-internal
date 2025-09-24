@@ -18,7 +18,7 @@ const BlogCard = ({ title, date, img }) => {
   return (
     <>
       <Link href={"#"}>
-        <div className="rounded-3xl h-full group border-[0.25px] border-stone-600 pb-4 max-md:!min-h-[52vh] bg-white/5 space-y-8 overflow-hidden group cursor-pointer max-sm:pb-0">
+        <div className="rounded-3xl h-full group border-[0.25px] border-stone-600 pb-4 max-md:!min-h-[55vh] bg-white/5 space-y-8 overflow-hidden group cursor-pointer max-sm:pb-0">
           <div className="w-full h-full  overflow-hidden rounded-3xl ">
             <Image
               src={img}
@@ -87,7 +87,7 @@ const Blogs = () => {
             Stay Ahead with AI Insights
           </h2>
           <Copy>
-            <p className="text-[#CACACA] w-[72%] leading-[1.4] max-md:w-full">
+            <p className="text-[#CACACA] w-[72%] leading-[1.4] max-md:w-[92%] max-sm:w-full">
               stay informed with expert insights, industry updates, and
               real-world use cases from UnifyAI. Whether you&apos;re looking for
               the latest in Generative AI, AI governance, or enterprise AI
@@ -98,7 +98,7 @@ const Blogs = () => {
             <PrimaryButton text={"Know More"} href={"#"} />
           </div>
         </div>
-        <div className="w-[50%] text-white max-md:w-full max-md:mt-[10vw] ">
+        <div className="w-[50%] text-white max-sm:w-full max-md:w-[93%] max-md:mt-[10vw] ">
           <Swiper
             slidesPerView={2}
             className="mySwiper swiper-container"
@@ -111,7 +111,7 @@ const Blogs = () => {
                 spaceBetween: 20,
               },
               640: {
-                slidesPerView: 2,
+                slidesPerView: 1.6,
                 spaceBetween: 30,
               },
               1024: {

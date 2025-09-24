@@ -76,7 +76,7 @@ export default function UsecaseMobile({ allowMultiple = false }) {
         </h2>
       </div>
 
-      <div className="w-full max-sm:pt-[20vw]">
+      <div className="w-full max-md:pt-[20vw]">
         {usecaseData.map((f, i) => (
           <Accordion
             key={i}
@@ -104,7 +104,7 @@ function Accordion({ title, para, link, features, isOpen, onToggle, id }) {
         <button
           onClick={onToggle}
           aria-expanded={isOpen}
-          className="relative cursor-pointer w-full h-full max-sm:pt-[5vw] max-sm:pb-[5vw] flex items-start justify-between max-md:pt-[3vw] max-md:pb-[5vw]"
+          className="relative cursor-pointer w-full h-full max-sm:pt-[5vw] max-sm:pb-[5vw] flex items-start justify-between max-md:pt-[5vw] max-md:pb-[5vw]"
         >
           <div className="w-full flex justify-between ">
             <div className="flex text-white-200 items-center justify-center gap-[5vw]">

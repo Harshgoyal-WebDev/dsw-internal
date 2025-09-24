@@ -102,7 +102,7 @@ export default function Clients() {
             {logos.map((item, index) => (
               <div key={index} className="grid__item">
                 <Image
-                  className="w-[20vw] h-auto max-sm:scale-[3] brightness-200"
+                  className="w-[20vw] h-auto max-sm:scale-[3] max-md:scale-[1.8] brightness-200"
                   src={item}
                   alt="client-logo"
                   width={200}

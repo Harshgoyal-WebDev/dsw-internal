@@ -152,7 +152,7 @@ function Accordion({ title, para, link, isOpen, onToggle }) {
                   </h3> */}
                 </div>
                 <div className="py-4 space-y-[4vw] ">{para}</div>
-                <div className="w-full mt-[5vw]">
+                <div className="w-full mt-[5vw] max-md:mt-[1vw] max-sm:mt-[5vw]">
                   <WhiteButton
                     background="border-primary-2 border bg-transparent hover:bg-transparent"
                     circleColor={"bg-primary-2 group-hover:!bg-primary-2"}

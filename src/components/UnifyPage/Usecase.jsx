@@ -128,7 +128,7 @@ export default function Usecase() {
   ];
 
   return (
-    <div className="min-h-screen max-sm:hidden container flex flex-col items-center justify-center space-y-[7vw] h-fit w-full">
+    <div className="min-h-screen max-md:hidden container flex flex-col items-center justify-center space-y-[7vw] h-fit w-full">
       <h2 className="text-60 headingAnim w-[45%] text-center">
         Supercharge Your AI and GenAI Use Cases
       </h2>

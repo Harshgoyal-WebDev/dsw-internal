@@ -34,7 +34,7 @@ const Tour = ({heading,para}) => {
 
   return (
     <section className="w-screen h-fit container" id="tour">
-      <div className="w-full flex flex-col gap-[2vw] items-center max-sm:gap-[4vw]">
+      <div className="w-full flex flex-col gap-[2vw] items-center max-md:gap-[4vw]">
         <h2 className="text-60 headingAnim w-[40%] max-md:w-full text-center">{heading}</h2>
         <Copy>
           <p className="text-[#CACACA] text-center">
