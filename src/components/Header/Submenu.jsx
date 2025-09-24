@@ -40,7 +40,7 @@ const SubmenuNavigation = ({
 
           <div
             className={`w-fit h-fit transition-transform duration-300 ${
-              isOpen ? "-rotate-90" : "rotate-0"
+              isOpen ? "-rotate-180" : "rotate-0"
             }`}
           >
             <svg
