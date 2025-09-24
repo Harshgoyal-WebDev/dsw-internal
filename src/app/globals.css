@@ -491,7 +491,7 @@ h4 {
   }
   @keyframes marquee-reverse {
     0% {
-      transform: translateX(-187.5%);
+      transform: translateX(-187%);
     }
     100% {
       transform: translateX(0);
