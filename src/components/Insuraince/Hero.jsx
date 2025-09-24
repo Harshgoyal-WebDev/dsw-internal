@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { Suspense, useEffect, useRef } from "react";
 import PrimaryButton from "../Button/PrimaryButton";
 import WhiteButton from "../Button/WhiteButton";
@@ -8,8 +8,15 @@ import { initSplit, SplitInLineOnly } from "../splitTextUtils";
 import { SplitText } from "gsap/SplitText";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import { fadeIn, fadeUp, headingAnim, lineAnim, paraAnim } from "@/components/Animations/gsapAnimations";
-import heroGradient from "../../../public/assets/images/homepage/gradient-mobile.png"
+import {
+  fadeIn,
+  fadeUp,
+  headingAnim,
+  lineAnim,
+  paraAnim,
+} from "@/components/Animations/gsapAnimations";
+import heroGradient from "../../../public/assets/images/homepage/gradient-mobile.png";
+import { usePathname } from "next/navigation";
 
 const DynamicShaderComp = dynamic(() => import("../BgShader/ShaderComp"), {
   ssr: false,
@@ -50,11 +57,19 @@ const Hero = () => {
     initSplit();
     SplitInLineOnly(heading.current);
     const lines = heading.current.querySelectorAll(".line");
-    const heroPara = document.querySelector(".heroPara")
+    const heroPara = document.querySelector(".heroPara");
     const heroEl = new SplitText(heroPara, {
       type: "lines",
-      mask: "lines"
-    })
+      mask: "lines",
+    });
+    // gsap.set(lines,{
+    //    maskPosition: "100% 100%",
+    // })
+    // gsap.set(heroEl.lines,{
+    //    yPercent: 100,
+    // })
+
+   
     gsap.fromTo(
       lines,
       {
@@ -86,48 +101,70 @@ const Hero = () => {
     })
 
   }, []);
+    // gsap.from(".")
 
-   const ShaderRef = useRef();
-  
+  const ShaderRef = useRef();
+
   useEffect(() => {
     gsap.fromTo(
-      ShaderRef.current, 
+      ShaderRef.current,
       {
-        opacity: 0
+        opacity: 0,
       },
       {
         opacity: 1,
         duration: 3,
         delay: 1.5,
-        ease:'power3.out'
+        ease: "power3.out",
       }
     );
-      gsap.to(".heroPara,.heroHead",{
-      opacity:1,
-      duration:0.1
-    })
+    gsap.to(".heroPara,.heroHead", {
+      opacity: 1,
+      duration: 0.1,
+    });
+    gsap.fromTo(
+      ".breadcrumbsContainer",
+      {
+        y: 50,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power3.out",
+        delay: 1.5,
+      }
+    );
   }, []);
 
+  const pathname = usePathname();
+  const pathArray = pathname.split("/").filter(Boolean);
+  const createBreadcrumbName = (segment) =>
+    segment.replace(/-/g, " ").replace(/\b\w/g, (char) => char.toUpperCase());
+
   return (
-    <section className="h-[70vw] w-screen relative bg-background max-sm:h-screen max-sm:px-[7vw]" id="hero">
-      <div className="flex flex-col items-center justify-start w-full h-full pt-[30vh] relative z-[12] max-sm:pt-[15vh]">
-        <div className="flex items-center justify-center flex-col w-[80%] text-center gap-[2.5vw] pb-5 max-sm:w-[90%] max-sm:space-y-[8vw]">
+    <section
+      className="h-[70vw] w-screen relative bg-background max-md:h-screen max-md:px-[7vw]"
+      id="hero"
+    >
+      <div className="flex flex-col items-center justify-start w-full h-full pt-[30vh] relative z-[12] max-md:pt-[15vh]">
+        <div className="flex items-center justify-center flex-col w-[80%] text-center gap-[2.5vw] pb-5 max-sm:w-[90%] max-sm:space-y-[8vw] max-md:space-y-[3vw]">
           <h1
             ref={heading}
-            className="title-1 font-head heroHeadAnim text-white-200 heroHead opacity-0"
+            className="text-100 font-head heroHeadAnim text-[#E8E8E8] opacity-0 heroHead"
           >
-           Enterprise AI Platform for Insurance
+             Enterprise AI Platform for Insurance
           </h1>
-          <div className=" h-auto w-[16vw] max-sm:w-[50vw] hero-img opacity-0">
+           <div className=" h-auto w-[16vw] max-sm:w-[50vw] max-md:w-[28vw] hero-img opacity-0">
             <Image src={"/assets/icons/insuraince/insuraince.svg"} height={46} width={297} alt="insuraince" className="h-full w-full object-cover fadeUp"/>
           </div>
-          <p
+         <p
             className={`text-white-300 w-full mx-auto overflow-hidden heroPara opacity-0`}
           >
            Purpose-Built, Proven, and Production-Ready . InsurAInce is the enterprise AI platform designed for insurers to build GenAI agents in hours, deploy AI use cases in days, and scale confidently with compliance, speed, and accuracy – all through your policy lifecycle. 
           </p>
-          
-          <div className="flex items-center justify-center gap-6 mt-2 max-sm:flex-col max-sm:gap-[5vw]">
+          <div className="flex items-center justify-center gap-6 mt-2 max-md:flex-col max-sm:gap-[5vw] max-md:gap-[3vw]">
             {[
               { Component: PrimaryButton, text: "Explore the Platform ", link: "/#" },
               { Component: WhiteButton, text: "Book a demo", link: "/#"},
@@ -144,26 +181,76 @@ const Hero = () => {
                   }
                 }}
               >
-                <Component href="#" text={text} className="max-sm:min-w-[60vw]" />
+                <Component
+                  href="#"
+                  text={text}
+                  className="max-md:min-w-[20vw]"
+                />
               </motion.div>
             ))}
           </div>
         </div>
       </div>
+      {/* {breadcrumbs && (
+        <div className="breadcrumbs overflow-hidden w-fit flex items-start justify-start text-[1vw] text-[#CACACA] max-md:text-[4vw] max-md:h-fit absolute left-[5%] top-[75%] max-md:top-[95%] z-[800]">
+          <div className="flex gap-3 breadcrumbsContainer">
+            {pathArray
+              .filter((segment) => segment && segment.toLowerCase() !== "home")
+              .map((segment, index, arr) => {
+                const href = "/" + arr.slice(0, index + 1).join("/");
+                const isLast = index === arr.length - 1;
+
+                return (
+                  <div key={index} className="flex items-center gap-2">
+                  
+                    {index > 0 && <span>&gt;</span>}
+
+                    {isLast ? (
+                      <span>{createBreadcrumbName(segment)}</span>
+                    ) : (
+                      <a
+                        onClick={(e) => {
+                          e.preventDefault();
+                          navigateTo(href);
+                        }}
+                        href={href}
+                      >
+                        {createBreadcrumbName(segment)}
+                      </a>
+                    )}
+                  </div>
+                );
+              })}
+          </div>
+        </div>
+      )} */}
 
       {/* Animated Vertical Lines */}
-      <div className="w-screen h-[55vw] absolute top-0 left-0 z-[10] flex justify-center gap-[22vw] max-sm:hidden">
+      <div className="w-screen h-[55vw] absolute top-0 left-0 z-[10] flex justify-center gap-[22vw] max-md:hidden">
         {[...Array(lineCount)].map((_, i) => (
-          <AnimatedLine key={i} delay={5 + (i * 0.2)} />
+          <AnimatedLine
+            key={i}
+            delay={5 + (i * 0.2)}
+          />
         ))}
       </div>
-      <div ref={ShaderRef} className="absolute top-[30%] left-0 h-screen w-screen max-sm:hidden">
+      <div
+        ref={ShaderRef}
+        className="absolute top-[30%] left-0 h-screen w-screen max-md:hidden"
+      >
         <Suspense>
           <DynamicShaderComp />
         </Suspense>
       </div>
-      <div className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-sm:block">
-        <Image src={heroGradient} placeholder="blur" alt="shader-gradient-mobile" className="w-full h-full object-cover" width={600} height={1080} />
+      <div className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-md:block">
+        <Image
+          src={heroGradient}
+          placeholder="blur"
+          alt="shader-gradient-mobile"
+          className="w-full h-full object-cover"
+          width={600}
+          height={1080}
+        />
       </div>
     </section>
   );

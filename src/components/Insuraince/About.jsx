@@ -62,8 +62,8 @@ export default function About() {
     const image1Y = useTransform(smoothY, (v) => v * 20);
 
     return (
-        <div ref={containerRef} className="flex items-center  justify-between h-[80vh] w-screen overflow-hidden max-sm:flex-col  max-sm:h-full container relative z-[20] " id="footer-cta">
-            <div className="relative w-1/2 h-[50vw] max-sm:w-full max-sm:h-[110vw] max-sm:mt-[20vh]">
+        <div ref={containerRef} className="flex items-center  justify-between h-[80vh] max-md:h-full w-screen overflow-hidden max-sm:flex-col  max-sm:h-full container relative z-[20] " id="footer-cta">
+            <div className="relative w-1/2 h-[50vw] max-sm:w-full max-sm:h-[110vw] max-md:mt-[20vh] max-sm:mt-[20vh]">
                 <div className="absolute top-1/2 -translate-y-1/2 right-0 -z-10">
                     
                 </div>
@@ -81,7 +81,7 @@ export default function About() {
                     <Image src={"/assets/images/footer/image-2.png"} alt="Image2"  width={313} height={272} loading="lazy"  className="w-full h-full object-cover" />
                 </motion.div>
             </div>
-              <div className="w-[60%] max-sm:!w-[100%] max-sm:text-center  space-y-[2vw]">
+              <div className="w-[60%] max-md:w-full max-sm:!w-[100%] max-sm:text-center   space-y-[2vw]">
                 <h2 className="text-60  max-sm:text-wrap font-head  headingAnim text-white-200 max-sm:mb-[7vw] max-sm:!text-[11.5vw]">One Platform. Built with Insurance
                      DNA. Unified AI and GenAI.</h2>
                 <div className="space-y-[0.5vw]">
