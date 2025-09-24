@@ -97,7 +97,7 @@ const FutureScope = () => {
   });
 
   return (
-    <div className="container overflow-hidden future-section h-[100vh] max-md:h-full relative max-md:gap-[5vw] flex flex-col gap-[2.8vw] justify-center items-center">
+    <section className="container overflow-hidden future-section h-[100vh] max-md:h-full relative max-md:gap-[5vw] flex flex-col gap-[2.8vw] justify-center items-center">
       <h2 className="text-90 headingAnim text-center text-white-200">
         Ready for the Future
         <br />
@@ -230,7 +230,7 @@ const FutureScope = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
