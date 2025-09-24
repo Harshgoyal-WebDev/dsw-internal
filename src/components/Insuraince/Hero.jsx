@@ -8,6 +8,7 @@ import { initSplit, SplitInLineOnly } from "../splitTextUtils";
 import { SplitText } from "gsap/SplitText";
 import Image from "next/image";
 import dynamic from "next/dynamic";
+import { usePathname } from "next/navigation";
 import {
   fadeIn,
   fadeUp,

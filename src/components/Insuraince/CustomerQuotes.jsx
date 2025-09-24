@@ -187,7 +187,7 @@ const ExpandablePanels = () => {
             <div
               className={`transition-all duration-700 ease-in-out ${
                 activeMobilePanel === index
-                  ? 'max-h-[100vh] h-[40vh] opacity-100 '
+                  ? 'max-h-[100vh] max-md:h-[45vh] max-sm:h-[40vh] opacity-100 '
                   : 'max-h-0 h-0 opacity-0'
               } overflow-hidden`}
             >
