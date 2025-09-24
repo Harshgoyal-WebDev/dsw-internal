@@ -59,22 +59,22 @@ export default function Expect() {
 
   return (
     <section className="w-screen container relative z-[10]" id="expect">
-      <div className="w-full flex flex-col items-center justify-center gap-y-[7vw] max-sm:gap-y-[20vw]">
+      <div className="w-full flex flex-col items-center justify-center gap-y-[7vw] max-sm:gap-y-[20vw] max-md:gap-y-[12vw]">
         <div className="text-center ">
           <h2 className="text-90 headingAnim text-white-200 max-sm:text-center">
             What to Expect
           </h2>
         </div>
 
-        <div className="flex  flex-wrap justify-end gap-y-[5vw] gap-x-[10vw] max-sm:w-full max-sm:gap-[15vw] max-sm:justify-center max-sm:items-center">
+        <div className="flex  flex-wrap justify-end gap-y-[5vw] gap-x-[10vw] max-md:w-full max-sm:gap-[15vw] max-md:justify-center max-md:items-center max-md:gap-[7vw]">
           {POINTS.map(({ id, text,title}) => (
             <div
               key={id}
-              className=" flex flex-col gap-[1.2vw] items-start about-item w-[44%] fadeup max-sm:w-full max-sm:items-center max-sm:gap-y-[7vw]"
+              className=" flex flex-col gap-[1.2vw] items-start about-item w-[44%] fadeup max-md:w-full max-sm:items-center max-md:items-start max-sm:gap-y-[7vw] max-md:gap-[5vw]"
             >
-              <div className="w-[15%] relative max-sm:w-fit">
-                <div className="relative w-[6vw] h-[6vw] border border-white-200 rounded-full flex items-center justify-center max-sm:w-[18vw] max-sm:h-[18vw]">
-                  <p className="about-id text-white-200 text-[1.5vw] font-head relative z-[1] max-sm:text-[4.2vw] max-sm:text-center">
+              <div className="w-[15%] relative max-md:w-fit">
+                <div className="relative w-[6vw] h-[6vw] border border-white-200 rounded-full flex items-center justify-center max-sm:w-[18vw] max-sm:h-[18vw] max-md:h-[10vw] max-md:w-[10vw]">
+                  <p className="about-id text-white-200 text-[1.5vw] font-head relative z-[1] max-sm:text-[4.2vw] max-sm:text-center max-md:text-[2.5vw]">
                     {id}
                   </p>
                 </div>

@@ -191,7 +191,7 @@ const Hero = ({ heroData, breadcrumbs }) => {
         </div>
       </div>
       {breadcrumbs && (
-        <div className="breadcrumbs overflow-hidden w-fit flex items-start justify-start text-[1vw] text-[#CACACA] max-md:text-[4vw] max-md:h-fit absolute left-[5%] top-[75%] max-md:top-[95%] z-[800]">
+        <div className="breadcrumbs overflow-hidden w-fit flex items-start justify-start text-[1vw] text-[#CACACA] max-md:text-[2.5vw] max-md:h-fit absolute left-[5%] top-[75%] max-md:top-[90%] z-[800]">
           <div className="flex gap-3 breadcrumbsContainer">
             {pathArray
               .filter((segment) => segment && segment.toLowerCase() !== "home") // skip empty & "home"

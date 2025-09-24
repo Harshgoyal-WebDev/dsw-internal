@@ -49,7 +49,7 @@ const UpcomingWebinars = () => {
   return (
     <section className="container" id="announcement">
       <div className="space-y-[7vw]">
-        <div className="w-1/2 space-y-[1vw] max-sm:w-full max-sm:text-center max-sm:space-y-[7vw]">
+        <div className="w-1/2 space-y-[1vw] max-md:w-full max-sm:text-center max-sm:space-y-[7vw] max-md:space-y-[5vw] ">
           <h2 className=" text-90  headingAnim">Upcoming Webinars & Events</h2>
           <Copy>
             <p>
@@ -62,8 +62,8 @@ const UpcomingWebinars = () => {
         <div className="w-full space-y-[3vw] max-sm:mt-[20vw]">
           {/* Main Announcement */}
           <div className="w-full space-y-[4vw] max-sm:space-y-[7vw]">
-            <div className="w-full h-fit flex gap-[4.5vw] max-sm:flex-col max-sm:gap-y-[7vw]">
-              <div className="w-[30vw] h-[23vw] rounded-[1.2vw] overflow-hidden fadeup max-sm:w-full max-sm:h-[35vh]">
+            <div className="w-full h-fit flex gap-[4.5vw] max-md:flex-col max-md:gap-y-[7vw]">
+              <div className="w-[30vw] h-[23vw] rounded-[1.2vw] overflow-hidden fadeup max-md:w-full max-md:h-[35vh] max-md:border max-md:border-white/10 max-md:rounded-[7vw]">
                 <Image
                   src={mainAnnouncement.image}
                   alt={mainAnnouncement.alt}
@@ -72,7 +72,7 @@ const UpcomingWebinars = () => {
                   height={300}
                 />
               </div>
-              <div className="w-[60%] flex flex-col gap-[2vw] mt-[1vw] max-sm:w-full max-sm:gap-[7vw]">
+              <div className="w-[60%] flex flex-col gap-[2vw] mt-[1vw] max-md:w-full max-sm:gap-[7vw] max-md:gap-[5vw]">
                 <Copy>
                   <h3 className="text-30">{mainAnnouncement.title}</h3>
                 </Copy>
@@ -80,7 +80,7 @@ const UpcomingWebinars = () => {
                   <p>{mainAnnouncement.description}</p>
                 </Copy>
 
-                <div className="flex gap-[4vw] fadeup max-sm:flex-wrap max-sm:justify-between">
+                <div className="flex gap-[4vw] fadeup max-md:flex-wrap max-md:justify-between max-md:gap-[7vw]">
                   <div className="flex flex-col gap-[0.5vw]">
                     <p className="text-white/40">Format</p>
                     <p>{mainAnnouncement.format}</p>
@@ -95,7 +95,7 @@ const UpcomingWebinars = () => {
                   </div>
                 </div>
 
-                <div className="w-fit fadeup max-sm:my-[10vw]">
+                <div className="w-fit fadeup max-md:my-[10vw]">
                   <WhiteButton
                     background="border-primary-2 border bg-transparent hover:bg-transparent"
                     circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
@@ -110,14 +110,14 @@ const UpcomingWebinars = () => {
           </div>
 
           {/* Secondary Announcements */}
-          <div className="max-sm:w-screen max-sm:overflow-x-scroll max-sm:ml-[-7vw] max-sm:mt-[7vw]">
-            <div className="w-full flex justify-between fadeup pt-[3vw] max-sm:w-[270vw] max-sm:px-[7vw] max-sm:pb-[10vw] ">
+          <div className="max-md:w-screen max-md:overflow-x-scroll max-md:ml-[-7vw] max-md:mt-[7vw]">
+            <div className="w-full flex justify-between fadeup pt-[3vw] max-md:w-[270vw] max-md:px-[7vw] max-md:pb-[10vw] ">
               {secondaryAnnouncements.map((item, index) => (
                 <div
                   key={index}
-                  className="w-[32%] h-fit flex flex-col gap-[1.5vw] max-sm:gap-[7vw]"
+                  className="w-[32%] h-fit flex flex-col gap-[1.5vw] max-md:gap-[7vw]"
                 >
-                  <div className="w-full h-[15vw] rounded-[1.2vw] overflow-hidden max-sm:h-[25vh] max-sm:rounded-[4.5vw] max-sm:border max-sm:border-white/20">
+                  <div className="w-full h-[15vw] rounded-[1.2vw] overflow-hidden max-sm:h-[25vh] max-md:h-[35vh] max-md:rounded-[4.5vw] max-md:border max-md:border-white/20">
                     <Image
                       src={item.image}
                       alt={item.alt}

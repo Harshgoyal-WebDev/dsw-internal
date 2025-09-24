@@ -64,11 +64,11 @@ const VideoListing = ({margin}) => {
         className={`container relative z-[20]  max-sm:mt-0 ${margin ? "mt-[-10vh]":"mt-0"}`}
         id="video-listing"
       >
-        <div className="w-full h-full flex flex-wrap justify-between gap-y-[7vw] max-sm:gap-y-[20vw]">
+        <div className="w-full h-full flex flex-wrap justify-between gap-y-[7vw] max-sm:gap-y-[20vw] max-md:gap-y-[15vw]">
           {videos.map((video, index) => (
-            <div key={index} className="w-[47.5%] flex flex-col gap-[1vw] max-sm:w-full max-sm:gap-[7vw]">
+            <div key={index} className="w-[47.5%] flex flex-col gap-[1vw] max-sm:w-full max-sm:gap-[7vw] max-md:w-full max-md:gap-[4vw]">
               <div
-                className="w-full h-[25vw] rounded-[1.8vw] overflow-hidden relative cursor-pointer video-modal-thumbnail outline-none fadeup group max-sm:h-[27vh] max-sm:rounded-[4.5vw] max-sm:border max-sm:border-white/20"
+                className="w-full h-[25vw] rounded-[1.8vw] overflow-hidden relative cursor-pointer video-modal-thumbnail outline-none fadeup group max-sm:h-[27vh] max-md:h-[40vh] max-sm:rounded-[4.5vw] max-md:border max-md:border-white/20"
                 role="button"
                 tabIndex={0}
                 aria-label={`Play video: ${video.title}`}
@@ -88,7 +88,7 @@ const VideoListing = ({margin}) => {
                   height={400}
                 />
                 <div className="w-full h-full absolute bg-gradient-to-t from-black/80 via-transparent to-transparent z-[2] inset-0 flex justify-between items-end p-[2vw] max-sm:p-[5vw]">
-                  <div className="w-[4vw] h-auto max-sm:w-[12vw]">
+                  <div className="w-[4vw] h-auto max-sm:w-[12vw] max-md:w-[10vw]">
                     <Image
                       alt="play-icon"
                       className="group-hover:scale-[0.9] duration-700 ease-in-out w-full h-full"
@@ -127,7 +127,7 @@ const VideoListing = ({margin}) => {
           {/* Close button */}
           <div
             onClick={handleClose}
-            className={` h-auto absolute right-[5%] top-[5%] group  max-sm:w-[12vw] rounded-full   p-[2vw]  transition-all  ease-out max-sm:p-[6vw]  bg-gradient-to-br from-[#F16B0D] to-[#E61216] cursor-pointer `}
+            className={` h-auto absolute right-[5%] top-[5%] group  max-sm:w-[12vw] rounded-full   p-[2vw]  transition-all  ease-out max-sm:p-[6vw]  bg-gradient-to-br from-[#F16B0D] to-[#E61216] cursor-pointer max-md:p-[4vw] `}
           >
             <div
               style={{
@@ -136,11 +136,11 @@ const VideoListing = ({margin}) => {
               className="rotate-45 group-hover:rotate-[225deg] duration-700"
             >
               <span
-                className={`w-[1.5vw] rounded-full h-[2px] bg-[#ffffff] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-300 transform-origin-center max-sm:w-[5vw] max-sm:h-[1.5px] rotate-90 `}
+                className={`w-[1.5vw] rounded-full h-[2px] bg-[#ffffff] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-300 transform-origin-center max-sm:w-[5vw] max-sm:h-[1.5px] rotate-90 max-md:w-[3vw]`}
               ></span>
 
               <span
-                className={`w-[1.5vw] rounded-full h-[2px] bg-[#ffffff] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-300 transform-origin-center max-sm:w-[5vw] max-sm:h-[1.5px] `}
+                className={`w-[1.5vw] rounded-full h-[2px] bg-[#ffffff] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-300 transform-origin-center max-sm:w-[5vw] max-sm:h-[1.5px] max-md:w-[3vw]`}
               ></span>
             </div>
           </div>
@@ -148,17 +148,17 @@ const VideoListing = ({margin}) => {
           {/* Dialog */}
           <div
             className={[
-              "relative z-[101] w-[70vw] h-[90vh] flex items-center justify-center max-sm:h-fit max-sm:w-[85vw]",
+              "relative z-[101] w-[70vw] h-[90vh] flex items-center justify-center max-sm:h-fit max-sm:w-[85vw] max-md:w-[85vw] max-md:h-fit",
               "transition-all duration-500 ease-out ",
               isOpen
                 ? "opacity-100 translate-y-0 delay-200"
                 : "opacity-0 translate-y-2",
             ].join(" ")}
           >
-            <div className="w-full h-full bg-[#050E2B] rounded-[1.8vw] overflow-hidden shadow-xl p-[2vw] space-y-[1.5vw] max-sm:rounded-[4.5vw] max-sm:p-[5vw] max-sm:space-y-[7vw] max-sm:h-fit">
+            <div className="w-full h-full bg-[#050E2B] rounded-[1.8vw] overflow-hidden shadow-xl p-[2vw] space-y-[1.5vw] max-sm:rounded-[4.5vw] max-sm:p-[5vw] max-sm:space-y-[7vw] max-sm:h-fit max-md:space-y-[5vw] max-md:p-[3vw]">
              
               <iframe
-                className="w-full h-[80%] rounded-[1.2vw] max-sm:rounded-[4.2vw] max-sm:h-[30vh] "
+                className="w-full h-[80%] rounded-[1.2vw] max-sm:rounded-[4.2vw] max-sm:h-[30vh] max-md:h-[50vh]"
                 src={toEmbedUrl(videos[openIndex].youtubeUrl)}
                 title={videos[openIndex].title}
                 allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

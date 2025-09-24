@@ -127,7 +127,6 @@ const Annoucements = () => {
             ))}
           </div>
         </div>
-        {/* Secondary Announcements */}
       </div>
     </section>
   );

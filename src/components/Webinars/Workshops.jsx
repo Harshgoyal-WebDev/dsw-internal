@@ -39,13 +39,13 @@ const Workshops = () => {
           </Copy>
         </div>
 
-        <div className="w-full flex justify-between  pt-[3vw] max-sm:flex-col max-sm:gap-[18vw]">
+        <div className="w-full flex justify-between  pt-[3vw] max-md:flex-col max-md:gap-[10vw] max-sm:gap-[18vw]">
           {secondaryAnnouncements.map((item, index) => (
             <div
               key={index}
-              className="w-[47.5%] h-fit flex flex-col gap-[1.5vw] fadeup max-sm:w-full max-sm:gap-[7vw] "
+              className="w-[47.5%] h-fit flex flex-col gap-[1.5vw] fadeup max-md:w-full max-md:gap-[3vw] max-sm:gap-[7vw] "
             >
-              <div className="w-full h-[25vw] rounded-[1.2vw] overflow-hidden group max-sm:h-[27vh] max-sm:rounded-[4.5vw] max-sm:border max-sm:border-white/20">
+              <div className="w-full h-[25vw] rounded-[1.2vw] overflow-hidden group max-md:h-[35vh] max-sm:h-[27vh] max-md:rounded-[4.5vw] max-md:border max-md:border-white/20">
                 <Image
                   src={item.image}
                   alt={item.alt}
