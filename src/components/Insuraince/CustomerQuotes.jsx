@@ -92,7 +92,7 @@ const ExpandablePanels = () => {
       </h2>
 
       {/* Desktop Version  */}
-      <div className=" items-center justify-center max-sm:hidden">
+      <div className=" items-center justify-center max-md:hidden">
         <div className="flex w-full px-[10vw] h-[65vh] overflow-hidden ">
           {panelsData.map((panel, index) => (
             <div
@@ -159,7 +159,7 @@ const ExpandablePanels = () => {
       </div>
 
       {/* Mobile Accordion  */}
-      <div className=" flex-col w-full px-[2vw] max-sm:block hidden">
+      <div className=" flex-col w-full px-[2vw] max-md:block hidden">
         {panelsData.map((panel, index) => (
           <div
             key={index}

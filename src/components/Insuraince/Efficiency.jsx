@@ -108,15 +108,15 @@ const Efficiency = () => {
         </Copy>
       </div>
 
-      <div className="w-full flex justify-between items-start max-sm:hidden">
+      <div className="w-full flex justify-between max-md:gap-y-[5vw] max-md:flex-wrap items-start max-sm:hidden">
         {/* Stat 1 */}
-         <div className="flex flex-col items-start gap-[1vw] w-[20%] ">
+         <div className="flex flex-col max-md:items-center items-start gap-[1vw] max-md:gap-[5vw] w-[45%] ">
           <div className="overflow-hidden h-[10vh]  w-fit items-center flex justify-start">
             <div className="w-fit flex flex-col items-center justify-center left-timer translate-y-[38%]">
               {TimeLd.map((digit, idx) => (
                 <p
                   key={idx}
-                  className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.4vw] font-head "
+                  className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.4vw] max-md:text-[10vw] font-head "
                 >
                   {digit}
                 </p>
@@ -127,28 +127,28 @@ const Efficiency = () => {
               {TCORd.map((digit, idx) => (
                 <p
                   key={idx}
-                  className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.4vw] font-head "
+                  className="bg-gradient-to-r from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.4vw] max-md:text-[10vw] font-head "
                 >
                   {digit}
                 </p>
               ))}
             </div>
             <div>
-              <p className="bg-gradient-to-r font-head  from-primary-2 to-primary-3 bg-clip-text text-transparent text-[4.4vw] ">
+              <p className="bg-gradient-to-r font-head  from-primary-2 to-primary-3 bg-clip-text text-transparent max-md:text-[10vw] text-[4.4vw] ">
                 %
               </p>
             </div>
           </div>
 
           <Copy>
-            <p className="tracking-wider text-white-300 leading-[1.4]">
+            <p className="tracking-wider text-white-300 max-md:text-center leading-[1.4]">
                faster time to market for AI and GenAI use cases
             </p>
           </Copy>
         </div>
 
         {/* Stat 2 */}
-        <div className="flex flex-col items-start gap-[1vw] w-[20%] ">
+        <div className="flex flex-col max-md:items-center  items-start gap-[1vw] max-md:gap-[5vw] w-[45%] ">
           <div className="overflow-hidden h-[10vh]  w-fit items-center flex justify-start">
             <div className="w-fit flex flex-col items-center justify-center left-timer translate-y-[38%]">
               {TCOLd.map((digit, idx) => (
@@ -186,7 +186,7 @@ const Efficiency = () => {
         </div>
 
         {/* Stat 3 */}
-        <div className="flex flex-col items-start gap-[1vw] w-[20%]">
+        <div className="flex flex-col max-md:items-center  items-start gap-[1vw] w-[45%]">
           <div className="overflow-hidden h-[10vh]  w-fit items-center flex justify-start">
             <div className="w-fit flex flex-col items-center justify-center left-timer translate-y-[38%]">
               {TaskLd.map((digit, idx) => (
@@ -223,7 +223,7 @@ const Efficiency = () => {
         </div>
 
         {/* Stat 4 */}
-        <div className="flex flex-col items-start gap-[1vw] w-[20%]">
+        <div className="flex flex-col max-md:items-center  items-start gap-[1vw] w-[45%]">
           <div className="overflow-hidden h-[10vh]  w-fit items-center flex justify-start">
             <div className="w-fit flex flex-col items-center justify-center left-timer translate-y-[38%]">
               {DaysLd.map((digit, idx) => (

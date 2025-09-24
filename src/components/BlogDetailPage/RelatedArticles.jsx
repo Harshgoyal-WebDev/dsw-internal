@@ -25,18 +25,18 @@ const BlogCard = ({ title, date, img }) => {
               width={531}
               height={510}
               alt={title}
-              className="object-cover h-[20vw] w-[31vw] group-hover:scale-[1.05] transition-all duration-500 ease-out max-sm:w-full max-sm:h-[60vw]"
+              className="object-cover h-[20vw] w-[31vw] group-hover:scale-[1.05] transition-all duration-500 ease-out max-md:w-full max-md:h-[60vw]"
             />
           </div>
           <div className="space-y-5 px-5">
             <p className=" font-medium text-[#E8E8E8] leading-[1.5]">
               <span className=" pb-0.5">{title}</span>
             </p>
-            <p className="text-[1.145vw] font-medium text-[#909090] max-sm:text-[3vw]">
+            <p className="text-[1.145vw] font-medium text-[#909090] max-md:text-[3vw]">
               {date}
             </p>
           </div>
-          <div className="h-[3vw] w-[3vw] absolute top-6 right-6 bg-white/20 rounded-full group-hover:!bg-white group-hover:text-[#111111] transition-all duration-500 ease-out max-sm:h-[15vw] max-sm:w-[15vw]">
+          <div className="h-[3vw] w-[3vw] absolute top-6 right-6 bg-white/20 rounded-full group-hover:!bg-white group-hover:text-[#111111] transition-all duration-500 ease-out max-sm:h-[15vw] max-md:h-[8vw] max-md:w-[8vw] max-sm:w-[15vw]">
             <ArrowButton />
           </div>
         </div>

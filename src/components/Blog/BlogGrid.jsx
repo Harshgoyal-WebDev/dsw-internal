@@ -10,7 +10,7 @@ const BlogCard = ({ title, date, img }) => {
   return (
     <>
       <Link href={"#"}>
-        <div className="rounded-[2vw] max-sm:rounded-3xl fadeup relative group border-[0.25px] border-white/30 h-[56vh] max-sm:h-[52vh]  bg-white/5 space-y-[2vw] max-sm:space-y-[8vw] overflow-hidden group cursor-pointer max-sm:pb-0">
+        <div className="rounded-[2vw] max-sm:rounded-3xl fadeup relative group border-[0.25px] border-white/30 h-[56vh] max-sm:h-[52vh] max-md:h-fit  bg-white/5 space-y-[2vw] max-sm:space-y-[8vw] overflow-hidden group cursor-pointer max-sm:pb-0">
           <div className="w-full h-[69%] max-sm:h-[60%] border-[0.25px] border-white/30 overflow-hidden max-sm:rounded-3xl rounded-[2vw] ">
             <Image
               src={img}
@@ -20,15 +20,15 @@ const BlogCard = ({ title, date, img }) => {
               className="object-cover h-full w-full  rounded-[2vw] max-sm:rounded-3xl  group-hover:scale-[1.05] transition-all duration-500 ease-out max-sm:w-full max-sm:h-full "
             />
           </div>
-          <div className="space-y-[1vw] max-sm:space-y-[4vw] px-5 w-[90%] max-sm:w-[100%]">
-            <p className=" text-white-200 leading-[1.5] max-sm:text-[6.5vw] font-head text-[1.2vw]">
+          <div className="space-y-[1vw] max-sm:space-y-[4vw] px-5 max-md:w-full w-[90%] max-sm:w-[100%]">
+            <p className=" text-white-200 leading-[1.5] max-md:text-[3.2vw] max-sm:text-[6.5vw] font-head text-[1.2vw]">
               {title}
             </p>
-            <p className="text-[1.145vw] font-medium text-[#909090] max-sm:text-[4.5vw]">
+            <p className="text-[1.145vw] font-medium text-[#909090] max-sm:text-[4.5vw]  max-md:text-[2.5vw]">
               {date}
             </p>
           </div>
-          <div className="h-[3.5vw] w-[3.5vw] absolute top-6 right-6 bg-white/20 rounded-full group-hover:!bg-white group-hover:text-[#111111] transition-all duration-500 ease-out max-sm:h-[15vw] max-sm:w-[15vw]">
+          <div className="h-[3.5vw] w-[3.5vw] absolute top-6 right-6 bg-white/20 rounded-full group-hover:!bg-white group-hover:text-[#111111] transition-all duration-500 ease-out max-md:h-[8vw] max-md:w-[8vw] max-sm:h-[15vw] max-sm:w-[15vw]">
             <ArrowButton />
           </div>
         </div>
@@ -286,7 +286,7 @@ const BlogGrid = () => {
       </div>
 
       {/* Pagination */}
-      <div className="flex items-center justify-center space-x-[2vw] max-sm:mt-[18vw] max-sm:w-full max-sm:justify-between">
+      <div className="flex items-center justify-center space-x-[2vw] max-sm:mt-[18vw] max-md:w-full max-md:justify-between">
         {/* Left arrow */}
         <PreviousButton onClick={handlePrev} />
 
@@ -305,7 +305,7 @@ const BlogGrid = () => {
           ))}
         </div> */}
 
-        <div className="flex max-sm:w-full   max-sm:justify-center font-head max-sm:space-x-[10vw] space-x-[2vw] text-30 text-[#909090]">
+        <div className="flex max-sm:w-full   max-sm:justify-center font-head max-md:space-x-[10vw] space-x-[2vw] text-30 text-[#909090]">
 
 
         {(() => {

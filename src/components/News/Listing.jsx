@@ -57,15 +57,15 @@ const Listing = () => {
   }, []);
 
   return (
-    <section className="container relative z-[10] mt-[-10vh]" id="news-listing">
-      <div className="w-full space-y-[4.5vw] max-sm:space-y-[15vw]">
+    <section className="container relative z-[10] max-md:mt-0 mt-[-10vh]" id="news-listing">
+      <div className="w-full space-y-[4.5vw] max-md:space-y-[15vw]">
         {listingData.map((data, id) => (
           <div
             key={id}
-            className="w-full space-y-[4vw] fadeupListing max-sm:space-y-[10vw]"
+            className="w-full space-y-[4vw] fadeupListing max-md:space-y-[10vw]"
           >
-            <div className="w-full h-fit flex gap-[2.5vw] max-sm:flex-col max-sm:gap-[5vw]">
-              <div className="w-[30vw] h-[20vw] rounded-[1.2vw] overflow-hidden max-sm:w-full max-sm:h-[25vh] max-sm:rounded-[4vw]">
+            <div className="w-full h-fit flex gap-[2.5vw] max-md:flex-col max-md:gap-[5vw]">
+              <div className="w-[30vw] h-[20vw] rounded-[1.2vw] overflow-hidden max-md:w-full max-sm:h-[25vh] max-md:h-[35vh] max-md:rounded-[3vw] max-sm:rounded-[4vw]">
                 <Image
                   src={data.imgSrc}
                   alt="listing images"
@@ -74,10 +74,10 @@ const Listing = () => {
                   height={300}
                 />
               </div>
-              <div className="w-[60%] flex flex-col gap-[1.5vw] mt-[2vw] max-sm:w-full max-sm:gap-[7vw]">
-                <p className="max-sm:order-3">{data.date}</p>
+              <div className="w-[60%] flex flex-col gap-[1.5vw] mt-[2vw] max-md:w-full max-md:gap-[7vw]">
+                <p className="max-md:order-3">{data.date}</p>
                 <h3 className="text-30 ordder-2">{data.title}</h3>
-                <p className="max-sm:order-1 text-white-300">{data.description}</p>
+                <p className="max-md:order-1 text-white-300">{data.description}</p>
                 <LinkButton
                   href={data.link}
                   text={"Read More"}

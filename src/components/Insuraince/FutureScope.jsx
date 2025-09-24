@@ -8,9 +8,9 @@ gsap.registerPlugin(ScrollTrigger);
 const MobileCard = ({ id, content }) => {
   return (
     <div
-      className="relative w-full rounded-[6vw] group cursor-pointer
-    overflow-hidden flex flex-col border transition-opacity border-[#59595980] 
-    justify-between p-[8vw] h-[75vw]  background-glass backdrop-blur-[1vw]"
+      className="relative w-full  max-md:w-[70%] max-md:translate-x-[22%] max-sm:translate-x-0 max-sm:w-full rounded-[6vw] group cursor-pointer
+    overflow-hidden flex flex-col max-md:flex-row max-sm:flex-col border transition-opacity border-[#59595980] 
+    justify-between p-[8vw] h-[75vw] max-md:h-fit max-sm:h-[75vw]  background-glass backdrop-blur-[1vw]"
     >
       <div className="relative z-10 flex flex-col gap-[6vw] justify-between h-full">
         <p
@@ -18,13 +18,13 @@ const MobileCard = ({ id, content }) => {
         transition-all duration-500 ease-in-out
         group-hover:border-white group-hover:text-white-300 
         border-[#175CFE] font-head text-[#175CFE] tracking-wider 
-        h-[25vw] w-[25vw] rounded-full"
+        h-[25vw] w-[25vw] max-md:w-[15vw] max-md:h-[15vw] max-sm:w-[25vw] max-sm:h-[25vw] rounded-full"
         >
           {id}
         </p>
 
         <p
-          className="text-white-300 text-[5vw] leading-[1.4] max-sm:w-[100%] w-[90%] pb-[1vw] 
+          className="text-white-300 text-[5vw] max-md:text-[3vw] max-sm:text-[5vw] leading-[1.4] max-md:w-[100%] w-[90%] pb-[1vw] 
         transition-colors duration-500 ease-in-out"
         >
           {content}
@@ -54,10 +54,10 @@ const FutureScope = () => {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 1025);
 
       const handleResize = () => {
-        setIsMobile(window.innerWidth <= 768);
+        setIsMobile(window.innerWidth <= 1025);
       };
 
       window.addEventListener("resize", handleResize);
@@ -97,7 +97,7 @@ const FutureScope = () => {
   });
 
   return (
-    <div className="container overflow-hidden future-section h-[100vh] max-sm:h-full relative max-sm:gap-[5vw] flex flex-col gap-[2.8vw] justify-center items-center">
+    <div className="container overflow-hidden future-section h-[100vh] max-md:h-full relative max-md:gap-[5vw] flex flex-col gap-[2.8vw] justify-center items-center">
       <h2 className="text-90 headingAnim text-center text-white-200">
         Ready for the Future
         <br />
@@ -105,7 +105,7 @@ const FutureScope = () => {
       </h2>
 
       <Copy>
-        <p className="text-white-300 w-[55%] max-sm:w-[100%] text-center max-sm:px-[2vw]">
+        <p className="text-white-300 w-[55%] max-md:w-[100%] text-center max-md:px-[2vw]">
           insurAInce isn’t just built for today’s problems. It’s built for
           tomorrow’s scale. AI in insurance is moving beyond pilots and isolated
           use cases. insurAInce is building what’s next — an integrated
@@ -113,8 +113,8 @@ const FutureScope = () => {
         </p>
       </Copy>
 
-      <div className="hidden max-sm:block w-full max-sm:pt-[10vw]">
-        <div className="flex flex-col gap-[7vw]">
+      <div className="hidden max-md:block w-full max-md:pt-[10vw]">
+        <div className="flex flex-col  gap-[7vw]">
           {scope.map((card, index) => (
             <div key={index} className="">
               <MobileCard id={card.id} content={card.content} />
@@ -123,7 +123,7 @@ const FutureScope = () => {
         </div>
       </div>
 
-      <div className="absolute future-card w-[100vw] max-sm:hidden inset-0 flex px-[8vw] gap-[0.5vw] flex-col items-start">
+      <div className="absolute future-card w-[100vw] max-md:hidden inset-0 flex px-[8vw] gap-[0.5vw] flex-col items-start">
         <div className="flex w-full justify-start">
           <div
             className="relative w-[27.5vw] rounded-[2.5vw] group cursor-pointer

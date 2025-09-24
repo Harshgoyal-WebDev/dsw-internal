@@ -32,27 +32,27 @@ const FeaturedBlog = () => {
   },[])
 
   return (
-    <section id='featured-blog-container' className="container opacity-0 featured-blog-img w-full !pb-[0.5vw] gap-[1.5vw] flex justify-between max-sm:gap-[3vh] mt-[-10vh] max-md:mt-0 max-sm:flex-col relative z-[20]">
-      <div className="w-[45%] max-md:w-[85%] max-sm:px-0 max-md:px-p2  max-sm:w-full  rounded-3xl h-[30vw] max-sm:h-[40vh] max-sm:border max-sm:border-white/30  relative group overflow-hidden">
+    <section id='featured-blog-container' className="container opacity-0 featured-blog-img w-full !pb-[0.5vw] gap-[1.5vw] flex justify-between max-md:gap-[3vh] mt-[-10vh] max-md:mt-0 max-md:flex-col relative z-[20]">
+      <div className="w-[45%] max-md:w-[85%] max-md:px-0 max-md:px-p2   rounded-3xl h-[30vw] max-md:h-[40vh] max-md:border max-md:border-white/30  relative group overflow-hidden">
         <Link href={"#"}>
-          <div className="w-full h-full max-md:w-full   max-sm:h-full max-sm:w-full overflow-hidden rounded-3xl">
+          <div className="w-full h-full   max-md:h-full max-md:w-full overflow-hidden rounded-3xl">
             <Image
               src="/assets/images/blog/ai-blog.png"
               width={800}
               height={800}
               alt="ai-img"
-              className="w-full h-full object-cover max-sm:h-full  group-hover:scale-[1.05] transition-all duration-500 ease-out max-sm:w-auto"
+              className="w-full h-full object-cover max-md:h-full  group-hover:scale-[1.05] transition-all duration-500 ease-out max-md:w-auto"
             />
           </div>
 
-          <div className="h-[3vw] max-sm:hidden w-[3vw] featured-blog-img  absolute top-6 right-6 bg-white/20 rounded-full group-hover:!bg-white group-hover:text-[#111111] transition-all duration-500 ease-out max-sm:h-[15vw] max-sm:w-[15vw]">
+          <div className="h-[3vw] max-md:hidden w-[3vw] featured-blog-img  absolute top-6 right-6 bg-white/20 rounded-full group-hover:!bg-white group-hover:text-[#111111] transition-all duration-500 ease-out max-md:h-[15vw] max-md:w-[15vw]">
             <ArrowButton />
           </div>
         </Link>
       </div>
 
-      <div className="w-[55%]  p-[2.5vw] max-sm:w-full  space-y-[3vw] max-sm:space-y-[5vw]">
-        <div className="space-y-[1.8vw] max-sm:space-y-[5vw]">
+      <div className="w-[55%]  p-[2.5vw] max-md:w-full  space-y-[3vw] max-md:space-y-[5vw]">
+        <div className="space-y-[1.8vw] max-md:space-y-[5vw]">
      
 
           <p className="text-30">
@@ -74,24 +74,24 @@ const FeaturedBlog = () => {
           
         </div>
 
-        <div className="flex max-sm:flex-wrap max-sm:justify-between  gap-[3.5vw]">
-          <div className="space-y-[0.5vw] fadeup max-sm:space-y-[1.5vw]">
+        <div className="flex max-md:flex-wrap max-md:justify-between  gap-[3.5vw]">
+          <div className="space-y-[0.5vw] fadeup max-md:space-y-[1.5vw]">
             <p className="text-[#909090]">Category</p>
             <p className="text-white-200">AI</p>
           </div>
 
-          <div className="space-y-[0.5vw] fadeup max-sm:space-y-[1.5vw]">
+          <div className="space-y-[0.5vw] fadeup max-md:space-y-[1.5vw]">
             <p className="text-[#909090]">Date</p>
             <p className="text-white-200">October 10, 2024</p>
           </div>
 
-          <div className="space-y-[0.5vw] fadeup max-sm:space-y-[1.5vw]">
+          <div className="space-y-[0.5vw] fadeup max-md:space-y-[1.5vw]">
             <p className="text-[#909090]">Author</p>
             <p className="text-white-200">Jane Smith</p>
           </div>
         </div>
 
-        <div className="max-sm:py-[2.5vw] py-[0.7vw] fadeup">
+        <div className="max-md:py-[2.5vw] py-[0.7vw] fadeup">
           <WhiteButton
             background="border-primary-2 border bg-transparent hover:bg-transparent"
             circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
@@ -101,7 +101,7 @@ const FeaturedBlog = () => {
           />
         </div>
 
-        <div className="hidden max-sm:mt-[4vh] max-sm:mb-[20vw] max-sm:block max-sm:w-full max-sm:h-[1px] bg-[#434343]" />
+        <div className="hidden max-md:mt-[4vh] max-md:mb-[20vw] max-md:block max-md:w-full max-md:h-[1px] bg-[#434343]" />
       </div>
     </section>
   );
