@@ -2,7 +2,6 @@
 import React, { Suspense, useEffect, useRef } from "react";
 import PrimaryButton from "../Button/PrimaryButton";
 import WhiteButton from "../Button/WhiteButton";
-import { motion } from "motion/react";
 import gsap from "gsap";
 import { initSplit, SplitInLineOnly } from "../splitTextUtils";
 import { SplitText } from "gsap/SplitText";
@@ -18,64 +17,80 @@ import {
 import heroGradient from "../../../public/assets/images/homepage/gradient-mobile.png";
 import { usePathname } from "next/navigation";
 
+gsap.registerPlugin(SplitText);
+
 const DynamicShaderComp = dynamic(() => import("../BgShader/ShaderComp"), {
   ssr: false,
 });
 
 const lineCount = 4;
 
-const AnimatedLine = ({ delay }) => (
-  <motion.div
-    initial={{ scaleY: 0 }}
-    animate={{ scaleY: 1, transition: { duration: 1.2, delay } }}
-    className="w-[0.5px] h-full bg-gradient-to-b from-white/20 to-transparent origin-top overflow-y-hidden"
-  >
-    <motion.span
-      initial={{ y: 0 }}
-      animate={{ y: "100vh" }}
-      transition={{
-        duration: 1.2,
-        delay,
-        repeat: Infinity,
-        repeatDelay: 2 + delay,
-      }}
-      className="block w-full h-3 bg-white blur-[1px]"
-    />
-  </motion.div>
-);
+/** GSAP-only animated vertical line */
+const AnimatedLine = ({ delay }) => {
+  const lineRef = useRef(null);
+  const dotRef = useRef(null);
+
+  useEffect(() => {
+    if (!lineRef.current || !dotRef.current) return;
+      
+    // grow the line
+    gsap.fromTo(
+      lineRef.current,
+      { scaleY: 0, transformOrigin: "top" },
+      { scaleY: 1, duration: 1.2, delay, ease: "power2.out" }
+    );
+
+    // sliding "dot"
+    gsap.to(dotRef.current, {
+      y: "100vh",
+      duration: 1.2,
+      delay,
+      repeat: -1,
+      repeatDelay: 2 + delay,
+      ease: "none",
+    });
+  }, [delay]);
+
+  return (
+    <div
+      ref={lineRef}
+      className="w-[0.5px] h-full bg-gradient-to-b from-white/20 to-transparent origin-top overflow-y-hidden"
+    >
+      <span ref={dotRef} className="block w-full h-3 bg-white blur-[1px]" />
+    </div>
+  );
+};
 
 const Hero = ({ heroData, breadcrumbs }) => {
   const heading = useRef(null);
+  const ShaderRef = useRef(null);
 
+  // keep your existing base hooks
   headingAnim();
   paraAnim();
   fadeUp();
   fadeIn();
   lineAnim();
 
+  // Split & reveal
   useEffect(() => {
     initSplit();
+    if (!heading.current) return;
+
     SplitInLineOnly(heading.current);
     const lines = heading.current.querySelectorAll(".line");
     const heroPara = document.querySelector(".heroPara");
-    const heroEl = new SplitText(heroPara, {
-      type: "lines",
-      mask: "lines",
-    });
-    // gsap.set(lines,{
-    //    maskPosition: "100% 100%",
-    // })
-    // gsap.set(heroEl.lines,{
-    //    yPercent: 100,
-    // })
+
+    const splitPara = heroPara
+      ? new SplitText(heroPara, { type: "lines", mask: "lines" })
+      : null;
 
     const delayLines = heroData.homepage ? 4.5 : 0.7;
     const delayPara = heroData.homepage ? 5.2 : 1.8;
+
     gsap.fromTo(
       lines,
-      {
-        maskPosition: "100% 100%",
-      },
+      { maskPosition: "100% 100%" },
       {
         maskPosition: "0% 100%",
         delay: delayLines,
@@ -84,49 +99,68 @@ const Hero = ({ heroData, breadcrumbs }) => {
         ease: "power2.out",
       }
     );
-    gsap.from(heroEl.lines, {
-      yPercent: 100,
-      delay: delayPara,
-      duration: 1.4,
-      stagger: 0.04,
-      ease: "power3.out",
-    });
-    // gsap.from(".")
-  }, []);
-  const ShaderRef = useRef();
 
-  useEffect(() => {
-    gsap.fromTo(
-      ShaderRef.current,
-      {
-        opacity: 0,
-      },
-      {
-        opacity: 1,
-        duration: 3,
-        delay: 1.5,
+    if (splitPara) {
+      gsap.from(splitPara.lines, {
+        yPercent: 100,
+        delay: delayPara,
+        duration: 1.4,
+        stagger: 0.04,
         ease: "power3.out",
-      }
-    );
-    gsap.to(".heroPara,.heroHead", {
+      });
+    }
+
+    return () => {
+      splitPara && splitPara.revert();
+    };
+  }, [heroData.homepage]);
+
+  // Shader, breadcrumbs, CTA buttons
+  useEffect(() => {
+    if (ShaderRef.current) {
+      gsap.fromTo(
+        ShaderRef.current,
+        { opacity: 0 },
+        { opacity: 1, duration: 3, delay: 1.5, ease: "power3.out" }
+      );
+    }
+   gsap.set(".hero-lines",{
+    opacity:1,
+   })
+   gsap.set(".hero-btns",{
+    opacity:1,
+   })
+     gsap.set(".mobile-gradient", {
       opacity: 1,
-      duration: 0.1,
     });
+     gsap.fromTo(
+        ".mobile-gradient",
+        { opacity: 0 },
+        { opacity: 1, duration: 3, delay: 1.5, ease: "power3.out" }
+      );
+    gsap.to(".heroPara,.heroHead", { opacity: 1, duration: 0.1 });
+
     gsap.fromTo(
       ".breadcrumbsContainer",
+      { y: 50, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, ease: "power3.out", delay: 1.5 }
+    );
+
+    // CTA button reveal (replaces <motion.div> wrappers)
+    const ctaDelay = heroData.homepage ? 5.8 : 1.8;
+    gsap.fromTo(
+      ".ctaBtn",
+      { opacity: 0, y: 20 },
       {
-        y: 50,
-        opacity: 0,
-      },
-      {
-        y: 0,
         opacity: 1,
+        y: 0,
         duration: 1,
+        delay: ctaDelay,
+        stagger: 0.12,
         ease: "power3.out",
-        delay: 1.5,
       }
     );
-  }, []);
+  }, [heroData.homepage]);
 
   const pathname = usePathname();
   const pathArray = pathname.split("/").filter(Boolean);
@@ -140,7 +174,9 @@ const Hero = ({ heroData, breadcrumbs }) => {
     >
       <div className="flex flex-col items-center justify-start w-full h-full pt-[30vh] relative z-[12] max-md:pt-[15vh]">
         <div
-          className={`text-center space-y-6 pb-5 max-md:w-[100%] max-md:space-y-[10vw] ${heroData.headingWidth || "w-[70%]"}`}
+          className={`text-center space-y-6 pb-5 max-md:w-[100%] max-md:space-y-[10vw] ${
+            heroData.headingWidth || "w-[70%]"
+          }`}
         >
           <h1
             ref={heading}
@@ -148,13 +184,19 @@ const Hero = ({ heroData, breadcrumbs }) => {
           >
             {heroData.heading}
           </h1>
+
           <p
-            className={`text-[#CACACA] font-head mx-auto overflow-hidden heroPara opacity-0 ${heroData.paraClass ? heroData.paraClass : "w-full"}`}
+            className={`text-[#CACACA] font-head mx-auto overflow-hidden heroPara opacity-0 ${
+              heroData.paraClass ? heroData.paraClass : "w-full"
+            }`}
           >
             {heroData.para}
           </p>
+
           <div
-            className={`flex items-center justify-center gap-6 mt-10 max-md:flex-col max-md:gap-[5vw] ${heroData.hidebtn ? "hidden" : "flex"}`}
+            className={`flex items-center justify-center gap-6 mt-10 max-md:flex-col max-md:gap-[5vw] hero-btns opacity-0 ${
+              heroData.hidebtn ? "hidden" : "flex"
+            }`}
           >
             {[
               {
@@ -168,54 +210,36 @@ const Hero = ({ heroData, breadcrumbs }) => {
                 link: heroData.link2,
               },
             ].map(({ Component, text }, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                  transition: {
-                    duration: 1,
-                    delay: heroData.homepage ? 5.8 : 1.8,
-                  },
-                }}
-              >
-                <Component
-                  href="#"
-                  text={text}
-                  className="max-md:min-w-[20vw]"
-                />
-              </motion.div>
+              <div key={index} className="ctaBtn">
+                <Component href="#" text={text} className="max-md:min-w-[20vw]" />
+              </div>
             ))}
           </div>
         </div>
       </div>
+
       {breadcrumbs && (
-        <div className="breadcrumbs overflow-hidden w-fit flex items-start justify-start text-[1vw] text-[#CACACA] max-md:text-[2.5vw] max-md:h-fit absolute left-[5%] top-[75%] max-md:top-[90%] z-[800]">
+        <div className="breadcrumbs overflow-hidden w-fit flex items-start justify-start text-[1vw] text-[#CACACA] max-md:text-[2.5vw] max-sm:text-[3.5vw] max-md:h-fit absolute left-[5%] top-[75%] max-md:top-[90%] z-[800]">
           <div className="flex gap-3 breadcrumbsContainer">
             {pathArray
-              .filter((segment) => segment && segment.toLowerCase() !== "home") // skip empty & "home"
+              .filter((segment) => segment && segment.toLowerCase() !== "home")
               .map((segment, index, arr) => {
-                const href = "/" + arr.slice(0, index + 1).join("/");
                 const isLast = index === arr.length - 1;
-
                 return (
                   <div key={index} className="flex items-center gap-2">
-                    {/* only render '>' if not the first item */}
                     {index > 0 && <span>&gt;</span>}
-
                     {isLast ? (
                       <span>{createBreadcrumbName(segment)}</span>
                     ) : (
-                      <a
-                        onClick={(e) => {
-                          e.preventDefault();
-                          navigateTo(href);
-                        }}
-                        href={href}
+                       <span
+                        // onClick={(e) => {
+                        //   e.preventDefault();
+                        //   navigateTo(href);
+                        // }}
+                        // href={href}
                       >
                         {createBreadcrumbName(segment)}
-                      </a>
+                      </span>
                     )}
                   </div>
                 );
@@ -225,14 +249,15 @@ const Hero = ({ heroData, breadcrumbs }) => {
       )}
 
       {/* Animated Vertical Lines */}
-      <div className="w-screen h-[55vw] absolute top-0 left-0 z-[10] flex justify-center gap-[22vw] max-md:hidden">
-        {[...Array(lineCount)].map((_, i) => (
+      <div className="w-screen h-[55vw] absolute top-0 left-0 z-[10] flex justify-center gap-[22vw] max-md:hidden opacity-0 hero-lines">
+        {Array.from({ length: lineCount }).map((_, i) => (
           <AnimatedLine
             key={i}
             delay={heroData.homepage ? 5 + i * 0.2 : 0.5 + i * 0.2}
           />
         ))}
       </div>
+
       <div
         ref={ShaderRef}
         className="absolute top-[30%] left-0 h-screen w-screen max-md:hidden"
@@ -241,7 +266,8 @@ const Hero = ({ heroData, breadcrumbs }) => {
           <DynamicShaderComp />
         </Suspense>
       </div>
-      <div className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-md:block">
+
+      <div className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-md:block mobile-gradient opacity-0">
         <Image
           src={heroGradient}
           placeholder="blur"
@@ -256,3 +282,6 @@ const Hero = ({ heroData, breadcrumbs }) => {
 };
 
 export default Hero;
+
+
+

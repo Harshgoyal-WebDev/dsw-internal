@@ -122,7 +122,7 @@ export default function ContactForm() {
                         placeholder="Name*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw] bg-white/5 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[3.5vw] max-md:pl-[5vw]"
+                        className="placeholder:text-[1.15vw] pl-[2vw] bg-white/5 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw]  max-md:pl-[5vw]"
                       />
                     </FormControl>
                     <FormMessage />
@@ -143,7 +143,7 @@ export default function ContactForm() {
                         placeholder="Business Email*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/5 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[3.5vw] max-md:pl-[5vw]"
+                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/5 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw]  max-md:pl-[5vw]"
                       />
                     </FormControl>
                     <FormMessage />
@@ -163,7 +163,7 @@ export default function ContactForm() {
                         placeholder="Designation*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/5 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[3.5vw] max-md:pl-[5vw]"
+                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/5 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw]   max-md:pl-[5vw]"
                       />
                     </FormControl>
                     <FormMessage />
@@ -184,7 +184,7 @@ export default function ContactForm() {
                         placeholder="Company Name*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/5  border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[3.5vw] max-md:pl-[5vw]"
+                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/5  border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw]  max-md:pl-[5vw]"
                       />
                     </FormControl>
                     <FormMessage />
@@ -206,7 +206,7 @@ export default function ContactForm() {
                         defaultCountry="IN"
                         international
                         {...field}
-                        className="placeholder:text-[1.15vw] placeholder:text-[#CACACA] max-md:placeholder:text-[3.5vw] "
+                        className="placeholder:text-[1.15vw] placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw]  "
                       />
                     </FormControl>
                     <FormMessage />
@@ -222,11 +222,11 @@ export default function ContactForm() {
                     <FormControl>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <SelectTrigger
-                          className="w-full placeholder:!text-[3.15vw] pl-[2vw] bg-white/5 border !border-[#B0B0B080] rounded-full text-[#CACACA] max-md:placeholder:text-[5vw] max-md:pl-[5vw]"
+                          className="w-full placeholder:!text-[3.15vw] px-[2vw] bg-white/5 border !border-[#B0B0B080] rounded-full text-[#CACACA] max-md:placeholder:text-[5vw] max-md:pl-[5vw] max-md:pr-[4vw]"
                         >
                           <SelectValue placeholder="Reason*" className='placeholder:!text-[3.5vw]' />
                         </SelectTrigger>
-                        <SelectContent className="bg-white/5 backdrop-blur-md max-md:placeholder:!text-[3.5vw] text-[#CACACA] border !border-[#B0B0B080]">
+                        <SelectContent className="bg-black/20 backdrop-blur-md max-md:placeholder:!text-[2.5vw] text-[#CACACA] border !border-[#B0B0B080] rounded-[1.5vw] p-[1vw] max-sm:rounded-[3vw] max-sm:p-[3vw] max-md:rounded-[2.5vw] max-md:p-[1.5vw]">
                           <SelectItem value="support">Support</SelectItem>
                           <SelectItem value="sales">Sales Inquiry</SelectItem>
                           <SelectItem value="partnership">Partnership</SelectItem>
@@ -251,7 +251,7 @@ export default function ContactForm() {
                         placeholder="Message"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/5 border !border-[#B0B0B080] rounded-[2vw] placeholder:text-[#CACACA] max-md:placeholder:text-[3.5vw] max-md:pl-[5vw] max-md:rounded-[5vw]"
+                        className="placeholder:text-[1.15vw] pl-[2vw] pt-[1vw]  bg-white/5 border !border-[#B0B0B080] rounded-[2vw] placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw]  max-md:pl-[5vw] max-sm:pt-[3vw] max-md:rounded-[5vw] max-md:pt-[2vw]"
                       />
                     </FormControl>
                     <FormMessage />

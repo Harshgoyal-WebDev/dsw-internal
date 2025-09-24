@@ -13,8 +13,8 @@ export const SocialLink = ({
   const baseClasses = "group transition-all duration-300 ease";
   
   const variants = {
-    default: "rounded-full block p-3 border overflow-hidden bg-white/10 group-hover:bg-white group-hover:scale-[0.95] duration-300",
-    footer: "rounded-full block p-3 border overflow-hidden bg-white/10 group-hover:bg-white group-hover:scale-[0.95] duration-300",
+    default: "rounded-full block p-3 border overflow-hidden bg-white/5 group-hover:bg-white group-hover:scale-[0.95] duration-300",
+    footer: "rounded-full block p-3 border overflow-hidden bg-white/5 group-hover:bg-white group-hover:scale-[0.95] duration-300",
     header: "rounded-full block p-2 border overflow-hidden bg-white/5 group-hover:bg-white/20 duration-300"
   };
 

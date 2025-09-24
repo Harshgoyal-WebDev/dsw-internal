@@ -69,7 +69,7 @@ const FooterCTA = ({ footerCTAData }) => {
       id="footer-cta"
     >
       <div className="w-[45%] max-md:!w-full max-md:text-center max-sm:mt-[5vw]">
-        <h2 className="text-90 font-head mb-3 headingAnim text-white-200 max-sm:mb-[7vw]">
+        <h2 className="text-90 font-head mb-[2vw] headingAnim text-white-200 max-sm:mb-[7vw]">
           {footerCTAData.heading}
         </h2>
         <Copy>

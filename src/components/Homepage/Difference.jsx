@@ -44,8 +44,8 @@ const useStackedCardsAnimation = (triggerRef, cardsRef, options = {}) => {
       },
       scrollTrigger: {
         trigger: triggerRef.current,
-        start: "20% center",   
-        end: "80% center", 
+        start: "top center",   
+        end: "70% center", 
         scrub: true,
         // markers: true
       },

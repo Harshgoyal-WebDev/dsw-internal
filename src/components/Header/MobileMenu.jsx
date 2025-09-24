@@ -71,15 +71,15 @@ export default function MobileMenu({
 
       {/* Drawer */}
       <div
-        className={`max-sm:w-screen max-sm:h-screen overflow-hidden opacity-100 flex flex-col max-sm:justify-between px-[7vw] text-[#CACACA] !font-display max-sm:text-[5vw] absolute top-0 z-[911] right-0 max-sm:space-y-[5vw] max-md:py-[8vw] transition-all duration-500 origin-top-right max-md:w-[100vw] max-md:h-screen max-md:text-[4vw] max-md:space-y-[7vw] ${
+        className={`max-sm:w-screen max-sm:h-screen overflow-hidden opacity-100 flex flex-col max-sm:justify-between px-[7vw] text-[#CACACA] !font-display max-sm:text-[5vw] absolute top-0 z-[911] right-0 max-sm:space-y-[5vw] max-md:py-[8vw] transition-all duration-500 origin-top-right max-md:w-[100vw] max-md:h-screen max-md:text-[3.5vw] max-md:space-y-[7vw] ${
           openMobileMenu
             ? "translate-x-0 pointer-events-auto"
             : "translate-x-[100%] pointer-events-none"
         }`}
       >
-        <div className="h-full w-full relative z-[30] border border-white/40 rounded-[10vw] bg-white/5 flex flex-col justify-between py-[10vw] px-[7vw]">
-          <div data-lenis-prevent className="w-full h-[80vh] overflow-x-hidden flex items-center mt-[7vh]">
-            <div className="flex w-full flex-col max-sm:gap-[4vw] items-start max-md:gap-[3vw] h-fit  justify-center">
+        <div className="h-full w-full relative z-[30] border border-white/40 max-sm:rounded-[10vw] bg-white/5 flex flex-col justify-between py-[10vw] px-[7vw] max-md:rounded-[7vw]">
+          <div data-lenis-prevent className="w-full h-[80vh] overflow-x-hidden flex items-center mt-[7vh] max-md:pt-[22vw] max-md:pr-[2vw] max-sm:pt-0">
+            <div className="flex w-full flex-col max-sm:gap-[4vw] items-start max-md:gap-[3vw] h-fit  justify-center max-md:justify-start">
               {/* Home */}
               {homeItem && (
                 <>
@@ -176,7 +176,7 @@ export default function MobileMenu({
 
           {/* Close pill */}
           <div
-            className="w-fit px-[6vw] py-[3.2vw] flex items-center justify-center rounded-full bg-gradient-to-r from-primary-2 to-primary-3 gap-[3.5vw] absolute top-[3%] right-[5%] max-md:text-[3vw] max-sm:text-[4.2vw] text-[4.2vw] font-semibold"
+            className="w-fit max-sm:px-[6vw] max-sm:py-[3.2vw] max-md:px-[4vw] max-md:py-[2.5vw] flex items-center justify-center rounded-full bg-gradient-to-r from-primary-2 to-primary-3 max-sm:gap-[3.5vw] max-md:gap-[2vw] absolute top-[3%] right-[5%] max-md:text-[3vw] max-sm:text-[4.2vw] text-[4.2vw] font-semibold"
             onClick={() => {
               setOpenMobileMenu(false);
             }}

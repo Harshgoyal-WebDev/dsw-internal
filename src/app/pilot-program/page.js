@@ -40,7 +40,7 @@ const heroData= {
 }
 
 const footerCTAData={
-  heading:"Test drive the purpose-built insurance AI platform  ​",
+  heading:"Test drive the purpose - built insurance AI platform  ​",
   para:"",
   btnText1:"Book a demo",
   btnLink1:"/#",

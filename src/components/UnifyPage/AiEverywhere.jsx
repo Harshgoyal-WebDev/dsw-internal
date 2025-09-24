@@ -24,7 +24,7 @@ export default function AiEverywhere() {
     <>
       <section className="h-full relative z-[20] max-md:mt-0 w-screen container">
         <div className="flex flex-col items-center justify-between space-y-[10vw] max-md:space-y-[25vw] w-full">
-          <SectionBreak text={"Even today, most enterprises struggle to move from pilot to production. Complex tech stacks, long timelines, and compliance risks slow things down. DSW UnifyAI solves this."} span={false}/>
+          <SectionBreak text={"Even today, most enterprises struggle to move from pilot to production. Complex tech stacks, long timelines, and compliance risks slow things down. DSW UnifyAI solves this."} span={false} textAlign={"!text-center"} width={"w-[95%]"}/>
           <div className="space-y-[7vw] max-md:space-y-[20vw]">
             <div className="flex h-full max-md:flex-col items-center max-md:gap-[10vw] gap-[12vw] justify-between">
               <h2 className="w-[45%]  max-md:w-full max-md:text-center text-50 text-nowrap font-head headingAnim  ">

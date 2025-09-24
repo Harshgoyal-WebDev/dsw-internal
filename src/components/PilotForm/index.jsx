@@ -112,7 +112,7 @@ export default function PilotForm() {
                         placeholder="Name*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw] bg-white/5 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[3.5vw] max-md:pl-[5vw]"
+                        className="placeholder:text-[1.15vw] pl-[2vw] bg-white/5 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw] max-md:pl-[5vw]"
                       />
                     </FormControl>
                     <FormMessage />
@@ -133,7 +133,7 @@ export default function PilotForm() {
                         placeholder="Business Email*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/5 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[3.5vw] max-md:pl-[5vw]"
+                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/5 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw] max-md:pl-[5vw]"
                       />
                     </FormControl>
                     <FormMessage />
@@ -153,7 +153,7 @@ export default function PilotForm() {
                         placeholder="Designation*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/5 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[3.5vw] max-md:pl-[5vw]"
+                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/5 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw] max-md:pl-[5vw]"
                       />
                     </FormControl>
                     <FormMessage />
@@ -174,7 +174,7 @@ export default function PilotForm() {
                         placeholder="Company Name*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/5  border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[3.5vw] max-md:pl-[5vw]"
+                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/5  border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw] max-md:pl-[5vw]"
                       />
                     </FormControl>
                     <FormMessage />
@@ -196,7 +196,7 @@ export default function PilotForm() {
                         defaultCountry="IN"
                         international
                         {...field}
-                        className="placeholder:text-[1.15vw] placeholder:text-[#CACACA] max-md:placeholder:text-[3.5vw] "
+                        className="placeholder:text-[1.15vw] placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw] "
                       />
                     </FormControl>
                     <FormMessage />
@@ -217,7 +217,7 @@ export default function PilotForm() {
                         placeholder="Message"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/5 border !border-[#B0B0B080] rounded-[2vw] placeholder:text-[#CACACA] max-md:placeholder:text-[3.5vw] max-md:pl-[5vw] max-md:rounded-[5vw]"
+                        className="placeholder:text-[1.15vw] pl-[2vw] pt-[1vw]  bg-white/5 border !border-[#B0B0B080] rounded-[2vw] placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw]  max-md:pl-[5vw] max-sm:pt-[3vw] max-md:rounded-[5vw] max-md:pt-[2vw]"
                       />
                     </FormControl>
                     <FormMessage />
@@ -262,14 +262,14 @@ export default function PilotForm() {
                 className="cursor-pointer mt-[3vw] pb-[3vw] max-md:pb-[8vw] max-md:mt-[8vw] px-0"
               >
                 <div
-                  className={` relative inline-flex items-center h-[4vw] min-w-[10vw] px-[2vw] gap-3 rounded-full overflow-hidden text-white-200 group max-md:h-fit max-md:py-[4vw] max-md:px-[6vw] max-md:min-w-[30vw] max-md:gap-[4vw] `}
+                  className={` relative inline-flex items-center h-[4vw] min-w-[10vw] px-[2vw] gap-3 rounded-full overflow-hidden text-white-200 group max-md:h-fit max-md:py-[3vw] max-md:px-[4.5vw] max-md:min-w-[20vw] max-md:gap-[2vw] `}
                 >
                   <span
-                    className={`bg-foreground rounded-full h-2 w-2 max-md:w-[2.5vw] max-md:h-[2.5vw] z-[1] `}
+                    className={`bg-foreground rounded-full h-2 w-2 max-sm:w-[2.5vw] max-sm:h-[2.5vw] max-md:w-[1vw] max-md:h-[1vw] z-[1] `}
                   ></span>
                   <div className="overflow-clip leading-[1.4] mt-[-4px] max-md:mt-0 z-[1]">
                     <p
-                      className={`text-[1.145vw] leading-[1.4] buttonTextShadow max-md:text-[4vw] `}
+                      className={`text-[1.145vw] leading-[1.4] buttonTextShadow max-sm:text-[4vw] max-md:text-[3vw] `}
                     >
                       {" "}
                       {isLoading ? "Sending..." : "Submit"}

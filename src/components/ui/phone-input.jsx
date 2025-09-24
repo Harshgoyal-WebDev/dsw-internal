@@ -44,7 +44,7 @@ const InputComponent = React.forwardRef(({ className, ...props }, ref) => (
         ref={ref}
         data-slot="input"
         className={cn(
-          "file:text-foreground placeholder:text-muted-foreground selection:bg-primary  selection:text-primary-foreground dark:bg-input/30 border-input flex h-[4vw] max-sm:h-[12vw] max-md:h-[10vw] w-full min-w-0   px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm border !border-[#B0B0B080] rounded-full !bg-white/5",
+          "file:text-foreground placeholder:text-muted-foreground selection:bg-primary max-md:text-[2.7vw] max-sm:text-[3.5vw] max-md:px-[4vw]  selection:text-primary-foreground dark:bg-input/30 border-input flex h-[4vw] max-sm:h-[12vw] max-md:h-[10vw] w-full min-w-0   px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm border !border-[#B0B0B080] rounded-full !bg-white/5",
           "",
           "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-white",
           className
@@ -88,13 +88,13 @@ const CountrySelect = ({ disabled, value: selectedCountry, options: countryList,
           <FlagComponent country={selectedCountry} countryName={selectedCountry} />
           <ChevronDown
             className={cn(
-              "-mr-2 size-4 opacity-50",
+              "-mr-2 size-4 opacity-50 max-md:size-[3vw]",
               disabled ? "hidden" : "opacity-100"
             )}
           />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[300px] p-0 bg-[#030815] border border-white/20 rounded-[1.2vw] overflow-hidden">
+      <PopoverContent className="w-[300px] p-0 bg-black/10  backdrop-blur-md border border-white/20 rounded-[1.2vw] overflow-hidden">
         <Command>
           <CommandInput
             value={searchValue}
@@ -110,7 +110,7 @@ const CountrySelect = ({ disabled, value: selectedCountry, options: countryList,
             placeholder="Search country..."
           />
           <CommandList>
-            <ScrollArea data-lenis-prevent ref={scrollAreaRef} className="h-72 bg-[#030815]">
+            <ScrollArea data-lenis-prevent ref={scrollAreaRef} className="h-72 bg-black/10 pl-[1vw] backdrop-blur-md">
               <CommandEmpty>No country found.</CommandEmpty>
               <CommandGroup>
                 {countryList?.map((entry) => {
@@ -124,7 +124,7 @@ const CountrySelect = ({ disabled, value: selectedCountry, options: countryList,
                     >
                       <FlagComponent country={country} countryName={countryName} />
                       <span className="flex-1 text-sm ">{countryName}</span>
-                      <span className="text-sm">
+                      <span className="text-sm ">
                         +{getCountryCallingCode(country)}
                       </span>
                       <CheckIcon

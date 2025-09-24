@@ -1,7 +1,7 @@
 "use client";
 
 import PrimaryButton from "../Button/PrimaryButton";
-import { motion } from "motion/react";
+// ❌ remove: import { motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import NavigationLink from "../ui/NavigationLink";
 import Logo from "../ui/Logo";
@@ -19,8 +19,9 @@ const Header = () => {
   const [isHidden, setIsHidden] = useState(false);
   const [unify, setUnify] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [openDropdown, setOpenDropdown] = useState(null); // Track active dropdown
-  const headerRef = useRef(null);
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const headerRef = useRef(null);        // inner container ref (you already had)
+  const headerWrapRef = useRef(null);    // NEW: wraps the whole <header> for GSAP
   const lenis = useLenis();
   const pathname = usePathname();
   const [openMobileMenu, setOpenMobileMenu] = useState(false);
@@ -32,6 +33,7 @@ const Header = () => {
     }
   }, [lenis, pathname]);
 
+  // Show/hide header on scroll
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -46,6 +48,7 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
+  // ScrollTrigger bits you already had
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const unifyEnter = ScrollTrigger.create({
@@ -66,18 +69,32 @@ const Header = () => {
     };
   }, []);
 
+  // ✅ GSAP replacement for motion.header initial/animate/transition
+  useEffect(() => {
+    if (!headerWrapRef.current) return;
+    gsap.set(headerWrapRef.current,{
+      opacity:1,
+    })
+    gsap.fromTo(
+      headerWrapRef.current,
+      { opacity: 0, y: -50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power1.out",
+        delay: pathname === "/" ? 6 : 1,
+      }
+    );
+  }, [pathname]);
+
   return (
     <>
       <div className="w-screen overflow-hidden h-screen fixed top-0 z-[900] pointer-events-none">
-        <motion.header
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 1,
-            ease: "easeOut",
-            delay: pathname === "/" ? 6 : 1,
-          }}
-          className="text-white w-screen fixed top-0 left-0 z-[900] pointer-events-none"
+        {/* 🔁 Replaced motion.header with a plain header + GSAP */}
+        <header
+          ref={headerWrapRef}
+          className="text-white w-screen fixed top-0 left-0 z-[900] pointer-events-none opacity-0"
         >
           <div
             className={`flex items-center justify-between px-[4vw] py-6 w-full transition-transform duration-500 pointer-events-auto max-sm:px-[7vw] max-sm:bg-transparent max-sm:py-[3vw] max-sm:pt-[5vw] max-sm:backdrop-blur-sm ${isHidden ? "-translate-y-full" : "translate-y-0"}`}
@@ -164,11 +181,11 @@ const Header = () => {
                           onMouseEnter={() => {
                             setOpenDropdown(link.id);
                             lenis.stop();
-                          }} // keep open while hovering submenu
+                          }}
                           onMouseLeave={() => {
                             setOpenDropdown(null);
                             lenis.stop();
-                          }} // close when leaving submenu
+                          }}
                         >
                           <ul className="p-[1.5vw]">
                             {link.children.map((child) => (
@@ -222,7 +239,7 @@ const Header = () => {
               />
             </div>
           </div>
-        </motion.header>
+        </header>
 
         <MobileMenu
           openMobileMenu={openMobileMenu}
