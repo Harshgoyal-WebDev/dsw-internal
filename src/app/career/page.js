@@ -4,6 +4,7 @@ import FooterCTA from "@/components/Common/FooterCta";
 import Hero from '@/components/Common/Hero';
 import Join from '@/components/CareerPage/Join';
 import OpenRoles from '@/components/CareerPage/OpenRoles';
+import OpenRolesMobile from '@/components/CareerPage/OpenRolesMobile';
 
 const Page = () => {
   return (
@@ -12,6 +13,7 @@ const Page = () => {
         <Hero heroData={heroData} />
        <Join/>
        <OpenRoles/>
+       <OpenRolesMobile/>
          <FooterCTA footerCTAData={footerCTAData} />
         </Layout>
        
@@ -26,7 +28,9 @@ const heroData= {
   para:"At DSW, we are transforming the way enterprises embed AI into their core business. By joining our team, you’ll work on groundbreaking technologies, from AI infrastructure to GenAI solutions, that shape industries worldwide. Here, innovation meets impact—and your career grows alongside the future of enterprise AI.​",
   paraClass:"",
   homepage:false,
-  hidebtn:true
+  hidebtn:true,
+  headingWidth:"w-[55%]",
+  paraClass:"w-[60vw]"
 }
 
 const footerCTAData={

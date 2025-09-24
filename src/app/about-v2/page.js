@@ -15,6 +15,7 @@ import Ecosystem from '@/components/AboutPage/Ecosystem'
 import Careers from '@/components/AboutPage/Careers'
 import Proof from '@/components/AboutPage/Proof'
 import Differently from '@/components/AboutPage/Differently'
+import BuildMobile from '@/components/AboutPage/BuildMobile'
 
 export default function page() {
     return (
@@ -22,6 +23,7 @@ export default function page() {
             <Hero heroData={heroData} />
            <AboutV2/>
            <Build/>
+           <BuildMobile/>
            <Proof/>
            <Differently/>
             <Experts heading={"Meet the Team"}/>

@@ -1,130 +1,139 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import gsap from "gsap";
-import { motion } from "framer-motion";
+import { useLayoutEffect, useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import Image from "next/image";
+gsap.registerPlugin(ScrollTrigger);
 
-export default function OpenRoles() {
-  const [activeCard, setActiveCard] = useState(0);
+export default function CardStack({ allowMultiple = false}) {
+  const [openIndexes, setOpenIndexes] = useState([0]);
 
-  // Generic card handler
-  const handleCardClick = (index) => {
-    const tl = gsap.timeline();
-
-    // reset all cards
-    tl.to(
-      [".usecase-card1", ".usecase-card2", ".usecase-card3", ".usecase-card4"],
-      { yPercent: 0, duration: 0.6, ease: "power2.out" }
-    );
-
-    // lift the cards above the clicked one
-    if (index >= 1) {
-      tl.to(
-        ".usecase-card2",
-        { yPercent: -30, duration: 0.6, ease: "power2.out" },
-        "<"
+  function toggleIndex(i) {
+    if (allowMultiple) {
+      setOpenIndexes((prev) =>
+        prev.includes(i) ? prev.filter((x) => x !== i) : [...prev, i]
       );
+    } else {
+      setOpenIndexes((prev) => (prev.includes(i) ? [] : [i]));
     }
-    if (index >= 2) {
-      tl.to(
-        ".usecase-card3",
-        { yPercent: -30, duration: 0.6, ease: "power2.out" },
-        "<"
-      );
-    }
-    if (index >= 3) {
-      tl.to(
-        ".usecase-card4",
-        { yPercent: -30, duration: 0.6, ease: "power2.out" },
-        "<"
-      );
-    }
+  }
+  useLayoutEffect(() => {
+    ScrollTrigger.refresh();
+  }, [openIndexes]);
 
-    tl.eventCallback("onComplete", () => setActiveCard(index));
-  };
-
- 
 
   return (
-    <div className="min-h-screen max-sm:hidden container flex flex-col items-start justify-center space-y-[7vw] h-fit w-full">
-      <h2 className="text-90 headingAnim w-[45%]">Open Roles</h2>
+    <section
+      className=" w-full  relative ] max-sm:min-h-screen max-md:min-h-screen dark z-[40]  !text-[#E8E8E8] container max-md:hidden"
+      id="cardstack"
+    >
+      <div className="flex flex-col items-start gap-[5vw] max-sm:gap-[10vw] max-md:justify-center max-sm:items-start">
+        
+         <h2 className="text-90 headingAnim w-[45%]">Open Roles</h2>
+        
+        <div className="w-full max-md:w-full max-sm:space-y-[5vw]  max-md:py-[3vw] max-md:space-y-[3vw] relative z-[10]">
+          {usecaseData.map((f, i) => (
+            <AccordionItem
+              key={i}
+              index={i}
+              question={f.title}
+              features={f.features}
+              isOpen={openIndexes.includes(i)}
+              onToggle={() => toggleIndex(i)}
+              z={f.z}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
-      <div className="w-[100%] fadeup relative text-white-200 overflow-hidden rounded-[2.5vw] h-[100vh] border-b border-white/20">
-        {usecaseData.map((card, index) => (
-          <motion.div
-            key={card.id}
-            onClick={() => handleCardClick(index)}
-            className={`h-full px-[3vw] py-[1.5vw] flex items-end flex-col absolute inset-0 pr-[8vw] cursor-pointer group
-               ${
-                 activeCard === index
-                   ? "bg-gradient-to-r from-[#041035] to-[#1727FF]"
-                   : "bg-background"
-               }
-            
-            w-full border border-white/20  rounded-[2.5vw] ${card.className}`}
-          >
-            {/* Card header */}
-            <div
-              className={`py-[2.5vw] min-h-[15.5vh] flex items-center w-[85%] justify-between border-white`}
+function AccordionItem({ question,features, isOpen, onToggle,index,z}) {
+
+  return (
+    <div className={`w-full group  overflow-hidden relative faq-tab fadeupanim accordion-block group fadeup ${z} ${index>0 ? "mt-[-2vw] ":"mt-0"}`}>
+      <div className={`w-full mr-auto relative`}>
+
+        <div className={`inset-0 w-full relative border rounded-[1.5vw] border-white/10 ${ isOpen ? "bg-gradient-to-r from-light-blue to-dark-blue" :"bg-[#030815]"}  `}>
+          <div className="relative w-full h-full z-10 px-[3vw] max-sm:rounded-[2.5vw] content  duration-300 max-sm:px-0">
+            <button
+              onClick={onToggle}
+              aria-expanded={isOpen}
+              className="cursor-pointer w-full h-full py-[2.5vw] pt-[3vw] flex items-start justify-between max-sm:pb-[7vw]"
             >
-              <span className="w-[75%] h-[1px] rounded-full bg-white/80 absolute top-[18%]"></span>
-
-              <div className="space-x-[5vw] w-full flex items-center">
-                <p className="absolute left-[3%] top-[10.5%] translate-y-[-50%]">
-                  {card.id}
+                <div className="flex items-center gap-[8vw]">
+                 <p className="">
+                  {`00${index+1}`}
                 </p>
-                <p className="text-30 ">{card.title}</p>
+              <h4 className="text-40  text-left leading-[1.2] max-sm:text-[4.5vw] max-sm:w-[70%] max-md:text-[3vw] max-md:w-[80%] max-sm:leading-[1.5]">
+                {question}
+              </h4>
               </div>
+              <div
+                className={` h-auto relative duration-500 max-sm:w-[12vw] rounded-full border-[1.5px]  p-[2vw]  transition-all  ease-out max-sm:p-[6vw] max-md:p-[4vw] max-md:w-[10vw] max-md:h-[10vw] ${ isOpen ? "border bg-white" :" background-glass border-white/20"}  ${
+                  !isOpen ? "group-hover:rotate-[180deg]" : "group-hover:rotate-[315deg] rotate-[45deg]"
+                }`}
+              >
+                <span className={`w-[1.5vw] rounded-full h-[2px] bg-[#ffffff] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-300 transform-origin-center max-sm:w-[5vw] max-md:w-[3vw] max-md:h-[1.5px] max-sm:h-[1.5px] ${
+                    isOpen ? "rotate-90" : "rotate-90"
+                  } ${
+                    isOpen ? "bg-black" : "bg-white"
+                  }`}></span>
 
-              <div className="flex items-center justify-end w-full gap-[5vw]">
-                <div
-                  className={`rounded-full absolute right-[3%] top-[10%] translate-y-[-50%] cursor-pointer h-[4vw] w-[4vw] border-[#888888]/80 p-[0.5vw] border ${
-                    activeCard === index ? "bg-white" : "bg-white/5"
-                  } flex items-center justify-center  active:scale-95 active:opacity-80 transition-all duration-300`}
+                <span
+               
+                  className={`w-[1.5vw] rounded-full h-[2px] bg-[#ffffff] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-300 transform-origin-center max-sm:w-[5vw] max-md:w-[3vw] max-sm:h-[1.5px]  ${
+                    isOpen ? "bg-black" : "bg-white"
+                  }`}
+                ></span>
+              </div>
+            </button>
+
+            <AnimatePresence initial={false}>
+              {isOpen && (
+                <motion.div
+                  key="content"
+                  initial={{ height: 0, opacity: 0, y: 20 }}
+                  animate={{ height: "auto", opacity: 1, y: 0 }}
+                  onAnimationComplete={() => {
+                    ScrollTrigger.refresh();
+                  }}
+                  exit={{ height: 0, opacity: 0, y: 20 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                  className="overflow-hidden relative"
                 >
-                  <div
-                    className={`transition-all duration-800 ${
-                      activeCard === index
-                        ? "group-hover:rotate-[315deg] rotate-45"
-                        : "group-hover:rotate-[180deg]"
-                    }`}
-                  >
-                    <div className={`relative w-[2.2vw] h-[2.2vw] `}>
-                      <span
-                        className={`w-[70%] rounded-full h-[2px] ${
-                          activeCard === index ? "bg-black" : "bg-white"
-                        } absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-800`}
-                      ></span>
-
-                      <span
-                        className={`w-[70%] rounded-full h-[2px] ${
-                          activeCard === index ? "bg-black" : "bg-white"
-                        } absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-800 transition-all rotate-90`}
-                      ></span>
-                    </div>
+                    <span className="bg-white w-[78%] h-[1px] absolute top-0 left-1/2 translate-x-[-50%]"></span>
+                  <div className="py-[3.5vw] text-[#CACACA] w-[90%] max-sm:pb-[8vw] max-sm:w-[95%] max-sm:text-[4.2vw]">
+                    <ul className="space-y-[1.5vw] ml-[10vw] list-disc">
+                        {features.map((item,index)=>(
+                            <li key={index} className="flex items-center gap-[0.5vw]">
+                                <span className="rounded-full bg-white h-[0.3vw] w-[0.3vw] mr-[0.8vw]"></span>
+                                <p>{item}</p>
+                                <div className="h-[0.8vw] w-[0.8vw]">
+                                    <Image src={"/assets/icons/top-right-white.svg"} height={10} width={10} alt="top-right-arrow" className="h-full w-full"/>
+                                </div>
+                            </li>
+                        ))}
+                    </ul >
                   </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Card body */}
-            <div className="w-[92%] h-fit min-h-full">
-              <ul className="list-disc items-center text-white-200 space-y-[1vw] py-[2vw] pl-[7vw]">
-                {card.features.map((feature, i) => (
-                  <li key={i}>{feature}</li>
-                ))}
-              </ul>
-            </div>
-          </motion.div>
-        ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        </div>
       </div>
     </div>
   );
 }
 
- const usecaseData = [
+const usecaseData = [
     {
       id: "001",
       title: "Engineering & Development",
+      description:"An enterprise-grade AI platform that integrates data, models, agents, deployment, and governance in one seamless fabric. Build AI solutions in weeks and GenAI applications in hours. Operate with full observability, built-in guardrails, and policy control. Avoid vendor lock-in with flexible deployment options: on-premises, hybrid, or cloud. ",
       features: [
         "AI Platform Engineer",
         "Machine Learning Engineer",
@@ -132,11 +141,13 @@ export default function OpenRoles() {
         "Frontend Engineer",
         "AI Platform Engineer"
       ],
+      z:"z-[100]",
       className: `usecase-card1 z-[1]`,
     },
     {
       id: "002",
       title: "AI Research & Applied Science",
+      description:"An enterprise-grade AI platform that integrates data, models, agents, deployment, and governance in one seamless fabric. Build AI solutions in weeks and GenAI applications in hours. Operate with full observability, built-in guardrails, and policy control. Avoid vendor lock-in with flexible deployment options: on-premises, hybrid, or cloud. ",
       features: [
         "AI Platform Engineer",
         "Machine Learning Engineer",
@@ -144,11 +155,14 @@ export default function OpenRoles() {
         "Frontend Engineer",
         "AI Platform Engineer"
       ],
+      z:"z-[200]",
+
       className: `translate-y-[48%] usecase-card2 z-[1]`,
     },
     {
       id: "003",
       title: "Data & Analytics",
+      description:"An enterprise-grade AI platform that integrates data, models, agents, deployment, and governance in one seamless fabric. Build AI solutions in weeks and GenAI applications in hours. Operate with full observability, built-in guardrails, and policy control. Avoid vendor lock-in with flexible deployment options: on-premises, hybrid, or cloud. ",
       features: [
         "AI Platform Engineer",
         "Machine Learning Engineer",
@@ -156,11 +170,13 @@ export default function OpenRoles() {
         "Frontend Engineer",
         "AI Platform Engineer"
       ],
+      z:"z-[300]",
       className: `translate-y-[65%] usecase-card3 z-[4]`,
     },
     {
       id: "004",
       title: "Customer & Growth",
+      description:"An enterprise-grade AI platform that integrates data, models, agents, deployment, and governance in one seamless fabric. Build AI solutions in weeks and GenAI applications in hours. Operate with full observability, built-in guardrails, and policy control. Avoid vendor lock-in with flexible deployment options: on-premises, hybrid, or cloud. ",
       features: [
         "AI Platform Engineer",
         "Machine Learning Engineer",
@@ -168,6 +184,7 @@ export default function OpenRoles() {
         "Frontend Engineer",
         "AI Platform Engineer"
       ],
+      z:"z-[400]",
       className: `translate-y-[82%] usecase-card4 z-[4]`,
     },
   ];

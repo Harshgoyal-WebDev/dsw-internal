@@ -1,210 +1,178 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import gsap from "gsap";
-import { motion } from "framer-motion";
+import { useLayoutEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
-export default function Usecase() {
-  const [activeCard, setActiveCard] = useState(0);
-  const handleFirstCard = () => {
-    const tl = gsap.timeline();
-    tl.to(".usecase-card1", {
-      yPercent: 0,
-      duration: 0.8,
-      ease: "power2.out",
-    });
-    tl.to(
-      ".usecase-card2",
-      {
-        yPercent: 0,
-        duration: 0.8,
-        ease: "power2.out",
-      },
-      "<"
-    );
-    tl.to(
-      ".usecase-card3",
-      {
-        yPercent: 0,
-        duration: 0.8,
-        ease: "power2.out",
-      },
-      "<"
-    );
-    tl.eventCallback("onUpdate", () => {
-      setActiveCard(0);
-    });
-  };
 
-  const handleSecondCard = () => {
-    const tl = gsap.timeline();
+export default function UseCase({ allowMultiple = false}) {
+  const [openIndexes, setOpenIndexes] = useState([0]);
 
-    tl.to(".usecase-card1", { yPercent: 0, duration: 0.8, ease: "power2.out" });
-    tl.to(
-      ".usecase-card2",
-      { yPercent:-27, duration: 0.8, ease: "power2.out" },
-      "<"
-    );
-    tl.to(
-      ".usecase-card3",
-      { yPercent: 0, duration: 0.8, ease: "power2.out" },
-      "<"
-    );
+  function toggleIndex(i) {
+    if (allowMultiple) {
+      setOpenIndexes((prev) =>
+        prev.includes(i) ? prev.filter((x) => x !== i) : [...prev, i]
+      );
+    } else {
+      setOpenIndexes((prev) => (prev.includes(i) ? [] : [i]));
+    }
+  }
+  useLayoutEffect(() => {
+    ScrollTrigger.refresh();
+  }, [openIndexes]);
 
-    tl.eventCallback("onUpdate", () => {
-      setActiveCard(1);
-    });
-  };
-
-  const handleThirdCard = () => {
-    const tl = gsap.timeline();
-    tl.to(".usecase-card1", { yPercent: 0, duration: 0.8, ease: "power2.out" });
-    tl.to(
-      ".usecase-card2",
-      { yPercent: -27, duration: 0.8, ease: "power2.out" },
-      "<"
-    );
-    tl.to(
-      ".usecase-card3",
-      { yPercent: -28, duration: 0.8, ease: "power2.out" },
-      "<"
-    );
-    tl.eventCallback("onUpdate", () => {
-      setActiveCard(2);
-    });
-  };
-
-  const usecaseData = [
-    {
-      id: "001",
-      title: "AI Studio",
-      description:
-        "Build, test, deploy, and monitor AI/ML models with lightning speed using accelerated workflows",
-      features: [
-        "Agentic AI drag and drop workflows and framework for task-based orchestration",
-        "Seamless integration with popular AI/ML frameworks and libraries",
-        "Automated model training and hyperparameter optimization",
-        "Real-time monitoring and performance analytics",
-      ],
-      handleClick: handleFirstCard,
-      className: `usecase-card1 z-[1]`,
-      borderClass: "border-white",
-      iconBg: "bg-white",
-      iconFill: "black",
-    },
-    {
-      id: "002",
-      title: "GenAI Studio ",
-      description:
-        "Design, configure, and launch enterprise-grade GenAI agents with ease",
-      features: [
-        "Agentic AI drag and drop workflows and framework for task-based orchestration",
-        "LLM model plug-ins with customizable tools, memory, and prompts ",
-        "Secure integration with internal knowledge bases and APIs ",
-        "Guardrails and governance by design for safe, compliant outputs ",
-      ],
-      handleClick: handleSecondCard,
-      className: `translate-y-[52%] usecase-card2 z-[1]`,
-      borderClass: "border-white",
-      iconBg: "bg-white",
-      iconFill: "black",
-    },
-    {
-      id: "003",
-      title: "Unified Ops ",
-      description:
-        "One platform. One centralized AI ecosystem. Total control. ",
-      features: [
-        "Agentic AI drag and drop workflows and framework for task-based orchestration",
-        "Intelligent automation of complex business processes",
-        "Advanced natural language processing capabilities",
-        "Customizable AI agents for specific business domains",
-      ],
-      handleClick: handleThirdCard,
-      className: `translate-y-[76%] usecase-card3  z-[4]`,
-      borderClass: "border-white",
-      iconBg: "bg-white",
-      iconFill: "black",
-    },
-  ];
 
   return (
-    <div className="min-h-screen max-md:hidden container flex flex-col items-center justify-center space-y-[7vw] h-fit w-full">
-      <h2 className="text-60 headingAnim w-[45%] text-center">
-        Supercharge Your AI and GenAI Use Cases
-      </h2>
-      <div className="w-[100%] fadeup relative text-white-200 overflow-hidden rounded-[2.5vw] h-[75vh] border-b border-white/20">
-        {usecaseData.map((card, index) => (
-          <motion.div
-            key={card.id}
-            onClick={card.handleClick}
-            className={`h-full px-[3vw] py-[1.5vw] flex items-end flex-col absolute inset-0 pr-[8vw] cursor-pointer group
-               ${
-                 activeCard === index
-                   ? "bg-gradient-to-r from-[#041035] to-[#1727FF]"
-                   : "bg-background"
-               }
-            
-            w-full border border-white/20  rounded-[2.5vw] ${
-              card.className
-            }`}
-          >
-            {/* <div className="w-full flex items-start justify-end h-full "> */}
-            <div
-              className={`py-[2.5vw] min-h-[15.5vh] flex items-center w-[85%] justify-between ${card.borderClass} `}
+    <section
+      className=" w-full  relative max-md:hidden dark z-[40]  !text-[#E8E8E8] container"
+      id="cardstack"
+    >
+      <div className="flex flex-col items-center gap-[5vw] max-sm:gap-[10vw] max-md:justify-center max-sm:items-start">
+        
+        <h2 className="text-60 headingAnim w-[45%] text-center">
+     Supercharge Your AI and GenAI Use Case      
+ </h2>
+        
+        <div className=" max-md:w-full max-sm:space-y-[5vw]  max-md:py-[3vw] max-md:space-y-[3vw] relative z-[10]">
+          {usecaseData.map((f, i) => (
+            <AccordionItem
+              key={i}
+              index={i}
+              title={f.title}
+              description={f.description}
+              features={f.features}
+              isOpen={openIndexes.includes(i)}
+              onToggle={() => toggleIndex(i)}
+              z={f.z}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function AccordionItem({ title, description,features, isOpen, onToggle,index,z}) {
+
+  return (
+    <div className={`w-full group  overflow-hidden relative faq-tab fadeupanim accordion-block group fadeup ${z} ${index>0 ? "mt-[-2.5vw] ":"mt-0"}`}>
+      <div className={`w-full mr-auto relative`}>
+
+        <div className={`inset-0 w-full relative border rounded-[2vw] border-white/10 ${ isOpen ? "bg-gradient-to-r from-light-blue to-dark-blue" :"bg-[#030815]"}  `}>
+          <div className="relative w-full h-full z-10 px-[3vw] max-sm:rounded-[2.5vw] content  duration-300 max-sm:px-0">
+            <button
+              onClick={onToggle}
+              aria-expanded={isOpen}
+              className={`cursor-pointer w-full h-full py-[3.5vw] max-sm:pb-[7vw] flex items-start justify-between`}
             >
-              <span className="w-[75%] h-[1px] rounded-full bg-white/80 absolute top-[25%]"></span>
-              
-              <div className="space-x-[5vw] w-full flex items-center">
-                <p className="absolute left-[3%] top-[14.5%] translate-y-[-50%]">
-                  {card.id}
+                <div className="flex items-start justify-between">
+                <div className="flex items-center gap-[8vw] w-[45vw]">
+                 <p className="">
+                  {`00${index+1}`}
                 </p>
-                <p className="text-30 ">{card.title}</p>
+              <h4 className="text-30  text-left leading-[1.2] max-sm:text-[4.5vw] max-sm:w-[70%] max-md:text-[3vw] max-md:w-[80%] max-sm:leading-[1.5] capitalize">
+                {title}
+              </h4>
               </div>
-              <div className="flex items-center  text-white-200 justify-end w-full gap-[5vw]">
-                <p className=" w-[30vw]">{card.description}</p>
-                <div
-                  className={`rounded-full absolute right-[3%] top-[12%] translate-y-[-50%] cursor-pointer h-[4vw] w-[4vw] border-[#888888]/80 p-[0.5vw] border ${
-                    activeCard == index ? card.iconBg : "bg-white/5"
-                  } flex items-center justify-center  active:scale-95 active:opacity-80 transition-all duration-300`}
-                >
-                  <div
-                    className={`transition-all duration-800 ${
-                  activeCard === index ? "group-hover:rotate-[315deg] rotate-45" : "group-hover:rotate-[180deg]"
+              
+              <div className={`w-[30vw] `}>
+              <p className="text-left">{description}</p>
+              </div>
+              </div>
+
+              <div
+                className={` h-auto relative duration-500 max-sm:w-[12vw] rounded-full border-[1.5px]  p-[2vw]  transition-all  ease-out max-sm:p-[6vw] max-md:p-[4vw] max-md:w-[10vw] max-md:h-[10vw] ${ isOpen ? "border bg-white" :" background-glass border-white/20"}  ${
+                  !isOpen ? "group-hover:rotate-[180deg]" : "group-hover:rotate-[315deg] rotate-[45deg]"
                 }`}
-                  >
-                    <div className={`relative w-[2.2vw] h-[2.2vw] `}>
-                      <span
-                        className={`w-[70%] rounded-full h-[2px] ${
-                          activeCard === index ? "bg-black" : "bg-white"
-                        } absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-800`}
-                      ></span>
+              >
+                <span className={`w-[1.5vw] rounded-full h-[2px] bg-[#ffffff] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-300 transform-origin-center max-sm:w-[5vw] max-md:w-[3vw] max-md:h-[1.5px] max-sm:h-[1.5px] ${
+                    isOpen ? "rotate-90" : "rotate-90"
+                  } ${
+                    isOpen ? "bg-black" : "bg-white"
+                  }`}></span>
 
-                      <span
-                        className={`w-[70%] rounded-full h-[2px] ${
-                          activeCard === index
-                            ? "bg-black"
-                            : "bg-white"
-                        } absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-800 transition-all ${
-                          activeCard == index ? "rotate-90" : "rotate-90"
-                        }`}
-                      ></span>
-                    </div>
-                  </div>
-                </div>
+                <span
+               
+                  className={`w-[1.5vw] rounded-full h-[2px] bg-[#ffffff] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-300 transform-origin-center max-sm:w-[5vw] max-md:w-[3vw] max-sm:h-[1.5px]  ${
+                    isOpen ? "bg-black" : "bg-white"
+                  }`}
+                ></span>
               </div>
-            </div>
-            {/* </div> */}
+            </button>
 
-            <div className="w-[92%] h-fit min-h-full">
-              <ul className="flex list-disc items-center text-white-200 gap-[5vw] py-[2vw] pl-[7vw]">
-                {card.features.map((feature, i) => (
-                  <li key={i}>{feature}</li>
-                ))}
-              </ul>
-            </div>
-          </motion.div>
-        ))}
+            <AnimatePresence initial={false}>
+              {isOpen && (
+                <motion.div
+                  key="content"
+                  initial={{ height: 0, opacity: 0, y: 20 }}
+                  animate={{ height: "auto", opacity: 1, y: 0 }}
+                  onAnimationComplete={() => {
+                    ScrollTrigger.refresh();
+                  }}
+                  exit={{ height: 0, opacity: 0, y: 20 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                  className="overflow-hidden relative"
+                >
+                    <span className="bg-white w-[75%] h-[1px] absolute top-0 left-1/2 translate-x-[-50%]"></span>
+                  <div className="py-[3.5vw] text-[#CACACA] w-[90%] max-sm:pb-[8vw] max-sm:w-[95%] max-sm:text-[4.2vw] pb-[7vw]">
+                    <ul className="ml-[13vw] list-disc flex  gap-x-[5vw] gap-y-[3vw]">
+                        {features.map((item,index)=>(
+                            <li key={index} className="w-1/5 marker:text-sm">
+                                {/* <span className="rounded-full bg-white h-[0.3vw] w-[0.3vw] mr-[0.8vw]"></span> */}
+                                <p>{item}</p>
+                                
+                            </li>
+                        ))}
+                    </ul >
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        </div>
       </div>
     </div>
   );
 }
+
+ const usecaseData = [
+    {
+      id: "001",
+      title: "AI Studio ",
+      description:"Build, test, deploy, and monitor AI/ML models with lightning speed using accelerated workflows",
+      features: [
+        "Agentic AI drag and drop workflows and framework for task-based orchestration ",
+        "LLM model plug-ins with customizable tools, memory, and prompts ",
+        "Secure integration with internal knowledge bases and APIs ",
+        "Guardrails and governance by design for safe, compliant outputs "
+      ],
+      z:"z-[100]",
+    },
+    {
+      id: "002",
+      title: "GenAI Studio ",
+      description:"Design, configure, and launch enterprise-grade GenAI agents with ease",
+      features: [
+        "Agentic AI drag and drop workflows and framework for task-based orchestration ",
+        "LLM model plug-ins with customizable tools, memory, and prompts ",
+        "Secure integration with internal knowledge bases and APIs ",
+        "Guardrails and governance by design for safe, compliant outputs "
+      ],
+      z:"z-[200]",
+    },
+    {
+      id: "003",
+      title: "Unified Ops ",
+      description:"One platform. One centralized AI ecosystem. Total control.  ",
+      features: [
+        "Agentic AI drag and drop workflows and framework for task-based orchestration ",
+        "LLM model plug-ins with customizable tools, memory, and prompts ",
+        "Secure integration with internal knowledge bases and APIs ",
+        "Guardrails and governance by design for safe, compliant outputs "
+      ],
+      z:"z-[300]"
+    },
+   
+  ];

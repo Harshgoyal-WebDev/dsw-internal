@@ -52,7 +52,7 @@ const Join = () => {
   };
   return (
     <section className="w-screen h-fit container" id="brochure">
-      <div className="w-full flex flex-col items-center justify-center gap-[5vw] max-sm:gap-[10vw]">
+      <div className="w-full flex flex-col items-center justify-center gap-[8vw] max-sm:gap-[10vw]">
         <h2 className="w-[70%] text-center text-90 headingAnim max-sm:w-full max-sm:text-left max-sm:!text-[11.5vw]">
           Why Join DSW?
         </h2>
@@ -61,7 +61,7 @@ const Join = () => {
             <TiltedCard
               key={index}
               containerHeight="40vw"
-              containerWidth="33vw"
+              containerWidth="32vw"
               imageHeight="100%"
               imageWidth="100%"
               rotateAmplitude={12}
@@ -71,10 +71,10 @@ const Join = () => {
               displayOverlayContent={true}
               overlayContent={
                 <div className="w-full h-full px-[4vw] py-[4vw] flex flex-col justify-between group">
-                  <div className="h-[7vw] w-[7vw] text-[#1727FF] group-hover:text-[#FFFFFF] transition-all duration-500 ease-out">
+                  <div className="h-[5vw] w-[5vw] text-[#1727FF] group-hover:text-[#FFFFFF] transition-all duration-500 ease-out">
                     {card.icon}
                   </div>
-                  <div className="w-full flex flex-col h-fit space-y-[1.5vw]">
+                  <div className="w-full flex flex-col h-[19vw] space-y-[3vw]">
                     <h4 className="text-40">{card.title}</h4>
                     <p>{card.para}</p>
                   </div>
