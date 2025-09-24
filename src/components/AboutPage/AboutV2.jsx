@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Copy from "../Animations/Copy";
 import SplitText from 'gsap/SplitText';
 import SectionBreak from "../Common/SectionBreak";
+import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const POINTS = [
@@ -42,13 +43,39 @@ export default function AboutV2() {
   return (
     <section className="w-screen container mt-[-5%] max-sm:mt-0 relative z-[10]" id="about" >
       <div className="w-full flex flex-col items-center justify-center gap-y-[10vw] max-sm:gap-y-[15vw]">
-        <SectionBreak text={" At Data Science Wizards (DSW), we believe that AI should be accessible, scalable, and enterprise-ready—not locked behind complexity. That’s why we built UnifyAI, a next-generation platform that simplifies the entire AI lifecycle for businesses across industries."} span={true}/>
+        <div className="space-y-[3vw]">
+        <SectionBreak text={" At DSW, we are redefining how enterprises transform AI from a technology experiment into a core business capability. We build the infrastructure that empowers organizations to embed AI at the heart of their operations - securely, at speed, and with measurable outcomes. Our deep tech AI platform, DSW UnifyAI, unifies the entire AI lifecycle, enabling teams to build, deploy, and scale AI and GenAI solutions with governance, observability, and flexibility. "} span={true}/>
+        <div className="flex flex-col items-start gap-[2vw]">
+          <Copy>
+          <p className="text-30 text-white-200">Locations :</p>
+          </Copy>
+          <div className="flex gap-[0.7vw] fadeup">
+            <div className="h-[2.5vw] w-[2.5vw] rounded-full overflow-hidden">
+              <Image src={"/assets/images/about/india.png"} height={48} width={48} alt="india" className="h-full w-full"/>
+            </div>
+            <span className="h-[2.5vw] w-[1px] bg-[#CACACA75]"/>
+             <div className="h-[2.5vw] w-[2.5vw] rounded-full overflow-hidden">
+              <Image src={"/assets/images/about/united-kingdom.png"} height={48} width={48} alt="united-kingdom" className="h-full w-full"/>
+            </div>
+            <span className="h-[2.5vw] w-[1px] bg-[#CACACA75]"/>
+             <div className="h-[2.5vw] w-[2.5vw] rounded-full overflow-hidden">
+              <Image src={"/assets/images/about/ireland.png"} height={48} width={48} alt="ireland" className="h-full w-full"/>
+            </div>
+            <span className="h-[2.5vw] w-[1px] bg-[#CACACA75]"/>
+             <div className="h-[2.5vw] w-[2.5vw] rounded-full overflow-hidden">
+              <Image src={"/assets/images/about/usa.png"} height={48} width={48} alt="usa" className="h-full w-full"/>
+            </div>
 
-        <div className="flex flex-col items-end gap-[5vw] max-sm:w-full max-sm:gap-[15vw] max-sm:items-start max-sm:mt-[10vw]">
+
+          </div>
+        </div>
+        </div>
+
+        <div className="flex flex-col items-end  gap-[5vw] max-sm:w-full max-sm:gap-[15vw] max-sm:items-start max-sm:mt-[10vw]">
           {POINTS.map(({ id, text, width, title }) => (
             <div
               key={id}
-              className="w-[58%] flex gap-[5vw] items-start about-item max-sm:w-[98%] max-sm:flex-col"
+              className="w-[55%] flex gap-[5vw] items-start about-item max-sm:w-[98%] max-sm:flex-col"
             >
               <div className="w-[15%] relative max-sm:w-[30%]">
                 <div className="relative fadeup w-[6.5vw] h-[6.5vw] border border-[#59595980] rounded-full flex items-center justify-center max-sm:w-[18vw] max-sm:h-[18vw] max-sm:border-primary-1">
@@ -58,23 +85,24 @@ export default function AboutV2() {
                   </p>
                 </div>
               </div>
-              <div className="space-y-[1.8vw] max-sm:space-y-[4vw]">
+              <div className="space-y-[1.8vw] max-sm:space-y-[4vw] w-full">
                 <Copy>
-                  <h4 className=" w-[80%] text-50  max-sm:text-[5vw] text-white-200 ">
+                  <h4 className=" w-[85%] text-50  max-sm:text-[5vw] text-white-200 ">
                     {title}
                   </h4>
                 </Copy>
-                <Copy>
-                  <div className="space-y-[1vw]">
+               
+                  <div className="w-[40vw] space-y-[1vw] fadeup">
                   {text.map((item,index)=>(
-                    <p key={index} className="text-white-300 w-[38vw] max-sm:w-full">{item}</p>
+                    <p key={index} className="text-white-300  max-sm:w-full">{item}</p>
                   ))}
                   </div>
-                </Copy>
+                
               </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

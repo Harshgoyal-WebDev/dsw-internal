@@ -24,15 +24,10 @@ export default function page() {
            <Build/>
            <Proof/>
            <Differently/>
-            {/* <Journey />
-            <TechPartners />
-            <Clients /> */}
-            <Experts />
-            <Guiders />
+            <Experts heading={"Meet the Team"}/>
+            <Guiders heading={"Advisors and Board"}/>
             <Ecosystem/>
-            {/* <Recognized /> */}
             <Careers/>
-            {/* <Faqs /> */}
             <FooterCTA footerCTAData={footerCTAData} />
         </Layout>
     )

@@ -41,7 +41,7 @@ const data = [
 const PilotCard = ({ id, icon, title, para }) => {
   return (
     <>
-      <div className=" space-y-[2vw] relative group  max-sm:space-y-[10vw] w-[50%] pb-[3vw]">
+      <div className=" space-y-[2vw] relative group  max-sm:space-y-[10vw] w-[50%] pb-[6vw]">
         <span className="absolute top-0 left-0 w-full h-[1px] bg-[#59595980]  lineDraw"></span>
         <div className=" pt-[3vw] flex gap-[4vw] items-start space-y-[3vw] max-sm:flex max-sm:flex-col max-sm:items-center max-sm:space-y-[6vw] max-sm:mt-[10vw] fadeup">
           <div className="pr-[1vw]">
@@ -58,7 +58,7 @@ const PilotCard = ({ id, icon, title, para }) => {
             <h4 className="text-50 text-white-200 max-sm:!text-[7.5vw] max-sm:w-[72%] max-sm:text-center max-sm:h-fit">
               {title}
             </h4>
-            <p className="text-white-300 content-p h-28 max-sm:w-[80%] max-sm:text-center max-sm:h-auto">
+            <p className="text-white-300  max-sm:w-[80%] max-sm:text-center max-sm:h-auto">
               {para}
             </p>
           </div>
@@ -87,10 +87,9 @@ const Ecosystem = () => {
   return (
     <>
       <section
-        id="ai-pilots"
-        className="h-full w-screen  relative overflow-hidden  background-radial"
+        className="h-full w-screen container !pb-[3vw] relative overflow-hidden"
       >
-        <div className="w-full h-full  relative z-[2] space-y-[7vw] container">
+        <div className="w-full h-full  relative z-[2] space-y-[1.5vw] ">
          <div className="w-[90%] max-sm:w-[100%] ">
                  <h2 className="text-90 headingAnim max-sm:text-center">
                    Our Ecosystem
@@ -117,7 +116,7 @@ const Ecosystem = () => {
                    </div>
                    </div>
                    </div>
-          <div className=" w-full max-sm:hidden flex flex-col items-end  h-[64vw] gap-x-[7vw] justify-between">
+          <div className=" w-full max-sm:hidden flex flex-col items-end  mt-[7vw]  gap-x-[7vw] justify-between">
             {data.map((card, index) => (
               <PilotCard
                 key={index}

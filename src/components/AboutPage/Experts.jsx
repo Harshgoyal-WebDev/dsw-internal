@@ -10,7 +10,7 @@ import Copy from "../Animations/Copy";
 import { NextButton, PreviousButton } from "../Button/SliderButtons";
 import Link from "next/link";
 
-export default function Experts() {
+export default function Experts({heading}) {
   useGSAP(() => {
     gsap.from(".experts-cards", {
       yPercent: 40,
@@ -43,7 +43,8 @@ export default function Experts() {
     <section className="relative w-full h-fit space-y-[6vw] container max-sm:h-full overflow-hidden">
       <div className="w-full flex h-full gap-[1vw] items-end justify-between max-sm:flex-col max-sm:items-start">
         <h2 className="text-90 headingAnim w-[45%] max-md:w-full">
-          Driven by Vision. Built by Experts.
+          
+          {heading}
         </h2>
 
         <div className="flex fadeup gap-6 mt-12 max-sm:mt-10 max-md:mt-[10vw] max-md:items-center max-md:justify-center max-md:absolute max-md:top-[85%]  max-md:right-[8%] ">

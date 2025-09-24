@@ -10,7 +10,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import { NextButton, PreviousButton } from "../Button/SliderButtons";
 
-export default function Guiders() {
+export default function Guiders({heading}) {
   const swiperRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -41,7 +41,8 @@ export default function Guiders() {
   return (
     <section className="container w-[95%] max-md:!px-0 max-sm:!px-[7vw] mx-auto space-y-[6.5vw] max-md:!pt-[35vw] relative">
       <h2 className="text-90 w-full max-md:px-[7vw] max-sm:px-0 text-center headingAnim max-md:text-left">
-        Guided by Industry Luminaries
+       
+        {heading}
       </h2>
 
       <div className="flex w-[100%] items-start gap-[3vw] justify-between max-md:hidden">

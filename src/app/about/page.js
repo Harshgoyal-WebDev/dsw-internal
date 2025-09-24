@@ -19,8 +19,8 @@ export default function page() {
             <Journey />
             <TechPartners />
             <Clients />
-            <Experts />
-            <Guiders />
+            <Experts heading={"Driven by Vision. Built by Experts."}/>
+            <Guiders heading={" Guided by Industry Luminaries"}/>
             <Recognized />
             <Faqs />
             <FooterCTA footerCTAData={footerCTAData} />
