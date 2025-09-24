@@ -39,7 +39,7 @@ export default function Guiders({heading}) {
     });
   });
   return (
-    <section className="container w-[95%] max-md:w-full max-sm:!px-[7vw] mx-auto space-y-[6.5vw] max-md:!pt-[35vw] relative overflow-hidden">
+    <section className="container w-[95%] max-sm:pb-[10vh] max-md:w-full max-sm:!px-[7vw] mx-auto space-y-[6.5vw] max-md:!pt-[35vw] relative overflow-hidden">
       <h2 className="text-90 w-full max-md:px-[7vw] max-sm:px-0 text-center headingAnim max-md:text-left">
        
         {heading}
@@ -127,14 +127,14 @@ export default function Guiders({heading}) {
                 </div>
                <div className="space-y-[.5vw] w-full mt-[1vw] max-md:mt-[5vw] max-md:pl-0 max-sm:pl-[2vw] max-md:space-y-[1vw] max-sm:mt-[3vw]">
                   <p className="text-30">{card.name}</p>
-                  <p className="w-[75%] max-md:w-[90%]  font-medium ">{card.role}</p>
+                  <p className="w-[75%] max-md:w-[90%] max-sm:w-[95%]  font-medium ">{card.role}</p>
                 </div>
               </Link>
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
-      <div className=" gap-6 mt-12 max-md:mt-10 max-md:items-center max-md:justify-center max-md:absolute max-md:top-[90%] max-md:right-[8%] hidden max-md:flex">
+      <div className=" gap-6 mt-12 max-md:mt-10  max-md:items-center max-sm:mt-2 max-md:justify-center max-md:absolute max-md:top-[90%] max-md:right-[8%] hidden max-md:flex">
         <PreviousButton onClick={handlePrev} />
         <NextButton onClick={handleNext} />
       </div>

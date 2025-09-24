@@ -4,16 +4,16 @@ import Copy from '../Animations/Copy'
 const Differently = () => {
   return (
    <section className='h-full w-screen ' id='differently'>
-    <div className='h-full w-full container flex flex-col items-center justify-center space-y-[5vw]'>
-      <div className=' space-y-[3vw] w-1/2 text-center'>
+    <div className='h-full w-full container flex flex-col items-center justify-center space-y-[5vw] max-sm:space-y-[9vw]'>
+      <div className=' space-y-[3vw] max-sm:space-y-[8vw] w-1/2 max-sm:w-full text-center'>
         <h2 className='text-90 headingAnim'>Do Differently : An Ode to Builders </h2>
         <Copy>
           <p className='text-white-300'>Do Differently. is our commitment to the people who bring AI to life, those who tackle complexity and build systems that matter. </p>
         </Copy>
 
       </div>
-      <div className='flex items-center justify-center gap-[3vw]'>
-        <div className='h-[25vw] w-[35vw] rounded-[1.5vw] border border-white/20 py-[6vw] px-[3vw]  background-glass relative group  fadeup'>
+      <div className='flex items-center max-sm:flex-col justify-center gap-[3vw] max-sm:w-[90%] max-sm:gap-[8vw]'>
+        <div className='h-[25vw] w-[35vw] max-sm:h-[39vh] max-sm:w-full rounded-[1.5vw] max-sm:rounded-3xl border border-white/20 py-[6vw] max-sm:py-[8vw] max-sm:px-[6vw] px-[3vw]  background-glass relative group  fadeup'>
         <div
               className="absolute inset-0 h-full w-full rounded-[1.5vw] 
       bg-gradient-to-r from-light-blue to-dark-blue 
@@ -30,7 +30,7 @@ const Differently = () => {
           </div>
 
         </div>
-        <div className='h-[25vw] w-[35vw] rounded-[1.5vw] border border-white/20 py-[6vw] px-[3vw] space-y-[3vw] background-glass relative group fadeup' >
+        <div className='h-[25vw] w-[35vw] max-sm:h-[39vh] max-sm:w-full max-sm:rounded-3xl max-sm:py-[7vw] max-sm:px-[6vw] rounded-[1.5vw] border border-white/20 py-[6vw] px-[3vw] space-y-[3vw] background-glass relative group fadeup' >
         <div
               className="absolute inset-0 h-full w-full rounded-[1.5vw] 
       bg-gradient-to-r from-light-blue to-dark-blue 

@@ -43,26 +43,26 @@ export default function AboutV2() {
   return (
     <section className="w-screen container mt-[-5%] max-sm:mt-0 relative z-[10]" id="about" >
       <div className="w-full flex flex-col items-center justify-center gap-y-[10vw] max-sm:gap-y-[15vw]">
-        <div className="space-y-[3vw]">
+        <div className="space-y-[3vw] max-sm:space-y-[10vw]">
         <SectionBreak text={" At DSW, we are redefining how enterprises transform AI from a technology experiment into a core business capability. We build the infrastructure that empowers organizations to embed AI at the heart of their operations - securely, at speed, and with measurable outcomes. Our deep tech AI platform, DSW UnifyAI, unifies the entire AI lifecycle, enabling teams to build, deploy, and scale AI and GenAI solutions with governance, observability, and flexibility. "} span={true}/>
-        <div className="flex flex-col items-start gap-[2vw]">
+        <div className="flex flex-col items-start gap-[2vw] max-sm:gap-[7vw]">
           <Copy>
           <p className="text-30 text-white-200">Locations :</p>
           </Copy>
-          <div className="flex gap-[0.7vw] fadeup">
-            <div className="h-[2.5vw] w-[2.5vw] rounded-full overflow-hidden">
+          <div className="flex gap-[0.7vw] fadeup max-sm:gap-[5vw]">
+            <div className="h-[2.5vw] w-[2.5vw] max-sm:w-[12vw] max-sm:h-[12vw] rounded-full overflow-hidden">
               <Image src={"/assets/images/about/india.png"} height={48} width={48} alt="india" className="h-full w-full"/>
             </div>
-            <span className="h-[2.5vw] w-[1px] bg-[#CACACA75]"/>
-             <div className="h-[2.5vw] w-[2.5vw] rounded-full overflow-hidden">
+            <span className="h-[2.5vw] w-[1px] bg-[#CACACA75] max-sm:h-[12vw]"/>
+             <div className="h-[2.5vw] w-[2.5vw] rounded-full overflow-hidden max-sm:w-[12vw] max-sm:h-[12vw]">
               <Image src={"/assets/images/about/united-kingdom.png"} height={48} width={48} alt="united-kingdom" className="h-full w-full"/>
             </div>
-            <span className="h-[2.5vw] w-[1px] bg-[#CACACA75]"/>
-             <div className="h-[2.5vw] w-[2.5vw] rounded-full overflow-hidden">
+            <span className="h-[2.5vw] w-[1px] max-sm:h-[12vw] bg-[#CACACA75]"/>
+             <div className="h-[2.5vw] w-[2.5vw] rounded-full overflow-hidden max-sm:w-[12vw] max-sm:h-[12vw]">
               <Image src={"/assets/images/about/ireland.png"} height={48} width={48} alt="ireland" className="h-full w-full"/>
             </div>
-            <span className="h-[2.5vw] w-[1px] bg-[#CACACA75]"/>
-             <div className="h-[2.5vw] w-[2.5vw] rounded-full overflow-hidden">
+            <span className="h-[2.5vw] w-[1px] bg-[#CACACA75] max-sm:h-[12vw]"/>
+             <div className="h-[2.5vw] w-[2.5vw] rounded-full overflow-hidden max-sm:w-[12vw] max-sm:h-[12vw]">
               <Image src={"/assets/images/about/usa.png"} height={48} width={48} alt="usa" className="h-full w-full"/>
             </div>
 
@@ -71,16 +71,16 @@ export default function AboutV2() {
         </div>
         </div>
 
-        <div className="flex flex-col items-end  gap-[5vw] max-sm:w-full max-sm:gap-[15vw] max-sm:items-start max-sm:mt-[10vw]">
+        <div className="flex flex-col items-end gap-[5vw] max-md:w-full max-md:gap-[10vw] max-sm:gap-[15vw] max-md:items-start max-md:mt-[10vw]">
           {POINTS.map(({ id, text, width, title }) => (
             <div
               key={id}
-              className="w-[55%] flex gap-[5vw] items-start about-item max-sm:w-[98%] max-sm:flex-col"
+              className="w-[55%] flex gap-[5vw] max-sm:gap-[7vw] items-start about-item max-sm:flex-col max-sm:w-[98%] max-md:w-[100%] max-md:flex-col"
             >
               <div className="w-[15%] relative max-sm:w-[30%]">
-                <div className="relative fadeup w-[6.5vw] h-[6.5vw] border border-[#59595980] rounded-full flex items-center justify-center max-sm:w-[18vw] max-sm:h-[18vw] max-sm:border-primary-1">
+                 <div className="relative fadeup w-[6.5vw] h-[6.5vw] max-md:h-[12vw] max-md:w-[12vw] border border-[#59595980] rounded-full flex items-center justify-center max-sm:w-[18vw] max-sm:h-[18vw] max-sm:border-primary-1">
                   
-                  <p className="about-id text-white-200 text-[1.5vw] font-head relative z-[1] max-sm:text-[4.2vw] max-sm:text-primary-1">
+                  <p className="about-id text-white-200 text-[1.5vw] max-md:text-[3.5vw] font-head relative z-[1] max-sm:text-[4.5vw] max-sm:text-primary-1">
                     {id}
                   </p>
                 </div>
@@ -92,7 +92,7 @@ export default function AboutV2() {
                   </h4>
                 </Copy>
                
-                  <div className="w-[40vw] space-y-[1vw] fadeup">
+                  <div className="w-[40vw] max-sm:w-full space-y-[1vw] fadeup">
                   {text.map((item,index)=>(
                     <p key={index} className="text-white-300  max-sm:w-full">{item}</p>
                   ))}

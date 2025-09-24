@@ -168,9 +168,12 @@ const Ecosystem = () => {
               ))}
             </Swiper>
           </div>
+          <div className="hidden max-md:block">
+
           <div className="flex gap-6 mt-6 max-md:mt-[10vw] max-md:items-center max-md:justify-center">
             <PreviousButton onClick={handlePrev} />
             <NextButton onClick={handleNext} />
+          </div>
           </div>
         </div>
       </section>

@@ -47,7 +47,7 @@ export default function Experts({heading}) {
           {heading}
         </h2>
 
-        <div className="flex fadeup gap-6 mt-12 max-sm:mt-10 max-md:mt-[10vw] max-md:items-center max-md:justify-center max-md:absolute max-md:top-[85%]  max-md:right-[8%] ">
+        <div className="flex fadeup gap-6 mt-12 max-sm:mt-0 max-md:mt-[10vw] max-md:items-center max-md:justify-center max-md:absolute max-md:top-[85%]  max-md:right-[8%] ">
           <PreviousButton onClick={handlePrev} />
           <NextButton onClick={handleNext} />
         </div>
