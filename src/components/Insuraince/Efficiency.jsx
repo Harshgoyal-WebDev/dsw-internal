@@ -265,11 +265,8 @@ const Efficiency = () => {
             </p>
           </Copy>
         </div>
-
-
       </div>
       </div>
-
 
      <div className="w-full flex justify-between items-start max-md:hidden max-sm:hidden">
         {/* Stat 1 */}

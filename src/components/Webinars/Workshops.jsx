@@ -39,13 +39,13 @@ const Workshops = () => {
           </Copy>
         </div>
 
-        <div className="w-full flex justify-between  pt-[3vw] max-md:flex-col max-md:gap-[10vw] max-sm:gap-[18vw]">
+        <div className="w-full flex justify-between  pt-[0.8vw] max-md:flex-col max-md:gap-[10vw] max-sm:gap-[18vw]">
           {secondaryAnnouncements.map((item, index) => (
             <div
               key={index}
-              className="w-[47.5%] h-fit flex flex-col gap-[1.5vw] fadeup max-md:w-full max-md:gap-[3vw] max-sm:gap-[7vw] "
+              className="w-[47.5%] h-fit flex flex-col gap-[1.3vw] fadeup max-md:w-full max-md:gap-[3vw] max-sm:gap-[7vw] "
             >
-              <div className="w-full h-[25vw] rounded-[1.2vw] overflow-hidden group max-md:h-[35vh] max-sm:h-[27vh] max-md:rounded-[4.5vw] max-md:border max-md:border-white/20">
+              <div className="w-full h-[24vw] rounded-[2.5vw] overflow-hidden group max-md:h-[35vh] max-sm:h-[27vh] max-md:rounded-[4.5vw] max-md:border max-md:border-white/20">
                 <Image
                   src={item.image}
                   alt={item.alt}
@@ -56,7 +56,7 @@ const Workshops = () => {
               </div>
               <h3 className="text-30">{item.title}</h3>
 
-              <p>{item.date}</p>
+              <p className="text-[1.05vw] max-md:text-[2.5vw] max-sm:text-[4vw]">{item.date}</p>
 
               <LinkButton text={"Learn More"} href={item.href} />
             </div>

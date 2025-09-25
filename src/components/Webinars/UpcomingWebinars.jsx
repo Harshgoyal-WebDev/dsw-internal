@@ -52,7 +52,7 @@ const UpcomingWebinars = () => {
         <div className="w-1/2 space-y-[1vw] max-md:w-full max-sm:text-center max-sm:space-y-[7vw] max-md:space-y-[5vw] ">
           <h2 className=" text-90  headingAnim">Upcoming Webinars & Events</h2>
           <Copy>
-            <p>
+            <p className="text-white-300">
               See how DSW is making waves across global tech and AI
               publications. Explore press features, interviews with our
               leadership, and industry mentions.
@@ -74,24 +74,24 @@ const UpcomingWebinars = () => {
               </div>
               <div className="w-[60%] flex flex-col gap-[2vw] mt-[1vw] max-md:w-full max-sm:gap-[7vw] max-md:gap-[5vw]">
                 <Copy>
-                  <h3 className="text-30">{mainAnnouncement.title}</h3>
+                  <h3 className="text-30 text-white-300">{mainAnnouncement.title}</h3>
                 </Copy>
                 <Copy>
-                  <p>{mainAnnouncement.description}</p>
+                  <p className="text-white-300">{mainAnnouncement.description}</p>
                 </Copy>
 
                 <div className="flex gap-[4vw] fadeup max-md:flex-wrap max-md:justify-between max-md:gap-[7vw]">
                   <div className="flex flex-col gap-[0.5vw]">
                     <p className="text-white/40">Format</p>
-                    <p>{mainAnnouncement.format}</p>
+                    <p className="text-white-300">{mainAnnouncement.format}</p>
                   </div>
                   <div className="flex flex-col gap-[0.5vw]">
                     <p className="text-white/40">Webinar Date</p>
-                    <p>{mainAnnouncement.date}</p>
+                    <p className="text-white-300">{mainAnnouncement.date}</p>
                   </div>
                   <div className="flex flex-col gap-[0.5vw]">
                     <p className="text-white/40">Author</p>
-                    <p>{mainAnnouncement.author}</p>
+                    <p className="text-white-300">{mainAnnouncement.author}</p>
                   </div>
                 </div>
 
