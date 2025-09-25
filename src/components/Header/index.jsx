@@ -117,11 +117,15 @@ const Header = () => {
                       className="relative text-[#E8E8E8] dropdown-links"
                       onMouseEnter={() => {
                         setOpenDropdown(link.id);
-                        lenis.stop();
+                        if(hasChildren){
+                          lenis.stop()
+                        }
                       }}
                       onMouseLeave={() => {
                         setOpenDropdown(null);
-                        lenis.start();
+                        if(hasChildren){
+                          lenis.start()
+                        }
                       }}
                     >
                       {/* Top-level link */}
@@ -184,7 +188,7 @@ const Header = () => {
                           }}
                           onMouseLeave={() => {
                             setOpenDropdown(null);
-                            lenis.stop();
+                            lenis.start();
                           }}
                         >
                           <ul className="p-[1.5vw]">

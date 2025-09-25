@@ -44,7 +44,7 @@ const InputComponent = React.forwardRef(({ className, ...props }, ref) => (
         ref={ref}
         data-slot="input"
         className={cn(
-          "file:text-foreground placeholder:text-muted-foreground selection:bg-primary max-md:text-[2.7vw] max-sm:text-[3.5vw] max-md:px-[4vw]  selection:text-primary-foreground dark:bg-input/30 border-input flex h-[4vw] max-sm:h-[12vw] max-md:h-[10vw] w-full min-w-0   px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm border !border-[#B0B0B080] rounded-full !bg-white/5",
+          "file:text-foreground placeholder:text-muted-foreground selection:bg-primary text-[1.05vw] max-md:text-[2.7vw] max-sm:text-[3.5vw] max-md:px-[4vw]  selection:text-primary-foreground dark:bg-input/30 border-input flex h-[4vw] max-sm:h-[12vw] max-md:h-[10vw] w-full min-w-0   px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm border border-white/20 rounded-full !bg-white/5",
           "",
           "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-white",
           className
@@ -82,7 +82,7 @@ const CountrySelect = ({ disabled, value: selectedCountry, options: countryList,
         <Button
           type="button"
           variant="outline"
-          className="flex justify-center gap-[1.5vw] h-[4vw] border shadow-none px-[2vw] pb-2 mobile:pb-0 focus:z-10  max-md:h-[10vw] max-sm:h-[12vw] max-sm:w-[35%] max-sm:gap-[4vw] w-[20%] mr-[0.8vw] max-sm:mr-[2.5vw]  !bg-white/5  !border-[#B0B0B080] rounded-full cursor-pointer"
+          className="flex justify-center gap-[1.5vw] h-[4vw] border  shadow-none px-[2vw] pb-2 mobile:pb-0 focus:z-10  max-md:h-[10vw] max-sm:h-[12vw] max-sm:w-[35%] max-sm:gap-[4vw] w-[20%] mr-[0.8vw] max-sm:mr-[2.5vw]  !bg-white/5  border-white/20 rounded-full cursor-pointer"
           disabled={disabled}
         >
           <FlagComponent country={selectedCountry} countryName={selectedCountry} />

@@ -58,7 +58,7 @@ export default function TeamForm() {
   const [notsubmitted, setIsNotSubmitted] = useState(false);
 
   return (
-    <section className="mobile:pt-0 overflow-hidden" id="formoem">
+    <section className="mobile:pt-0 overflow-hidden h-fit max-md:pb-[10%] max-sm:pb-0" id="formoem">
       <div className="w-full h-full mobile:p-0 tablet:p-[6.5vw]">
         <div className="w-full flex flex-col gap-[2vw] mobile:gap-[5vw] tablet:w-full mobile:px-0 max-md:px-[2vw] mobile:py-[5vw] fadeup">
           <Form {...form}>
@@ -77,7 +77,7 @@ export default function TeamForm() {
                         placeholder="Name*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw] bg-white/5 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-sm:pl-[5vw]"
+                        className="placeholder:text-[1.05vw] pl-[2vw] bg-white/5 border border-white/20 rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] max-md:pl-[4vw] max-sm:pl-[5vw]"
                       />
                     </FormControl>
                     <FormMessage />
@@ -95,7 +95,7 @@ export default function TeamForm() {
                         placeholder="Business Email*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/5 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-sm:pl-[5vw]"
+                        className="placeholder:text-[1.05vw] pl-[2vw]  bg-white/5 border border-white/20 rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] max-md:pl-[4vw] max-sm:pl-[5vw]"
                       />
                     </FormControl>
                     <FormMessage />
@@ -112,7 +112,7 @@ export default function TeamForm() {
                         placeholder="Designation*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/5 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-sm:pl-[5vw]"
+                        className="placeholder:text-[1.05vw] pl-[2vw]  bg-white/5 border border-white/20 rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] max-md:pl-[4vw] max-sm:pl-[5vw]"
                       />
                     </FormControl>
                     <FormMessage />
@@ -130,7 +130,7 @@ export default function TeamForm() {
                         placeholder="Company Name*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/5  border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-sm:pl-[5vw]"
+                        className="placeholder:text-[1.05vw] pl-[2vw]  bg-white/5  border border-white/20 rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] max-md:pl-[4vw] max-sm:pl-[5vw]"
                       />
                     </FormControl>
                     <FormMessage />
@@ -152,7 +152,7 @@ export default function TeamForm() {
                         defaultCountry="IN"
                         international
                         {...field}
-                        className="placeholder:text-[1.15vw] placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] "
+                        className="placeholder:text-[1.05vw] placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] "
                       />
                     </FormControl>
                     <FormMessage />
@@ -171,9 +171,9 @@ export default function TeamForm() {
                           aria-label="checkbox"
                           checked={field.value}
                           onCheckedChange={field.onChange}
-                          className="mobile:mt-[2vw] tablet:mt-[2vw] cursor-pointer max-sm:rounded-[0.5vw]"
+                          className="mobile:mt-[2vw] tablet:mt-[2vw] cursor-pointer max-sm:rounded-[0.5vw] max-md:rounded-[0.5vw]"
                         />
-                        <label className="text-[1.15vw] mt-2  text-[#CACACA] max-sm:text-[3.5vw] max-sm:mt-5">
+                        <label className="text-[1.15vw] mt-2  text-[#CACACA] max-sm:text-[3.5vw] max-sm:mt-5 max-md:text-[2.7vw]">
                           I agree to{" "}
                           <a href="/" className="border-b border-[#CACACA]">
                             Privacy Policy{" "}
@@ -194,17 +194,17 @@ export default function TeamForm() {
               <Button
                 // type="submit"
                 aria-label="submit form"
-                className="cursor-pointer mt-[3vw] pb-[3vw] max-sm:mt-[10vw] max-sm:pb-[8vw] max-md:mt-[8vw] px-0"
+                className="cursor-pointer mt-[3vw] pb-[3vw] max-sm:mt-[10vw] max-sm:pb-[8vw] max-md:mt-[4vw] px-0 "
               >
                 <div
-                  className={` relative inline-flex items-center h-[4vw] min-w-[10vw] px-[2vw] gap-3 rounded-full overflow-hidden text-white-200 group max-sm:h-fit max-sm:py-[4vw] max-sm:px-[6vw] max-sm:min-w-[30vw] max-sm:gap-[4vw] `}
+                  className={` relative inline-flex items-center h-[4vw] min-w-[10vw] px-[2vw] gap-3 rounded-full overflow-hidden text-white-200 group max-sm:h-fit max-sm:py-[4vw] max-sm:px-[6vw] max-sm:min-w-[30vw] max-md:px-[4.5vw] max-md:py-[3vw] max-md:h-fit max-sm:gap-[4vw] `}
                 >
                   <span
                     className={`bg-foreground rounded-full h-2 w-2 max-sm:w-[2.5vw] max-sm:h-[2.5vw] z-[1] `}
                   ></span>
                   <div className="overflow-clip leading-[1.4] mt-[-4px] max-sm:mt-0 z-[1]">
                     <p
-                      className={`text-[1.145vw] leading-[1.4] buttonTextShadow max-sm:text-[4vw] `}
+                      className={`text-[1.145vw] leading-[1.4] buttonTextShadow max-sm:text-[4vw] max-md:text-[2.7vw] `}
                     >
                       {" "}
                       {isLoading ? "Sending..." : "Submit"}

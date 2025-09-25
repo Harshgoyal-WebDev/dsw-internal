@@ -5,79 +5,117 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import SplitText from "gsap/dist/SplitText";
 import Copy from "../Animations/Copy";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 export default function Journey() {
   const wholeSliderRef = useRef(null);
 
-   const [isMobile, setIsMobile] = useState(false);
-    const [isTablet, setIsTablet] = useState(false);
-  
-    useEffect(() => {
-      const checkMobile = () => setIsMobile(window.innerWidth < 640);
-      const checkTablet = () => setIsTablet(window.innerWidth < 1025);
-      
-      checkMobile();
-      checkTablet();
-      
-      window.addEventListener('resize', checkMobile);
-      window.addEventListener('resize', checkTablet);
-      
-      return () => {
-        window.removeEventListener('resize', checkMobile);
-        window.removeEventListener('resize', checkTablet);
-        
-      };
-    }, []);
+  useGSAP(() => {
+    if (globalThis.innerWidth >= 642 && globalThis.innerWidth <= 1024) {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#journey",
+          start: "top top",
+          end: "97% bottom",
+          scrub: true,
+          markers: true,
+        },
+        defaults: {
+          ease: "none",
+        },
+      });
+      tl.fromTo(
+        wholeSliderRef.current,
+        {
+          xPercent: 0,
+        },
+        {
+          xPercent: -82,
+        }
+      );
+      gsap.to(".journey-line", {
+        width: "85%",
+        ease: "none",
+        scrollTrigger: {
+          trigger: "#journey",
+          start: "top 30%",
+          end: "90% bottom",
+          scrub: true,
+          // markers: true,
+        },
+      });
+    } else if (globalThis.innerWidth < 642) {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#journey",
+          start: "top top",
+          end: "97% bottom",
+          scrub: true,
+          // markers: true,
+        },
+        defaults: {
+          ease: "none",
+        },
+      });
+      tl.fromTo(
+        wholeSliderRef.current,
+        {
+          xPercent: 0,
+        },
+        {
+          xPercent: -75,
+        }
+      );
+      gsap.to(".journey-line", {
+        width: "80%",
+        ease: "none",
+        scrollTrigger: {
+          trigger: "#journey",
+          start: "top 30%",
+          end: "90% bottom",
+          scrub: true,
+          // markers: true,
+        },
+      });
+    } else {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#journey",
+          start: "top 12%",
+          end: "97% bottom",
+          scrub: true,
+          // markers: true,
+        },
+        defaults: {
+          ease: "none",
+        },
+      });
+      tl.fromTo(
+        wholeSliderRef.current,
+        {
+          xPercent: 0,
+        },
+        {
+          xPercent: -75,
+        }
+      );
+      gsap.to(".journey-line", {
+        width: "98%",
+        ease: "none",
+        scrollTrigger: {
+          trigger: "#journey",
+          start: "top 60%",
+          end: "97% bottom",
+          scrub: true,
+          // markers: true,
+        },
+      });
+    }
+  }, []);
 
-    useEffect(() => {
-  console.log("Tablet:", isTablet);
-  console.log("Mobile:", isMobile);
-}, [isTablet, isMobile]);
-
-  useEffect(() => {
-    const ctx= gsap.context(() => {
-       const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: wholeSliderRef.current,
-        start: "top 23%",
-        end: "+500%",
-        scrub: true,
-        pin: true,
-      },
-    });
-
-   if(isTablet){
-     tl.fromTo(
-      wholeSliderRef.current,
-      {
-        xPercent: 0,
-      },
-      {
-        xPercent:-82,
-        ease: 'none'
-      }
-    );
-   }else{
-     tl.fromTo(
-      wholeSliderRef.current,
-      {
-        xPercent: 0,
-      },
-      {
-        xPercent: -75,
-        ease: 'none'
-      }
-    );
-   }
-    })
-      return () => ctx.revert()
-  },[isTablet])
-
-  
-  useEffect(() => {
-
+  useGSAP(() => {
     const years = [
       "2018",
       "2019",
@@ -101,60 +139,33 @@ export default function Journey() {
 
     const titleSplits = {};
     const descriptionSplits = {};
-    
+
     years.forEach((year) => {
       titleSplits[year] = new SplitText(`.title${year}Years`, {
         type: "chars, words, lines",
         mask: "lines",
       });
-      
+
       descriptionSplits[year] = new SplitText(`.description${year}Years`, {
         type: "chars, words, lines",
         mask: "lines",
       });
     });
 
-  //   const tl = gsap.timeline({
-  //     scrollTrigger: {
-  //       trigger: wholeSliderRef.current,
-  //       start: "top 23%",
-  //       end: "+500%",
-  //       scrub: true,
-  //       pin: true,
-  //     },
-  //   });
-
-  //  if(isTablet){
-  //    tl.fromTo(
-  //     wholeSliderRef.current,
-  //     {
-  //       xPercent: 0,
-  //     },
-  //     {
-  //       xPercent:-90,
-  //       ease: 'none'
-  //     }
-  //   );
-  //  }else{
-  //    tl.fromTo(
-  //     wholeSliderRef.current,
-  //     {
-  //       xPercent: 0,
-  //     },
-  //     {
-  //       xPercent: -75,
-  //       ease: 'none'
-  //     }
-  //   );
-  //  }
-
     // Create a function to generate timeline for each year
-    const createYearTimeline = (year, startPos, endPos, markerOptions = true, triggerPosStart, triggerPosEnd) => {
+    const createYearTimeline = (
+      year,
+      startPos,
+      endPos,
+      markerOptions = true,
+      triggerPosStart,
+      triggerPosEnd
+    ) => {
       const timeline = gsap.timeline({
         scrollTrigger: {
-          trigger: `.jcontainer-${year}`,
-          start: `${startPos}% ${triggerPosStart}%`,
-          end: `${endPos}% ${triggerPosEnd}%`,
+          trigger: `#journey`,
+          start: `${startPos}% 50%`,
+          end: `${endPos}% 50%`,
           scrub: true,
           markers: markerOptions,
         },
@@ -173,61 +184,84 @@ export default function Journey() {
           titleSplits[year].lines,
           { y: 100 },
           {
-            y: -5,
-            duration: 0.5,
-            stagger: 0.1,
-            ease: "power2.inOut",
-          },
-          "<"
+            y: 0,
+            delay: -0.8,
+            duration: 1,
+            stagger: 0.02,
+            ease: "power2.out",
+          }
         )
         .fromTo(
           descriptionSplits[year].lines,
           { y: 100 },
           {
             y: -0,
-            duration: 0.7,
-            stagger: 0.1,
-            ease: "power2.inOut",
-          }
+            // delay:-0.4,
+            duration: 1,
+            stagger: 0.02,
+            ease: "power2.out",
+          },
+          "<"
         );
 
       return timeline;
     };
-
-    // Create timelines for all years
-    createYearTimeline("2018", 50, 100, false, 50, 50);
-    createYearTimeline("2019", 80, 180, false, 50, 50);
-    createYearTimeline("2020", 280, 380, false, 50, 50);
-    createYearTimeline("2021", 300, 400, false, 50, 50);
-    createYearTimeline("2022", 520, 620, false, 50, 50);
-    createYearTimeline("2023", 600, 700, false, 50, 50);
-    createYearTimeline("2024", 820, 920, false, 50, 50);
-    createYearTimeline("2025", 820, 920, false, 50, 50);
+    if (globalThis.innerWidth < 642) {
+      createYearTimeline("2018", 20, 31, false, 50, 50);
+      createYearTimeline("2019", 28, 38, false, 50, 50);
+      createYearTimeline("2020", 37, 49, false, 50, 50);
+      createYearTimeline("2021", 43, 55, false, 50, 50);
+      createYearTimeline("2022", 52, 62, false, 50, 50);
+      createYearTimeline("2023", 59, 73, false, 50, 50);
+      createYearTimeline("2024", 68, 79, false, 50, 50);
+      createYearTimeline("2025", 75, 86, false, 50, 50);
+    }
+    else if(globalThis.innerWidth >= 642 && globalThis.innerWidth <= 1024){
+      createYearTimeline("2018", 20, 31, false, 50, 50);
+      createYearTimeline("2019", 28, 38, false, 50, 50);
+      createYearTimeline("2020", 37, 49, false, 50, 50);
+      createYearTimeline("2021", 43, 55, false, 50, 50);
+      createYearTimeline("2022", 52, 62, false, 50, 50);
+      createYearTimeline("2023", 59, 73, false, 50, 50);
+      createYearTimeline("2024", 68, 79, false, 50, 50);
+      createYearTimeline("2025", 75, 86, false, 50, 50);
+    }
     
+    else {
+      createYearTimeline("2018", 14, 31, false, 50, 50);
+      createYearTimeline("2019", 21, 38, false, 50, 50);
+      createYearTimeline("2020", 32, 49, false, 50, 50);
+      createYearTimeline("2021", 38, 55, false, 50, 50);
+      createYearTimeline("2022", 52, 69, false, 50, 50);
+      createYearTimeline("2023", 56, 73, false, 50, 50);
+      createYearTimeline("2024", 71, 88, false, 50, 50);
+      createYearTimeline("2025", 75, 92, false, 50, 50);
+    }
+    // Create timelines for all years
+
     // Handle resize events to update animations
     const handleResize = () => {
       ScrollTrigger.refresh();
     };
-    
-    window.addEventListener('resize', handleResize);
-    
+
+    window.addEventListener("resize", handleResize);
+
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
-   
-  }, []);
+  });
 
   return (
     <section
       id="journey"
-      className="h-[400vh] max-md:h-[500vh] max-sm:h-[400vh] w-full  overflow-x-hidden relative background-radial container"
+      className="h-[300vw] max-md:h-[500vh] max-sm:h-[400vh] w-full  relative  py-[7%]"
     >
-      <div className="h-screen w-full sticky top-0">
+      <div className="h-screen w-screen sticky top-0 pt-[15%] overflow-hidden background-radial max-md:pt-[5%] max-sm:pt-[15%]">
         <div
           ref={wholeSliderRef}
-          className="h-[60vh] max-md:w-[700vw]  max-sm:h-[60vh] max-md:h-[70vh]  flex gap-[5vw] mr-[2vw] items-center max-md:items-start max-sm:w-[700vw] max-md:flex-col w-[300vw]"
+          className="h-[30vw] max-md:w-[700vw] px-[5vw] max-sm:h-[80vh] max-md:h-[70vh]  flex gap-[5vw] mr-[2vw] items-center max-md:items-start max-sm:w-[700vw] max-md:flex-col w-[300vw] max-sm:px-[7vw] max-md:gap-[2vw]"
         >
-          <div className="h-[100%] max-sm:h-[50vw] max-sm:w-[70vw] max-md:h-[60vh] max-md:w-[12.2%]  journey-img w-[25vw] overflow-hidden rounded-[2vw]">
+          <div className="h-[100%] max-sm:h-[50vw] max-sm:w-[70vw] max-md:h-[40vh] max-md:w-[12.2%]  journey-img w-[27vw] overflow-hidden rounded-[2vw] fadeup max-sm:rounded-[5vw]">
             <Image
               src={"/assets/images/about/journey.jpg"}
               alt="journey"
@@ -236,27 +270,27 @@ export default function Journey() {
               className="h-full w-full object-cover"
             />
           </div>
-          <div className="w-[100%] relative h-full ">
+          <div className="w-[100%] relative h-full max-md:h-fit ">
             {/* LINE */}
             <div className="w-full absolute left-0 top-[49%] tranlate-y-[-50%] flex items-center h-fit">
-              <div className="h-[.8vw] max-sm:h-[2vw] max-sm:w-[2vw] w-[.8vw] rounded-full bg-[#59595990]"></div>
-              <div className="h-[1.5px] w-[95%] rounded-full bg-[#59595980]"></div>
-              <div className="h-[.8vw] max-sm:h-[2vw] max-sm:w-[2vw] w-[.8vw] rounded-full bg-[#59595990]"></div>
+              <div className="h-[.8vw] max-sm:h-[2vw] max-sm:w-[2vw] w-[.8vw] rounded-full bg-[#59595990] max-md:w-[1.5vw] max-md:h-[1.5vw]"></div>
+              <div className="h-[1px] w-[0%] rounded-full bg-white/15 journey-line "></div>
+              <div className="h-[.8vw] max-sm:h-[2vw] max-sm:w-[2vw] w-[.8vw] rounded-full bg-[#59595990] max-md:w-[1.5vw] max-md:h-[1.5vw]"></div>
             </div>
 
             <div className="h-1/2 flex items-center gap-[.5vw]  justify-start w-full ">
-              <div className="w-[20%] max-sm:pt-[5vw] h-full ">
-                <p className="title-1 headings w-[60%] headingAnim">
+              <div className="w-[20%] max-sm:pt-[5vw] h-full pt-[2vw] max-sm:h-fit ">
+                <h2 className="text-90 headings w-[65%] headingAnim">
                   Foundations Of DSW
-                </p>
+                </h2>
               </div>
 
-              <div className="w-full flex h-full gap-x-[8vw]">
+              <div className="w-full flex h-full gap-x-[15vw]">
                 {/* TOP JOURNEY ITEMS */}
                 {topJourneyData.map((item, index) => (
                   <div
                     key={`top-${index}`}
-                    className={`w-[18%]  max-sm:flex max-sm:flex-col max-sm:justify-center journey-container px-[5vw] h-full relative ${item.containerClass}`}
+                    className={`w-[18%]  max-sm:flex max-sm:flex-col max-sm:justify-center journey-container px-[3vw] h-full relative max-sm:px-[7vw] max-md:px-[5vw] ${item.containerClass}`}
                   >
                     {/* STOPS */}
                     <div className="w-full absolute left-0 bottom-0 top-0 h-full">
@@ -264,14 +298,18 @@ export default function Journey() {
                         className={`h-[12%] translate-x-[-50%] relative w-auto aspect-square rounded-full bg-primary-1 ${item.dotClass}`}
                       ></div>
                       <div
-                        className={`h-[88%] w-[1.5px]  origin-bottom rounded-full bg-[#59595980] ${item.lineClass}`}
+                        className={`h-[88%] w-[1px]  origin-bottom rounded-full bg-white/15 ${item.lineClass}`}
                       ></div>
                     </div>
-                    <div className={`space-y-[2vw] ${item.contentClass}`}>
-                      <p className={`title-3 leading-[2] ${item.titleClass}`}>
+                    <div
+                      className={`space-y-[2vw] pt-[0.5vw] max-sm:pb-[10vw] ${item.contentClass}`}
+                    >
+                      <p className={`text-30  ${item.titleClass}`}>
                         {item.year} – {item.title}
                       </p>
-                      <p className={`text-white-300 ${item.descriptionClass}`}>
+                      <p
+                        className={`text-white-300 w-[90%] max-sm:w-[90%] max-md:w-[70%] ${item.descriptionClass}`}
+                      >
                         {item.content}
                       </p>
                     </div>
@@ -283,32 +321,36 @@ export default function Journey() {
             <div className="h-1/2 flex items-center justify-start w-full">
               <div className="w-[34%] pt-[2vw] max-sm:pt-[5vw] h-full">
                 <Copy>
-                  <p className="title-2 headings w-[100%]">2018-2025</p>
+                  <p className="text-60 headings w-[100%] font-head">
+                    2018-2025
+                  </p>
                 </Copy>
               </div>
-              <div className="w-full flex h-full gap-x-[12vw]">
+              <div className="w-full flex h-full gap-x-[15vw]">
                 {/* BOTTOM JOURNEY ITEMS */}
                 {bottomJourneyData.map((item, index) => (
                   <div
                     key={`bottom-${index}`}
-                    className={`w-[18%] max-md:w-[20%]  max-md:flex max-md:flex-col max-md:justify-center  journey-container px-[5vw] h-full relative ${item.containerClass}`}
+                    className={`w-[18%] max-md:w-[20%]  max-md:flex max-md:flex-col max-md:justify-center  journey-container px-[3vw] h-full relative max-sm:px-[7vw] max-md:px-[5vw] ${item.containerClass}`}
                   >
                     {/* STOPS */}
                     <div className="w-full absolute left-0 bottom-0 top-0 h-full">
                       <div
-                        className={`h-[88%] origin-top w-[1.5px] rounded-full bg-[#59595980] ${item.lineClass}`}
+                        className={`h-[88%] origin-top w-[1px] rounded-full bg-white/15 max-sm:h-full ${item.lineClass}`}
                       ></div>
                       <div
                         className={`h-[12%] translate-x-[-50%] relative w-auto aspect-square rounded-full  bg-primary-1 ${item.dotClass}`}
                       ></div>
                     </div>
                     <div
-                      className={`space-y-[2vw] pt-[2vw] max-md:pt-[7vw] ${item.contentClass}`}
+                      className={`space-y-[2vw] max-md:pt-[7vw] w-full h-full flex flex-col justify-end pb-[2vw] ${item.contentClass}`}
                     >
-                      <p className={`title-3 leading-[2] ${item.titleClass}`}>
+                      <h4 className={`text-30 ${item.titleClass}`}>
                         {item.year} – {item.title}
-                      </p>
-                      <p className={`text-white-300 ${item.descriptionClass}`}>
+                      </h4>
+                      <p
+                        className={`text-white-300 w-[90%] max-sm:w-[90%] max-md:w-[70%] ${item.descriptionClass}`}
+                      >
                         {item.content}
                       </p>
                     </div>

@@ -7,7 +7,7 @@ const Empower= ({heading,para,width}) => {
     <section className="w-screen h-full overflow-hidden relative z-[10]">
       <div className="h-full w-full flex items-start justify-between  container max-md:flex-col max-sm:flex-col max-sm:gap-[8vw] max-md:gap-[10vw] max-sm:px-[5.5vw] max-md:px-[4vw]">
         <div className="w-[52%] h-full   max-sm:w-full max-md:w-[100%] space-y-[1.5vw] max-md:space-y-[3vw] max-sm:space-y-[4.5vw] flex flex-col justify-between gap-[6.5vw]">
-          <div className="space-y-[1.5vw] max-sm:space-y-[5vw]">
+          <div className="space-y-[1.5vw] max-sm:space-y-[5vw] max-md:space-y-[2.5vw]">
             <h2 className={` text-60  font-head text-white-200 headingAnim max-sm:!text-[11.5vw] ${width}`}>
               {heading}
             </h2>
@@ -21,7 +21,7 @@ const Empower= ({heading,para,width}) => {
             </div>
           </div>
         </div>
-        <div className="w-[47%] mt-[15vw] max-md:w-[100%] max-sm:w-full max-sm:mt-0">
+        <div className="w-[47%] mt-[15vw] max-md:w-[100%] max-sm:w-full max-md:mt-0">
          <TeamForm/>
         </div>
       </div>

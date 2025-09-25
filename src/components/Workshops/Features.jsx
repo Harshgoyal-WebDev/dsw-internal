@@ -13,7 +13,7 @@ const FeaturesCard = ({ icon, title, para }) => {
             alt={title}
             className="w-[5vw] h-[5vw] object-contain max-md:w-[25vw] max-md:h-[25vw]"
           />
-          <h4 className="text-30 text-white-200 max-md:!text-[7.5vw] max-md:w-[95%] max-md:text-center max-md:h-fit">
+          <h4 className="text-30 text-white-200 max-md:!text-[5.5vw] max-md:w-[95%] max-md:text-center max-md:h-fit">
             {title}
           </h4>
           <p className="text-white-300  w-[95%] max-md:w-[95%] max-md:text-center max-md:h-auto">
