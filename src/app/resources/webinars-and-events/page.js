@@ -7,7 +7,6 @@ import UpcomingWebinars from "@/components/Webinars/UpcomingWebinars";
 import Workshops from "@/components/Webinars/Workshops";
 import WatchOnDemand from "@/components/Webinars/WatchOn-Demand";
 
-
 const Page = () => {
   return (
     <>

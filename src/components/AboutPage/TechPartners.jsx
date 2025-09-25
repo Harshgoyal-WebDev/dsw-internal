@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import Copy from "../Animations/Copy";
@@ -34,55 +34,57 @@ const Card = () => {
   const imgRefs = useRef([]);
   const currentIndex = useRef(Math.floor(Math.random() * images.length)); // random start
   const nextIndex = useRef(getRandomIndex(currentIndex.current, images.length));
+  const [isInitialized, setIsInitialized] = useState(false);
 
   useEffect(() => {
-    const imgs = imgRefs.current;
-    gsap.set(imgs[currentIndex.current], {
-      x: 0,
-      y: 0,
-      opacity: 1,
+  const imgs = imgRefs.current;
+
+  imgs.forEach((img, i) => {
+    if (i === currentIndex.current) {
+      gsap.set(img, { x: 0, y: 0, opacity: 1 });
+    } else {
+      gsap.set(img, { ...randomDirection(), opacity: 0 });
+    }
+  });
+
+  setIsInitialized(true);
+
+  const animateNext = () => {
+    const curr = imgs[currentIndex.current];
+    const next = imgs[nextIndex.current];
+    const outDir = randomDirection();
+let inDir;
+
+
+do {
+  inDir = randomDirection();
+} while (
+  (inDir.x !== 0 && inDir.x === outDir.x) ||
+  (inDir.y !== 0 && inDir.y === outDir.y)
+);
+
+    gsap.to(curr, {
+      ...outDir,
+      opacity: 0,
+      duration: 1.2,
+      ease: "power2.out",
     });
 
-    // place all others offscreen
-    imgs.forEach((img, i) => {
-      if (i !== currentIndex.current) {
-        gsap.set(img, { ...randomDirection(), opacity: 0 });
-      }
-    });
+    gsap.fromTo(
+      next,
+      { ...inDir, opacity: 0 },
+      { x: 0, y: 0, opacity: 1, duration: 1.2, ease: "power2.out" }
+    );
 
-    const tl = gsap.timeline({
-      repeat: -1,
-      repeatDelay: 1.5,
-    });
+    currentIndex.current = nextIndex.current;
+    nextIndex.current = getRandomIndex(currentIndex.current, images.length);
+  };
 
-    const animateNext = () => {
-      const curr = imgs[currentIndex.current];
-      const next = imgs[nextIndex.current];
+  const interval = setInterval(animateNext, 3000); 
+  animateNext();
 
-      // animate current out
-      tl.to(curr, {
-        ...randomDirection(),
-        opacity: 0,
-        duration: 1.2,
-        ease: "power2.out",
-        delay: 1.5,
-      })
-        // animate next in
-        .fromTo(
-          next,
-          { ...randomDirection(), opacity: 0 },
-          { x: 0, y: 0, opacity: 1, duration: 1.2, ease: "power2.out" },
-          "<"
-        );
-
-      // update indices
-      currentIndex.current = nextIndex.current;
-      nextIndex.current = getRandomIndex(currentIndex.current, images.length);
-    };
-
-    tl.eventCallback("onRepeat", animateNext);
-    animateNext();
-  }, []);
+  return () => clearInterval(interval);
+}, []);
 
   return (
     <div className="w-[17vw] relative bg-[#081B57] h-[22vh] flex justify-center items-center border border-white/10 rounded-[2vw] overflow-hidden max-md:h-[20vh] max-sm:h-[15vh] max-md:w-[40vw] max-md:rounded-[4vw]">
@@ -91,6 +93,10 @@ const Card = () => {
           key={i}
           className="absolute"
           ref={(el) => (imgRefs.current[i] = el)}
+           style={{ 
+            opacity: isInitialized ? undefined : 0,
+            visibility: isInitialized ? 'visible' : 'hidden'
+          }}
         >
           <Image
             src={src}

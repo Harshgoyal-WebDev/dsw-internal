@@ -1,89 +1,96 @@
-'use client'
-import React, { useState, useEffect, useRef } from 'react'
-import { gsap } from 'gsap'
-import Image from 'next/image'
+"use client";
+import React, { useState, useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import Image from "next/image";
 
 const panelsData = [
   {
-    title: 'Mr. Ritesh Rathod',
-    name: 'Mr. Ritesh Rathod',
-    position: 'Senior Data Analyst',
-    company: 'Tech Solutions',
+    title: "Mr. Ritesh Rathod",
+    name: "Mr. Ritesh Rathod",
+    position: "Senior Data Analyst",
+    company: "Tech Solutions",
     description:
-      'Expert in data visualization and business intelligence with extensive experience in transforming complex datasets into actionable insights.',
-    logo: '/assets/icons/insuraince/customer-logo-1.svg',
+      "Expert in data visualization and business intelligence with extensive experience in transforming complex datasets into actionable insights.",
+    logo: "/assets/icons/insuraince/customer-logo-1.svg",
   },
   {
-    title: 'Mr. Stefano Bonfa',
-    name: 'Mr. Stefano Bonfa',
-    position: 'Lead Data Engineer',
-    company: 'Data Corp',
+    title: "Mr. Stefano Bonfa",
+    name: "Mr. Stefano Bonfa",
+    position: "Lead Data Engineer",
+    company: "Data Corp",
     description:
-      'Specialized in building robust data pipelines and implementing machine learning solutions for enterprise-level applications.',
-    logo: '/assets/icons/insuraince/customer-logo-1.svg',
+      "Specialized in building robust data pipelines and implementing machine learning solutions for enterprise-level applications.",
+    logo: "/assets/icons/insuraince/customer-logo-1.svg",
   },
   {
-    title: 'Mr. Neeraj Kulkarni',
-    name: 'Mr. Neeraj Kulkarni',
-    position: 'President / Chief Data Scientist',
-    company: 'CIEK Solutions',
+    title: "Mr. Neeraj Kulkarni",
+    name: "Mr. Neeraj Kulkarni",
+    position: "President / Chief Data Scientist",
+    company: "CIEK Solutions",
     description:
-      'Great expertise and analytical diligence by DSW UnifyAI in developing an end-to-end data pipeline - making analytical insights available in the form of interactive, advanced dashboards',
-    logo: '/assets/icons/insuraince/customer-logo-1.svg',
+      "Great expertise and analytical diligence by DSW UnifyAI in developing an end-to-end data pipeline - making analytical insights available in the form of interactive, advanced dashboards",
+    logo: "/assets/icons/insuraince/customer-logo-1.svg",
   },
   {
-    title: 'Mr. Ritesh Tiwari',
-    name: 'Mr. Ritesh Tiwari',
-    position: 'AI Solutions Architect',
-    company: 'AI Innovations',
+    title: "Mr. Ritesh Tiwari",
+    name: "Mr. Ritesh Tiwari",
+    position: "AI Solutions Architect",
+    company: "AI Innovations",
     description:
-      'Pioneer in artificial intelligence and machine learning implementations, focusing on scalable AI solutions for modern businesses.',
-    logo: '/assets/icons/insuraince/customer-logo-1.svg',
+      "Pioneer in artificial intelligence and machine learning implementations, focusing on scalable AI solutions for modern businesses.",
+    logo: "/assets/icons/insuraince/customer-logo-1.svg",
   },
-]
+];
 
 const ExpandablePanels = () => {
-  const [activePanel, setActivePanel] = useState(2) 
-  const [activeMobilePanel, setActiveMobilePanel] = useState(2)
+  const [activePanel, setActivePanel] = useState(2);
+  const [activeMobilePanel, setActiveMobilePanel] = useState(2);
 
-  const panelsRef = useRef([])
-  const contentRef = useRef([])
+  const panelsRef = useRef([]);
+  const contentRef = useRef([]);
 
   useEffect(() => {
     panelsRef.current.forEach((panel, index) => {
       if (index === activePanel) {
-        gsap.set(contentRef.current[index], { opacity: 1, x: 0 })
+        gsap.set(contentRef.current[index], { opacity: 1, x: 0 });
       } else {
-        gsap.set(contentRef.current[index], { opacity: 0, x: 0 })
+        gsap.set(contentRef.current[index], { opacity: 0, x: 0 });
       }
-    })
-  }, [])
+    });
+  }, []);
 
   const handlePanelHover = (index) => {
-    if (index === activePanel) return
+    if (index === activePanel) return;
 
     // Animate out current active content
     gsap.to(contentRef.current[activePanel], {
       opacity: 0,
-      x: 0,
-      duration: 1,
-      ease: 'power2.inOut',
-    })
+      // y: -40,
+      duration: 0.5,
+      ease: "power2.inOut",
+    });
 
     // Animate in new active content
-    gsap.to(contentRef.current[index], {
-      opacity: 1,
-      x: 0,
-      duration: 0.5,
-      delay: 0.5,
-      ease: 'power2.out',
-    })
-    setActivePanel(index)
-  }
+    gsap.fromTo(
+      contentRef.current[index],
+      {
+        opacity: 0,
+        y: 20,
+      },
+      {
+        opacity: 1,
+        y: 1,
+        duration: 0.5,
+        delay: 0.7,
+        ease: "power2.out",
+      }
+    );
+    setActivePanel(index);
+  };
 
   const handlePanelClick = (index) => {
-    setActiveMobilePanel(activeMobilePanel === index ? null : index)
-  }
+    setActiveMobilePanel(activeMobilePanel === index ? null : index);
+  };
 
   return (
     <section className="container h-fit background-radial space-y-[8vw]">
@@ -99,16 +106,16 @@ const ExpandablePanels = () => {
               key={index}
               ref={(el) => (panelsRef.current[index] = el)}
               className={`relative cursor-pointer transition-all duration-700 ease-out border-r border-white/30 overflow-hidden group ${
-                activePanel === index ? 'flex-[3]' : 'flex-[0.8]'
-              } ${index === 0 ? 'border-l' : ''}`}
+                activePanel === index ? "flex-[3]" : "flex-[0.8]"
+              } ${index === 0 ? "border-l" : ""}`}
               onMouseEnter={() => handlePanelHover(index)}
             >
               {/* Vertical title for inactive panels */}
               <div
                 className={`absolute inset-0 flex flex-col py-[1vw] items-center justify-between transition-opacity duration-300 ${
                   activePanel === index
-                    ? 'opacity-0 pointer-events-none'
-                    : 'opacity-90'
+                    ? "opacity-0 pointer-events-none"
+                    : "opacity-90"
                 }`}
               >
                 <Image
@@ -127,7 +134,7 @@ const ExpandablePanels = () => {
               <div
                 ref={(el) => (contentRef.current[index] = el)}
                 className={`absolute inset-0 flex flex-col justify-center items-start px-[4vw] text-center text-white ${
-                  activePanel === index ? 'block' : 'hidden'
+                  activePanel === index ? "block" : "hidden"
                 }`}
               >
                 <div className="flex flex-col gap-[8vw] pt-[2vw] justify-center items-start">
@@ -138,7 +145,9 @@ const ExpandablePanels = () => {
                     <h2 className="title-3 font-display text-start text-primary-2 py-[0.8vw] leading-tight">
                       {panel.name}
                     </h2>
-                    <p className="text-start text-white-300">{panel.position}</p>
+                    <p className="text-start text-white-300">
+                      {panel.position}
+                    </p>
                     <p className="text-start text-white-300">{panel.company}</p>
                   </div>
                 </div>
@@ -169,36 +178,36 @@ const ExpandablePanels = () => {
               className="flex justify-between items-center py-[5vw] cursor-pointer"
               onClick={() => handlePanelClick(index)}
             >
-              <h3 className={`text-40 font-display duration-500  ease-in-out ${activeMobilePanel ===index ? 'text-primary-2' : 'text-white-200'}`}>
+              <h3
+                className={`text-40 font-display duration-500  ease-in-out ${activeMobilePanel === index ? "text-primary-2" : "text-white-200"}`}
+              >
                 {panel.title}
               </h3>
               <Image
-                src="/assets/icons/insuraince/plus.svg"
+                src={
+                  activeMobilePanel === index
+                    ? "/assets/icons/insuraince/minus.svg"
+                    : "/assets/icons/insuraince/plus.svg"
+                }
                 width={200}
                 height={200}
-                className={`w-auto h-[5vw] transition-transform duration-300 ${
-                  activeMobilePanel === index ? 'hidden' : ''
-                }`}
+                className="w-auto h-[5vw] transition-transform ease-out duration-700"
                 alt="toggle-icon"
               />
             </div>
 
-           
             <div
               className={`transition-all duration-700 ease-in-out ${
                 activeMobilePanel === index
-                  ? 'max-h-[100vh] max-md:h-[45vh] max-sm:h-[40vh] opacity-100 '
-                  : 'max-h-0 h-0 opacity-0'
+                  ? "max-h-[100vh] max-md:h-[45vh] max-sm:h-[40vh] opacity-100 "
+                  : "max-h-0 h-0 opacity-0"
               } overflow-hidden`}
             >
-
-               <div>
-               
+              <div>
                 <p className="text-start text-white-300">{panel.position}</p>
                 <p className="text-start text-white-300">{panel.company}</p>
               </div>
 
-              
               <div className="py-[4vw] items-start">
                 <Image
                   src={panel.logo}
@@ -216,7 +225,7 @@ const ExpandablePanels = () => {
         ))}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ExpandablePanels
+export default ExpandablePanels;
