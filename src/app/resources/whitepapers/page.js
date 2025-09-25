@@ -11,7 +11,7 @@ const Page = () => {
       <Layout>
         <Hero heroData={heroData} breadcrumbs={true}/>
         <Listing/>
-        <FooterCTA footerCTAData={footerCTAData} />
+        <FooterCTA footerCTAData={footerCTAData} width={"w-[95%]"} />
       </Layout>
     </>
   );

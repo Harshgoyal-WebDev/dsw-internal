@@ -67,7 +67,7 @@ export default function WorkshopFlow({ sessionsData, space }) {
             },
             1024: {
               slidesPerView: 2.5,
-              spaceBetween: 50,
+              spaceBetween: 10,
             },
           }}
         >
@@ -93,7 +93,7 @@ const SwiperCard = ({ title, list, duration, onHover, isActive, space }) => {
   return (
     <>
       <div
-        className="relative py-[3vw] background-glass max-md:py-[8vw] max-md:px-[8vw] rounded-[1.5vw] overflow-hidden w-[34vw] px-[3vw] h-[38vw] max-md:min-h-[70vh] max-sm:h-fit max-md:w-full max-md:rounded-[6vw] border border-white/30 group "
+        className="relative py-[3vw] background-glass max-md:py-[8vw] max-md:px-[8vw] rounded-[1.5vw] overflow-hidden w-[34vw] px-[3vw] h-[38vw] max-md:min-h-[70vh] max-sm:h-fit max-md:w-full max-md:rounded-[6vw] border border-white/10 group "
         onMouseEnter={onHover}
       >
         <div
@@ -101,19 +101,19 @@ const SwiperCard = ({ title, list, duration, onHover, isActive, space }) => {
             isActive ? "opacity-100" : "opacity-0"
           }`}
         />
-        <div className="absolute right-[4%] top-[4%] z-[5] rounded-full flex items-center justify-center h-[5vw] w-[5vw] max-sm:h-[18vw] max-sm:top-[7%] max-sm:w-[18vw] max-md:w-[12vw] max-md:h-[12vw] border border-[#FFFFFF54]">
-          <p className="text-white-300 max-sm:text-[4vw] max-md:text-[3vw] text-[1vw]">{duration}</p>
+        <div className="absolute right-[4%] top-[4%] z-[5] rounded-full flex items-center justify-center h-[5vw] w-[5vw] max-sm:h-[18vw] max-sm:top-[7%] max-sm:w-[18vw] max-md:w-[12vw] max-md:h-[12vw] border border-white/20">
+          <p className="text-white-200 max-sm:text-[4vw] max-md:text-[3vw] text-[1vw]">{duration}</p>
         </div>
         <div className="h-full flex flex-col justify-between relative z-[10]">
           <div className="w-[60%] max-md:w-[80%]">
-            <h3 className="text-40">{title}</h3>
+            <h3 className="text-40 text-white-200">{title}</h3>
           </div>
 
           <div className="w-full  max-md:space-y-[3vw] py-[2vw] max-sm:mt-[8vw]">
-            <ul className={`list-disc text-white-300 pl-[1.5vw] max-md:pl-0 ${space}`}>
+            <ul className={`list-disc text-white-200 pl-[1.5vw] max-md:pl-0 ${space}`}>
               {list.map((item, index) => (
-                <li key={index}>
-                  <span className="!font-medium max-md:w-full text-white-300">{item.heading} </span>{" "}
+                <li key={index} className="text-white-300">
+                  <span className="!font-medium max-md:w-full text-white-200">{item.heading} </span>{" "}
                   {item.para}
                 </li>
               ))}

@@ -5,7 +5,7 @@ import Copy from "../Animations/Copy";
 const Card = ({ src, content }) => {
   return (
     <div className="flex flex-col max-sm:gap-[5vw] gap-[2vw] max-sm:w-full max-sm:h-fit w-[16vw] max-md:w-[40vw] relative group min-h-[20vh] fadeup">
-       <div className="absolute z-[2] bottom-[-15%] max-sm:bottom-0 w-full h-[1px] bg-primary-2 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700"></div>
+      
 
       <div className="w-fit h-[5vw] max-sm:h-[12vh] max-md:h-[12vw]">
         <Image
@@ -17,9 +17,9 @@ const Card = ({ src, content }) => {
           />
       </div>
                        
-      <p className="text-white-300 text-12 font-display">{content}</p>
-             
-      <div className="w-full  h-[1px] bottom-[-15%] absolute lineDraw bg-foreground/30 mt-auto" />
+      <p className="text-white-300 text-12 font-display h-[35%]">{content}</p>
+              <div className="absolute bottom-0 z-[5] max-sm:bottom-0 w-full h-[1px] bg-primary-2 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700"></div>
+      <div className="w-full h-[1px]  lineDraw bg-foreground/30 mt-auto" />
     </div>
   );
 };
@@ -56,10 +56,9 @@ const Outcomes = () => {
       </h2>
 
       <Copy>                
-
+<p className="w-[40%] text-white-300 max-md:w-[100%]"> One secure platform. Many powerful outcomes.</p>
       <p className="w-[40%] text-white-300 max-md:w-[100%]">
-        One secure platform. Many powerful outcomes.
-        <br />
+       
         Whether you're deploying fraud models or launching a GenAI assistant for
         claims, insurAInce brings everything into one secure platform that
         scales with your business. 

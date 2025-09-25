@@ -122,19 +122,19 @@ const Difference = () => {
                 Traditional AI Platforms
               </h3>
               <div className="w-full flex-col flex gap-[0.5vw] max-md:gap-[3vw]" ref={cardsRef1}>
-                <div className="stacked-card w-full text-[#cacaca] text-center h-[10.5vh]  max-sm:py-[2.5vw] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px] ">
+                <div className="stacked-card w-full text-[#cacaca] text-center h-[11vh]  max-sm:py-[2.5vw] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px] ">
                   Generic, one-size-fits-all 
                 </div>
-                <div className="stacked-card w-full text-[#cacaca] text-center h-[10.5vh]  max-sm:py-[2.5vw] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px]">
+                <div className="stacked-card w-full text-[#cacaca] text-center h-[11vh]  max-sm:py-[2.5vw] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw]  flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px]">
                   Long time to deploy 
                 </div>
-                <div className="stacked-card w-full text-[#cacaca] text-center h-[10.5vh]  max-sm:py-[2.5vw] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px]">
+                <div className="stacked-card w-full text-[#cacaca] text-center h-[11vh]  max-sm:py-[2.5vw] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw]  flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px]">
                   Retrofitted Compliance 
                 </div>
-                <div className="stacked-card w-full text-[#cacaca] text-center h-[10.5vh]  max-sm:py-[2.5vw] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px]">
+                <div className="stacked-card w-full text-[#cacaca] text-center h-[11vh]  max-sm:py-[2.5vw] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw]  flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px]">
                   Scattered stack
                 </div>
-                <div className="stacked-card w-full text-[#cacaca] text-center h-[10.5vh]  max-sm:py-[2.5vw] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px]">
+                <div className="stacked-card w-full text-[#cacaca] text-center h-[11vh]  max-sm:py-[2.5vw] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw]  flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px]">
                   High cost - every use case starts from scratch
                 </div>
               </div>
@@ -144,19 +144,19 @@ const Difference = () => {
                 InsurAInce
               </h3>
               <div className="w-full flex-col flex max-md:mt-[9.2vw] max-sm:mt-0 gap-[0.5vw]  max-md:gap-[3vw]">
-                <div className="stacked-card w-full text-[#cacaca] text-center h-[10.5vh]  max-sm:py-[2.5vw] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px]  ">
+                <div className="stacked-card w-full text-[#cacaca] text-center h-[11vh]  max-sm:py-[2.5vw] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw]  flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px]  ">
                   Insurance-first, domain-trained 
                 </div>
-                <div className=" stacked-card w-full text-[#cacaca] text-center  max-md:py-[5vw] max-sm:py-[2.5vw]h-[10.5vh] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px]">
+                <div className=" stacked-card w-full text-[#cacaca] text-center  max-md:py-[5vw] max-sm:py-[2.5vw] h-[11vh] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw]  flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px]">
                   30 days or less for AI, hours for GenAI 
                 </div>
-                <div className="stacked-card w-full text-[#cacaca] text-center h-[10.5vh]  max-sm:py-[2.5vw] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px]">
+                <div className="stacked-card w-full text-[#cacaca] text-center h-[11vh]  max-sm:py-[2.5vw] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[6vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px]">
                   Built-in Compliance (SOC 2, ISO, HIPAA, GDPR compliant) ​
                 </div>
-                <div className="stacked-card w-full text-[#cacaca] text-center h-[10.5vh]  max-sm:py-[2.5vw] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px]">
+                <div className="stacked-card w-full text-[#cacaca] text-center h-[11vh]  max-sm:py-[2.5vw] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw]  flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px]">
                   Unified AI platform, no vendor lock-in  
                 </div>
-                <div className="stacked-card w-full text-[#cacaca] text-center h-[10.5vh]  max-sm:py-[2.5vw] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw] px-[2vw] py-[2.5vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px]">
+                <div className="stacked-card w-full text-[#cacaca] text-center h-[11vh]  max-sm:py-[2.5vw] max-sm:h-[8vh] max-sm:rounded-[4vw]  border border-white/20 rounded-[1.6vw]  px-[2vw] flex items-center justify-center  background-glass-diff max-sm:text-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px]">
                   Pipelines, features, and models are reused intelligently –
                   reducing cost with every use case 
                 </div>

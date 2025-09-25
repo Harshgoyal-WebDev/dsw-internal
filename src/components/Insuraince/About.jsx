@@ -69,14 +69,14 @@ export default function About() {
                 </div>
                  <motion.div
                     style={{ x: image1X, y: image1Y }}
-                    className="absolute w-[40%] max-md:w-[35%] top-[20%] left-[20%] rounded-2xl border border-white/30 overflow-hidden max-sm:w-[50%] max-sm:top-[5%] max-sm:left-[10%]  max-md:left-[10%] fadeup max-md:top-[10%]"
+                    className="absolute w-[42%] max-md:w-[35%] top-[20%] left-[15%] rounded-2xl border border-white/15 overflow-hidden max-sm:w-[50%] max-sm:top-[5%] max-sm:left-[10%]  max-md:left-[10%] fadeup max-md:top-[10%]"
                 >
                     <Image src={"/assets/images/footer/image-1.png"} alt="Image1"  width={348} height={312} loading="lazy"  className="w-full h-full object-cover" />
                 </motion.div>
 
                 <motion.div
           style={{ x: image1X, y: image1Y }}
-          className="absolute  w-[35%] bottom-[18%] left-[45%] rounded-2xl  border border-white/30 overflow-hidden max-sm:w-[50%] max-sm:left-[35%] max-md:left-[52%] fadeup"
+          className="absolute  w-[40%] bottom-[18%] left-[45%] rounded-2xl  overflow-hidden max-sm:w-[50%] max-sm:left-[35%] max-md:left-[52%] fadeup"
         >
                     <Image src={"/assets/images/footer/image-2.png"} alt="Image2"  width={313} height={272} loading="lazy"  className="w-full h-full object-cover" />
                 </motion.div>

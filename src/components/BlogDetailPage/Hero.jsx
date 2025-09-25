@@ -11,6 +11,7 @@ import {
 import { initSplit } from "../splitTextUtils";
 import gsap from "gsap";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 
 export default function Hero({breadcrumbs}) {
@@ -21,7 +22,7 @@ export default function Hero({breadcrumbs}) {
   lineAnim();
   useEffect(() => {
     initSplit();
-
+    
      gsap.fromTo(".breadcrumbsContainer", {
       y: 50,
       opacity: 0,
@@ -43,15 +44,17 @@ export default function Hero({breadcrumbs}) {
       id="blogDetail"
       className="h-screen max-md:h-[40vh] container flex items-center justify-center w-full relative"
     >
-      <div className="absolute inset-0 h-full w-full z-0">
-        <img
+      <div className="absolute inset-0 h-full w-full z-0 imageContainer">
+        <Image
           src="/assets/images/blog-detail/heroBlogDetail.png"
           alt="Blog hero background"
+          height={978}
+          width={1920}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b to-black/20 from-black/90 max-md:from-black/20"></div>
       </div>
-      <h1 className="text-100 headingAnim max-md:hidden relative z-10 text-white text-center">
+      <h1 className="text-100 headingAnim max-md:hidden relative z-10 text-white-200 text-center w-[85%]">
         How Generative AI is Transforming the Insurance Industry
       </h1>
 

@@ -29,7 +29,7 @@ const Brochure = () => {
         </h2>
         <div className="w-full flex justify-center gap-[3vw] fadeup max-md:hidden">
           <TiltedCard
-            containerHeight="40vw"
+            containerHeight="41vw"
             containerWidth="33vw"
             imageHeight="100%"
             imageWidth="100%"
@@ -39,7 +39,7 @@ const Brochure = () => {
             showTooltip={true}
             displayOverlayContent={true}
             overlayContent={
-              <div className="w-full h-full px-[4vw] py-[4vw] flex flex-col justify-between">
+              <div className="w-full h-full px-[4vw] py-[4vw] pb-[5vw] flex flex-col justify-between">
                 <h3 className="text-30 w-[85%] h-fit">
                   25+ proven AI use cases across the policy lifecycle
                 </h3>
@@ -68,7 +68,7 @@ const Brochure = () => {
             }
           />
           <TiltedCard
-            containerHeight="40vw"
+            containerHeight="41vw"
             containerWidth="33vw"
             imageHeight="100%"
             imageWidth="100%"
@@ -78,7 +78,7 @@ const Brochure = () => {
             showTooltip={true}
             displayOverlayContent={true}
             overlayContent={
-              <div className="w-full h-full px-[4vw] py-[4vw] flex flex-col justify-between">
+              <div className="w-full h-full px-[4vw] py-[4vw] pb-[5vw] flex flex-col justify-between">
                 <h3 className="text-30 w-full h-fit">
                   300+ ready-to-deploy GenAI agents trained on insurance data 
                 </h3>

@@ -10,21 +10,21 @@ const BlogCard = ({ title, date, img }) => {
   return (
     <>
       <Link href={"#"}>
-        <div className="rounded-[2vw] max-sm:rounded-3xl fadeup relative group border-[0.25px] border-white/30 h-[56vh] max-sm:h-[52vh] max-md:h-fit  bg-white/5 space-y-[2vw] max-sm:space-y-[8vw] overflow-hidden group cursor-pointer max-sm:pb-0">
-          <div className="w-full h-[69%] max-sm:h-[60%] border-[0.25px] border-white/30 overflow-hidden max-sm:rounded-3xl rounded-[2vw] ">
+        <div className="rounded-[1.8vw] max-sm:rounded-3xl fadeup relative group border-[0.25px] border-white/20 h-[56vh] max-sm:h-[52vh] max-md:h-fit  background-glass space-y-[2vw] max-sm:space-y-[8vw] overflow-hidden group cursor-pointer max-sm:pb-0">
+          <div className="w-full h-[69%] max-sm:h-[60%] overflow-hidden max-sm:rounded-3xl rounded-[1.8vw] ">
             <Image
               src={img}
               width={531}
               height={510}
               alt={title}
-              className="object-cover h-full w-full  rounded-[2vw] max-sm:rounded-3xl  group-hover:scale-[1.05] transition-all duration-500 ease-out max-sm:w-full max-sm:h-full "
+              className="object-cover h-full w-full group-hover:scale-[1.1] duration-700 ease-in-out transition-all max-sm:w-full max-sm:h-full "
             />
           </div>
           <div className="space-y-[1vw] max-sm:space-y-[4vw] px-5 max-md:w-full w-[90%] max-sm:w-[100%]">
-            <p className=" text-white-200 leading-[1.5] max-md:text-[3.2vw] max-sm:text-[6.5vw] font-head text-[1.2vw]">
+            <p className=" text-white-200 font-medium leading-[1.5] max-md:text-[3.2vw] max-sm:text-[6.5vw] font-head text-[1.2vw]">
               {title}
             </p>
-            <p className="text-[1.145vw] font-medium text-[#909090] max-sm:text-[4.5vw]  max-md:text-[2.5vw]">
+            <p className=" font-medium text-white/40">
               {date}
             </p>
           </div>

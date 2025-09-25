@@ -140,10 +140,10 @@ export default function PresentationLayer() {
         className="h-fit flex max-md:flex-col max-md:gap-[3vw] gap-[.8vw] w-full"
       >
         <div ref={AIStudioRef} className="h-full overflow-hidden ">
-          <div className="h-fit p-[1.5vw] text-center w-full bg-gradient-to-r from-white/8 to bg-white/0 border-white/20 rounded-[2vw] max-md:rounded-[4vw] flex flex-col max-md:p-[4vw] items-center gap-[.5vw] border">
+          <div className="h-fit p-[1.5vw] py-[2vw] text-center w-full bg-gradient-to-r from-white/8 to bg-white/0 border-white/20 rounded-[2vw] max-md:rounded-[4vw] flex flex-col max-md:p-[4vw] items-center gap-[1vw] border">
             <div className="w-full h-full">
               <p className="text-[1.5vw] max-md:text-[5.5vw] ">AI Studio</p>
-              <div className="py-[1.8vw] max-md:py-[6vw] border-b relative border-white/20 flex justify-evenly items-center w-full pl-[5vw]">
+              <div className="py-[3vw] max-md:py-[6vw] border-b relative border-white/20 flex justify-evenly items-center w-full pl-[5vw]">
                 <p className=" absolute top-1/2 max-md:left-[-10%] max-md:!text-[4.2vw] left-[-5%] translate-y-[-50%] rotate-[-90deg]">
                   Core Tools
                 </p>
@@ -158,7 +158,7 @@ export default function PresentationLayer() {
                 <p className=" absolute top-1/2 max-md:left-[-10%] max-md:!text-[4.2vw] left-[-5%] translate-y-[-50%] rotate-[-90deg]">
                   Capabilities
                 </p>
-                <div className="flex-row flex-wrap justify-center gap-x-[5vw] gap-[0.5vw] max-md:gap-y-[4vw] flex w-full items-center">
+                <div className="flex-row flex-wrap justify-center gap-x-[5vw] gap-[2vw] max-md:gap-y-[4vw] flex w-full items-center">
                   {capabilities.map((tool, index) => (
                     <ToolItem key={index} tool={tool} />
                   ))}
@@ -169,10 +169,10 @@ export default function PresentationLayer() {
         </div>
 
         <div ref={GenAIStudioRef} className="h-full w-full">
-          <div className="h-fit bg-gradient-to-l from-white/8 to bg-white/0 p-[1.5vw] max-md:p-[4vw] text-center w-full border-white/20 max-md:rounded-[4vw] rounded-[2vw] flex flex-col items-center gap-[.5vw] border">
+          <div className="h-fit bg-gradient-to-l from-white/8 to bg-white/0 p-[1.5vw] py-[2vw] max-md:p-[4vw] text-center w-full border-white/20 max-md:rounded-[4vw] rounded-[2vw] flex flex-col items-center gap-[.5vw] border">
             <div className="w-full h-full">
               <p className="text-[1.5vw] max-md:text-[5.5vw]">Gen AI Studio</p>
-              <div className="py-[1.8vw] max-md:py-[6vw] border-b relative border-white/20 flex justify-between max-md:items-start items-center w-full px-[3vw] max-md:px-0 max-md:pr-[13vw] pr-[5vw]  max-md:gap-[3vw]">
+              <div className="py-[3vw] max-md:py-[6vw] border-b relative border-white/20 flex justify-between max-md:items-start items-center w-full px-[3vw] max-md:px-0 max-md:pr-[13vw] pr-[5vw]  max-md:gap-[3vw]">
                 <p className=" absolute top-1/2 right-[-5%] max-md:right-[-13%] translate-y-[-50%] max-md:!text-[4.2vw] rotate-[90deg]">
                   Core Tools
                 </p>
@@ -188,7 +188,7 @@ export default function PresentationLayer() {
                 <p className=" absolute top-1/2 max-md:!text-[4.2vw] right-[-5%] max-md:right-[-15%] translate-y-[-50%] rotate-[90deg]">
                   Capabilities
                 </p>
-                <div className="flex-row flex-wrap max-md:items-center max-md:justify-center justify-center gap-x-[4vw] max-md:gap-[4vw] gap-[2vw] max-md:gap-y-[5vw] flex w-full max-md:translate-x-[-8%] items-center">
+                <div className="flex-row flex-wrap max-md:items-center max-md:justify-center justify-center gap-x-[4vw] max-md:gap-[4vw] gap-[4vw] max-md:gap-y-[5vw] flex w-full max-md:translate-x-[-8%] items-center">
                   {genAIBottom.map((tool, index) => (
                     <ToolItem key={index} tool={tool} />
                   ))}

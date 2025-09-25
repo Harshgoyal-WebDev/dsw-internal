@@ -50,7 +50,7 @@ const UpcomingWebinars = () => {
     <section className="container" id="announcement">
       <div className="space-y-[7vw]">
         <div className="w-1/2 space-y-[1vw] max-md:w-full max-sm:text-center max-sm:space-y-[7vw] max-md:space-y-[5vw] ">
-          <h2 className=" text-90  headingAnim">Upcoming Webinars & Events</h2>
+          <h2 className=" text-90  headingAnim w-[95%]">Upcoming Webinars & Events</h2>
           <Copy>
             <p className="text-white-300">
               See how DSW is making waves across global tech and AI
@@ -74,7 +74,7 @@ const UpcomingWebinars = () => {
               </div>
               <div className="w-[60%] flex flex-col gap-[2vw] mt-[1vw] max-md:w-full max-sm:gap-[7vw] max-md:gap-[5vw]">
                 <Copy>
-                  <h3 className="text-30 text-white-300">{mainAnnouncement.title}</h3>
+                  <h3 className="text-30 text-white-200">{mainAnnouncement.title}</h3>
                 </Copy>
                 <Copy>
                   <p className="text-white-300">{mainAnnouncement.description}</p>
@@ -83,15 +83,15 @@ const UpcomingWebinars = () => {
                 <div className="flex gap-[4vw] fadeup max-md:flex-wrap max-md:justify-between max-md:gap-[7vw]">
                   <div className="flex flex-col gap-[0.5vw]">
                     <p className="text-white/40">Format</p>
-                    <p className="text-white-300">{mainAnnouncement.format}</p>
+                    <p className="text-white-200">{mainAnnouncement.format}</p>
                   </div>
                   <div className="flex flex-col gap-[0.5vw]">
                     <p className="text-white/40">Webinar Date</p>
-                    <p className="text-white-300">{mainAnnouncement.date}</p>
+                    <p className="text-white-200">{mainAnnouncement.date}</p>
                   </div>
                   <div className="flex flex-col gap-[0.5vw]">
                     <p className="text-white/40">Author</p>
-                    <p className="text-white-300">{mainAnnouncement.author}</p>
+                    <p className="text-white-200">{mainAnnouncement.author}</p>
                   </div>
                 </div>
 
@@ -126,12 +126,14 @@ const UpcomingWebinars = () => {
                       height={300}
                     />
                   </div>
-                  <h3 className="text-30">{item.title}</h3>
+                  <h3 className="text-30 text-white-200">{item.title}</h3>
                   <div className="w-full flex justify-between">
-                    <p>{item.type}</p>
-                    <p>{item.date}</p>
+                    <p className="text-[1.05vw] text-white-200 max-md:text-[2.5vw] max-sm:text-[4vw]">{item.type}</p>
+                    <p className="text-[1.05vw] text-white-200 max-md:text-[2.5vw] max-sm:text-[4vw]"> {item.date}</p>
                   </div>
-                  <LinkButton text={"Read More"} href={item.href} />
+                  <div className="pt-[1vw]">
+                  <LinkButton text={"Register Now"} href={item.href} />
+                  </div>
                 </div>
               ))}
             </div>

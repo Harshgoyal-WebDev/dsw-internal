@@ -70,7 +70,7 @@ const Annoucements = () => {
             </div>
             <div className="w-[60%] flex flex-col gap-[2.5vw] mt-[1vw] max-md:w-full max-md:gap-[5vw]">
               <Copy>
-                <h3 className="text-30">{mainAnnouncement.title}</h3>
+                <h3 className="text-30 text-white-200">{mainAnnouncement.title}</h3>
               </Copy>
               <Copy>
                 <p className="text-white-300">{mainAnnouncement.description}</p>
@@ -79,15 +79,15 @@ const Annoucements = () => {
               <div className="flex gap-[4vw] fadeup max-md:flex-wrap max-md:gap-[7vw] max-md:justify-between">
                 <div className="flex flex-col gap-[0.5vw]">
                   <p className="text-white/40">Category</p>
-                  <p>{mainAnnouncement.category}</p>
+                  <p className="text-white-200">{mainAnnouncement.category}</p>
                 </div>
                 <div className="flex flex-col gap-[0.5vw]">
                   <p className="text-white/40">Publication Date</p>
-                  <p>{mainAnnouncement.date}</p>
+                  <p className="text-white-200">{mainAnnouncement.date}</p>
                 </div>
                 <div className="flex flex-col gap-[0.5vw]">
                   <p className="text-white/40">Author</p>
-                  <p>{mainAnnouncement.author}</p>
+                  <p className="text-white-200">{mainAnnouncement.author}</p>
                 </div>
               </div>
 
@@ -120,9 +120,11 @@ const Annoucements = () => {
                     height={300}
                   />
                 </div>
-                <h3 className="text-30">{item.title}</h3>
-                <p>{item.date}</p>
+                <h3 className="text-30 text-white-200">{item.title}</h3>
+                <p className="text-[1.05vw] max-md:text-[2.5vw] max-sm:text-[4vw] text-white-200" >{item.date}</p>
+                <div className="pt-[1vw]">
                 <LinkButton text={"Read More"} href={item.href} />
+                </div>
               </div>
             ))}
           </div>

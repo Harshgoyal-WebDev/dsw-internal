@@ -61,7 +61,7 @@ const VideoListing = ({margin}) => {
   return (
     <>
       <section
-        className={`container relative z-[20]  max-sm:mt-0 ${margin ? "mt-[-10vh]":"mt-0"}`}
+        className={`container relative z-[20]  max-sm:mt-0 ${margin ? "mt-[-20vh]":"mt-0"}`}
         id="video-listing"
       >
         <div className="w-full h-full flex flex-wrap justify-between gap-y-[7vw] max-sm:gap-y-[20vw] max-md:gap-y-[15vw]">
@@ -88,7 +88,7 @@ const VideoListing = ({margin}) => {
                   height={400}
                 />
                 <div className="w-full h-full absolute bg-gradient-to-t from-black/80 via-transparent to-transparent z-[2] inset-0 flex justify-between items-end p-[2vw] max-sm:p-[5vw]">
-                  <div className="w-[4vw] h-auto max-sm:w-[12vw] max-md:w-[10vw]">
+                  <div className="w-[3.5vw] h-auto max-sm:w-[12vw] max-md:w-[10vw]">
                     <Image
                       alt="play-icon"
                       className="group-hover:scale-[0.9] duration-700 ease-in-out w-full h-full"
@@ -97,14 +97,14 @@ const VideoListing = ({margin}) => {
                       src={"/assets/icons/play-icon.svg"}
                     />
                   </div>
-                  <p className="text-white">{video.duration}</p>
+                  <p className="text-white-200">{video.duration}</p>
                 </div>
               </div>
               <Copy>
-                <h3 className="text-30 mt-[1vw] max-sm:pl-[1vw]">{video.title}</h3>
+                <h3 className="text-30 mt-[1vw] max-sm:pl-[1vw] text-white-200">{video.title}</h3>
               </Copy>
               <Copy>
-                <p className="max-sm:pl-[1vw]">{video.description}</p>
+                <p className="max-sm:pl-[1vw] text-white-300">{video.description}</p>
               </Copy>
             </div>
           ))}
@@ -188,7 +188,7 @@ const videos = [
   {
     image: "/assets/images/product-videos/genai-production.png",
     alt: "genai-production",
-    duration: "3 min",
+    duration: "2 min",
     title: "How Insurers Are Using GenAI in Production",
     description:
       "Real-world examples of how leading insurance companies are using DSW’s GenAI capabilities for claims automation, fraud detection, and policy personalization—deployed in as little as 2–4 hours.",
@@ -198,7 +198,7 @@ const videos = [
   {
     image: "/assets/images/product-videos/ai-complexity.png",
     alt: "ai-complexity",
-    duration: "3 min",
+    duration: "2.30 min",
     title: "AI Without Complexity – A Message from Our CTO",
     description:
       "Hear directly from DSW’s CTO as they break down the vision behind UnifyAI and explain how the platform brings speed, security, and simplicity to enterprise AI adoption.",
@@ -208,7 +208,7 @@ const videos = [
   {
     image: "/assets/images/product-videos/securing-ai.png",
     alt: "securing-ai",
-    duration: "3 min",
+    duration: "2 min",
     title: "Securing AI: How We Achieved SOC 2 & ISO 27001",
     description:
       "An animated explainer of the security and compliance features built into UnifyAI—including encryption, audit trails, model explainability, and adherence to SOC 2, ISO 27001, GDPR, and HIPAA standards.",
@@ -228,7 +228,7 @@ const videos = [
   {
     image: "/assets/images/product-videos/unify-video-6.png",
     alt: "unify-video-6",
-    duration: "3 min",
+    duration: "2.30 min",
     title: "AI Without Complexity – A Message from Our CTO",
     description:
       "Hear directly from DSW’s CTO as they break down the vision behind UnifyAI and explain how the platform brings speed, security, and simplicity to enterprise AI adoption.",

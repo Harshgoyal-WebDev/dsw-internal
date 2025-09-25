@@ -6,7 +6,6 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import Copy from "../Animations/Copy";
 import { NextButton, PreviousButton } from "../Button/SliderButtons";
 import Link from "next/link";
 
@@ -52,11 +51,11 @@ export default function Experts({heading}) {
           <NextButton onClick={handleNext} />
         </div>
       </div>
-      <div className="h-fit flex items-center justify-center  w-full max-sm:mt-10 max-md:my-[10vw]">
+      <div className="h-fit flex items-center justify-start  w-full max-sm:mt-10 max-md:my-[10vw]">
         <Swiper
           ref={swiperRef}
           modules={[Navigation]}
-          spaceBetween={35}
+          // spaceBetween={35}
           // centeredSlides={true}
           freeMode={true}
           // slidesPerView={4}
@@ -75,7 +74,7 @@ export default function Experts({heading}) {
             },
             1025: {
               slidesPerView: 4,
-              spaceBetween: 50,
+              spaceBetween: 20,
               centeredSlides: true,
             },
           }}

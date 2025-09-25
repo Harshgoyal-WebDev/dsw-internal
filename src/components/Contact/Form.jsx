@@ -6,7 +6,7 @@ import { SOCIAL_LINKS } from "@/constants/siteConfig";
 
 const Form = () => {
   return (
-    <section className="w-screen h-full overflow-hidden relative z-[10]">
+    <section className="w-screen h-full overflow-hidden relative z-[10] mt-[-20vh] max-md:mt-0">
       <div className="h-full w-full flex items-start justify-between  container max-sm:flex-col max-md:flex-col max-sm:gap-[8vw] max-md:gap-[10vw] max-sm:px-[5.5vw] max-md:px-[4vw]">
         <div className="w-[52%] h-full  max-sm:w-full max-md:w-[100%] space-y-[1.5vw] max-md:space-y-[3vw] max-sm:space-y-[4.5vw] flex flex-col justify-between gap-[6.5vw]">
           <div className="h-[35%]  space-y-[1.5vw] max-md:space-y-[5vw]">
@@ -28,21 +28,39 @@ const Form = () => {
           <div className="h-[40%] max-md:hidden flex flex-col justify-between  gap-[3vw]">
             <div className="space-y-[0.3vw] text-head text-white-300 font-normal fadeup">
               <p>Phone:</p>
-
-              <p className=" cursor-pointer link-line">+353894015233</p>
-              <p className=" cursor-pointer link-line">+919664056847</p>
+                <div  className="under-multi-parent">
+            <a 
+              href={`tel:+353894015233`} 
+              className="under-multi content-p hover:text-white transition-colors duration-300"
+            >
+              +353894015233
+            </a>
+          </div>
+          <div  className="under-multi-parent">
+            <a 
+              href={`tel:+919664056847`} 
+              className="under-multi  "
+            >
+              +919664056847
+            </a>
+          </div>
             </div>
 
             <div className="text-white-300 space-y-[0.3vw] fadeup">
               <p>E-mail:</p>
-<a href="mailto:contact@datasciencewizards.ai" terget="_blank">
-              <p className=" cursor-pointer link-line">contact@datasciencewizards.ai</p>
-              </a>
+              <div className="under-multi-parent">
+            <a 
+              href={`mailto:contact@datasciencewizards.ai`} 
+              className="under-multi "
+            >
+             contact@datasciencewizards.ai
+            </a>
+          </div>
             </div>
 
             <div className="text-white-300 space-y-[0.8vw] fadeup">
                 <p>Socials:</p>
-              <ul className="flex gap-4 max-md:items-center max-md:justify-center max-md:mt-[15vw]">
+              <ul className="flex gap-3 max-md:items-center max-md:justify-center max-md:mt-[15vw]">
                 {SOCIAL_LINKS.map((link) => (
                   <li key={link.id} className="group">
                     <SocialLink
@@ -80,7 +98,7 @@ const Form = () => {
 
             <div className="text-white-300 space-y-[0.8vw]">
                 <p>Socials:</p>
-              <ul className="flex gap-4 max-md:items-center max-md:justify-center max-md:mt-[5vw]">
+              <ul className="flex gap-0 max-md:items-center max-md:justify-center max-md:mt-[5vw]">
                 {SOCIAL_LINKS.map((link) => (
                   <li key={link.id} className="group">
                     <SocialLink

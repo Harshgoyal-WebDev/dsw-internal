@@ -23,7 +23,7 @@ export default function Home() {
 
   return (
     <>
-      <Loader />
+      {/* <Loader /> */}
       <Layout>
         <Hero heroData={heroData}/>
         <TurbochargeG />

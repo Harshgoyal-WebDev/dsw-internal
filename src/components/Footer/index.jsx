@@ -59,7 +59,7 @@ const Footer = () => {
                             <div className="flex flex-col justify-between w-3/5 max-md:w-full">
                                 <Newsletter />
                                 {/* Social Media Links */}
-                                <ul className="flex gap-4 max-md:items-center max-md:justify-center max-md:mt-[10vw] max-sm:mt-[15vw]">
+                                <ul className="flex gap-3 max-md:items-center max-md:justify-center max-md:mt-[10vw] max-sm:mt-[15vw]">
                                     {SOCIAL_LINKS.map((link) => (
                                         <li key={link.id} className="group">
                                             <SocialLink

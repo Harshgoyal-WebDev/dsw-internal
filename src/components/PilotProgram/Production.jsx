@@ -61,7 +61,7 @@ const ProductionCard = ({ className, title, para }) => {
     }
     
     // Desktop behavior
-    gsap.set(paraElement, { y: 30, opacity: 0 });
+    gsap.set(paraElement, { y: 0, opacity: 0 });
     gsap.set(gradient, { opacity: 0 });
 
     let isHovered = false;
@@ -93,7 +93,7 @@ const ProductionCard = ({ className, title, para }) => {
         opacity: 1,
         duration: 0.5,
         ease: "power3.out",
-        delay: 0.3
+        delay: 0.5
       });
     };
 
@@ -112,12 +112,13 @@ const ProductionCard = ({ className, title, para }) => {
           
           gsap.to(titleElement, { 
             y: 0, 
-            duration: 0.8, 
+            duration: 1.2, 
+            delay:0.2,
             ease: "power3.out" 
           });
           
           gsap.to(paraElement, {
-            y: 30,
+            y: 0,
             opacity: 0,
             duration: 0.5,
             ease: "power3.out",
@@ -185,8 +186,6 @@ const ProductionCard = ({ className, title, para }) => {
 
 const Production = () => {
     const containerRef = useRef(null);
-
-    
 useGSAP(()=>{
 
       const div1 = containerRef.current.querySelectorAll(".production-card-left");

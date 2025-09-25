@@ -97,7 +97,7 @@ const Tour = ({heading,para}) => {
         </div>
 
         {/* Content Containers */}
-        <div className="w-[80%] h-[30vw] relative fadeup mt-[5vw] max-sm:w-full max-sm:h-[60vw] max-md:h-[40vw] max-md:w-full max-sm:mt-[12vw]">
+        <div className="w-[80%] h-[22vw] relative fadeup mt-[5vw] max-sm:w-full max-sm:h-[60vw] max-md:h-[40vw] max-md:w-full max-sm:mt-[12vw]">
           <AnimatePresence mode="wait">
            
             {activeTab === "aiStudio" && (
@@ -140,7 +140,7 @@ const Tour = ({heading,para}) => {
                   transition={{ delay: 0.2, duration: 0.3 }}
                 >
                   <PrimaryButton
-                    text={"Experience AI Studio"}
+                    text={"See it, to believe it! "}
                     className=""
                     href={"/ai-studio"}
                   />

@@ -18,7 +18,7 @@ const page = () => {
         <Outcomes outcomesData={outcomesData}/>
         <Empower heading="Ready to Empower Your Team with Practical AI Skills?" para="Fill out the form" width={"w-[90%]"}/>
         <Faqs />
-        <FooterCTA footerCTAData={footerCTAData}/>
+        <FooterCTA footerCTAData={footerCTAData} width={"w-[95%]"}/>
     </Layout>
     </>
   )

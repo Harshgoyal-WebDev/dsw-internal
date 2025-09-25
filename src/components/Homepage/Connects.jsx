@@ -73,7 +73,7 @@ const Connects = () => {
       className="h-screen w-screen relative overflow-hidden  max-md:h-full container"
     >
       <div className="w-full h-full flex flex-col items-center justify-center relative z-[2]">
-        <div className="w-full flex items-center justify-center gap-20 py-20 max-md:flex-col max-sm:gap-[20vw] max-md:gap-[20vw]">
+        <div className="w-full flex items-center justify-center gap-25 py-20 max-md:flex-col max-sm:gap-[20vw] max-md:gap-[20vw]">
           <div>
             <Image
               src="/assets/icons/azure-logo.svg"
@@ -117,7 +117,7 @@ const Connects = () => {
               height={65}
               width={150}
               alt="unify-logo"
-              className="fadein"
+              className="fadein scale-[0.9]"
             />
           </div>
 

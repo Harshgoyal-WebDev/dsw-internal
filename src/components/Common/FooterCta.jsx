@@ -7,7 +7,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Copy from "../Animations/Copy";
 
-const FooterCTA = ({ footerCTAData }) => {
+const FooterCTA = ({ footerCTAData , width, paraWidth}) => {
   const containerRef = useRef(null);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -68,12 +68,12 @@ const FooterCTA = ({ footerCTAData }) => {
       className="flex items-center justify-between h-[80vh] w-screen overflow-hidden max-md:flex-col-reverse  max-md:h-full container "
       id="footer-cta"
     >
-      <div className="w-[45%] max-md:!w-full max-md:text-center max-sm:mt-[5vw]">
-        <h2 className="text-90 font-head mb-[2vw] headingAnim text-white-200 max-sm:mb-[7vw]">
+      <div className="w-[48%] max-md:!w-full max-md:text-center max-sm:mt-[5vw]">
+        <h2 className={` ${width} text-90 font-head mb-[2vw] headingAnim text-white-200 max-sm:mb-[7vw] max-md:w-full`}>
           {footerCTAData.heading}
         </h2>
         <Copy>
-          <p data-para-anim className="text-[#CACACA]  mb-12">
+          <p data-para-anim className={`text-[#CACACA] mb-12 ${paraWidth ? paraWidth : "w-full"}`}>
             {footerCTAData.para}
           </p>
         </Copy>

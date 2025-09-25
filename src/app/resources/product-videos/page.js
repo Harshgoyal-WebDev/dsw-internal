@@ -9,8 +9,8 @@ const Page = () => {
     <>
       <Layout>
         <Hero heroData={heroData} breadcrumbs={true}/>
-        <VideoListing/>
-        <FooterCTA footerCTAData={footerCTAData} />
+        <VideoListing margin={true}/>
+        <FooterCTA footerCTAData={footerCTAData} paraWidth={"w-[75%]"} />
       </Layout>
     </>
   );

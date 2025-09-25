@@ -45,7 +45,7 @@ const Workshops = () => {
               key={index}
               className="w-[47.5%] h-fit flex flex-col gap-[1.3vw] fadeup max-md:w-full max-md:gap-[3vw] max-sm:gap-[7vw] "
             >
-              <div className="w-full h-[24vw] rounded-[2.5vw] overflow-hidden group max-md:h-[35vh] max-sm:h-[27vh] max-md:rounded-[4.5vw] max-md:border max-md:border-white/20">
+              <div className="w-full h-[24vw] rounded-[1.8vw] overflow-hidden group max-md:h-[35vh] max-sm:h-[27vh] max-md:rounded-[4.5vw] max-md:border max-md:border-white/20">
                 <Image
                   src={item.image}
                   alt={item.alt}

@@ -259,37 +259,6 @@ export default function ContactForm() {
                 )}
               />
 
-              <div className="w-full flex gap-[1vw] justify-start mobile:justify-start mobile:items-start mobile:gap-3 tablet:block tablet:w-4/5 ">
-                <FormField
-                  control={control}
-                  name="terms"
-                  render={({ field }) => (
-                    <FormItem className="">
-                      <div className="flex items-center justify-center max-md:gap-[5vw] max-sm:gap-3 gap-3 tablet:gap-1 pl-[0.5vw]">
-                        <Checkbox
-                          aria-label="checkbox"
-                          checked={field.value}
-                          onCheckedChange={field.onChange}
-                          className="mobile:mt-[2vw] max-md:scale-[1.5] max-sm:scale-[1] tablet:mt-[2vw] cursor-pointer max-md:rounded-[0.5vw]"
-                        />
-                        <label className="text-[1.15vw] mt-2   text-[#CACACA] max-md:text-[3.5vw] max-md:mt-5">
-                          I agree to{" "}
-                          <a href="/" className="border-b border-[#CACACA]">
-                            Privacy Policy{" "}
-                          </a>{" "}
-                          and{" "}
-                          <a href="/" className="border-b border-[#CACACA]">
-                            Terms and Conditions
-                          </a>
-                          .
-                        </label>
-                      </div>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </div>
-
               <Button
                 // type="submit"
                 aria-label="submit form"

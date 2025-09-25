@@ -67,7 +67,7 @@ export function WorldMap() {
     <div className="relative w-full aspect-[2/1] rounded-lg max-sm:p-0 ">
       {/* Background static map image */}
       <img
-        src="/assets/images/contact/location-map.png"
+        src="/assets/images/contact/contact-map.png"
         className="h-auto w-[90%] max-sm:w-[100%] mx-auto absolute inset-0  object-contain pointer-events-none select-none opacity-80"
         alt="world map"
         draggable={false}

@@ -10,7 +10,7 @@ const Card = ({ srcc, content, isActive, onHover }) => {
   return (
     <div
       onMouseEnter={onHover}
-      className="card relative border border-[#88888880] h-[40vh] cursor-pointer w-[20vw] rounded-[2vw] py-[2vw] px-[2vw] overflow-hidden group"
+      className="card relative border border-[#88888880] h-[40vh] cursor-pointer w-[21vw] rounded-[2vw] py-[2vw] px-[2vw] overflow-hidden group"
     >
       <div className="absolute inset-0 background-glass transition-opacity duration-500" />
 

@@ -80,7 +80,7 @@ const Capabilities = () => {
           <div className="">
             <div className="flex flex-col gap-[4.5vw] pt-[4vw]">
               {capabilities.map((cap) => (
-                <div key={cap.id} className="relative group ">
+                <div key={cap.id} className="relative group pb-[2vw]">
                   <div className="w-full h-[1px]  bg-[#59595980] absolute top-[-40%] mb-[2vw] lineDraw" />
 
                   <div className="flex items-start fadeup justify-start gap-[5vw]">

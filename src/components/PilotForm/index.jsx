@@ -112,7 +112,7 @@ export default function PilotForm() {
                         placeholder="Name*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw] bg-white/5 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw] max-md:pl-[5vw]"
+                        className="placeholder:text-[1.15vw] pl-[2vw] bg-white/5 border !border-white/20 rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw] max-md:pl-[5vw]"
                       />
                     </FormControl>
                     <FormMessage />
@@ -133,7 +133,7 @@ export default function PilotForm() {
                         placeholder="Business Email*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/5 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw] max-md:pl-[5vw]"
+                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/5 border !border-white/20 rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw] max-md:pl-[5vw]"
                       />
                     </FormControl>
                     <FormMessage />
@@ -153,7 +153,7 @@ export default function PilotForm() {
                         placeholder="Designation*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/5 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw] max-md:pl-[5vw]"
+                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/5 border !border-white/20 rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw] max-md:pl-[5vw]"
                       />
                     </FormControl>
                     <FormMessage />
@@ -174,7 +174,7 @@ export default function PilotForm() {
                         placeholder="Company Name*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/5  border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw] max-md:pl-[5vw]"
+                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/5  border !border-white/20 rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw] max-md:pl-[5vw]"
                       />
                     </FormControl>
                     <FormMessage />
@@ -217,7 +217,7 @@ export default function PilotForm() {
                         placeholder="Message"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw] pt-[1vw]  bg-white/5 border !border-[#B0B0B080] rounded-[2vw] placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw]  max-md:pl-[5vw] max-sm:pt-[3vw] max-md:rounded-[5vw] max-md:pt-[2vw]"
+                        className="placeholder:text-[1.15vw] pl-[2vw] pt-[1vw]  bg-white/5 border !border-white/20 rounded-[2vw] placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw]  max-md:pl-[5vw] max-sm:pt-[3vw] max-md:rounded-[5vw] max-md:pt-[2vw]"
                       />
                     </FormControl>
                     <FormMessage />
@@ -240,11 +240,11 @@ export default function PilotForm() {
                         />
                         <label className="text-[1.15vw] mt-2   text-[#CACACA] max-md:text-[3.5vw] max-md:mt-5">
                           I agree to{" "}
-                          <a href="/" className="border-b border-[#CACACA]">
+                          <a href="/" className="border-b border-white/40">
                             Privacy Policy{" "}
                           </a>{" "}
                           and{" "}
-                          <a href="/" className="border-b border-[#CACACA]">
+                          <a href="/" className="border-b border-white/40">
                             Terms and Conditions
                           </a>
                           .

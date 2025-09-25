@@ -83,7 +83,7 @@ export default function About() {
     <section className="w-screen container mt-[-5%] max-md:mt-0 relative z-[10]" id="about" >
       <div className="w-full flex flex-col items-center justify-center gap-y-[10vw] max-md:gap-y-[15vw]">
         <SectionBreak text={" At Data Science Wizards (DSW), we believe that AI should be accessible, scalable, and enterprise-ready—not locked behind complexity. That’s why we built UnifyAI, a next-generation platform that simplifies the entire AI lifecycle for businesses across industries."} span={true}/>
-        <div className="flex flex-col items-end gap-[5vw] max-md:w-full max-md:gap-[10vw] max-sm:gap-[15vw] max-md:items-start max-md:mt-[10vw]">
+        <div className="flex flex-col items-end gap-[7vw] max-md:w-full max-md:gap-[10vw] max-sm:gap-[15vw] max-md:items-start max-md:mt-[10vw]">
           {POINTS.map(({ id, text, width, title }) => (
             <div
               key={id}

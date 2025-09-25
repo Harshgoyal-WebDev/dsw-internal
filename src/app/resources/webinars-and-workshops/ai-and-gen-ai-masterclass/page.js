@@ -20,7 +20,7 @@ const page = () => {
         <Outcomes outcomesData={outcomesData}/>
         <Empower heading="First Come First Basis - Limited Seats!" para="Sign-up for this No-fees Workshop | All participants earn AI Masterclass Completion Certificate." width={"w-[70%] max-md:w-[80%] max-sm:w-full"}/>
         <Faqs />
-        <FooterCTA footerCTAData={footerCTAData}/>
+        <FooterCTA footerCTAData={footerCTAData} width={"w-[95%]"}/>
     </Layout>
     </>
   )

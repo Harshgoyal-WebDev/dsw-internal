@@ -103,6 +103,7 @@ const Blogs = () => {
             slidesPerView={2}
             className="mySwiper swiper-container"
             onSwiper={(swiper) => (swiperRef.current = swiper)}
+            freeMode={true}
             spaceBetween={50}
             speed={1000}
             breakpoints={{
@@ -116,16 +117,16 @@ const Blogs = () => {
               },
               1024: {
                 slidesPerView: 2,
-                spaceBetween: 40,
+                spaceBetween: 15,
               },
               1440: {
                 slidesPerView: 1.8,
-                spaceBetween: 50,
+                spaceBetween: 15,
               },
             }}
           >
             {BlogsData.map((blog) => (
-              <SwiperSlide className="w-[26vw] max-md:w-[50vw] h-full pr-1 max-sm:w-full">
+              <SwiperSlide className="w-[28vw] max-md:w-[50vw] h-full pr-1 max-sm:w-full">
                 <BlogCard
                   key={blog.id}
                   title={blog.title}

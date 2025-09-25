@@ -26,7 +26,8 @@ const heroData= {
   para:"Whether you're ready to launch your next AI initiative or just exploring possibilities—let’s talk.​",
   paraClass:"",
   homepage:false,
-  hidebtn:true
+  hidebtn:true,
+  headingWidth:"w-[50%]"
 }
 
 const footerCTAData={
