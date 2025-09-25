@@ -24,8 +24,8 @@ const SectionBreak = ({text, span,textAlign,width}) => {
               .timeline({
                 scrollTrigger: {
                   trigger: sectionRef.current,
-                  start: "top center",
-                  end: "center center",
+                  start: "top 90%",
+                  end: "center 30%",
                   scrub: 0.25,
                   // markers:true
                 },
@@ -42,8 +42,8 @@ const SectionBreak = ({text, span,textAlign,width}) => {
               .timeline({
                 scrollTrigger: {
                   trigger: sectionRef.current,
-                  start: "top center",
-                  end: "center center",
+                  start: "top 70%",
+                  end: "center 30%",
                   scrub: 0.25,
                 },
               })
@@ -77,7 +77,7 @@ const SectionBreak = ({text, span,textAlign,width}) => {
     
   return (
 <>
- <section className="w-full flex justify-center" id="section-break"  ref={sectionRef}>
+ <section className="w-full h-fit flex justify-center" id="section-break"  ref={sectionRef}>
       <div className={` flex flex-col items-start justify-start gap-y-[10vw] max-sm:gap-y-[15vw] ${width?width:"w-full"}`}>
         <div className="split__wrapper  space-y-[2vw] max-sm:space-y-[5vw]">
          

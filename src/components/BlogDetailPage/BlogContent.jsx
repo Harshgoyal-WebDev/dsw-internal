@@ -53,32 +53,39 @@ export default function BlogContent() {
       id="content"
       className="h-fit relative max-md:flex-col bg-[#FEFEFE] container flex w-full"
     >
-     
-        <h1 className="text-100 headingAnim max-md:flex hidden relative z-10 text-background">
-          How Generative AI is Transforming the Insurance Industry
-        </h1>
-    
-      <div className="h-fit absolute max-md:relative max-md:py-[15vw] max-md:w-full w-fit">
+      <h1 className="text-100 headingAnim max-md:flex hidden relative z-10 text-background">
+        How Generative AI is Transforming the Insurance Industry
+      </h1>
+
+      <div className="h-fit absolute max-md:relative max-md:py-[15vw] max-md:w-full w-fit blog-info">
         <div className="flex flex-wrap items-center max-md:items-start max-md:justify-between max-md:flex-row-reverse gap-y-[2.5vw]">
           {stickyTop.map((item, index) => (
             <div
               key={index}
               className="text-[1.05vw] max-md:text-[4vw]  space-y-[.8vw] w-[50%] max-md:w-[40%]"
             >
-              <p className="text-background max-md:font-normal font-medium">{item.label}</p>
-              <p className="text-[#626262]">{item.value}</p>
+              <Copy>
+                <p className="text-background max-md:font-normal font-medium">
+                  {item.label}
+                </p>
+              </Copy>
+              <Copy>
+                <p className="text-[#626262]">{item.value}</p>
+              </Copy>
             </div>
           ))}
         </div>
       </div>
       <div className="space-y-[2vw]  sticky top-[15%] mt-[15vw] max-md:hidden h-full w-[55%] pr-[8vw]">
-        <p className="text-[1.05vw]  max-md:text-[4vw] text-background  font-medium">
-          Table of Contents
-        </p>
+        <Copy>
+          <p className="text-[1.05vw]  max-md:text-[4vw] text-background  font-medium">
+            Table of Contents
+          </p>
+        </Copy>
         <div
           data-lenis-prevent
           className="w-fit overflow-y-scroll h-fit max-h-[55vh] max-md:hidden rounded-[2vw] border border-black/10 drop-shadow-lg
-           shadow-background bg-white p-[1vw]"
+           shadow-background bg-white p-[1vw] fadeup"
         >
           <ul className="flex flex-col items-start h-full gap-[1.5vw] list-disc p-[2vw]">
             {tableOfContents.map((item, index) => (
@@ -99,7 +106,7 @@ export default function BlogContent() {
       </div>
       <div className="h-full  w-[100%]  text-background">
         <div id="Introduction" className="w-full border-b h-full">
-          <div className="space-y-[2vw] max-md:space-y-[7vw] pb-[3vw] max-md:pb-[15vw] border-b">
+          <div className="space-y-[2vw] max-md:space-y-[7vw] pb-[3vw] max-md:pb-[15vw] border-b fadeup">
             <h2 className="text-30 font-head">Introduction</h2>
             <div>
               <p>
@@ -117,8 +124,8 @@ export default function BlogContent() {
               </p>
             </div>
           </div>
-          <div className="space-y-[3vw] max-md:py-[15vw] py-[3vw]">
-            <div className="space-y-[2vw] max-md:space-y-[7vw]">
+          <div className="space-y-[3vw] max-md:py-[15vw] py-[3vw] ">
+            <div className="space-y-[2vw] max-md:space-y-[7vw] fadeup">
               <div className="flex items-center max-md:items-start max-md:gap-[3.5vw] gap-[1vw]">
                 <div className="w-[.3vw] h-[.3vw] ml-[1vw] max-md:translate-y-[100%] max-sm:translate-y-[200%] max-md:h-[1.5vw] max-md:w-[1.5vw] max-md:ml-[4vw] bg-background "></div>
                 <h2 className="text-30 font-head">What Is Generative AI?</h2>
@@ -136,7 +143,7 @@ export default function BlogContent() {
                 </p>
               </div>
             </div>
-            <div className="space-y-[2vw] max-md:space-y-[7vw]">
+            <div className="space-y-[2vw] max-md:space-y-[7vw] fadeup">
               <div className="flex items-center max-md:items-start max-md:pt-[5vw] max-md:gap-[3.5vw] gap-[1vw]">
                 <div className="w-[.3vw] h-[.3vw] ml-[1vw] max-sm:translate-y-[200%] max-md:translate-y-[100%] max-md:h-[1.5vw] max-md:w-[1.5vw] max-md:ml-[4vw] bg-background "></div>
                 <h2 className="text-30 font-head">
@@ -225,7 +232,7 @@ export default function BlogContent() {
                 </p>
               </div>
             </div>
-            <div className="h-[50vh] max-md:my-[12vw] max-md:rounded-[5vw] max-md:h-[25vh]  rounded-[1vw] overflow-hidden w-full relative">
+            <div className="h-[50vh] max-md:my-[12vw] max-md:rounded-[5vw] max-md:h-[25vh]  rounded-[1vw] overflow-hidden w-full relative fadeup">
               <Image
                 alt={activeSection}
                 fill
@@ -234,7 +241,7 @@ export default function BlogContent() {
               />
             </div>
 
-            <div className="space-y-[2vw] max-md:space-y-[7vw]">
+            <div className="space-y-[2vw] max-md:space-y-[7vw] fadeup">
               <div className="flex items-center max-md:items-start max-md:gap-[3.5vw] gap-[1vw]">
                 <div className="w-[.3vw] h-[.3vw] ml-[1vw] max-sm:translate-y-[200%] max-md:translate-y-[100%] max-md:h-[1.5vw] max-md:w-[1.5vw] max-md:ml-[4vw] bg-background "></div>
                 <h2 className="text-30 font-head">

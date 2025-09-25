@@ -13,19 +13,21 @@ export default function Journey() {
   const wholeSliderRef = useRef(null);
 
   useGSAP(() => {
-    if (globalThis.innerWidth >= 642 && globalThis.innerWidth <= 1024) {
-      const tl = gsap.timeline({
+
+     const tl = gsap.timeline({
         scrollTrigger: {
           trigger: "#journey",
-          start: "top top",
+          start: "2% top",
           end: "97% bottom",
           scrub: true,
-          markers: true,
+          // markers: true,
         },
         defaults: {
           ease: "none",
         },
       });
+    if (globalThis.innerWidth >= 642 && globalThis.innerWidth <= 1024) {
+      
       tl.fromTo(
         wholeSliderRef.current,
         {
@@ -40,25 +42,14 @@ export default function Journey() {
         ease: "none",
         scrollTrigger: {
           trigger: "#journey",
-          start: "top 30%",
+          start: "top 50%",
           end: "90% bottom",
           scrub: true,
           // markers: true,
         },
       });
     } else if (globalThis.innerWidth < 642) {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: "#journey",
-          start: "top top",
-          end: "97% bottom",
-          scrub: true,
-          // markers: true,
-        },
-        defaults: {
-          ease: "none",
-        },
-      });
+     
       tl.fromTo(
         wholeSliderRef.current,
         {
@@ -80,18 +71,7 @@ export default function Journey() {
         },
       });
     } else {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: "#journey",
-          start: "top 12%",
-          end: "97% bottom",
-          scrub: true,
-          // markers: true,
-        },
-        defaults: {
-          ease: "none",
-        },
-      });
+     
       tl.fromTo(
         wholeSliderRef.current,
         {
@@ -157,9 +137,7 @@ export default function Journey() {
       year,
       startPos,
       endPos,
-      markerOptions = true,
-      triggerPosStart,
-      triggerPosEnd
+      markerOptions = false,
     ) => {
       const timeline = gsap.timeline({
         scrollTrigger: {
@@ -207,35 +185,35 @@ export default function Journey() {
       return timeline;
     };
     if (globalThis.innerWidth < 642) {
-      createYearTimeline("2018", 20, 31, false, 50, 50);
-      createYearTimeline("2019", 28, 38, false, 50, 50);
-      createYearTimeline("2020", 37, 49, false, 50, 50);
-      createYearTimeline("2021", 43, 55, false, 50, 50);
-      createYearTimeline("2022", 52, 62, false, 50, 50);
-      createYearTimeline("2023", 59, 73, false, 50, 50);
-      createYearTimeline("2024", 68, 79, false, 50, 50);
-      createYearTimeline("2025", 75, 86, false, 50, 50);
+      createYearTimeline("2018", 20, 31);
+      createYearTimeline("2019", 28, 38);
+      createYearTimeline("2020", 37, 49);
+      createYearTimeline("2021", 43, 55);
+      createYearTimeline("2022", 52, 62);
+      createYearTimeline("2023", 59, 73);
+      createYearTimeline("2024", 68, 79);
+      createYearTimeline("2025", 75, 86);
     }
     else if(globalThis.innerWidth >= 642 && globalThis.innerWidth <= 1024){
-      createYearTimeline("2018", 20, 31, false, 50, 50);
-      createYearTimeline("2019", 28, 38, false, 50, 50);
-      createYearTimeline("2020", 37, 49, false, 50, 50);
-      createYearTimeline("2021", 43, 55, false, 50, 50);
-      createYearTimeline("2022", 52, 62, false, 50, 50);
-      createYearTimeline("2023", 59, 73, false, 50, 50);
-      createYearTimeline("2024", 68, 79, false, 50, 50);
-      createYearTimeline("2025", 75, 86, false, 50, 50);
+      createYearTimeline("2018", 16, 27);
+      createYearTimeline("2019", 24, 36);
+      createYearTimeline("2020", 32, 44);
+      createYearTimeline("2021", 40, 52);
+      createYearTimeline("2022", 48, 60);
+      createYearTimeline("2023", 56, 68);
+      createYearTimeline("2024", 64, 76);
+      createYearTimeline("2025", 72, 84);
     }
     
     else {
-      createYearTimeline("2018", 14, 31, false, 50, 50);
-      createYearTimeline("2019", 21, 38, false, 50, 50);
-      createYearTimeline("2020", 32, 49, false, 50, 50);
-      createYearTimeline("2021", 38, 55, false, 50, 50);
-      createYearTimeline("2022", 52, 69, false, 50, 50);
-      createYearTimeline("2023", 56, 73, false, 50, 50);
-      createYearTimeline("2024", 71, 88, false, 50, 50);
-      createYearTimeline("2025", 75, 92, false, 50, 50);
+      createYearTimeline("2018", 14, 31);
+      createYearTimeline("2019", 21, 38);
+      createYearTimeline("2020", 32, 49);
+      createYearTimeline("2021", 38, 55);
+      createYearTimeline("2022", 52, 69);
+      createYearTimeline("2023", 56, 73);
+      createYearTimeline("2024", 71, 88);
+      createYearTimeline("2025", 75, 92);
     }
     // Create timelines for all years
 
@@ -261,7 +239,7 @@ export default function Journey() {
           ref={wholeSliderRef}
           className="h-[30vw] max-md:w-[700vw] px-[5vw] max-sm:h-[80vh] max-md:h-[70vh]  flex gap-[5vw] mr-[2vw] items-center max-md:items-start max-sm:w-[700vw] max-md:flex-col w-[300vw] max-sm:px-[7vw] max-md:gap-[2vw]"
         >
-          <div className="h-[100%] max-sm:h-[50vw] max-sm:w-[70vw] max-md:h-[40vh] max-md:w-[12.2%]  journey-img w-[27vw] overflow-hidden rounded-[2vw] fadeup max-sm:rounded-[5vw]">
+          <div className="h-[100%] max-sm:h-[50vw] max-sm:w-[70vw] max-md:h-[40vh] max-md:w-[12.2%]  journey-img w-[27vw] overflow-hidden rounded-[2vw] fadeup max-sm:rounded-[5vw] max-md:rounded-[3vw]">
             <Image
               src={"/assets/images/about/journey.jpg"}
               alt="journey"
@@ -319,7 +297,7 @@ export default function Journey() {
             </div>
 
             <div className="h-1/2 flex items-center justify-start w-full">
-              <div className="w-[34%] pt-[2vw] max-sm:pt-[5vw] h-full">
+              <div className="w-[34%] pt-[2vw] max-sm:pt-[5vw] h-full max-md:pt-[5vw]">
                 <Copy>
                   <p className="text-60 headings w-[100%] font-head">
                     2018-2025

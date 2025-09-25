@@ -25,6 +25,7 @@ const Header = () => {
   const lenis = useLenis();
   const pathname = usePathname();
   const [openMobileMenu, setOpenMobileMenu] = useState(false);
+  const [isHoveringHeader, setIsHoveringHeader] = useState(false);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
@@ -34,19 +35,30 @@ const Header = () => {
   }, [lenis, pathname]);
 
   // Show/hide header on scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        setIsHidden(true);
-      } else {
-        setIsHidden(false);
-      }
-      setLastScrollY(currentScrollY);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+useEffect(() => {
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+
+    // If mouse is over the header, don't hide it.
+    if (isHoveringHeader) {
+      setIsHidden(false);
+      setLastScrollY(currentScrollY); // keep baseline fresh to avoid jump after leaving
+      return;
+    }
+
+    if (currentScrollY > lastScrollY && currentScrollY > 50) {
+      setIsHidden(true);
+    } else {
+      setIsHidden(false);
+    }
+
+    setLastScrollY(currentScrollY);
+  };
+
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  return () => window.removeEventListener("scroll", handleScroll);
+}, [lastScrollY, isHoveringHeader]);
+
 
   // ScrollTrigger bits you already had
   useEffect(() => {
@@ -94,6 +106,8 @@ const Header = () => {
         {/* 🔁 Replaced motion.header with a plain header + GSAP */}
         <header
           ref={headerWrapRef}
+            onMouseEnter={() => setIsHoveringHeader(true)}
+  onMouseLeave={() => setIsHoveringHeader(false)}
           className="text-white w-screen fixed top-0 left-0 z-[900] pointer-events-none opacity-0"
         >
           <div
@@ -117,19 +131,15 @@ const Header = () => {
                       className="relative text-[#E8E8E8] dropdown-links"
                       onMouseEnter={() => {
                         setOpenDropdown(link.id);
-                        if(hasChildren){
-                          lenis.stop()
-                        }
+                        
                       }}
                       onMouseLeave={() => {
                         setOpenDropdown(null);
-                        if(hasChildren){
-                          lenis.start()
-                        }
+                       
                       }}
                     >
                       {/* Top-level link */}
-                      <div className="flex items-center gap-[0.5vw]">
+                      <div className="flex items-center gap-[0.5vw] relative z-[10]">
                         <NavigationLink
                           text={link.text}
                           href={link.href}
@@ -166,7 +176,7 @@ const Header = () => {
                             </div>
 
                             <span
-                              className={`block w-full  absolute left-0 ${
+                              className={`block w-full  absolute left-0 z-[-1] ${
                                 openDropdown === link.id ? "h-[3vw]" : "h-0"
                               } `}
                             />
@@ -184,11 +194,11 @@ const Header = () => {
                           }`}
                           onMouseEnter={() => {
                             setOpenDropdown(link.id);
-                            lenis.stop();
+                        
                           }}
                           onMouseLeave={() => {
                             setOpenDropdown(null);
-                            lenis.start();
+                           
                           }}
                         >
                           <ul className="p-[1.5vw]">
