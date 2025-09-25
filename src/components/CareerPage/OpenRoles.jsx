@@ -26,14 +26,14 @@ export default function CardStack({ allowMultiple = false}) {
 
   return (
     <section
-      className=" w-full  relative ] max-sm:min-h-screen max-md:min-h-screen dark z-[40]  !text-[#E8E8E8] container max-md:hidden"
+      className=" w-full relative z-[40] !text-[#E8E8E8] container max-md:hidden"
       id="cardstack"
     >
-      <div className="flex flex-col items-start gap-[5vw] max-sm:gap-[10vw] max-md:justify-center max-sm:items-start">
+      <div className="flex flex-col items-start gap-[5vw]">
         
          <h2 className="text-90 headingAnim w-[45%]">Open Roles</h2>
         
-        <div className="w-full max-md:w-full max-sm:space-y-[5vw]  max-md:py-[3vw] max-md:space-y-[3vw] relative z-[10]">
+        <div className="w-full relative z-[10]">
           {usecaseData.map((f, i) => (
             <AccordionItem
               key={i}
@@ -54,30 +54,30 @@ export default function CardStack({ allowMultiple = false}) {
 function AccordionItem({ question,features, isOpen, onToggle,index,z}) {
 
   return (
-    <div className={`w-full group  overflow-hidden relative faq-tab fadeupanim accordion-block group fadeup ${z} ${index>0 ? "mt-[-2vw] ":"mt-0"}`}>
+    <div className={`w-full group  overflow-hidden relative faq-tab  accordion-block group  ${z} ${index>0 ? "mt-[-2vw] ":"mt-0"}`}>
       <div className={`w-full mr-auto relative`}>
 
         <div className={`inset-0 w-full relative border rounded-[1.5vw] border-white/10 ${ isOpen ? "bg-gradient-to-r from-light-blue to-dark-blue" :"bg-[#030815]"}  `}>
-          <div className="relative w-full h-full z-10 px-[3vw] max-sm:rounded-[2.5vw] content  duration-300 max-sm:px-0">
+          <div className="relative w-full h-full z-10 px-[3vw] content duration-300 ">
             <button
               onClick={onToggle}
               aria-expanded={isOpen}
-              className="cursor-pointer w-full h-full py-[2.5vw] pt-[3vw] flex items-start justify-between max-sm:pb-[7vw]"
+              className="cursor-pointer w-full h-full py-[2.5vw] pt-[3vw] flex items-start justify-between "
             >
                 <div className="flex items-center gap-[8vw]">
                  <p className="">
                   {`00${index+1}`}
                 </p>
-              <h4 className="text-40  text-left leading-[1.2] max-sm:text-[4.5vw] max-sm:w-[70%] max-md:text-[3vw] max-md:w-[80%] max-sm:leading-[1.5]">
+              <h4 className="text-40  text-left leading-[1.2]">
                 {question}
               </h4>
               </div>
               <div
-                className={` h-auto relative duration-500 max-sm:w-[12vw] rounded-full border-[1.5px]  p-[2vw]  transition-all  ease-out max-sm:p-[6vw] max-md:p-[4vw] max-md:w-[10vw] max-md:h-[10vw] ${ isOpen ? "border bg-white" :" background-glass border-white/20"}  ${
+                className={` h-auto relative duration-500 max-sm:w-[12vw] rounded-full border-[1.5px]  p-[2vw]  transition-all  ease-out  ${ isOpen ? "border bg-white" :" background-glass border-white/20"}  ${
                   !isOpen ? "group-hover:rotate-[180deg]" : "group-hover:rotate-[315deg] rotate-[45deg]"
                 }`}
               >
-                <span className={`w-[1.5vw] rounded-full h-[2px] bg-[#ffffff] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-300 transform-origin-center max-sm:w-[5vw] max-md:w-[3vw] max-md:h-[1.5px] max-sm:h-[1.5px] ${
+                <span className={`w-[1.5vw] rounded-full h-[2px] bg-[#ffffff] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-300 transform-origin-center  ${
                     isOpen ? "rotate-90" : "rotate-90"
                   } ${
                     isOpen ? "bg-black" : "bg-white"
@@ -85,7 +85,7 @@ function AccordionItem({ question,features, isOpen, onToggle,index,z}) {
 
                 <span
                
-                  className={`w-[1.5vw] rounded-full h-[2px] bg-[#ffffff] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-300 transform-origin-center max-sm:w-[5vw] max-md:w-[3vw] max-sm:h-[1.5px]  ${
+                  className={`w-[1.5vw] rounded-full h-[2px] bg-[#ffffff] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-300 transform-origin-center  ${
                     isOpen ? "bg-black" : "bg-white"
                   }`}
                 ></span>
@@ -106,7 +106,7 @@ function AccordionItem({ question,features, isOpen, onToggle,index,z}) {
                   className="overflow-hidden relative"
                 >
                     <span className="bg-white w-[78%] h-[1px] absolute top-0 left-1/2 translate-x-[-50%]"></span>
-                  <div className="py-[3.5vw] text-[#CACACA] w-[90%] max-sm:pb-[8vw] max-sm:w-[95%] max-sm:text-[4.2vw]">
+                  <div className="py-[3.5vw] text-[#CACACA] w-[90%] ">
                     <ul className="space-y-[1.5vw] ml-[10vw] list-disc">
                         {features.map((item,index)=>(
                             <li key={index} className="flex items-center gap-[0.5vw]">

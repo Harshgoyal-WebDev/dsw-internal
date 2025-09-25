@@ -84,19 +84,6 @@ h4 {
   margin-right: auto;
 }
 
-.title-1 {
-  font-size: 5.2vw;
-  line-height: 1.2;
-}
-.title-2 {
-  font-size: 3.4vw;
-  line-height: 1.2;
-}
-.title-3 {
-  font-size: 2.2vw;
-  line-height: 1.2;
-}
-
 .headingAnim .line .line-internal {
   mask-size: 500% 100%;
   mask-image: linear-gradient(
@@ -427,12 +414,6 @@ h4 {
   margin-left: auto;
   margin-right: auto;
 }
-
-  .title-3 {
-  font-size: 6.5vw;
-  /* line-height: 1.2; */
-}
-
   body {
     font-size: 2.7vw;
     line-height: 1.6;
@@ -444,9 +425,7 @@ h4 {
     margin-right: auto;
   }
 
-  .title-1 {
-    font-size: 9vw;
-  }
+ 
 
   .unifyblock {
     /* initial gradient colors */
@@ -508,16 +487,6 @@ h4 {
     --text-50: 7.5vw;
     --text-40: 7.5vw;
     --text-30: 5vw;
-  }
-
-  .title-1 {
-    font-size: 14vw;
-  }
-  .title-2 {
-    font-size: 9vw;
-  }
-  .title-3 {
-    font-size: 7.5vw;
   }
   body {
     font-size: 4.2vw;

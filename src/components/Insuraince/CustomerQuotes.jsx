@@ -142,7 +142,7 @@ const ExpandablePanels = () => {
                     {panel.description}
                   </p>
                   <div>
-                    <h2 className="title-3 font-display text-start text-primary-2 py-[0.8vw] leading-tight">
+                    <h2 className="text-40 font-display text-start text-primary-2 py-[0.8vw] leading-tight">
                       {panel.name}
                     </h2>
                     <p className="text-start text-white-300">

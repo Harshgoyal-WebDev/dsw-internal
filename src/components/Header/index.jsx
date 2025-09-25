@@ -104,7 +104,7 @@ const Header = () => {
 
             {/* Desktop navigation */}
             <div className="border rounded-full border-white/20 ml-[4vw] max-md:hidden relative">
-              <div className="w-full h-full absolute top-0 left-0 rounded-full bg-black/10 backdrop-blur-md" />
+              <div className="w-full h-full absolute top-0 left-0 rounded-full bg-black/40 backdrop-blur-md" />
 
               <ul className="flex items-center justify-between px-[2.5vw] py-[1.5vw] gap-[3vw] text-[1vw]">
                 {NAVIGATION.map((link) => {

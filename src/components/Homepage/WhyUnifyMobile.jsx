@@ -147,9 +147,6 @@ function Accordion({ title, para, link, isOpen, onToggle }) {
                   </div>
                 </div>
                 <div className="w-full">
-                  {/* <h3 className="capitalize title-2 max-md:text-[5.5vw] text-left ">
-                    {title}
-                  </h3> */}
                 </div>
                 <div className="py-4 space-y-[4vw] ">{para}</div>
                 <div className="w-full mt-[5vw] max-md:mt-[1vw] max-sm:mt-[5vw]">
