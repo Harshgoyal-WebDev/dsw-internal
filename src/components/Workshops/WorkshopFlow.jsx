@@ -93,7 +93,7 @@ const SwiperCard = ({ title, list, duration, onHover, isActive, space }) => {
   return (
     <>
       <div
-        className="relative py-[3vw] max-md:py-[8vw] max-md:px-[8vw] rounded-[2vw] overflow-hidden w-[34vw] px-[3vw] h-[38vw] max-md:min-h-[70vh] max-sm:h-fit max-md:w-full max-md:rounded-[6vw] border border-white/30 group "
+        className="relative py-[3vw] background-glass max-md:py-[8vw] max-md:px-[8vw] rounded-[1.5vw] overflow-hidden w-[34vw] px-[3vw] h-[38vw] max-md:min-h-[70vh] max-sm:h-fit max-md:w-full max-md:rounded-[6vw] border border-white/30 group "
         onMouseEnter={onHover}
       >
         <div
@@ -110,10 +110,10 @@ const SwiperCard = ({ title, list, duration, onHover, isActive, space }) => {
           </div>
 
           <div className="w-full  max-md:space-y-[3vw] py-[2vw] max-sm:mt-[8vw]">
-            <ul className={`list-disc text-white-300  ${space}`}>
+            <ul className={`list-disc text-white-300 pl-[1.5vw] max-md:pl-0 ${space}`}>
               {list.map((item, index) => (
                 <li key={index}>
-                  <span className="!font-medium max-md:w-full max-md:text-[#F1F1F1]">{item.heading} </span>{" "}
+                  <span className="!font-medium max-md:w-full text-white-300">{item.heading} </span>{" "}
                   {item.para}
                 </li>
               ))}

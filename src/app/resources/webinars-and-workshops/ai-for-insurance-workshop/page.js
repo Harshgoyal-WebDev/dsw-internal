@@ -30,6 +30,8 @@ const heroData={
     heading:"Equip Your Team With Real-World AI & GenAI Skills for Insurance",
     para:"The insurance industry is evolving—and AI is no longer optional. Our hands-on workshops are designed specifically for insurers ready to unlock real value from AI, Machine Learning, and Generative AI. Led by enterprise AI experts, these sessions blend strategy, compliance, and implementation—all tailored for insurance workflows.",
     width:"w-[75%]",
+    headingWidth:'w-[75%]',
+    paraClass:'w-[93%]',
     hidebtn: true,
 }
 const featuresData=[
