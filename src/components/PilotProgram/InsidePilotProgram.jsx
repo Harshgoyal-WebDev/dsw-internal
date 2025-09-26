@@ -1,5 +1,6 @@
 import React from 'react'
 import Copy from '../Animations/Copy'
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 const InsidePilotProgram = () => {
   return (
@@ -21,8 +22,18 @@ const InsidePilotProgram = () => {
           </div>
 
           {/* GRID VERSION */}
-          <div className='w-full max-md:w-[200vw] origin-left max-md:mr-[5vw] max-md:mt-[10vw] h-full max-md:overflow-x-scroll max-md:pb-[8vw] flex items-center justify-center '>
-          <div className='h-[40vw] flex-shrink-0  w-[80vw] max-md:translate-x-[0%] max-md:ml-[180vw] max-md:mr-[60vw]  max-md:w-full max-md:h-full fadeup background-glass rounded-[2vw] border border-white/20  py-[3vw] pb-[4vw] px-[3vw] max-md:px-[7vw] max-md:py-[7vw] max-md:rounded-[6vw]'>
+          <div className='w-full max-md:w-[200vw]  origin-left max-md:mr-[5vw] max-md:mt-[10vw] h-full max-md:overflow-x-scroll max-md:pb-[8vw] flex items-center justify-center '>
+          <div className='h-[40vw] flex-shrink-0  w-[80vw] max-md:translate-x-[0%] max-md:ml-[180vw] max-md:mr-[60vw]  max-md:w-full max-md:h-full fadeup background-glass  rounded-[2vw] border border-white/20  py-[3vw] pb-[4vw] px-[3vw] max-md:px-[7vw] max-md:py-[7vw] max-md:rounded-[6vw]'>
+             <GlowingEffect
+          blur={0}
+          borderWidth={5}
+          spread={80}
+          glow={true}
+          disabled={false}
+          proximity={100}
+          inactiveZone={0.01}   
+          className=""
+        />
             <div className="grid grid-cols-[.8fr_1.2fr_1.8fr] border-collpase w-full h-full  border-t-0 border-l-0">
               {/* Header Row */}
               <h3 className="text-50 font-head text-[#F26B0D] font-normal border border-white/10 border-t-0 border-l-0 pb-[1vw] max-md:pb-[4vw] max-md:text-[6vw]">
