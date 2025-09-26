@@ -111,7 +111,7 @@ function AccordionItem({ title, description,features, isOpen, onToggle,index,z})
                   }}
                   exit={{ height: 0, opacity: 0, y: 20 }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
-                  className="overflow-hidden relative"
+                  className="overflow-hidden relative "
                 >
                     <span className="bg-white w-[75%] h-[1px] absolute top-0 left-1/2 translate-x-[-50%]"></span>
                   <div className="py-[3.5vw] text-[#CACACA] w-[90%] pb-[7vw]">
@@ -137,37 +137,37 @@ function AccordionItem({ title, description,features, isOpen, onToggle,index,z})
  const usecaseData = [
     {
       id: "001",
-      title: "AI Studio ",
-      description:"Build, test, deploy, and monitor AI/ML models with lightning speed using accelerated workflows",
+      title: "AI Studio ",
+      description:"Build, test, deploy, and monitor AI/ML models with lightning speed using accelerated workflows: ",
       features: [
-        "Agentic AI drag and drop workflows and framework for task-based orchestration ",
-        "LLM model plug-ins with customizable tools, memory, and prompts ",
-        "Secure integration with internal knowledge bases and APIs ",
-        "Guardrails and governance by design for safe, compliant outputs "
+        "400+ pre-built connectors for seamless data ingestion and transformation ",
+        "Core AI/ML engine with built-in model selection and evaluation ",
+        "Real-time monitoring with performance, drift, and anomaly tracking",
+        "One-click deployment to production environments "
       ],
       z:"z-[100]",
     },
     {
       id: "002",
-      title: "GenAI Studio ",
-      description:"Design, configure, and launch enterprise-grade GenAI agents with ease",
+      title: "GenAI Studio ",
+      description:"Design, configure, and launch enterprise-grade GenAI agents with ease:",
       features: [
-        "Agentic AI drag and drop workflows and framework for task-based orchestration ",
-        "LLM model plug-ins with customizable tools, memory, and prompts ",
-        "Secure integration with internal knowledge bases and APIs ",
-        "Guardrails and governance by design for safe, compliant outputs "
+        "Agentic AI drag and drop workflows and framework for task-based orchestration ",
+        "LLM model plug-ins with customizable tools, memory, and prompts ",
+        "LLM model plug-ins with customizable tools, memory, and prompts", 
+        "Secure integration with internal knowledge bases and APIs ",
+        "Guardrails and governance by design for safe, compliant outputs "
       ],
       z:"z-[200]",
     },
     {
       id: "003",
-      title: "Unified Ops ",
-      description:"One platform. One centralized AI ecosystem. Total control.  ",
+      title: "Unified Ops ",
+      description:"One platform. One centralized AI ecosystem. Total control.",
       features: [
-        "Agentic AI drag and drop workflows and framework for task-based orchestration ",
-        "LLM model plug-ins with customizable tools, memory, and prompts ",
-        "Secure integration with internal knowledge bases and APIs ",
-        "Guardrails and governance by design for safe, compliant outputs "
+        "Centralized observability across models and agents ",
+        "Built-in compliance – ISO 42001, SOC 2, ISO 27001, HIPAA, GDPR",
+        "Full traceability with logs, alerts, and audit trails  ",
       ],
       z:"z-[300]"
     },

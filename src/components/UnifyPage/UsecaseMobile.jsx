@@ -9,42 +9,44 @@ import WhiteButton from "../Button/WhiteButton";
 gsap.registerPlugin(ScrollTrigger);
 
 const usecaseData = [
-  {
-    id: "001",
-    title: "AI Studio",
-    description:
-      "Build, test, deploy, and monitor AI/ML models with lightning speed using accelerated workflows",
-    features: [
-      "Agentic AI drag and drop workflows and framework for task-based orchestration",
-      "Seamless integration with popular AI/ML frameworks and libraries",
-      "Automated model training and hyperparameter optimization",
-      "Real-time monitoring and performance analytics",
-    ],
-  },
-  {
-    id: "002",
-    title: "GenAI Studio ",
-    description:
-      "Design, configure, and launch enterprise-grade GenAI agents with ease",
-    features: [
-      "Agentic AI drag and drop workflows and framework for task-based orchestration",
-      "LLM model plug-ins with customizable tools, memory, and prompts ",
-      "Secure integration with internal knowledge bases and APIs ",
-      "Guardrails and governance by design for safe, compliant outputs ",
-    ],
-  },
-  {
-    id: "003",
-    title: "Unified Ops ",
-    description: "One platform. One centralized AI ecosystem. Total control. ",
-    features: [
-      "Agentic AI drag and drop workflows and framework for task-based orchestration",
-      "Intelligent automation of complex business processes",
-      "Advanced natural language processing capabilities",
-      "Customizable AI agents for specific business domains",
-    ],
-  },
-];
+    {
+      id: "001",
+      title: "AI Studio ",
+      description:"Build, test, deploy, and monitor AI/ML models with lightning speed using accelerated workflows: ",
+      features: [
+        "400+ pre-built connectors for seamless data ingestion and transformation ",
+        "Core AI/ML engine with built-in model selection and evaluation ",
+        "Real-time monitoring with performance, drift, and anomaly tracking",
+        "One-click deployment to production environments "
+      ],
+      z:"z-[100]",
+    },
+    {
+      id: "002",
+      title: "GenAI Studio ",
+      description:"Design, configure, and launch enterprise-grade GenAI agents with ease:",
+      features: [
+        "Agentic AI drag and drop workflows and framework for task-based orchestration ",
+        "LLM model plug-ins with customizable tools, memory, and prompts ",
+        "LLM model plug-ins with customizable tools, memory, and prompts", 
+        "Secure integration with internal knowledge bases and APIs ",
+        "Guardrails and governance by design for safe, compliant outputs "
+      ],
+      z:"z-[200]",
+    },
+    {
+      id: "003",
+      title: "Unified Ops ",
+      description:"One platform. One centralized AI ecosystem. Total control.",
+      features: [
+        "Centralized observability across models and agents ",
+        "Built-in compliance – ISO 42001, SOC 2, ISO 27001, HIPAA, GDPR",
+        "Full traceability with logs, alerts, and audit trails  ",
+      ],
+      z:"z-[300]"
+    },
+   
+  ];
 
 export default function UsecaseMobile({ allowMultiple = false }) {
   const [openIndexes, setOpenIndexes] = useState([0]);

@@ -7,19 +7,19 @@ const panelsData = [
   {
     title: "Mr. Ritesh Rathod",
     name: "Mr. Ritesh Rathod",
-    position: "Senior Data Analyst",
-    company: "Tech Solutions",
+    position: "Chief Strategy and Data Officer ",
+    company: "Canara HSBC Life Insurance",
     description:
-      "Expert in data visualization and business intelligence with extensive experience in transforming complex datasets into actionable insights.",
+      "With DSW's insurance-specific solutions on top of its robust AI platform, we've been able to move use cases into production quickly. ",
     logo: "/assets/icons/insuraince/customer-logo-1.svg",
   },
   {
     title: "Mr. Stefano Bonfa",
     name: "Mr. Stefano Bonfa",
-    position: "Lead Data Engineer",
-    company: "Data Corp",
+    position: "Director",
+    company: "SB Europe ",
     description:
-      "Specialized in building robust data pipelines and implementing machine learning solutions for enterprise-level applications.",
+      "UnifyAI simplified our data-driven approach, enabling easy development of AI-powered use cases. ",
     logo: "/assets/icons/insuraince/customer-logo-1.svg",
   },
   {
@@ -28,16 +28,16 @@ const panelsData = [
     position: "President / Chief Data Scientist",
     company: "CIEK Solutions",
     description:
-      "Great expertise and analytical diligence by DSW UnifyAI in developing an end-to-end data pipeline - making analytical insights available in the form of interactive, advanced dashboards",
+      "Great expertise and analytical diligence by DSW UnifyAI in developing an end-to-end data pipeline - making analytical insights available in the form of interactive, advanced dashboards ",
     logo: "/assets/icons/insuraince/customer-logo-1.svg",
   },
   {
     title: "Mr. Ritesh Tiwari",
     name: "Mr. Ritesh Tiwari",
-    position: "AI Solutions Architect",
-    company: "AI Innovations",
+    position: "Chief Product Officer ",
+    company: "Castler ",
     description:
-      "Pioneer in artificial intelligence and machine learning implementations, focusing on scalable AI solutions for modern businesses.",
+      "With advanced capabilities of its GenAI Studio, Castler's escrow services became smarter, more efficient - enabling faster, secure, scalable solutions for our BFSI clients. ",
     logo: "/assets/icons/insuraince/customer-logo-1.svg",
   },
 ];
