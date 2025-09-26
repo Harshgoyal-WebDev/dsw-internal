@@ -395,6 +395,8 @@ h4 {
   transform: scaleX(1);
 }
 
+
+
 .split__wrapper .split-chars {
   transition: color 0.4s;
   /* color: var(--background); */
