@@ -124,8 +124,8 @@ const AIPilots = () => {
             </Swiper>
           </div>
            <div className=" gap-6 mt-6 max-md:mt-[10vw] max-md:items-center max-md:justify-center hidden max-md:flex">
-                      <PreviousButton onClick={handlePrev} />
-                      <NextButton onClick={handleNext} />
+                      <PreviousButton onClick={handlePrev} isDisabled={activeIndex === 0} />
+                      <NextButton onClick={handleNext} isDisabled={data.length-1 === activeIndex} />
                     </div>
        
         </div>

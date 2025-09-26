@@ -171,8 +171,8 @@ const Ecosystem = () => {
           <div className="hidden max-md:block">
 
           <div className="flex gap-6 mt-6 max-md:mt-[10vw] max-md:items-center max-md:justify-center">
-            <PreviousButton onClick={handlePrev} />
-            <NextButton onClick={handleNext} />
+            <PreviousButton onClick={handlePrev} isDisabled={activeIndex === 0} />
+            <NextButton onClick={handleNext} isDisabled={activeIndex === 3} />
           </div>
           </div>
         </div>

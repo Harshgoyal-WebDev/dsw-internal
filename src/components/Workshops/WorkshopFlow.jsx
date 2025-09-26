@@ -44,8 +44,8 @@ export default function WorkshopFlow({ sessionsData, space }) {
         </h2>
 
         <div className="flex fadeup gap-6 mt-12 max-md:mt-[15vw]  max-md:items-center max-md:justify-center max-md:absolute max-md:top-[85%] max-md:left-[50%] max-md:translate-x-[-50%]">
-          <PreviousButton onClick={handlePrev} />
-          <NextButton onClick={handleNext} />
+          <PreviousButton onClick={handlePrev} isDisabled={activeIndex === 0} />
+          <NextButton onClick={handleNext} isDisabled={sessionsData.length-1 === activeIndex } />
         </div>
       </div>
       <div className="h-fit flex  items-center justify-center  w-full max-md:my-[15vw]">

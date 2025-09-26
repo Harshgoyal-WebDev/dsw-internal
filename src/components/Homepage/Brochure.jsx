@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import TiltedCard from "../Animations/TiltedCard";
 import PrimaryButton from "../Button/PrimaryButton";
 import { NextButton, PreviousButton } from "../Button/SliderButtons";
@@ -10,6 +10,8 @@ import WhiteButton from "../Button/WhiteButton";
 
 const Brochure = () => {
   const swiperRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
   const handleNext = () => {
     if (swiperRef.current) {
       swiperRef.current.slideNext();
@@ -114,6 +116,7 @@ const Brochure = () => {
             className=" !opacity-100 "
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             spaceBetween={50}
+            onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
             speed={1000}
             breakpoints={{
               320: {
@@ -147,8 +150,8 @@ const Brochure = () => {
           </Swiper>
 
           <div className="flex gap-6 mt-6 max-md:mt-[10vw] max-md:items-center max-md:justify-center">
-            <PreviousButton onClick={handlePrev} />
-            <NextButton onClick={handleNext} />
+            <PreviousButton onClick={handlePrev} isDisabled={activeIndex === 0} />
+            <NextButton onClick={handleNext} isDisabled={1===activeIndex} />
           </div>
         </div>
       </div>

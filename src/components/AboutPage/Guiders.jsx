@@ -135,8 +135,8 @@ export default function Guiders({heading}) {
         </Swiper>
       </div>
       <div className=" gap-6 mt-12 max-md:mt-10  max-md:items-center max-sm:mt-2 max-md:justify-center max-md:absolute max-md:top-[90%] max-md:right-[8%] hidden max-md:flex">
-        <PreviousButton onClick={handlePrev} />
-        <NextButton onClick={handleNext} />
+        <PreviousButton onClick={handlePrev}  isDisabled={activeIndex === 0} />
+        <NextButton onClick={handleNext}  isDisabled={GuidersData.length-1 === activeIndex} />
       </div>
     </section>
   );
