@@ -26,7 +26,7 @@ const InsidePilotProgram = () => {
           <div className='h-[40vw] flex-shrink-0  w-[80vw] max-md:translate-x-[0%] max-md:ml-[180vw] max-md:mr-[60vw]  max-md:w-full max-md:h-full fadeup background-glass  rounded-[2vw] border border-white/20  py-[3vw] pb-[4vw] px-[3vw] max-md:px-[7vw] max-md:py-[7vw] max-md:rounded-[6vw]'>
              <GlowingEffect
           blur={0}
-          borderWidth={5}
+          borderWidth={3}
           spread={80}
           glow={true}
           disabled={false}

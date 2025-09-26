@@ -139,7 +139,11 @@ const Hero = ({ heroData, breadcrumbs }) => {
         { opacity: 1, duration: 3, delay: 1.5, ease: "power3.out" }
       );
     gsap.to(".heroPara,.heroHead", { opacity: 1, duration: 0.1 });
-
+gsap.fromTo(
+      ".hero-img",
+      { yPercent: 80, opacity: 0 },
+      { opacity: 1, yPercent: 0, duration: 1, delay: 1.5, ease: "power3.out" }
+    );
     gsap.fromTo(
       ".breadcrumbsContainer",
       { y: 50, opacity: 0 },
@@ -184,6 +188,18 @@ const Hero = ({ heroData, breadcrumbs }) => {
           >
             {heroData.heading}
           </h1>
+          {heroData.img ?
+          <>
+          <div className=" h-auto w-[16vw] mx-auto max-sm:w-[50vw] max-md:w-[28vw] hero-img opacity-0">
+                      <Image
+                        src={heroData.img}
+                        height={46}
+                        width={297}
+                        alt="insuraince"
+                        className="h-full w-full object-cover "
+                      />
+                    </div>
+                    </> :<></>}
 
           <p
             className={`text-[#CACACA] font-head mx-auto overflow-hidden heroPara opacity-0 ${

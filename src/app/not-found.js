@@ -101,9 +101,11 @@ export default function NotFoundPage() {
                 Go back to{" "}
                 <Link
                   href="/"
-                  className="link-line pointer-events-auto pb-[1px]"
+                  className="under-multi-parent w-fit pointer-events-auto pb-[1px]"
                 >
+                  <span className="under-multi">
                   Homepage!!!
+                  </span>
                 </Link>
               </p>
             </Copy>

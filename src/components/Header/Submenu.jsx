@@ -72,7 +72,6 @@ ${
                 <li key={safeKey}>
                   <Link
                     href={child.href}
-                    className="link-line"
                     onClick={() => {
                       setOpenMobileMenu(false);
                       setOpenSection(null);
