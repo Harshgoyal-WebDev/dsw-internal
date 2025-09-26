@@ -13,7 +13,7 @@ const SuccessStories = () => {
         id="success-stories"
         className="h-full  w-screen background-radial container"
       >
-        <div className="w-full h-full">
+        <div className="w-full h-full max-sm:space-y-[15vw]">
           <div className="w-full flex items-end justify-between max-md:flex-col max-md:items-start max-md:gap-[5vw] max-sm:gap-[10vw]">
             <div className="space-y-5 mt-10 w-[35%] max-md:w-full">
               <h2 className="text-60 w-[85%] headingAnim text-[#E8E8E8] max-md:w-[75%]">
@@ -35,7 +35,7 @@ const SuccessStories = () => {
             <LinkCard
               title={"Streamlining Operations with ERP Integration"}
               link={"#"}
-              width={"w-[70%] max-md:w-[80%] max-sm:w-[80%]"}
+              width={"w-[70%] max-md:w-[80%] max-sm:w-[90%]"}
             />
             <ImageCard
               img={"/assets/images/homepage/success-stories/success-img.png"}
@@ -99,7 +99,7 @@ const LinkCard = ({ title, link, width }) => {
           <div className="h-[20vw] group w-full background-glass cursor-pointer pl-[2.5vw] pr-[1.5vw] pb-[2.5vw] pt-[1.5vw] max-sm:h-[55vw] max-md:h-[50vw] max-sm:pl-[5vw]  max-md:px-[5vw] max-md:py-[5vw]  max-sm:pb-[5vw] max-sm:pr-[3vw] max-sm:pt-[3vw] ">
             <div className="h-full w-full flex z-[10] relative">
               <div className={`${width} flex items-end`}>
-                <p className="text-[1.565vw] text-[#E8E8E8] leading-[1.3] !font-display max-md:text-[4vw] max-sm:text-[5.5vw]">
+                <p className="text-30 text-[#E8E8E8] font-head max-sm:text-[6vw]">
                   {title}
                 </p>
               </div>

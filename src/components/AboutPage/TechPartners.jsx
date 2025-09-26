@@ -115,7 +115,7 @@ const TechPartners = () => {
   const shuffled = [...images].sort(() => Math.random() - 0.5);
 
   return (
-    <div className="flex justify-start items-start container max-md:flex-col">
+    <section className="flex justify-start items-start container max-md:flex-col" id="tech-partners">
       <div className="w-[40%] space-y-[2vw] max-md:w-full max-md:space-y-[10vw] max-md:pb-[10vw]">
         <h2 className="text-60 text-white-200  headingAnim w-[80%]">
           Technology Partners
@@ -137,7 +137,7 @@ const TechPartners = () => {
           <Card key={i} startIndex={i} images={images} />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

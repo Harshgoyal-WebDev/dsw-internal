@@ -80,6 +80,7 @@ const FooterCTA = ({ footerCTAData , width, paraWidth}) => {
         <div className="flex gap-6 max-md:items-center max-md:justify-center max-sm:flex-col">
           <div className="fadeup">
             <PrimaryButton
+              className="max-sm:min-w-[50vw]"
               text={footerCTAData.btnText1}
               href={footerCTAData.btnLink1}
             />
@@ -170,7 +171,7 @@ const FooterCTA = ({ footerCTAData , width, paraWidth}) => {
         </div>
         <motion.div
           style={{ x: image1X, y: image1Y }}
-          className="absolute w-[40%] top-[20%] left-[20%] rounded-2xl border border-white/30 overflow-hidden max-sm:w-[50%] max-sm:top-[5%] max-md:w-[35%] max-sm:left-[10%] max-md:left-[13.5%]
+          className="absolute w-[40%] top-[20%] left-[20%] rounded-2xl border border-white/20 max-md:border-white/10 overflow-hidden max-sm:w-[50%] max-sm:top-[5%] max-md:w-[35%] max-sm:left-[10%] max-md:left-[13.5%]
                     max-md:top-[-18%] fadeup "
         >
           <Image
@@ -185,7 +186,7 @@ const FooterCTA = ({ footerCTAData , width, paraWidth}) => {
 
         <motion.div
           style={{ x: image1X, y: image1Y }}
-          className="absolute  w-[35%] bottom-[18%] left-[45%] rounded-2xl  border border-white/30 overflow-hidden max-sm:w-[50%] max-sm:left-[35%] max-md:left-[54%] fadeup"
+          className="absolute  w-[35%] bottom-[18%] left-[45%] rounded-2xl  border border-white/20 max-md:border-white/10 overflow-hidden max-sm:w-[50%] max-sm:left-[35%] max-md:left-[54%] fadeup"
         >
           <Image
             src={footerCTAData.img2}

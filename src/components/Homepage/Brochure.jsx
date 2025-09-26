@@ -23,7 +23,7 @@ const Brochure = () => {
   };
   return (
     <section className="w-screen h-fit container" id="brochure">
-      <div className="w-full flex flex-col items-center justify-center gap-[5vw] max-md:gap-[7vw] max-sm:gap-[10vw]">
+      <div className="w-full flex flex-col items-center justify-center gap-[5vw] max-md:gap-[10vw] max-sm:gap-[15vw]">
         <h2 className="w-[70%] text-center text-60 headingAnim max-md:w-full max-md:text-left max-md:!text-[9vw] max-sm:!text-[11.5vw]">
           Join the Fastest - Moving Insurers on Their AI Journey 
         </h2>
@@ -108,7 +108,7 @@ const Brochure = () => {
             }
           />
         </div>
-        <div className="h-fit text-white max-md:w-full max-md:mt-[10vw] hidden max-md:block fadeup">
+        <div className="h-fit text-white max-md:w-full hidden max-md:block fadeup">
           <Swiper
             slidesPerView={1.8}
             className=" !opacity-100 "
@@ -162,7 +162,7 @@ const BrochureCard = ({ title, list, listTitle }) => {
   return (
     <>
       {/* <Link href={"#"}> */}
-      <div className="bg-gradient-to-r from-[#09183e] to-[#1626FD] h-[70vh] rounded-[6.5vw] max-md:h-[80vh] max-sm:h-[70vh]  border border-white/40 py-[10%] px-[7vw]">
+      <div className="bg-gradient-to-r from-[#09183e] to-[#1626FD] max-sm:rounded-[7.5vw] max-md:rounded-[5vw] max-md:h-[80vh] max-sm:h-[65vh]  border border-white/40 py-[10%] px-[7vw]">
         <div className="w-full h-full flex flex-col gap-[3vw] justify-between">
           <div>
             <h3 className="text-30">{title}</h3>

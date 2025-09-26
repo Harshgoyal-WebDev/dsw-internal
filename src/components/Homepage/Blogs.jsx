@@ -18,7 +18,7 @@ const BlogCard = ({ title, date, img }) => {
   return (
     <>
       <Link href={"#"}>
-        <div className="rounded-3xl h-full group border-[0.25px] border-stone-600 pb-4 max-md:!min-h-[55vh] bg-white/5 space-y-8 overflow-hidden group cursor-pointer max-sm:pb-0">
+        <div className="rounded-3xl h-full group border-[0.25px] border-white/30 pb-4 max-md:h-fit bg-white/5 space-y-8 overflow-hidden group cursor-pointer max-sm:pb-0">
           <div className="w-full h-full  overflow-hidden rounded-3xl ">
             <Image
               src={img}

@@ -229,6 +229,12 @@ export default function Journey() {
     };
   });
 
+    const handleSkip = () => {
+    const next = document.getElementById("tech-partners");
+    if (next) next.scrollIntoView({ behavior: "smooth" });
+  };
+
+
   return (
     <section
       id="journey"
@@ -337,6 +343,43 @@ export default function Journey() {
               </div>
             </div>
           </div>
+        </div>
+        <div className="absolute bottom-[7%] right-[3%]">
+           <button
+              className="round px-6 py-2 rounded-full flex items-center cursor-pointer gap-2 text-white font-light hover:scale-95 text-[1vw] max-sm:text-[4.2vw] max-md:text-[2.7vw] transition duration-500 ease-out"
+              onClick={handleSkip}
+            >
+              Skip Timeline
+              <div className="-rotate-90 text-white flex items-center justify-center gap-0 w-[0.8vw] h-full max-sm:w-[3vw] max-md:w-[1.8vw]">
+                <svg
+                  className="arrow primera next"
+                  width="8"
+                  height="15"
+                  viewBox="0 0 8 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7.50293 14.46L2.50293 7.45996L7.50293 0.459961H5.05293L0.0529289 7.45996L5.05293 14.46H7.50293Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <svg
+                  className="arrow segunda next"
+                  width="8"
+                  height="15"
+                  viewBox="0 0 8 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7.50293 14.46L2.50293 7.45996L7.50293 0.459961H5.05293L0.0529289 7.45996L5.05293 14.46H7.50293Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+            </button>
+
         </div>
       </div>
     </section>

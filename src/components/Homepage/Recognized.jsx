@@ -83,7 +83,7 @@ const Recognized = () => {
           </div>
         </div>
         <div className="marquee fadeup mt-[3vw] max-md:my-[7vw]">
-          <div className="marquee__track max-md:space-x-[10vw]">
+          <div className="marquee__track recognized max-md:space-x-[10vw]">
             {awards.map((item, index) => (
               <AwardItem
                 key={index}

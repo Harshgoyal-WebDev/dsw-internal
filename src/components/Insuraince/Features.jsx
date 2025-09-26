@@ -83,7 +83,7 @@ const Features = () => {
 
       if (!isMobile) {
         const horizAnim = gsap.to(cardsContainerRef.current, {
-          x: "-18vw",
+          x: "-22vw",
           ease: "none",
           scrollTrigger: {
             trigger: featuresRef.current,

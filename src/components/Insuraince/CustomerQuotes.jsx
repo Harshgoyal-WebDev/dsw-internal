@@ -44,7 +44,7 @@ const panelsData = [
 
 const ExpandablePanels = () => {
   const [activePanel, setActivePanel] = useState(2);
-  const [activeMobilePanel, setActiveMobilePanel] = useState(2);
+  const [activeMobilePanel, setActiveMobilePanel] = useState(0);
 
   const panelsRef = useRef([]);
   const contentRef = useRef([]);
@@ -57,6 +57,10 @@ const ExpandablePanels = () => {
         gsap.set(contentRef.current[index], { opacity: 0, x: 0 });
       }
     });
+    if (globalThis.innerWidth < 1024) {
+
+    } else {
+    }
   }, []);
 
   const handlePanelHover = (index) => {
@@ -183,17 +187,26 @@ const ExpandablePanels = () => {
               >
                 {panel.title}
               </h3>
-              <Image
-                src={
-                  activeMobilePanel === index
-                    ? "/assets/icons/insuraince/minus.svg"
-                    : "/assets/icons/insuraince/plus.svg"
-                }
-                width={200}
-                height={200}
-                className="w-auto h-[5vw] transition-transform ease-out duration-700"
-                alt="toggle-icon"
-              />
+
+              {activeMobilePanel != index ? (
+                <Image
+                  src={"/assets/icons/insuraince/plus.svg"}
+                  width={200}
+                  height={200}
+                  className={`w-auto h-[5vw] duration-500 ease-out  ${activeMobilePanel != index ? "rotate-90" : "rotate-0"}`}
+                  alt="toggle-icon"
+                />
+              ) : (
+                <div className="scale-[1.4]">
+                  <Image
+                    src={"/assets/icons/insuraince/minus.svg"}
+                    width={200}
+                    height={200}
+                    className={`w-auto h-[5vw] duration-500 ease-out  ${activeMobilePanel != index ? "rotate-90" : "rotate-0"}`}
+                    alt="toggle-icon"
+                  />
+                </div>
+              )}
             </div>
 
             <div

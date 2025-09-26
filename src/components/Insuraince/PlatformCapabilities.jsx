@@ -70,7 +70,7 @@ const PlatformCapabilities = () => {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "20% bottom",
-          end: "80% 60%",
+          end: "90% 70%",
           scrub: true,
           // markers: true,
         },

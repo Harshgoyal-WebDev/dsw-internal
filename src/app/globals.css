@@ -20,7 +20,7 @@
   --text-90: 4.5vw;
   --text-60: 3.4vw;
   --text-50: 2.6vw;
-  --text-40:2vw;
+  --text-40: 2vw;
   --text-30: 1.55vw;
 }
 
@@ -123,6 +123,8 @@ h4 {
   transform: translate(0px, -1.5em);
 }
 
+/* marquee animation */
+
 .marquee {
   display: flex;
   white-space: nowrap;
@@ -132,23 +134,34 @@ h4 {
 
 .marquee__track {
   display: flex;
-  /* transform: translateX(-62.5%); */
   animation: marquee 15s linear infinite;
-  min-width: 200%; /* Added for consistency */
+  min-width: 200%;
+}
+.marquee__track.recognized {
+  display: flex;
+  animation: marqueeRec 15s linear infinite;
+  min-width: 200%;
 }
 
-@keyframes marquee {
+@keyframes marqueeRec {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-60%);
+  }
+}
+
+/* @keyframes marquee {
   0% {
     transform: translateX(0);
   }
   100% {
     transform: translateX(-62.5%);
   }
-}
-
+} */
 .marquee__track_reverse {
   display: flex;
-  /* transform: translateX(-50%); */
   animation: marquee-reverse 15s linear infinite;
   min-width: 200%;
 }
@@ -250,6 +263,8 @@ h4 {
   }
 }
 
+/* scrollbar styling */
+
 ::-webkit-scrollbar {
   width: 4px;
   padding-left: 5vw;
@@ -268,6 +283,9 @@ h4 {
   ); /* gradient from top to bottom */
   border-radius: 8px;
 }
+
+
+/* ripple animation */
 
 @keyframes ripple {
   0% {
@@ -321,6 +339,8 @@ h4 {
     transform: translateX(0px) scale(1);
   }
 }
+
+/* arrow and link line animations */
 
 .round:hover .arrow {
   animation-name: bounceAlpha;
@@ -378,7 +398,7 @@ h4 {
 .split__wrapper .split-chars {
   transition: color 0.4s;
   /* color: var(--background); */
-  color: rgba(255, 255, 255, 0.159) ;
+  color: rgba(255, 255, 255, 0.159);
 }
 
 .split__wrapper .split-chars.show {
@@ -389,8 +409,7 @@ h4 {
 @keyframes color-transition {
   0% {
     /* color: var(--background); */
-  color: rgba(255, 255, 255, 0.159) ;
-
+    color: rgba(255, 255, 255, 0.159);
   }
   30% {
     color: var(--primary-2);
@@ -409,23 +428,15 @@ h4 {
     --text-30: 3.5vw;
   }
   .container {
-  max-width: 100%;
-  padding: 10% 7vw;
-  margin-left: auto;
-  margin-right: auto;
-}
-  body {
-    font-size: 2.7vw;
-    line-height: 1.6;
-  }
-  .container {
     max-width: 100%;
     padding: 15% 7vw;
     margin-left: auto;
     margin-right: auto;
   }
-
- 
+  body {
+    font-size: 2.7vw;
+    line-height: 1.6;
+  }
 
   .unifyblock {
     /* initial gradient colors */
@@ -453,11 +464,13 @@ h4 {
     background: #ffffff33;
   }
 
-  .marquee__track {
-    display: flex;
-    /* transform: translateX(-187.5%) !important; */
-    animation: marquee 16s linear infinite;
-    min-width: 200%; /* Added for consistency */
+  @keyframes marqueeRec {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-80%);
+    }
   }
 
   @keyframes marquee {
@@ -465,7 +478,7 @@ h4 {
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-200%);
+      transform: translateX(-187.5%);
     }
   }
   @keyframes marquee-reverse {
@@ -478,7 +491,6 @@ h4 {
   }
 }
 
-
 @media (max-width: 542px) {
   :root {
     --text-100: 12.5vw;
@@ -486,7 +498,7 @@ h4 {
     --text-60: 9vw;
     --text-50: 7.5vw;
     --text-40: 7.5vw;
-    --text-30: 5vw;
+    --text-30: 4.7vw;
   }
   body {
     font-size: 4.2vw;
@@ -525,14 +537,14 @@ h4 {
   ::-webkit-scrollbar-track {
     background: #ffffff33;
   }
-
-  .marquee__track {
-    display: flex;
-    /* transform: translateX(-187.5%) !important; */
-    animation: marquee 15s linear infinite;
-    min-width: 200%; /* Added for consistency */
+  @keyframes marqueeRec {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-160%);
+    }
   }
-
   @keyframes marquee {
     0% {
       transform: translateX(0);

@@ -211,7 +211,7 @@ const Hero = ({ heroData, breadcrumbs }) => {
               },
             ].map(({ Component, text }, index) => (
               <div key={index} className="ctaBtn">
-                <Component href="#" text={text} className="max-md:min-w-[20vw]" />
+                <Component href="#" text={text} className="max-md:min-w-[20vw] max-sm:min-w-[55vw]" />
               </div>
             ))}
           </div>

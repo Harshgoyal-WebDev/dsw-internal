@@ -32,7 +32,7 @@ const Footer = () => {
                     <Image src={"/assets/images/homepage/gradient-mobile.png"} alt="bg-gradient" className="w-full h-full object-cover" width={600} height={1080} />
                 </div>
                 <div className="relative z-[20]">
-                    <div className="rounded-[2.2vw] background-glass-diff border border-white/30 px-12 py-[5%] flex justify-between max-md:px-[0vw] max-md:py-[15%] max-md:rounded-[5vw] max-md:flex-col max-md:items-center max-md:justify-center max-md:text-center">
+                    <div className="rounded-[2.2vw] background-glass-diff border border-white/30 px-12 py-[5%] flex justify-between max-md:px-[0vw] max-md:py-[15%] max-md:rounded-[5vw] max-sm:rounded-[10vw] max-md:flex-col max-md:items-center max-md:justify-center max-md:text-center">
                         {/* Logo and Contact Info */}
                         <div className="flex flex-col justify-between items-start gap-24 max-md:gap-18 footer-content max-sm:pb-[15vw] max-md:pb-[10vw] max-md:items-center max-md:justify-center">
                             <Logo variant="footer" className="w-fit" />
@@ -74,7 +74,7 @@ const Footer = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="flex justify-between py-8 pt-12  text-[1vw] max-md:text-xl max-sm:text-sm max-md:gap-2 text-foreground max-md:flex-col max-md:text-center">
+                    <div className="flex justify-between py-8 pt-12  text-[1vw] max-md:text-xl max-sm:text-sm max-md:gap-2 text-foreground max-md:flex-col max-md:text-center max-sm:py-[7%]">
                         <p>Copyright © {SITE_CONFIG.name} {SITE_CONFIG.copyright.year}</p>
                         <p>
                             {SITE_CONFIG.copyright.credits.text}{" "}
