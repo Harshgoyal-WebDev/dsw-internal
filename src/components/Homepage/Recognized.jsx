@@ -6,7 +6,7 @@ const AwardItem = ({ img, title, year }) => {
   return (
     <>
       <div className="flex-shrink-0 flex items-center justify-center gap-[1vw] w-[30vw] max-md:w-[70vw]  max-md:gap-[2vw]">
-        <div className="w-[7vw] h-auto max-md:w-[15vw] max-sm:w-[20vw]">
+        <div className="w-[8vw] h-auto max-md:w-[15vw] max-sm:w-[20vw]">
           <Image
             src={img}
             height={146}
@@ -16,7 +16,7 @@ const AwardItem = ({ img, title, year }) => {
           />
         </div>
         <div className="space-y-[1vw]">
-          <p className="font-display text-[1.565vw] text-[#E8E8E8] max-md:text-[4.5vw]">
+          <p className="font-head text-30 text-[#E8E8E8]">
             {title}
           </p>
           <p className="text-[#CACACA]">{year}</p>
@@ -111,28 +111,28 @@ export default Recognized;
 
 const awards = [
   {
-    img: "/assets/images/homepage/recognized/top-10.png",
+    img: "/assets/images/homepage/recognized/top-10-ai-startup.png",
     title: "Top 10 AI Startups",
     year: "Ireland 2024",
   },
   {
-    img: "/assets/images/homepage/recognized/top-10.png",
-    title: "Top 10 AI Startups",
+    img: "/assets/images/homepage/recognized/winner-of-pitchjam.png",
+    title: "Winner of Pitchjam",
     year: "Ireland 2024",
   },
   {
-    img: "/assets/images/homepage/recognized/top-10.png",
-    title: "Top 10 AI Startups",
-    year: "Ireland 2024",
+    img: "/assets/images/homepage/recognized/best-startup-application.png",
+    title: "Best startup application",
+    year: "Dublin 2023",
   },
   {
-    img: "/assets/images/homepage/recognized/top-10.png",
-    title: "Top 10 AI Startups",
-    year: "Ireland 2024",
+    img: "/assets/images/homepage/recognized/challenger-in-pema-quadrant.png",
+    title: "Challeneger in PeMa Quadrant",
+    year: "India 2023",
   },
-  // {
-  //     img: "/assets/images/homepage/top-10.png",
-  //     title: "Top 10 AI Startups",
-  //     year: "Ireland 2024"
-  // },
+  {
+      img: "/assets/images/homepage/recognized/top-ai-startup.png",
+      title: "Top AI Startup",
+      year: "India 2022"
+  },
 ];

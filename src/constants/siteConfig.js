@@ -76,6 +76,12 @@ export const SOCIAL_LINKS = [
     label: "Instagram",
     href: "https://www.instagram.com/datasciencewizards/", 
     icon: "instagram"
+  },
+   {
+    id: "youtube",
+    label: "Youtube",
+    href: "https://www.youtube.com/@DataScienceWizards", 
+    icon: "youtube"
   }
 ];
 
