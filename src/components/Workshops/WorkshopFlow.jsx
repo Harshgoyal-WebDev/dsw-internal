@@ -110,9 +110,9 @@ const SwiperCard = ({ title, list, duration, onHover, isActive, space }) => {
           </div>
 
           <div className="w-full  max-md:space-y-[3vw] py-[2vw] max-sm:mt-[8vw]">
-            <ul className={`list-disc text-white-200 pl-[1.5vw] max-md:pl-0 ${space}`}>
+            <ul className={`list-disc text-white-200 pl-[1.5vw] marker:text-[1vw] max-md:pl-0 ${space}`}>
               {list.map((item, index) => (
-                <li key={index} className="text-white-300">
+                <li key={index} className="text-white-300 text-[1.05vw] max-md:text-[2.5vw] max-sm:text-[4vw]">
                   <span className="!font-medium max-md:w-full text-white-200">{item.heading} </span>{" "}
                   {item.para}
                 </li>

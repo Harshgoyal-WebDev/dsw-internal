@@ -30,11 +30,11 @@ const Transform = () => {
     >
       <div className="w-full h-full flex flex-col items-center justify-center relative z-[2] gap-[7.5vw]">
         <div className="text-center  space-y-[2vw] mt-10 max-md:space-y-10">
-          <h2 className="text-60  headingAnim text-[#E8E8E8]">
+          <h2 className="text-50  headingAnim text-[#E8E8E8]">
             Transform and scale your enterprise operations
           </h2>
           <Copy>
-            <p className=" text-[#CACACA] w-[60%] mx-auto leading-[1.5] max-md:w-full">
+            <p className=" text-[#CACACA] w-[80%] mx-auto leading-[1.5] max-md:w-full">
               Build AI and GenAI Use Cases Across the Enterprise Lifecycle
             </p>
           </Copy>

@@ -10,7 +10,7 @@ const OfficeLocations = () => {
          <h2 className='text-90  max-md:text-left max-md:px-[3vw] text-center headingAnim'>
             Our Office Locations
         </h2>
-        <div className="w-full">
+        <div className="w-full fadeup">
         <WorldMap />
         </div>
       

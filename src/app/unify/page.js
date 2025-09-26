@@ -28,7 +28,7 @@ export default function page() {
             <OnePlatform />
             <SuccessStories />
             <Faqs />
-            <FooterCTA footerCTAData={footerCTAData} />
+            <FooterCTA footerCTAData={footerCTAData} width={"w-[80%]"} paraWidth={"w-[75%]"}/>
         </Layout>
     )
 }

@@ -24,7 +24,7 @@ const Brochure = () => {
   return (
     <section className="w-screen h-fit container" id="brochure">
       <div className="w-full flex flex-col items-center justify-center gap-[5vw] max-md:gap-[10vw] max-sm:gap-[15vw]">
-        <h2 className="w-[70%] text-center text-60 headingAnim max-md:w-full max-md:text-left max-md:!text-[9vw] max-sm:!text-[11.5vw]">
+        <h2 className="w-[55%] text-center text-60 text-white-200 headingAnim max-md:w-full max-md:text-left max-md:!text-[9vw] max-sm:!text-[11.5vw]">
           Join the Fastest - Moving Insurers on Their AI Journey 
         </h2>
         <div className="w-full flex justify-center gap-[3vw] fadeup max-md:hidden">
@@ -39,13 +39,13 @@ const Brochure = () => {
             showTooltip={true}
             displayOverlayContent={true}
             overlayContent={
-              <div className="w-full h-full px-[4vw] py-[4vw] pb-[5vw] flex flex-col justify-between">
+              <div className="w-full h-full px-[4vw] py-[4vw] pb-[5vw] flex flex-col justify-between text-white-300">
                 <h3 className="text-30 w-[85%] h-fit">
                   25+ proven AI use cases across the policy lifecycle
                 </h3>
                 <div className="w-full flex flex-col h-fit space-y-[1.5vw]">
                   <h4 className="text-50">AI/ML</h4>
-                  <ul className="list-disc pl-[2vw] space-y-[0.2vw]">
+                  <ul className="list-disc pl-[1vw] space-y-[0.2vw] marker:text-[0.9vw] text-[1.05vw] max-md:text-[2.5vw] max-sm:text-[4vw]">
                     <li>Fraud detection</li>
                     <li>​ Claims</li>
                     <li>​ Underwriting​</li>
@@ -78,13 +78,13 @@ const Brochure = () => {
             showTooltip={true}
             displayOverlayContent={true}
             overlayContent={
-              <div className="w-full h-full px-[4vw] py-[4vw] pb-[5vw] flex flex-col justify-between">
+              <div className="w-full h-full px-[4vw] py-[4vw] pb-[5vw] flex flex-col justify-between text-white-300">
                 <h3 className="text-30 w-full h-fit">
                   300+ ready-to-deploy GenAI agents trained on insurance data 
                 </h3>
                 <div className="w-full flex flex-col h-fit space-y-[1.5vw]">
                   <h4 className="text-50">GenAI Agents​</h4>
-                  <ul className="list-disc pl-[2vw] space-y-[0.2vw]">
+                  <ul className="list-disc pl-[1vw] space-y-[0.2vw] marker:text-[0.9vw] text-[1.05vw] max-md:text-[2.5vw] max-sm:text-[4vw]">
                     <li>Sales and Marketing​</li>
                     <li>​ Underwriting​</li>
                     <li>​ Claims</li>

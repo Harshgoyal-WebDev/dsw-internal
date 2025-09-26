@@ -23,7 +23,7 @@ export default function Home() {
 
   return (
     <>
-      <Loader />
+      {/* <Loader /> */}
       <Layout>
         <Hero heroData={heroData}/>
         <TurbochargeG />
@@ -42,7 +42,7 @@ export default function Home() {
         <SuccessStories />
         <Blogs />
         <Faqs />
-        <FooterCTA footerCTAData={footerCTAData}/>
+        <FooterCTA footerCTAData={footerCTAData} width={"w-[95%]"}/>
       </Layout>
     </>
   );

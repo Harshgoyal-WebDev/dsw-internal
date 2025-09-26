@@ -13,7 +13,7 @@ const Page = () => {
         <Hero heroData={heroData} />
         <Form />
          <OfficeLocations />
-         <FooterCTA footerCTAData={footerCTAData} />
+         <FooterCTA footerCTAData={footerCTAData} width={"w-[95%]"}/>
         </Layout>
     </>
   )

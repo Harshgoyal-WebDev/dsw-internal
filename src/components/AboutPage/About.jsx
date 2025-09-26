@@ -81,13 +81,13 @@ export default function About() {
 
   return (
     <section className="w-screen container mt-[-5%] max-md:mt-0 relative z-[10]" id="about" >
-      <div className="w-full flex flex-col items-center justify-center gap-y-[10vw] max-md:gap-y-[15vw]">
+      <div className="w-full flex flex-col items-end justify-center gap-y-[10vw] max-md:gap-y-[15vw]">
         <SectionBreak text={" At Data Science Wizards (DSW), we believe that AI should be accessible, scalable, and enterprise-ready—not locked behind complexity. That’s why we built UnifyAI, a next-generation platform that simplifies the entire AI lifecycle for businesses across industries."} span={true}/>
-        <div className="flex flex-col items-end gap-[7vw] max-md:w-full max-md:gap-[10vw] max-sm:gap-[15vw] max-md:items-start max-md:mt-[10vw]">
+        <div className="w-[58%] flex flex-col items-start gap-[7vw] max-md:w-full max-md:gap-[10vw] max-sm:gap-[15vw] max-md:items-start max-md:mt-[10vw]">
           {POINTS.map(({ id, text, width, title }) => (
             <div
               key={id}
-              className="w-[58%]  flex gap-[5vw] items-start about-item max-sm:w-[98%] max-md:w-[100%] max-md:flex-col"
+              className="w-full  flex gap-[5vw] items-start about-item max-sm:w-[98%] max-md:w-[100%] max-md:flex-col"
             >
               <div className="w-[15%] relative max-sm:w-[100%]">
                 <div className="relative fadeup w-[6.5vw] h-[6.5vw] max-md:h-[12vw] max-md:w-[12vw] border border-[#59595980] rounded-full flex items-center justify-center max-sm:w-[18vw] max-sm:h-[18vw] max-sm:border-primary-1">
@@ -104,7 +104,7 @@ export default function About() {
                   </h4>
                 </Copy>
                 <Copy>
-                  <div className="text-white-300 w-[38vw] max-md:w-full" dangerouslySetInnerHTML={{__html:text}}/>
+                  <div className="text-white-300 max-md:w-full" dangerouslySetInnerHTML={{__html:text}}/>
                 </Copy>
               </div>
             </div>

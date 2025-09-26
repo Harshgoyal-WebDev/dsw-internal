@@ -80,9 +80,9 @@ export default function OnePlatform() {
                     <Image src={"/assets/images/footer/image-2.png"} alt="Image2"  width={313} height={272} loading="lazy"  className="w-full h-full object-cover" />
                 </motion.div>
             </div>
-              <div className="w-[50%] max-md:!w-[90%] max-md:text-center max-md:mt-[5vw] space-y-[4vw]">
+              <div className="w-[60%] max-md:!w-[90%] max-md:text-center max-md:mt-[5vw] space-y-[4vw]">
                 <h2 className="text-60 max-md:w-full font-head  headingAnim text-white-200 max-md:mb-[7vw]">One Platform. Many Possibilities.  </h2>
-                <div>
+                <div className="w-[85%] max-md:w-full">
                 <Copy>
                 <p className="text-white-300">From GenAI agents that automate knowledge work, to AI models that power predictions, decisions, and actions — UnifyAI gives enterprises the infrastructure to lead with AI. </p>
                 </Copy>

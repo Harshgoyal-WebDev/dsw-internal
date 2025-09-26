@@ -93,7 +93,7 @@ export default function PresentationLayer() {
           alt={tool.name}
         />
       </div>
-      <p className="text-[.9vw] max-md:text-[2.8vw] text-white-300 max-md:w-full w-[180%]">
+      <p className="text-[1vw] max-md:text-[2.8vw] text-white-300 max-md:w-full w-[150%]">
         {tool.name}
       </p>
     </div>
@@ -143,7 +143,7 @@ export default function PresentationLayer() {
           <div className="h-fit p-[1.5vw] py-[2vw] text-center w-full bg-gradient-to-r from-white/8 to bg-white/0 border-white/20 rounded-[2vw] max-md:rounded-[4vw] flex flex-col max-md:p-[4vw] items-center gap-[1vw] border">
             <div className="w-full h-full">
               <p className="text-[1.5vw] max-md:text-[5.5vw] ">AI Studio</p>
-              <div className="py-[3vw] max-md:py-[6vw] border-b relative border-white/20 flex justify-evenly items-center w-full pl-[5vw]">
+              <div className="py-[3.5vw] max-md:py-[6vw] border-b relative border-white/20 flex justify-evenly items-center w-full pl-[5vw]">
                 <p className=" absolute top-1/2 max-md:left-[-10%] max-md:!text-[4.2vw] left-[-5%] translate-y-[-50%] rotate-[-90deg]">
                   Core Tools
                 </p>

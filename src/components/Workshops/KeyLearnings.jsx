@@ -32,7 +32,7 @@ const KeyLearnings = () => {
               <div key={index} className="relative max-md:pb-[8vw] pb-[2vw]">
                 <ul className="list-disc space-y-[2vw] ml-[2vw] max-md:ml-[4vw]">
                   <li className="relative fadeup">
-                    <p className="text-white-300 w-[80%] max-md:w-full">
+                    <p className="text-white-200 w-[85%] max-md:w-full">
                       {cap.text}
                     </p>
                   </li>

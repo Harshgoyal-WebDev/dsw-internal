@@ -87,7 +87,7 @@ const Blogs = () => {
             Stay Ahead with AI Insights
           </h2>
           <Copy>
-            <p className="text-[#CACACA] w-[72%] leading-[1.4] max-md:w-[92%] max-sm:w-full">
+            <p className="text-[#CACACA] w-[83%] leading-[1.4] max-md:w-[92%] max-sm:w-full">
               stay informed with expert insights, industry updates, and
               real-world use cases from UnifyAI. Whether you&apos;re looking for
               the latest in Generative AI, AI governance, or enterprise AI

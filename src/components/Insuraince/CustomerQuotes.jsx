@@ -103,7 +103,7 @@ const ExpandablePanels = () => {
       </h2>
 
       {/* Desktop Version  */}
-      <div className=" items-center justify-center max-md:hidden">
+      <div className=" items-center justify-center max-md:hidden fadeup">
         <div className="flex w-full px-[10vw] h-[65vh] overflow-hidden ">
           {panelsData.map((panel, index) => (
             <div

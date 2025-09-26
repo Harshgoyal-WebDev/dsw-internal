@@ -59,8 +59,8 @@ export default function Outcomes({outcomesData}) {
   return (
     <section className="w-screen container background-radial" id="about">
       <div className="w-full flex flex-col items-center justify-center gap-y-[5vw] max-md:gap-y-[15vw]">
-        <div className="mx-auto w-1/2 max-md:w-full space-y-[4vw] max-md:space-y-[5vw]">
-          <h2 className="text-60 headingAnim text-white-200 max-md:text-center">
+        <div className="mx-auto w-[55%] max-md:w-full space-y-[4vw] max-md:space-y-[5vw]">
+          <h2 className="text-60 headingAnim text-white-200 max-md:text-center w-[90%] max-md:w-full">
             {outcomesData.heading}
           </h2>
           <div className="space-y-[1vw]">

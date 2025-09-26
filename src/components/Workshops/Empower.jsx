@@ -21,7 +21,7 @@ const Empower= ({heading,para,width}) => {
             </div>
           </div>
         </div>
-        <div className="w-[47%] mt-[15vw] max-md:w-[100%] max-sm:w-full max-md:mt-0">
+        <div className="w-[47%] mt-[10vw] max-md:w-[100%] max-sm:w-full max-md:mt-0">
          <TeamForm/>
         </div>
       </div>

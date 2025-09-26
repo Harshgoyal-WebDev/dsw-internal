@@ -28,7 +28,6 @@ const usecaseData = [
       features: [
         "Agentic AI drag and drop workflows and framework for task-based orchestration ",
         "LLM model plug-ins with customizable tools, memory, and prompts ",
-        "LLM model plug-ins with customizable tools, memory, and prompts", 
         "Secure integration with internal knowledge bases and APIs ",
         "Guardrails and governance by design for safe, compliant outputs "
       ],

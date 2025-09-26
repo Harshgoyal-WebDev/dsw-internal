@@ -28,7 +28,7 @@ export default function Home() {
       <CustomerQuotes />
       <FutureScope />
       <Faqs />
-      <FooterCTA footerCTAData={footerCTAData}/>
+      <FooterCTA footerCTAData={footerCTAData} paraWidth={"w-[85%]"}/>
       </Layout>
     </>
   );

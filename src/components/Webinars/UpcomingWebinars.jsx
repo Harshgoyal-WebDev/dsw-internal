@@ -83,15 +83,15 @@ const UpcomingWebinars = () => {
                 <div className="flex gap-[4vw] fadeup max-md:flex-wrap max-md:justify-between max-md:gap-[7vw]">
                   <div className="flex flex-col gap-[0.5vw]">
                     <p className="text-white/40">Format</p>
-                    <p className="text-white-200">{mainAnnouncement.format}</p>
+                    <p className="text-white-200 text-[1.05vw] max-md:text-[2.5vw] max-sm:text-[4vw]">{mainAnnouncement.format}</p>
                   </div>
                   <div className="flex flex-col gap-[0.5vw]">
                     <p className="text-white/40">Webinar Date</p>
-                    <p className="text-white-200">{mainAnnouncement.date}</p>
+                    <p className="text-white-200 text-[1.05vw] max-md:text-[2.5vw] max-sm:text-[4vw]">{mainAnnouncement.date}</p>
                   </div>
                   <div className="flex flex-col gap-[0.5vw]">
                     <p className="text-white/40">Author</p>
-                    <p className="text-white-200">{mainAnnouncement.author}</p>
+                    <p className="text-white-200 text-[1.05vw] max-md:text-[2.5vw] max-sm:text-[4vw]">{mainAnnouncement.author}</p>
                   </div>
                 </div>
 

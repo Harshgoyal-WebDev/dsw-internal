@@ -28,27 +28,27 @@ const Form = () => {
           <div className="h-[40%] max-md:hidden flex flex-col justify-between  gap-[3vw]">
             <div className="space-y-[0.3vw] text-head text-white-300 font-normal fadeup">
               <p>Phone:</p>
-                <div  className="under-multi-parent">
+                <div  className="under-multi-parent w-fit">
             <a 
               href={`tel:+353894015233`} 
               className="under-multi content-p hover:text-white transition-colors duration-300"
             >
-              +353894015233
+              +353 89401 5233
             </a>
           </div>
-          <div  className="under-multi-parent">
+          <div  className="under-multi-parent w-fit">
             <a 
               href={`tel:+919664056847`} 
               className="under-multi  "
             >
-              +919664056847
+              +91 96640 56847
             </a>
           </div>
             </div>
 
             <div className="text-white-300 space-y-[0.3vw] fadeup">
               <p>E-mail:</p>
-              <div className="under-multi-parent">
+              <div className="under-multi-parent w-fit">
             <a 
               href={`mailto:contact@datasciencewizards.ai`} 
               className="under-multi "
@@ -75,7 +75,7 @@ const Form = () => {
             </div>
           </div>
         </div>
-        <div className="w-[47%] mt-[15vw] max-md:w-[100%] max-sm:w-full max-md:mt-0">
+        <div className="w-[50%] mt-[11vw] max-md:w-[100%] max-sm:w-full max-md:mt-0">
           <ContactForm />
         </div>
 

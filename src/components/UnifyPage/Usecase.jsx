@@ -110,11 +110,11 @@ function AccordionItem({ title, description,features, isOpen, onToggle,index,z})
                     ScrollTrigger.refresh();
                   }}
                   exit={{ height: 0, opacity: 0, y: 20 }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
-                  className="overflow-hidden relative "
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  className=" relative "
                 >
-                    <span className="bg-white w-[75%] h-[1px] absolute top-0 left-1/2 translate-x-[-50%]"></span>
-                  <div className="py-[3.5vw] text-[#CACACA] w-[90%] pb-[7vw]">
+                    <span className="bg-white w-[75%] h-[1px] absolute top-0 left-1/2 translate-x-[-50%] mt-[-2vw]"></span>
+                  <div className="pt-[1vw] text-[#CACACA] w-[90%] pb-[7vw]">
                     <ul className="ml-[13vw] list-disc flex  gap-x-[5vw] gap-y-[3vw]">
                         {features.map((item,index)=>(
                             <li key={index} className="w-1/5 marker:text-sm">
@@ -154,7 +154,6 @@ function AccordionItem({ title, description,features, isOpen, onToggle,index,z})
       features: [
         "Agentic AI drag and drop workflows and framework for task-based orchestration ",
         "LLM model plug-ins with customizable tools, memory, and prompts ",
-        "LLM model plug-ins with customizable tools, memory, and prompts", 
         "Secure integration with internal knowledge bases and APIs ",
         "Guardrails and governance by design for safe, compliant outputs "
       ],

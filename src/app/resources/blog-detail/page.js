@@ -11,7 +11,7 @@ export default function page() {
             <Hero  breadcrumbs={true}/>
             <BlogContent />
             <RelatedArticles />
-            <FooterCTA footerCTAData={footerCTAData} />
+            <FooterCTA footerCTAData={footerCTAData} width={"w-[95%]"}/>
         </Layout>
     )
 }

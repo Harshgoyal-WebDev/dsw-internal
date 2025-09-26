@@ -56,25 +56,25 @@ export const SOCIAL_LINKS = [
   {
     id: "facebook",
     label: "Facebook",
-    href: "https://www.facebook.com",
+    href: "https://www.facebook.com/datasciencewizards/",
     icon: "facebook"
   },
   {
     id: "linkedin", 
     label: "LinkedIn",
-    href: "https://www.linkedin.com",
+    href: "https://www.linkedin.com/company/data-science-wizards/",
     icon: "linkedin"
   },
   {
     id: "twitter",
     label: "Twitter", 
-    href: "https://www.twitter.com",
+    href: "https://x.com/dswizards",
     icon: "twitter"
   },
   {
     id: "instagram",
     label: "Instagram",
-    href: "https://www.instagram.com", 
+    href: "https://www.instagram.com/datasciencewizards/", 
     icon: "instagram"
   }
 ];
