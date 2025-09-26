@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -47,6 +47,7 @@ const BlogCard = ({ title, date, img }) => {
 const Blogs = () => {
   const swiperRef = useRef(null);
   const blogsRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     if (blogsRef.current) {
@@ -104,6 +105,7 @@ const Blogs = () => {
             className="mySwiper swiper-container"
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             freeMode={true}
+            onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
             spaceBetween={50}
             speed={1000}
             breakpoints={{
@@ -138,8 +140,8 @@ const Blogs = () => {
           </Swiper>
 
           <div className="flex gap-6 mt-12 max-sm:mt-10 max-md:items-center max-md:justify-center">
-            <PreviousButton onClick={handlePrev} />
-            <NextButton onClick={handleNext} />
+            <PreviousButton onClick={handlePrev}  isDisabled={activeIndex === 0} />
+            <NextButton onClick={handleNext} isDisabled={BlogsData.length-1 === activeIndex} />
           </div>
         </div>
       </div>

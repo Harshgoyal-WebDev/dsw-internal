@@ -16,7 +16,7 @@ const images = [
 // random direction (x or y, ±200)
 const randomDirection = () => {
   if (Math.random() < 0.5) {
-    return { x: Math.random() < 0.5 ? -250 : 250, y: 0 };
+    return { x: Math.random() < 0.5 ? -270 : 270, y: 0 };
   } else {
     return { y: Math.random() < 0.5 ? -200 : 200, x: 0 };
   }

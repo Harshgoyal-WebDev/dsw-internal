@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
+import React, { act, useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -220,8 +220,8 @@ const PlatformCapabilities = () => {
 
         {/* Mobile Nav Buttons */}
          <div className="flex gap-6 mt-6 max-md:mt-[10vw] max-md:items-center max-md:justify-center">
-                    <PreviousButton onClick={handlePrev} />
-                    <NextButton onClick={handleNext} />
+                    <PreviousButton onClick={handlePrev} isDisabled={activeIndex === 0} />
+                    <NextButton onClick={handleNext} isDisabled={cardsData.length === activeIndex} />
                   </div>
       </div>
     </section>

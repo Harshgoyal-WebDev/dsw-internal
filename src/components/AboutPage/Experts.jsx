@@ -24,6 +24,9 @@ export default function Experts({ heading }) {
   });
   const swiperRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [totalSlides, setTotalSlides] = useState(0);
+
+
 
   const handleNext = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
@@ -43,8 +46,8 @@ export default function Experts({ heading }) {
         <h2 className="text-90 headingAnim w-[45%] max-md:w-full">{heading}</h2>
 
         <div className="flex fadeup gap-6 mt-12 max-sm:mt-0 max-md:mt-[10vw] max-md:items-center max-md:justify-center max-md:absolute max-md:bottom-0 max-sm:bottom-0  max-md:right-[8%] ">
-          <PreviousButton onClick={handlePrev} />
-          <NextButton onClick={handleNext} />
+          <PreviousButton onClick={handlePrev} isDisabled={activeIndex===0} />
+          <NextButton onClick={handleNext} isDisabled={activeIndex === totalSlides - 1} />
         </div>
       </div>
       {/* Swiper */}
@@ -52,6 +55,8 @@ export default function Experts({ heading }) {
         ref={swiperRef}
         slidesPerView={"auto"}
         // spaceBetween={20}
+        onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+        onInit={(swiper) => setTotalSlides(swiper.slides.length)}
         freeMode={true}
         className="!overflow-visible max-sm:!pt-[5vh] max-md:!pt-[5vw] !pl-[27%] max-md:!pl-0 max-md:w-full max-sm:mb-[15%] max-md:mb-[10%] "
         breakpoints={{

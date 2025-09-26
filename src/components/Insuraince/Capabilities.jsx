@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, act } from "react";
 import Image from "next/image";
 import Copy from "../Animations/Copy";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -137,8 +137,8 @@ const Capabilities = () => {
 
           {/* Mobile Nav Buttons */}
           <div className="flex gap-6 mt-6 max-md:mt-[10vw] max-md:items-center max-md:justify-center">
-            <PreviousButton onClick={handlePrev} />
-            <NextButton onClick={handleNext} />
+            <PreviousButton onClick={handlePrev} isDisabled={activeIndex === 0} />
+            <NextButton onClick={handleNext} isDisabled={capabilities.length -1 === activeIndex} />
           </div>
         </div>
       </div>

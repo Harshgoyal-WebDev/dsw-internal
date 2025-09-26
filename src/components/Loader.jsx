@@ -34,6 +34,26 @@ const Loader = () => {
          }
 
        }
+
+       else if(globalThis.innerWidth>768){
+         for (let i = 1; i <= steps; i++) {
+           tl.to(".sequence-container", {
+             xPercent: i * 100,
+             ease: "power3.inOut",
+             duration: 1,
+           }).to(
+             ".number-container",
+             {
+               xPercent: i * 19.9,
+               duration: 1,
+               ease: "power3.inOut",
+             },
+             "<"
+           );
+         }
+
+       }
+
        else{
          for (let i = 1; i <= steps; i++) {
            tl.to(".sequence-container", {
@@ -123,12 +143,12 @@ const Loader = () => {
         >
           <Gradient />
         </div> */}
-        <div className="absolute top-[-5%] left-0 h-screen w-screen max-sm:hidden">
+        <div className="absolute top-[-5%] left-0 h-screen w-screen max-md:hidden">
         <Suspense>
           <ShaderComp color={"0x1726FD"} />
         </Suspense>
       </div>
-       <div className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-sm:block">
+       <div className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-md:block">
               <Image src={"/assets/images/homepage/gradient-mobile.png"} alt="bg-gradient" className="w-full h-full object-cover" width={600} height={1080}/>
             </div>
 

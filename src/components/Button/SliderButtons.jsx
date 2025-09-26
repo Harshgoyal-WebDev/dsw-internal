@@ -1,11 +1,11 @@
 import Image from "next/image";
 
-export function PreviousButton({ onClick }) {
+export function PreviousButton({ onClick, isDisabled }) {
   return (
     <button
       aria-label="previous slide"
-      onClick={onClick}
-      className="h-[4vw] w-[4vw] px-[1.2vw] group rounded-full relative cursor-pointer max-sm:h-[18vw] max-sm:w-[18vw] max-md:h-[10vw] max-md:w-[10vw] max-sm:px-[6vw] max-md:px-[3vw]"
+      disabled={isDisabled} onClick={onClick}
+      className={`h-[4vw] w-[4vw] px-[1.2vw] group rounded-full relative cursor-pointer max-sm:h-[18vw] max-sm:w-[18vw] max-md:h-[10vw] max-md:w-[10vw] max-sm:px-[6vw] max-md:px-[3vw] ${isDisabled ? "opacity-50 cursor-not-allowed hover:scale-100 hover:border-stone-700" : ""}`}
     >
       <span className="absolute h-[4vw] w-[4vw] max-sm:h-[18vw] max-sm:w-[18vw] max-md:h-[10vw] max-md:w-[10vw] border bg-white/5 border-white/20 top-0 left-0 duration-400 group-hover:scale-90 group-hover:border-transparent rounded-full" />
       <span className="block w-[4vw] h-[4vw] absolute !bg-gradient-to-r !from-[#F16B0D] !to-[#E61216] group-hover:scale-100 scale-0 duration-400 rounded-full left-0 top-0 max-sm:h-[18vw] max-sm:w-[18vw] max-md:h-[10vw] max-md:w-[10vw] " />
@@ -20,12 +20,13 @@ export function PreviousButton({ onClick }) {
   );
 }
 
-export function NextButton({ onClick }) {
+export function NextButton({ onClick, isDisabled }) {
   return (
     <button
       aria-label="next slide"
+      disabled={isDisabled}
       onClick={onClick}
-      className="h-[4vw] w-[4vw] px-[1.2vw] group rounded-full relative cursor-pointer max-sm:h-[18vw] max-sm:w-[18vw] max-md:h-[10vw] max-md:w-[10vw] max-sm:px-[6vw] max-md:px-[3vw]"
+      className={`h-[4vw] w-[4vw] px-[1.2vw] group rounded-full relative cursor-pointer max-sm:h-[18vw] max-sm:w-[18vw] max-md:h-[10vw] max-md:w-[10vw] max-sm:px-[6vw] max-md:px-[3vw]  ${isDisabled ? "opacity-50 cursor-not-allowed hover:scale-100 hover:border-stone-700" : ""}`}
     >
       <span className="absolute h-[4vw] w-[4vw] max-sm:h-[18vw] max-sm:w-[18vw] max-md:h-[10vw] max-md:w-[10vw] border bg-white/5 border-white/20 top-0 left-0 duration-400 group-hover:scale-90 group-hover:border-transparent rounded-full" />
 

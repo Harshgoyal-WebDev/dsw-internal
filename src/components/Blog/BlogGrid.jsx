@@ -259,6 +259,7 @@ const blogData = [
 const BlogGrid = () => {
   const [page, setPage] = useState(1);
   const [isMobile, setIsMobile] = useState(false);
+   const [activeIndex, setActiveIndex] = useState(0);
     
     useEffect(() => {
       const checkMobile = () => setIsMobile(window.innerWidth < 640);
@@ -288,7 +289,8 @@ const BlogGrid = () => {
       {/* Pagination */}
       <div className="flex items-center justify-center space-x-[2vw] max-sm:mt-[18vw] max-md:w-full max-md:justify-between">
         {/* Left arrow */}
-        <PreviousButton onClick={handlePrev} />
+        <PreviousButton onClick={handlePrev} isDisabled={page === 1} />
+
 
         {/* Page numbers */}
         {/* <div className="flex max-sm:w-full max-sm:justify-center  font-head max-sm:space-x-[6vw] space-x-[2vw] text-30 text-[#909090]">
@@ -334,7 +336,7 @@ const BlogGrid = () => {
         </div>
 
         {/* Right arrow */}
-        <NextButton onClick={handleNext} />
+        <NextButton onClick={handleNext} isDisabled={page === totalPages} />
       </div>
     </section>
   );
