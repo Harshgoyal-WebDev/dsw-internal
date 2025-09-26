@@ -5,7 +5,7 @@ const FeaturesCard = ({ icon, title, para }) => {
   return (
     <>
       <div className=" relative group  max-md:space-y-[10vw] max-md:w-full w-[45%]">
-        <div className=" pt-[3vw] space-y-[1.5vw] max-md:flex max-md:flex-col max-md:items-center max-md:space-y-[6vw] max-md:mt-[10vw] fadeup  w-full">
+        <div className=" pt-[3vw] space-y-[1.5vw] max-md:flex max-md:flex-col max-md:items-center max-md:space-y-[2.5vw] max-md:mt-[7vw] fadeup  w-full">
           <Image
             src={icon}
             height={98}
@@ -13,7 +13,7 @@ const FeaturesCard = ({ icon, title, para }) => {
             alt={title}
             className="w-[5vw] h-[5vw] object-contain max-md:w-[25vw] max-md:h-[25vw]"
           />
-          <h4 className="text-30 text-white-200 max-md:!text-[5.5vw] max-md:w-[95%] max-md:text-center max-md:h-fit">
+          <h4 className="text-30 text-white-200 max-md:text-[5.5vw] max-sm:text-[7vw] max-md:w-[95%] max-md:text-center max-md:h-fit">
             {title}
           </h4>
           <p className="text-white-300  w-[95%] max-md:w-[95%] max-md:text-center max-md:h-auto">

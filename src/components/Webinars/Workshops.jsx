@@ -54,7 +54,7 @@ const Workshops = () => {
                   height={300}
                 />
               </div>
-              <h3 className="text-30">{item.title}</h3>
+              <h3 className="text-30 max-sm:text-[5.5vw]">{item.title}</h3>
 
               <p className="text-[1.05vw] max-md:text-[2.5vw] max-sm:text-[4vw]">{item.date}</p>
 

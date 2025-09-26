@@ -93,7 +93,7 @@ const SwiperCard = ({ title, list, duration, onHover, isActive, space }) => {
   return (
     <>
       <div
-        className="relative py-[3vw] background-glass max-md:py-[8vw] max-md:px-[8vw] rounded-[1.5vw] overflow-hidden w-[34vw] px-[3vw] h-[38vw] max-md:min-h-[70vh] max-sm:h-fit max-md:w-full max-md:rounded-[6vw] border border-white/10 group "
+        className="relative py-[3vw] background-glass max-md:py-[8vw] max-md:px-[8vw] rounded-[1.5vw] overflow-hidden w-[34vw] px-[3vw] h-[38vw] max-md:min-h-[70vh] max-sm:min-h-[65vh] max-md:w-full max-md:rounded-[6vw] border border-white/20 group "
         onMouseEnter={onHover}
       >
         <div
@@ -105,12 +105,12 @@ const SwiperCard = ({ title, list, duration, onHover, isActive, space }) => {
           <p className="text-white-200 max-sm:text-[4vw] max-md:text-[3vw] text-[1vw]">{duration}</p>
         </div>
         <div className="h-full flex flex-col justify-between relative z-[10]">
-          <div className="w-[60%] max-md:w-[80%]">
+          <div className="w-[60%] max-md:w-[70%]">
             <h3 className="text-40 text-white-200">{title}</h3>
           </div>
 
           <div className="w-full  max-md:space-y-[3vw] py-[2vw] max-sm:mt-[8vw]">
-            <ul className={`list-disc text-white-200 pl-[1.5vw] marker:text-[1vw] max-md:pl-0 ${space}`}>
+            <ul className={`list-disc text-white-200 pl-[2vw] ${space}`}>
               {list.map((item, index) => (
                 <li key={index} className="text-white-300 text-[1.05vw] max-md:text-[2.5vw] max-sm:text-[4vw]">
                   <span className="!font-medium max-md:w-full text-white-200">{item.heading} </span>{" "}

@@ -74,7 +74,7 @@ const UpcomingWebinars = () => {
               </div>
               <div className="w-[60%] flex flex-col gap-[2vw] mt-[1vw] max-md:w-full max-sm:gap-[7vw] max-md:gap-[5vw]">
                 <Copy>
-                  <h3 className="text-30 text-white-200">{mainAnnouncement.title}</h3>
+                  <h3 className="text-30 text-white-200 max-sm:text-[5.5vw]">{mainAnnouncement.title}</h3>
                 </Copy>
                 <Copy>
                   <p className="text-white-300">{mainAnnouncement.description}</p>
@@ -126,7 +126,7 @@ const UpcomingWebinars = () => {
                       height={300}
                     />
                   </div>
-                  <h3 className="text-30 text-white-200">{item.title}</h3>
+                  <h3 className="text-30 text-white-200 max-sm:text-[5.5vw]">{item.title}</h3>
                   <div className="w-full flex justify-between">
                     <p className="text-[1.05vw] text-white-200 max-md:text-[2.5vw] max-sm:text-[4vw]">{item.type}</p>
                     <p className="text-[1.05vw] text-white-200 max-md:text-[2.5vw] max-sm:text-[4vw]"> {item.date}</p>

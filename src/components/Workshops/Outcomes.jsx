@@ -63,7 +63,7 @@ export default function Outcomes({outcomesData}) {
           <h2 className="text-60 headingAnim text-white-200 max-md:text-center w-[90%] max-md:w-full">
             {outcomesData.heading}
           </h2>
-          <div className="space-y-[1vw]">
+          <div className="space-y-[1vw] max-sm:space-y-[7vw]">
           <Copy>
             <p className="text-white-300 max-md:text-center">
             {outcomesData.para}
@@ -82,7 +82,7 @@ export default function Outcomes({outcomesData}) {
               className="w-[60%] max-md:w-[100%] flex gap-[3.2vw] items-center about-item"
             >
               <div className="w-[15%]  relative max-md:w-[30%]">
-                <div className="relative w-[6.5vw] h-[6.5vw] border border-primary-1 rounded-full flex items-center justify-center max-md:w-[20vw] max-md:h-[20vw]">
+                <div className="relative w-[6.5vw] h-[6.5vw] border border-primary-1 rounded-full flex items-center justify-center max-md:w-[18vw] max-md:h-[18vw]">
                   <p className="about-id text-primary-1 text-[1.5vw] font-head relative z-[1] max-md:text-[4.2vw]">
                     {id}
                   </p>

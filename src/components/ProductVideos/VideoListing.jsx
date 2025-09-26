@@ -101,7 +101,7 @@ const VideoListing = ({margin}) => {
                 </div>
               </div>
               <Copy>
-                <h3 className="text-30 mt-[1vw] max-sm:pl-[1vw] text-white-200">{video.title}</h3>
+                <h3 className="text-30 mt-[1vw] max-sm:pl-[1vw] text-white-200 max-sm:text-[5.5vw]">{video.title}</h3>
               </Copy>
               <Copy>
                 <p className="max-sm:pl-[1vw] text-white-300">{video.description}</p>
