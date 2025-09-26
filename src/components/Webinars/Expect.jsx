@@ -58,7 +58,7 @@ export default function Expect() {
   
 
   return (
-    <section className="w-screen container relative z-[10] mt-[-20vh]" id="expect">
+    <section className="w-screen container relative z-[10] " id="expect">
       <div className="w-full flex flex-col items-center justify-center gap-y-[7vw] max-sm:gap-y-[20vw] max-md:gap-y-[12vw]">
         <div className="text-center ">
           <h2 className="text-90 headingAnim text-white-200 max-sm:text-center">

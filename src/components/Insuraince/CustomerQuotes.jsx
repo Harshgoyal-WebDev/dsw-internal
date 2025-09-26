@@ -97,7 +97,7 @@ const ExpandablePanels = () => {
   };
 
   return (
-    <section className="container h-fit background-radial space-y-[8vw]">
+    <section className="container h-fit background-radial space-y-[8vw] max-sm:space-y-[12vw]">
       <h2 className="text-60 text-white-200 text-center headingAnim">
         Real Customer Quotes
       </h2>
@@ -129,7 +129,7 @@ const ExpandablePanels = () => {
                   className="w-[2vw] h-[2vw]"
                   alt="plus-icon"
                 />
-                <h3 className="text-white text-[2vw] font-display pl-[15vw] transform -rotate-90 whitespace-nowrap">
+                <h3 className="text-white-200 text-[2vw] font-display pl-[15vw] transform -rotate-90 whitespace-nowrap">
                   {panel.title}
                 </h3>
               </div>
@@ -172,11 +172,11 @@ const ExpandablePanels = () => {
       </div>
 
       {/* Mobile Accordion  */}
-      <div className=" flex-col w-full px-[2vw] max-md:block hidden">
+      <div className=" flex-col w-full px-[2vw] max-md:block hidden fadeup">
         {panelsData.map((panel, index) => (
           <div
             key={index}
-            className="border-b border-white/30 duration-500 ease-in-out overflow-hidden group"
+            className="border-b border-white/30 duration-500 ease-in-out overflow-hidden group "
           >
             <div
               className="flex justify-between items-center py-[5vw] cursor-pointer"
@@ -188,7 +188,7 @@ const ExpandablePanels = () => {
                 {panel.title}
               </h3>
 
-              {activeMobilePanel != index ? (
+              {/* {activeMobilePanel != index ? (
                 <Image
                   src={"/assets/icons/insuraince/plus.svg"}
                   width={200}
@@ -206,13 +206,27 @@ const ExpandablePanels = () => {
                     alt="toggle-icon"
                   />
                 </div>
-              )}
+              )} */}
+              <div
+              className={`max-sm:w-[13vw] max-sm:h-[12vw] relative flex items-center justify-center max-sm:rounded-[3vw] transition-all duration-500 max-md:w-[9vw] max-md:h-[8vw] max-md:rounded-[1.5vw] rotate-45`}
+            >
+              <span
+                className={` absolute block  w-[1.5px] max-sm:h-[5.5vw] transition-all duration-500 max-md:h-[4vw] rotate-45 bg-white/40`}
+              />
+              <span
+                className={` absolute block  w-[1.5px] max-sm:h-[5.5vw] transition-all duration-500 max-md:h-[4vw] ${
+                  activeMobilePanel==index
+                    ? "rotate-[45deg] bg-white/40"
+                    : "rotate-[135deg] bg-white/40"
+                }`}
+              />
+            </div>
             </div>
 
             <div
               className={`transition-all duration-700 ease-in-out ${
                 activeMobilePanel === index
-                  ? "max-h-[100vh] max-md:h-[45vh] max-sm:h-[40vh] opacity-100 "
+                  ? "max-h-[100vh] max-md:h-[45vh] max-sm:h-[33vh] opacity-100 "
                   : "max-h-0 h-0 opacity-0"
               } overflow-hidden`}
             >

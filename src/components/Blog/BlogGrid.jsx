@@ -21,7 +21,7 @@ const BlogCard = ({ title, date, img }) => {
             />
           </div>
           <div className="space-y-[1vw] max-sm:space-y-[4vw] px-5 max-md:w-full w-[90%] max-sm:w-[100%]">
-            <p className=" text-white-200 font-medium leading-[1.5] max-md:text-[3.2vw] max-sm:text-[6.5vw] font-head text-[1.2vw]">
+            <p className=" text-white-200 font-medium leading-[1.5] max-md:text-[3.2vw] max-sm:text-[5.5vw] max-sm:font-normal font-head text-[1.2vw]">
               {title}
             </p>
             <p className=" font-medium text-white/40">
@@ -307,7 +307,7 @@ const BlogGrid = () => {
           ))}
         </div> */}
 
-        <div className="flex max-sm:w-full   max-sm:justify-center font-head max-md:space-x-[10vw] space-x-[2vw] text-30 text-[#909090]">
+        <div className="flex max-sm:w-fit   max-sm:justify-center font-head max-md:space-x-[10vw] space-x-[2vw] text-30 text-[#909090]">
 
 
         {(() => {

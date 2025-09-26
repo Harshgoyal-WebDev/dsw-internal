@@ -13,8 +13,8 @@ const FeaturedBlog = () => {
 
   return (
     <section id='featured-blog-container' className=" w-screen h-full max-md:gap-[3vh] mt-[-20vh] max-md:mt-0 max-md:flex-col relative z-[20]">
-      <div className="w-full h-full flex fadeup justify-between container !pb-[0.5vw]  ">
-      <div className="w-[45%] max-md:w-[85%] max-md:px-0 max-md:px-p2   rounded-3xl h-[30vw] max-md:h-[40vh] max-md:border max-md:border-white/30  relative group overflow-hidden">
+      <div className="w-full h-full flex fadeup justify-between container !pb-[0.5vw] max-md:flex-col  ">
+      <div className="w-[45%] max-md:w-[85%] max-md:px-0  max-sm:w-full   rounded-3xl h-[30vw] max-md:h-[40vh] max-md:border max-md:border-white/30  relative group overflow-hidden">
         <Link href={"/resources/blog-detail"}>
           <div className="w-full h-full   max-md:h-full max-md:w-full overflow-hidden rounded-3xl">
             <Image
@@ -32,10 +32,10 @@ const FeaturedBlog = () => {
         </Link>
       </div>
 
-      <div className="w-[55%]  p-[2.5vw] max-md:w-full  space-y-[3vw] max-md:space-y-[5vw]">
+      <div className="w-[55%]  p-[2.5vw] max-md:w-full  space-y-[3vw] max-md:space-y-[5vw] max-md:p-0 max-md:pt-[5vw] max-sm:pt-[7vw]">
         <div className="space-y-[1.8vw] max-md:space-y-[5vw]">
           <Copy>
-          <p className="text-30">
+          <p className="text-30 max-sm:text-[6vw] max-md:text-[4.5vw]">
             DSW Launches Rapid GenAI Deployment Capability for Insurance
             Providers
           </p>
@@ -52,7 +52,7 @@ const FeaturedBlog = () => {
           
         </div>
 
-        <div className="flex max-md:flex-wrap max-md:justify-between  gap-[3.5vw]">
+        <div className="flex max-md:flex-wrap max-md:justify-between  gap-[3.5vw] max-sm:gap-[10vw]">
           <div className="space-y-[0.5vw] fadeup max-md:space-y-[1.5vw]">
             <p className="text-white/40 text-[1.05vw] max-md:text-[2.5vw] max-sm:text-[4vw]">Category</p>
             <p className="text-white-200 text-[1.05vw] max-md:text-[2.5vw] max-sm:text-[4vw]">AI</p>

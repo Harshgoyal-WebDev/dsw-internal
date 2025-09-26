@@ -11,7 +11,7 @@ const Page = () => {
   return (
     <>
       <Layout>
-        <Hero heroData={heroData} breadcrumbs={true}/>
+       <Hero heroData={heroData} breadcrumbs={true}/>
        <Expect/>
        <UpcomingWebinars/>
        <Workshops/>
@@ -27,7 +27,7 @@ export default Page;
 const heroData = {
   heading: "Stay Ahead with Live Insights, Expert Panels & Hands-On Learning",
   para: "At Data Science Wizards, we don’t just talk about AI—we show you how to build it, deploy it, and scale it securely in the enterprise. Our webinars, virtual sessions, and live events are designed to help decision-makers, technologists, and innovators stay ahead in the fast-moving world of AI and GenAI.​",
-  paraClass: "w-[70%]",
+  paraClass: "w-[70%] max-sm:w-full",
   homepage: false,
   hidebtn: true,
   headingWidth:"w-[85%]"

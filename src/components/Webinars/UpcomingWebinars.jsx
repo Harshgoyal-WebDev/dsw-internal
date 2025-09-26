@@ -50,7 +50,7 @@ const UpcomingWebinars = () => {
     <section className="container" id="announcement">
       <div className="space-y-[7vw]">
         <div className="w-1/2 space-y-[1vw] max-md:w-full max-sm:text-center max-sm:space-y-[7vw] max-md:space-y-[5vw] ">
-          <h2 className=" text-90  headingAnim w-[95%]">Upcoming Webinars & Events</h2>
+          <h2 className=" text-90  headingAnim w-[95%] max-sm:w-full">Upcoming Webinars & Events</h2>
           <Copy>
             <p className="text-white-300">
               See how DSW is making waves across global tech and AI

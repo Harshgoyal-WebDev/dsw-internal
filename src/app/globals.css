@@ -152,14 +152,14 @@ h4 {
   }
 }
 
-/* @keyframes marquee {
+@keyframes marquee {
   0% {
     transform: translateX(0);
   }
   100% {
     transform: translateX(-62.5%);
   }
-} */
+}
 .marquee__track_reverse {
   display: flex;
   animation: marquee-reverse 15s linear infinite;

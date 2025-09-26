@@ -126,7 +126,7 @@ const FutureScope = () => {
       <div className="absolute future-card w-[100vw] max-md:hidden inset-0 flex px-[8vw] gap-[0.5vw] flex-col items-start">
         <div className="flex w-full justify-start">
           <div
-            className="relative w-[27.5vw] rounded-[2.5vw] group cursor-pointer
+            className="relative w-[27.5vw] rounded-[2.5vw] fadeup group cursor-pointer
     overflow-hidden flex flex-col border transition-opacity border-[#59595980] 
     justify-between p-[2.5vw] h-[22vw] background-glass backdrop-blur-[1vw]"
           >
@@ -162,7 +162,7 @@ const FutureScope = () => {
 
         <div className="flex w-full justify-center">
           <div
-            className="relative w-[27.5vw] rounded-[2.5vw] group cursor-pointer
+            className="relative w-[27.5vw] rounded-[2.5vw] fadeup group cursor-pointer
     overflow-hidden flex flex-col border border-[#59595980] 
     justify-between p-[2.5vw] h-[22vw] background-glass backdrop-blur-[1vw]"
           >
@@ -197,7 +197,7 @@ const FutureScope = () => {
 
         <div className="flex w-full justify-end">
           <div
-            className="relative w-[27.5vw] rounded-[2.5vw] group cursor-pointer
+            className="relative w-[27.5vw] rounded-[2.5vw] fadeup group cursor-pointer
     overflow-hidden flex flex-col border border-[#59595980] 
     justify-between p-[2.5vw] h-[22vw] background-glass backdrop-blur-[1vw]"
           >

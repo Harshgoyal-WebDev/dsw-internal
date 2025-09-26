@@ -42,7 +42,7 @@ const Card = ({ srcc, content, isActive, onHover }) => {
 
 const MobileCard = ({ srcc, content }) => {
   return (
-    <div className="max-sm:h-[33vh] max-md:h-[44vh] mx-auto background-glass flex-shrink-0 max-md:w-[45%] border border-[#88888880] py-[5vw] max-sm:w-[80vw] rounded-[6vw] flex flex-col max-md:gap-[6vw] max-sm:gap-[5vw] items-start max-md:justify-start max-sm:justify-center px-[5vw] fadeup">
+    <div className="max-sm:h-[33vh] max-md:h-[44vh] mx-auto background-glass flex-shrink-0 max-md:w-[45%] border border-[#88888880] py-[5vw] max-sm:w-[85vw] rounded-[6vw] flex flex-col max-md:gap-[6vw] max-sm:gap-[5vw] items-start max-md:justify-start max-sm:justify-center px-[7vw] fadeup">
       <div className="max-sm:w-[22vw] max-md:w-auto max-md:h-[15vw] max-sm:h-auto h-auto">
         <Image
           src={srcc}
@@ -83,7 +83,7 @@ const Features = () => {
 
       if (!isMobile) {
         const horizAnim = gsap.to(cardsContainerRef.current, {
-          x: "-22vw",
+          x: "-24vw",
           ease: "none",
           scrollTrigger: {
             trigger: featuresRef.current,
@@ -159,7 +159,7 @@ const Features = () => {
           </div>
         </div>
 
-        <div className="hidden max-md:block w-full max-md:pt-[10vw] max-sm:pt-[25vw]">
+        <div className="hidden max-md:block w-full max-md:pt-[10vw] max-sm:pt-[20vw]">
           <div className="flex max-sm:flex-col max-md:flex-wrap max-sm:px-0 max-md:px-[4vw]  gap-[7vw] mx-auto">
             {cardsData.map((card, index) => (
               <MobileCard key={index} srcc={card.src} content={card.content} />

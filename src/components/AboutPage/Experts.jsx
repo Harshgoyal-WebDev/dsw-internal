@@ -41,7 +41,7 @@ export default function Experts({ heading }) {
   };
 
   return (
-    <section className="relative w-full h-fit  space-y-[6vw] container max-md:h-full overflow-hidden">
+    <section className="relative w-full h-fit  space-y-[6vw] container max-md:h-full overflow-hidden flex flex-col">
       <div className="w-full flex h-full gap-[1vw] items-end justify-between max-sm:flex-col max-sm:items-start">
         <h2 className="text-90 headingAnim w-[45%] max-md:w-full">{heading}</h2>
 
@@ -51,6 +51,7 @@ export default function Experts({ heading }) {
         </div>
       </div>
       {/* Swiper */}
+      <div className="">
       <Swiper
         ref={swiperRef}
         slidesPerView={"auto"}
@@ -58,7 +59,7 @@ export default function Experts({ heading }) {
         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
         onInit={(swiper) => setTotalSlides(swiper.slides.length)}
         freeMode={true}
-        className="!overflow-visible max-sm:!pt-[5vh] max-md:!pt-[5vw] !pl-[27%] max-md:!pl-0 max-md:w-full max-sm:mb-[15%] max-md:mb-[10%] "
+        className="!overflow-visible max-sm:!pt-[5vh] max-md:!pt-[5vw] !pl-[27%] max-md:!pl-0 max-md:w-full max-sm:mb-[5%] max-md:mb-[10%] "
         breakpoints={{
           0: {
             slidesPerView: 1,
@@ -84,7 +85,7 @@ export default function Experts({ heading }) {
             className="!w-[20vw] max-md:!w-[55vw]  max-sm:!w-full  experts-cards flex-shrink-0"
           >
             <Link href={"#"} key={index} className="w-full flex-shrink-0">
-              <div className="relative rounded-[1.5vw] max-sm:w-[90%] max-sm:mx-auto overflow-hidden w-[95%] h-[20vw] max-md:mx-auto max-sm:h-[38vh] max-md:h-[38vh] max-md:w-auto max-md:rounded-[6vw]">
+              <div className="relative rounded-[1.5vw] max-sm:w-full max-sm:mx-auto overflow-hidden w-[95%] h-[20vw] max-md:mx-auto max-sm:h-[42vh] max-md:h-[38vh] max-md:w-auto max-md:rounded-[6vw]">
                 <Image
                   src={card.src}
                   width={1000}
@@ -102,14 +103,20 @@ export default function Experts({ heading }) {
                   />
                 </div>
               </div>
-              <div className="space-y-[.5vw] w-full mt-[1vw] max- max-md:mt-[5vw]  max-md:pl-[4vw] max-sm:space-y-[1vw] max-sm:mt-[5vw] max-sm:pl-[4vw]">
-                <p className="text-30">{card.name}</p>
+              <div className="space-y-[.5vw] w-full mt-[1vw] max- max-md:mt-[5vw]  max-md:pl-[4vw] max-sm:space-y-[2.5vw] max-sm:mt-[5vw] max-sm:pl-[1vw]">
+                <p className="text-30 max-sm:text-[7vw]">{card.name}</p>
                 <p className="w-[75%] font-medium">{card.role}</p>
               </div>
             </Link>
           </SwiperSlide>
         ))}
       </Swiper>
+
+      </div>
+       {/* <div className="flex fadeup gap-6 mt-12 max-sm:mt-0 max-md:mt-[10vw] max-md:items-center max-md:justify-end max-md:static  absolute top-[17%] right-[4%] ">
+          <PreviousButton onClick={handlePrev} />
+          <NextButton onClick={handleNext} />
+        </div> */}
     </section>
   );
 }

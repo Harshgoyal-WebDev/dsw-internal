@@ -17,7 +17,7 @@ const Annoucements = () => {
       "DSW Launches Rapid GenAI Deployment Capability for Insurance Providers",
     description:
       "Data Science Wizards (DSW) has unveiled a groundbreaking capability that allows insurance providers to deploy Generative AI solutions in just 2–4 hours, transforming traditional workflows such as claims processing, fraud detection, customer support, and document intelligence.",
-    category: "All",
+    category: "AI",
     date: "October 10, 2024",
     author: "Jane Smith",
     href: "#",
@@ -70,7 +70,7 @@ const Annoucements = () => {
             </div>
             <div className="w-[60%] flex flex-col gap-[2.5vw] mt-[1vw] max-md:w-full max-md:gap-[5vw]">
               <Copy>
-                <h3 className="text-30 text-white-200">{mainAnnouncement.title}</h3>
+                <h3 className="text-30 text-white-200 max-sm:text-[5.5vw]">{mainAnnouncement.title}</h3>
               </Copy>
               <Copy>
                 <p className="text-white-300">{mainAnnouncement.description}</p>
@@ -120,7 +120,7 @@ const Annoucements = () => {
                     height={300}
                   />
                 </div>
-                <h3 className="text-30 text-white-200">{item.title}</h3>
+                <h3 className="text-30 text-white-200 max-sm:text-[5.5vw]">{item.title}</h3>
                 <p className="text-[1.05vw] max-md:text-[2.5vw] max-sm:text-[4vw] text-white-200" >{item.date}</p>
                 <div className="pt-[1vw]">
                 <LinkButton text={"Read More"} href={item.href} />

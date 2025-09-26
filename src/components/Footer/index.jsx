@@ -1,10 +1,5 @@
 'use client'
 import Newsletter from "./Newsletter";
-import FooterCTA from "../Common/FooterCta";
-// import NavigationLink from "../ui/NavigationLink";
-// import SocialLink from "../ui/SocialLink";
-// import ContactInfo from "../ui/ContactInfo";
-// import Logo from "../ui/Logo";
 import { NAVIGATION, SOCIAL_LINKS, SITE_CONFIG } from "@/constants/siteConfig";
 import { Suspense } from "react";
 import Image from "next/image";

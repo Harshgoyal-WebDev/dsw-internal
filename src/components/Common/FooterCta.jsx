@@ -68,7 +68,7 @@ const FooterCTA = ({ footerCTAData , width, paraWidth}) => {
       className="flex items-center justify-between h-[80vh] w-screen overflow-hidden max-md:flex-col-reverse  max-md:h-full container "
       id="footer-cta"
     >
-      <div className="w-[48%] max-md:!w-full max-md:text-center max-sm:mt-[5vw]">
+      <div className="w-[48%] max-md:!w-full max-md:text-center max-sm:mt-[5vw] max-sm:flex max-sm:flex-col max-sm:items-center ">
         <h2 className={` ${width} text-90 font-head mb-[2vw] headingAnim text-white-200 max-sm:mb-[7vw] max-md:w-full`}>
           {footerCTAData.heading}
         </h2>
@@ -80,7 +80,7 @@ const FooterCTA = ({ footerCTAData , width, paraWidth}) => {
         <div className="flex gap-6 max-md:items-center max-md:justify-center max-sm:flex-col">
           <div className="fadeup">
             <PrimaryButton
-              className="max-sm:min-w-[50vw]"
+              className="max-sm:min-w-[55vw]"
               text={footerCTAData.btnText1}
               href={footerCTAData.btnLink1}
             />
@@ -88,6 +88,7 @@ const FooterCTA = ({ footerCTAData , width, paraWidth}) => {
           {footerCTAData.btnText2 && (
             <div className="fadeup">
               <WhiteButton
+              className="max-sm:min-w-[55vw]"
                 text={footerCTAData.btnText2}
                 href={footerCTAData.btnLink2}
               />
@@ -171,7 +172,7 @@ const FooterCTA = ({ footerCTAData , width, paraWidth}) => {
         </div>
         <motion.div
           style={{ x: image1X, y: image1Y }}
-          className="absolute w-[40%] top-[20%] left-[20%] rounded-2xl border border-white/20 max-md:border-white/10 overflow-hidden max-sm:w-[50%] max-sm:top-[5%] max-md:w-[35%] max-sm:left-[10%] max-md:left-[13.5%]
+          className="absolute w-[40%] top-[20%] left-[20%] rounded-2xl border border-white/20 max-md:border-white/10 overflow-hidden max-sm:w-[50%] max-sm:top-[5%] max-md:w-[35%] max-sm:left-[10%] max-md:left-[13.5%] max-sm:rounded-[3vw]
                     max-md:top-[-18%] fadeup "
         >
           <Image

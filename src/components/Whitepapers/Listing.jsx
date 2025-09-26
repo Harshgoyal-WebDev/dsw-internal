@@ -109,7 +109,7 @@ const Listing = () => {
               </div>
               <div className="w-[60%] flex flex-col gap-[1.5vw] mt-[2vw] max-md:w-full max-sm:gap-[7vw] max-md:gap-[3vw]">
                 <p className="max-sm:order-3 text-[1.05vw] max-md:text-[2.5vw] max-sm:text-[4vw] text-white-200">{data.date}</p>
-                <h3 className="text-30 ordder-2 text-white-200">{data.title}</h3>
+                <h3 className="text-30  text-white-200 max-sm:text-[5.5vw]">{data.title}</h3>
                 <p className="max-sm:order-1 text-white-300">{data.description}</p>
                 <LinkButton href={data.link} text={data.btnText} className="order-4" />
               </div>

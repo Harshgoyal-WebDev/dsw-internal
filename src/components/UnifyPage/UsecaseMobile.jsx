@@ -138,7 +138,7 @@ function Accordion({ title, para, link, features, isOpen, onToggle, id }) {
               initial={{ height: 0, opacity: 0, y: 20 }}
               animate={{ height: "auto", opacity: 1, y: 0 }}
               exit={{ height: 0, opacity: 0, y: 20 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               onAnimationComplete={() => {
                 ScrollTrigger.refresh();
               }}

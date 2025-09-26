@@ -102,8 +102,8 @@ export default function Impact() {
               className="w-full flex gap-[3.2vw] items-center about-item"
             >
               <div className="w-[15%] relative max-md:w-[30%]">
-                <div className="relative w-[6.5vw] h-[6.5vw] border border-primary-1 rounded-full flex items-center justify-center max-sm:w-[20vw] max-sm:h-[20vw] max-md:w-[15vw] max-md:h-[15vw]">
-                  <p className="about-id text-primary-1 text-[1.5vw] font-head relative z-[1] max-md:text-[4.2vw]">
+                <div className="relative w-[6.5vw] h-[6.5vw] border border-primary-1 rounded-full flex items-center justify-center max-sm:w-[18vw] max-sm:h-[18vw] max-md:w-[15vw] max-md:h-[15vw]">
+                  <p className="about-id text-primary-1 text-[1.5vw] font-head relative z-[1] max-md:text-[4.5vw]">
                     {id}
                   </p>
                 </div>
