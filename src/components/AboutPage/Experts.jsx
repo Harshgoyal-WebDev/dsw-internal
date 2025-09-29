@@ -71,7 +71,7 @@ export default function Experts({ heading }) {
           },
           1025: {
             slidesPerView: "auto",
-            spaceBetween: 20,
+            spaceBetween: 30,
           },
         }}
         // style={{
@@ -84,8 +84,8 @@ export default function Experts({ heading }) {
             key={index}
             className="!w-[20vw] max-md:!w-[55vw]  max-sm:!w-full  experts-cards flex-shrink-0"
           >
-            <Link href={"#"} key={index} className="w-full flex-shrink-0">
-              <div className="relative rounded-[1.5vw] max-sm:w-full max-sm:mx-auto overflow-hidden w-[95%] h-[20vw] max-md:mx-auto max-sm:h-[42vh] max-md:h-[38vh] max-md:w-auto max-md:rounded-[6vw]">
+            <Link href={card.link} key={index} target="_blank" className="w-full flex-shrink-0">
+              <div className="relative rounded-[1.5vw] max-sm:w-full max-sm:mx-auto overflow-hidden w-[95%] h-[22vw] max-md:mx-auto max-sm:h-[42vh] max-md:h-[38vh] max-md:w-auto max-md:rounded-[6vw]">
                 <Image
                   src={card.src}
                   width={1000}
@@ -126,44 +126,64 @@ const cardsData = [
     src: "/assets/images/about/experts/sandeep.png",
     name: "Sandeep Khuperkar",
     role: "Founder and CEO",
+    link:"https://www.linkedin.com/in/sandeepkhuperkar/"
   },
 
   {
     src: "/assets/images/about/experts/pritesh.png",
     name: "Pritesh Tiwari",
     role: "Founder and Chief Data Scientist",
+    link:"https://www.linkedin.com/in/pritesh-tiwari-b129a6a6/"
   },
   {
     src: "/assets/images/about/experts/shivam.png",
     name: "Shivam Thakkar",
     role: "Founder and Chief Product Officer",
+    link:"https://www.linkedin.com/in/skt7/"
   },
 
   {
     src: "/assets/images/about/experts/sandya.png",
     name: "Sandhya Oza",
     role: "Co-Founder and Chief Project Officer",
+    link:"https://www.linkedin.com/in/sandhyaoza22/"
   },
   {
-    src: "/assets/images/about/experts/sandeep.png",
-    name: "Sandeep Khuperkar",
-    role: "Founder and CEO",
-  },
-
-  {
-    src: "/assets/images/about/experts/pritesh.png",
-    name: "Pritesh Tiwari",
-    role: "Founder and Chief Data Scientist",
-  },
-  {
-    src: "/assets/images/about/experts/shivam.png",
-    name: "Shivam Thakkar",
-    role: "Founder and Chief Product Officer",
+    src: "/assets/images/about/experts/dr-ramesh-khare.png",
+    name: "Dr. Ramesh Khare",
+    role: "Business Consulting – Insurance Specialist",
+    link:"https://www.linkedin.com/in/dr-ramesh-khare-07a0359/"
   },
 
   {
-    src: "/assets/images/about/experts/sandya.png",
-    name: "Sandhya Oza",
-    role: "Co-Founder and Chief Project Officer",
+    src: "/assets/images/about/experts/deepti-dilip.png",
+    name: "Deepti Dilip J.",
+    role: "FChief Marketing Officer",
+    link:"https://www.linkedin.com/in/deepti-dilip-727b6a14/"
+  },
+  {
+    src: "/assets/images/about/experts/rohit-rajgor.png",
+    name: "Rohit Rajgor",
+    role: "Vice-President Sales",
+    link:"https://www.linkedin.com/in/rohitrajgor/"
+  },
+
+  {
+    src: "/assets/images/about/experts/rajeshwar-singh.png",
+    name: "Rajeshwar Singh",
+    role: "Open Source Practice Head",
+    link:"https://www.linkedin.com/in/rajeshwar-singh-481aa83/"
+  },
+  {
+    src: "/assets/images/about/experts/hardik-raja.png",
+    name: "Hardik Raja",
+    role: "Senior Data Scientist",
+    link:"https://www.linkedin.com/in/hardik-raja-a3807824/"
+  },
+  {
+    src: "/assets/images/about/experts/saurabh-singh.png",
+    name: "Saurabh Singh",
+    role: "Senior Data Scientist",
+    link:"https://www.linkedin.com/in/saurabhsingh1401/"
   },
 ];

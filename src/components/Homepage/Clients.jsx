@@ -119,10 +119,16 @@ export default function Clients() {
 }
 
 const logos = [
-  "/assets/images/clients/manipal-cigna.png",
-  "/assets/images/clients/edgeverve.png",
-  "/assets/images/clients/sodexo.png",
+  "/assets/images/clients/bon-prix.png",
   "/assets/images/clients/canara-hsbc.png",
-  "/assets/images/clients/bonprix.png",
   "/assets/images/clients/ciek.png",
+"/assets/images/craft-so=ilicon.png",
+  "/assets/images/clients/earc.png",
+  "/assets/images/clients/edelweiss-tokio-life.png",
+  "/assets/images/clients/edge-verve.png",
+  "/assets/images/clients/iifl-capital.png",
+  "/assets/images/clients/kelmac-grop.png",
+  "/assets/images/clients/manipal-cigna.png",
+  "/assets/images/clients/oxsde.png",
+  "/assets/images/clients/sodexo.png",
 ];

@@ -11,7 +11,7 @@ const panelsData = [
     company: "Canara HSBC Life Insurance",
     description:
       "With DSW's insurance-specific solutions on top of its robust AI platform, we've been able to move use cases into production quickly. ",
-    logo: "/assets/icons/insuraince/customer-logo-1.svg",
+    logo: "/assets/images/insuraince/canara-hsbc.png",
   },
   {
     title: "Mr. Stefano Bonfa",
@@ -20,7 +20,7 @@ const panelsData = [
     company: "SB Europe ",
     description:
       "UnifyAI simplified our data-driven approach, enabling easy development of AI-powered use cases. ",
-    logo: "/assets/icons/insuraince/customer-logo-1.svg",
+    logo: "/assets/images/insuraince/ciek.png",
   },
   {
     title: "Mr. Neeraj Kulkarni",
@@ -29,7 +29,7 @@ const panelsData = [
     company: "CIEK Solutions",
     description:
       "Great expertise and analytical diligence by DSW UnifyAI in developing an end-to-end data pipeline - making analytical insights available in the form of interactive, advanced dashboards ",
-    logo: "/assets/icons/insuraince/customer-logo-1.svg",
+    logo: "/assets/images/insuraince/ciek.png",
   },
   {
     title: "Mr. Ritesh Tiwari",
@@ -38,7 +38,7 @@ const panelsData = [
     company: "Castler ",
     description:
       "With advanced capabilities of its GenAI Studio, Castler's escrow services became smarter, more efficient - enabling faster, secure, scalable solutions for our BFSI clients. ",
-    logo: "/assets/icons/insuraince/customer-logo-1.svg",
+    logo: "/assets/images/insuraince/castler.png",
   },
 ];
 

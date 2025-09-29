@@ -47,7 +47,7 @@ export default function Guiders({heading}) {
 
       <div className="flex w-[100%] items-start gap-[3vw] justify-between max-md:hidden">
         {GuidersData.map((guider, index) => (
-          <Link href={"/#"} key={index} className="w-full guiders-cards">
+          <Link href={guider.link} key={index} target="_blank" className="w-full guiders-cards">
             <div
               key={index}
               className="relative rounded-[1.5vw] overflow-hidden w-full  h-[19vw]"
@@ -103,7 +103,8 @@ export default function Guiders({heading}) {
           {GuidersData.map((card, index) => (
             <SwiperSlide key={index}>
               <Link
-                href={"#"}
+                href={card.link}
+                target="_blank"
                 key={index}
                 className="w-full flex-shrink-0 experts-cards"
               >
@@ -147,20 +148,24 @@ const GuidersData = [
     src: "/assets/images/guiders/javed.png",
     name: "Javed Tapia",
     role: "Founder, Chairman Clover InfoTech,Clover Realty,Ex-CEO RedHat India",
+    link:"https://www.linkedin.com/in/javedtapia/"
   },
   {
     src: "/assets/images/guiders/hemant.png",
     name: "Hemant Kenia",
     role: "Founder and CEO,SK International",
+    link:"https://www.linkedin.com/in/hemant-kenia-2829a155/"
   },
   {
     src: "/assets/images/guiders/sharad.png",
     name: "Sharad Sanghi",
     role: "Chairman NTT, Global Data India,Ex-CEO and Managing Director of Netmagic",
+    link:"http://linkedin.com/in/sharadsanghi"
   },
   {
     src: "/assets/images/guiders/upendra.png",
     name: "Dr. Upendra Rao",
     role: "Independent Director,IDBI-Intech,Ex-CTO State Bank of India",
+    link:"https://www.linkedin.com/in/seethala-upendra-rao-03802736/"
   },
 ];
