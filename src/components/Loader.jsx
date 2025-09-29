@@ -14,10 +14,12 @@ const Loader = () => {
   const [hidden, setIsHidden] = useState(false);
   const [mob, setMob] = useState(false);
   const lenis = useLenis();
-
+  console.log(lenis&&lenis._isStopped)
   useEffect(() => {
+    
     if (lenis) {
-      lenis.stop();
+      lenis._isStopped=true;
+      lenis.stop()
 
       const ctx = gsap.context(() => {
         const tl = gsap.timeline();

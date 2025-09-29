@@ -141,6 +141,7 @@ h4 {
   display: flex;
   animation: marqueeRec 15s linear infinite;
   min-width: 200%;
+  width: fit-content;
 }
 
 @keyframes marqueeRec {
@@ -148,7 +149,7 @@ h4 {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-60%);
+    transform: translateX(-75%);
   }
 }
 
@@ -447,7 +448,7 @@ h4 {
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-80%);
+      transform: translateX(-200%);
     }
   }
 
@@ -520,7 +521,7 @@ h4 {
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-160%);
+      transform: translateX(-189.5%);
     }
   }
   @keyframes marquee {

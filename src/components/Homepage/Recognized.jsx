@@ -5,7 +5,7 @@ import Copy from "../Animations/Copy";
 const AwardItem = ({ img, title, year }) => {
   return (
     <>
-      <div className="flex-shrink-0 flex items-center justify-center gap-[1vw] w-[30vw] max-md:w-[70vw]  max-md:gap-[2vw]">
+      <div className="flex-shrink-0 flex items-center justify-center gap-[1vw] w-[30vw] max-md:w-[70vw] max-sm:w-fit  max-md:gap-[2vw]">
         <div className="w-[8vw] h-auto max-md:w-[15vw] max-sm:w-[20vw]">
           <Image
             src={img}

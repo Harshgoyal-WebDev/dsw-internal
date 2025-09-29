@@ -83,7 +83,7 @@ export default function About() {
     <section className="w-screen container mt-[-5%] max-md:mt-0 relative z-[10]" id="about" >
       <div className="w-full flex flex-col items-end justify-center gap-y-[10vw] max-md:gap-y-[15vw]">
         <SectionBreak text={" At Data Science Wizards (DSW), we believe that AI should be accessible, scalable, and enterprise-ready—not locked behind complexity. That’s why we built UnifyAI, a next-generation platform that simplifies the entire AI lifecycle for businesses across industries."} span={true}/>
-        <div className="w-[58%] flex flex-col items-start gap-[7vw] max-md:w-full max-md:gap-[10vw] max-sm:gap-[15vw] max-md:items-start max-md:mt-[10vw]">
+        <div className="w-[59%] flex flex-col items-start gap-[7vw] max-md:w-full max-md:gap-[10vw] max-sm:gap-[15vw] max-md:items-start max-md:mt-[10vw]">
           {POINTS.map(({ id, text, width, title }) => (
             <div
               key={id}
@@ -103,9 +103,9 @@ export default function About() {
                     {title}
                   </h4>
                 </Copy>
-                <Copy>
-                  <div className="text-white-300 max-md:w-full" dangerouslySetInnerHTML={{__html:text}}/>
-                </Copy>
+                {/* <Copy> */}
+                  <div className="text-white-300 max-md:w-full fadeup" dangerouslySetInnerHTML={{__html:text}}/>
+                {/* </Copy> */}
               </div>
             </div>
           ))}

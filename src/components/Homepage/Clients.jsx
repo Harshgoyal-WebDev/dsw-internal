@@ -49,8 +49,8 @@ export default function Clients() {
             z: 0,
             opacity: 1,
             filter: "blur(0px)",
-            duration: 1.5,
-            delay: index * -0.8,
+            duration: 2.5,
+            delay: index * -1.5,
           })
           .to(
             item,

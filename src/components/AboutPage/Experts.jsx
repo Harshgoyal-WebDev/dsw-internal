@@ -158,7 +158,7 @@ const cardsData = [
   {
     src: "/assets/images/about/experts/deepti-dilip.png",
     name: "Deepti Dilip J.",
-    role: "FChief Marketing Officer",
+    role: "Chief Marketing Officer",
     link:"https://www.linkedin.com/in/deepti-dilip-727b6a14/"
   },
   {
