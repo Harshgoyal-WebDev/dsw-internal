@@ -26,7 +26,7 @@ export function headingAnim() {
                   ease:"power3.out",
                   scrollTrigger: {
                     trigger: headingWord,
-                    start: 'top 85%', 
+                    start: 'top 90%', 
                     lazy: true,
               
                   },

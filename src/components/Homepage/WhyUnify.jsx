@@ -239,20 +239,20 @@ const WhyUnify = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const bgAnim = gsap.to(".gradientClassBackground", {
-      scrollTrigger: {
-        trigger: ".gradientClassBackground",
-        start: "+3500 50%",
-        end: "+4400 50%",
-        scrub: 0.5,
-      },
-      yPercent: -15,
-    });
-    return () => {
-      bgAnim.kill();
-    };
-  }, []);
+  // useEffect(() => {
+  //   const bgAnim = gsap.to(".gradientClassBackground", {
+  //     scrollTrigger: {
+  //       trigger: ".gradientClassBackground",
+  //       start: "+3500 50%",
+  //       end: "+4400 50%",
+  //       scrub: 0.5,
+  //     },
+  //     yPercent: -15,
+  //   });
+  //   return () => {
+  //     bgAnim.kill();
+  //   };
+  // }, []);
 
   const handleSkip = () => {
     const next = document.getElementById("enterpriseAI");

@@ -67,18 +67,18 @@ export default function Clients() {
     { scope: container.current }
   );
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.to("#solution-clients,#solution-industries", {
-        scrollTrigger: {
-          trigger: "#solution-industries",
-          start: "top 50%",
-          end: "bottom 50%",
-        },
-      });
-    });
-    return () => ctx.revert();
-  }, []);
+  // useEffect(() => {
+  //   const ctx = gsap.context(() => {
+  //     gsap.to("#solution-clients,#solution-industries", {
+  //       scrollTrigger: {
+  //         trigger: "#solution-industries",
+  //         start: "top 50%",
+  //         end: "bottom 50%",
+  //       },
+  //     });
+  //   });
+  //   return () => ctx.revert();
+  // }, []);
 
   return (
     <>

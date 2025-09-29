@@ -148,7 +148,8 @@ const TestimonialCard = ({ message, img, name, designation }) => {
               <div className="h-[5vw] w-[5vw] rounded-full overflow-hidden relative max-sm:h-[20vw] max-md:w-[15vw] max-md:h-[15vw] max-sm:w-[20vw]">
                 <Image
                   src={img}
-                  fill
+                  width={400}
+                  height={500}
                   alt={name}
                   className="h-full w-full object-cover"
                 />

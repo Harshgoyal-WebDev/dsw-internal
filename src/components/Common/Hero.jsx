@@ -1,5 +1,13 @@
 "use client";
-import React, { Suspense, useMemo, useRef, useLayoutEffect, memo } from "react";
+import React, {
+  Suspense,
+  useMemo,
+  useRef,
+  useLayoutEffect,
+  memo,
+  useState,
+  useEffect,
+} from "react";
 import PrimaryButton from "../Button/PrimaryButton";
 import WhiteButton from "../Button/WhiteButton";
 import gsap from "gsap";
@@ -54,7 +62,6 @@ const AnimatedLine = memo(function AnimatedLine({ delay }) {
 
     return () => ctx.revert();
   }, [delay]);
-
   return (
     <div
       ref={lineRef}
@@ -75,6 +82,17 @@ const Hero = memo(function Hero({ heroData, breadcrumbs }) {
   const shaderRef = useRef(null);
   const crumbsRef = useRef(null);
   const mobileGradientRef = useRef(null);
+  const [mob, setMob] = useState(false);
+
+
+
+  useEffect(() => {
+    if (globalThis.innerWidth <= 1024) {
+      setMob(true);
+    } else {
+      setMob(false);
+    }
+  }, [mob]);
 
   // keep your existing base hooks (these set up global triggers, etc.)
   headingAnim();
@@ -87,7 +105,11 @@ const Hero = memo(function Hero({ heroData, breadcrumbs }) {
 
   // memoize breadcrumb segments
   const pathArray = useMemo(
-    () => pathname.split("/").filter(Boolean).filter(s => s.toLowerCase() !== "home"),
+    () =>
+      pathname
+        .split("/")
+        .filter(Boolean)
+        .filter((s) => s.toLowerCase() !== "home"),
     [pathname]
   );
 
@@ -104,7 +126,10 @@ const Hero = memo(function Hero({ heroData, breadcrumbs }) {
   useLayoutEffect(() => {
     if (prefersReducedMotion) {
       // instant show if reduced motion
-      gsap.set([headingRef.current, paraRef.current], { opacity: 1, clearProps: "all" });
+      gsap.set([headingRef.current, paraRef.current], {
+        opacity: 1,
+        clearProps: "all",
+      });
       return;
     }
 
@@ -198,14 +223,23 @@ const Hero = memo(function Hero({ heroData, breadcrumbs }) {
       }
 
       // reveal heading & para opacity (mask anim handled above)
-      gsap.to([headingRef.current, paraRef.current], { opacity: 1, duration: 0.1 });
+      gsap.to([headingRef.current, paraRef.current], {
+        opacity: 1,
+        duration: 0.1,
+      });
 
       // hero image float-in
       if (imgWrapRef.current) {
         gsap.fromTo(
           imgWrapRef.current,
           { yPercent: 80, opacity: 0 },
-          { opacity: 1, yPercent: 0, duration: 1, delay: 1.5, ease: "power3.out" }
+          {
+            opacity: 1,
+            yPercent: 0,
+            duration: 1,
+            delay: 1.5,
+            ease: "power3.out",
+          }
         );
       }
 
@@ -351,31 +385,34 @@ const Hero = memo(function Hero({ heroData, breadcrumbs }) {
       </div>
 
       {/* Shader (desktop) */}
-      <div
-        ref={shaderRef}
-        className="absolute top-[30%] left-0 h-screen w-screen max-md:hidden opacity-0 will-change-opacity"
-      >
-        <Suspense>
-          <DynamicShaderComp />
-        </Suspense>
-      </div>
+      {!mob ? (
+        <div
+          ref={shaderRef}
+          className="absolute top-[30%] left-0 h-screen w-screen max-md:hidden opacity-0 will-change-opacity"
+        >
+          <Suspense>
+            <DynamicShaderComp />
+          </Suspense>
+        </div>
+      ) : (
+        <div
+          ref={mobileGradientRef}
+          className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-md:block opacity-0 will-change-opacity"
+        >
+          <Image
+            src={heroGradient}
+            placeholder="blur"
+            loading="lazy"
+            alt="shader-gradient-mobile"
+            className="w-full h-full object-cover"
+            width={600}
+            height={1080}
+            sizes="100vw"
+          />
+        </div>
+      )}
 
       {/* Mobile gradient */}
-      <div
-        ref={mobileGradientRef}
-        className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-md:block opacity-0 will-change-opacity"
-      >
-        <Image
-          src={heroGradient}
-          placeholder="blur"
-          loading="lazy"
-          alt="shader-gradient-mobile"
-          className="w-full h-full object-cover"
-          width={600}
-          height={1080}
-          sizes="100vw"
-        />
-      </div>
     </section>
   );
 });

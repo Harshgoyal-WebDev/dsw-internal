@@ -7,37 +7,37 @@ const KeepScrolling = () => {
   const [scrolling, setScrolling] = useState(false);
   const [isFooterVisible, setIsFooterVisible] = useState(false);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      if (scrolling) {
-        gsap.to(".scroll-content", {
-          yPercent: 200,
-          duration: 1,
-          ease: "power3.inOut"
-        })
-        gsap.to(".arrow-container", {
-          yPercent: 50,
-          duration: 1,
-          repeatDelay: 3,
-        })
-      }
-      else {
-        gsap.to(".arrow-container", {
-          yPercent: 130,
-          duration: 1,
-          repeatDelay: 3,
-          repeat: -1
-        })
-        gsap.from(".scroll-content", {
-          yPercent: 200,
-          duration: 1,
-          ease: "power3.inOut"
-        })
-      }
-    });
-    return () => ctx.revert()
+  // useEffect(() => {
+  //   const ctx = gsap.context(() => {
+  //     if (scrolling) {
+  //       gsap.to(".scroll-content", {
+  //         yPercent: 200,
+  //         duration: 1,
+  //         ease: "power3.inOut"
+  //       })
+  //       gsap.to(".arrow-container", {
+  //         yPercent: 50,
+  //         duration: 1,
+  //         repeatDelay: 3,
+  //       })
+  //     }
+  //     else {
+  //       gsap.to(".arrow-container", {
+  //         yPercent: 130,
+  //         duration: 1,
+  //         repeatDelay: 3,
+  //         repeat: -1
+  //       })
+  //       gsap.from(".scroll-content", {
+  //         yPercent: 200,
+  //         duration: 1,
+  //         ease: "power3.inOut"
+  //       })
+  //     }
+  //   });
+  //   return () => ctx.revert()
 
-  }, [scrolling])
+  // }, [scrolling])
 
   useEffect(() => {
     const ctx = gsap.context(() => {

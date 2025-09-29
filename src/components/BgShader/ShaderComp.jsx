@@ -1,14 +1,9 @@
 "use client";
 import React, { useRef, useMemo, useEffect } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { extend } from "@react-three/fiber";
 import * as THREE from "three";
-import gsap from 'gsap'
-
-extend({ ShaderMaterial: THREE.ShaderMaterial });
 
 const MovingGradientShader = ({
-  scale,
   // Lower wave parameters
   lowerWaveFreq = 2.8,
   lowerWaveAmp = 0.07,
@@ -23,104 +18,98 @@ const MovingGradientShader = ({
   topBoundaryBase = 0.75,
   topFadeSoftness = 0.3,
 
-  // Color
-  color,
+  // Color (string like "#1726FD" or "0x1726FD" or number)
+  color = "#1726FD",
 }) => {
-  const meshRef = useRef();
   const materialRef = useRef();
-  const startTime = useRef(Date.now());
+  const { viewport } = useThree();
 
-  // Shader code
-  const vertexShader = `
-    varying vec2 vUv;
-    void main() {
-      vUv = uv;
-      gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-    }
-  `;
+  // GLSL (memoized so React doesn't recreate strings)
+  const vertexShader = useMemo(
+    () => `
+      varying vec2 vUv;
+      void main() {
+        vUv = uv;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+      }
+    `,
+    []
+  );
 
-  const fragmentShader = `
-    varying vec2 vUv;
-    uniform float u_time;
-    uniform vec3 u_color;
-    uniform vec2 u_resolution;
-    
-    // Lower wave uniforms
-    uniform float u_lowerWaveFreq;
-    uniform float u_lowerWaveAmp;
-    uniform float u_lowerWaveSpeed;
-    uniform float u_lowerBoundaryBase;
-    uniform float u_lowerFadeSoftness;
-    
-    // Upper wave uniforms
-    uniform float u_upperWaveFreq;
-    uniform float u_upperWaveAmp;
-    uniform float u_upperWaveSpeed;
-    uniform float u_topBoundaryBase;
-    uniform float u_topFadeSoftness;
+  const fragmentShader = useMemo(
+    () => `
+      varying vec2 vUv;
+      uniform float u_time;
+      uniform vec3  u_color;
 
-    // Function to create a smooth transition
-    float smoothstep_custom(float edge0, float edge1, float x) {
+      // Lower wave uniforms
+      uniform float u_lowerWaveFreq;
+      uniform float u_lowerWaveAmp;
+      uniform float u_lowerWaveSpeed;
+      uniform float u_lowerBoundaryBase;
+      uniform float u_lowerFadeSoftness;
+
+      // Upper wave uniforms
+      uniform float u_upperWaveFreq;
+      uniform float u_upperWaveAmp;
+      uniform float u_upperWaveSpeed;
+      uniform float u_topBoundaryBase;
+      uniform float u_topFadeSoftness;
+
+      float smoothstep_custom(float edge0, float edge1, float x) {
         float t = clamp((x - edge0) / (edge1 - edge0), 0.0, 1.0);
         return t * t * (3.0 - 2.0 * t);
-    }
+      }
 
-    void main() {
+      void main() {
         vec2 uv = vUv;
 
-        // --- Lower Wave Calculation ---
+        // Lower
         float lowerWave = sin(uv.x * u_lowerWaveFreq - u_time * u_lowerWaveSpeed) * u_lowerWaveAmp;
         float lowerBoundaryWavy = u_lowerBoundaryBase + lowerWave;
 
-        // --- Upper Wave Calculation ---
+        // Upper
         float upperWave = sin(uv.x * u_upperWaveFreq + u_time * u_upperWaveSpeed) * u_upperWaveAmp;
         float topBoundaryWavy = u_topBoundaryBase + upperWave;
 
-        // Calculate the center point between the two waves
-        float centerY = (lowerBoundaryWavy + topBoundaryWavy) * 0.5;
+        // Height & extended fade toward the center
         float waveHeight = topBoundaryWavy - lowerBoundaryWavy;
-
-        // Extended fade softness that reaches toward the center
         float extendedLowerFade = u_lowerFadeSoftness + (waveHeight * 0.4);
-        float extendedTopFade = u_topFadeSoftness + (waveHeight * 0.4);
+        float extendedTopFade   = u_topFadeSoftness   + (waveHeight * 0.4);
 
-        // Create intensity based on distance from boundaries with extended fade
         float intensityFromBottom = smoothstep_custom(
-            lowerBoundaryWavy - extendedLowerFade * 0.5, 
-            lowerBoundaryWavy + extendedLowerFade * 0.5, 
-            uv.y
+          lowerBoundaryWavy - extendedLowerFade * 0.5,
+          lowerBoundaryWavy + extendedLowerFade * 0.5,
+          uv.y
         );
 
         float visibilityFromTop = 1.0 - smoothstep_custom(
-            topBoundaryWavy - extendedTopFade * 0.5, 
-            topBoundaryWavy + extendedTopFade * 0.5, 
-            uv.y
+          topBoundaryWavy - extendedTopFade * 0.5,
+          topBoundaryWavy + extendedTopFade * 0.5,
+          uv.y
         );
 
-        // Combine the two fade effects
-        float finalAlpha = intensityFromBottom * visibilityFromTop;
-        finalAlpha = clamp(finalAlpha, 0.0, 1.0);
-
+        float finalAlpha = clamp(intensityFromBottom * visibilityFromTop, 0.0, 1.0);
         gl_FragColor = vec4(u_color, finalAlpha);
-    }
-  `;
+      }
+    `,
+    []
+  );
 
+  // Uniforms (created once)
   const uniforms = useMemo(
     () => ({
-      u_time: { value: 0.0 },
+      u_time: { value: 0 },
       u_color: { value: new THREE.Color(color) },
-      u_resolution: {
-        value: new THREE.Vector2(window.innerWidth, window.innerHeight),
-      },
 
-      // Lower wave uniforms
+      // Lower wave
       u_lowerWaveFreq: { value: lowerWaveFreq },
       u_lowerWaveAmp: { value: lowerWaveAmp },
       u_lowerWaveSpeed: { value: lowerWaveSpeed },
       u_lowerBoundaryBase: { value: lowerBoundaryBase },
       u_lowerFadeSoftness: { value: lowerFadeSoftness },
 
-      // Upper wave uniforms
+      // Upper wave
       u_upperWaveFreq: { value: upperWaveFreq },
       u_upperWaveAmp: { value: upperWaveAmp },
       u_upperWaveSpeed: { value: upperWaveSpeed },
@@ -142,43 +131,31 @@ const MovingGradientShader = ({
     ]
   );
 
-  useFrame(() => {
+  // Drive time via R3F clock (preserves original 2x speed)
+  useFrame(({ clock }) => {
     if (materialRef.current) {
-      const elapsedTime = (Date.now() - startTime.current) / 500.0;
-      materialRef.current.uniforms.u_time.value = elapsedTime;
+      materialRef.current.uniforms.u_time.value = clock.getElapsedTime() * 2.0;
     }
   });
 
+  // React to prop changes without recreating material
   useEffect(() => {
-    const handleResize = () => {
-      if (materialRef.current) {
-        materialRef.current.uniforms.u_resolution.value.set(
-          window.innerWidth,
-          window.innerHeight
-        );
-      }
-    };
+    const u = materialRef.current?.uniforms;
+    if (!u) return;
+    // color: accept any valid THREE.Color input
+    u.u_color.value.set(color);
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    u.u_lowerWaveFreq.value = lowerWaveFreq;
+    u.u_lowerWaveAmp.value = lowerWaveAmp;
+    u.u_lowerWaveSpeed.value = lowerWaveSpeed;
+    u.u_lowerBoundaryBase.value = lowerBoundaryBase;
+    u.u_lowerFadeSoftness.value = lowerFadeSoftness;
 
-  useEffect(() => {
-    if (materialRef.current) {
-      materialRef.current.uniforms.u_color.value.setHex(color);
-      materialRef.current.uniforms.u_lowerWaveFreq.value = lowerWaveFreq;
-      materialRef.current.uniforms.u_lowerWaveAmp.value = lowerWaveAmp;
-      materialRef.current.uniforms.u_lowerWaveSpeed.value = lowerWaveSpeed;
-      materialRef.current.uniforms.u_lowerBoundaryBase.value =
-        lowerBoundaryBase;
-      materialRef.current.uniforms.u_lowerFadeSoftness.value =
-        lowerFadeSoftness;
-      materialRef.current.uniforms.u_upperWaveFreq.value = upperWaveFreq;
-      materialRef.current.uniforms.u_upperWaveAmp.value = upperWaveAmp;
-      materialRef.current.uniforms.u_upperWaveSpeed.value = upperWaveSpeed;
-      materialRef.current.uniforms.u_topBoundaryBase.value = topBoundaryBase;
-      materialRef.current.uniforms.u_topFadeSoftness.value = topFadeSoftness;
-    }
+    u.u_upperWaveFreq.value = upperWaveFreq;
+    u.u_upperWaveAmp.value = upperWaveAmp;
+    u.u_upperWaveSpeed.value = upperWaveSpeed;
+    u.u_topBoundaryBase.value = topBoundaryBase;
+    u.u_topFadeSoftness.value = topFadeSoftness;
   }, [
     color,
     lowerWaveFreq,
@@ -192,18 +169,22 @@ const MovingGradientShader = ({
     topBoundaryBase,
     topFadeSoftness,
   ]);
-  const { viewport } = useThree();
+
+  const planeArgs = useMemo(
+    () => [viewport.width * 1.3, viewport.height * 0.9],
+    [viewport.width, viewport.height]
+  );
 
   return (
-    <mesh ref={meshRef} scale={1} position={[0, 0.5, 0]}>
-      <planeGeometry args={[viewport.width * 1.3, viewport.height * 0.9]} />
+    <mesh position={[0, 0.5, 0]}>
+      <planeGeometry args={planeArgs} />
       <shaderMaterial
         ref={materialRef}
-        toneMapped={false}
         vertexShader={vertexShader}
         fragmentShader={fragmentShader}
         uniforms={uniforms}
-        transparent={true}
+        transparent
+        toneMapped={false}
       />
     </mesh>
   );
@@ -211,22 +192,21 @@ const MovingGradientShader = ({
 
 const ShaderComp = () => {
   return (
-      <Canvas className="w-full h-full">
-        <MovingGradientShader
-          lowerWaveFreq={9}
-          lowerWaveAmp={0.05}
-          lowerWaveSpeed={0.3}
-          lowerBoundaryBase={0.2}
-          lowerFadeSoftness={0.1}
-          upperWaveFreq={9.0}
-          upperWaveAmp={0.1}
-          upperWaveSpeed={0.7}
-          topBoundaryBase={0.7}
-          topFadeSoftness={0.1}
-          color={"0x1726FD"}
-        />
-      </Canvas>
-  
+    <Canvas className="w-full h-full">
+      <MovingGradientShader
+        lowerWaveFreq={9}
+        lowerWaveAmp={0.05}
+        lowerWaveSpeed={0.3}
+        lowerBoundaryBase={0.2}
+        lowerFadeSoftness={0.1}
+        upperWaveFreq={9.0}
+        upperWaveAmp={0.1}
+        upperWaveSpeed={0.7}
+        topBoundaryBase={0.7}
+        topFadeSoftness={0.1}
+        color={"#1726FD"}
+      />
+    </Canvas>
   );
 };
 

@@ -1,127 +1,124 @@
-"use client"
+"use client";
 import React, { Suspense, useEffect, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-// import ShaderComp from "./BgShader/ShaderComp";
 import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger);
-import {useLenis} from "lenis/react"
+import { useLenis } from "lenis/react";
 import dynamic from "next/dynamic";
 const DynamicShaderComp = dynamic(() => import("./BgShader/ShaderComp"), {
   ssr: false,
 });
 
-
 const Loader = () => {
-  const [hidden, setIsHidden] = useState(false)
-  const lenis = useLenis()
+  const [hidden, setIsHidden] = useState(false);
+  const [mob, setMob] = useState(false);
+  const lenis = useLenis();
+
   useEffect(() => {
-    if(lenis){
-      lenis.stop()
+    if (lenis) {
+      lenis.stop();
 
       const ctx = gsap.context(() => {
         const tl = gsap.timeline();
         const steps = 5; // Number of animation steps (and iterations)
-       if(globalThis.innerWidth>1024){
-         for (let i = 1; i <= steps; i++) {
-           tl.to(".sequence-container", {
-             xPercent: i * 100,
-             ease: "power3.inOut",
-             duration: 1,
-           }).to(
-             ".number-container",
-             {
-               xPercent: i * 19.9,
-               duration: 1,
-               ease: "power3.inOut",
-             },
-             "<"
-           );
-         }
-
-       }
-
-       else if(globalThis.innerWidth>768){
-         for (let i = 1; i <= steps; i++) {
-           tl.to(".sequence-container", {
-             xPercent: i * 100,
-             ease: "power3.inOut",
-             duration: 1,
-           }).to(
-             ".number-container",
-             {
-               xPercent: i * 19.9,
-               duration: 1,
-               ease: "power3.inOut",
-             },
-             "<"
-           );
-         }
-
-       }
-
-       else{
-         for (let i = 1; i <= steps; i++) {
-           tl.to(".sequence-container", {
-             xPercent: i * 60,
-             ease: "power3.inOut",
-             duration: 1,
-           }).to(
-             ".number-container",
-             {
-               xPercent: i * 19.9,
-               duration: 1,
-               ease: "power3.inOut",
-             },
-             "<"
-           );
-         }
-
-       }
+        if (globalThis.innerWidth > 1024) {
+          for (let i = 1; i <= steps; i++) {
+            tl.to(".sequence-container", {
+              xPercent: i * 100,
+              ease: "power3.inOut",
+              duration: 1,
+            }).to(
+              ".number-container",
+              {
+                xPercent: i * 19.9,
+                duration: 1,
+                ease: "power3.inOut",
+              },
+              "<"
+            );
+          }
+        } else if (globalThis.innerWidth > 768) {
+          for (let i = 1; i <= steps; i++) {
+            tl.to(".sequence-container", {
+              xPercent: i * 100,
+              ease: "power3.inOut",
+              duration: 1,
+            }).to(
+              ".number-container",
+              {
+                xPercent: i * 19.9,
+                duration: 1,
+                ease: "power3.inOut",
+              },
+              "<"
+            );
+          }
+        } else {
+          for (let i = 1; i <= steps; i++) {
+            tl.to(".sequence-container", {
+              xPercent: i * 60,
+              ease: "power3.inOut",
+              duration: 1,
+            }).to(
+              ".number-container",
+              {
+                xPercent: i * 19.9,
+                duration: 1,
+                ease: "power3.inOut",
+              },
+              "<"
+            );
+          }
+        }
         tl.to("#loader", {
           opacity: 0,
           filter: "blur(20px)",
           // duration:4,
           onComplete: () => {
-            setIsHidden(true)
-            lenis.start()
-          }
-        })
+            setIsHidden(true);
+            lenis.start();
+          },
+        });
       });
       return () => ctx.revert();
     }
   }, [lenis]);
   useEffect(() => {
-    if(globalThis.innerWidth>1024){
+    if (globalThis.innerWidth > 1024) {
       const ctx = gsap.context(() => {
         gsap.to(".loader-gradient", {
           yPercent: -10,
           duration: 2,
-          delay:0.2,
-          opacity: 1
-        })
-      })
-      return () => ctx.revert()
-    }
-    else{
-       const ctx = gsap.context(() => {
+          delay: 0.2,
+          opacity: 1,
+        });
+      });
+      return () => ctx.revert();
+    } else {
+      const ctx = gsap.context(() => {
         gsap.to(".loader-gradient", {
           yPercent: -28,
           duration: 2,
-          delay:0.2,
-          opacity: 1
-        })
-      })
-      return () => ctx.revert()
-
+          delay: 0.2,
+          opacity: 1,
+        });
+      });
+      return () => ctx.revert();
     }
-  })
+  });
+  useEffect(() => {
+    if (globalThis.innerWidth <= 1024) {
+      setMob(true);
+    } else {
+      setMob(false);
+    }
+  }, [mob]);
   return (
     <div
       className={`w-screen h-screen fixed top-0 left-0 z-[9999] bg-background text-[17vw] overflow-hidden max-sm:text-[25vw] ${hidden ? "hidden" : ""}`}
       id="loader"
     >
-
       <div className="w-fit h-fit flex sequence-container relative z-[2] font-head font-medium">
         <div className="flex w-[10vw] overflow-hidden max-sm:w-[14.5vw]">
           <div className="flex w-fit translate-x-[-79%] number-container gap-[0.2vw]">
@@ -144,21 +141,24 @@ const Loader = () => {
         </div>
       </div>
       <div className="loader-gradient opacity-0 relative z-[1] h-screen translate-y-[10%]">
-        {/* <div
-          className="w-screen h-[120vh] absolute bottom-[23%] left-0 right-0 z-[-2]"
-        >
-          <Gradient />
-        </div> */}
-        <div className="absolute top-[-5%] left-0 h-screen w-screen max-md:hidden">
-        <Suspense>
-          {/* <ShaderComp color={"0x1726FD"} /> */}
-          <DynamicShaderComp color={"0x1726FD"}/>
-        </Suspense>
-      </div>
-       <div className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-md:block">
-              <Image src={"/assets/images/homepage/gradient-mobile.png"} alt="bg-gradient" className="w-full h-full object-cover" width={600} height={1080}/>
-            </div>
-
+        {!mob ? (
+          <div className="absolute top-[-5%] left-0 h-screen w-screen max-md:hidden">
+            <Suspense>
+              {/* <ShaderComp color={"0x1726FD"} /> */}
+              <DynamicShaderComp color={"0x1726FD"} />
+            </Suspense>
+          </div>
+        ) : (
+          <div className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-md:block">
+            <Image
+              src={"/assets/images/homepage/gradient-mobile.png"}
+              alt="bg-gradient"
+              className="w-full h-full object-cover"
+              width={600}
+              height={1080}
+            />
+          </div>
+        )}
       </div>
     </div>
   );

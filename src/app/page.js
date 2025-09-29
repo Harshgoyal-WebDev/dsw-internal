@@ -1,3 +1,4 @@
+"use client"
 import About from "@/components/Homepage/About";
 import Blogs from "@/components/Homepage/Blogs";
 import Brochure from "@/components/Homepage/Brochure";
@@ -18,6 +19,28 @@ import Clients from "@/components/Homepage/Clients";
 import Loader from "@/components/Loader";
 import WhyUnifyMobile from "@/components/Homepage/WhyUnifyMobile";
 import FooterCTA from "@/components/Common/FooterCta";
+// import dynamic from "next/dynamic";
+
+// const About = dynamic(() => import("@/components/Homepage/About"), {
+//   ssr: false,
+// });
+// const Blogs = dynamic(() => import("@/components/Homepage/Blogs"), {
+//   ssr: false,
+// });
+// const Brochure = dynamic(()=>import("@/components/Homepage/Brochure"),{ssr:false})
+// const Connects = dynamic(()=>import("@/components/Homepage/Connects"),{ssr:false})
+// const EnterpriseAI = dynamic(()=>import("@/components/Homepage/EnterpriseAI"),{ssr:false})
+// const Difference = dynamic(()=>import("@/components/Homepage/Difference"),{ssr:false})
+// const Insuraince = dynamic(()=>import("@/components/Homepage/Insuraince"),{ssr:false})
+// const Recognized = dynamic(()=>import("@/components/Homepage/Recognized"),{ssr:false})
+// const SuccessStories = dynamic(()=>import("@/components/Homepage/SuccessStories"),{ssr:false})
+// const Tour = dynamic(()=>import("@/components/Common/Tour"),{ssr:false})
+// const TurbochargeG = dynamic(()=>import("@/components/Homepage/TurboChargeG"),{ssr:false})
+// const UnifyAi = dynamic(()=>import("@/components/Homepage/UnifyAi"),{ssr:false})
+// const WhyUnify = dynamic(()=>import("@/components/Homepage/WhyUnify"),{ssr:false})
+// const Faqs = dynamic(()=>import("@/components/Common/FAQs"),{ssr:false})
+// const Clients = dynamic(()=>import("@/components/Homepage/Clients"),{ssr:false})
+// const WhyUnifyMobile = dynamic(()=>import("@/components/Homepage/WhyUnifyMobile"),{ssr:false})
 
 export default function Home() {
 
