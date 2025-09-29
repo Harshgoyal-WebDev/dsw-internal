@@ -4,10 +4,13 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Copy from "@/components/Animations/Copy";
 import { Suspense, useRef } from "react";
-import ShaderComp from "@/components/BgShader/ShaderComp";
+// import ShaderComp from "@/components/BgShader/ShaderComp";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-
+import dynamic from "next/dynamic";
+const DynamicShaderComp = dynamic(() => import("@/components/BgShader/ShaderComp"), {
+  ssr: false,
+});
 
 export default function NotFoundPage() {
   const ShaderRef = useRef()
@@ -123,8 +126,8 @@ export default function NotFoundPage() {
        
           <div  ref={ShaderRef} className="absolute top-[30%] left-0 h-screen w-screen max-sm:hidden ">
             <Suspense>
-              {/* <DynamicShaderComp /> */}
-              <ShaderComp />
+              <DynamicShaderComp />
+              {/* <ShaderComp /> */}
             </Suspense>
           </div>
        

@@ -6,9 +6,9 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import dynamic from "next/dynamic";
 
-// const DynamicShaderComp = dynamic(() => import("../BgShader/ShaderComp"), {
-//     ssr: false,
-// });
+const DynamicShaderComp = dynamic(() => import("../BgShader/ShaderComp"), {
+    ssr: false,
+});
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -167,7 +167,7 @@ const Difference = () => {
       </div>
       <div className="absolute top-[30%] left-0 h-screen w-screen max-sm:hidden">
         <Suspense>
-          {/* <DynamicShaderComp/> */}
+          <DynamicShaderComp/>
         </Suspense>
       </div>
       <div className="w-screen h-screen absolute top-0 z-[10] left-0 hidden max-sm:block">
