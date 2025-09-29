@@ -30,7 +30,7 @@ export default function Home() {
         <About />
         <Insuraince />
         <Tour heading={"Take a Lightning Tour"} para={"Your OS for AI- not just for today's use cases, but for tomorrow's vision."} img={'/assets/images/homepage/tour-img.png'}/>
-        <Difference />
+        {/* <Difference />
         <Brochure />
         <UnifyAi />
         <WhyUnify />
@@ -41,7 +41,7 @@ export default function Home() {
         <Clients />
         <SuccessStories />
         <Blogs />
-        <Faqs />
+        <Faqs /> */}
         <FooterCTA footerCTAData={footerCTAData} width={"w-[95%]"}/>
       </Layout>
     </>

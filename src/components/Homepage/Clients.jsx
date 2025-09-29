@@ -10,61 +10,60 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 export default function Clients() {
   const container = useRef(null);
   const gridRef = useRef(null);
-  useGSAP(() => {
-    const grid = gridRef.current;
-    const gridItems = grid.querySelectorAll(".grid__item");
-    const timeline = gsap.timeline({
-      defaults: { ease: "none" },
-      scrollTrigger: {
-        trigger: container.current,
-        start: "top 10%",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
-    if (globalThis.innerWidth > 1024) {
-      gsap.set(gridItems, {
-        transformOrigin: "0% 0%",
-        opacity: 0,
-        x: () => gsap.utils.random(-200, 200),
-        y: () => gsap.utils.random(-200, 200),
-        filter: "blur(5px)",
-        z: () => gsap.utils.random(4000, 3000),
+  useGSAP(
+    () => {
+      const grid = gridRef.current;
+      const gridItems = grid.querySelectorAll(".grid__item");
+      const timeline = gsap.timeline({
+        defaults: { ease: "none" },
+        scrollTrigger: {
+          trigger: container.current,
+          start: "top 10%",
+          end: "bottom top",
+          scrub: true,
+        },
       });
+      if (globalThis.innerWidth > 1024) {
+        gsap.set(gridItems, {
+          transformOrigin: "0% 0%",
+          opacity: 0,
+          x: () => gsap.utils.random(-200, 200),
+          y: () => gsap.utils.random(-200, 200),
+          filter: "blur(5px)",
+          z: () => gsap.utils.random(4000, 3000),
+        });
+      } else {
+        gsap.set(gridItems, {
+          transformOrigin: "0% 0%",
+          opacity: 0,
+          x: () => gsap.utils.random(-100, 100),
+          y: () => gsap.utils.random(-400, 400),
+          filter: "blur(5px)",
+          z: () => gsap.utils.random(4000, 3000),
+        });
+      }
 
-    }
-    else {
-      gsap.set(gridItems, {
-        transformOrigin: "0% 0%",
-        opacity: 0,
-        x: () => gsap.utils.random(-100, 100),
-        y: () => gsap.utils.random(-400, 400),
-        filter: "blur(5px)",
-        z: () => gsap.utils.random(4000, 3000),
-      });
-    }
-
-    gridItems.forEach((item, index) =>
-      timeline
-        .to(item, {
-          z: 0,
-          opacity: 1,
-          filter: "blur(0px)",
-          duration: 1.5,
-          delay: index * -0.8,
-        })
-        .to(
-          item,
-          {
-            filter: "blur(5px)",
-            opacity: 0,
-            z: -2000,
-            duration: 3.5,
-          },
-          ">"
-        )
-    );
-  },
+      gridItems.forEach((item, index) =>
+        timeline
+          .to(item, {
+            z: 0,
+            opacity: 1,
+            filter: "blur(0px)",
+            duration: 1.5,
+            delay: index * -0.8,
+          })
+          .to(
+            item,
+            {
+              filter: "blur(5px)",
+              opacity: 0,
+              z: -2000,
+              duration: 3.5,
+            },
+            ">"
+          )
+      );
+    },
     { scope: container.current }
   );
 
@@ -77,7 +76,6 @@ export default function Clients() {
           end: "bottom 50%",
         },
       });
-
     });
     return () => ctx.revert();
   }, []);
@@ -122,7 +120,7 @@ const logos = [
   "/assets/images/clients/bon-prix.png",
   "/assets/images/clients/canara-hsbc.png",
   "/assets/images/clients/ciek.png",
-"/assets/images/craft-so=ilicon.png",
+  "/assets/images/clients/craft-silicon.png",
   "/assets/images/clients/earc.png",
   "/assets/images/clients/edelweiss-tokio-life.png",
   "/assets/images/clients/edge-verve.png",

@@ -6,6 +6,12 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger);
 import {useLenis} from "lenis/react"
+import dynamic from "next/dynamic";
+const DynamicShaderComp = dynamic(() => import("./BgShader/ShaderComp"), {
+  ssr: false,
+});
+
+
 const Loader = () => {
   const [hidden, setIsHidden] = useState(false)
   const lenis = useLenis()
@@ -146,6 +152,7 @@ const Loader = () => {
         <div className="absolute top-[-5%] left-0 h-screen w-screen max-md:hidden">
         <Suspense>
           {/* <ShaderComp color={"0x1726FD"} /> */}
+          <DynamicShaderComp color={"0x1726FD"}/>
         </Suspense>
       </div>
        <div className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-md:block">
