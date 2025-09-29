@@ -132,25 +132,25 @@ h4 {
   width: 100vw;
 }
 
-/* .marquee__track {
+.marquee__track {
   display: flex;
   animation: marquee 15s linear infinite;
   min-width: 200%;
-} */
+}
 .marquee__track.recognized {
   display: flex;
   animation: marqueeRec 15s linear infinite;
   min-width: 200%;
 }
 
-/* @keyframes marqueeRec {
+@keyframes marqueeRec {
   0% {
     transform: translateX(0);
   }
   100% {
     transform: translateX(-60%);
   }
-} */
+}
 
 @keyframes marquee {
   0% {

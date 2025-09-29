@@ -42,7 +42,7 @@ const Transform = () => {
 
         <div className="space-y-[5.5vw] max-md:space-y-[10vw]">
           <div className="marquee fadeup  max-md:my-[10vw] gap-[3vw]">
-            <div className="marquee__track">
+            <div className="marquee__track ">
               {awards1.map((item, index) => (
                 <AwardItem
                   key={index}
