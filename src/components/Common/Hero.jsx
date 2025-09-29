@@ -19,9 +19,9 @@ import { usePathname } from "next/navigation";
 
 gsap.registerPlugin(SplitText);
 
-const DynamicShaderComp = dynamic(() => import("../BgShader/ShaderComp"), {
-  ssr: false,
-});
+// const DynamicShaderComp = dynamic(() => import("../BgShader/ShaderComp"), {
+//   ssr: false,
+// });
 
 const lineCount = 4;
 
@@ -279,7 +279,7 @@ gsap.fromTo(
         className="absolute top-[30%] left-0 h-screen w-screen max-md:hidden"
       >
         <Suspense>
-          <DynamicShaderComp />
+          {/* <DynamicShaderComp /> */}
         </Suspense>
       </div>
 

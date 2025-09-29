@@ -2,7 +2,7 @@
 import React, { Suspense, useEffect, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import ShaderComp from "./BgShader/ShaderComp";
+// import ShaderComp from "./BgShader/ShaderComp";
 import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger);
 import {useLenis} from "lenis/react"
@@ -145,7 +145,7 @@ const Loader = () => {
         </div> */}
         <div className="absolute top-[-5%] left-0 h-screen w-screen max-md:hidden">
         <Suspense>
-          <ShaderComp color={"0x1726FD"} />
+          {/* <ShaderComp color={"0x1726FD"} /> */}
         </Suspense>
       </div>
        <div className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-md:block">
