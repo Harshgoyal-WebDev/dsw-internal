@@ -1,6 +1,6 @@
 import Hero from '@/components/Common/Hero'
 import Layout from '@/components/Layout'
-import Content from '@/components/TermsAndConditions/Content'
+import Content from '@/components/PrivacyPolicy/Content'
 import React from 'react'
 
 const page = () => {
@@ -15,7 +15,7 @@ const page = () => {
 export default page
 
 const heroData= {
-  heading:"Terms and Conditions",
+  heading:"Privacy Policy",
   para:"​",
   paraClass:"",
   headingWidth:"w-[60%]",

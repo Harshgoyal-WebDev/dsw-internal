@@ -33,9 +33,9 @@ const SuccessStories = () => {
 
           <div className="w-full h-full grid grid-cols-3  gap-y-[1.2vw] gap-x-[1vw] mt-[5vw] max-md:mt-[10vw] max-md:grid-cols-1 max-md:gap-x-[3vw] max-md:gap-y-[3vw] max-sm:gap-y-[5vw]">
             <LinkCard
-              title={"Streamlining Operations with ERP Integration"}
+              title={"80% faster model deployment with CI/CD automation"}
               link={"#"}
-              width={"w-[70%] max-md:w-[80%] max-sm:w-[90%]"}
+              width={"w-[85%] max-md:w-[80%] max-sm:w-[90%]"}
             />
             <ImageCard
               img={"/assets/images/homepage/success-stories/success-img.png"}
