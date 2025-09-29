@@ -45,7 +45,7 @@ export default function PilotForm() {
   const [submitted, setIsSubmitted] = useState(false);
   const [notsubmitted, setIsNotSubmitted] = useState(false);
 
-  // const onSubmit = async (data) => {
+  const onSubmit = async (data) => {
   //   // if (!domainsLoaded) {
   //   //   form.setError("email", { type: "manual", message: "Please wait until the page is fully loaded." });
   //   //   return;
@@ -57,37 +57,37 @@ export default function PilotForm() {
   //   //   return;
   //   // }
 
-  //   setIsLoading(true);
+    setIsLoading(true);
 
-  //   const formattedData = {
-  //     ...data
-  //   };
+    const formattedData = {
+      ...data
+    };
 
-  //   // console.log(data);
+    // console.log(data);
 
-  //   try {
-  //     const res = await fetch("/api/pilotform", {
-  //       method: "POST",
-  //       body: JSON.stringify(formattedData),
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //     });
+    try {
+      const res = await fetch("/api/pilotform", {
+        method: "POST",
+        body: JSON.stringify(formattedData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
-  //     if (!res.ok) throw new Error("Failed to send message");
+      if (!res.ok) throw new Error("Failed to send message");
 
-  //     setIsSubmitted(true);
-  //     setTimeout(() => setIsSubmitted(false), 7000);
-  //     // console.log(data)
-  //     form.reset();
-  //   } catch (error) {
-  //     setIsNotSubmitted(true);
-  //     setTimeout(() => setIsNotSubmitted(false), 7000);
-  //     console.error(error);
-  //   } finally {
-  //     setIsLoading(false);
-  //   }
-  // };
+      setIsSubmitted(true);
+      setTimeout(() => setIsSubmitted(false), 7000);
+      // console.log(data)
+      form.reset();
+    } catch (error) {
+      setIsNotSubmitted(true);
+      setTimeout(() => setIsNotSubmitted(false), 7000);
+      console.error(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <section className="mobile:pt-0 overflow-hidden" id="formoem">
@@ -97,16 +97,13 @@ export default function PilotForm() {
             <form
               autoComplete="off"
               className="space-y-[1vw] max-sm:space-y-[4vw] max-md:space-y-[4vw]"
-              // onSubmit={handleSubmit(onSubmit)}
+              onSubmit={handleSubmit(onSubmit)}
             >
               <FormField
                 control={control}
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    {/* <label className="block text-sm uppercase font-medium mb-1 tablet:text-[1.2vw] mobile:text-[3.5vw]">
-                      Full name*
-                    </label> */}
                     <FormControl>
                       <Input
                         placeholder="Name*"
@@ -125,9 +122,6 @@ export default function PilotForm() {
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    {/* <label className="block text-sm font-medium mb-1 tablet:text-[1.2vw] mobile:text-[3.5vw]">
-                      EMAIL*
-                    </label> */}
                     <FormControl>
                       <Input
                         placeholder="Business Email*"
@@ -145,9 +139,6 @@ export default function PilotForm() {
                 name="designation"
                 render={({ field }) => (
                   <FormItem>
-                    {/* <label className="block text-md font-medium mb-1 tablet:text-[1.2vw] mobile:text-[3.5vw]">
-                      COMPANY NAME*
-                    </label> */}
                     <FormControl>
                       <Input
                         placeholder="Designation*"
@@ -166,9 +157,6 @@ export default function PilotForm() {
                 name="company"
                 render={({ field }) => (
                   <FormItem>
-                    {/* <label className="block text-md font-medium mb-1 tablet:text-[1.2vw] mobile:text-[3.5vw]">
-                      COMPANY NAME*
-                    </label> */}
                     <FormControl>
                       <Input
                         placeholder="Company Name*"
@@ -187,9 +175,6 @@ export default function PilotForm() {
                 name="number"
                 render={({ field }) => (
                   <FormItem>
-                    {/* <label className="block text-md uppercase font-medium mb-1 tablet:text-[1.2vw] mobile:text-[3.5vw]">
-                      Phone Number*
-                    </label> */}
                     <FormControl>
                       <PhoneInput
                         placeholder="Phone Number*"
@@ -209,9 +194,7 @@ export default function PilotForm() {
                 name="message"
                 render={({ field }) => (
                   <FormItem>
-                    {/* <label className="block text-md font-medium mb-1 tablet:text-[1.2vw] mobile:text-[3.5vw]">
-                      MESSAGE*
-                    </label> */}
+                   
                     <FormControl>
                       <Textarea
                         placeholder="Message"
@@ -257,7 +240,7 @@ export default function PilotForm() {
               </div>
 
               <Button
-                // type="submit"
+                type="submit"
                 aria-label="submit form"
                 className="cursor-pointer mt-[3vw] pb-[3vw] max-md:pb-[8vw] max-md:mt-[8vw] px-0"
               >

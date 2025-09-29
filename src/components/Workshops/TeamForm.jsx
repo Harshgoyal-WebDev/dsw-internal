@@ -14,16 +14,9 @@ import {
 } from "../ui/form";
 import { Input } from "../ui/input";
 import { PhoneInput } from "../ui/phone-input";
-import { Textarea } from "../ui/textarea";
-import { Checkbox } from "../ui/checkbox";
 import { Button } from "../ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../ui/select";
+import { Checkbox } from "../ui/checkbox";
+
 
 const formSchema = z.object({
   name: z.string().min(3, { message: "Name must be at least 3 characters." }),
@@ -33,10 +26,7 @@ const formSchema = z.object({
     .refine(isValidPhoneNumber, { message: "Invalid phone number" }),
   designation: z.string().min(2, { message: "Designation is required." }),
   company: z.string().min(2, { message: "Company name is required." }),
-  message: z.string().optional(),
   terms: z.boolean().refine((val) => val === true, {
-    
-   
   }),
 });
 
@@ -57,6 +47,51 @@ export default function TeamForm() {
   const [submitted, setIsSubmitted] = useState(false);
   const [notsubmitted, setIsNotSubmitted] = useState(false);
 
+  const onSubmit = async (data) => {
+  //   // if (!domainsLoaded) {
+  //   //   form.setError("email", { type: "manual", message: "Please wait until the page is fully loaded." });
+  //   //   return;
+  //   // }
+
+  //   // const emailDomain = data.email.split("@")[1]?.toLowerCase();
+  //   // if (!emailDomain || blockedDomains.includes(emailDomain)) {
+  //   //   form.setError("email", { type: "manual", message: "Enter a business email." });
+  //   //   return;
+  //   // }
+
+    setIsLoading(true);
+
+    const formattedData = {
+      ...data
+    };
+
+    // console.log(data);
+
+    try {
+      const res = await fetch("/api/workshopform", {
+        method: "POST",
+        body: JSON.stringify(formattedData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!res.ok) throw new Error("Failed to send message");
+
+      setIsSubmitted(true);
+      setTimeout(() => setIsSubmitted(false), 7000);
+      // console.log(data)
+      form.reset();
+    } catch (error) {
+      setIsNotSubmitted(true);
+      setTimeout(() => setIsNotSubmitted(false), 7000);
+      console.error(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+
   return (
     <section className="mobile:pt-0 overflow-hidden h-fit max-md:pb-[10%] max-sm:pb-0" id="formoem">
       <div className="w-full h-full mobile:p-0 tablet:p-[6.5vw]">
@@ -65,7 +100,7 @@ export default function TeamForm() {
             <form
               autoComplete="off"
               className="space-y-[1vw] max-sm:space-y-[4vw] max-md:space-y-[4vw]"
-              // onSubmit={handleSubmit(onSubmit)}
+              onSubmit={handleSubmit(onSubmit)}
             >
               <FormField
                 control={control}
@@ -143,9 +178,6 @@ export default function TeamForm() {
                 name="number"
                 render={({ field }) => (
                   <FormItem>
-                    {/* <label className="block text-sm uppercase font-medium mb-1 tablet:text-[1.2vw] mobile:text-[3.5vw]">
-                      Phone Number*
-                    </label> */}
                     <FormControl>
                       <PhoneInput
                         placeholder="Phone Number*"
@@ -192,7 +224,7 @@ export default function TeamForm() {
               </div>
 
               <Button
-                // type="submit"
+                type="submit"
                 aria-label="submit form"
                 className="cursor-pointer mt-[3vw] pb-[3vw] max-sm:mt-[10vw] max-sm:pb-[8vw] max-md:mt-[4vw] px-0 "
               >
