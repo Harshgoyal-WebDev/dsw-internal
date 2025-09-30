@@ -13,8 +13,8 @@ import Faqs from "@/components/Common/FAQs";
 import FooterCTA from "@/components/Common/FooterCta";
 import Hero from "@/components/Common/Hero";
 import { FAQJSONLD, WebpageJsonLd } from "@/lib/json-ld";
-import { getPageMetadata } from "@/lib/seo.config";
 import { homepage } from "@/lib/util";
+import { getPageMetadata } from "@/config/metadata";
 
 export const metadata = getPageMetadata({
   title: "Enterprise AI for Insurance - insurAInce by DSW",

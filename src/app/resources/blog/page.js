@@ -5,8 +5,8 @@ import BlogGrid from '@/components/Blog/BlogGrid'
 import Layout from '@/components/Layout'
 import FooterCTA from "@/components/Common/FooterCta";
 import { BreadcrumbsJSONLD, WebpageJsonLd } from '@/lib/json-ld'
-import { getPageMetadata } from '@/lib/seo.config'
 import { homepage } from '@/lib/util'
+import { getPageMetadata } from '@/config/metadata'
 
 export const metadata = getPageMetadata({
   title: "DSW Blog - Insights on AI & Enterprise Innovation",

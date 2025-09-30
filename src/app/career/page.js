@@ -6,8 +6,8 @@ import Join from "@/components/CareerPage/Join";
 import OpenRoles from "@/components/CareerPage/OpenRoles";
 import OpenRolesMobile from "@/components/CareerPage/OpenRolesMobile";
 import { WebpageJsonLd } from "@/lib/json-ld";
-import { getPageMetadata } from "@/lib/seo.config";
 import { homepage } from "@/lib/util";
+import { getPageMetadata } from "@/config/metadata";
 
 export const metadata = getPageMetadata({
   title: "Join DSW - Careers in AI, Engineering & Innovation",

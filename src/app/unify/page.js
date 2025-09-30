@@ -13,8 +13,8 @@ import Impact from '@/components/UnifyPage/Impact'
 import FooterCTA from '@/components/Common/FooterCta'
 import UsecaseMobile from '@/components/UnifyPage/UsecaseMobile'
 import { FAQJSONLD, WebpageJsonLd } from '@/lib/json-ld'
-import { getPageMetadata } from '@/lib/seo.config'
 import { homepage } from '@/lib/util'
+import { getPageMetadata } from '@/config/metadata'
 
 
 export const metadata = getPageMetadata({

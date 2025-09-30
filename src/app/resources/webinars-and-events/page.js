@@ -6,9 +6,9 @@ import Expect from "@/components/Webinars/Expect";
 import UpcomingWebinars from "@/components/Webinars/UpcomingWebinars";
 import Workshops from "@/components/Webinars/Workshops";
 import WatchOnDemand from "@/components/Webinars/WatchOn-Demand";
-import { getPageMetadata } from "@/lib/seo.config";
 import { homepage } from "@/lib/util";
 import { BreadcrumbsJSONLD, WebpageJsonLd } from "@/lib/json-ld";
+import { getPageMetadata } from "@/config/metadata";
 
 
 export const metadata = getPageMetadata({

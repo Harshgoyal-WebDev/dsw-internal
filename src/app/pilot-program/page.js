@@ -9,8 +9,8 @@ import React from 'react'
 import FooterCTA from '@/components/Common/FooterCta'
 import Faqs from '@/components/Common/FAQs'
 import { FAQJSONLD, WebpageJsonLd } from '@/lib/json-ld'
-import { getPageMetadata } from '@/lib/seo.config'
 import { homepage } from '@/lib/util'
+import { getPageMetadata } from '@/config/metadata'
 
 export const metadata = getPageMetadata({
   title: "Pilot Program - Validate AI & GenAI Use Cases Fast",

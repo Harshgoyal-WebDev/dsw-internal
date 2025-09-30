@@ -4,98 +4,132 @@ import Image from "next/image";
 import { gsap } from "gsap";
 import Copy from "../Animations/Copy";
 
-const images = [
-  "/assets/icons/bon-prix.svg",
-  "/assets/icons/canara-hsbc.svg",
-  "/assets/icons/edge-verve.svg",
-  "/assets/icons/manipal-signa-big.svg",
-  "/assets/icons/sodexo.svg",
-  "/assets/icons/ciek.svg",
+const ALL_LOGOS = [
+ "/assets/images/clients/bon-prix.png",
+  "/assets/images/clients/canara-hsbc.png",
+  "/assets/images/clients/ciek.png",
+  "/assets/images/clients/craft-silicon.png",
+  "/assets/images/clients/earc.png",
+  "/assets/images/clients/edelweiss-tokio-life.png",
+  "/assets/images/clients/edge-verve.png",
+  "/assets/images/clients/iifl-capital.png",
+  "/assets/images/clients/kelmac-grop.png",
+  "/assets/images/clients/manipal-cigna.png",
+  "/assets/images/clients/oxsde.png",
+  "/assets/images/clients/sodexo.png",
 ];
 
-// random direction (x or y, ±200)
-const randomDirection = () => {
-  if (Math.random() < 0.5) {
-    return { x: Math.random() < 0.5 ? -270 : 270, y: 0 };
-  } else {
-    return { y: Math.random() < 0.5 ? -200 : 200, x: 0 };
+const shuffle = (arr) => {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
   }
+  return a;
+};
+
+const make6GroupsOf3to4 = (logos) => {
+  const shuffled = shuffle(logos);
+  const groups = [[], [], [], [], [], []];
+
+  let i = 0;
+  const give = (limit) => {
+    let moved = true;
+    while (moved && i < shuffled.length) {
+      moved = false;
+      for (let g = 0; g < 6 && i < shuffled.length; g++) {
+        if (groups[g].length < limit) {
+          groups[g].push(shuffled[i++]);
+          moved = true;
+        }
+      }
+    }
+  };
+
+  give(1); 
+  give(3);
+  give(4);
+
+
+  let g = 0;
+  while (i < shuffled.length) groups[g++ % 6].push(shuffled[i++]);
+
+  return groups;
+};
+
+
+const randomDirection = () => {
+  if (Math.random() < 0.5) return { x: Math.random() < 0.5 ? -270 : 270, y: 0 };
+  return { y: Math.random() < 0.5 ? -200 : 200, x: 0 };
 };
 
 const getRandomIndex = (exclude, length) => {
+  if (length <= 1) return 0;
   let idx;
-  do {
-    idx = Math.floor(Math.random() * length);
-  } while (idx === exclude);
+  do { idx = Math.floor(Math.random() * length); } while (idx === exclude);
   return idx;
 };
 
-const Card = () => {
+const Card = ({ logos, intervalMs = 3000 }) => {
   const imgRefs = useRef([]);
-  const currentIndex = useRef(Math.floor(Math.random() * images.length)); // random start
-  const nextIndex = useRef(getRandomIndex(currentIndex.current, images.length));
+
+  const currentIndex = useRef(0);
+  const nextIndex = useRef(logos.length > 1 ? 1 : 0);
   const [isInitialized, setIsInitialized] = useState(false);
 
   useEffect(() => {
-  const imgs = imgRefs.current;
+    if (!logos.length) return;
+    currentIndex.current = Math.floor(Math.random() * logos.length);
+    nextIndex.current = getRandomIndex(currentIndex.current, logos.length);
 
-  imgs.forEach((img, i) => {
-    if (i === currentIndex.current) {
-      gsap.set(img, { x: 0, y: 0, opacity: 1 });
-    } else {
-      gsap.set(img, { ...randomDirection(), opacity: 0 });
-    }
-  });
+    const imgs = imgRefs.current;
 
-  setIsInitialized(true);
-
-  const animateNext = () => {
-    const curr = imgs[currentIndex.current];
-    const next = imgs[nextIndex.current];
-    const outDir = randomDirection();
-let inDir;
-
-
-do {
-  inDir = randomDirection();
-} while (
-  (inDir.x !== 0 && inDir.x === outDir.x) ||
-  (inDir.y !== 0 && inDir.y === outDir.y)
-);
-
-    gsap.to(curr, {
-      ...outDir,
-      opacity: 0,
-      duration: 1.2,
-      ease: "power2.out",
+    imgs.forEach((img, i) => {
+      if (!img) return;
+      if (i === currentIndex.current) {
+        gsap.set(img, { x: 0, y: 0, opacity: 1 });
+      } else {
+        gsap.set(img, { ...randomDirection(), opacity: 0 });
+      }
     });
 
-    gsap.fromTo(
-      next,
-      { ...inDir, opacity: 0 },
-      { x: 0, y: 0, opacity: 1, duration: 1.2, ease: "power2.out" }
-    );
+    setIsInitialized(true);
 
-    currentIndex.current = nextIndex.current;
-    nextIndex.current = getRandomIndex(currentIndex.current, images.length);
-  };
+    const animateNext = () => {
+      const curr = imgs[currentIndex.current];
+      const next = imgs[nextIndex.current];
+      if (!curr || !next) return;
 
-  const interval = setInterval(animateNext, 3000); 
-  animateNext();
+      const outDir = randomDirection();
+      let inDir;
+      do { inDir = randomDirection(); }
+      while (
+        (inDir.x !== 0 && inDir.x === outDir.x) ||
+        (inDir.y !== 0 && inDir.y === outDir.y)
+      );
 
-  return () => clearInterval(interval);
-}, []);
+      gsap.to(curr, { ...outDir, opacity: 0, duration: 1, ease: "power2.out" });
+      gsap.fromTo(next, { ...inDir, opacity: 0 }, { x: 0, y: 0, opacity: 1, duration: 1, ease: "power2.out" });
+
+      currentIndex.current = nextIndex.current;
+      nextIndex.current = getRandomIndex(currentIndex.current, logos.length);
+    };
+
+    const id = setInterval(animateNext, intervalMs);
+    animateNext(); // start immediately
+    return () => clearInterval(id);
+  }, [logos, intervalMs]);
 
   return (
     <div className="w-[17vw] relative bg-[#081B57] h-[22vh] flex justify-center items-center border border-white/10 rounded-[2vw] overflow-hidden max-md:h-[20vh] max-sm:h-[15vh] max-md:w-[40vw] max-md:rounded-[4vw]">
-      {images.map((src, i) => (
+      {logos.map((src, i) => (
         <div
-          key={i}
+          key={`${src}-${i}`}
           className="absolute"
           ref={(el) => (imgRefs.current[i] = el)}
-           style={{ 
+          style={{
             opacity: isInitialized ? undefined : 0,
-            visibility: isInitialized ? 'visible' : 'hidden'
+            visibility: isInitialized ? "visible" : "hidden",
           }}
         >
           <Image
@@ -103,38 +137,42 @@ do {
             width={200}
             height={200}
             alt={`logo-${i}`}
-            className="h-[3.2vw] w-auto max-md:h-[8vw]"
+            className="h-[6vw] w-auto max-md:h-[15vw]"
+            priority={i === 0}
           />
         </div>
       ))}
+      {/* {!logos.length && <div className="text-white/60 text-sm">No logos</div>} */}
     </div>
   );
 };
 
 const TechPartners = () => {
-  const shuffled = [...images].sort(() => Math.random() - 0.5);
+  const [groups, setGroups] = useState(null);
+
+  useEffect(() => {
+    setGroups(make6GroupsOf3to4(ALL_LOGOS));
+  }, []);
 
   return (
     <section className="flex justify-start items-start container max-md:flex-col" id="tech-partners">
       <div className="w-[40%] space-y-[2vw] max-md:w-full max-md:space-y-[10vw] max-md:pb-[10vw]">
-        <h2 className="text-60 text-white-200  headingAnim w-[80%]">
-          Technology Partners
-        </h2>
-
+        <h2 className="text-60 text-white-200 headingAnim w-[80%]">Technology Partners</h2>
         <Copy>
           <p className="text-white-300 w-[80%] max-md:w-[100%]">
             At Data Science Wizards, we believe that building world-class AI
             solutions requires more than just great ideas—it takes a powerful
             ecosystem. That’s why we partner with industry-leading technology
             providers, cloud platforms, and AI innovators to deliver secure,
-            scalable, and future-proof solutions for our clients
+            scalable, and future-proof solutions for our clients.
           </p>
         </Copy>
       </div>
 
-      <div className="h-full w-[60%] max-md:space-x-[3vw] grid grid-cols-3 fadeup space-x-[1vw] space-y-[1vw] max-md:w-full max-md:grid-cols-2 max-md:space-y-[3vw] max-sm:space-y-[3vw] ">
-        {shuffled.map((src, i) => (
-          <Card key={i} startIndex={i} images={images} />
+      {/* While groups are null during SSR/first paint, render empty cards (no images) to keep markup stable */}
+      <div className="h-full w-[60%] grid grid-cols-3 fadeup gap-[1vw] max-md:w-full max-md:grid-cols-2 max-md:gap-[3vw]">
+        {(groups ?? [[], [], [], [], [], []]).slice(0, 6).map((logos, i) => (
+          <Card key={i} logos={logos} />
         ))}
       </div>
     </section>

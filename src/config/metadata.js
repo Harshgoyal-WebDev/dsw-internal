@@ -69,7 +69,7 @@ export const siteMetadata = {
     description: "Launch AI use cases in days and GenAI in hours with DSW UnifyAI - insurance-domain trained, compliant, scalable, and vendor-lock-in free.",
     images: [
       {
-        url: "/assets/seo/homepage.jpg",
+        url: "/seo/homepage.png",
         width: 1200,
         height: 630,
         alt: "Data Science Wizards UnifyAI - Enterprise AI Platform",
@@ -82,6 +82,7 @@ export const siteMetadata = {
   // Twitter Card
   twitter: {
     card: "summary_large_image",
+    site: "@DSW",
     title: "DSW UnifyAI – Enterprise AI Platform for Insurance",
     description: "Launch AI use cases in days and GenAI in hours with DSW UnifyAI - insurance-domain trained, compliant, scalable, and vendor-lock-in free.",
     images: ["/assets/seo/homepage-og.jpg"],
@@ -97,3 +98,27 @@ export const siteMetadata = {
 
 // Export default metadata for layout.js
 export default siteMetadata;
+
+
+export function getPageMetadata(overrides) {
+  return {
+    ...siteMetadata,
+    ...overrides,
+    title:
+      typeof overrides.title === "string"
+        ? { default: overrides.title, template: siteMetadata.title.template }
+        : overrides.title || siteMetadata.title,
+    openGraph: {
+      ...siteMetadata.openGraph,
+      ...(overrides.openGraph || {}),
+    },
+    twitter: {
+      ...siteMetadata.openGraph,
+      ...(overrides.openGraph || {}),
+    },
+    alternates: {
+      ...siteMetadata.alternates,
+      ...(overrides.alternates || {}),
+    },
+  };
+}

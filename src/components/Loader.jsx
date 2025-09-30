@@ -23,7 +23,7 @@ const Loader = () => {
 
       const ctx = gsap.context(() => {
         const tl = gsap.timeline();
-        const steps = 5; // Number of animation steps (and iterations)
+        const steps = 5; 
         if (globalThis.innerWidth > 1024) {
           for (let i = 1; i <= steps; i++) {
             tl.to(".sequence-container", {
@@ -146,7 +146,6 @@ const Loader = () => {
         {!mob ? (
           <div className="absolute top-[-5%] left-0 h-screen w-screen max-md:hidden">
             <Suspense>
-              {/* <ShaderComp color={"0x1726FD"} /> */}
               <DynamicShaderComp color={"0x1726FD"} />
             </Suspense>
           </div>

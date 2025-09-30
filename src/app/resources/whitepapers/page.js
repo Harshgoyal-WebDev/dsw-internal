@@ -3,9 +3,9 @@ import Layout from "@/components/Layout";
 import FooterCTA from "@/components/Common/FooterCta";
 import Hero from "@/components/Common/Hero";
 import Listing from "@/components/Whitepapers/Listing";
-import { BreadcrumbsJSONLD, WebpageJsonLd } from "@/lib/json-ld";
-import { getPageMetadata } from "@/lib/seo.config";
+import { BreadcrumbsJSONLD, WebpageJsonLd } from "@/lib/json-ld"
 import { homepage } from "@/lib/util";
+import { getPageMetadata } from "@/config/metadata";
 
 export const metadata = getPageMetadata({
   title: "Deep Insights. Real Strategies. Enterprise AI Whitepapers",

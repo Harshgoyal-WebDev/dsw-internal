@@ -13,7 +13,8 @@ import Differently from '@/components/AboutPage/Differently'
 import BuildMobile from '@/components/AboutPage/BuildMobile'
 import { WebpageJsonLd } from '@/lib/json-ld'
 import { homepage } from '@/lib/util'
-import { getPageMetadata } from '@/lib/seo.config'
+import { getPageMetadata } from '@/config/metadata'
+
 
 export const metadata = getPageMetadata({
   title: "About DSW UnifyAI - Deep-Tech AI for Enterprises",

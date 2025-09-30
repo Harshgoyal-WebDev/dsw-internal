@@ -1,8 +1,8 @@
 import Hero from '@/components/Common/Hero'
 import Layout from '@/components/Layout'
 import Content from '@/components/TermsAndConditions/Content'
+import { getPageMetadata } from '@/config/metadata';
 import { WebpageJsonLd } from '@/lib/json-ld';
-import { getPageMetadata } from '@/lib/seo.config';
 import { homepage } from '@/lib/util';
 import React from 'react'
 

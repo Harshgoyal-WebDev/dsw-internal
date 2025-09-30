@@ -5,7 +5,7 @@ import Hero from "@/components/Common/Hero";
 import VideoListing from "@/components/ProductVideos/VideoListing";
 import { BreadcrumbsJSONLD, WebpageJsonLd } from "@/lib/json-ld";
 import { homepage } from "@/lib/util";
-import { getPageMetadata } from "@/lib/seo.config";
+import { getPageMetadata } from "@/config/metadata";
 
 export const metadata = getPageMetadata({
   title: "DSW Product Videos - AI Demos & Platform Insights",

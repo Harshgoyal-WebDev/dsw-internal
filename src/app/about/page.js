@@ -11,8 +11,8 @@ import React from 'react'
 import TechPartners from '@/components/AboutPage/TechPartners'
 import Journey from '@/components/AboutPage/Journey'
 import { FAQJSONLD, WebpageJsonLd } from '@/lib/json-ld'
-import { getPageMetadata } from '@/lib/seo.config'
 import { homepage } from '@/lib/util'
+import { getPageMetadata } from '@/config/metadata'
 
 export const metadata = getPageMetadata({
   title: "About DSW UnifyAI - Deep-Tech AI for Enterprises",
