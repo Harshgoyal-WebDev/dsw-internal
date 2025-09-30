@@ -10,7 +10,7 @@ const Form = () => {
       <div className="h-full w-full flex items-start justify-between  container max-sm:flex-col max-md:flex-col max-sm:gap-[8vw] max-md:gap-[10vw] max-sm:px-[5.5vw] max-md:px-[4vw]">
         <div className="w-[52%] h-full  max-sm:w-full max-md:w-[100%] space-y-[1.5vw] max-md:space-y-[3vw] max-sm:space-y-[4.5vw] flex flex-col justify-between gap-[6.5vw]">
           <div className="h-[35%]  space-y-[1.5vw] max-md:space-y-[5vw]">
-            <h2 className="w-[90%] text-90  font-head text-white-200 headingAnim max-md:!text-[11.5vw]">
+            <h2 className="w-[90%] text-90  font-head text-white-200 headingAnim">
               Have a specific  request or question?
             </h2>
 
@@ -98,7 +98,7 @@ const Form = () => {
 
             <div className="text-white-300 space-y-[0.8vw]">
                 <p>Socials:</p>
-              <ul className="flex gap-0 max-md:items-center max-md:justify-center max-md:mt-[5vw]">
+              <ul className="flex gap-0 max-md:items-center max-md:justify-center max-md:mt-[5vw] max-sm:gap-[4vw] max-md:gap-[2vw]">
                 {SOCIAL_LINKS.map((link) => (
                   <li key={link.id} className="group">
                     <SocialLink

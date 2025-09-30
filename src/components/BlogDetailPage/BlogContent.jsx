@@ -53,16 +53,14 @@ export default function BlogContent() {
       id="content"
       className="h-fit relative max-md:flex-col bg-[#FEFEFE] container flex w-full"
     >
-      <h1 className="text-100 headingAnim max-md:flex hidden relative z-10 text-background">
-        How Generative AI is Transforming the Insurance Industry
-      </h1>
+     
 
-      <div className="h-fit absolute max-md:relative max-md:py-[15vw] max-md:w-full w-fit blog-info">
-        <div className="flex flex-wrap items-center max-md:items-start max-md:justify-between max-md:flex-row-reverse gap-y-[2.5vw]">
+      <div className="h-fit absolute max-md:relative max-sm:py-[15vw] max-md:pb-[10vw] max-md:w-full w-fit blog-info">
+        <div className="flex flex-wrap items-center max-md:items-start max-md:justify-between max-md:flex-row-reverse gap-y-[2.5vw] max-md:gap-y-[5vw]">
           {stickyTop.map((item, index) => (
             <div
               key={index}
-              className="text-[1.05vw] max-md:text-[4vw]  space-y-[.8vw] w-[50%] max-md:w-[40%]"
+              className="text-[1.05vw] max-sm:text-[4vw] max-md:text-[3vw]  space-y-[.8vw] w-[50%] max-md:w-[40%]"
             >
               <Copy>
                 <p className="text-background max-md:font-normal font-medium">
@@ -78,7 +76,7 @@ export default function BlogContent() {
       </div>
       <div className="space-y-[2vw]  sticky top-[15%] mt-[15vw] max-md:hidden h-full w-[55%] pr-[8vw]">
         <Copy>
-          <p className="text-[1.05vw]  max-md:text-[4vw] text-background  font-medium">
+          <p className="text-[1.05vw]  max-sm:text-[4vw] max-md:text-[3vw] text-background  font-medium">
             Table of Contents
           </p>
         </Copy>
@@ -92,7 +90,7 @@ export default function BlogContent() {
               <li
                 key={index}
                 onClick={() => handleScrollTo(item.title)}
-                className={`text-[1.05vw]  max-md:text-[4vw] cursor-pointer transition-all duration-300 hover:text-primary-2 ${
+                className={`text-[1.05vw]  max-sm:text-[4vw] max-md:text-[3vw] cursor-pointer transition-all duration-300 hover:text-primary-2 ${
                   activeSection === item.title
                     ? "text-primary-2"
                     : "text-background"
@@ -106,8 +104,8 @@ export default function BlogContent() {
       </div>
       <div className="h-full  w-[100%]  text-background">
         <div id="Introduction" className="w-full border-b h-full">
-          <div className="space-y-[2vw] max-md:space-y-[7vw] pb-[3vw] max-md:pb-[15vw] border-b fadeup">
-            <h2 className="text-30 font-head">Introduction</h2>
+          <div className="space-y-[2vw] max-sm:space-y-[7vw] max-md:space-y-[4vw] pb-[3vw] max-sm:pb-[15vw] max-md:pb-[10vw] border-b fadeup">
+            <h2 className="text-30 max-md:text-[5.5vw] font-head">Introduction</h2>
             <div>
               <p>
                 In an industry defined by data, regulation, and customer trust,
@@ -124,11 +122,11 @@ export default function BlogContent() {
               </p>
             </div>
           </div>
-          <div className="space-y-[3vw] max-md:py-[15vw] py-[3vw] ">
+          <div className="space-y-[3vw] max-sm:py-[15vw] max-md:py-[7vw] py-[3vw] ">
             <div className="space-y-[2vw] max-md:space-y-[7vw] fadeup">
               <div className="flex items-center max-md:items-start max-md:gap-[3.5vw] gap-[1vw]">
-                <div className="w-[.3vw] h-[.3vw] ml-[1vw] max-md:translate-y-[100%] max-sm:translate-y-[200%] max-md:h-[1.5vw] max-md:w-[1.5vw] max-md:ml-[4vw] bg-background "></div>
-                <h2 className="text-30 font-head">What Is Generative AI?</h2>
+                <div className="w-[.5vw] h-[.5vw] ml-[0.5vw] max-md:translate-y-[100%] max-sm:translate-y-[200%] max-md:h-[1.5vw] max-md:w-[1.5vw] max-sm:ml-[1vw] max-sm:mt-[-1vw] bg-background "></div>
+                <h2 className="text-30 max-md:text-[4.5vw] font-head">What Is Generative AI?</h2>
               </div>
               <div>
                 <p>
@@ -145,8 +143,8 @@ export default function BlogContent() {
             </div>
             <div className="space-y-[2vw] max-md:space-y-[7vw] fadeup">
               <div className="flex items-center max-md:items-start max-md:pt-[5vw] max-md:gap-[3.5vw] gap-[1vw]">
-                <div className="w-[.3vw] h-[.3vw] ml-[1vw] max-sm:translate-y-[200%] max-md:translate-y-[100%] max-md:h-[1.5vw] max-md:w-[1.5vw] max-md:ml-[4vw] bg-background "></div>
-                <h2 className="text-30 font-head">
+                <div className="w-[.5vw] h-[.5vw] ml-[0.5vw] max-sm:translate-y-[200%] max-md:translate-y-[100%] max-md:h-[1.5vw] max-md:w-[1.5vw] max-sm:ml-[1vw] max-sm:mt-[-1vw] bg-background "></div>
+                <h2 className="text-30 max-md:text-[4.5vw] font-head">
                   Top Use Cases of GenAI in Insurance
                 </h2>
               </div>
@@ -158,12 +156,12 @@ export default function BlogContent() {
                   Manual claims review is time-consuming and error-prone. With
                   GenAI, insurers can:
                 </p>
-                <ul className="list-disc pl-[2vw] max-md:pl-[5vw] py-[1vw] max-md:py-[8vw] max-md:space-y-[2vw] space-y-[0.5vw] marker:text-sm">
+                <ul className="list-disc pl-[2vw] max-md:pl-[5vw] py-[1vw] max-sm:py-[8vw] max-md:py-[5vw] max-md:space-y-[2vw] space-y-[0.5vw] marker:text-sm max-md:marker:text-[2.7vw] max-sm:marker:text-[4vw] ">
                   <li>Extract and summarize claims documents</li>
                   <li>Auto-generate response templates for approval/denial</li>
                   <li>Speed up settlements with fewer human touchpoints</li>
                 </ul>
-                <p className="pt-[.5vw] max-md:pt-[3vw]">
+                <p className="pt-[.5vw] max-sm:pt-[3vw]">
                   → Result: Faster turnaround, reduced operational costs, and
                   better customer satisfaction.
                 </p>
@@ -177,7 +175,7 @@ export default function BlogContent() {
                   historical claims, behavioral patterns—GenAI can flag
                   anomalies and generate risk narratives to support decisions.
                 </p>
-                <ul className="list-disc pl-[2vw] max-md:pl-[5vw] py-[1vw] max-md:space-y-[2vw] space-y-[0.5vw] marker:text-sm">
+                <ul className="list-disc pl-[2vw] max-md:pl-[5vw] py-[1vw] max-md:space-y-[2vw] space-y-[0.5vw] marker:text-sm max-md:marker:text-[2.7vw] max-sm:marker:text-[4vw]">
                   <li>Detecting fraudulent language patterns</li>
                   <li>
                     Generating fraud likelihood summaries for investigators
@@ -198,7 +196,7 @@ export default function BlogContent() {
                   historical claims, behavioral patterns—GenAI can flag
                   anomalies and generate risk narratives to support decisions.
                 </p>
-                <ul className="list-disc pl-[2vw] max-md:pl-[5vw] py-[1vw] max-md:space-y-[2vw] space-y-[0.5vw] marker:text-sm">
+                <ul className="list-disc pl-[2vw] max-md:pl-[5vw] py-[1vw] max-md:space-y-[2vw] space-y-[0.5vw] marker:text-sm max-md:marker:text-[2.7vw] max-sm:marker:text-[4vw]">
                   <li>Detecting fraudulent language patterns</li>
                   <li>
                     Generating fraud likelihood summaries for investigators
@@ -219,7 +217,7 @@ export default function BlogContent() {
                   historical claims, behavioral patterns—GenAI can flag
                   anomalies and generate risk narratives to support decisions.
                 </p>
-                <ul className="list-disc pl-[2vw] max-md:pl-[5vw] py-[1vw] max-md:space-y-[2vw] space-y-[0.5vw] marker:text-sm">
+                <ul className="list-disc pl-[2vw] max-md:pl-[5vw] py-[1vw] max-md:space-y-[2vw] space-y-[0.5vw] marker:text-sm max-md:marker:text-[2.7vw] max-sm:marker:text-[4vw]">
                   <li>Detecting fraudulent language patterns</li>
                   <li>
                     Generating fraud likelihood summaries for investigators
@@ -232,7 +230,7 @@ export default function BlogContent() {
                 </p>
               </div>
             </div>
-            <div className="h-[50vh] max-md:my-[12vw] max-md:rounded-[5vw] max-md:h-[25vh]  rounded-[1vw] overflow-hidden w-full relative fadeup">
+            <div className="h-[50vh] max-md:my-[12vw] max-sm:rounded-[5vw] max-md:rounded-[3vw] max-md:h-[50vw] max-sm:h-[25vh]  rounded-[1vw] overflow-hidden w-full relative fadeup">
               <Image
                 alt={activeSection}
                 fill
@@ -243,8 +241,8 @@ export default function BlogContent() {
 
             <div className="space-y-[2vw] max-md:space-y-[7vw] fadeup">
               <div className="flex items-center max-md:items-start max-md:gap-[3.5vw] gap-[1vw]">
-                <div className="w-[.3vw] h-[.3vw] ml-[1vw] max-sm:translate-y-[200%] max-md:translate-y-[100%] max-md:h-[1.5vw] max-md:w-[1.5vw] max-md:ml-[4vw] bg-background "></div>
-                <h2 className="text-30 font-head">
+                <div className="w-[.5vw] h-[.5vw] ml-[0.5vw] max-sm:translate-y-[200%] max-md:translate-y-[100%] max-md:h-[1.5vw] max-md:w-[1.5vw] max-sm:ml-[1vw] max-sm:mt-[-1vw] bg-background "></div>
+                <h2 className="text-30 max-md:text-[4.5vw] font-head">
                   Addressing Compliance & Security in GenAI
                 </h2>
               </div>
@@ -254,7 +252,7 @@ export default function BlogContent() {
                   GenAI responsibly is non-negotiable. With DSW's UnifyAI
                   platform, insurers benefit from:
                 </p>
-                <ul className="list-disc pl-[2vw] max-md:pl-[5vw] py-[1vw] max-md:py-[5vw] max-md:space-y-[3vw] space-y-[0.5vw] marker:text-sm">
+                <ul className="list-disc pl-[2vw] max-md:pl-[5vw] py-[1vw] max-md:py-[5vw] max-md:space-y-[3vw] space-y-[0.5vw] marker:text-sm max-md:marker:text-[2.7vw] max-sm:marker:text-[4vw]">
                   <li>
                     SOC 2, ISO 27001, HIPAA & GDPR-compliant infrastructure
                   </li>

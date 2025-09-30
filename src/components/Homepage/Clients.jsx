@@ -122,7 +122,7 @@ const logos = [
   "/assets/images/clients/ciek.png",
   "/assets/images/clients/craft-silicon.png",
   "/assets/images/clients/earc.png",
-  "/assets/images/clients/edelweiss-tokio-life.png",
+  "/assets/images/clients/edelweiss-tokio-life-logo.png",
   "/assets/images/clients/edge-verve.png",
   "/assets/images/clients/iifl-capital.png",
   "/assets/images/clients/kelmac-grop.png",

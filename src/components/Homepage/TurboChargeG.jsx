@@ -122,7 +122,7 @@ const TurbochargeG = () => {
   return (
     <section id="turbo" className="w-screen h-full bg-background max-md:relative max-md:z-[12] max-md:bg-transparent">
       <div className="flex flex-col items-center p-10 w-full space-y-[3vw] max-md:px-[7vw]">
-        <h2 className="text-90 headingAnim text-[#E8E8E8] max-md:!text-[10vw] max-md:text-center">Unifying AI and Business ​</h2>
+        <h2 className="text-90 headingAnim text-[#E8E8E8] max-md:text-center">Unifying AI and Business ​</h2>
         <div className="w-[70%] text-center space-y-15 py-15 max-md:w-full">
           <div
             className="w-full h-fit rounded-[1vw] relative  perspective-[800px] max-md:hidden"

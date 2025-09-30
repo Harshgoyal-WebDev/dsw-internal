@@ -249,14 +249,14 @@ export default function ContactForm() {
                 className="cursor-pointer mt-[3vw] pb-[3vw] max-md:pb-[8vw] max-md:mt-[8vw] px-0"
               >
                 <div
-                  className={` relative inline-flex items-center h-[4vw] min-w-[10vw] px-[2vw] gap-3 rounded-full overflow-hidden text-white-200 group max-md:h-fit max-md:py-[4vw] max-md:px-[6vw] max-md:min-w-[30vw] max-md:gap-[4vw] `}
+                  className={`relative inline-flex items-center h-[4vw] min-w-[10vw] px-[2vw] gap-3 rounded-full overflow-hidden text-white-200 group max-md:h-fit max-md:py-[3vw] max-md:px-[4.5vw] max-md:min-w-[20vw] max-md:gap-[2vw] max-sm:px-[7vw] max-sm:py-[4vw] max-sm:gap-[3vw] `}
                 >
                   <span
-                    className={`bg-foreground rounded-full h-2 w-2 max-md:w-[2.5vw] max-md:h-[2.5vw] z-[1] `}
+                    className={`bg-foreground rounded-full h-2 w-2 max-sm:w-[2vw] max-sm:h-[2vw] z-[1] max-md:w-[1.2vw] max-md:h-[1.2vw] mt-[-0.25vw] `}
                   ></span>
                   <div className="overflow-clip leading-[1.4] mt-[-4px] max-md:mt-0 z-[1]">
                     <p
-                      className={`text-[1.145vw] leading-[1.4] buttonTextShadow max-md:text-[4vw] `}
+                      className={`text-[1.145vw] leading-[1.4] buttonTextShadow max-sm:text-[4vw] max-md:text-[3vw] `}
                     >
                       {" "}
                       {isLoading ? "Sending..." : "Submit"}

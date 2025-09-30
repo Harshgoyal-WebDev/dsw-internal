@@ -52,7 +52,7 @@ const heroData= {
   heading:"Explore the Future of AI, One Post at a Time​ ",
   para:"​",
   paraClass:"",
-  headingWidth:"w-[60%]",
+  headingWidth:"w-[60%] max-md:mt-[20vw]",
   homepage:false,
   hidebtn:true
 }

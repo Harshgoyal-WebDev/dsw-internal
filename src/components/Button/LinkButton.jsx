@@ -67,13 +67,13 @@ export const LinkButton = ({
         href={href}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className={`relative  h-fit w-fit  group cursor-pointer text-primary-2 flex items-center gap-[0.7vw] max-sm:gap-[3vw] ${className}`}
+        className={`relative  h-fit w-fit  group cursor-pointer text-primary-2 flex items-center gap-[0.7vw] max-sm:gap-[3vw] max-md:gap-[2vw] ${className}`}
       >
-        <span className="w-[0.5vw] h-[0.5vw] rounded-full bg-primary-2 block duration-500 ease-in-out max-sm:h-[2vw] max-sm:w-[2vw]"/>
+        <span className="w-[0.5vw] h-[0.5vw] rounded-full bg-primary-2 block duration-500 ease-in-out max-sm:h-[2vw] max-sm:w-[2vw] max-md:w-[1.2vw] max-md:h-[1.2vw]"/>
         <div
           ref={containerRef}
           style={{ perspective: "800px" }}
-          className="relative flex flex-col items-start transform-origin-center mt-[0.2vw]"
+          className="relative flex flex-col items-start transform-origin-center mt-[0.2vw] max-md:mt-0"
         >
           {/* Bottom (Gray) Layer */}
           <div

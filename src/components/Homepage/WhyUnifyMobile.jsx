@@ -88,7 +88,7 @@ export default function WhyUnifyMobile({ allowMultiple = false }) {
 
 function Accordion({ title, para, link, isOpen, onToggle }) {
   return (
-    <div className={`w-full group overflow-hidden`}>
+    <div className={`w-full group overflow-hidden fadeup`}>
       <div className="w-full mr-auto  ">
         <button
           onClick={onToggle}

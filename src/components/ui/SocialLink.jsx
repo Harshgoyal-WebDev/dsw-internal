@@ -13,9 +13,9 @@ export const SocialLink = ({
   const baseClasses = "group transition-all duration-300 ease";
   
   const variants = {
-    default: "rounded-full block p-3 border overflow-hidden bg-white/5 group-hover:bg-white group-hover:scale-[0.95] duration-300",
-    footer: "rounded-full block p-3 border overflow-hidden bg-white/5 group-hover:bg-white group-hover:scale-[0.95] duration-300",
-    header: "rounded-full block p-2 border overflow-hidden bg-white/5 group-hover:bg-white/20 duration-300"
+    default: "rounded-full block p-3 border overflow-hidden bg-white/5 group-hover:bg-white group-hover:scale-[0.95] duration-300 max-md:p-[3vw]",
+    footer: "rounded-full block p-3 border overflow-hidden bg-white/5 group-hover:bg-white group-hover:scale-[0.95] duration-300 max-md:p-[3vw]",
+    header: "rounded-full block p-2 border overflow-hidden bg-white/5 group-hover:bg-white/20 duration-300 max-md:p-[3vw]"
   };
 
   const iconVariants = {
@@ -37,7 +37,7 @@ export const SocialLink = ({
         <Icon 
           name={icon} 
           className={iconVariantClass}
-          size="w-4 h-4 max-sm:h-[5vw]  max-sm:w-[5vw] max-md:h-10 max-md:w-10 "
+          size="w-4 h-4 max-sm:h-[5vw]  max-sm:w-[5vw] max-md:h-[3vw] max-md:w-[3vw] "
         />
       </div>
     </Link>

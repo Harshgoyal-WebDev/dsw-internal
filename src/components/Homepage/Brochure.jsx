@@ -127,7 +127,7 @@ const Brochure = () => {
                 slidesPerView: 1,
                 spaceBetween: 30,
               },
-              1024: {
+              1025: {
                 slidesPerView: 1.8,
                 spaceBetween: 40,
               },

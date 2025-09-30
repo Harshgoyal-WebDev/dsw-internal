@@ -11,7 +11,7 @@ const listingData = [
       "“Enterprise AI Without Complexity” — Interview with DSW’s CTO in Forbes Tech",
     description:
       "In a recent feature published by Forbes Technology, DSW’s Chief Technology Officer (CTO), shared powerful insights on how enterprises can embrace AI and GenAI at scale—without the usual roadblocks of complexity, integration delays, or compliance risk.",
-    imgSrc: "/assets/images/news/enterprise-ai.png",
+    imgSrc: "/assets/images/news/enterprise-ai-new.png",
     link: "/",
   },
   {
@@ -19,7 +19,7 @@ const listingData = [
     title: "DSW Featured in TechCrunch as a GenAI Deployment Pioneer",
     description:
       "TechCrunch spotlighted Data Science Wizards as a pioneer in rapid GenAI deployment across traditional enterprises, especially in sectors where compliance and infrastructure constraints often slow innovation.",
-    imgSrc: "/assets/images/news/dsw-featured.png",
+    imgSrc: "/assets/images/news/dsw-featured-new.png",
     link: "/",
   },
   {
@@ -27,7 +27,7 @@ const listingData = [
     title: "CEO Talks AI Governance at World AI Summit",
     description:
       "At the prestigious World AI Summit, DSW’s CEO took the stage to address one of the most urgent topics in the AI space: governance, transparency, and accountability in enterprise AI systems.",
-    imgSrc: "/assets/images/news/ceo-talks.png",
+    imgSrc: "/assets/images/news/ceo-talks-new.png",
     link: "/",
   },
   //   {},
@@ -65,7 +65,7 @@ const Listing = () => {
             className="w-full space-y-[4vw] fadeupListing max-md:space-y-[10vw]"
           >
             <div className="w-full h-fit flex gap-[2.5vw] max-md:flex-col max-md:gap-[5vw]">
-              <div className="w-[30vw] h-[20vw] rounded-[1.2vw] overflow-hidden max-md:w-full max-sm:h-[25vh] max-md:h-[35vh] max-md:rounded-[3vw] max-sm:rounded-[4vw]">
+              <div className="w-[30vw] h-[20vw] rounded-[2vw] overflow-hidden max-md:w-full max-sm:h-[25vh] max-md:h-[55vw] max-md:rounded-[3vw] max-sm:rounded-[4vw]">
                 <Image
                   src={data.imgSrc}
                   alt="listing images"

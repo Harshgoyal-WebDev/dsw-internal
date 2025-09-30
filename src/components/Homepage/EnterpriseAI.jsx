@@ -107,37 +107,37 @@ const EnterpriseAI = () => {
           <div>
             <div className="absolute top-[21%] left-[67%] max-md:top-[35%] max-md:left-0 max-sm:top-[45%] max-sm:left-0">
               <Copy>
-                <p className="text-[#E8E8E8] text-[1vw] max-md:text-[3.5vw]">Presentation Layer</p>
+                <p className="text-[#E8E8E8] text-[1vw] max-md:text-[2.7vw]">Presentation Layer</p>
               </Copy>
             </div>
             <div className="absolute top-[32%] left-[67%] max-sm:left-0 max-sm:top-[50%] max-md:top-[40%] max-md:left-0">
               <Copy>
-                <p className="text-[#E8E8E8] text-[1vw] max-md:text-[3.5vw]">Use Cases</p>
+                <p className="text-[#E8E8E8] text-[1vw] max-md:text-[2.7vw]">Use Cases</p>
               </Copy>
             </div>
             <div className="absolute top-[42%] left-[67%] max-sm:left-[70%] max-sm:top-[54%] max-md:top-[50%] max-md:left-[70%]">
               <Copy>
-                <p className="text-[#E8E8E8] text-[1vw] max-md:text-[3.5vw]">Gen AI Studio</p>
+                <p className="text-[#E8E8E8] text-[1vw] max-md:text-[2.7vw]">Gen AI Studio</p>
               </Copy>
             </div>
             <div className="absolute top-[42%] left-[28%] text-right max-sm:left-0 max-sm:top-[54%] max-md:top-[47%] max-md:left-0">
               <Copy>
-                <p className="text-[#E8E8E8] text-[1vw] max-md:text-[3.5vw]">AI Studio</p>
+                <p className="text-[#E8E8E8] text-[1vw] max-md:text-[2.7vw]">AI Studio</p>
               </Copy>
             </div>
             <div className="absolute top-[50%] left-[27%] text-right max-sm:left-0 max-sm:top-[58%] max-md:top-[52%] max-md:left-0">
               <Copy>
-                <p className="text-[#E8E8E8] text-[1vw] max-md:text-[3.5vw]">InsurAInce</p>
+                <p className="text-[#E8E8E8] text-[1vw] max-md:text-[2.7vw]">InsurAInce</p>
               </Copy>
             </div>
             <div className="absolute top-[58%] left-[29%] text-right max-sm:left-0 max-sm:top-[62%] max-md:top-[57%] max-md:left-0">
               <Copy>
-                <p className="text-[#E8E8E8] text-[1vw] max-md:text-[3.5vw]">UnifyAI</p>
+                <p className="text-[#E8E8E8] text-[1vw] max-md:text-[2.7vw]">UnifyAI</p>
               </Copy>
             </div>
             <div className="absolute top-[68%] left-[19.5%] text-right max-sm:left-0 max-sm:top-[66%] max-sm:w-[30%] max-sm:text-left max-md:top-[62%] max-md:left-0">
               <Copy>
-                <p className="text-[#E8E8E8] text-[1vw] max-md:text-[3.5vw]">
+                <p className="text-[#E8E8E8] text-[1vw] max-md:text-[2.7vw]">
                   Infra: On - Premise/Cloud
                 </p>
               </Copy>

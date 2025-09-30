@@ -290,7 +290,7 @@ const Hero = memo(function Hero({ heroData, breadcrumbs }) {
     >
       <div className="flex flex-col items-center justify-start w-full h-full pt-[30vh] relative z-[12] max-md:pt-[15vh]">
         <div
-          className={`text-center space-y-6 pb-5 max-md:w-[100%] max-md:space-y-[10vw] ${
+          className={`text-center space-y-6 pb-5 max-md:w-[100%] max-md:space-y-[7vw] ${
             heroData.headingWidth || "w-[70%]"
           }`}
         >

@@ -200,7 +200,7 @@ export default function PilotForm() {
                         placeholder="Message"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw] pt-[1vw]  bg-white/5 border !border-white/20 rounded-[2vw] placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw]  max-md:pl-[5vw] max-sm:pt-[3vw] max-md:rounded-[5vw] max-md:pt-[2vw]"
+                        className="placeholder:text-[1.15vw] pl-[2vw] pt-[1vw]  bg-white/5 border !border-white/20 rounded-[2vw] placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw]  max-md:pl-[5vw] max-sm:pt-[3vw] max-md:rounded-[5vw] max-md:pt-[2vw] max-md:text-[2.7vw] max-sm:text-[3.5vw]"
                       />
                     </FormControl>
                     <FormMessage />
@@ -214,14 +214,14 @@ export default function PilotForm() {
                   name="terms"
                   render={({ field }) => (
                     <FormItem className="">
-                      <div className="flex items-center justify-center max-md:gap-[5vw] max-sm:gap-3 gap-3 tablet:gap-1 pl-[0.5vw]">
+                      <div className="flex items-center justify-center max-md:gap-[3vw] max-sm:gap-3 gap-3 tablet:gap-1 pl-[0.5vw]">
                         <Checkbox
                           aria-label="checkbox"
                           checked={field.value}
                           onCheckedChange={field.onChange}
-                          className="mobile:mt-[2vw] max-md:scale-[1.5] max-sm:scale-[1] tablet:mt-[2vw] cursor-pointer max-md:rounded-[0.5vw]"
+                          className="mobile:mt-[2vw] max-md:scale-[1.5] max-sm:scale-[1] max-md:mt-[2vw] cursor-pointer max-md:rounded-[0.5vw]"
                         />
-                        <label className="text-[1.15vw] mt-2   text-[#CACACA] max-md:text-[3.5vw] max-md:mt-5">
+                        <label className="text-[1.15vw] mt-2   text-[#CACACA] max-sm:text-[3.5vw] max-md:text-[2.7vw] max-md:mt-5">
                           I agree to{" "}
                           <a href="/" className="border-b border-white/40">
                             Privacy Policy{" "}
@@ -245,7 +245,7 @@ export default function PilotForm() {
                 className="cursor-pointer mt-[3vw] pb-[3vw] max-md:pb-[8vw] max-md:mt-[8vw] px-0"
               >
                 <div
-                  className={` relative inline-flex items-center h-[4vw] min-w-[10vw] px-[2vw] gap-3 rounded-full overflow-hidden text-white-200 group max-md:h-fit max-md:py-[3vw] max-md:px-[4.5vw] max-md:min-w-[20vw] max-md:gap-[2vw] `}
+                  className={` relative inline-flex items-center h-[4vw] min-w-[10vw] px-[2vw] gap-3 rounded-full overflow-hidden text-white-200 group max-md:h-fit max-md:py-[3vw] max-md:px-[4.5vw] max-md:min-w-[20vw] max-md:gap-[2vw] max-sm:px-[7vw] max-sm:py-[4vw] max-sm:gap-[3vw] `}
                 >
                   <span
                     className={`bg-foreground rounded-full h-2 w-2 max-sm:w-[2.5vw] max-sm:h-[2.5vw] max-md:w-[1vw] max-md:h-[1vw] z-[1] `}

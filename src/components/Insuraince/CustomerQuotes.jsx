@@ -188,25 +188,7 @@ const ExpandablePanels = () => {
                 {panel.title}
               </h3>
 
-              {/* {activeMobilePanel != index ? (
-                <Image
-                  src={"/assets/icons/insuraince/plus.svg"}
-                  width={200}
-                  height={200}
-                  className={`w-auto h-[5vw] duration-500 ease-out  ${activeMobilePanel != index ? "rotate-90" : "rotate-0"}`}
-                  alt="toggle-icon"
-                />
-              ) : (
-                <div className="scale-[1.4]">
-                  <Image
-                    src={"/assets/icons/insuraince/minus.svg"}
-                    width={200}
-                    height={200}
-                    className={`w-auto h-[5vw] duration-500 ease-out  ${activeMobilePanel != index ? "rotate-90" : "rotate-0"}`}
-                    alt="toggle-icon"
-                  />
-                </div>
-              )} */}
+              
               <div
               className={`max-sm:w-[13vw] max-sm:h-[12vw] relative flex items-center justify-center max-sm:rounded-[3vw] transition-all duration-500 max-md:w-[9vw] max-md:h-[8vw] max-md:rounded-[1.5vw] rotate-45`}
             >
@@ -244,7 +226,7 @@ const ExpandablePanels = () => {
                   className="h-[10vw] w-auto"
                 />
               </div>
-              <p className="text-[3.7vw] mt-[4vw] leading-relaxed font-display text-start text-white-300 w-full mb-[4vw]">
+              <p className="max-sm:text-[3.7vw] mt-[4vw] leading-relaxed font-display text-start text-white-300 w-full mb-[4vw] max-md:text-[2.7vw]">
                 {panel.description}
               </p>
             </div>

@@ -1,8 +1,7 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import gsap from 'gsap';
-import { useGSAP } from "@gsap/react";
+
 
 export default function Clients() {
   // useGSAP(() => {

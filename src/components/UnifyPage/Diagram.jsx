@@ -1,6 +1,5 @@
 'use client'
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+
 import Image from "next/image";
 import React from "react";
 import Copy from "../Animations/Copy";
@@ -45,37 +44,37 @@ const Diagram = () => {
           <div className="">
             <div className="absolute top-[21%] left-[67%] max-md:top-[33%] max-md:left-0">
               <Copy>
-                <p className="text-white-200 text-[1vw] max-md:text-[3.5vw]">Presentation Layer</p>
+                <p className="text-white-200 text-[1vw] max-md:text-[2.7vw] max-sm:text-[3.5vw]">Presentation Layer</p>
               </Copy>
             </div>
             <div className="absolute top-[32%] left-[67%] max-md:left-0 max-md:top-[38%]">
               <Copy>
-                <p className="text-white-200 text-[1vw] max-md:text-[3.5vw]">Use Cases</p>
+                <p className="text-white-200 text-[1vw] max-md:text-[2.7vw] max-sm:text-[3.5vw]">Use Cases</p>
               </Copy>
             </div>
             <div className="absolute top-[42%] left-[67%] max-md:left-[70%] max-md:top-[45%]">
               <Copy>
-                <p className="text-white-200 text-[1vw] max-md:text-[3.5vw]">Gen AI Studio</p>
+                <p className="text-white-200 text-[1vw] max-md:text-[2.7vw] max-sm:text-[3.5vw]">Gen AI Studio</p>
               </Copy>
             </div>
             <div className="absolute top-[42%] left-[28%] text-right max-md:left-0 max-md:top-[43%]">
               <Copy>
-                <p className="text-white-200 text-[1vw] max-md:text-[3.5vw]">AI Studio</p>
+                <p className="text-white-200 text-[1vw] max-md:text-[2.7vw] max-sm:text-[3.5vw]">AI Studio</p>
               </Copy>
             </div>
             <div className="absolute top-[50%] left-[27%] text-right max-md:left-0 max-md:top-[48%]">
               <Copy>
-                <p className="text-white-200 text-[1vw] max-md:text-[3.5vw]">InsurAInce</p>
+                <p className="text-white-200 text-[1vw] max-md:text-[2.7vw] max-sm:text-[3.5vw]">InsurAInce</p>
               </Copy>
             </div>
             <div className="absolute top-[58%] left-[29%] text-right max-md:left-0 max-md:top-[53%]">
               <Copy>
-                <p className="text-white-200 text-[1vw] max-md:text-[3.5vw]">UnifyAI</p>
+                <p className="text-white-200 text-[1vw] max-md:text-[2.7vw] max-sm:text-[3.5vw]">UnifyAI</p>
               </Copy>
             </div>
             <div className="absolute top-[68%] left-[19.5%] text-right max-md:left-0 max-md:top-[58%] max-md:w-[30%] max-md:text-left">
               <Copy>
-                <p className="text-white-200 text-[1vw] max-md:text-[3.5vw]">
+                <p className="text-white-200 text-[1vw] max-md:text-[2.7vw] max-sm:text-[3.5vw]">
                   Infra: On - Premise/Cloud
                 </p>
               </Copy>

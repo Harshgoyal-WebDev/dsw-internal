@@ -84,9 +84,9 @@ const Listing = () => {
   }, []);
 
   return (
-    <section className="container relative z-[10] mt-[-20vh] max-sm:mt-0" id="news-listing">
+    <section className="container relative z-[10] mt-[-20vh] max-md:mt-0" id="news-listing">
         <div className="space-y-[7vw] max-sm:space-y-[20vw] max-md:space-y-[12vw]">
-        <div className="w-full space-y-[1.5vw] max-sm:space-y-[7vw]">
+        <div className="w-full space-y-[1.5vw] max-sm:space-y-[7vw] max-md:space-y-[4vw]">
          <h2 className="text-90 headingAnim  max-sm:w-full text-center">Featured Whitepapers</h2>
                 <Copy>
                   <p className="text-[#CACACA] text-center">
@@ -98,7 +98,7 @@ const Listing = () => {
         {listingData.map((data, id) => (
           <div key={id} className="w-full space-y-[4vw] fadeupListing max-sm:space-y-[10vw] max-md:space-y-[8vw]">
             <div className="w-full h-fit flex gap-[2.5vw] max-md:flex-col max-sm:gap-[5vw] max-md:gap-[3vw] ">
-              <div className="w-[30vw] h-[20vw] rounded-[1.8vw] overflow-hidden max-md:w-full max-sm:h-[25vh] max-sm:rounded-[4vw] max-md:h-[35vh]">
+              <div className="w-[30vw] h-[20vw] rounded-[1.8vw] max-md:rounded-[3vw] overflow-hidden max-md:w-full max-sm:h-[25vh] max-sm:rounded-[4vw] max-md:h-[35vh]">
                 <Image
                   src={data.imgSrc}
                   alt="listing images"

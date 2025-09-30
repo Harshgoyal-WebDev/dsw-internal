@@ -11,7 +11,7 @@ const Annoucements = () => {
 
   // Announcement data
   const mainAnnouncement = {
-    image: "/assets/images/news/dsw-launches.png",
+    image: "/assets/images/news/dsw-launches-new.png",
     alt: "dsw-launches",
     title:
       "DSW Launches Rapid GenAI Deployment Capability for Insurance Providers",
@@ -52,14 +52,14 @@ const Annoucements = () => {
 
   return (
     <section className="container" id="announcement">
-      <h2 className="text-center text-90 mb-[7vw] headingAnim max-md:mb-[15vw]">
+      <h2 className="text-center text-90 mb-[7vw] headingAnim max-md:mb-[10vw] max-md:text-left">
         Latest Announcements
       </h2>
       <div className="w-full space-y-[3vw]">
         {/* Main Announcement */}
         <div className="w-full space-y-[4vw]">
           <div className="w-full h-fit flex gap-[4.5vw] max-md:flex-col max-md:gap-[7vw]">
-            <div className="w-[30vw] h-[23vw] rounded-[1.2vw] overflow-hidden fadeup max-md:w-full max-md:h-[35vh] max-md:border max-md:border-white/10 max-md:rounded-[7vw]">
+            <div className="w-[30vw] h-[23vw] rounded-[2vw] overflow-hidden fadeup max-md:w-full max-md:h-[55vw] max-md:border max-md:border-white/10 max-sm:rounded-[7vw] max-md:rounded-[3vw]">
               <Image
                 src={mainAnnouncement.image}
                 alt={mainAnnouncement.alt}
@@ -111,7 +111,7 @@ const Annoucements = () => {
                 key={index}
                 className="w-[32%] h-fit flex flex-col gap-[1.5vw] max-md:gap-[7vw]"
               >
-                <div className="w-full h-[15vw] rounded-[1.2vw] overflow-hidden max-md:h-[30vh] max-sm:h-[25vh] max-md:rounded-[4.5vw] max-md:border max-sm:border-white/20">
+                <div className="w-full h-[15vw] rounded-[1.2vw] overflow-hidden max-md:h-[30vh] max-sm:h-[25vh] max-md:rounded-[4.5vw] max-md:border max-md:border-white/20">
                   <Image
                     src={item.image}
                     alt={item.alt}

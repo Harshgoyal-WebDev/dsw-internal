@@ -22,7 +22,7 @@ const FeaturedBlog = () => {
               width={800}
               height={800}
               alt="ai-img"
-              className="w-full h-full object-cover max-md:h-full  group-hover:scale-[1.1] duration-700 ease-in-out transition-all max-md:w-auto"
+              className="w-full h-full object-cover max-md:h-full  group-hover:scale-[1.1] duration-700 ease-in-out transition-all"
             />
           </div>
 

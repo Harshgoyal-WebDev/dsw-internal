@@ -5,49 +5,6 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Copy from "../Animations/Copy";
 gsap.registerPlugin(ScrollTrigger);
 
-const MobileCard = ({ id, content }) => {
-  return (
-    <div
-      className="relative w-full  max-md:w-[70%] max-md:translate-x-[22%] max-sm:translate-x-0 max-sm:w-full rounded-[6vw] group cursor-pointer
-    overflow-hidden flex flex-col max-md:flex-row max-sm:flex-col border transition-opacity border-[#59595980] 
-    justify-between p-[8vw] h-[75vw] max-md:h-fit max-sm:h-[75vw]  background-glass backdrop-blur-[1vw]"
-    >
-      <div className="relative z-10 flex flex-col gap-[6vw] justify-between h-full">
-        <p
-          className="flex justify-center items-center text-[6.5vw] border 
-        transition-all duration-500 ease-in-out
-        group-hover:border-white group-hover:text-white-300 
-        border-[#175CFE] font-head text-[#175CFE] tracking-wider 
-        h-[25vw] w-[25vw] max-md:w-[15vw] max-md:h-[15vw] max-sm:w-[25vw] max-sm:h-[25vw] rounded-full"
-        >
-          {id}
-        </p>
-
-        <p
-          className="text-white-300 text-[5vw] max-md:text-[3vw] max-sm:text-[5vw] leading-[1.4] max-md:w-[100%] w-[90%] pb-[1vw] 
-        transition-colors duration-500 ease-in-out"
-        >
-          {content}
-        </p>
-      </div>
-    </div>
-  );
-};
-
-const scope = [
-  {
-    id: "01",
-    content: `Industry's first verticalized SLM (Small Language Model) for insurance `,
-  },
-  {
-    id: "02",
-    content: `Continuous learning from operational feedback  `,
-  },
-  {
-    id: "03",
-    content: `Modular expansion into newer lines of business and territories `,
-  },
-];
 
 const FutureScope = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -113,22 +70,12 @@ const FutureScope = () => {
         </p>
       </Copy>
 
-      <div className="hidden max-md:block w-full max-md:pt-[10vw]">
-        <div className="flex flex-col  gap-[7vw]">
-          {scope.map((card, index) => (
-            <div key={index} className="">
-              <MobileCard id={card.id} content={card.content} />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="absolute future-card w-[100vw] max-md:hidden inset-0 flex px-[8vw] gap-[0.5vw] flex-col items-start">
-        <div className="flex w-full justify-start">
+      <div className="absolute future-card w-[100vw] inset-0 flex px-[8vw] gap-[0.5vw] flex-col items-start max-md:static max-md:gap-[4vw] max-sm:mt-[15vw] max-md:mt-[7.5vw]">
+        <div className="flex w-full justify-start max-md:justify-center">
           <div
             className="relative w-[27.5vw] rounded-[2.5vw] fadeup group cursor-pointer
-    overflow-hidden flex flex-col border transition-opacity border-[#59595980] 
-    justify-between p-[2.5vw] h-[22vw] background-glass backdrop-blur-[1vw]"
+    overflow-hidden flex flex-col border transition-opacity border-[#59595980] max-md:p-[5vw]
+    justify-between p-[2.5vw] h-[22vw] background-glass backdrop-blur-[10px] max-md:w-[60vw] max-md:h-fit max-md:backdrop-blur-none max-md:rounded-[3.5vw] max-sm:w-full max-sm:rounded-[6vw] max-sm:p-[7vw]"
           >
             {/* gradient overlay */}
             <div
@@ -138,13 +85,13 @@ const FutureScope = () => {
       transition-opacity duration-500 ease-in-out"
             />
 
-            <div className="relative z-10 flex flex-col justify-between h-full">
+            <div className="relative z-10 flex flex-col justify-between h-full max-md:space-y-[10vw]  ">
               <p
-                className="flex justify-center items-center text-[1.5vw] border 
+                className="flex justify-center items-center text-[1.5vw] border  max-md:text-[5.5vw] font-head max-md:h-[14vw] max-md:w-[14vw]
         transition-all duration-500 ease-in-out
         group-hover:border-white group-hover:text-white-300 
         border-[#175CFE] text-[#175CFE] tracking-wider 
-        h-[5.5vw] w-[5.5vw] rounded-full"
+        h-[5.5vw] w-[5.5vw] rounded-full max-sm:text-[7.5vw] max-sm:w-[20vw] max-sm:h-[20vw]"
               >
                 01
               </p>
@@ -164,7 +111,7 @@ const FutureScope = () => {
           <div
             className="relative w-[27.5vw] rounded-[2.5vw] fadeup group cursor-pointer
     overflow-hidden flex flex-col border border-[#59595980] 
-    justify-between p-[2.5vw] h-[22vw] background-glass backdrop-blur-[1vw]"
+    justify-between p-[2.5vw] h-[22vw] background-glass backdrop-blur-[10px] max-md:w-[60vw] max-md:h-fit max-md:backdrop-blur-none max-md:rounded-[3.5vw] max-sm:w-full max-sm:rounded-[6vw] max-sm:p-[7vw] max-md:p-[5vw]"
           >
             {/* gradient overlay */}
             <div
@@ -174,13 +121,13 @@ const FutureScope = () => {
       transition-opacity duration-500 ease-in-out"
             />
 
-            <div className="relative z-10 flex flex-col justify-between h-full">
+            <div className="relative z-10 flex flex-col justify-between h-full max-md:space-y-[10vw]">
               <p
-                className="flex justify-center items-center text-[1.5vw] border 
+                className="flex justify-center items-center text-[1.5vw] border max-md:text-[5.5vw] font-head max-md:h-[14vw] max-md:w-[14vw] 
         transition-all duration-500 ease-in-out
         group-hover:border-white group-hover:text-white-300 
         border-[#175CFE] text-[#175CFE] tracking-wider 
-        h-[5.5vw] w-[5.5vw] rounded-full"
+        h-[5.5vw] w-[5.5vw] rounded-full max-sm:text-[7.5vw] max-sm:w-[20vw] max-sm:h-[20vw]"
               >
                 02
               </p>
@@ -195,11 +142,11 @@ const FutureScope = () => {
           </div>
         </div>
 
-        <div className="flex w-full justify-end">
+        <div className="flex w-full justify-end max-md:justify-center">
           <div
             className="relative w-[27.5vw] rounded-[2.5vw] fadeup group cursor-pointer
     overflow-hidden flex flex-col border border-[#59595980] 
-    justify-between p-[2.5vw] h-[22vw] background-glass backdrop-blur-[1vw]"
+    justify-between p-[2.5vw] h-[22vw] background-glass backdrop-blur-[10px] max-md:w-[60vw] max-md:h-fit max-md:backdrop-blur-none max-md:rounded-[3.5vw] max-sm:w-full max-sm:rounded-[6vw] max-sm:p-[7vw] max-md:p-[5vw]"
           >
             {/* gradient overlay */}
             <div
@@ -209,13 +156,13 @@ const FutureScope = () => {
       transition-opacity duration-500 ease-in-out"
             />
 
-            <div className="relative z-10 flex flex-col justify-between h-full">
+            <div className="relative z-10 flex flex-col justify-between h-full max-md:space-y-[10vw]">
               <p
-                className="flex justify-center items-center text-[1.5vw] border 
+                className="flex justify-center items-center text-[1.5vw] border max-md:text-[5.5vw] font-head max-md:h-[14vw] max-md:w-[14vw] 
         transition-all duration-500 ease-in-out
         group-hover:border-white group-hover:text-white-300 
         border-[#175CFE] text-[#175CFE] tracking-wider 
-        h-[5.5vw] w-[5.5vw] rounded-full"
+        h-[5.5vw] w-[5.5vw] rounded-full max-sm:text-[7.5vw] max-sm:w-[20vw] max-sm:h-[20vw]"
               >
                 03
               </p>

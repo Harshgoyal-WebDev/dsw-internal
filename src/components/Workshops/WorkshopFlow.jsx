@@ -65,7 +65,7 @@ export default function WorkshopFlow({ sessionsData, space }) {
               slidesPerView: 1,
               spaceBetween: 40,
             },
-            1024: {
+            1025: {
               slidesPerView: 2.5,
               spaceBetween: 10,
             },

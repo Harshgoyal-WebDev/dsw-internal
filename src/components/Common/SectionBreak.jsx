@@ -37,7 +37,7 @@ const SectionBreak = ({text, span,textAlign,width}) => {
                 ease: "power2.inOut"
               }, 0)
           }
-          if (globalThis.innerWidth > 541 && globalThis.innerWidth < 1024) {
+          if (globalThis.innerWidth > 541 && globalThis.innerWidth <= 1024) {
             gsap
               .timeline({
                 scrollTrigger: {

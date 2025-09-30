@@ -139,7 +139,7 @@ useEffect(() => {
                       }}
                     >
                       {/* Top-level link */}
-                      <div className="flex items-center gap-[0.5vw] relative z-[10]">
+                      <div className="flex items-center gap-[0.5vw] relative z-[10] navlinks">
                         <NavigationLink
                           text={link.text}
                           href={link.href}
