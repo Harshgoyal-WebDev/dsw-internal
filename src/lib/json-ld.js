@@ -93,7 +93,7 @@ export function LocalBusiness() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Monielink",
+    "name": "Data Science Wizards",
     "image": `https://dsw-internal.vercel.app/dsw-logo.png`,
     "@id": "",
     "url": `${homepage}`,
@@ -168,7 +168,7 @@ export function WebpageJsonLd({ metadata = {} }) {
       name: "Data Science Wizards",
       logo: {
         "@type": "ImageObject",
-        url: `${homepage}/${faviconPath}`,
+        url: `${homepage}${faviconPath}`,
       },
     },
     about: { "@id": `${fullUrl}#organization` },

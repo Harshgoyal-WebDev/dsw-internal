@@ -33,4 +33,4 @@ export function removeExtraSpaces(text) {
 }
 
 export const homepage = "http://dsw-internal.vercel.app/";
-export const faviconPath = '/favicons/favicon.ico';
+export const faviconPath = 'favicons/favicon.ico';
