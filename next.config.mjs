@@ -95,7 +95,7 @@ const nextConfig = {
   compress: true,
   
   // Generate source maps for better debugging
-  productionBrowserSourceMaps: false,
+  productionBrowserSourceMaps: true,
 };
 
 export default nextConfig;
