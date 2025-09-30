@@ -4,10 +4,13 @@ import { fontVariables } from "@/styles/fonts";
 import { siteMetadata } from "@/config/metadata";
 import { siteViewport } from "@/config/viewport";
 import LayoutTransition from "@/components/LayoutTransition";
+import { defaultMetadata } from "@/lib/seo.config";
 
 // Use external metadata configuration like working project
-export const metadata = siteMetadata;
+// export const metadata = siteMetadata;
 export const viewport = siteViewport;
+export const metadata = defaultMetadata;
+
 
 export default function RootLayout({ children }) {
   return (

@@ -7,24 +7,25 @@ export function OrganizationJsonLd() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     '@id': `${homepage}#organization`,
-    name: "Monielink",
-    description: "Empower fintechs & banks with MonieLink neobank Super SDK for digital banking, payments, card issuing & lending. Drive 6X revenue growth via scalable solutions. ",
+    name: "Data Science Wizards",
+    description: "Launch AI use cases in days and GenAI in hours with DSW UnifyAI - insurance-domain trained, compliant, scalable, and vendor-lock-in free.",
     url: homepage,
-    telephone: "",
-    email: "info@monielink.io",
+    telephone: "+91 96640 56847",
+    email: "contact@datasciencewizards.ai",
     address: {
       "@type": 'PostalAddress',
-      streetAddress: '',
-      addressLocality: '',
-      addressRegion: '',
-      addressCountry: 'Nigeria',
+      streetAddress: '707, 7th Floor, ',
+      addressLocality: 'Lodha Supremus II Road No. 22',
+      addressRegion: 'Wagle Estate,Thane-West-400604',
+      addressCountry: 'India',
     },
-    logo: `${homepage}/favicon.ico`,
+    logo: `${homepage}favicons/favicon.ico`,
     sameAs: [
-      "https://www.facebook.com/",
-      "https://www.linkedin.com/in/",
-      "https://www.linkedin.com/in/",
-      "https://x.com/"
+      "https://www.facebook.com/datasciencewizards/",
+      "https://www.linkedin.com/company/data-science-wizards/",
+      "https://x.com/dswizards",
+      "https://www.instagram.com/datasciencewizards/",
+      "https://www.youtube.com/@DataScienceWizards"
     ]
   };
 
@@ -43,14 +44,14 @@ export function WebsiteJsonLd() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    '@id': `${homepage}/#website`,
-    name: 'Monielink',
+    '@id': `${homepage}#website`,
+    name: 'Data Science Wizards',
     url: homepage,
     copyrightYear: new Date().getFullYear(),
     'inLanguage': "en-US",
     "publisher": [
       {
-        "@id": `${homepage}/#organization`
+        "@id": `${homepage}#organization`
       }
     ],
   };
@@ -70,8 +71,8 @@ export function ImageObjectJsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ImageObject",
-    '@id': `${homepage}/seo/homepage.png`,
-    url: `${homepage}/seo/homepage.png`,
+    '@id': `${homepage}seo/homepage.png`,
+    url: `${homepage}seo/homepage.png`,
     width: "1920",
     height: "1016",
     inLanguage: "en-US"
@@ -93,23 +94,23 @@ export function LocalBusiness() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Monielink",
-    "image": `https://www.monielink.io/logo.png`,
+    "image": `https://dsw-internal.vercel.app/dsw-logo.png`,
     "@id": "",
     "url": `${homepage}`,
-    "telephone": "",
+    "telephone": "+91 96640 56847",
     "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "",
-      "addressLocality": "",
-      "postalCode": "",
-      "addressCountry": "",
-      "addressRegion": "Nigeria"
+      "@type": 'PostalAddress',
+      "streetAddress": '707, 7th Floor, ',
+      "addressLocality" : 'Lodha Supremus II Road No. 22',
+      "addressRegion": 'Wagle Estate,Thane-West-400604',
+      "addressCountry": 'India',
     },
     "sameAs": [
-      "https://www.facebook.com/",
-      "https://www.linkedin.com/in/",
-      "https://www.linkedin.com/in/",
-      "https://x.com/"
+       "https://www.facebook.com/datasciencewizards/",
+      "https://www.linkedin.com/company/data-science-wizards/",
+      "https://x.com/dswizards",
+      "https://www.instagram.com/datasciencewizards/",
+      "https://www.youtube.com/@DataScienceWizards"
     ],
     "openingHoursSpecification": [
       {
@@ -121,8 +122,8 @@ export function LocalBusiness() {
           "Thursday",
           "Friday"
         ],
-        "opens": "09:30",
-        "closes": "06:30"
+        "opens": "09:00",
+        "closes": "06:00"
       }
     ]
   };
@@ -164,7 +165,7 @@ export function WebpageJsonLd({ metadata = {} }) {
     dateModified: date_modified,
     publisher: {
       "@type": "Organization",
-      name: "Monielink",
+      name: "Data Science Wizards",
       logo: {
         "@type": "ImageObject",
         url: `${homepage}/${faviconPath}`,

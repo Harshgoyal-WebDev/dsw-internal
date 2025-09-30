@@ -7,7 +7,7 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 
-export default function Faqs({ allowMultiple = false, content }) {
+export default function Faqs({ allowMultiple = false, data }) {
   const [openIndexes, setOpenIndexes] = useState([]);
 
   function toggleIndex(i) {
@@ -40,8 +40,8 @@ export default function Faqs({ allowMultiple = false, content }) {
           {data.map((f, i) => (
             <AccordionItem
               key={i}
-              question={f.title}
-              answer={f.description}
+              question={f.question}
+              answer={f.answer}
               isOpen={openIndexes.includes(i)}
               onToggle={() => toggleIndex(i)}
             />
@@ -112,30 +112,3 @@ function AccordionItem({ question, answer, isOpen, onToggle }) {
   );
 }
 
-const data = [
-  {
-    title: "What is UnifyAI?",
-    description:
-      "UnifyAI is an enterprise AI platform that enables businesses to develop, deploy, and manage AI models seamlessly. It supports machine learning, Generative AI, and large language models (LLMs) while ensuring security, compliance, and scalability.",
-  },
-  {
-    title: "Who can use UnifyAI?",
-    description:
-      "UnifyAI is an enterprise AI platform that enables businesses to develop, deploy, and manage AI models seamlessly. It supports machine learning, Generative AI, and large language models (LLMs) while ensuring security, compliance, and scalability.",
-  },
-  {
-    title: "How does UnifyAI integrate with existing systems?",
-    description:
-      "UnifyAI is an enterprise AI platform that enables businesses to develop, deploy, and manage AI models seamlessly. It supports machine learning, Generative AI, and large language models (LLMs) while ensuring security, compliance, and scalability.",
-  },
-  {
-    title: "Is UnifyAI secure?",
-    description:
-      "UnifyAI is an enterprise AI platform that enables businesses to develop, deploy, and manage AI models seamlessly. It supports machine learning, Generative AI, and large language models (LLMs) while ensuring security, compliance, and scalability.",
-  },
-  {
-    title: "What types of AI models does UnifyAI support?",
-    description:
-      "UnifyAI is an enterprise AI platform that enables businesses to develop, deploy, and manage AI models seamlessly. It supports machine learning, Generative AI, and large language models (LLMs) while ensuring security, compliance, and scalability.",
-  },
-]

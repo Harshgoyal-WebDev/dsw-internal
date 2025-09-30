@@ -4,19 +4,18 @@ import { homepage, faviconPath } from "./util";
 export const defaultMetadata = {
   metadataBase: new URL(homepage),
   title: {
-    default: "MonieLink: Secure Neobank Platform for Fintechs",
-    template: "%s | Monielink",
+    default: "DSW UnifyAI – Enterprise AI Platform for Insurance",
+    // template: "%s | Data Science Wizards",
   },
   description:
-    "Empower fintechs & banks with MonieLink neobank Super SDK for digital banking, payments, card issuing & lending. Drive 6X revenue growth via scalable solutions.",
+    "Launch AI use cases in days and GenAI in hours with DSW UnifyAI - insurance-domain trained, compliant, scalable, and vendor-lock-in free.",
   keywords: [
-    "digital banking",
-    "digital lending",
-    "kyc and soft token",
-    "card issuing",
-    "dual transaction service",
-    "loyalty management",
-    "merchant acquiring"
+    "AI Platform", 
+    "Insurance AI", 
+    "Enterprise AI", 
+    "GenAI", 
+    "Data Science Wizards",
+    "UnifyAI"
   ],
   alternates: {
     canonical: "/",
@@ -34,11 +33,11 @@ export const defaultMetadata = {
     },
   },
   openGraph: {
-    title: "MonieLink: Secure Neobank Platform for Fintechs",
+    title: "DSW UnifyAI – Enterprise AI Platform for Insurance",
     description:
-      "Empower fintechs & banks with MonieLink neobank Super SDK for digital banking, payments, card issuing & lending. Drive 6X revenue growth via scalable solutions.",
+      "Launch AI use cases in days and GenAI in hours with DSW UnifyAI - insurance-domain trained, compliant, scalable, and vendor-lock-in free.",
     url: homepage,
-    siteName: "Monielink",
+    siteName: "Data Science Wizards",
     images: [
       {
         url: `${homepage}/seo/homepage.png`,
@@ -52,9 +51,9 @@ export const defaultMetadata = {
   twitter: {
     card: "summary_large_image",
     site: "@Monielink",
-    title: "MonieLink: Secure Neobank Platform for Fintechs",
+    title: "DSW UnifyAI – Enterprise AI Platform for Insurance",
     description:
-      "Empower fintechs & banks with MonieLink neobank Super SDK for digital banking, payments, card issuing & lending. Drive 6X revenue growth via scalable solutions.",
+      "Launch AI use cases in days and GenAI in hours with DSW UnifyAI - insurance-domain trained, compliant, scalable, and vendor-lock-in free.",
     images: [`${homepage}/seo/homepage.png`],
   },
 };

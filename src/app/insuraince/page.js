@@ -12,10 +12,38 @@ import Layout from "@/components/Layout";
 import Faqs from "@/components/Common/FAQs";
 import FooterCTA from "@/components/Common/FooterCta";
 import Hero from "@/components/Common/Hero";
+import { FAQJSONLD, WebpageJsonLd } from "@/lib/json-ld";
+import { getPageMetadata } from "@/lib/seo.config";
+import { homepage } from "@/lib/util";
 
+export const metadata = getPageMetadata({
+  title: "Enterprise AI for Insurance - insurAInce by DSW",
+  description: "insurAInce is a unified AI & GenAI platform built for insurers — deploy AI use cases in days, agents in hours, with compliance and scale.",
+  url: "insuraince",
+  date_published: "2025-09-30T00:00",
+  date_modified: "2025-09-30T00:00",
+  alternates: {
+    canonical: "/insuraince",
+    languages: {
+      "x-default": "/insuraince",
+    },
+  },
+  openGraph: {
+    url: "insuraince",
+    images: [
+      {
+        url: `${homepage}seo/insuraince.png`,
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+});
 export default function Home() {
   return (
     <>
+     <WebpageJsonLd metadata={metadata}/>
+     <FAQJSONLD faqs={faqData}/>
       <Layout>
       <Hero heroData={heroData}/>
       <About />
@@ -27,7 +55,7 @@ export default function Home() {
       <Efficiency />
       <CustomerQuotes />
       <FutureScope />
-      <Faqs />
+      <Faqs data={faqData}/>
       <FooterCTA footerCTAData={footerCTAData} paraWidth={"w-[85%]"}/>
       </Layout>
     </>
@@ -57,3 +85,30 @@ const footerCTAData={
   img1:"/assets/images/footer/image-1.png",
   img2:"/assets/images/footer/image-2.png"
 }
+const faqData = [
+  {
+    question: "What is UnifyAI?",
+    answer:
+      "UnifyAI is an enterprise AI platform that enables businesses to develop, deploy, and manage AI models seamlessly. It supports machine learning, Generative AI, and large language models (LLMs) while ensuring security, compliance, and scalability.",
+  },
+  {
+    question: "Who can use UnifyAI?",
+    answer:
+      "UnifyAI is an enterprise AI platform that enables businesses to develop, deploy, and manage AI models seamlessly. It supports machine learning, Generative AI, and large language models (LLMs) while ensuring security, compliance, and scalability.",
+  },
+  {
+    question: "How does UnifyAI integrate with existing systems?",
+    answer:
+      "UnifyAI is an enterprise AI platform that enables businesses to develop, deploy, and manage AI models seamlessly. It supports machine learning, Generative AI, and large language models (LLMs) while ensuring security, compliance, and scalability.",
+  },
+  {
+    question: "Is UnifyAI secure?",
+    answer:
+      "UnifyAI is an enterprise AI platform that enables businesses to develop, deploy, and manage AI models seamlessly. It supports machine learning, Generative AI, and large language models (LLMs) while ensuring security, compliance, and scalability.",
+  },
+  {
+    question: "What types of AI models does UnifyAI support?",
+    answer:
+      "UnifyAI is an enterprise AI platform that enables businesses to develop, deploy, and manage AI models seamlessly. It supports machine learning, Generative AI, and large language models (LLMs) while ensuring security, compliance, and scalability.",
+  },
+]

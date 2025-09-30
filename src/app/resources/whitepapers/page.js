@@ -3,11 +3,38 @@ import Layout from "@/components/Layout";
 import FooterCTA from "@/components/Common/FooterCta";
 import Hero from "@/components/Common/Hero";
 import Listing from "@/components/Whitepapers/Listing";
+import { BreadcrumbsJSONLD, WebpageJsonLd } from "@/lib/json-ld";
+import { getPageMetadata } from "@/lib/seo.config";
+import { homepage } from "@/lib/util";
 
-
+export const metadata = getPageMetadata({
+  title: "Deep Insights. Real Strategies. Enterprise AI Whitepapers",
+  description: "Access curated whitepapers offering actionable AI frameworks, technical guidance, and strategic insights to help enterprises adopt, scale, and govern AI confidently.",
+  url: "resouces/whitepapers",
+  date_published: "2025-09-30T00:00",
+  date_modified: "2025-09-30T00:00",
+  alternates: {
+    canonical: "/resources/whitepapers",
+    languages: {
+      "x-default": "/resources/whitepapers",
+    },
+  },
+  openGraph: {
+    url: "resources/whitepapers",
+    images: [
+      {
+        url: `${homepage}seo/whitepapers.png`,
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+});
 const Page = () => {
   return (
     <>
+    <WebpageJsonLd metadata={metadata}/>
+          <BreadcrumbsJSONLD pathname={metadata.url}/>
       <Layout>
         <Hero heroData={heroData} breadcrumbs={true}/>
         <Listing/>

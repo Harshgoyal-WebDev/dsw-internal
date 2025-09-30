@@ -5,10 +5,37 @@ import Hero from '@/components/Common/Hero';
 import Join from '@/components/CareerPage/Join';
 import OpenRoles from '@/components/CareerPage/OpenRoles';
 import OpenRolesMobile from '@/components/CareerPage/OpenRolesMobile';
+import { WebpageJsonLd } from '@/lib/json-ld';
+import { getPageMetadata } from '@/lib/seo.config';
+import { homepage } from '@/lib/util';
 
+export const metadata = getPageMetadata({
+  title: "Join DSW - Careers in AI, Engineering & Innovation",
+  description: "Explore career opportunities at DSW. Build enterprise AI solutions, grow in a collaborative environment, and transform industries with technology and impact.",
+  url: "career",
+  date_published: "2025-09-30T00:00",
+  date_modified: "2025-09-30T00:00",
+  alternates: {
+    canonical: "/career",
+    languages: {
+      "x-default": "/career",
+    },
+  },
+  openGraph: {
+    url: "career",
+    images: [
+      {
+        url: `${homepage}seo/career.png`,
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+});
 const Page = () => {
   return (
     <>
+     <WebpageJsonLd metadata={metadata}/>
         <Layout>
         <Hero heroData={heroData} />
        <Join/>

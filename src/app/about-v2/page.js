@@ -1,14 +1,9 @@
-import Clients from '@/components/AboutPage/Clients'
 import Experts from '@/components/AboutPage/Experts'
 import Guiders from '@/components/AboutPage/Guiders'
-import Faqs from '@/components/Common/FAQs'
 import FooterCTA from '@/components/Common/FooterCta'
 import Hero from '@/components/Common/Hero'
-import Recognized from '@/components/Homepage/Recognized'
 import Layout from '@/components/Layout'
 import React from 'react'
-import TechPartners from '@/components/AboutPage/TechPartners'
-import Journey from '@/components/AboutPage/Journey'
 import AboutV2 from '@/components/AboutPage/AboutV2'
 import Build from '@/components/AboutPage/Build'
 import Ecosystem from '@/components/AboutPage/Ecosystem'
@@ -16,9 +11,37 @@ import Careers from '@/components/AboutPage/Careers'
 import Proof from '@/components/AboutPage/Proof'
 import Differently from '@/components/AboutPage/Differently'
 import BuildMobile from '@/components/AboutPage/BuildMobile'
+import { WebpageJsonLd } from '@/lib/json-ld'
+import { homepage } from '@/lib/util'
+import { getPageMetadata } from '@/lib/seo.config'
 
+export const metadata = getPageMetadata({
+  title: "About DSW UnifyAI - Deep-Tech AI for Enterprises",
+  description: "Learn about Data Science Wizards: mission, vision, team & enterprise AI platform UnifyAI that powers scalable, secure, real-world AI deployments.",
+  url: "about",
+  date_published: "2025-09-30T00:00",
+  date_modified: "2025-09-30T00:00",
+  alternates: {
+    canonical: "/about",
+    languages: {
+      "x-default": "/about",
+    },
+  },
+  openGraph: {
+    url: "about",
+    images: [
+      {
+        url: `${homepage}seo/about.png`,
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+});
 export default function page() {
     return (
+        <>
+         <WebpageJsonLd metadata={metadata}/>
         <Layout>
             <Hero heroData={heroData} />
            <AboutV2/>
@@ -32,6 +55,7 @@ export default function page() {
             <Careers/>
             <FooterCTA footerCTAData={footerCTAData} />
         </Layout>
+        </>
     )
 }
 

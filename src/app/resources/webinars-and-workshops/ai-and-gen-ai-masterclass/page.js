@@ -7,11 +7,39 @@ import Features from '@/components/Workshops/Features'
 import KeyLearnings from '@/components/Workshops/KeyLearnings'
 import Outcomes from '@/components/Workshops/Outcomes'
 import WorkshopFlow from '@/components/Workshops/WorkshopFlow'
+import { BreadcrumbsJSONLD, WebpageJsonLd } from '@/lib/json-ld'
+import { getPageMetadata } from '@/lib/seo.config'
+import { homepage } from '@/lib/util'
 import React from 'react'
 
+export const metadata = getPageMetadata({
+  title: "AI & GenAI Masterclass | DSW",
+  description: "Join DSW’s hands-on masterclass to build enterprise AI/GenAI use cases, learn strategy, architecture, governance & deployment with domain experts.",
+  url: "resources/webinars-and-workshops/ai-and-gen-ai-masterclass",
+  date_published: "2025-09-30T00:00",
+  date_modified: "2025-09-30T00:00",
+  alternates: {
+    canonical: "/resources/webinars-and-workshops/ai-and-gen-ai-masterclass",
+    languages: {
+      "x-default": "/resources/webinars-and-workshops/ai-and-gen-ai-masterclass",
+    },
+  },
+  openGraph: {
+    url: "resources/webinars-and-workshops/ai-and-gen-ai-masterclass",
+    images: [
+      {
+        url: `${homepage}seo/ai-and-genai.png`,
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+});
 const page = () => {
   return (
     <>
+     <WebpageJsonLd metadata={metadata}/>
+              <BreadcrumbsJSONLD pathname={metadata.url}/>
     <Layout>
         <Hero breadcrumbs={true} heroData={heroData}/>
         <Features featuresData={featuresData}/>
@@ -19,7 +47,7 @@ const page = () => {
         <WorkshopFlow sessionsData={sessionsData} space={"space-y-[0.5vw]"}/>
         <Outcomes outcomesData={outcomesData}/>
         <Empower heading="First Come First Basis - Limited Seats!" para="Sign-up for this No-fees Workshop | All participants earn AI Masterclass Completion Certificate." width={"w-[70%] max-md:w-[80%] max-sm:w-full"}/>
-        <Faqs />
+        <Faqs data={faqData}/>
         <FooterCTA footerCTAData={footerCTAData} width={"w-[95%]"}/>
     </Layout>
     </>
@@ -234,3 +262,31 @@ const footerCTAData={
   img1:"/assets/images/footer/image-1.png",
   img2:"/assets/images/footer/image-2.png"
 }
+
+const faqData = [
+  {
+    question: "What is UnifyAI?",
+    answer:
+      "UnifyAI is an enterprise AI platform that enables businesses to develop, deploy, and manage AI models seamlessly. It supports machine learning, Generative AI, and large language models (LLMs) while ensuring security, compliance, and scalability.",
+  },
+  {
+    question: "Who can use UnifyAI?",
+    answer:
+      "UnifyAI is an enterprise AI platform that enables businesses to develop, deploy, and manage AI models seamlessly. It supports machine learning, Generative AI, and large language models (LLMs) while ensuring security, compliance, and scalability.",
+  },
+  {
+    question: "How does UnifyAI integrate with existing systems?",
+    answer:
+      "UnifyAI is an enterprise AI platform that enables businesses to develop, deploy, and manage AI models seamlessly. It supports machine learning, Generative AI, and large language models (LLMs) while ensuring security, compliance, and scalability.",
+  },
+  {
+    question: "Is UnifyAI secure?",
+    answer:
+      "UnifyAI is an enterprise AI platform that enables businesses to develop, deploy, and manage AI models seamlessly. It supports machine learning, Generative AI, and large language models (LLMs) while ensuring security, compliance, and scalability.",
+  },
+  {
+    question: "What types of AI models does UnifyAI support?",
+    answer:
+      "UnifyAI is an enterprise AI platform that enables businesses to develop, deploy, and manage AI models seamlessly. It supports machine learning, Generative AI, and large language models (LLMs) while ensuring security, compliance, and scalability.",
+  },
+]

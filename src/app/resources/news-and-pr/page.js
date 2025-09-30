@@ -4,10 +4,38 @@ import FooterCTA from "@/components/Common/FooterCta";
 import Hero from "@/components/Common/Hero";
 import Listing from "@/components/News/Listing";
 import Annoucements from "@/components/News/Annoucements";
+import { BreadcrumbsJSONLD, WebpageJsonLd } from "@/lib/json-ld";
+import { homepage } from "@/lib/util";
+import { getPageMetadata } from "@/lib/seo.config";
 
+export const metadata = getPageMetadata({
+  title: "DSW News & Press — Media Features & Announcements",
+  description: "Read DSW’s latest press coverage, announcements, interviews, and media features highlighting our enterprise AI innovations and market impact.",
+  url: "resources/news-and-pr",
+  date_published: "2025-09-30T00:00",
+  date_modified: "2025-09-30T00:00",
+  alternates: {
+    canonical: "/resources/news-and-pr",
+    languages: {
+      "x-default": "/resources/news-and-pr",
+    },
+  },
+  openGraph: {
+    url: "resources/news-and-pr",
+    images: [
+      {
+        url: `${homepage}seo/news-and-pr.png`,
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+});
 const Page = () => {
   return (
     <>
+    <WebpageJsonLd metadata={metadata}/>
+        <BreadcrumbsJSONLD pathname={metadata.url}/>
       <Layout>
         <Hero heroData={heroData} breadcrumbs={true} />
         <Listing />
