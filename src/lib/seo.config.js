@@ -32,6 +32,22 @@ export const defaultMetadata = {
       "max-image-preview": "large",
     },
   },
+  icons: {
+    icon: [
+      { url: "/favicons/favicon.ico", type: "image/x-icon" },
+      { url: "/favicons/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicons/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicons/favicon-48x48.png", sizes: "48x48", type: "image/png" },
+    ],
+    shortcut: "/favicons/favicon.ico",
+    apple: [
+      { url: "/favicons/apple-touch-icon-180x180.png", sizes: "180x180", type: "image/png" },
+    ],
+    other: {
+      rel: "apple-touch-icon-precomposed",
+      url: "/favicons/apple-touch-icon-180x180.png",
+    },
+  },
   openGraph: {
     title: "DSW UnifyAI – Enterprise AI Platform for Insurance",
     description:
@@ -50,7 +66,7 @@ export const defaultMetadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@Monielink",
+    site: "@DSW",
     title: "DSW UnifyAI – Enterprise AI Platform for Insurance",
     description:
       "Launch AI use cases in days and GenAI in hours with DSW UnifyAI - insurance-domain trained, compliant, scalable, and vendor-lock-in free.",

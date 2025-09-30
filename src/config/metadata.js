@@ -15,6 +15,21 @@ export const siteMetadata = {
     "UnifyAI"
   ],
   referrer: "origin-when-cross-origin",
+  alternates: {
+    canonical: "/",
+    languages: {
+      "x-default": "/",
+    },
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+    },
+  },
   
   // Icons configuration
   icons: {
@@ -54,12 +69,14 @@ export const siteMetadata = {
     description: "Launch AI use cases in days and GenAI in hours with DSW UnifyAI - insurance-domain trained, compliant, scalable, and vendor-lock-in free.",
     images: [
       {
-        url: "/assets/seo/homepage-og.jpg",
+        url: "/assets/seo/homepage.jpg",
         width: 1200,
         height: 630,
         alt: "Data Science Wizards UnifyAI - Enterprise AI Platform",
       },
     ],
+     locale: "en_US",
+    type: "website",
   },
 
   // Twitter Card
