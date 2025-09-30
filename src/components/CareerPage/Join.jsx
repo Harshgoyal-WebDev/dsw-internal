@@ -13,6 +13,7 @@ import {
   GrowIcon,
   PurposeDrivenIcon,
 } from "../Icons";
+import Link from "next/link";
 
 const featuresData = [
   {
@@ -51,12 +52,12 @@ const Join = () => {
     }
   };
   return (
-    <section className="w-screen h-fit container" id="brochure">
+    <section className="w-screen h-fit container relative z-[10]" id="brochure">
       <div className="w-full flex flex-col items-center justify-center gap-[8vw] max-sm:gap-[10vw]">
-        <h2 className="w-[70%] text-center text-90 headingAnim max-sm:w-full max-sm:text-left max-sm:!text-[11.5vw]">
+        <h2 className="w-[70%] text-center text-90 headingAnim max-md:w-full max-sm:text-left max-sm:!text-[11.5vw]">
           Why Join DSW?
         </h2>
-        <div className="w-full flex flex-wrap justify-center gap-[3vw] fadeup max-sm:hidden">
+        <div className="w-full flex flex-wrap justify-center gap-[3vw] fadeup max-md:hidden">
           {featuresData.map((card, index) => (
             <TiltedCard
               key={index}
@@ -83,9 +84,9 @@ const Join = () => {
             />
           ))}
         </div>
-        {/* <div className="h-fit text-white max-sm:w-full max-sm:mt-[10vw] hidden max-sm:block fadeup">
+        <div className="h-fit text-white max-sm:w-full max-sm:mt-[10vw] hidden max-md:block fadeup overflow-x-hidden">
           <Swiper
-            slidesPerView={1.8}
+            // slidesPerView={1.8}
             className=" !opacity-100 "
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             spaceBetween={50}
@@ -96,7 +97,7 @@ const Join = () => {
                 spaceBetween: 20,
               },
               640: {
-                slidesPerView: 1.2,
+                slidesPerView: 1,
                 spaceBetween: 30,
               },
               1024: {
@@ -109,13 +110,15 @@ const Join = () => {
               },
             }}
           >
-            {BrochureData.map((data) => (
-              <SwiperSlide className=" max-sm:w-full">
+            {featuresData.map((data) => (
+              <SwiperSlide className=" max-md:w-full">
                 <BrochureCard
                   key={data.id}
                   title={data.title}
                   listTitle={data.listTitle}
                   list={data.list}
+                  icon={data.icon}
+                  para={data.para}
                 />
               </SwiperSlide>
             ))}
@@ -125,7 +128,7 @@ const Join = () => {
             <PreviousButton onClick={handlePrev} />
             <NextButton onClick={handleNext} />
           </div>
-        </div> */}
+        </div>
       </div>
     </section>
   );
@@ -133,34 +136,25 @@ const Join = () => {
 
 export default Join;
 
-// const BrochureCard = ({ title, list, listTitle }) => {
-//   return (
-//     <>
-//       {/* <Link href={"#"}> */}
-//         <div className="bg-gradient-to-r from-[#09183e] to-[#1626FD] h-[70vh] rounded-[6.5vw] border border-white/40 py-[10%] px-[7vw]">
-//           <div className="w-full h-full flex flex-col gap-[3vw] justify-between">
-//             <div>
-//             <h3 className="text-[5vw]">
-//               {title}
+const BrochureCard = ({ title, icon,para}) => {
+  return (
+    <>
+        <div className=" h-[65vh] rounded-[6.5vw] border border-white/40 py-[10%] px-[7vw] w-full">
+          <div className="w-full h-full flex flex-col gap-[3vw] justify-between">
+            <div className="h-[20vw] w-[20vw] text-[#1727FF] group-hover:text-[#FFFFFF] transition-all duration-500 ease-out">
+                    {icon}
+                  </div>
+            <div className="space-y-[4vw]">
+            <h3 className="text-40">
+              {title}
 
-//             </h3>
-//             <h4 className="text-[9vw] mt-[7vw] max-sm:mb-[4vw]">
-//             {listTitle}
-//             </h4>
-//             <ul className="space-y-[1vw] list-disc pl-[5vw]">
-//               {
-//                 list.map((list,id)=>(
+            </h3>
+            <p>{para}</p>
+            </div>
 
-//                   <li key={id}>{list}</li>
-//                 ))
-//               }
-//             </ul>
-//             </div>
+          </div>
 
-//           </div>
-
-//         </div>
-//       {/* </Link> */}
-//     </>
-//   );
-// };
+        </div>
+    </>
+  );
+};
