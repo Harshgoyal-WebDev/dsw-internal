@@ -30,7 +30,7 @@ const heroData= {
   homepage:false,
   hidebtn:true,
   headingWidth:"w-[55%]",
-  paraClass:"w-[60vw]"
+  paraClass:"w-[60vw] max-md:w-full"
 }
 
 const footerCTAData={

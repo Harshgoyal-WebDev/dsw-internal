@@ -5,65 +5,66 @@ import { motion, AnimatePresence } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import WhiteButton from "../Button/WhiteButton";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const usecaseData = [
-    {
-      id: "001",
-      title: "Engineering & Development",
-      description:"An enterprise-grade AI platform that integrates data, models, agents, deployment, and governance in one seamless fabric. Build AI solutions in weeks and GenAI applications in hours. Operate with full observability, built-in guardrails, and policy control. Avoid vendor lock-in with flexible deployment options: on-premises, hybrid, or cloud. ",
-      features: [
-        "AI Platform Engineer",
-        "Machine Learning Engineer",
-        "Backend Engineer",
-        "Frontend Engineer",
-        "AI Platform Engineer"
-      ],
-      z:"z-[100]",
-    },
-    {
-      id: "002",
-      title: "AI Research & Applied Science",
-      description:"An enterprise-grade AI platform that integrates data, models, agents, deployment, and governance in one seamless fabric. Build AI solutions in weeks and GenAI applications in hours. Operate with full observability, built-in guardrails, and policy control. Avoid vendor lock-in with flexible deployment options: on-premises, hybrid, or cloud. ",
-      features: [
-        "AI Platform Engineer",
-        "Machine Learning Engineer",
-        "Backend Engineer",
-        "Frontend Engineer",
-        "AI Platform Engineer"
-      ],
-      z:"z-[200]",
+  {
+    id: "001",
+    title: "Engineering & Development",
+    description: "An enterprise-grade AI platform that integrates data, models, agents, deployment, and governance in one seamless fabric. Build AI solutions in weeks and GenAI applications in hours. Operate with full observability, built-in guardrails, and policy control. Avoid vendor lock-in with flexible deployment options: on-premises, hybrid, or cloud. ",
+    features: [
+      "AI Platform Engineer",
+      "Machine Learning Engineer",
+      "Backend Engineer",
+      "Frontend Engineer",
+      "AI Platform Engineer"
+    ],
+    z: "z-[100]",
+  },
+  {
+    id: "002",
+    title: "AI Research & Applied Science",
+    description: "An enterprise-grade AI platform that integrates data, models, agents, deployment, and governance in one seamless fabric. Build AI solutions in weeks and GenAI applications in hours. Operate with full observability, built-in guardrails, and policy control. Avoid vendor lock-in with flexible deployment options: on-premises, hybrid, or cloud. ",
+    features: [
+      "AI Platform Engineer",
+      "Machine Learning Engineer",
+      "Backend Engineer",
+      "Frontend Engineer",
+      "AI Platform Engineer"
+    ],
+    z: "z-[200]",
 
-    },
-    {
-      id: "003",
-      title: "Data & Analytics",
-      description:"An enterprise-grade AI platform that integrates data, models, agents, deployment, and governance in one seamless fabric. Build AI solutions in weeks and GenAI applications in hours. Operate with full observability, built-in guardrails, and policy control. Avoid vendor lock-in with flexible deployment options: on-premises, hybrid, or cloud. ",
-      features: [
-        "AI Platform Engineer",
-        "Machine Learning Engineer",
-        "Backend Engineer",
-        "Frontend Engineer",
-        "AI Platform Engineer"
-      ],
-      z:"z-[300]",
-      
-    },
-    {
-      id: "004",
-      title: "Customer & Growth",
-      description:"An enterprise-grade AI platform that integrates data, models, agents, deployment, and governance in one seamless fabric. Build AI solutions in weeks and GenAI applications in hours. Operate with full observability, built-in guardrails, and policy control. Avoid vendor lock-in with flexible deployment options: on-premises, hybrid, or cloud. ",
-      features: [
-        "AI Platform Engineer",
-        "Machine Learning Engineer",
-        "Backend Engineer",
-        "Frontend Engineer",
-        "AI Platform Engineer"
-      ],
-      z:"z-[400]",
-    },
-  ];
+  },
+  {
+    id: "003",
+    title: "Data & Analytics",
+    description: "An enterprise-grade AI platform that integrates data, models, agents, deployment, and governance in one seamless fabric. Build AI solutions in weeks and GenAI applications in hours. Operate with full observability, built-in guardrails, and policy control. Avoid vendor lock-in with flexible deployment options: on-premises, hybrid, or cloud. ",
+    features: [
+      "AI Platform Engineer",
+      "Machine Learning Engineer",
+      "Backend Engineer",
+      "Frontend Engineer",
+      "AI Platform Engineer"
+    ],
+    z: "z-[300]",
+
+  },
+  {
+    id: "004",
+    title: "Customer & Growth",
+    description: "An enterprise-grade AI platform that integrates data, models, agents, deployment, and governance in one seamless fabric. Build AI solutions in weeks and GenAI applications in hours. Operate with full observability, built-in guardrails, and policy control. Avoid vendor lock-in with flexible deployment options: on-premises, hybrid, or cloud. ",
+    features: [
+      "AI Platform Engineer",
+      "Machine Learning Engineer",
+      "Backend Engineer",
+      "Frontend Engineer",
+      "AI Platform Engineer"
+    ],
+    z: "z-[400]",
+  },
+];
 
 export default function OpenRolesMobile({ allowMultiple = false }) {
   const [openIndexes, setOpenIndexes] = useState([0]);
@@ -90,8 +91,8 @@ export default function OpenRolesMobile({ allowMultiple = false }) {
       id="WhyUnify"
     >
       <div className="h-[5vh] relative w-full">
-        <h2 className="text-60 text-center font-light headingAnim">
-          Supercharge Your AI and GenAI Use Cases  
+        <h2 className="text-90 font-light headingAnim">
+          Open Roles
         </h2>
       </div>
 
@@ -139,11 +140,10 @@ function Accordion({ title, para, link, features, isOpen, onToggle, id }) {
                 className={` absolute block  w-[1.5px] max-sm:h-[5.5vw] transition-all duration-500 max-md:h-[4vw] rotate-45 bg-[#DADADA]`}
               />
               <span
-                className={` absolute block  w-[1.5px] max-sm:h-[5.5vw] transition-all duration-500 max-md:h-[4vw] ${
-                  isOpen
+                className={` absolute block  w-[1.5px] max-sm:h-[5.5vw] transition-all duration-500 max-md:h-[4vw] ${isOpen
                     ? "rotate-[45deg] bg-[#DADADA]"
                     : "rotate-[135deg] bg-[#DADADA]"
-                }`}
+                  }`}
               />
             </div>
           </div>
@@ -168,12 +168,18 @@ function Accordion({ title, para, link, features, isOpen, onToggle, id }) {
                   <ul className="list-disc pl-[5vw] ">
                     {features &&
                       features.map((feature, index) => (
-                        <li key={index} className="mb-[8vw]">
+                        <li key={index} className="mb-[8vw] flex gap-[2vw] items-center">
+                                <span className="rounded-full bg-white h-[1vw] w-[1vw] mr-[0.8vw]"></span>
+
                           {feature}
+                          <span className="h-[2.2vw] w-[2.2vw] text-white">
+                  <Image src={"/assets/icons/top-right-white.svg"} height={10} width={10} alt="top-right-arrow" className="h-full w-full" />
+                </span>
                         </li>
                       ))}
                   </ul>
                 </div>
+                
               </div>
             </motion.div>
           )}
