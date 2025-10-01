@@ -418,7 +418,8 @@ const Hero = memo(function Hero({ heroData, breadcrumbs }) {
           <Image
             src={heroGradient}
             placeholder="blur"
-            loading="lazy"
+            // loading="lazy"
+            fetchPriority="high"
             alt="shader-gradient-mobile"
             className="w-full h-full object-cover"
             width={600}

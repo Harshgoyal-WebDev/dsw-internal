@@ -17,7 +17,7 @@ const Loader = () => {
    const [showLoader, setShowLoader] = useState(false);
 
   const lenis = useLenis();
-  console.log(lenis&&lenis._isStopped)
+  // console.log(lenis&&lenis._isStopped)
 
   useEffect(() => {
     const hasVisited = sessionStorage.getItem("hasVisited");
@@ -28,10 +28,7 @@ const Loader = () => {
   }, []);
 
   useEffect(() => {
-    
-
-
-
+  if(showLoader){
     const alreadyShown = sessionStorage.getItem("loaderShown");
 
     if (alreadyShown) {
@@ -108,7 +105,9 @@ const Loader = () => {
       });
       return () => ctx.revert();
     }
-  }, [lenis]);
+
+  }
+  }, [lenis,showLoader]);
   useEffect(() => {
     if (!showLoader) return;
     if (globalThis.innerWidth > 1024) {
@@ -181,6 +180,7 @@ const Loader = () => {
             <Image
               src={"/assets/images/homepage/gradient-mobile.png"}
               alt="bg-gradient"
+              fetchPriority="high"
               className="w-full h-full object-cover"
               width={600}
               height={1080}

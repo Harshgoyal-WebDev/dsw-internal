@@ -102,6 +102,7 @@ export default function Clients() {
                 <Image
                   className="w-[20vw] h-auto max-sm:scale-[3] max-md:scale-[1.8] brightness-200"
                   src={item}
+                  fetchPriority="high"
                   alt="client-logo"
                   width={200}
                   height={100}

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
@@ -8,32 +8,35 @@ import { Suspense, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import dynamic from "next/dynamic";
-const DynamicShaderComp = dynamic(() => import("@/components/BgShader/ShaderComp"), {
-  ssr: false,
-});
+const DynamicShaderComp = dynamic(
+  () => import("@/components/BgShader/ShaderComp"),
+  {
+    ssr: false,
+  }
+);
 
 export default function NotFoundPage() {
-  const ShaderRef = useRef()
-  useGSAP(()=>{
-    gsap.set(".not-found-para",{
-      opacity:1,
-    })
-   gsap.to(".num",{
-    translateY:"-100%",
-    stagger:{from:"random",amount:1},
-    duration:1.5,
-    delay:2,
-    ease:"back.inOut",
-    repeat:-1,
-    repeatDelay:3,
-   })
-   gsap.to(".not-found-head",{
-    translateY:"0%",
-    duration:1,
-    rotate:0,
-    delay:0.5,
-    ease:"power2.out"
-   })
+  const ShaderRef = useRef();
+  useGSAP(() => {
+    gsap.set(".not-found-para", {
+      opacity: 1,
+    });
+    gsap.to(".num", {
+      translateY: "-100%",
+      stagger: { from: "random", amount: 1 },
+      duration: 1.5,
+      delay: 2,
+      ease: "back.inOut",
+      repeat: -1,
+      repeatDelay: 3,
+    });
+    gsap.to(".not-found-head", {
+      translateY: "0%",
+      duration: 1,
+      rotate: 0,
+      delay: 0.5,
+      ease: "power2.out",
+    });
     gsap.fromTo(
       ShaderRef.current,
       {
@@ -58,19 +61,7 @@ export default function NotFoundPage() {
         ease: "power3.out",
       }
     );
-    gsap.fromTo(
-      ShaderRef.current,
-      {
-        opacity: 0,
-      },
-      {
-        opacity: 1,
-        duration: 3,
-        delay: 0.5,
-        ease: "power3.out",
-      }
-    );
-  })
+  });
   return (
     <>
       <Header />
@@ -84,15 +75,15 @@ export default function NotFoundPage() {
             >
               <div className="flex flex-col num">
                 <span className="leading-[0.8]">4</span>
-                <span  className="leading-[0.8]">4</span>
+                <span className="leading-[0.8]">4</span>
               </div>
               <div className="flex flex-col num">
                 <span className="leading-[0.8]">0</span>
-                <span  className="leading-[0.8]">0</span>
+                <span className="leading-[0.8]">0</span>
               </div>
               <div className="flex flex-col num">
                 <span className="leading-[0.8]">4</span>
-                <span  className="leading-[0.8]">4</span>
+                <span className="leading-[0.8]">4</span>
               </div>
             </h1>
           </div>
@@ -106,9 +97,7 @@ export default function NotFoundPage() {
                   href="/"
                   className="under-multi-parent w-fit pointer-events-auto pb-[1px]"
                 >
-                  <span className="under-multi">
-                  Homepage!!!
-                  </span>
+                  <span className="under-multi">Homepage!!!</span>
                 </Link>
               </p>
             </Copy>
@@ -123,14 +112,16 @@ export default function NotFoundPage() {
             className="h-full w-full"
           />
         </div>
-       
-          <div  ref={ShaderRef} className="absolute top-[30%] left-0 h-screen w-screen max-sm:hidden ">
-            <Suspense>
-              <DynamicShaderComp />
-              {/* <ShaderComp /> */}
-            </Suspense>
-          </div>
-       
+
+        <div
+          ref={ShaderRef}
+          className="absolute top-[30%] left-0 h-screen w-screen max-sm:hidden "
+        >
+          <Suspense>
+            <DynamicShaderComp />
+            {/* <ShaderComp /> */}
+          </Suspense>
+        </div>
       </section>
     </>
   );

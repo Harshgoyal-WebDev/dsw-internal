@@ -1,23 +1,20 @@
 // next.config.mjs
-
 import bundleAnalyzer from '@next/bundle-analyzer';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Fix workspace root warning
   outputFileTracingRoot: process.cwd(),
 
-  // Performance optimizations
   images: {
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 31536000, // 1 year
-    // NOTE: there is no `qualities` config in Next.js; remove it.
+
+    // 👇 Add this block
+    qualities: [75, 85, 90, 100], 
+    // default is [75] if you don’t set it
   },
 
-  // Compression
   compress: true,
-
-  // Generate source maps for better debugging
   productionBrowserSourceMaps: true,
 };
 

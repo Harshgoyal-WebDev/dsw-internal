@@ -111,7 +111,7 @@ const RelatedArticles = () => {
                 slidesPerView: 1.2,
                 spaceBetween: 30,
               },
-              1024: {
+              1025: {
                 slidesPerView: 3,
                 spaceBetween: 40,
               },

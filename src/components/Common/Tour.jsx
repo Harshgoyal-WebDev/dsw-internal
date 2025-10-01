@@ -127,6 +127,7 @@ const Tour = ({heading,para}) => {
                   <Image
                     src={'/assets/images/homepage/tour-img.png'}
                     alt="AI Studio tour image"
+                    fetchPriority="high"
                     className="w-full h-full object-cover rounded-lg"
                     width={900}
                     height={400}

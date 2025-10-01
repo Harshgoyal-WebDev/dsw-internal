@@ -94,7 +94,7 @@ export default function Guiders({heading}) {
               slidesPerView: 1.5,
               spaceBetween: 40,
             },
-            1024: {
+            1025: {
               slidesPerView: 4,
               spaceBetween: 50,
             },
