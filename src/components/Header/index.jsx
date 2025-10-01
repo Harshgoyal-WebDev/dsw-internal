@@ -1,7 +1,6 @@
 "use client";
 
 import PrimaryButton from "../Button/PrimaryButton";
-// ❌ remove: import { motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import NavigationLink from "../ui/NavigationLink";
 import Logo from "../ui/Logo";
@@ -10,8 +9,10 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { usePathname } from "next/navigation";
 import { useLenis } from "lenis/react";
-import MobileMenu from "./MobileMenu";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+
+const MobileMenu = dynamic(() => import("./MobileMenu"), { ssr: true });
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -35,29 +36,29 @@ const Header = () => {
   }, [lenis, pathname]);
 
   // Show/hide header on scroll
-useEffect(() => {
-  const handleScroll = () => {
-    const currentScrollY = window.scrollY;
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
 
-    // If mouse is over the header, don't hide it.
-    if (isHoveringHeader) {
-      setIsHidden(false);
-      setLastScrollY(currentScrollY); // keep baseline fresh to avoid jump after leaving
-      return;
-    }
+      // If mouse is over the header, don't hide it.
+      if (isHoveringHeader) {
+        setIsHidden(false);
+        setLastScrollY(currentScrollY); // keep baseline fresh to avoid jump after leaving
+        return;
+      }
 
-    if (currentScrollY > lastScrollY && currentScrollY > 50) {
-      setIsHidden(true);
-    } else {
-      setIsHidden(false);
-    }
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        setIsHidden(true);
+      } else {
+        setIsHidden(false);
+      }
 
-    setLastScrollY(currentScrollY);
-  };
+      setLastScrollY(currentScrollY);
+    };
 
-  window.addEventListener("scroll", handleScroll, { passive: true });
-  return () => window.removeEventListener("scroll", handleScroll);
-}, [lastScrollY, isHoveringHeader]);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY, isHoveringHeader]);
 
 
   // ScrollTrigger bits you already had
@@ -91,8 +92,8 @@ useEffect(() => {
   // ✅ GSAP replacement for motion.header initial/animate/transition
   useEffect(() => {
     if (!headerWrapRef.current) return;
-    gsap.set(headerWrapRef.current,{
-      opacity:1,
+    gsap.set(headerWrapRef.current, {
+      opacity: 1,
     })
     gsap.fromTo(
       headerWrapRef.current,
@@ -113,8 +114,8 @@ useEffect(() => {
         {/* 🔁 Replaced motion.header with a plain header + GSAP */}
         <header
           ref={headerWrapRef}
-            onMouseEnter={() => setIsHoveringHeader(true)}
-  onMouseLeave={() => setIsHoveringHeader(false)}
+          onMouseEnter={() => setIsHoveringHeader(true)}
+          onMouseLeave={() => setIsHoveringHeader(false)}
           className="text-white w-screen fixed top-0 left-0 z-[900] pointer-events-none opacity-0"
         >
           <div
@@ -138,11 +139,11 @@ useEffect(() => {
                       className="relative text-[#E8E8E8] dropdown-links"
                       onMouseEnter={() => {
                         setOpenDropdown(link.id);
-                        
+
                       }}
                       onMouseLeave={() => {
                         setOpenDropdown(null);
-                       
+
                       }}
                     >
                       {/* Top-level link */}
@@ -165,11 +166,10 @@ useEffect(() => {
                         {hasChildren && (
                           <div className="w-fit">
                             <div
-                              className={` text-[#CACACA] flex items-center justify-center gap-0 w-[0.8vw] mt-[-0.1vw] h-full max-sm:w-[3vw] transition-transform duration-300 ${
-                                openDropdown === link.id
+                              className={` text-[#CACACA] flex items-center justify-center gap-0 w-[0.8vw] mt-[-0.1vw] h-full max-sm:w-[3vw] transition-transform duration-300 ${openDropdown === link.id
                                   ? "translate-y-[25%] scale-[1.05]"
                                   : ""
-                              }`}
+                                }`}
                             >
                               <div className="w-[1.5vw] h-auto">
                                 <Image
@@ -183,9 +183,8 @@ useEffect(() => {
                             </div>
 
                             <span
-                              className={`block w-full  absolute left-0 z-[-1] ${
-                                openDropdown === link.id ? "h-[3vw]" : "h-0"
-                              } `}
+                              className={`block w-full  absolute left-0 z-[-1] ${openDropdown === link.id ? "h-[3vw]" : "h-0"
+                                } `}
                             />
                           </div>
                         )}
@@ -194,18 +193,17 @@ useEffect(() => {
                       {/* Submenu */}
                       {hasChildren && (
                         <div
-                          className={`absolute top-[270%] left-[-5%] w-fit h-fit bg-black/40 backdrop-blur-sm rounded-[1.2vw] border border-white/20 transition-opacity duration-300 ${
-                            openDropdown === link.id
+                          className={`absolute top-[270%] left-[-5%] w-fit h-fit bg-black/40 backdrop-blur-sm rounded-[1.2vw] border border-white/20 transition-opacity duration-300 ${openDropdown === link.id
                               ? "opacity-100"
                               : "opacity-0 pointer-events-none"
-                          }`}
+                            }`}
                           onMouseEnter={() => {
                             setOpenDropdown(link.id);
-                        
+
                           }}
                           onMouseLeave={() => {
                             setOpenDropdown(null);
-                           
+
                           }}
                         >
                           <ul className="p-[1.5vw]">
@@ -235,19 +233,16 @@ useEffect(() => {
                 onClick={() => setOpenMobileMenu((prev) => !prev)}
               >
                 <div
-                  className={`w-full h-[2.5px] rounded-full line-1 transition-all duration-500 origin-center ham-mobile bg-gradient-to-r from-[#F16B0D] to-[#E61216] ${
-                    openMobileMenu ? " !bg-primary" : "bg-primary"
-                  }`}
+                  className={`w-full h-[2.5px] rounded-full line-1 transition-all duration-500 origin-center ham-mobile bg-gradient-to-r from-[#F16B0D] to-[#E61216] ${openMobileMenu ? " !bg-primary" : "bg-primary"
+                    }`}
                 />
                 <div
-                  className={`w-full h-[2.5px] bg-primary rounded-full line-2 transition-all duration-500 ham-mobile bg-gradient-to-r from-[#F16B0D] to-[#E61216] ${
-                    openMobileMenu ? "" : "bg-primary"
-                  }`}
+                  className={`w-full h-[2.5px] bg-primary rounded-full line-2 transition-all duration-500 ham-mobile bg-gradient-to-r from-[#F16B0D] to-[#E61216] ${openMobileMenu ? "" : "bg-primary"
+                    }`}
                 />
                 <div
-                  className={`w-full h-[2.5px] bg-primary rounded-full line-3 transition-all duration-500 origin-center ham-mobile bg-gradient-to-r from-[#F16B0D] to-[#E61216] ${
-                    openMobileMenu ? " !bg-primary" : "bg-primary"
-                  }`}
+                  className={`w-full h-[2.5px] bg-primary rounded-full line-3 transition-all duration-500 origin-center ham-mobile bg-gradient-to-r from-[#F16B0D] to-[#E61216] ${openMobileMenu ? " !bg-primary" : "bg-primary"
+                    }`}
                 />
               </div>
             </div>

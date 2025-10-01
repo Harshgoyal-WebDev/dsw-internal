@@ -1,9 +1,7 @@
 import { homepage } from "@/lib/util";
 
-
 export default function sitemap() {
   const lastModified = new Date('2025-09-30T09:31:16Z');
-
   
   const pages = [
     ['', 1.00],

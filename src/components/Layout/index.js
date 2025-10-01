@@ -7,7 +7,7 @@ import { ImageObjectJsonLd, LocalBusiness, OrganizationJsonLd, WebsiteJsonLd } f
 const Layout = ({ children }) => {
   return (
     <>
-     <OrganizationJsonLd />
+      <OrganizationJsonLd />
       <LocalBusiness />
       <ImageObjectJsonLd />
       <WebsiteJsonLd />

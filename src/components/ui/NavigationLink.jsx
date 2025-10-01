@@ -21,6 +21,7 @@ export const NavigationLink = ({
 
   return (
     <Link 
+      prefetch={false}
       href={href} 
       data-split="letters" 
       data-letters-delay 

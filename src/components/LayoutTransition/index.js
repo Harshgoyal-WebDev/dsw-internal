@@ -1,9 +1,10 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, domAnimation, LazyMotion } from "motion/react";
 import { useSelectedLayoutSegment } from "next/navigation";
 import { LayoutRouterContext } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { useContext, useEffect, useRef } from "react";
+import * as m from "motion/react-m"
 
 function usePreviousValue(value) {
     const prev = useRef();
@@ -40,21 +41,23 @@ export default function LayoutTransition({ children }) {
     };
 
     return (
-        <AnimatePresence
-            mode="wait"
-            initial={false}
-            onExitComplete={() => window.scrollTo(0, 0)}
-        >
-            <motion.div
-                key={segment}
-                className="relative"
-                variants={fadeVariants}
-                initial="initial"
-                animate="enter"
-                exit="exit"
+        <LazyMotion features={domAnimation}>
+            <AnimatePresence
+                mode="wait"
+                initial={false}
+                onExitComplete={() => window.scrollTo(0, 0)}
             >
-                <FrozenRouter>{children}</FrozenRouter>
-            </motion.div>
-        </AnimatePresence>
+                <m.div
+                    key={segment}
+                    className="relative"
+                    variants={fadeVariants}
+                    initial="initial"
+                    animate="enter"
+                    exit="exit"
+                >
+                    <FrozenRouter>{children}</FrozenRouter>
+                </m.div>
+            </AnimatePresence>
+        </LazyMotion>
     );
 }

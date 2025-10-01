@@ -9,8 +9,6 @@ import LayoutTransition from "@/components/LayoutTransition";
 export const metadata = siteMetadata;
 export const viewport = siteViewport;
 
-
-
 export default function RootLayout({ children }) {
   return (
     <>
