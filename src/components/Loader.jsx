@@ -11,12 +11,35 @@ const DynamicShaderComp = dynamic(() => import("./BgShader/ShaderComp"), {
 });
 
 const Loader = () => {
+
   const [hidden, setIsHidden] = useState(false);
   const [mob, setMob] = useState(false);
+   const [showLoader, setShowLoader] = useState(false);
+
   const lenis = useLenis();
   console.log(lenis&&lenis._isStopped)
+
+  useEffect(() => {
+    const hasVisited = sessionStorage.getItem("hasVisited");
+    if (!hasVisited) {
+      setShowLoader(true);
+      sessionStorage.setItem("hasVisited", "true");
+    }
+  }, []);
+
   useEffect(() => {
     
+
+
+
+    const alreadyShown = sessionStorage.getItem("loaderShown");
+
+    if (alreadyShown) {
+      setShowLoader(false); 
+      if (lenis) lenis.start();
+      return;
+    }
+
     if (lenis) {
       lenis._isStopped=true;
       lenis.stop()
@@ -87,6 +110,7 @@ const Loader = () => {
     }
   }, [lenis]);
   useEffect(() => {
+    if (!showLoader) return;
     if (globalThis.innerWidth > 1024) {
       const ctx = gsap.context(() => {
         gsap.to(".loader-gradient", {
@@ -116,6 +140,9 @@ const Loader = () => {
       setMob(false);
     }
   }, [mob]);
+
+  if (!showLoader) return null;
+
   return (
     <div
       className={`w-screen h-screen fixed top-0 left-0 z-[9999] bg-background text-[17vw] overflow-hidden max-sm:text-[25vw] ${hidden ? "hidden" : ""}`}
@@ -144,13 +171,13 @@ const Loader = () => {
       </div>
       <div className="loader-gradient opacity-0 relative z-[1] h-screen translate-y-[10%]">
         {!mob ? (
-          <div className="absolute top-[-5%] left-0 h-screen w-screen max-md:hidden">
+          <div className="absolute top-[-5%] left-0 h-screen w-screen max-sm:hidden">
             <Suspense>
               <DynamicShaderComp color={"0x1726FD"} />
             </Suspense>
           </div>
         ) : (
-          <div className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-md:block">
+          <div className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-sm:block">
             <Image
               src={"/assets/images/homepage/gradient-mobile.png"}
               alt="bg-gradient"

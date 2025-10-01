@@ -85,7 +85,7 @@ const ExpandablePanels = () => {
         opacity: 1,
         y: 1,
         duration: 0.5,
-        delay: 0.7,
+        delay: 0.5,
         ease: "power2.out",
       }
     );

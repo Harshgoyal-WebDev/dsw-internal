@@ -81,6 +81,13 @@ useEffect(() => {
     };
   }, []);
 
+  const [hasVisited, setHasVisited] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return !!sessionStorage.getItem("hasVisited");
+    }
+    return false;
+  });
+
   // ✅ GSAP replacement for motion.header initial/animate/transition
   useEffect(() => {
     if (!headerWrapRef.current) return;
@@ -95,7 +102,7 @@ useEffect(() => {
         y: 0,
         duration: 1,
         ease: "power1.out",
-        delay: pathname === "/" ? 6 : 1,
+        delay: pathname === "/" ? (hasVisited ? 1 : 6) : 1,
       }
     );
   }, [pathname]);

@@ -84,6 +84,13 @@ const Hero = memo(function Hero({ heroData, breadcrumbs }) {
   const mobileGradientRef = useRef(null);
   const [mob, setMob] = useState(false);
 
+   const [hasVisited, setHasVisited] = useState(() => {
+  if (typeof window !== 'undefined') {
+    return !!sessionStorage.getItem("hasVisited");
+  }
+  return false;
+});
+
 
 
   useEffect(() => {
@@ -124,6 +131,8 @@ const Hero = memo(function Hero({ heroData, breadcrumbs }) {
 
   // Split & reveal (heading + paragraph)
   useLayoutEffect(() => {
+    //  if (hasVisited === null) return; 
+
     if (prefersReducedMotion) {
       // instant show if reduced motion
       gsap.set([headingRef.current, paraRef.current], {
@@ -147,8 +156,20 @@ const Hero = memo(function Hero({ heroData, breadcrumbs }) {
         ? new SplitText(paraRef.current, { type: "lines", mask: "lines" })
         : null;
 
-      const delayLines = heroData.homepage ? 4.5 : 0.7;
-      const delayPara = heroData.homepage ? 5.2 : 1.8;
+      // const delayLines = heroData.homepage ? 0.7 : 0.7;
+      // const delayPara = heroData.homepage ? 1.8 : 1.8;
+
+      const delayLines = heroData.homepage
+  ? hasVisited
+    ? 0.7
+    : 4.5
+  : 0.7;
+
+const delayPara = heroData.homepage
+  ? hasVisited
+    ? 1.8
+    : 5.2
+  : 1.8;
 
       gsap.fromTo(
         lines,
@@ -179,7 +200,7 @@ const Hero = memo(function Hero({ heroData, breadcrumbs }) {
 
     return () => ctx.revert();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [heroData.homepage, prefersReducedMotion]);
+  }, [heroData.homepage, prefersReducedMotion, hasVisited]);
 
   // Shader, breadcrumbs, CTA buttons, imagery, and initial sets
   useLayoutEffect(() => {
@@ -253,7 +274,12 @@ const Hero = memo(function Hero({ heroData, breadcrumbs }) {
       }
 
       // CTA button reveal (replaces motion.div)
-      const ctaDelay = heroData.homepage ? 5.8 : 1.8;
+      // const ctaDelay = heroData.homepage ? 1.8 : 1.8;
+      const ctaDelay = heroData.homepage
+  ? hasVisited
+    ? 1.8
+    : 5.8
+  : 1.8;
       if (btnsRef.current) {
         const items = btnsRef.current.querySelectorAll(".ctaBtn");
         gsap.fromTo(
@@ -272,14 +298,18 @@ const Hero = memo(function Hero({ heroData, breadcrumbs }) {
     }, sectionRef);
 
     return () => ctx.revert();
-  }, [heroData.homepage, prefersReducedMotion]);
+  }, [heroData.homepage, prefersReducedMotion, hasVisited]);
 
   const lineDelays = useMemo(
     () =>
       Array.from({ length: LINE_COUNT }, (_, i) =>
-        heroData.homepage ? 5 + i * 0.2 : 0.5 + i * 0.2
+        heroData.homepage
+  ? hasVisited
+    ? 0.5 + i * 0.2
+    : 5 + i * 0.2
+  : 0.5 + i * 0.2
       ),
-    [heroData.homepage]
+    [heroData.homepage, hasVisited]
   );
 
   return (
