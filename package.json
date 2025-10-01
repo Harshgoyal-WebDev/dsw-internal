@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "analyze": "cross-env ANALYZE=true next build",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -48,7 +49,9 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@next/bundle-analyzer": "^15.5.4",
     "@tailwindcss/postcss": "^4",
+    "cross-env": "^10.1.0",
     "eslint": "^9",
     "eslint-config-next": "15.5.2",
     "tailwindcss": "^4",

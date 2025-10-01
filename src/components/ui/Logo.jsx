@@ -37,6 +37,7 @@ export const Logo = ({
         height={height || dimensions.height}
         alt={`${SITE_CONFIG.name} logo`}
         className={variantClass}
+        fetchPriority="true"
         priority={variant === "header" || variant === "default"}
       />
     </Link>
