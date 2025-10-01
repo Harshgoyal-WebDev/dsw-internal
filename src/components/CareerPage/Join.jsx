@@ -1,19 +1,16 @@
 "use client";
 import React, { useRef } from "react";
 import TiltedCard from "../Animations/TiltedCard";
-import PrimaryButton from "../Button/PrimaryButton";
 import { NextButton, PreviousButton } from "../Button/SliderButtons";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import Image from "next/image";
 import {
   AdvancingIcon,
   CultureIcon,
   GrowIcon,
   PurposeDrivenIcon,
 } from "../Icons";
-import Link from "next/link";
 
 const featuresData = [
   {

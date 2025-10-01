@@ -2,6 +2,7 @@
 import React, { useRef, useMemo, useEffect } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
+// import { ThreeTunnel } from "../Common/tunnel";
 
 const MovingGradientShader = ({
   // Lower wave parameters
@@ -193,6 +194,7 @@ const MovingGradientShader = ({
 const ShaderComp = () => {
   return (
     <Canvas className="w-full h-full">
+    {/* // <ThreeTunnel.In> */}
       <MovingGradientShader
         lowerWaveFreq={9}
         lowerWaveAmp={0.05}
@@ -206,7 +208,8 @@ const ShaderComp = () => {
         topFadeSoftness={0.1}
         color={"#1726FD"}
       />
-    </Canvas>
+    {/* // </ThreeTunnel.In> */}
+     </Canvas>
   );
 };
 

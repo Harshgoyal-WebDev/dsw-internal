@@ -1,8 +1,15 @@
-import React from 'react'
-import Header from '../Header'
-import Footer from '../Footer'
-import KeepScrolling from '../KeepScrolling'
-import { ImageObjectJsonLd, LocalBusiness, OrganizationJsonLd, WebsiteJsonLd } from '@/lib/json-ld'
+"use client";
+import React from "react";
+import Header from "../Header";
+import Footer from "../Footer";
+import KeepScrolling from "../KeepScrolling";
+import {
+  ImageObjectJsonLd,
+  LocalBusiness,
+  OrganizationJsonLd,
+  WebsiteJsonLd,
+} from "@/lib/json-ld";
+// import CanvasTunnel from "../Common/CanvasTunnel";
 
 const Layout = ({ children }) => {
   return (
@@ -13,10 +20,13 @@ const Layout = ({ children }) => {
       <WebsiteJsonLd />
       <Header />
       {children}
+      {/* <CanvasTunnel/> */}
+
+      {/* </CanvasTunnel> */}
       <KeepScrolling />
       <Footer />
     </>
-  )
-}
+  );
+};
 
 export default Layout;

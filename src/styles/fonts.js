@@ -1,15 +1,51 @@
-import { Manrope } from "next/font/google";
+
 import localFont from "next/font/local";
 
-// Google Font - Body text (optimized)
-export const manrope = Manrope({
-  subsets: ["latin"],
+export const manrope = localFont({
+  src: [
+    {
+      path: "../app/fonts/manrope-regular.woff",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../app/fonts/manrope-medium.woff",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../app/fonts/manrope-semiBold.woff",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../app/fonts/manrope-bold.woff",
+      weight: "700",
+      style: "normal",
+    },
+  ],
   variable: "--font-body",
-  weight: ["400", "500", "600", "700"], // Only weights you actually use
-  display: "swap", // Prevents invisible text during font swap
-  fallback: ["system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "arial", "sans-serif"],
-  preload: true, // Critical for performance
-  adjustFontFallback: false, // Can help reduce CLS
+  display: "swap",
+  fallback: [
+    "system-ui", 
+    "-apple-system", 
+    "BlinkMacSystemFont", 
+    "georgia", 
+    "Times New Roman", 
+    "serif"
+  ],
+  preload: true,
+  // OpenType feature settings for better typography
+  declarations: [
+    {
+      prop: 'font-feature-settings',
+      value: '"kern" 1, "liga" 1, "calt" 1, "case" 1', 
+    },
+    {
+      prop: 'font-variant-numeric',
+      value: 'lining-nums proportional-nums',
+    },
+  ],
 });
 
 // Local Font - Display/Heading text (optimized)

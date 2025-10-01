@@ -4,8 +4,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { SplitInLine} from "../splitTextUtils";
 import { useEffect } from "react";
-// import { useRouter } from "next/router";
-
 
 gsap.registerPlugin(ScrollTrigger);
 
