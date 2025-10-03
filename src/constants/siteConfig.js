@@ -43,7 +43,7 @@ export const NAVIGATION = [
     { text: "News And PR", href :"/resources/news-and-pr" , id:"resources-news"},
     { text: "Videos", href :"/resources/product-videos" , id:"resources-videos"},
     { text: "Webinars And Events", href :"/resources/webinars-and-events" , id:"resources-webinars"},
-    { text: "AI for insuraince workshop", href :"/resources/webinars-and-workshops/ai-for-insurance-workshop" , id:"resources-workshops"},
+    { text: "AI for insurance workshop", href :"/resources/webinars-and-workshops/ai-for-insurance-workshop" , id:"resources-workshops"},
     { text: "AI & GenAI masterclass", href :"/resources/webinars-and-workshops/ai-and-gen-ai-masterclass" , id:"resources-workshops"},
     { text: "Whitepapers", href :"/resources/whitepapers" , id:"resources-whitepapers"},
   ]},

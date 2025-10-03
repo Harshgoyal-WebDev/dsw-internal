@@ -118,13 +118,13 @@ function Accordion({ title, para, link, features, isOpen, onToggle, id }) {
               className={`max-sm:w-[13vw] max-sm:h-[12vw] relative flex items-center justify-center max-sm:rounded-[3vw] transition-all duration-500 max-md:w-[9vw] max-md:h-[8vw] max-md:rounded-[1.5vw] rotate-45`}
             >
               <span
-                className={` absolute block  w-[1.5px] max-sm:h-[5.5vw] transition-all duration-500 max-md:h-[4vw] rotate-45 bg-[#DADADA]`}
+                className={` absolute block  w-[1.5px] max-sm:h-[5.5vw] transition-all duration-500 max-md:h-[4vw] rotate-45 bg-white/50`}
               />
               <span
                 className={` absolute block  w-[1.5px] max-sm:h-[5.5vw] transition-all duration-500 max-md:h-[4vw] ${
                   isOpen
-                    ? "rotate-[45deg] bg-[#DADADA]"
-                    : "rotate-[135deg] bg-[#DADADA]"
+                    ? "rotate-[45deg] bg-white/50"
+                    : "rotate-[135deg] bg-white/50"
                 }`}
               />
             </div>
@@ -160,7 +160,7 @@ function Accordion({ title, para, link, features, isOpen, onToggle, id }) {
             </motion.div>
           )}
         </AnimatePresence>
-        <div className="w-full h-[1px] bg-[#DADADA]" />
+        <div className="w-full h-[1px] bg-white/50" />
       </div>
     </div>
   );

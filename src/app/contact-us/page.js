@@ -3,10 +3,10 @@ import Layout from '@/components/Layout'
 import Form from '@/components/Contact/Form';
 import OfficeLocations from '@/components/Contact/OfficeLocations';
 import FooterCTA from "@/components/Common/FooterCta";
-import Hero from '@/components/Common/Hero';
 import { homepage } from '@/lib/util';
 import { WebpageJsonLd } from '@/lib/json-ld';
 import { getPageMetadata } from '@/config/metadata';
+import Hero from '@/components/Common/Hero';
 
 export const metadata = getPageMetadata({
   title: "Contact DSW UnifyAI - Get in Touch",

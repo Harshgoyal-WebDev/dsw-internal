@@ -18,7 +18,7 @@ const BlogCard = ({ title, date, img }) => {
   return (
     <>
       <Link href={"#"}>
-        <div className="rounded-3xl h-full group border-[0.25px] border-white/30 pb-4 max-md:h-fit bg-white/5 space-y-8 overflow-hidden group cursor-pointer max-sm:pb-0">
+        <div className="rounded-[2.5vw] h-full group border-[0.25px] border-white/30 pb-4 max-md:h-fit bg-white/5 space-y-8 overflow-hidden group cursor-pointer max-sm:pb-0">
           <div className="w-full h-full  overflow-hidden rounded-3xl ">
             <Image
               src={img}
@@ -36,7 +36,7 @@ const BlogCard = ({ title, date, img }) => {
               {date}
             </p>
           </div>
-          <div className="h-[3vw] w-[3vw] absolute top-6 right-6 bg-white/20 rounded-full group-hover:!bg-white group-hover:text-[#111111] transition-all duration-500 ease-out max-sm:h-[15vw] max-sm:w-[15vw]">
+          <div className="h-[3vw] w-[3vw] absolute top-6 right-6 bg-white/20 rounded-full group-hover:!bg-white group-hover:text-[#111111] transition-all duration-500 ease-out max-md:h-[8vw] max-md:w-[8vw] max-sm:h-[15vw] max-sm:w-[15vw] ">
             <ArrowButton />
           </div>
         </div>
@@ -117,8 +117,8 @@ const Blogs = () => {
                 slidesPerView: 1.6,
                 spaceBetween: 30,
               },
-              1024: {
-                slidesPerView: 2,
+              1025: {
+                slidesPerView: 1.8,
                 spaceBetween: 15,
               },
               1440: {

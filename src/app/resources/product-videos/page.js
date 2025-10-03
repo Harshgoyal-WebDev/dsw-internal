@@ -1,11 +1,11 @@
 import React from "react";
 import Layout from "@/components/Layout";
 import FooterCTA from "@/components/Common/FooterCta";
-import Hero from "@/components/Common/Hero";
 import VideoListing from "@/components/ProductVideos/VideoListing";
 import { BreadcrumbsJSONLD, WebpageJsonLd } from "@/lib/json-ld";
 import { homepage } from "@/lib/util";
 import { getPageMetadata } from "@/config/metadata";
+import Hero from "@/components/Common/Hero";
 
 export const metadata = getPageMetadata({
   title: "DSW Product Videos - AI Demos & Platform Insights",
@@ -38,7 +38,7 @@ const Page = () => {
       <Layout>
         <Hero heroData={heroData} breadcrumbs={true}/>
         <VideoListing margin={true}/>
-        <FooterCTA footerCTAData={footerCTAData} paraWidth={"w-[75%]"} />
+        <FooterCTA footerCTAData={footerCTAData} paraWidth={"w-[75%] max-md:w-full"} />
       </Layout>
     </>
   );

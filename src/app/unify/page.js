@@ -1,5 +1,4 @@
 import Faqs from '@/components/Common/FAQs'
-import Hero from '@/components/Common/Hero'
 import SuccessStories from '@/components/Homepage/SuccessStories'
 import Tour from '@/components/Common/Tour'
 import Layout from '@/components/Layout'
@@ -15,6 +14,7 @@ import UsecaseMobile from '@/components/UnifyPage/UsecaseMobile'
 import { FAQJSONLD, WebpageJsonLd } from '@/lib/json-ld'
 import { homepage } from '@/lib/util'
 import { getPageMetadata } from '@/config/metadata'
+import Hero from '@/components/Common/Hero'
 
 
 export const metadata = getPageMetadata({

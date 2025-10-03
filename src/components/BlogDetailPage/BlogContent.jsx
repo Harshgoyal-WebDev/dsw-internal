@@ -51,11 +51,9 @@ export default function BlogContent() {
   return (
     <section
       id="content"
-      className="h-fit relative max-md:flex-col bg-[#FEFEFE] container flex w-full"
+      className="h-fit relative max-md:flex-col bg-[#FEFEFE] container flex w-full max-md:!pt-0"
     >
-     
-
-      <div className="h-fit absolute max-md:relative max-sm:py-[15vw] max-md:pb-[10vw] max-md:w-full w-fit blog-info">
+      <div className="h-fit absolute max-md:relative max-sm:py-[15vw] max-md:!pt-[0vw] max-md:pb-[10vw] max-md:w-full w-fit blog-info">
         <div className="flex flex-wrap items-center max-md:items-start max-md:justify-between max-md:flex-row-reverse gap-y-[2.5vw] max-md:gap-y-[5vw]">
           {stickyTop.map((item, index) => (
             <div
@@ -105,7 +103,7 @@ export default function BlogContent() {
       <div className="h-full  w-[100%]  text-background">
         <div id="Introduction" className="w-full border-b h-full">
           <div className="space-y-[2vw] max-sm:space-y-[7vw] max-md:space-y-[4vw] pb-[3vw] max-sm:pb-[15vw] max-md:pb-[10vw] border-b fadeup">
-            <h2 className="text-30 max-md:text-[5.5vw] font-head">Introduction</h2>
+            <h2 className="text-30 max-md:text-[5.5vw] max-sm:text-[7vw] font-head">Introduction</h2>
             <div>
               <p>
                 In an industry defined by data, regulation, and customer trust,
@@ -125,8 +123,8 @@ export default function BlogContent() {
           <div className="space-y-[3vw] max-sm:py-[15vw] max-md:py-[7vw] py-[3vw] ">
             <div className="space-y-[2vw] max-md:space-y-[7vw] fadeup">
               <div className="flex items-center max-md:items-start max-md:gap-[3.5vw] gap-[1vw]">
-                <div className="w-[.5vw] h-[.5vw] ml-[0.5vw] max-md:translate-y-[100%] max-sm:translate-y-[200%] max-md:h-[1.5vw] max-md:w-[1.5vw] max-sm:ml-[1vw] max-sm:mt-[-1vw] bg-background "></div>
-                <h2 className="text-30 max-md:text-[4.5vw] font-head">What Is Generative AI?</h2>
+                <div className="w-[0.35vw] h-[0.35vw] ml-[0.5vw] max-md:translate-y-[100%] max-sm:translate-y-[200%] max-md:h-[1.5vw] max-md:w-[1.5vw] max-sm:ml-[1vw]  bg-background "></div>
+                <h2 className="text-30 max-md:text-[4.5vw] font-head max-sm:text-[7vw]">What Is Generative AI?</h2>
               </div>
               <div>
                 <p>
@@ -143,8 +141,8 @@ export default function BlogContent() {
             </div>
             <div className="space-y-[2vw] max-md:space-y-[7vw] fadeup">
               <div className="flex items-center max-md:items-start max-md:pt-[5vw] max-md:gap-[3.5vw] gap-[1vw]">
-                <div className="w-[.5vw] h-[.5vw] ml-[0.5vw] max-sm:translate-y-[200%] max-md:translate-y-[100%] max-md:h-[1.5vw] max-md:w-[1.5vw] max-sm:ml-[1vw] max-sm:mt-[-1vw] bg-background "></div>
-                <h2 className="text-30 max-md:text-[4.5vw] font-head">
+                <div className="w-[0.35vw] h-[0.35vw] ml-[0.5vw] max-sm:translate-y-[200%] max-md:translate-y-[100%] max-md:h-[1.5vw] max-md:w-[1.5vw]  bg-background "></div>
+                <h2 className="text-30 max-md:text-[4.5vw] font-head max-sm:text-[7vw]">
                   Top Use Cases of GenAI in Insurance
                 </h2>
               </div>
@@ -241,8 +239,8 @@ export default function BlogContent() {
 
             <div className="space-y-[2vw] max-md:space-y-[7vw] fadeup">
               <div className="flex items-center max-md:items-start max-md:gap-[3.5vw] gap-[1vw]">
-                <div className="w-[.5vw] h-[.5vw] ml-[0.5vw] max-sm:translate-y-[200%] max-md:translate-y-[100%] max-md:h-[1.5vw] max-md:w-[1.5vw] max-sm:ml-[1vw] max-sm:mt-[-1vw] bg-background "></div>
-                <h2 className="text-30 max-md:text-[4.5vw] font-head">
+                <div className="w-[0.35vw] h-[0.35vw] ml-[0.5vw] max-sm:translate-y-[200%] max-md:translate-y-[100%] max-md:h-[1.5vw] max-md:w-[1.5vw] bg-background "></div>
+                <h2 className="text-30 max-md:text-[4.5vw] font-head max-sm:text-[7vw]">
                   Addressing Compliance & Security in GenAI
                 </h2>
               </div>

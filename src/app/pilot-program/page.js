@@ -1,4 +1,3 @@
- import Hero from '@/components/Common/Hero'
 import Layout from '@/components/Layout'
 import AIPilots from '@/components/PilotProgram/AIPilots'
 import PilotProgramForm from '../../components/PilotForm/PilotProgramForm'
@@ -11,6 +10,7 @@ import Faqs from '@/components/Common/FAQs'
 import { FAQJSONLD, WebpageJsonLd } from '@/lib/json-ld'
 import { homepage } from '@/lib/util'
 import { getPageMetadata } from '@/config/metadata'
+import Hero from '@/components/Common/Hero'
 
 export const metadata = getPageMetadata({
   title: "Pilot Program - Validate AI & GenAI Use Cases Fast",

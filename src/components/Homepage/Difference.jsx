@@ -165,7 +165,7 @@ const Difference = () => {
               </div>
             </div>
             <div
-              className="w-[40%] max-md:w-full max-sm:w-[50%] space-y-[2.5vw] max-sm:space-y-[21vw] max-md:space-y-[7vw]"
+              className="w-[40%] max-md:w-full max-sm:w-[50%] space-y-[2.5vw] max-sm:space-y-[15vw] max-md:space-y-[7vw]"
               ref={cardsRef2}
             >
               <h3 className="text-center text-40 headingAnim text-white-200 max-sm:text-left">

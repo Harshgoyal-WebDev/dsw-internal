@@ -51,7 +51,7 @@ export default function Hero({ breadcrumbs }) {
   return (
     <section
       id="blogDetail"
-      className="h-screen max-md:h-screen container flex items-center justify-center w-full relative bg-[#FEFEFE] max-md:items-start max-md:!pt-[40vh]"
+      className="h-screen max-md:h-[88vh] container flex items-center justify-center w-full relative bg-[#FEFEFE] max-md:items-start max-md:!pt-[40vh]"
     >
       <div className="absolute inset-0 h-full w-full z-0 hero-img opacity-0 max-md:h-[35vh]">
         <Image

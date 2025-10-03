@@ -6,7 +6,7 @@ const AwardItem = ({ img, title, year }) => {
   return (
     <>
       <div className="flex-shrink-0 flex items-center justify-center gap-[1vw] w-[30vw] max-md:w-[70vw] max-sm:w-fit  max-md:gap-[2vw]">
-        <div className="w-[8vw] h-auto max-md:w-[15vw] max-sm:w-[20vw]">
+        <div className="w-[8vw] h-auto max-md:w-[18vw] max-sm:w-[20vw]">
           <Image
             src={img}
             height={146}
@@ -83,7 +83,7 @@ const Recognized = () => {
           </div>
         </div>
         <div className="marquee fadeup mt-[3vw] max-md:my-[7vw]">
-          <div className="marquee__track recognized max-md:space-x-[10vw]">
+          <div className="marquee__track recognized max-md:space-x-[7vw] max-sm:space-x-[10vw]">
             {awards.map((item, index) => (
               <AwardItem
                 key={index}

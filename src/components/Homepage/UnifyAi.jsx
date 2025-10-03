@@ -112,8 +112,9 @@ const UnifyAi = () => {
           One Platform. Infinite Possibilities.
         </h2>
         <Copy>
-          <p className="text-center w-[40%] text-[#111111] max-md:w-full">
+          <p className="text-center w-[43%] text-[#111111] max-md:w-full">
             AI is everywhere. But it&apos;s not working everywhere. Why?​
+            <br/>
             Because AI and business still operate in silos. DSW UnifyAI changes
             that. ​The intelligent layer between your data, teams, and
             production — turning isolated models into living business processes.

@@ -85,7 +85,7 @@ export default function Impact() {
     <section className="w-screen container" id="about">
       <div className="w-full flex flex-col items-center justify-center gap-y-[5vw] max-md:gap-[10vw] max-sm:gap-y-[15vw]">
         <div className="text-center space-y-[2vw] max-md:space-y-[5vw]">
-          <h2 className="text-60 headingAnim text-white-200 max-md:text-center">
+          <h2 className="text-50 headingAnim text-white-200 max-md:text-center">
             From Idea to Impact  
           </h2>
           <Copy>

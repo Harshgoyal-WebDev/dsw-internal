@@ -1,5 +1,4 @@
 import React from 'react'
-import Hero from '@/components/Common/Hero'
 import FeaturedBlog from '@/components/Blog/FeaturedBlog'
 import BlogGrid from '@/components/Blog/BlogGrid'
 import Layout from '@/components/Layout'
@@ -7,6 +6,7 @@ import FooterCTA from "@/components/Common/FooterCta";
 import { BreadcrumbsJSONLD, WebpageJsonLd } from '@/lib/json-ld'
 import { homepage } from '@/lib/util'
 import { getPageMetadata } from '@/config/metadata'
+import Hero from '@/components/Common/Hero';
 
 export const metadata = getPageMetadata({
   title: "DSW Blog - Insights on AI & Enterprise Innovation",

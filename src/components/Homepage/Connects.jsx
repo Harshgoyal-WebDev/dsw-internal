@@ -105,11 +105,11 @@ const Connects = () => {
             className="relative flex items-center justify-center w-[20vw] h-[20vw] max-sm:h-[30vw] max-sm:w-[30vw] max-md:mb-[5vw] max-md:w-fit max-md:h-fit"
           >
             <div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#202530] h-[15vw] w-[15vw] z-[-1] origin-center  max-md:w-[25vw] max-md:h-[25vw] max-sm:h-[40vw] max-sm:w-[40vw]"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#202530] h-[13vw] w-[13vw] z-[-1] origin-center  max-md:w-[25vw] max-md:h-[25vw] max-sm:h-[40vw] max-sm:w-[40vw]"
               ref={circle1}
             />
             <div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full  max-md:w-[40vw] max-md:h-[40vw] bg-[#121723] h-[20vw] w-[20vw] z-[-2] origin-center max-sm:h-[60vw] max-sm:w-[60vw]"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full  max-md:w-[40vw] max-md:h-[40vw] bg-[#121723] h-[18vw] w-[18vw] z-[-2] origin-center max-sm:h-[60vw] max-sm:w-[60vw]"
               ref={circle2}
             />
             <div className="w-[10vw] h-auto max-sm:w-[50vw] max-md:w-[20vw]">
@@ -118,7 +118,7 @@ const Connects = () => {
               height={65}
               width={150}
               alt="unify-logo"
-              className="fadein scale-[0.9] w-full h-full"
+              className="fadein scale-[0.8] w-full h-full"
             />
 
             </div>

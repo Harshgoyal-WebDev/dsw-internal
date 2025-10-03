@@ -1,7 +1,6 @@
 import React from "react";
 import Layout from "@/components/Layout";
 import FooterCTA from "@/components/Common/FooterCta";
-import Hero from "@/components/Common/Hero";
 import Expect from "@/components/Webinars/Expect";
 import UpcomingWebinars from "@/components/Webinars/UpcomingWebinars";
 import Workshops from "@/components/Webinars/Workshops";
@@ -9,6 +8,7 @@ import WatchOnDemand from "@/components/Webinars/WatchOn-Demand";
 import { homepage } from "@/lib/util";
 import { BreadcrumbsJSONLD, WebpageJsonLd } from "@/lib/json-ld";
 import { getPageMetadata } from "@/config/metadata";
+import Hero from "@/components/Common/Hero";
 
 
 export const metadata = getPageMetadata({

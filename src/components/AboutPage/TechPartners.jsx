@@ -5,7 +5,7 @@ import { gsap } from "gsap";
 import Copy from "../Animations/Copy";
 
 const ALL_LOGOS = [
- "/assets/images/clients/bon-prix.png",
+ "/assets/images/clients/bon-prix-2.png",
   "/assets/images/clients/canara-hsbc.png",
   "/assets/images/clients/ciek.png",
   "/assets/images/clients/craft-silicon.png",

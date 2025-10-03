@@ -9,6 +9,7 @@ import {
   OrganizationJsonLd,
   WebsiteJsonLd,
 } from "@/lib/json-ld";
+import Loader from "../Loader";
 // import CanvasTunnel from "../Common/CanvasTunnel";
 
 const Layout = ({ children }) => {
@@ -18,6 +19,7 @@ const Layout = ({ children }) => {
       <LocalBusiness />
       <ImageObjectJsonLd />
       <WebsiteJsonLd />
+      <Loader />
       <Header />
       {children}
       {/* <CanvasTunnel/> */}

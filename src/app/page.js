@@ -4,7 +4,6 @@ import Brochure from "@/components/Homepage/Brochure";
 import Connects from "@/components/Homepage/Connects";
 import EnterpriseAI from "@/components/Homepage/EnterpriseAI";
 import Difference from "@/components/Homepage/Difference";
-import Hero from "@/components/Common/Hero";
 import Insuraince from "@/components/Homepage/Insuraince";
 import Recognized from "@/components/Homepage/Recognized";
 import SuccessStories from "@/components/Homepage/SuccessStories";
@@ -15,10 +14,10 @@ import WhyUnify from "@/components/Homepage/WhyUnify";
 import Layout from "@/components/Layout";
 import Faqs from "@/components/Common/FAQs";
 import Clients from "@/components/Homepage/Clients";
-import Loader from "@/components/Loader";
 import WhyUnifyMobile from "@/components/Homepage/WhyUnifyMobile";
 import FooterCTA from "@/components/Common/FooterCta";
 import { FAQJSONLD, WebpageJsonLd } from "@/lib/json-ld";
+import Hero from "@/components/Common/Hero";
 
 
 export const metadata = {
@@ -34,7 +33,6 @@ export default function Home() {
     <>
      <WebpageJsonLd metadata={metadata}/>
     <FAQJSONLD faqs={faqData}/>
-      <Loader />
       <Layout>
         <Hero heroData={heroData}/>
         <TurbochargeG />

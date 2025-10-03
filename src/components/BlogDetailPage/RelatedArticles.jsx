@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import Image from "next/image";
-import PrimaryButton from "../Button/PrimaryButton";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { NextButton, PreviousButton } from "../Button/SliderButtons";
@@ -29,7 +28,7 @@ const BlogCard = ({ title, date, img }) => {
             />
           </div>
           <div className="space-y-5 px-5">
-            <p className=" font-medium text-[#E8E8E8] leading-[1.5]">
+            <p className=" font-medium text-[#E8E8E8] leading-[1.5] max-md:w-[80%] max-sm:w-full">
               <span className=" pb-0.5">{title}</span>
             </p>
             <p className="text-[1.145vw] font-medium text-[#909090] max-md:text-[3vw]">
@@ -97,27 +96,27 @@ const RelatedArticles = () => {
         <div className="w-[100%] max-sm:py-[15vw] text-white  ">
           <Swiper
             slidesPerView={3}
-            className="mySwiper swiper-container"
+            className="mySwiper swiper-container max-md:!overflow-visible"
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             spaceBetween={50}
             onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
             speed={1000}
             breakpoints={{
-              320: {
+               320: {
                 slidesPerView: 1,
                 spaceBetween: 20,
               },
               640: {
-                slidesPerView: 1.2,
+                slidesPerView: 1.4,
                 spaceBetween: 30,
               },
               1025: {
                 slidesPerView: 3,
-                spaceBetween: 40,
+                spaceBetween: 15,
               },
               1440: {
-                slidesPerView:3,
-                spaceBetween: 50,
+                slidesPerView: 3,
+                spaceBetween: 15,
               },
             }}
           >

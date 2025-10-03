@@ -7,7 +7,7 @@ import Copy from "../Animations/Copy";
 import { LinkButton } from "../Button/LinkButton";
 
 const mainAnnouncement = {
-  image: "/assets/images/news/dsw-launches.png",
+  image: "/assets/images/news/dsw-launches-new.png",
   alt: "dsw-launches",
   title: "Deploying GenAI for Claims Automation",
   description:

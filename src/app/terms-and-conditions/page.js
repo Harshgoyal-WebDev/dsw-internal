@@ -1,4 +1,4 @@
-import Hero from '@/components/Common/Hero'
+import Hero from '@/components/Common/Hero';
 import Layout from '@/components/Layout'
 import Content from '@/components/TermsAndConditions/Content'
 import { getPageMetadata } from '@/config/metadata';

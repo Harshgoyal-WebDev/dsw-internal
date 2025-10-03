@@ -245,7 +245,7 @@ export default function Journey() {
           ref={wholeSliderRef}
           className="h-[30vw] max-md:w-[700vw] px-[5vw] max-sm:h-[80vh] max-md:h-[70vh]  flex gap-[5vw] mr-[2vw] items-center max-md:items-start max-sm:w-[700vw] max-md:flex-col w-[300vw] max-sm:px-[7vw] max-md:gap-[2vw]"
         >
-          <div className="h-[100%] max-sm:h-[50vw] max-sm:w-[70vw] max-md:h-[40vh] max-md:w-[12.2%]  journey-img w-[27vw] overflow-hidden rounded-[2vw] fadeup max-sm:rounded-[5vw] max-md:rounded-[3vw]">
+          <div className="h-[100%]  max-sm:w-[70vw] max-md:h-[40vh] max-sm:h-[80vh] max-md:w-[12.2%]  journey-img w-[27vw] overflow-hidden rounded-[2vw] fadeup max-sm:rounded-[5vw] max-md:rounded-[3vw]">
             <Image
               src={"/assets/images/about/journey.jpg"}
               alt="journey"
@@ -344,13 +344,13 @@ export default function Journey() {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-[7%] right-[3%]">
+        <div className="absolute bottom-[7%] right-[3%] max-md:bottom-[3%]">
            <button
-              className="round px-6 py-2 rounded-full flex items-center cursor-pointer gap-2 text-white font-light hover:scale-95 text-[1vw] max-sm:text-[4.2vw] max-md:text-[2.7vw] transition duration-500 ease-out"
+              className="round px-6 py-2 rounded-full flex items-center cursor-pointer gap-2 text-white-300 font-light hover:scale-95 text-[1vw] max-sm:text-[4.2vw] max-md:text-[2.7vw] transition duration-500 ease-out"
               onClick={handleSkip}
             >
               Skip Timeline
-              <div className="-rotate-90 text-white flex items-center justify-center gap-0 w-[0.8vw] h-full max-sm:w-[3vw] max-md:w-[1.8vw]">
+              <div className="-rotate-90 text-white-300 flex items-center justify-center gap-0 w-[0.8vw] h-full max-sm:w-[3vw] max-md:w-[1.8vw]">
                 <svg
                   className="arrow primera next"
                   width="8"

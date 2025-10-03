@@ -93,7 +93,7 @@ const Insuraince = () => {
             Enterprises​
           </h2>
           <Copy>
-            <p className="text-[#CACACA] w-[70%] max-md:w-full">
+            <p className="text-[#CACACA] w-[75%] max-md:w-full">
               Over 75% of insurers are experimenting with AI. Fewer than 20%
               have scaled a second use case. And, insurAInce changes that. ​
             </p>
@@ -123,7 +123,7 @@ export default Insuraince;
 
 const Card = ({ data, spanRef }) => {
   return (
-    <div className="w-full space-y-[2vw] relative group insuraince-cards  max-sm:space-y-[10vw] max-md:space-y-[10vw]">
+    <div className="space-y-[2vw] relative group insuraince-cards  max-sm:space-y-[10vw] max-md:space-y-[10vw] max-md:w-full">
       <div className=" space-y-[3vw] max-md:flex max-md:flex-col max-md:items-center max-md:space-y-[6vw]  max-md:mt-[10vw]">
         <Image
           src={data.icon}
@@ -132,15 +132,15 @@ const Card = ({ data, spanRef }) => {
           alt={data.title}
           className="w-[5vw] h-[5vw] object-contain max-md:w-[15vw] max-md:h-[15vw] max-sm:w-[20vw] max-sm:h-[20vw]"
         />
-        <h4 className="text-40 text-white-200 leading-[1.25] max-md:w-[72%] max-md:text-center max-md:h-fit">
+        <h4 className="text-40  text-white-200 leading-[1.25] max-md:w-[72%] max-md:text-center max-md:h-fit">
           {data.title}
         </h4>
         <p className="text-white-300 content-p h-28 max-md:w-[80%] max-md:text-center max-md:h-auto">{data.desc}</p>
       </div>
-      <div className="relative w-full h-[0.5px] bg-[#CACACA75] opacity-[0.5] group-hover:opacity-[1] transition-all duration-500">
+      <div className="relative w-full h-[0.5px] bg-white/50 opacity-[0.5] group-hover:opacity-[1] transition-all duration-500">
         <span
           ref={spanRef}
-          className="absolute top-0 left-0 h-full bg-[#CACACA75] w-full scale-x-0 origin-left "
+          className="absolute top-0 left-0 h-full bg-white/50 w-full scale-x-0 origin-left "
         />
         <span className="absolute top-0 left-0 h-full bg-primary-2 w-full scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500" />
       </div>

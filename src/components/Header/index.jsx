@@ -110,16 +110,16 @@ const Header = () => {
 
   return (
     <>
-      <div className="w-screen overflow-hidden h-screen fixed top-0 z-[900] pointer-events-none">
+      <div className="w-screen overflow-hidden h-screen fixed top-0 z-[900] pointer-events-none ">
         {/* 🔁 Replaced motion.header with a plain header + GSAP */}
         <header
           ref={headerWrapRef}
           onMouseEnter={() => setIsHoveringHeader(true)}
           onMouseLeave={() => setIsHoveringHeader(false)}
-          className="text-white w-screen fixed top-0 left-0 z-[900] pointer-events-none opacity-0"
+          className="text-white w-screen fixed top-0 left-0 z-[900] pointer-events-none opacity-0 "
         >
           <div
-            className={`flex items-center justify-between px-[4vw] py-6 w-full transition-transform duration-500 pointer-events-auto max-sm:px-[7vw] max-sm:bg-transparent max-sm:py-[3vw] max-sm:pt-[5vw] max-sm:backdrop-blur-sm ${isHidden ? "-translate-y-full" : "translate-y-0"}`}
+            className={`flex items-center justify-between px-[4vw] py-6 w-full transition-transform duration-500 pointer-events-auto max-sm:px-[7vw] max-md:bg-black/20 max-sm:py-[3vw] max-sm:pt-[5vw] max-md:backdrop-blur-md ${isHidden ? "-translate-y-full" : "translate-y-0"}`}
             ref={headerRef}
           >
             <Logo variant="header" className="dsw-logo" />

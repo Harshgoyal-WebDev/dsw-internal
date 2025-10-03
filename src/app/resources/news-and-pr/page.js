@@ -1,12 +1,12 @@
 import React from "react";
 import Layout from "@/components/Layout";
 import FooterCTA from "@/components/Common/FooterCta";
-import Hero from "@/components/Common/Hero";
 import Listing from "@/components/News/Listing";
 import Annoucements from "@/components/News/Annoucements";
 import { BreadcrumbsJSONLD, WebpageJsonLd } from "@/lib/json-ld";
 import { homepage } from "@/lib/util";
 import { getPageMetadata } from "@/config/metadata";
+import Hero from "@/components/Common/Hero";
 
 
 export const metadata = getPageMetadata({

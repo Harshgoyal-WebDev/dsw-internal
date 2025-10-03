@@ -238,19 +238,19 @@ if(globalThis.innerWidth>1025){
     <section className='h-full w-full relative z-[20]'>
         <div className='container h-full w-full'>
             <div className='w-full space-y-[5vw] flex flex-col items-center justify-center'>
-                <div className='flex flex-col items-center justify-center text-center  gap-[2vw] w-[70%] mx-auto max-md:w-full max-md:mx-0 max-md:gap-[10vw]'>
+                <div className='flex flex-col items-center justify-center text-center  gap-[2vw] w-[65%] mx-auto max-md:w-full max-md:mx-0 max-md:gap-[10vw]'>
                     <h2 className='text-90 headingAnim text-white-200'>Production Pilot: Experience the AI Platform. See Results. Commit with Certainty.</h2>
                     <Copy>
                         <h3 className='text-50 text-white-200 w-[80%] max-md:w-full'>Accelerate AI and GenAI deployment in record time, swiftly and at scale.</h3>
                     </Copy>
                     <Copy>
-                        <p className='text-white-300 w-[90%]'>Sign up for the UnifyAI Production Pilot — your low-risk, structured path to validating and deploying AI and GenAI use cases across core business functions, no matter the industry sector.</p>
+                        <p className='text-white-300 w-[95%]'>Sign up for the UnifyAI Production Pilot — your low-risk, structured path to validating and deploying AI and GenAI use cases across core business functions, no matter the industry sector.</p>
                     </Copy>
 
                 </div>
 
-                <div ref={containerRef} className='w-screen flex justify-center max-md:mt-[15vw] gap-[2.5vw] max-md:flex-col overflow-hidden max-md:items-center max-md:gap-[7vw]'>
-                    <div className='space-y-[2.5vw] max-md:space-y-[7vw] w-fit'>
+                <div ref={containerRef} className='w-screen flex justify-center max-md:mt-[5vw]  gap-[2.5vw] max-md:flex-col overflow-hidden max-md:items-center max-md:gap-[7vw]'>
+                    <div className='space-y-[2.5vw] max-md:space-y-[7vw] w-fit max-md:pt-[10vw]'>
                     <ProductionCard className={"production-card-left"} title={"Accelerated Deployment"} para={"Move from concept to production in weeks for AI and in hours for GenAI — with enterprise-grade readiness from day one."}/>
                     <ProductionCard className={"production-card-left"} title={"Scalable, Unified Platform"} para={"Simplify adoption with an end-to-end platform that brings data, models, and governance together in one place."}/>
                     </div>

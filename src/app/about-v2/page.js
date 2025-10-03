@@ -1,7 +1,6 @@
 import Experts from '@/components/AboutPage/Experts'
 import Guiders from '@/components/AboutPage/Guiders'
 import FooterCTA from '@/components/Common/FooterCta'
-import Hero from '@/components/Common/Hero'
 import Layout from '@/components/Layout'
 import React from 'react'
 import AboutV2 from '@/components/AboutPage/AboutV2'
@@ -14,6 +13,7 @@ import BuildMobile from '@/components/AboutPage/BuildMobile'
 import { WebpageJsonLd } from '@/lib/json-ld'
 import { homepage } from '@/lib/util'
 import { getPageMetadata } from '@/config/metadata'
+import Hero from '@/components/Common/Hero'
 
 
 export const metadata = getPageMetadata({

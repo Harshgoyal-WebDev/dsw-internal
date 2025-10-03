@@ -11,10 +11,10 @@ import FutureScope from "@/components/Insuraince/FutureScope";
 import Layout from "@/components/Layout";
 import Faqs from "@/components/Common/FAQs";
 import FooterCTA from "@/components/Common/FooterCta";
-import Hero from "@/components/Common/Hero";
 import { FAQJSONLD, WebpageJsonLd } from "@/lib/json-ld";
 import { homepage } from "@/lib/util";
 import { getPageMetadata } from "@/config/metadata";
+import Hero from "@/components/Common/Hero";
 
 export const metadata = getPageMetadata({
   title: "Enterprise AI for Insurance - insurAInce by DSW",

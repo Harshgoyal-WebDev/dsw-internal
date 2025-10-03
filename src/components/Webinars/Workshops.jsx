@@ -27,7 +27,7 @@ const Workshops = () => {
       id="workshops"
     >
       <div className="space-y-[7vw] max-sm:space-y-[20vw]">
-        <div className="w-full space-y-[1vw] max-sm:space-y-[7vw]">
+        <div className="w-full space-y-[1vw] max-sm:space-y-[7vw] max-md:!space-y-[2vw]">
           <h2 className="text-90 headingAnim  max-sm:w-full text-center">
             AI workshops
           </h2>
