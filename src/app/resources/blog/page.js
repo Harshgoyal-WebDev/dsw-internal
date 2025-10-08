@@ -72,3 +72,4 @@ const footerCTAData={
   img2:"/assets/images/footer/image-2.png"
 }
 
+ 

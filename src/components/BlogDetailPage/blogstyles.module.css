@@ -320,6 +320,8 @@
   @media screen and (max-width: 640px) {
     .blogContent h2 {
       font-size: 7vw;
+      line-height: 1.2;
+      padding-top: 7%;
       
     }
     .blogContent h3 {
