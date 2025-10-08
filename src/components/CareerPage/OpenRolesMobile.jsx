@@ -116,7 +116,7 @@ export default function OpenRolesMobile({ allowMultiple = false }) {
 }
 
 function Accordion({ title, para, link, features, isOpen, onToggle, id }) {
-  console.log(features);
+  // console.log(features);
 
   return (
     <div className={`w-full group overflow-hidden fadeup`}>

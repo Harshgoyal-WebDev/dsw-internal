@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const FeaturedBlog = ({ posts }) => {
   const featuredPost = posts.find((post) => post.isSticky === true) || null;
-  console.log(featuredPost);
+  // console.log(featuredPost);
   return (
     <section
       id="featured-blog-container"
