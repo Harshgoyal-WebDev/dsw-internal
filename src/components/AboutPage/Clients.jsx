@@ -53,7 +53,7 @@ const clientData = [
   { src: "/assets/icons/about/edge.svg", name: "AI Alliance" },
   { src: "/assets/icons/about/manipal.svg", name: "Cloud Partner" },
   { src: "/assets/icons/about/sodexo.svg", name: "Innovate" },
-   { src: "/assets/icons/about/ciek.svg", name: "Boxprix" },
+  { src: "/assets/icons/about/ciek.svg", name: "Boxprix" },
   { src: "/assets/icons/about/boxprix.svg", name: "Techstar" },
   { src: "/assets/icons/about/edge.svg", name: "AI Alliance" },
   { src: "/assets/icons/about/manipal.svg", name: "Cloud Partner" },

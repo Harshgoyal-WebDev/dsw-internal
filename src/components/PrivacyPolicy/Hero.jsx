@@ -12,7 +12,7 @@ import gsap from "gsap";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 
-export default function Hero({ breadcrumbs,post }) {
+export default function Hero({ breadcrumbs }) {
   headingAnim();
   paraAnim();
   fadeUp();
@@ -57,7 +57,7 @@ export default function Hero({ breadcrumbs,post }) {
         <Image
           width={1920}
           height={1080}
-          src={post.featuredImage?.sourceUrl}
+          src="/assets/images/blog-detail/heroBlogDetail.png"
           alt="Blog hero background"
           
           className="w-full h-full object-cover"
@@ -65,7 +65,7 @@ export default function Hero({ breadcrumbs,post }) {
         <div className="absolute inset-0 bg-gradient-to-b to-black/20 from-black/90 max-md:from-black/20"></div>
       </div>
       <h1 className="text-100 headingAnim relative z-10 text-white-200 text-center opacity-0 hero-head w-[85%] max-md:text-background max-md:text-left max-md:w-full">
-       {post.title}
+        How Generative AI is Transforming the Insurance Industry
       </h1>
 
       {breadcrumbs && (

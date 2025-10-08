@@ -1,6 +1,7 @@
-import Hero from '@/components/BlogDetailPage/Hero';
+
 import Layout from '@/components/Layout'
 import Content from '@/components/PrivacyPolicy/Content'
+import Hero from '@/components/Common/Hero';
 import { getPageMetadata } from '@/config/metadata';
 import { WebpageJsonLd } from '@/lib/json-ld';
 import { homepage } from '@/lib/util';

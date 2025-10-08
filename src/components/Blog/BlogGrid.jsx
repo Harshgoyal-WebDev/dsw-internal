@@ -4,16 +4,15 @@ import Link from "next/link";
 import Image from "next/image";
 import ArrowButton from "../Button/ArrowButton";
 import { NextButton, PreviousButton } from "../Button/SliderButtons";
-
-const BlogCard = ({ title, date, img }) => {
-
+import { formatDate } from "../../lib/datetime"
+const BlogCard = ({ title, date ,slug,featuredImage}) => {
   return (
     <>
-      <Link href={"#"}>
-        <div className="rounded-[1.8vw] max-sm:rounded-3xl fadeup relative group border-[0.25px] border-white/20 h-[56vh] max-sm:h-[52vh] max-md:h-fit  background-glass space-y-[2vw] max-sm:space-y-[8vw] overflow-hidden group cursor-pointer max-sm:pb-0">
-          <div className="w-full h-[69%] max-sm:h-[60%] overflow-hidden max-sm:rounded-3xl rounded-[1.8vw] ">
+      <Link href={slug}>
+        <div className="rounded-[1.8vw] max-sm:rounded-3xl fadeup relative group border-[0.25px] border-white/20 h-[33vw] max-sm:h-[52vh] max-md:h-fit  background-glass space-y-[2vw] max-sm:space-y-[8vw] overflow-hidden group cursor-pointer max-sm:pb-0">
+          <div className="w-full h-[64%] max-sm:h-[60%] overflow-hidden max-sm:rounded-3xl rounded-[1.8vw] ">
             <Image
-              src={img}
+              src={featuredImage.sourceUrl}
               width={531}
               height={510}
               alt={title}
@@ -25,7 +24,7 @@ const BlogCard = ({ title, date, img }) => {
               {title}
             </p>
             <p className=" font-medium text-white/40">
-              {date}
+             {formatDate(date)}
             </p>
           </div>
           <div className="h-[3.5vw] w-[3.5vw] absolute top-6 right-6 bg-white/20 rounded-full group-hover:!bg-white group-hover:text-[#111111] transition-all duration-500 ease-out max-md:h-[8vw] max-md:w-[8vw] max-sm:h-[15vw] max-sm:w-[15vw]">
@@ -256,11 +255,10 @@ const blogData = [
   },
 ];
 
-const BlogGrid = () => {
+const BlogGrid = ({posts}) => {
   const [page, setPage] = useState(1);
   const [isMobile, setIsMobile] = useState(false);
-   const [activeIndex, setActiveIndex] = useState(0);
-    
+    // console.log(posts)
     useEffect(() => {
       const checkMobile = () => setIsMobile(window.innerWidth < 640);
       checkMobile();
@@ -281,7 +279,7 @@ const BlogGrid = () => {
     <section className="container relative !pt-0  space-y-[7vw] h-fit  max-sm:h-[360vh]">
       {/* Grid */}
       <div className="grid grid-cols-3 max-md:grid-cols-2 gap-[3vw] max-sm:gap-[9vw] max-sm:grid-cols-1">
-        {currentCards.map((card, idx) => (
+        {posts.map((card, idx) => (
           <BlogCard key={idx} {...card} />
         ))}
       </div>
@@ -290,22 +288,6 @@ const BlogGrid = () => {
       <div className="flex items-center justify-center space-x-[2vw] max-sm:mt-[18vw] max-md:w-full max-md:justify-between">
         {/* Left arrow */}
         <PreviousButton onClick={handlePrev} isDisabled={page === 1} />
-
-
-        {/* Page numbers */}
-        {/* <div className="flex max-sm:w-full max-sm:justify-center  font-head max-sm:space-x-[6vw] space-x-[2vw] text-30 text-[#909090]">
-          {Array.from({ length: totalPages }, (_, i) => (
-            <button
-              key={i}
-              onClick={() => setPage(i + 1)}
-              className={`${
-                page === i + 1 ? "text-white-200" : "text-[#909090]"
-              } transition cursor-pointer`}
-            >
-              {i + 1}
-            </button>
-          ))}
-        </div> */}
 
         <div className="flex max-sm:w-fit   max-sm:justify-center font-head max-md:space-x-[10vw] space-x-[2vw] text-30 text-[#909090]">
 

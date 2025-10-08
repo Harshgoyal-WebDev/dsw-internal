@@ -24,7 +24,7 @@ const WhyUnify = () => {
 
   const timelineRef = useRef(null);
 
-  // NEW: flag to disable snap during programmatic scrolls (tag clicks)
+  // flag to disable snap during programmatic scrolls (tag clicks)
   const isClickScrollingRef = useRef(false);
 
   const addToContentRefs = (el) => {
@@ -36,6 +36,20 @@ const WhyUnify = () => {
   };
   const addToTagRefs = (el) => {
     if (el && !tagRefs.current.includes(el)) tagRefs.current.push(el);
+  };
+
+  // Helper: toggle pointer-events based on active step
+  const setActiveStep = (activeIndex) => {
+    contentRefs.current.forEach((el, i) => {
+      const isActive = i === activeIndex;
+      // Tailwind class toggles (for clarity in devtools)
+      el.classList.toggle("pointer-events-auto", isActive);
+      el.classList.toggle("pointer-events-none", !isActive);
+      // Inline style (GSAP friendly + guarantees behavior)
+      gsap.set(el, { pointerEvents: isActive ? "auto" : "none" });
+      // Optional a11y hint
+      el.setAttribute("aria-hidden", isActive ? "false" : "true");
+    });
   };
 
   useLayoutEffect(() => {
@@ -70,9 +84,13 @@ const WhyUnify = () => {
               const totalSteps = contentRefs.current.length;
               const stepsLocal = Math.max(1, totalSteps - 1);
 
+              // ---- Active step detection → pointer-events toggle ----
+              const activeIndex = Math.round(progress * stepsLocal);
+              setActiveStep(activeIndex);
+
               // Circles fill continuously with progress
               svgCircleRefs.current.forEach((circle, i) => {
-                const threshold = i / stepsLocal - 0.01; // slight bias like before
+                const threshold = i / stepsLocal - 0.01; // slight bias
                 const isReached = progress >= threshold - 1e-6;
                 gsap.to(circle, {
                   fill: isReached ? "#1626FD" : "#f8f8f8",
@@ -128,6 +146,9 @@ const WhyUnify = () => {
         if (contentRefs.current[0]) {
           gsap.set(contentRefs.current[0], { opacity: 1, y: 0, zIndex: 1 });
         }
+        // Ensure pointer-events start state
+        setActiveStep(0);
+
         svgCircleRefs.current.forEach((circle, i) => {
           gsap.set(circle, { fill: i === 0 ? "#1626FD" : "#f8f8f8" });
         });
@@ -194,7 +215,7 @@ const WhyUnify = () => {
               ease: "power2.inOut",
               scrollTo: target,
               onComplete: () => {
-                // brief delay to avoid snap race
+                // let ScrollTrigger update pointer-events via onUpdate
                 setTimeout(() => (isClickScrollingRef.current = false), 50);
               },
             });
@@ -238,21 +259,6 @@ const WhyUnify = () => {
       sectionRef.current?.__cleanupGsap?.();
     };
   }, []);
-
-  // useEffect(() => {
-  //   const bgAnim = gsap.to(".gradientClassBackground", {
-  //     scrollTrigger: {
-  //       trigger: ".gradientClassBackground",
-  //       start: "+3500 50%",
-  //       end: "+4400 50%",
-  //       scrub: 0.5,
-  //     },
-  //     yPercent: -15,
-  //   });
-  //   return () => {
-  //     bgAnim.kill();
-  //   };
-  // }, []);
 
   const handleSkip = () => {
     const next = document.getElementById("enterpriseAI");
@@ -380,7 +386,7 @@ const WhyUnify = () => {
             <div className="w-[40vw] relative">
               <div
                 ref={addToContentRefs}
-                className="step-block absolute top-20 left-0"
+                className="step-block absolute top-20 left-0 pointer-events-auto"
               >
                 <h3 className="text-50 text-black font-head ">
                   The Freedom to Own AI
@@ -400,7 +406,7 @@ const WhyUnify = () => {
 
               <div
                 ref={addToContentRefs}
-                className="step-block absolute top-20 left-0"
+                className="step-block absolute top-20 left-0 pointer-events-none"
               >
                 <h3 className="text-50 text-black font-head ">
                   Unified AI Lifecycle
@@ -420,7 +426,7 @@ const WhyUnify = () => {
 
               <div
                 ref={addToContentRefs}
-                className="step-block absolute top-20 left-0"
+                className="step-block absolute top-20 left-0 pointer-events-none"
               >
                 <h3 className="text-50 text-black font-head ">
                   Governance by Design
@@ -440,7 +446,7 @@ const WhyUnify = () => {
 
               <div
                 ref={addToContentRefs}
-                className="step-block absolute top-10 left-0"
+                className="step-block absolute top-10 left-0 pointer-events-none"
               >
                 <h3 className="text-50 text-black font-head ">
                   Sector-Agnostic, Vertically Accelerated
@@ -509,25 +515,29 @@ export const data = [
   {
     list: "End-to-End AI Lifecycle Management",
     title: "The Freedom to Own AI",
-    para: "The power of OpenAI, but entirely inside your infrastructure with your data, your compliance, and your governance.",
+    para:
+      "The power of OpenAI, but entirely inside your infrastructure with your data, your compliance, and your governance.",
     link: "#",
   },
   {
     list: "Multi-Model AI Support",
     title: "Unified AI Lifecycle",
-    para: "One platform for the full journey from data to deployment to continuous learning, eliminating silos and execution gaps.",
+    para:
+      "One platform for the full journey from data to deployment to continuous learning, eliminating silos and execution gaps.",
     link: "#",
   },
   {
     list: "Seamless Enterprise Integration",
     title: "Governance by Design",
-    para: "Security, compliance, and trust baked in with role-based access, explainability, audit trails, and approval workflows.",
+    para:
+      "Security, compliance, and trust baked in with role-based access, explainability, audit trails, and approval workflows.",
     link: "#",
   },
   {
     list: "Scalable Infrastructure",
     title: "Sector-Agnostic, Vertically Accelerated",
-    para: "Supports enterprises across industries, combining a sector-agnostic core with domain-focused accelerators to deliver impact at scale.",
+    para:
+      "Supports enterprises across industries, combining a sector-agnostic core with domain-focused accelerators to deliver impact at scale.",
     link: "#",
   },
 ];

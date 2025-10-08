@@ -7,6 +7,7 @@ import { BreadcrumbsJSONLD, WebpageJsonLd } from '@/lib/json-ld'
 import { homepage } from '@/lib/util'
 import { getPageMetadata } from '@/config/metadata'
 import Hero from '@/components/Common/Hero';
+import { getAllPosts } from '@/lib/posts';
 
 export const metadata = getPageMetadata({
   title: "DSW Blog - Insights on AI & Enterprise Innovation",
@@ -31,22 +32,25 @@ export const metadata = getPageMetadata({
     ],
   },
 });
-const page = () => {
+export default async function page(){
+   const { posts } = await getAllPosts();
   return (
     <>
     <WebpageJsonLd metadata={metadata}/>
     <BreadcrumbsJSONLD pathname={metadata.url}/>
         <Layout>
          <Hero heroData={heroData} breadcrumbs={true} />
-         <FeaturedBlog />
-         <BlogGrid />
+         <FeaturedBlog posts={posts} />
+         <BlogGrid posts={posts} />
          <FooterCTA footerCTAData={footerCTAData} width={"w-[95%]"}/>
         </Layout>
     </>
   )
 }
 
-export default page
+
+
+
 
 const heroData= {
   heading:"Explore the Future of AI, One Post at a Time​ ",
@@ -67,3 +71,4 @@ const footerCTAData={
   img1:"/assets/images/footer/image-1.png",
   img2:"/assets/images/footer/image-2.png"
 }
+

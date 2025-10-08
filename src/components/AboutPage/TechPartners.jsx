@@ -125,7 +125,7 @@ const Card = ({ logos, intervalMs = 3000 }) => {
       {logos.map((src, i) => (
         <div
           key={`${src}-${i}`}
-          className="absolute"
+          className="absolute h-[6vw] w-auto max-md:h-[15vw]"
           ref={(el) => (imgRefs.current[i] = el)}
           style={{
             opacity: isInitialized ? undefined : 0,
@@ -137,7 +137,7 @@ const Card = ({ logos, intervalMs = 3000 }) => {
             width={200}
             height={200}
             alt={`logo-${i}`}
-            className="h-[6vw] w-auto max-md:h-[15vw]"
+            className="w-full h-full object-contain"
             priority={i === 0}
           />
         </div>
