@@ -15,7 +15,7 @@ const BlogContentWp = ({ post }) => {
   const [modifiedHtml, setModifiedHtml] = useState(post?.content || "");
   const [toc, setToc] = useState([]); // [{ id, title }]
   const contentRef = useRef(null); // scope all queries to the article content
-
+  // console.log(post);
   // Change this to match your sticky header total height
   const getHeaderOffset = () => {
     // If you have a fixed header, measure it here:
@@ -135,7 +135,9 @@ const BlogContentWp = ({ post }) => {
               </p>
             </Copy>
             <Copy>
-              <p className="text-[#626262]">AI</p>
+              {post.categories.map((category,id) => (
+                <p className="text-[#626262]" key={id}>{category.name}</p>
+              ))}
             </Copy>
           </div>
           <div className="text-[1.05vw] max-sm:text-[4vw] max-md:text-[3vw] space-y-[.8vw] w-[50%] max-md:w-[40%]">
@@ -155,7 +157,7 @@ const BlogContentWp = ({ post }) => {
               </p>
             </Copy>
             <Copy>
-              <p className="text-[#626262]">Dr. Emily Walker</p>
+              <p className="text-[#626262]">Sandeep khuperkar</p>
             </Copy>
           </div>
         </div>

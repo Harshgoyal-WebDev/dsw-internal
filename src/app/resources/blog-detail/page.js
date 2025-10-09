@@ -40,7 +40,7 @@ export default function page() {
       <Layout>
         {/* <Hero breadcrumbs={true} /> */}
         <BlogContent />
-        <RelatedArticles />
+        {/* <RelatedArticles /> */}
         <FooterCTA footerCTAData={footerCTAData} width={"w-[95%]"} />
       </Layout>
     </>

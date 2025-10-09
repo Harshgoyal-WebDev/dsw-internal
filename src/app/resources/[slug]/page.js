@@ -42,7 +42,7 @@ export default async function Page({ params }) {
       <Layout>
         <Hero breadcrumbs post={post}/>
         <BlogContentWp post={post}/>
-        <RelatedArticles currentSlug={slug} />
+        <RelatedArticles post={post} />
         <FooterCTA footerCTAData={footerCTAData} width="w-[95%]" />
       </Layout>
     </>

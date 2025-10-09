@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Copy from "../Animations/Copy";
@@ -29,53 +28,7 @@ const POINTS = [
 ];
 
 export default function About() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  // useEffect(() => {
-  //   if (typeof window !== "undefined") {
-  //     setIsMobile(window.innerWidth <= 768);
-
-  //     const handleResize = () => {
-  //       setIsMobile(window.innerWidth <= 768);
-  //     };
-
-  //     window.addEventListener("resize", handleResize);
-  //     return () => window.removeEventListener("resize", handleResize);
-  //   }
-  // }, []);
-  // useEffect(() => {
-  //   gsap.set(".about-item", {
-  //     scale: 0.7,
-  //     transformOrigin: "center",
-  //     y: 60,
-  //     x: 25,
-  //     opacity: 0.45,
-  //   });
-
-  //   document.querySelectorAll(".about-item").forEach((item, index) => {
-  //     const masterTl = gsap.timeline({
-  //       scrollTrigger: {
-  //         trigger: item,
-  //         start: isMobile ? "20% 180%" : "10% bottom",
-  //         end: "bottom 60%",
-  //         scrub: true,
-  //         markers:true,
-  //       },
-  //     });
-
-  //     masterTl.to(
-  //       item,
-  //       {
-  //         scale: 1,
-  //         y: 0,
-  //         x: 0,
-  //         opacity: 1,
-  //         duration: 0.8,
-  //       },
-  //       "<-.8"
-  //     );
-  //   });
-  // }, []);
+ 
 
 
 

@@ -402,7 +402,7 @@ h4 {
 }
 @media (max-width: 1025px) {
   :root {
-    --text-100: 9.5vw;
+    --text-100: 9vw;
     --text-90: 8.5vw;
     --text-60: 7.5vw;
     --text-50: 5.5vw;

@@ -11,29 +11,30 @@ import { NextButton, PreviousButton } from "../Button/SliderButtons";
 import ArrowButton from "../Button/ArrowButton";
 import Copy from "../Animations/Copy";
 import Link from "next/link";
+import { formatDate } from "@/lib/datetime";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const BlogCard = ({ title, date, img }) => {
+const BlogCard = ({ title, date, img ,slug}) => {
   return (
     <>
-      <Link href={"#"}>
-        <div className="rounded-[2.5vw] h-full group border-[0.25px] border-white/30 pb-4 max-md:h-fit bg-white/5 space-y-8 overflow-hidden group cursor-pointer max-sm:pb-0">
-          <div className="w-full h-full  overflow-hidden rounded-3xl ">
+      <Link href={`/resources/${slug}`}>
+        <div className="rounded-[2vw] group border-[0.25px] border-white/30 pb-4 bg-white/5 space-y-8 overflow-hidden group cursor-pointer max-sm:pb-0 h-[33vw] max-sm:rounded-[6vw] max-sm:h-[110vw] max-md:h-[70vw] max-md:rounded-[4vw]">
+          <div className="w-full h-[65%]  overflow-hidden rounded-3xl max-sm:h-[60%] ">
             <Image
               src={img}
               width={531}
               height={510}
               alt={title}
-              className="object-cover h-[20vw] w-[31vw] group-hover:scale-[1.05] transition-all duration-500 ease-out max-sm:w-full max-md:w-full max-md:min-h-[30vh] max-sm:h-[60vw]"
+              className="object-cover h-full w-[31vw] group-hover:scale-[1.05] transition-all duration-500 ease-out max-sm:w-full max-md:w-full max-md:min-h-[30vh] max-sm:h-[60vw]"
             />
           </div>
           <div className="space-y-5 px-5">
             <p className=" font-medium text-[#E8E8E8] leading-[1.5]">
               <span className=" pb-0.5">{title}</span>
             </p>
-            <p className="text-[1.145vw] font-medium text-[#909090] max-sm:text-[3vw] max-md:text-[3vw]">
-              {date}
+            <p className="text-[1.145vw] font-medium text-[#909090] max-sm:text-[3.5vw] max-md:text-[2.2vw]">
+              {formatDate(date)}
             </p>
           </div>
           <div className="h-[3vw] w-[3vw] absolute top-6 right-6 bg-white/20 rounded-full group-hover:!bg-white group-hover:text-[#111111] transition-all duration-500 ease-out max-md:h-[8vw] max-md:w-[8vw] max-sm:h-[15vw] max-sm:w-[15vw] ">
@@ -44,28 +45,11 @@ const BlogCard = ({ title, date, img }) => {
     </>
   );
 };
-const Blogs = () => {
+const Blogs = ({posts}) => {
   const swiperRef = useRef(null);
   const blogsRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
-
-  useEffect(() => {
-    if (blogsRef.current) {
-      gsap.from(".swiper-container", {
-        x: 50,
-        opacity: 0,
-        duration: 1.5,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: blogsRef.current,
-          start: "10% 80%",
-          // markers:true,
-          // scrub:true
-        },
-      });
-    }
-  }, []);
-
+  console.log(posts)
   const handleNext = () => {
     if (swiperRef.current) {
       swiperRef.current.slideNext();
@@ -99,7 +83,7 @@ const Blogs = () => {
             <PrimaryButton text={"Know More"} href={"#"} />
           </div>
         </div>
-        <div className="w-[50%] text-white max-sm:w-full max-md:w-[93%] max-md:mt-[10vw] ">
+        <div className="w-[50%] text-white max-sm:w-full max-md:w-[93%] max-md:mt-[10vw] fadeup ">
           <Swiper
             slidesPerView={2}
             className="mySwiper swiper-container"
@@ -127,13 +111,15 @@ const Blogs = () => {
               },
             }}
           >
-            {BlogsData.map((blog) => (
+            {posts.map((blog) => (
               <SwiperSlide className="w-[28vw] max-md:w-[50vw] h-full pr-1 max-sm:w-full">
                 <BlogCard
+
                   key={blog.id}
                   title={blog.title}
-                  img={blog.img}
+                  img={blog.featuredImage.sourceUrl}
                   date={blog.date}
+                  slug={blog.slug}
                 />
               </SwiperSlide>
             ))}

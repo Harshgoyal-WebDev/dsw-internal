@@ -7,6 +7,7 @@ import { BreadcrumbsJSONLD, WebpageJsonLd } from "@/lib/json-ld";
 import { homepage } from "@/lib/util";
 import { getPageMetadata } from "@/config/metadata";
 import Hero from "@/components/Common/Hero";
+import { getAllNews } from "@/lib/news";
 
 
 export const metadata = getPageMetadata({
@@ -32,14 +33,16 @@ export const metadata = getPageMetadata({
     ],
   },
 });
-const Page = () => {
+export default async function Page() {
+  const {news} = await getAllNews()
+  // console.log(news)
   return (
     <>
     <WebpageJsonLd metadata={metadata}/>
         <BreadcrumbsJSONLD pathname={metadata.url}/>
       <Layout>
         <Hero heroData={heroData} breadcrumbs={true} />
-        <Listing />
+        <Listing news={news} />
         <Annoucements />
         <FooterCTA footerCTAData={footerCTAData} />
       </Layout>
@@ -47,7 +50,6 @@ const Page = () => {
   );
 };
 
-export default Page;
 
 const heroData = {
   heading: "In the Media​ ",

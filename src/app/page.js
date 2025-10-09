@@ -18,6 +18,7 @@ import WhyUnifyMobile from "@/components/Homepage/WhyUnifyMobile";
 import FooterCTA from "@/components/Common/FooterCta";
 import { FAQJSONLD, WebpageJsonLd } from "@/lib/json-ld";
 import Hero from "@/components/Common/Hero";
+import { getAllPosts } from "@/lib/posts";
 
 
 export const metadata = {
@@ -28,7 +29,8 @@ export const metadata = {
     date_modified: "2025-09-30T00:00",
 }
 
-export default function Home() {
+export default async function Home() {
+  const { posts } = await getAllPosts();
   return (
     <>
      <WebpageJsonLd metadata={metadata}/>
@@ -49,7 +51,7 @@ export default function Home() {
         <Connects />
         <Clients />
         <SuccessStories />
-        <Blogs />
+        <Blogs posts={posts}/>
         <Faqs data={faqData}/>
         <FooterCTA footerCTAData={footerCTAData} width={"w-[95%]"}/>
       </Layout>

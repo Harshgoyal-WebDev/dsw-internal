@@ -9,7 +9,7 @@ const BlogCard = ({ title, date ,slug,featuredImage}) => {
   return (
     <>
       <Link href={slug}>
-        <div className="rounded-[1.8vw] max-sm:rounded-3xl fadeup relative group border-[0.25px] border-white/20 h-[33vw] max-sm:h-[52vh] max-md:h-fit  background-glass space-y-[2vw] max-sm:space-y-[8vw] overflow-hidden group cursor-pointer max-sm:pb-0">
+        <div className="rounded-[1.8vw] fadeup relative group border-[0.25px] border-white/20 h-[33vw]  background-glass space-y-[2vw] max-sm:space-y-[8vw] overflow-hidden group cursor-pointer max-sm:pb-0 max-sm:h-[110vw] max-md:h-[80vw] max-md:rounded-[4vw] max-sm:rounded-[6vw] max-md:space-y-[5vw]">
           <div className="w-full h-[64%] max-sm:h-[60%] overflow-hidden max-sm:rounded-3xl rounded-[1.8vw] ">
             <Image
               src={featuredImage.sourceUrl}
@@ -19,11 +19,11 @@ const BlogCard = ({ title, date ,slug,featuredImage}) => {
               className="object-cover h-full w-full group-hover:scale-[1.1] duration-700 ease-in-out transition-all max-sm:w-full max-sm:h-full "
             />
           </div>
-          <div className="space-y-[1vw] max-sm:space-y-[4vw] px-5 max-md:w-full w-[90%] max-sm:w-[100%]">
-            <p className=" text-white-200 font-medium leading-[1.5] max-md:text-[3.2vw] max-sm:text-[5.5vw] max-sm:font-normal font-head text-[1.2vw]">
-              {title}
+          <div className="space-y-[1vw] max-sm:space-y-[4vw] px-5 max-md:w-full w-[90%] max-sm:w-[100%] max-md:px-[2.5vw] max-md:space-y-[2vw]">
+            <p className=" font-medium text-[#E8E8E8] leading-[1.5] max-md:w-[80%] max-sm:w-full max-md:text-[3vw] max-sm:text-[4.5vw]">
+              <span className=" pb-0.5">{title}</span>
             </p>
-            <p className=" font-medium text-white/40">
+            <p className="text-[1.145vw] font-medium text-white/40 max-md:text-[2vw] max-sm:text-[3.5vw] ">
              {formatDate(date)}
             </p>
           </div>
@@ -278,7 +278,7 @@ const BlogGrid = ({posts}) => {
   return (
     <section className="container relative !pt-0  space-y-[7vw] h-fit  max-sm:h-[360vh]">
       {/* Grid */}
-      <div className="grid grid-cols-3 max-md:grid-cols-2 gap-[3vw] max-sm:gap-[9vw] max-sm:grid-cols-1">
+      <div className="grid grid-cols-3 gap-[3vw] max-sm:gap-[9vw] max-md:grid-cols-1">
         {posts.map((card, idx) => (
           <BlogCard key={idx} {...card} />
         ))}

@@ -8,31 +8,32 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { NextButton, PreviousButton } from "../Button/SliderButtons";
 import ArrowButton from "../Button/ArrowButton";
-import Copy from "../Animations/Copy";
+// import Copy from "../Animations/Copy";
 import Link from "next/link";
+import { formatDate } from "@/lib/datetime";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const BlogCard = ({ title, date, img }) => {
+const BlogCard = ({ title, date, img,slug }) => {
   return (
     <>
-      <Link href={"#"}>
-        <div className="rounded-3xl group border-[0.25px] border-stone-600 pb-4 bg-white/5 space-y-8 overflow-hidden group cursor-pointer max-sm:pb-0">
-          <div className="w-full h-full overflow-hidden rounded-3xl ">
+      <Link href={slug}>
+        <div className="rounded-3xl group border-[0.25px] border-stone-600 pb-4 bg-white/5 space-y-8 overflow-hidden group cursor-pointer max-sm:pb-0 h-[33vw] max-sm:h-[110vw] max-md:h-[70vw] max-md:rounded-[4vw] max-sm:rounded-[6vw]">
+          <div className="w-full h-[65%] overflow-hidden rounded-3xl max-sm:h-[60%]">
             <Image
               src={img}
               width={531}
               height={510}
               alt={title}
-              className="object-cover h-[20vw] w-[31vw] group-hover:scale-[1.05] transition-all duration-500 ease-out max-md:w-full max-md:h-[60vw]"
+              className="object-cover h-full w-[31vw] group-hover:scale-[1.05] transition-all duration-500 ease-out max-md:w-full max-md:h-full"
             />
           </div>
           <div className="space-y-5 px-5">
             <p className=" font-medium text-[#E8E8E8] leading-[1.5] max-md:w-[80%] max-sm:w-full">
               <span className=" pb-0.5">{title}</span>
             </p>
-            <p className="text-[1.145vw] font-medium text-[#909090] max-md:text-[3vw]">
-              {date}
+            <p className="text-[1.145vw] font-medium text-[#909090] max-md:text-[3vw] max-sm:text-[3.5vw]">
+              {formatDate(date)}
             </p>
           </div>
           <div className="h-[3vw] w-[3vw] absolute top-6 right-6 bg-white/20 rounded-full group-hover:!bg-white group-hover:text-[#111111] transition-all duration-500 ease-out max-sm:h-[15vw] max-md:h-[8vw] max-md:w-[8vw] max-sm:w-[15vw]">
@@ -43,27 +44,13 @@ const BlogCard = ({ title, date, img }) => {
     </>
   );
 };
-const RelatedArticles = () => {
+const RelatedArticles = ({post}) => {
   const swiperRef = useRef(null);
   const relatedArticlesRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const relatedBlogs = post.blogFields.relatedBlogs.edges
 
-  useEffect(() => {
-    if (relatedArticlesRef.current) {
-      gsap.from(".swiper-container", {
-        x: 50,
-        opacity: 0,
-        duration: 1.5,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: relatedArticlesRef.current,
-          start: "10% 80%",
-          // markers:true,
-          // scrub:true
-        },
-      });
-    }
-  }, []);
+ 
 
   const handleNext = () => {
     if (swiperRef.current) {
@@ -80,7 +67,7 @@ const RelatedArticles = () => {
     <section
       id="relatedArticles"
       ref={relatedArticlesRef}
-      className="h-full w-screen  relative  overflow-hidden container flex-col flex"
+      className={`h-full w-screen  relative  overflow-hidden container flex-col flex `}
     >
       <div className="h-full w-full  gap-y-[4vw] flex flex-col items-start justify-between  max-sm:flex-col ">
         <div className="w-full   items-center justify-between flex max-sm:w-full">
@@ -93,7 +80,7 @@ const RelatedArticles = () => {
             <NextButton onClick={handleNext} isDisabled={RelatedArticlesData.length-1 === activeIndex} />
           </div>
         </div>
-        <div className="w-[100%] max-sm:py-[15vw] text-white  ">
+        <div className="w-[100%] max-sm:py-[15vw] text-white fadeup ">
           <Swiper
             slidesPerView={3}
             className="mySwiper swiper-container max-md:!overflow-visible"
@@ -120,13 +107,14 @@ const RelatedArticles = () => {
               },
             }}
           >
-            {RelatedArticlesData.map((blog) => (
+            {relatedBlogs.map((blog) => (
               <SwiperSlide className="w-[26vw] h-full pr-1 max-sm:w-full">
                 <BlogCard
-                  key={blog.id}
-                  title={blog.title}
-                  img={blog.img}
-                  date={blog.date}
+                  key={blog.node.id}
+                  title={blog.node.title}
+                  img={blog.node.featuredImage.node.sourceUrl}
+                  date={blog.node.date}
+                  slug={blog.node.slug}
                 />
               </SwiperSlide>
             ))}

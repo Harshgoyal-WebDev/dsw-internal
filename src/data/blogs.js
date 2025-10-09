@@ -33,25 +33,25 @@ export const POST_FIELDS = gql`
 export const QUERY_ALL_POSTS = gql`
   query AllPosts {
     posts {
-    edges {
-      node {
-        id
-        excerpt
-        date
-        isSticky
-        slug
-        title
-        featuredImage {
-          node {
-            altText
-            sourceUrl
-            srcSet
-            sizes
+      edges {
+        node {
+          id
+          excerpt
+          date
+          isSticky
+          slug
+          title
+          featuredImage {
+            node {
+              altText
+              sourceUrl
+              srcSet
+              sizes
+            }
           }
         }
       }
     }
-  }
   }
 `;
 
@@ -60,14 +60,37 @@ export const QUERY_POST_BY_SLUG = gql`
     post(id: $slug, idType: SLUG) {
       excerpt
       id
-       featuredImage {
-          node {
-            altText
-            sourceUrl
-            srcSet
-            sizes
+      featuredImage {
+        node {
+          altText
+          sourceUrl
+          srcSet
+          sizes
+        }
+      }
+      blogFields {
+        relatedBlogs {
+          edges {
+            node {
+              ... on Post {
+                id
+                featuredImage {
+                  node {
+                    sourceUrl
+                    sizes
+                    srcSet
+                    altText
+                  }
+                }
+                excerpt
+                date
+                slug
+                title
+              }
+            }
           }
         }
+      }
       categories {
         edges {
           node {
@@ -81,12 +104,6 @@ export const QUERY_POST_BY_SLUG = gql`
       modified
       content
       date
-      
-      author {
-        node {
-          name
-        }
-      }
       title
       slug
       isSticky
@@ -94,12 +111,10 @@ export const QUERY_POST_BY_SLUG = gql`
   }
 `;
 
-
 export const QUERY_POST_SEO_BY_SLUG = gql`
   query PostSEOBySlug($slug: ID!) {
     post(id: $slug, idType: SLUG) {
       id
-      
     }
   }
 `;
