@@ -48,7 +48,7 @@ const WhyUnify = () => {
       // Inline style (GSAP friendly + guarantees behavior)
       gsap.set(el, { pointerEvents: isActive ? "auto" : "none" });
       // Optional a11y hint
-      el.setAttribute("aria-hidden", isActive ? "false" : "true");
+      // el.setAttribute("aria-hidden", isActive ? "false" : "true");
     });
   };
 

@@ -67,9 +67,9 @@ function AccordionItem({ question, answer, isOpen, onToggle }) {
               aria-expanded={isOpen}
               className="cursor-pointer w-full h-full py-[2.5vw] flex items-center justify-between max-md:pb-[7vw]"
             >
-              <h4 className="text-[1.2vw] font-medium text-left leading-[1.2] max-sm:text-[4.5vw] max-sm:w-[70%] max-md:text-[3vw] max-md:w-[80%] max-sm:leading-[1.5]">
+              <h3 className="text-[1.2vw] font-medium text-left leading-[1.2] max-sm:text-[4.5vw] max-sm:w-[70%] max-md:text-[3vw] max-md:w-[80%] max-sm:leading-[1.5]">
                 {question}
-              </h4>
+              </h3>
               <div
                 className={` h-auto relative duration-500 max-sm:w-[12vw] rounded-full border-[1.5px]  p-[2vw]  transition-all  ease-out max-sm:p-[6vw] max-md:p-[4vw] max-md:w-[10vw] max-md:h-[10vw] ${ isOpen ? "border-[#030815] bg-gradient-to-br from-[#F16B0D] to-[#E61216]" :" background-glass border-white/20"}  ${
                   !isOpen ? "group-hover:rotate-[180deg]" : "group-hover:rotate-[315deg] rotate-[45deg]"

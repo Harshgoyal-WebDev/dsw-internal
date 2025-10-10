@@ -9,9 +9,9 @@ import SocialLink from "../ui/SocialLink";
 import Logo from "../ui/Logo";
 import ContactInfo from "../ui/ContactInfo";
 
-// const DynamicShaderComp = dynamic(() => import("../BgShader/ShaderComp"), {
-//   ssr: false,
-// });
+const DynamicShaderComp = dynamic(() => import("../BgShader/ShaderComp"), {
+  ssr: false,
+});
 
 const Footer = () => {
   const [mob, setMob] = useState(false);
@@ -27,7 +27,7 @@ const Footer = () => {
   return (
     <>
       <footer className="relative overflow-hidden container !pb-0" id="footer">
-        {/* {!mob ? (
+        {!mob ? (
           <div className="absolute top-[30%] left-0 h-screen w-screen max-md:hidden">
             <Suspense>
               <DynamicShaderComp />
@@ -43,7 +43,7 @@ const Footer = () => {
               height={1080}
             />
           </div>
-        )} */}
+        )}
 
         <div className="relative z-[20]">
           <div className="rounded-[2.2vw] background-glass-diff border border-white/30 px-12 py-[5%] flex justify-between max-md:px-[0vw] max-md:py-[15%] max-md:rounded-[5vw] max-sm:rounded-[10vw] max-md:flex-col max-md:items-center max-md:justify-center max-md:text-center">
@@ -55,7 +55,7 @@ const Footer = () => {
             <div className="flex justify-between w-1/2 ml-auto gap-10 footer-content max-md:flex-col max-md:w-full">
               {/* Navigation Links */}
               <div>
-                <h6 className="mb-5 text-foreground content-p">NAVIGATION</h6>
+                <h5 className="mb-5 text-foreground content-p">NAVIGATION</h5>
                 <ul className="space-y-3">
                   {NAVIGATION.map((link) => (
                     <li key={link.id} className="text-foreground content-p">

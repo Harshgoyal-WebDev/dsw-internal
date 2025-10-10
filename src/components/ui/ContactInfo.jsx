@@ -19,7 +19,7 @@ export const ContactInfo = ({
 
   return (
     <div className={`${variantClass} ${className}`}>
-      <h6 className="font-medium mb-5 content-p">CONTACT US</h6>
+      <h5 className="font-medium mb-5 content-p">CONTACT US</h5>
       <ul className="space-y-2">
         {showPhones && contact.phones.map((phone, index) => (
           <li key={index} className="under-multi-parent">

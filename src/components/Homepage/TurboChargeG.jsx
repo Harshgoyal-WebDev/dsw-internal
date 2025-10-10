@@ -184,8 +184,8 @@ const TurbochargeG = () => {
               />
             </div>
           </div>
-          <div className="w-full h-[50vw] rounded-[2vw] overflow-hidden">
-          <Image src={"/assets/images/homepage/turbocharge/dashboard-mob.png"} alt="unify-ai-dashboard-mobile" className="w-full h-full object-cover fadeup hidden max-md:block" width={600} height={400} />
+          <div className="w-full h-[50vw] rounded-[2vw] overflow-hidden hidden max-md:block ">
+          <Image src={"/assets/images/homepage/turbocharge/dashboard-mob.png"} alt="unify-ai-dashboard-mobile" className="w-full h-full object-cover fadeup " width={600} height={400} />
 
           </div>
 

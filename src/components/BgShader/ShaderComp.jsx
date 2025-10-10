@@ -1,33 +1,35 @@
 "use client";
 import React, { useRef, useMemo, useEffect } from "react";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Canvas, useThree } from "@react-three/fiber";
 import * as THREE from "three";
-// import { ThreeTunnel } from "../Common/tunnel";
 
+/** ---------- MovingGradientShader (throttled, demand-render) ---------- */
 const MovingGradientShader = ({
-  // Lower wave parameters
+  // Lower wave
   lowerWaveFreq = 2.8,
   lowerWaveAmp = 0.07,
   lowerWaveSpeed = 0.2,
   lowerBoundaryBase = 0.25,
   lowerFadeSoftness = 0.25,
-
-  // Upper wave parameters
+  // Upper wave
   upperWaveFreq = 10.0,
   upperWaveAmp = 0.05,
   upperWaveSpeed = -0.15,
   topBoundaryBase = 0.75,
   topFadeSoftness = 0.3,
-
-  // Color (string like "#1726FD" or "0x1726FD" or number)
+  // Color
   color = "#1726FD",
+  // Target FPS (reduce to further save power)
+  fps = 30,
 }) => {
   const materialRef = useRef();
-  const { viewport } = useThree();
+  const geoRef = useRef();
+  const { viewport, invalidate, gl } = useThree();
 
-  // GLSL (memoized so React doesn't recreate strings)
+  // Use mediump for slightly lower precision = less bandwidth on some GPUs
   const vertexShader = useMemo(
     () => `
+      precision mediump float;
       varying vec2 vUv;
       void main() {
         vUv = uv;
@@ -39,78 +41,70 @@ const MovingGradientShader = ({
 
   const fragmentShader = useMemo(
     () => `
+      precision mediump float;
       varying vec2 vUv;
       uniform float u_time;
       uniform vec3  u_color;
 
-      // Lower wave uniforms
       uniform float u_lowerWaveFreq;
       uniform float u_lowerWaveAmp;
       uniform float u_lowerWaveSpeed;
       uniform float u_lowerBoundaryBase;
       uniform float u_lowerFadeSoftness;
 
-      // Upper wave uniforms
       uniform float u_upperWaveFreq;
       uniform float u_upperWaveAmp;
       uniform float u_upperWaveSpeed;
       uniform float u_topBoundaryBase;
       uniform float u_topFadeSoftness;
 
-      float smoothstep_custom(float edge0, float edge1, float x) {
-        float t = clamp((x - edge0) / (edge1 - edge0), 0.0, 1.0);
+      float smoothstep_custom(float e0, float e1, float x) {
+        float t = clamp((x - e0) / (e1 - e0), 0.0, 1.0);
         return t * t * (3.0 - 2.0 * t);
       }
 
       void main() {
         vec2 uv = vUv;
 
-        // Lower
         float lowerWave = sin(uv.x * u_lowerWaveFreq - u_time * u_lowerWaveSpeed) * u_lowerWaveAmp;
         float lowerBoundaryWavy = u_lowerBoundaryBase + lowerWave;
 
-        // Upper
         float upperWave = sin(uv.x * u_upperWaveFreq + u_time * u_upperWaveSpeed) * u_upperWaveAmp;
         float topBoundaryWavy = u_topBoundaryBase + upperWave;
 
-        // Height & extended fade toward the center
         float waveHeight = topBoundaryWavy - lowerBoundaryWavy;
         float extendedLowerFade = u_lowerFadeSoftness + (waveHeight * 0.4);
         float extendedTopFade   = u_topFadeSoftness   + (waveHeight * 0.4);
 
-        float intensityFromBottom = smoothstep_custom(
+        float fromBottom = smoothstep_custom(
           lowerBoundaryWavy - extendedLowerFade * 0.5,
           lowerBoundaryWavy + extendedLowerFade * 0.5,
           uv.y
         );
 
-        float visibilityFromTop = 1.0 - smoothstep_custom(
+        float fromTop = 1.0 - smoothstep_custom(
           topBoundaryWavy - extendedTopFade * 0.5,
           topBoundaryWavy + extendedTopFade * 0.5,
           uv.y
         );
 
-        float finalAlpha = clamp(intensityFromBottom * visibilityFromTop, 0.0, 1.0);
+        float finalAlpha = clamp(fromBottom * fromTop, 0.0, 1.0);
         gl_FragColor = vec4(u_color, finalAlpha);
       }
     `,
     []
   );
 
-  // Uniforms (created once)
+  // Create uniforms once
   const uniforms = useMemo(
     () => ({
       u_time: { value: 0 },
       u_color: { value: new THREE.Color(color) },
-
-      // Lower wave
       u_lowerWaveFreq: { value: lowerWaveFreq },
       u_lowerWaveAmp: { value: lowerWaveAmp },
       u_lowerWaveSpeed: { value: lowerWaveSpeed },
       u_lowerBoundaryBase: { value: lowerBoundaryBase },
       u_lowerFadeSoftness: { value: lowerFadeSoftness },
-
-      // Upper wave
       u_upperWaveFreq: { value: upperWaveFreq },
       u_upperWaveAmp: { value: upperWaveAmp },
       u_upperWaveSpeed: { value: upperWaveSpeed },
@@ -132,31 +126,24 @@ const MovingGradientShader = ({
     ]
   );
 
-  // Drive time via R3F clock (preserves original 2x speed)
-  useFrame(({ clock }) => {
-    if (materialRef.current) {
-      materialRef.current.uniforms.u_time.value = clock.getElapsedTime() * 2.0;
-    }
-  });
-
-  // React to prop changes without recreating material
+  // Apply prop changes without recreating material
   useEffect(() => {
     const u = materialRef.current?.uniforms;
     if (!u) return;
-    // color: accept any valid THREE.Color input
     u.u_color.value.set(color);
-
     u.u_lowerWaveFreq.value = lowerWaveFreq;
     u.u_lowerWaveAmp.value = lowerWaveAmp;
     u.u_lowerWaveSpeed.value = lowerWaveSpeed;
     u.u_lowerBoundaryBase.value = lowerBoundaryBase;
     u.u_lowerFadeSoftness.value = lowerFadeSoftness;
-
     u.u_upperWaveFreq.value = upperWaveFreq;
     u.u_upperWaveAmp.value = upperWaveAmp;
     u.u_upperWaveSpeed.value = upperWaveSpeed;
     u.u_topBoundaryBase.value = topBoundaryBase;
     u.u_topFadeSoftness.value = topFadeSoftness;
+
+    // Render once when uniforms change
+    invalidate();
   }, [
     color,
     lowerWaveFreq,
@@ -169,16 +156,55 @@ const MovingGradientShader = ({
     upperWaveSpeed,
     topBoundaryBase,
     topFadeSoftness,
+    invalidate,
   ]);
 
+  // Throttled animation loop (frameloop="demand" on <Canvas/>)
+  useEffect(() => {
+    let rafId = 0;
+    let running = true;
+    const u = materialRef.current?.uniforms;
+    if (!u) return;
+
+    const interval = 1000 / Math.max(1, fps);
+    let last = performance.now();
+
+    const loop = (now) => {
+      if (!running) return;
+      if (now - last >= interval) {
+        last = now;
+        u.u_time.value += interval / 500; // ~2x original speed (1000/500 = 2)
+        invalidate(); // ask R3F to render this frame only
+      }
+      rafId = requestAnimationFrame(loop);
+    };
+
+    rafId = requestAnimationFrame(loop);
+    return () => {
+      running = false;
+      if (rafId) cancelAnimationFrame(rafId);
+    };
+  }, [fps, invalidate]);
+
+  // Scale plane to viewport; single segment (no vertex deformation needed)
   const planeArgs = useMemo(
-    () => [viewport.width * 1.3, viewport.height * 0.9],
+    () => [viewport.width * 1.3, viewport.height * 0.9, 1, 1],
     [viewport.width, viewport.height]
   );
 
+  // Cleanup (defensive; R3F auto-disposes on unmount)
+  useEffect(() => {
+    return () => {
+      materialRef.current?.dispose?.();
+      geoRef.current?.dispose?.();
+      // Also ensure no lingering render target memory:
+      gl?.renderLists?.dispose?.();
+    };
+  }, [gl]);
+
   return (
     <mesh position={[0, 0.5, 0]}>
-      <planeGeometry args={planeArgs} />
+      <planeGeometry ref={geoRef} args={planeArgs} />
       <shaderMaterial
         ref={materialRef}
         vertexShader={vertexShader}
@@ -191,10 +217,29 @@ const MovingGradientShader = ({
   );
 };
 
+/** ----------------------------- Canvas Shell ----------------------------- */
 const ShaderComp = () => {
   return (
-    <Canvas className="w-full h-full">
-    {/* // <ThreeTunnel.In> */}
+    <Canvas
+      className="w-full h-full"
+      // Render only when we explicitly call `invalidate()` (saves a ton of CPU/GPU)
+      frameloop="demand"
+      // Cap device pixel ratio (lower = less VRAM & bandwidth)
+      dpr={[1, 1.25]}
+      // Use a very cheap WebGL context
+      gl={{
+        antialias: false,        // big win for memory/bandwidth
+        alpha: true,
+        depth: false,            // single mesh; no depth needed
+        stencil: false,
+        powerPreference: "low-power",
+        preserveDrawingBuffer: false,
+        failIfMajorPerformanceCaveat: true,
+      }}
+      // Orthographic can be slightly cheaper for 2D planes; comment out if you prefer perspective
+      orthographic
+      camera={{ position: [0, 0, 5], zoom: 100 }}
+    >
       <MovingGradientShader
         lowerWaveFreq={9}
         lowerWaveAmp={0.05}
@@ -206,10 +251,10 @@ const ShaderComp = () => {
         upperWaveSpeed={0.7}
         topBoundaryBase={0.7}
         topFadeSoftness={0.1}
-        color={"#1726FD"}
+        color="#1726FD"
+        fps={30}   // try 24 or 20 for even lower usage
       />
-    {/* // </ThreeTunnel.In> */}
-     </Canvas>
+    </Canvas>
   );
 };
 
