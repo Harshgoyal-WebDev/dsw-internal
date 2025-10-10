@@ -99,7 +99,7 @@ const Hero = memo(function Hero({ heroData, breadcrumbs }) {
     }
   }, [mob]);
 
-  // keep your existing base hooks (these set up global triggers, etc.)
+  // // keep your existing base hooks (these set up global triggers, etc.)
   headingAnim();
   paraAnim();
   fadeUp();
@@ -383,7 +383,7 @@ const Hero = memo(function Hero({ heroData, breadcrumbs }) {
       </div>
 
       {/* Shader (desktop) */}
-      {!mob ? (
+      {/* {!mob ? (
         <div
           ref={shaderRef}
           className="absolute top-[30%] left-0 h-screen w-screen max-md:hidden shader-container "
@@ -409,10 +409,8 @@ const Hero = memo(function Hero({ heroData, breadcrumbs }) {
             sizes="100vw"
           />
         </div>
-      )}
-      <div className="w-screen h-screen absolute inset-0 bg-background z-[200] hero-overlay"/>
-
-      
+      )} */}
+      <div className="w-screen h-screen absolute inset-0 bg-background z-[200] hero-overlay pointer-events-none opacity-100"/>
 
       {/* Mobile gradient */}
     </section>

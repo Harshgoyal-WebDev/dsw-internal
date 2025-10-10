@@ -3,7 +3,7 @@ import Blogs from "@/components/Homepage/Blogs";
 import Brochure from "@/components/Homepage/Brochure";
 import Connects from "@/components/Homepage/Connects";
 import EnterpriseAI from "@/components/Homepage/EnterpriseAI";
-import Difference from "@/components/Homepage/Difference";
+// import Difference from "@/components/Homepage/Difference";
 import Insuraince from "@/components/Homepage/Insuraince";
 import Recognized from "@/components/Homepage/Recognized";
 import SuccessStories from "@/components/Homepage/SuccessStories";
@@ -41,7 +41,7 @@ export default async function Home() {
         <About />
         <Insuraince />
         <Tour heading={"Take a Lightning Tour"} para={"Your OS for AI- not just for today's use cases, but for tomorrow's vision."} img={'/assets/images/homepage/tour-img.png'}/>
-        <Difference />
+        {/* <Difference /> */}
         <Brochure />
         <UnifyAi />
         <WhyUnify />

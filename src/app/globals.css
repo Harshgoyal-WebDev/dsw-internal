@@ -109,6 +109,20 @@ h4 {
     rgba(255, 255, 255, 0) 66.6%
   );
 }
+/* @keyframes fadeOutHero {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.hero-overlay {
+  opacity: 1;
+  animation: fadeOutHero 1s ease-in-out forwards;
+} */
+
 
 /* Button Text Shadow */
 .buttonTextShadow {
