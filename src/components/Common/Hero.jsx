@@ -1,6 +1,6 @@
 "use client";
 import React, {
-  // Suspense,
+  Suspense,
   useMemo,
   useRef,
   useLayoutEffect,
@@ -22,14 +22,14 @@ import {
   lineAnim,
   paraAnim,
 } from "@/components/Animations/gsapAnimations";
-// import heroGradient from "../../../public/assets/images/homepage/gradient-mobile.png";
+import heroGradient from "../../../public/assets/images/homepage/gradient-mobile.png";
 import { usePathname } from "next/navigation";
 
 gsap.registerPlugin(SplitText);
 
-// const DynamicShaderComp = dynamic(() => import("../BgShader/ShaderComp"), {
-//   ssr: false,
-// });
+const DynamicShaderComp = dynamic(() => import("../BgShader/ShaderComp"), {
+  ssr: false,
+});
 
 const LINE_COUNT = 4;
 
@@ -130,15 +130,11 @@ const Hero = memo(function Hero({ heroData, breadcrumbs }) {
   // Split & reveal (heading + paragraph)
   useLayoutEffect(() => {
     //  if (hasVisited === null) return;
-
-    if (prefersReducedMotion) {
-      // instant show if reduced motion
-      gsap.set([headingRef.current, paraRef.current], {
-        opacity: 1,
-        clearProps: "all",
-      });
-      return;
-    }
+    
+    gsap.set(
+        ".content-container,.shader-container,.bg-lines,.breadcrumbs ",
+        { opacity: 1}
+      );
 
     initSplit();
     if (!headingRef.current) return;
@@ -194,22 +190,7 @@ const Hero = memo(function Hero({ heroData, breadcrumbs }) {
 
   // Shader, breadcrumbs, CTA buttons, imagery, and initial sets
   useLayoutEffect(() => {
-    if (prefersReducedMotion) {
-      gsap.set(
-        [
-          shaderRef.current,
-          linesWrapRef.current,
-          btnsRef.current,
-          mobileGradientRef.current,
-          imgWrapRef.current,
-          crumbsRef.current,
-          headingRef.current,
-          paraRef.current,
-        ],
-        { opacity: 1, clearProps: "all" }
-      );
-      return;
-    }
+    
 
     const ctx = gsap.context(() => {
       // ensure initial visibility (batch)
@@ -304,15 +285,16 @@ const Hero = memo(function Hero({ heroData, breadcrumbs }) {
       className="h-[70vw] w-screen relative bg-background max-md:h-screen max-md:px-[7vw]"
       id="hero"
     >
-      <div className="flex flex-col items-center justify-start w-full h-full pt-[30vh] relative z-[12] max-md:pt-[15vh]">
+      <div className="flex flex-col items-center justify-start w-full h-full pt-[30vh] relative z-[12] max-md:pt-[15vh] opacity-0 content-container">
         <div
           className={`text-center space-y-6 pb-5 max-md:w-[100%] max-md:space-y-[7vw] ${
             heroData.headingWidth || "w-[70%]"
           }`}
         >
           <h1
+          
             ref={headingRef}
-            className="text-100 font-head heroHeadAnim text-[#E8E8E8] opacity-0 will-change-opacity"
+            className="text-100 font-head heroHeadAnim text-[#E8E8E8]"
           >
             {heroData.heading}
           </h1>
@@ -337,7 +319,7 @@ const Hero = memo(function Hero({ heroData, breadcrumbs }) {
 
           <p
             ref={paraRef}
-            className={`text-[#CACACA] font-head mx-auto overflow-hidden opacity-0 ${
+            className={`text-[#CACACA] font-head mx-auto overflow-hidden  ${
               heroData.paraClass ? heroData.paraClass : "w-full"
             }`}
           >
@@ -346,7 +328,7 @@ const Hero = memo(function Hero({ heroData, breadcrumbs }) {
 
           <div
             ref={btnsRef}
-            className={`flex items-center justify-center gap-6 mt-10 max-md:flex-col max-md:gap-[5vw] opacity-0 ${
+            className={`flex items-center justify-center gap-6 mt-10 max-md:flex-col max-md:gap-[5vw]  ${
               heroData.hidebtn ? "hidden" : "flex"
             }`}
           >
@@ -375,7 +357,7 @@ const Hero = memo(function Hero({ heroData, breadcrumbs }) {
       </div>
 
       {breadcrumbs && (
-        <div className="breadcrumbs overflow-hidden w-fit flex items-start justify-start text-[1vw] text-[#CACACA] max-md:text-[2.5vw] max-sm:text-[3.5vw] max-md:h-fit absolute left-[5%] top-[75%] max-md:top-[90%] z-[800]">
+        <div className="breadcrumbs overflow-hidden w-fit flex items-start justify-start text-[1vw] text-[#CACACA] max-md:text-[2.5vw] max-sm:text-[3.5vw] max-md:h-fit absolute left-[5%] top-[75%] max-md:top-[90%] z-[800] opacity-0 breadcrumbs">
           <div ref={crumbsRef} className="flex gap-3">
             {pathArray.map((segment, index) => {
               const isLast = index === pathArray.length - 1;
@@ -393,7 +375,7 @@ const Hero = memo(function Hero({ heroData, breadcrumbs }) {
       {/* Animated Vertical Lines (desktop only) */}
       <div
         ref={linesWrapRef}
-        className="w-screen h-[55vw] absolute top-0 left-0 z-[10] flex justify-center gap-[22vw] max-md:hidden opacity-0"
+        className="w-screen h-[55vw] absolute top-0 left-0 z-[10] flex justify-center gap-[22vw] max-md:hidden bg-lines opacity-0 "
       >
         {lineDelays.map((d, i) => (
           <AnimatedLine key={i} delay={d} />
@@ -401,10 +383,10 @@ const Hero = memo(function Hero({ heroData, breadcrumbs }) {
       </div>
 
       {/* Shader (desktop) */}
-      {/* {!mob ? (
+      {!mob ? (
         <div
           ref={shaderRef}
-          className="absolute top-[30%] left-0 h-screen w-screen max-md:hidden opacity-0 will-change-opacity"
+          className="absolute top-[30%] left-0 h-screen w-screen max-md:hidden shader-container opacity-0"
         >
           <Suspense>
             <DynamicShaderComp />
@@ -427,7 +409,7 @@ const Hero = memo(function Hero({ heroData, breadcrumbs }) {
             sizes="100vw"
           />
         </div>
-      )} */}
+      )}
 
       {/* Mobile gradient */}
     </section>

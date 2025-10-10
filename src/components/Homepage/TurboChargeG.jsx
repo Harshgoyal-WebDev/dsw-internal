@@ -140,7 +140,7 @@ const TurbochargeG = () => {
             />
 
             {/* Dashboard Image with perspective */}
-            <div className="absolute top-0 w-[8.8vw] left-0 z-[1] rounded-[0.5vw] overflow-hidden img-1 turbo-img">
+            <div className="absolute top-0 w-[8.8vw] h-[37vw] left-0 z-[1] rounded-[0.5vw] overflow-hidden img-1 turbo-img">
               <Image
                 src={"/assets/images/homepage/turbocharge/turbo-charge-sidebar.png"}
                 width={120}
@@ -151,7 +151,7 @@ const TurbochargeG = () => {
             </div>
 
             {/* Graph Image */}
-            <div className="absolute w-[37vw] top-[10%] left-[15%] z-[1] img-2 turbo-img">
+            <div className="absolute w-[37vw] h-[17vw] top-[10%] left-[15%] z-[1] img-2 turbo-img">
               <Image
                 src={"/assets/images/homepage/turbocharge/turbo-charge-graph.png"}
                 width={500}
@@ -162,7 +162,7 @@ const TurbochargeG = () => {
             </div>
 
             {/* Details Image */}
-            <div className="absolute w-[37vw] bottom-[7%] left-[15%] z-[1] img-3 turbo-img">
+            <div className="absolute w-[37vw] h-[17vw] bottom-0 left-[15%] z-[1] img-3 turbo-img">
               <Image
                 src={"/assets/images/homepage/turbocharge/turbo-charge-details.png"}
                 width={500}
@@ -173,18 +173,21 @@ const TurbochargeG = () => {
             </div>
 
             {/* Ratings Image */}
-            <div className="absolute right-0 top-[7%] z-[1] img-4 turbo-img">
+            <div className="absolute w-[19vw] h-[34vw] right-0 top-[7%] z-[1] img-4 turbo-img">
               <Image
                 src={"/assets/images/homepage/turbocharge/turbo-charge-ratings.png"}
                 width={200}
                 height={700}
                 fetchPriority="high"
-                className="w-[19vw] h-[35vw] object-contain"
+                className="w-full h-full object-contain"
                 alt="unify-ai-dashboard-ratings"
               />
             </div>
           </div>
+          <div className="w-full h-[50vw] rounded-[2vw] overflow-hidden">
           <Image src={"/assets/images/homepage/turbocharge/dashboard-mob.png"} alt="unify-ai-dashboard-mobile" className="w-full h-full object-cover fadeup hidden max-md:block" width={600} height={400} />
+
+          </div>
 
 
         </div>
