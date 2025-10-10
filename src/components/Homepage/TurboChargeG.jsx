@@ -134,6 +134,7 @@ const TurbochargeG = () => {
               src={"/assets/images/homepage/turbocharge/turbo-charge-base.png"}
               width={1500}
               height={900}
+              fetchPriority="high"
               className="w-full h-full object-contain base-img"
               alt="unify-ai-dashboard-base"
             />

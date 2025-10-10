@@ -6,9 +6,9 @@ import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger);
 import { useLenis } from "lenis/react";
 import dynamic from "next/dynamic";
-const DynamicShaderComp = dynamic(() => import("./BgShader/ShaderComp"), {
-  ssr: false,
-});
+// const DynamicShaderComp = dynamic(() => import("./BgShader/ShaderComp"), {
+//   ssr: false,
+// });
 
 const Loader = () => {
 
@@ -169,7 +169,7 @@ const Loader = () => {
         </div>
       </div>
       <div className="loader-gradient opacity-0 relative z-[1] h-screen translate-y-[10%]">
-        {!mob ? (
+        {/* {!mob ? (
           <div className="absolute top-[-5%] left-0 h-screen w-screen max-sm:hidden">
             <Suspense>
               <DynamicShaderComp color={"0x1726FD"} />
@@ -186,7 +186,7 @@ const Loader = () => {
               height={1080}
             />
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );
