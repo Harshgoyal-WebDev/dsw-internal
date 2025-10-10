@@ -49,7 +49,7 @@ const Blogs = ({posts}) => {
   const swiperRef = useRef(null);
   const blogsRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  console.log(posts)
+  // console.log(posts)
   const handleNext = () => {
     if (swiperRef.current) {
       swiperRef.current.slideNext();

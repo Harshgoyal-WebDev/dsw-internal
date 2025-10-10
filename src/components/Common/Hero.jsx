@@ -1,6 +1,6 @@
 "use client";
 import React, {
-  Suspense,
+  // Suspense,
   useMemo,
   useRef,
   useLayoutEffect,
@@ -22,14 +22,14 @@ import {
   lineAnim,
   paraAnim,
 } from "@/components/Animations/gsapAnimations";
-import heroGradient from "../../../public/assets/images/homepage/gradient-mobile.png";
+// import heroGradient from "../../../public/assets/images/homepage/gradient-mobile.png";
 import { usePathname } from "next/navigation";
 
 gsap.registerPlugin(SplitText);
 
-const DynamicShaderComp = dynamic(() => import("../BgShader/ShaderComp"), {
-  ssr: false,
-});
+// const DynamicShaderComp = dynamic(() => import("../BgShader/ShaderComp"), {
+//   ssr: false,
+// });
 
 const LINE_COUNT = 4;
 
@@ -401,7 +401,7 @@ const Hero = memo(function Hero({ heroData, breadcrumbs }) {
       </div>
 
       {/* Shader (desktop) */}
-      {!mob ? (
+      {/* {!mob ? (
         <div
           ref={shaderRef}
           className="absolute top-[30%] left-0 h-screen w-screen max-md:hidden opacity-0 will-change-opacity"
@@ -427,7 +427,7 @@ const Hero = memo(function Hero({ heroData, breadcrumbs }) {
             sizes="100vw"
           />
         </div>
-      )}
+      )} */}
 
       {/* Mobile gradient */}
     </section>

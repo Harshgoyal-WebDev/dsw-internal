@@ -2,16 +2,16 @@
 import Newsletter from "./Newsletter";
 import { NAVIGATION, SOCIAL_LINKS, SITE_CONFIG } from "@/constants/siteConfig";
 import { Suspense, useEffect, useState } from "react";
-import Image from "next/image";
+// import Image from "next/image";
 import dynamic from "next/dynamic";
 import NavigationLink from "../ui/NavigationLink";
 import SocialLink from "../ui/SocialLink";
 import Logo from "../ui/Logo";
 import ContactInfo from "../ui/ContactInfo";
 
-const DynamicShaderComp = dynamic(() => import("../BgShader/ShaderComp"), {
-  ssr: false,
-});
+// const DynamicShaderComp = dynamic(() => import("../BgShader/ShaderComp"), {
+//   ssr: false,
+// });
 
 const Footer = () => {
   const [mob, setMob] = useState(false);
@@ -27,7 +27,7 @@ const Footer = () => {
   return (
     <>
       <footer className="relative overflow-hidden container !pb-0" id="footer">
-        {!mob ? (
+        {/* {!mob ? (
           <div className="absolute top-[30%] left-0 h-screen w-screen max-md:hidden">
             <Suspense>
               <DynamicShaderComp />
@@ -43,7 +43,7 @@ const Footer = () => {
               height={1080}
             />
           </div>
-        )}
+        )} */}
 
         <div className="relative z-[20]">
           <div className="rounded-[2.2vw] background-glass-diff border border-white/30 px-12 py-[5%] flex justify-between max-md:px-[0vw] max-md:py-[15%] max-md:rounded-[5vw] max-sm:rounded-[10vw] max-md:flex-col max-md:items-center max-md:justify-center max-md:text-center">
