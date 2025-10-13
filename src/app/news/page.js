@@ -60,8 +60,8 @@ const heroData = {
 };
 
 const footerCTAData = {
-  heading: "Looking to write about us or request an interview? ",
-  para: "Download our press kit or reach out directly to our media team. ",
+  heading: "Looking to write about us or request an interview? ",
+  para: "Download our press kit or reach out directly to our media team. ",
   btnText1: "Download Press Kit",
   btnLink1: "/#",
   btnText2: "Contact",

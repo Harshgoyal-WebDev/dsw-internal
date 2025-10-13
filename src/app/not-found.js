@@ -7,16 +7,16 @@ import { Suspense, useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import dynamic from "next/dynamic";
-// const DynamicShaderComp = dynamic(
-//   () => import("@/components/BgShader/ShaderComp"),
-//   {
-//     ssr: false,
-//   }
-// );
+const DynamicShaderComp = dynamic(
+  () => import("@/components/BgShader/ShaderComp"),
+  {
+    ssr: false,
+  }
+);
 
 export default function NotFoundPage() {
-  // const ShaderRef = useRef();
-  // const [mob, setMob] = useState(false);
+  const ShaderRef = useRef();
+  const [mob, setMob] = useState(false);
   useGSAP(() => {
     gsap.set(".not-found-para", {
       opacity: 1,
@@ -110,7 +110,7 @@ export default function NotFoundPage() {
             </Copy>
           </div>
         </div>
-        {/* {!mob ? (
+        {!mob ? (
           <div
             ref={ShaderRef}
             className="absolute top-[30%] left-0 h-screen w-screen max-sm:hidden "
@@ -130,7 +130,7 @@ export default function NotFoundPage() {
               className="h-full w-full"
             />
           </div>
-        )} */}
+        )}
       </section>
     </>
   );

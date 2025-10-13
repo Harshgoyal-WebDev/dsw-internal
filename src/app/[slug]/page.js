@@ -1,4 +1,3 @@
-
 import BlogContentWp from '@/components/BlogDetailPage/BlogContentWp'
 import Hero from '@/components/BlogDetailPage/Hero'
 import RelatedArticles from '@/components/BlogDetailPage/RelatedArticles'

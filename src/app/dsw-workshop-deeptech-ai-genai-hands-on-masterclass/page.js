@@ -121,7 +121,7 @@ const sessionsData=[
       },
       {
         heading:"",
-        para:"Applying strategies to verify Data drift and Model drift of ML/DL models. "
+        para:"Applying strategies to verify Data drift and Model drift of ML/DL models. "
       },
       {
         heading:"",
@@ -183,7 +183,7 @@ const sessionsData=[
       },
       {
         heading:"",
-        para:"Applying strategies to verify Data drift and Model drift of ML/DL models. "
+        para:"Applying strategies to verify Data drift and Model drift of ML/DL models. "
       },
       {
         heading:"",
@@ -253,7 +253,7 @@ points:[
 }
 
 const footerCTAData={
-  heading:"Take a lightning tour of the Enterprise AI Platform ",
+  heading:"Take a lightning tour of the Enterprise AI Platform ",
   para:"Discover how UnifyAI can accelerate your AI/ML and GenAI initiatives with seamless deployment, scalability, and security.",
   btnText1:"Book a demo",
   btnLink1:"/#",
