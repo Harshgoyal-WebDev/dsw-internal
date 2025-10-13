@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Header from "../Header/index";
+// import Header from "../Header/index";
 import Footer from "../Footer";
 import KeepScrolling from "../KeepScrolling";
 import {
@@ -10,7 +10,11 @@ import {
   WebsiteJsonLd,
 } from "@/lib/json-ld";
 import Loader from "../Loader";
+import dynamic from "next/dynamic";
 // import CanvasTunnel from "../Common/CanvasTunnel";
+const Header = dynamic(() => import("../Header/index"), {
+  ssr: true,
+});
 
 const Layout = ({ children }) => {
   return (

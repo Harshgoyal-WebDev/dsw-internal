@@ -19,7 +19,6 @@ import FooterCTA from "@/components/Common/FooterCta";
 import { FAQJSONLD, WebpageJsonLd } from "@/lib/json-ld";
 import { getAllPosts } from "@/lib/posts";
 import OldHero from "@/components/Common/Hero";
-// import Hero from "@/components/Common/Hero";
 import dynamic from "next/dynamic";
 const Brochure = dynamic(() => import("@/components/Homepage/Brochure"), {
   ssr: true,
