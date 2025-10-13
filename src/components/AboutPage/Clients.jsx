@@ -17,8 +17,10 @@ export default function Clients() {
                 src={client.src}
                 width={100}
                 height={100}
+                quality={50}
                 className="h-full w-full object-contain"
                 alt={client.name}
+                loading="lazy"
               />
             </div>
           ))}

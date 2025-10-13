@@ -137,7 +137,7 @@ const Card = React.memo(function Card({ logos, intervalMs = 3000 }) {
             height={200}
             alt={`logo-${i}`}
             className="w-full h-full object-contain"
-            priority={i === 0}
+            loading="lazy"
           />
         </div>
       ))}

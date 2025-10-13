@@ -12,7 +12,7 @@ const nextConfig = {
     minimumCacheTTL: 31536000, // 1 year
 
     // 👇 Add this block
-    qualities: [75, 85, 90, 100],
+    qualities: [50, 75, 85, 90, 100],
     remotePatterns: [
       {
         protocol: "https",

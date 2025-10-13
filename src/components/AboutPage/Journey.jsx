@@ -13,21 +13,19 @@ export default function Journey() {
   const wholeSliderRef = useRef(null);
 
   useGSAP(() => {
-
-     const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: "#journey",
-          start: "2% top",
-          end: "97% bottom",
-          scrub: true,
-          // markers: true,
-        },
-        defaults: {
-          ease: "none",
-        },
-      });
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#journey",
+        start: "2% top",
+        end: "97% bottom",
+        scrub: true,
+        // markers: true,
+      },
+      defaults: {
+        ease: "none",
+      },
+    });
     if (globalThis.innerWidth >= 642 && globalThis.innerWidth <= 1024) {
-      
       tl.fromTo(
         wholeSliderRef.current,
         {
@@ -49,7 +47,6 @@ export default function Journey() {
         },
       });
     } else if (globalThis.innerWidth < 642) {
-     
       tl.fromTo(
         wholeSliderRef.current,
         {
@@ -71,7 +68,6 @@ export default function Journey() {
         },
       });
     } else {
-     
       tl.fromTo(
         wholeSliderRef.current,
         {
@@ -137,7 +133,7 @@ export default function Journey() {
       year,
       startPos,
       endPos,
-      markerOptions = false,
+      markerOptions = false
     ) => {
       const timeline = gsap.timeline({
         scrollTrigger: {
@@ -193,8 +189,7 @@ export default function Journey() {
       createYearTimeline("2023", 59, 73);
       createYearTimeline("2024", 68, 79);
       createYearTimeline("2025", 75, 86);
-    }
-    else if(globalThis.innerWidth >= 642 && globalThis.innerWidth <= 1024){
+    } else if (globalThis.innerWidth >= 642 && globalThis.innerWidth <= 1024) {
       createYearTimeline("2018", 16, 27);
       createYearTimeline("2019", 24, 36);
       createYearTimeline("2020", 32, 44);
@@ -203,9 +198,7 @@ export default function Journey() {
       createYearTimeline("2023", 56, 68);
       createYearTimeline("2024", 64, 76);
       createYearTimeline("2025", 72, 84);
-    }
-    
-    else {
+    } else {
       createYearTimeline("2018", 14, 31);
       createYearTimeline("2019", 21, 38);
       createYearTimeline("2020", 32, 49);
@@ -229,11 +222,10 @@ export default function Journey() {
     };
   });
 
-    const handleSkip = () => {
+  const handleSkip = () => {
     const next = document.getElementById("tech-partners");
     if (next) next.scrollIntoView({ behavior: "smooth" });
   };
-
 
   return (
     <section
@@ -247,11 +239,13 @@ export default function Journey() {
         >
           <div className="h-[100%]  max-sm:w-[70vw] max-md:h-[40vh] max-sm:h-[80vh] max-md:w-[12.2%]  journey-img w-[27vw] overflow-hidden rounded-[2vw] fadeup max-sm:rounded-[5vw] max-md:rounded-[3vw]">
             <Image
-              src={"/assets/images/about/journey.jpg"}
+              src="/assets/images/about/journey.jpg"
               alt="journey"
-              width={500}
-              height={500}
-              className="h-full w-full object-cover"
+              fill 
+              sizes="(max-width: 640px) 70vw, (max-width: 768px) 12vw, 27vw"
+              quality={50} // reduce file size
+              className="object-cover rounded-[2vw] max-sm:rounded-[5vw] max-md:rounded-[3vw]"
+             
             />
           </div>
           <div className="w-[100%] relative h-full max-md:h-fit ">
@@ -345,41 +339,40 @@ export default function Journey() {
           </div>
         </div>
         <div className="absolute bottom-[7%] right-[3%] max-md:bottom-[3%]">
-           <button
-              className="round px-6 py-2 rounded-full flex items-center cursor-pointer gap-2 text-white-300 font-light hover:scale-95 text-[1vw] max-sm:text-[4.2vw] max-md:text-[2.7vw] transition duration-500 ease-out"
-              onClick={handleSkip}
-            >
-              Skip Timeline
-              <div className="-rotate-90 text-white-300 flex items-center justify-center gap-0 w-[0.8vw] h-full max-sm:w-[3vw] max-md:w-[1.8vw]">
-                <svg
-                  className="arrow primera next"
-                  width="8"
-                  height="15"
-                  viewBox="0 0 8 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7.50293 14.46L2.50293 7.45996L7.50293 0.459961H5.05293L0.0529289 7.45996L5.05293 14.46H7.50293Z"
-                    fill="currentColor"
-                  />
-                </svg>
-                <svg
-                  className="arrow segunda next"
-                  width="8"
-                  height="15"
-                  viewBox="0 0 8 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7.50293 14.46L2.50293 7.45996L7.50293 0.459961H5.05293L0.0529289 7.45996L5.05293 14.46H7.50293Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </div>
-            </button>
-
+          <button
+            className="round px-6 py-2 rounded-full flex items-center cursor-pointer gap-2 text-white-300 font-light hover:scale-95 text-[1vw] max-sm:text-[4.2vw] max-md:text-[2.7vw] transition duration-500 ease-out"
+            onClick={handleSkip}
+          >
+            Skip Timeline
+            <div className="-rotate-90 text-white-300 flex items-center justify-center gap-0 w-[0.8vw] h-full max-sm:w-[3vw] max-md:w-[1.8vw]">
+              <svg
+                className="arrow primera next"
+                width="8"
+                height="15"
+                viewBox="0 0 8 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.50293 14.46L2.50293 7.45996L7.50293 0.459961H5.05293L0.0529289 7.45996L5.05293 14.46H7.50293Z"
+                  fill="currentColor"
+                />
+              </svg>
+              <svg
+                className="arrow segunda next"
+                width="8"
+                height="15"
+                viewBox="0 0 8 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.50293 14.46L2.50293 7.45996L7.50293 0.459961H5.05293L0.0529289 7.45996L5.05293 14.46H7.50293Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+          </button>
         </div>
       </div>
     </section>

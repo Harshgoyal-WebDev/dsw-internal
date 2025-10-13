@@ -54,7 +54,7 @@ export default function page() {
       <WebpageJsonLd metadata={metadata} />
       <FAQJSONLD faqs={faqData} />
       <Layout>
-        {/* <Hero heroData={heroData} /> */}
+        <Hero heroData={heroData} />
         <About />
         <Journey />
         <TechPartners />
