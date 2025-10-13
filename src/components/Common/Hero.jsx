@@ -86,9 +86,9 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
         ? new SplitText(paraRef.current, { type: "lines", mask: "lines" })
         : null;
 
-      const delayLines = heroData.homepage ? (hasVisited ? 0.7 : 4.5) : 0.7;
+      const delayLines = hasVisited ? 0.7 : 4.8;
 
-      const delayPara = heroData.homepage ? (hasVisited ? 1.8 : 5.2) : 1.8;
+      const delayPara = hasVisited ? 1.8 : 5.9;
 
       gsap.fromTo(
         lines,
@@ -144,8 +144,8 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
           {
             opacity: 1,
             yPercent: 0,
-            duration: 1,
-            delay: 1.5,
+            duration: 1.5,
+            delay: hasVisited ? 1.8 : 5.9,
             ease: "power3.out",
           }
         );
@@ -161,7 +161,7 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
         { y: 0, opacity: 1, duration: 1, ease: "power3.out", delay: 1.5 }
       );
 
-      const ctaDelay = heroData.homepage ? (hasVisited ? 1.8 : 5.8) : 1.8;
+      const ctaDelay = hasVisited ? 2 : 6.1;
       if (btnsRef.current) {
         const items = btnsRef.current.querySelectorAll(".ctaBtn");
         gsap.fromTo(

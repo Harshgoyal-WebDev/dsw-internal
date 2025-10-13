@@ -30,7 +30,7 @@ export const SITE_CONFIG = {
 export const NAVIGATION = [
   { text: "Home", href: "/", id: "home" },
   { text: "Product", href: "#", id: "product" , children:[
-    { text: "Unify AI", href :"/unifyai" , id:"products-unify"},
+    { text: "Unify AI", href :"/unify" , id:"products-unify"},
     { text: "Insuraince", href :"/insuraince" , id:"products-insuraince"}
   ]},
   { text: "Solutions", href: "#", id: "solutions" , children:[
@@ -39,15 +39,15 @@ export const NAVIGATION = [
   ]},
   { text: "About Us", href: "/about", id: "about" },
   { text: "Resources", href: "#", id: "resources" ,children:[
-    { text: "Blogs", href :"/blogs" , id:"resources-blog"},
-    { text: "News And PR", href :"/news" , id:"resources-news"},
-    { text: "Videos", href :"/product-videos" , id:"resources-videos"},
-    { text: "Webinars And Events", href :"/webinars-and-events" , id:"resources-webinars"},
-    { text: "AI for insurance workshop", href :"/ai-insurance-workshops" , id:"resources-workshops"},
-    { text: "AI & GenAI masterclass", href :"/dsw-workshop-deeptech-ai-genai-hands-on-masterclass" , id:"resources-workshops"},
-    { text: "Whitepapers", href :"/whitepapers" , id:"resources-whitepapers"},
+    { text: "Blogs", href :"/resources/blog" , id:"resources-blog"},
+    { text: "News And PR", href :"/resources/news-and-pr" , id:"resources-news"},
+    { text: "Videos", href :"/resources/product-videos" , id:"resources-videos"},
+    { text: "Webinars And Events", href :"/resources/webinars-and-events" , id:"resources-webinars"},
+    { text: "AI for insurance workshop", href :"/resources/webinars-and-workshops/ai-for-insurance-workshop" , id:"resources-workshops"},
+    { text: "AI & GenAI masterclass", href :"/resources/webinars-and-workshops/ai-and-gen-ai-masterclass" , id:"resources-workshops"},
+    { text: "Whitepapers", href :"/resources/whitepapers" , id:"resources-whitepapers"},
   ]},
-  { text: "Pilot Program", href: "/production-pilot", id: "pilot" },
+  { text: "Pilot Program", href: "/pilot-program", id: "pilot" },
   { text: "Contact", href: "/contact-us", id: "contact" }
 ];
 
