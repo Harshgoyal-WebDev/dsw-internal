@@ -1,4 +1,5 @@
-import React from 'react'
+import gsap from 'gsap';
+import React, { memo, useLayoutEffect } from 'react'
 
 /** GSAP-only animated vertical line */
 const AnimatedLine = memo(function AnimatedLine({ delay }) {

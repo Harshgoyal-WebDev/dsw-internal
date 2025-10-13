@@ -6,7 +6,7 @@ import { SplitText } from "gsap/SplitText";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import {fadeIn,fadeUp,headingAnim,lineAnim,paraAnim,} from "@/components/Animations/gsapAnimations";
-import heroGradient from "../../../../public/assets/images/homepage/gradient-mobile.png"
+// import heroGradient from "../../../../public/assets/images/homepage/gradient-mobile.png"
 import PrimaryButton from "@/components/Button/PrimaryButton";
 import WhiteButton from "@/components/Button/WhiteButton";
 import { initSplit , SplitInLineOnly } from "@/components/splitTextUtils";
@@ -320,7 +320,7 @@ const Hero = memo(function Hero({ heroData, breadcrumbs }) {
             {!mob ? (
                 <div
                     ref={shaderRef}
-                    className="absolute top-[30%] left-0 h-screen w-screen max-md:hidden opacity-0 will-change-opacity"
+                    className="absolute top-[30%] left-0 h-screen w-screen max-md:hidden "
                 >
                     <Suspense>
                         <DynamicShaderComp />
@@ -329,18 +329,17 @@ const Hero = memo(function Hero({ heroData, breadcrumbs }) {
             ) : (
                 <div
                     ref={mobileGradientRef}
-                    className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-md:block opacity-0 will-change-opacity"
+                    className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-md:block "
                 >
-                    <Image
+                    {/* <Image
                         src={heroGradient}
                         placeholder="blur"
-                        loading="lazy"
+                        fetchPriority="high"
                         alt="shader-gradient-mobile"
                         className="w-full h-full object-cover"
                         width={600}
                         height={1080}
-                        sizes="100vw"
-                    />
+                    /> */}
                 </div>
             )}
 

@@ -14,14 +14,33 @@ const Loader = () => {
 
   const [hidden, setIsHidden] = useState(false);
   const [mob, setMob] = useState(false);
-  //  const [showLoader, setShowLoader] = useState(false);
+   const [showLoader, setShowLoader] = useState(false);
 
   const lenis = useLenis();
+  // console.log(lenis&&lenis._isStopped)
 
   useEffect(() => {
-    lenis&&lenis.stop()
-    console.log(lenis)
-  if (lenis) {
+    const hasVisited = sessionStorage.getItem("hasVisited");
+    if (!hasVisited) {
+      setShowLoader(true);
+      sessionStorage.setItem("hasVisited", "true");
+    }
+  }, []);
+
+  useEffect(() => {
+  if(showLoader){
+    const alreadyShown = sessionStorage.getItem("loaderShown");
+
+    if (alreadyShown) {
+      setShowLoader(false); 
+      if (lenis) lenis.start();
+      return;
+    }
+
+    if (lenis) {
+      lenis._isStopped=true;
+      lenis.stop()
+
       const ctx = gsap.context(() => {
         const tl = gsap.timeline();
         const steps = 5; 
@@ -86,9 +105,11 @@ const Loader = () => {
       });
       return () => ctx.revert();
     }
-  }, [lenis]);
+
+  }
+  }, [lenis,showLoader]);
   useEffect(() => {
-    // if (!showLoader) return;
+    if (!showLoader) return;
     if (globalThis.innerWidth > 1024) {
       const ctx = gsap.context(() => {
         gsap.to(".loader-gradient", {
@@ -119,11 +140,11 @@ const Loader = () => {
     }
   }, [mob]);
 
-  // if (!showLoader) return null;
+  if (!showLoader) return null;
 
   return (
     <div
-      className={`w-screen h-screen fixed top-0 left-0 z-[9999] text-[17vw] overflow-hidden max-sm:text-[25vw] ${hidden ? "hidden" : ""}`}
+      className={`w-screen h-screen fixed top-0 left-0 z-[9999] bg-background text-[17vw] overflow-hidden max-sm:text-[25vw] ${hidden ? "hidden" : ""}`}
       id="loader"
     >
       <div className="w-fit h-fit flex sequence-container relative z-[2] font-head font-medium">
@@ -148,7 +169,7 @@ const Loader = () => {
         </div>
       </div>
       <div className="loader-gradient opacity-0 relative z-[1] h-screen translate-y-[10%]">
-        {/* {!mob ? (
+        {!mob ? (
           <div className="absolute top-[-5%] left-0 h-screen w-screen max-sm:hidden">
             <Suspense>
               <DynamicShaderComp color={"0x1726FD"} />
@@ -165,7 +186,7 @@ const Loader = () => {
               height={1080}
             />
           </div>
-        )} */}
+        )}
       </div>
     </div>
   );

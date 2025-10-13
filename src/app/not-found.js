@@ -3,20 +3,20 @@ import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Copy from "@/components/Animations/Copy";
-import { Suspense, useRef } from "react";
-// import ShaderComp from "@/components/BgShader/ShaderComp";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import dynamic from "next/dynamic";
-const DynamicShaderComp = dynamic(
-  () => import("@/components/BgShader/ShaderComp"),
-  {
-    ssr: false,
-  }
-);
+// const DynamicShaderComp = dynamic(
+//   () => import("@/components/BgShader/ShaderComp"),
+//   {
+//     ssr: false,
+//   }
+// );
 
 export default function NotFoundPage() {
-  const ShaderRef = useRef();
+  // const ShaderRef = useRef();
+  // const [mob, setMob] = useState(false);
   useGSAP(() => {
     gsap.set(".not-found-para", {
       opacity: 1,
@@ -62,10 +62,17 @@ export default function NotFoundPage() {
       }
     );
   });
+  useEffect(() => {
+    if (globalThis.innerWidth <= 1024) {
+      setMob(true);
+    } else {
+      setMob(false);
+    }
+  }, [mob]);
   return (
     <>
       <Header />
-      <section className="w-screen container relative h-screen  max-sm:pb-0 bg-background overflow-hidden">
+      <section className="w-screen container relative h-screen  max-sm:pb-0  overflow-hidden">
         <div
           className={`h-full w-full flex-col flex items-center justify-center z-[99] relative text-foreground text-center`}
         >
@@ -103,25 +110,27 @@ export default function NotFoundPage() {
             </Copy>
           </div>
         </div>
-        <div className="absolute top-0 left-0 h-full w-screen hidden max-sm:block max-md:block mobile-shader opacity-0">
-          <Image
-            src={"/assets/images/homepage/gradient-mobile.png"}
-            height={852}
-            width={393}
-            alt="hero-bg"
-            className="h-full w-full"
-          />
-        </div>
-
-        <div
-          ref={ShaderRef}
-          className="absolute top-[30%] left-0 h-screen w-screen max-sm:hidden "
-        >
-          <Suspense>
-            <DynamicShaderComp />
-            {/* <ShaderComp /> */}
-          </Suspense>
-        </div>
+        {/* {!mob ? (
+          <div
+            ref={ShaderRef}
+            className="absolute top-[30%] left-0 h-screen w-screen max-sm:hidden "
+          >
+            <Suspense>
+              <DynamicShaderComp />
+            </Suspense>
+          </div>
+        ) : (
+          <div className="absolute top-0 left-0 h-full w-screen hidden max-sm:block max-md:block mobile-shader">
+            <Image
+              src={"/assets/images/homepage/gradient-mobile.png"}
+              height={852}
+              fetchPriority="high"
+              width={393}
+              alt="hero-bg"
+              className="h-full w-full"
+            />
+          </div>
+        )} */}
       </section>
     </>
   );
