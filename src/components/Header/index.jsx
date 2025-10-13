@@ -103,7 +103,7 @@ const Header = () => {
         y: 0,
         duration: 1,
         ease: "power1.out",
-        delay: pathname === "/" ? (hasVisited ? 1 : 6) : 1,
+        delay: hasVisited ? 2 : 6.1,
       }
     );
   }, [pathname]);
