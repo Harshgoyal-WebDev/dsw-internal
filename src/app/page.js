@@ -1,6 +1,6 @@
 import About from "@/components/Homepage/About";
 import Blogs from "@/components/Homepage/Blogs";
-import Brochure from "@/components/Homepage/Brochure";
+// import Brochure from "@/components/Homepage/Brochure";
 import Connects from "@/components/Homepage/Connects";
 import EnterpriseAI from "@/components/Homepage/EnterpriseAI";
 import Difference from "@/components/Homepage/Difference";
@@ -18,9 +18,12 @@ import WhyUnifyMobile from "@/components/Homepage/WhyUnifyMobile";
 import FooterCTA from "@/components/Common/FooterCta";
 import { FAQJSONLD, WebpageJsonLd } from "@/lib/json-ld";
 import { getAllPosts } from "@/lib/posts";
-// import OldHero from "@/components/Common/Hero";
+import OldHero from "@/components/Common/Hero";
 // import Hero from "@/components/Common/Hero";
-
+import dynamic from "next/dynamic";
+const Brochure = dynamic(() => import("@/components/Homepage/Brochure"), {
+  ssr: true,
+});
 
 
 export const metadata = {
@@ -38,13 +41,14 @@ export default async function Home() {
      <WebpageJsonLd metadata={metadata}/>
     <FAQJSONLD faqs={faqData}/>
       <Layout>
-        {/* <OldHero heroData={heroData}/> */}
+        <OldHero heroData={heroData}/>
         <TurbochargeG />
         <About />
         <Insuraince />
         <Tour heading={"Take a Lightning Tour"} para={"Your OS for AI- not just for today's use cases, but for tomorrow's vision."} img={'/assets/images/homepage/tour-img.png'}/>
         <Difference />
-        <Brochure />
+        {/* <Brochure /> */}
+        <Brochure/>
         <UnifyAi />
         <WhyUnify />
         <WhyUnifyMobile />
