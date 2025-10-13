@@ -1,11 +1,12 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback, useMemo } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import Copy from "../Animations/Copy";
 
+// Use useMemo for ALL_LOGOS for stability (no effect here but for structure similarity).
 const ALL_LOGOS = [
- "/assets/images/clients/bon-prix-2.png",
+  "/assets/images/clients/bon-prix-2.png",
   "/assets/images/clients/canara-hsbc.png",
   "/assets/images/clients/ciek.png",
   "/assets/images/clients/craft-silicon.png",
@@ -19,8 +20,9 @@ const ALL_LOGOS = [
   "/assets/images/clients/sodexo.png",
 ];
 
+// Fastest in-place shuffle (Fisher-Yates)
 const shuffle = (arr) => {
-  const a = [...arr];
+  const a = arr.slice();
   for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [a[i], a[j]] = [a[j], a[i]];
@@ -28,73 +30,64 @@ const shuffle = (arr) => {
   return a;
 };
 
+// Group into six as equally as possible
 const make6GroupsOf3to4 = (logos) => {
   const shuffled = shuffle(logos);
-  const groups = [[], [], [], [], [], []];
-
-  let i = 0;
-  const give = (limit) => {
-    let moved = true;
-    while (moved && i < shuffled.length) {
-      moved = false;
-      for (let g = 0; g < 6 && i < shuffled.length; g++) {
-        if (groups[g].length < limit) {
-          groups[g].push(shuffled[i++]);
-          moved = true;
-        }
-      }
-    }
-  };
-
-  give(1); 
-  give(3);
-  give(4);
-
-
-  let g = 0;
-  while (i < shuffled.length) groups[g++ % 6].push(shuffled[i++]);
-
+  const n = shuffled.length;
+  const base = Math.floor(n / 6);
+  const remainder = n % 6;
+  let idx = 0;
+  const groups = Array.from({ length: 6 }, (_, g) => {
+    const len = base + (g < remainder ? 1 : 0);
+    const group = shuffled.slice(idx, idx + len);
+    idx += len;
+    return group;
+  });
   return groups;
 };
 
-
-const randomDirection = () => {
-  if (Math.random() < 0.5) return { x: Math.random() < 0.5 ? -270 : 270, y: 0 };
-  return { y: Math.random() < 0.5 ? -200 : 200, x: 0 };
-};
+// Avoid recreating direction objects
+const randomDirection = () => (Math.random() < 0.5
+  ? { x: Math.random() < 0.5 ? -270 : 270, y: 0 }
+  : { x: 0, y: Math.random() < 0.5 ? -200 : 200 }
+);
 
 const getRandomIndex = (exclude, length) => {
   if (length <= 1) return 0;
   let idx;
-  do { idx = Math.floor(Math.random() * length); } while (idx === exclude);
+  do {
+    idx = Math.floor(Math.random() * length);
+  } while (idx === exclude);
   return idx;
 };
 
-const Card = ({ logos, intervalMs = 3000 }) => {
+const Card = React.memo(function Card({ logos, intervalMs = 3000 }) {
   const imgRefs = useRef([]);
-
   const currentIndex = useRef(0);
   const nextIndex = useRef(logos.length > 1 ? 1 : 0);
   const [isInitialized, setIsInitialized] = useState(false);
 
   useEffect(() => {
-    if (!logos.length) return;
+    if (!logos.length) {
+      setIsInitialized(false);
+      return;
+    }
     currentIndex.current = Math.floor(Math.random() * logos.length);
     nextIndex.current = getRandomIndex(currentIndex.current, logos.length);
 
     const imgs = imgRefs.current;
-
-    imgs.forEach((img, i) => {
-      if (!img) return;
-      if (i === currentIndex.current) {
+    for (let i = 0; i < imgs.length; ++i) {
+      const img = imgs[i];
+      if (!img) continue;
+      if (i === currentIndex.current)
         gsap.set(img, { x: 0, y: 0, opacity: 1 });
-      } else {
+      else
         gsap.set(img, { ...randomDirection(), opacity: 0 });
-      }
-    });
+    }
 
     setIsInitialized(true);
 
+    let id;
     const animateNext = () => {
       const curr = imgs[currentIndex.current];
       const next = imgs[nextIndex.current];
@@ -102,22 +95,28 @@ const Card = ({ logos, intervalMs = 3000 }) => {
 
       const outDir = randomDirection();
       let inDir;
-      do { inDir = randomDirection(); }
-      while (
+      do {
+        inDir = randomDirection();
+      } while (
         (inDir.x !== 0 && inDir.x === outDir.x) ||
         (inDir.y !== 0 && inDir.y === outDir.y)
       );
 
       gsap.to(curr, { ...outDir, opacity: 0, duration: 1, ease: "power2.out" });
-      gsap.fromTo(next, { ...inDir, opacity: 0 }, { x: 0, y: 0, opacity: 1, duration: 1, ease: "power2.out" });
+      gsap.fromTo(
+        next,
+        { ...inDir, opacity: 0 },
+        { x: 0, y: 0, opacity: 1, duration: 1, ease: "power2.out" }
+      );
 
       currentIndex.current = nextIndex.current;
       nextIndex.current = getRandomIndex(currentIndex.current, logos.length);
     };
+    id = setInterval(animateNext, intervalMs);
+    animateNext();
 
-    const id = setInterval(animateNext, intervalMs);
-    animateNext(); // start immediately
     return () => clearInterval(id);
+    // eslint-disable-next-line
   }, [logos, intervalMs]);
 
   return (
@@ -126,7 +125,7 @@ const Card = ({ logos, intervalMs = 3000 }) => {
         <div
           key={`${src}-${i}`}
           className="absolute h-[6vw] w-auto max-md:h-[15vw]"
-          ref={(el) => (imgRefs.current[i] = el)}
+          ref={el => imgRefs.current[i] = el}
           style={{
             opacity: isInitialized ? undefined : 0,
             visibility: isInitialized ? "visible" : "hidden",
@@ -145,14 +144,17 @@ const Card = ({ logos, intervalMs = 3000 }) => {
       {/* {!logos.length && <div className="text-white/60 text-sm">No logos</div>} */}
     </div>
   );
-};
+});
 
 const TechPartners = () => {
-  const [groups, setGroups] = useState(null);
+  const [groups, setGroups] = useState(() => make6GroupsOf3to4(ALL_LOGOS));
 
+  // Only one shuffle on mount, avoid effect rerun
   useEffect(() => {
     setGroups(make6GroupsOf3to4(ALL_LOGOS));
   }, []);
+
+  const emptyGroups = useMemo(() => Array.from({ length: 6 }, () => []), []);
 
   return (
     <section className="flex justify-start items-start container max-md:flex-col" id="tech-partners">
@@ -171,7 +173,7 @@ const TechPartners = () => {
 
       {/* While groups are null during SSR/first paint, render empty cards (no images) to keep markup stable */}
       <div className="h-full w-[60%] grid grid-cols-3 fadeup gap-[1vw] max-md:w-full max-md:grid-cols-2 max-md:gap-[3vw]">
-        {(groups ?? [[], [], [], [], [], []]).slice(0, 6).map((logos, i) => (
+        {(groups ?? emptyGroups).slice(0, 6).map((logos, i) => (
           <Card key={i} logos={logos} />
         ))}
       </div>

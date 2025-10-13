@@ -1,18 +1,27 @@
 import About from '@/components/AboutPage/About'
 import Clients from '@/components/AboutPage/Clients'
-import Experts from '@/components/AboutPage/Experts'
+// import Experts from '@/components/AboutPage/Experts'
 import Guiders from '@/components/AboutPage/Guiders'
 import Faqs from '@/components/Common/FAQs'
 import FooterCTA from '@/components/Common/FooterCta'
-import Recognized from '@/components/Homepage/Recognized'
+// import Recognized from '@/components/Homepage/Recognized'
 import Layout from '@/components/Layout'
 import React from 'react'
-import TechPartners from '@/components/AboutPage/TechPartners'
+import dynamic from 'next/dynamic'
 import Journey from '@/components/AboutPage/Journey'
 import { FAQJSONLD, WebpageJsonLd } from '@/lib/json-ld'
 import { homepage } from '@/lib/util'
 import { getPageMetadata } from '@/config/metadata'
 import Hero from '@/components/Common/Hero'
+const TechPartners = dynamic(() => import('@/components/AboutPage/TechPartners'), {
+  ssr: true,
+})
+const Experts = dynamic(() => import('@/components/AboutPage/Experts'), {
+  ssr: true,
+})
+const Recognized = dynamic(() => import('@/components/Homepage/Recognized'), {
+  ssr: true,
+})
 
 export const metadata = getPageMetadata({
   title: "About DSW UnifyAI - Deep-Tech AI for Enterprises",

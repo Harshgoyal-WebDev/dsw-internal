@@ -4,19 +4,6 @@ import React from "react";
 
 
 export default function Clients() {
-  // useGSAP(() => {
-  //   gsap.from(".clients-logo", {
-  //     yPercent: 40,
-  //     opacity: 0,
-  //     stagger: 0.1,
-  //     duration: 2,
-  //     ease: "power3.out",
-  //     scrollTrigger: {
-  //       trigger: ".clients-logo",
-  //       start: "top 80%",
-  //     },
-  //   });
-  // });
   return (
     <section id="clients" className="container h-fit space-y-[5vw] w-full overflow-hidden">
       <h2 className="w-full text-center headingAnim text-60">
