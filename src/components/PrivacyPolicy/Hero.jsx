@@ -14,9 +14,7 @@ import Image from "next/image";
 
 export default function Hero({ breadcrumbs }) {
   headingAnim();
-  paraAnim();
   fadeUp();
-  fadeIn();
   lineAnim();
   useEffect(() => {
     initSplit();
