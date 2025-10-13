@@ -2,7 +2,7 @@
 import Newsletter from "./Newsletter";
 import { NAVIGATION, SOCIAL_LINKS, SITE_CONFIG } from "@/constants/siteConfig";
 import { Suspense, useEffect, useState } from "react";
-// import Image from "next/image";
+import Image from "next/image";
 import dynamic from "next/dynamic";
 import NavigationLink from "../ui/NavigationLink";
 import SocialLink from "../ui/SocialLink";
