@@ -6,14 +6,14 @@ import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger);
 import { useLenis } from "lenis/react";
 import dynamic from "next/dynamic";
-const DynamicShaderComp = dynamic(() => import("./BgShader/ShaderComp"), {
-  ssr: false,
-});
+// const DynamicShaderComp = dynamic(() => import("./BgShader/ShaderComp"), {
+//   ssr: false,
+// });
 
 const Loader = () => {
 
   const [hidden, setIsHidden] = useState(false);
-  const [mob, setMob] = useState(false);
+  // const [mob, setMob] = useState(false);
   //  const [showLoader, setShowLoader] = useState(false);
 
   const lenis = useLenis();
@@ -111,13 +111,13 @@ const Loader = () => {
       return () => ctx.revert();
     }
   });
-  useEffect(() => {
-    if (globalThis.innerWidth <= 1024) {
-      setMob(true);
-    } else {
-      setMob(false);
-    }
-  }, [mob]);
+  // useEffect(() => {
+  //   if (globalThis.innerWidth <= 1024) {
+  //     setMob(true);
+  //   } else {
+  //     setMob(false);
+  //   }
+  // }, [mob]);
 
   // if (!showLoader) return null;
 
