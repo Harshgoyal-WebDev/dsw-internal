@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import Header from "@/components/Header";
+import Header from "@/components/Header/index";
 import Copy from "@/components/Animations/Copy";
 import { Suspense, useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
@@ -37,30 +37,30 @@ export default function NotFoundPage() {
       delay: 0.5,
       ease: "power2.out",
     });
-    gsap.fromTo(
-      ShaderRef.current,
-      {
-        opacity: 0,
-      },
-      {
-        opacity: 1,
-        duration: 3,
-        delay: 0.5,
-        ease: "power3.out",
-      }
-    );
-    gsap.fromTo(
-      ".mobile-shader",
-      {
-        opacity: 0,
-      },
-      {
-        opacity: 1,
-        duration: 3,
-        delay: 0.5,
-        ease: "power3.out",
-      }
-    );
+    // gsap.fromTo(
+    //   ShaderRef.current,
+    //   {
+    //     opacity: 0,
+    //   },
+    //   {
+    //     opacity: 1,
+    //     duration: 3,
+    //     delay: 0.5,
+    //     ease: "power3.out",
+    //   }
+    // );
+    // gsap.fromTo(
+    //   ".mobile-shader",
+    //   {
+    //     opacity: 0,
+    //   },
+    //   {
+    //     opacity: 1,
+    //     duration: 3,
+    //     delay: 0.5,
+    //     ease: "power3.out",
+    //   }
+    // );
   });
   useEffect(() => {
     if (globalThis.innerWidth <= 1024) {

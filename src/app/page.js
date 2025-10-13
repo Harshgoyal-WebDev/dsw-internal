@@ -18,7 +18,7 @@ import WhyUnifyMobile from "@/components/Homepage/WhyUnifyMobile";
 import FooterCTA from "@/components/Common/FooterCta";
 import { FAQJSONLD, WebpageJsonLd } from "@/lib/json-ld";
 import { getAllPosts } from "@/lib/posts";
-import OldHero from "@/components/Common/Hero";
+// import OldHero from "@/components/Common/Hero";
 // import Hero from "@/components/Common/Hero";
 
 
@@ -38,7 +38,7 @@ export default async function Home() {
      <WebpageJsonLd metadata={metadata}/>
     <FAQJSONLD faqs={faqData}/>
       <Layout>
-        <OldHero heroData={heroData}/>
+        {/* <OldHero heroData={heroData}/> */}
         <TurbochargeG />
         <About />
         <Insuraince />

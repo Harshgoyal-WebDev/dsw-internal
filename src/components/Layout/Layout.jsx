@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Header from "../Header";
+import Header from "../Header/index-copy";
 import Footer from "../Footer";
 import KeepScrolling from "../KeepScrolling";
 import {

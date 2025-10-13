@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Header from "../Header";
+import Header from "../Header/index";
 import Footer from "../Footer";
 import KeepScrolling from "../KeepScrolling";
 import {
@@ -23,7 +23,6 @@ const Layout = ({ children }) => {
       <Header />
       {children}
       {/* <CanvasTunnel/> */}
-
       {/* </CanvasTunnel> */}
       <KeepScrolling />
       <Footer />

@@ -46,7 +46,7 @@ const AnimatedLine = memo(function AnimatedLine({ delay }) {
       gsap.fromTo(
         lineRef.current,
         { scaleY: 0, transformOrigin: "top" },
-        { scaleY: 1, duration: 1.2, delay, ease: "power2.out" }
+        { scaleY: 1, duration: 1.2, delay:5.5, ease: "power2.out" }
       );
 
       // sliding "dot"
@@ -84,12 +84,12 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
   const mobileGradientRef = useRef(null);
   const [mob, setMob] = useState(false);
 
-  const [hasVisited, setHasVisited] = useState(() => {
-    if (typeof window !== "undefined") {
-      return !!sessionStorage.getItem("hasVisited");
-    }
-    return false;
-  });
+  // const [hasVisited, setHasVisited] = useState(() => {
+  //   if (typeof window !== "undefined") {
+  //     return !!sessionStorage.getItem("hasVisited");
+  //   }
+  //   return false;
+  // });
 
   useEffect(() => {
     if (globalThis.innerWidth <= 1024) {
@@ -150,16 +150,16 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
       // const delayLines = heroData.homepage ? 0.7 : 0.7;
       // const delayPara = heroData.homepage ? 1.8 : 1.8;
 
-      const delayLines = heroData.homepage ? (hasVisited ? 0.7 : 4.5) : 0.7;
+      // const delayLines = heroData.homepage ? (hasVisited ? 0.7 : 4.5) : 0.7;
 
-      const delayPara = heroData.homepage ? (hasVisited ? 1.8 : 5.2) : 1.8;
+      // const delayPara = heroData.homepage ? (hasVisited ? 1.8 : 5.2) : 1.8;
 
       gsap.fromTo(
         lines,
         { maskPosition: "100% 100%" },
         {
           maskPosition: "0% 100%",
-          delay: delayLines,
+          delay: 4.5,
           stagger: 0.2,
           duration: 7,
           ease: "power2.out",
@@ -169,7 +169,7 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
       if (splitPara) {
         gsap.from(splitPara.lines, {
           yPercent: 100,
-          delay: delayPara,
+          delay: 5.5,
           duration: 1.4,
           stagger: 0.04,
           ease: "power3.out",
@@ -183,7 +183,7 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
 
     return () => ctx.revert();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [heroData.homepage, prefersReducedMotion, hasVisited]);
+  }, [heroData.homepage, prefersReducedMotion]);
 
   // Shader, breadcrumbs, CTA buttons, imagery, and initial sets
   useLayoutEffect(() => {
@@ -205,7 +205,7 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
         gsap.fromTo(
           shaderRef.current,
           { opacity: 0 },
-          { opacity: 1, duration: 3, delay: 1.5, ease: "power3.out" }
+          { opacity: 1, duration: 3, delay: 0.5, ease: "power3.out" }
         );
       }
 
@@ -241,7 +241,7 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
 
       // CTA button reveal (replaces motion.div)
       // const ctaDelay = heroData.homepage ? 1.8 : 1.8;
-      const ctaDelay = heroData.homepage ? (hasVisited ? 1.8 : 5.8) : 1.8;
+      // const ctaDelay = heroData.homepage ? (hasVisited ? 1.8 : 5.8) : 1.8;
       if (btnsRef.current) {
         const items = btnsRef.current.querySelectorAll(".ctaBtn");
         gsap.fromTo(
@@ -251,7 +251,7 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
             opacity: 1,
             y: 0,
             duration: 1,
-            delay: ctaDelay,
+            delay: 5.8,
             stagger: 0.12,
             ease: "power3.out",
           }
@@ -260,18 +260,16 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
     }, sectionRef);
 
     return () => ctx.revert();
-  }, [heroData.homepage, prefersReducedMotion, hasVisited]);
+  }, [heroData.homepage, prefersReducedMotion]);
 
   const lineDelays = useMemo(
     () =>
       Array.from({ length: LINE_COUNT }, (_, i) =>
-        heroData.homepage
-          ? hasVisited
-            ? 0.5 + i * 0.2
+        heroData.homepage? 0.5 + i * 0.2
             : 5 + i * 0.2
-          : 0.5 + i * 0.2
+         
       ),
-    [heroData.homepage, hasVisited]
+    [heroData.homepage]
   );
 
   return (
