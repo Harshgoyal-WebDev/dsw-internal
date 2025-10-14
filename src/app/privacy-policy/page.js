@@ -1,11 +1,13 @@
 
 import Layout from '@/components/Layout'
-import Content from '@/components/PrivacyPolicy/Content'
 import Hero from '@/components/Common/Hero';
 import { getPageMetadata } from '@/config/metadata';
 import { WebpageJsonLd } from '@/lib/json-ld';
 import { homepage } from '@/lib/util';
 import React from 'react'
+import dynamic from 'next/dynamic'
+
+const Content = dynamic(() => import('@/components/PrivacyPolicy/Content'))
 
 export const metadata = getPageMetadata({
   title: "DSW Privacy Policy - Your Data Rights & Protection",

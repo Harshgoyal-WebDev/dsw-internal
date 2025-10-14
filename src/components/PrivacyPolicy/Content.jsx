@@ -28,6 +28,16 @@ export default function Content() {
 
   const [isActive, setIsActive] = useState(null);
 
+  const [mob, setMob] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      setMob(window.innerWidth <= 1024);
+    };
+    handleResize(); // Set initially
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const handleScroll = (id) => {
     setIsActive(id);
     gsap.to(window, {
@@ -61,7 +71,8 @@ export default function Content() {
     <>
     <section className="mt-[-10vh] relative z-[10]">
     <div className="w-full h-full flex relative container justify-between">
-      <div className="w-[25%] flex flex-col gap-[.5vw]  capitalize py-[8vw] sticky top-[6%] h-fit max-md:hidden fadeup">
+      {!mob && (
+        <div className="w-[25%] flex flex-col gap-[.5vw]  capitalize py-[8vw] sticky top-[6%] h-fit max-md:hidden fadeup">
         {navLinks.map((item) => (
           <p
             key={item.id}
@@ -73,9 +84,10 @@ export default function Content() {
             {item.text.length > 20
               ? item.text.split(" ").slice(0, 3).join(" ") + "..."
               : item.text}
-          </p>
-        ))}
-      </div>
+            </p>
+          ))}
+        </div>
+      )}
       <div
         className="w-[60%] h-fit py-[8vw] gap-[5vw] flex flex-col max-md:w-full max-md:gap-[10vw]"
         
