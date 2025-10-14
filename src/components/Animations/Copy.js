@@ -24,6 +24,7 @@ export default function Copy({ children, animateOnScroll = true, delay = 0 }) {
     lines.current = [];
     triggers.current = [];
 
+    // If the user passes a wrapper with multiple children, animate each child.
     const elements = el.hasAttribute("data-copy-wrapper")
       ? Array.from(el.children)
       : [el];
@@ -34,6 +35,13 @@ export default function Copy({ children, animateOnScroll = true, delay = 0 }) {
           await document.fonts.ready;
         } catch (_) {}
       }
+    };
+
+    // Helper: ensure all descendants are aria-visible
+    const forceAriaVisible = (root) => {
+      if (!root) return;
+      const hidden = root.querySelectorAll('[aria-hidden="true"]');
+      hidden.forEach((node) => node.setAttribute("aria-hidden", "false"));
     };
 
     let unmounted = false;
@@ -51,17 +59,23 @@ export default function Copy({ children, animateOnScroll = true, delay = 0 }) {
         });
         splitRefs.current.push(split);
 
+        // Fix text-indent on first split line, preserve visual layout
         const textIndent = getComputedStyle(element).textIndent;
         if (textIndent && textIndent !== "0px" && split.lines.length > 0) {
           split.lines[0].style.paddingLeft = textIndent;
           element.style.textIndent = "0";
         }
 
+        // Make sure any wrappers created by SplitText are aria-visible
+        forceAriaVisible(element);
+
         lines.current.push(...split.lines);
       });
 
       if (prefersReduced) {
         gsap.set(lines.current, { y: "0%" });
+        // Double-ensure aria visibility after initial set
+        elements.forEach(forceAriaVisible);
         return;
       }
 
@@ -73,7 +87,11 @@ export default function Copy({ children, animateOnScroll = true, delay = 0 }) {
         stagger: 0.15,
         ease: "power4.out",
         delay,
-        onComplete: () => gsap.set(lines.current, { clearProps: "transform" }),
+        onComplete: () => {
+          gsap.set(lines.current, { clearProps: "transform" });
+          // Re-assert aria after animation completes
+          elements.forEach(forceAriaVisible);
+        },
       };
 
       if (animateOnScroll) {
@@ -83,6 +101,7 @@ export default function Copy({ children, animateOnScroll = true, delay = 0 }) {
             trigger: el,
             start: "top 85%",
             once: true,
+            onEnter: () => elements.forEach(forceAriaVisible),
           },
         });
         if (tween && tween.scrollTrigger) triggers.current.push(tween.scrollTrigger);

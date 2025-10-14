@@ -67,121 +67,144 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // Split & reveal (heading + paragraph)
-  useLayoutEffect(() => {
-    //  if (hasVisited === null) return;
+useLayoutEffect(() => {
+  gsap.set(".hero-overlay", { opacity: 0 });
 
-    gsap.set(".hero-overlay ", { opacity: 0 });
+  initSplit();
+  if (!headingRef.current) return;
 
-    initSplit();
-    if (!headingRef.current) return;
+  // helper: flip any aria-hidden="true" descendants to false
+  const forceAriaVisible = (root) => {
+    if (!root) return;
+    root
+      .querySelectorAll('[aria-hidden="true"]')
+      .forEach((n) => n.setAttribute("aria-hidden", "false"));
+  };
 
-    // scope all GSAP in this component for easy cleanup
-    const ctx = gsap.context(() => {
-      // split heading into lines (your utility makes .line wrappers)
-      SplitInLineOnly(headingRef.current);
-      const lines = headingRef.current.querySelectorAll(".line");
+  const ctx = gsap.context(() => {
+    // heading split
+    SplitInLineOnly(headingRef.current);
+    const lines = headingRef.current.querySelectorAll(".line");
 
-      // split paragraph (line mask)
-      const splitPara = paraRef.current
+    // paragraph split (line mask)
+    const splitPara =
+      paraRef.current
         ? new SplitText(paraRef.current, { type: "lines", mask: "lines" })
         : null;
 
-      const delayLines = hasVisited ? 0.7 : 4.8;
+    // ⬇️ ensure aria-visible for heading + paragraph split wrappers
+    forceAriaVisible(headingRef.current);
+    if (splitPara) {
+      forceAriaVisible(paraRef.current);
+      // belt & suspenders: also mark each generated line explicitly
+      splitPara.lines.forEach((l) => l.setAttribute("aria-hidden", "false"));
+    }
 
-      const delayPara = hasVisited ? 1.8 : 5.9;
+    const delayLines = hasVisited ? 0.7 : 4.8;
+    const delayPara = hasVisited ? 1.8 : 5.9;
 
+    gsap.fromTo(
+      lines,
+      { maskPosition: "100% 100%" },
+      {
+        maskPosition: "0% 100%",
+        delay: delayLines,
+        stagger: 0.2,
+        duration: 7,
+        ease: "power2.out",
+        onStart: () => forceAriaVisible(headingRef.current),
+        onComplete: () => forceAriaVisible(headingRef.current),
+      }
+    );
+
+    if (splitPara) {
+      gsap.from(splitPara.lines, {
+        yPercent: 100,
+        delay: delayPara,
+        duration: 1.4,
+        stagger: 0.04,
+        ease: "power3.out",
+        onStart: () => forceAriaVisible(paraRef.current),
+        onComplete: () => forceAriaVisible(paraRef.current),
+      });
+    }
+
+    // mobile gradient
+    if (mobileGradientRef.current) {
       gsap.fromTo(
-        lines,
-        { maskPosition: "100% 100%" },
+        mobileGradientRef.current,
+        { opacity: 0 },
+        { opacity: 1, duration: 3, delay: 1.5, ease: "power3.out" }
+      );
+    }
+
+    // shader fade
+    if (shaderRef.current) {
+      gsap.fromTo(
+        shaderRef.current,
+        { opacity: 0 },
+        { opacity: 1, duration: 3, delay: 1.5, ease: "power3.out" }
+      );
+    }
+
+    // reveal heading & para opacity (mask anim handled above)
+    gsap.to([headingRef.current, paraRef.current], {
+      opacity: 1,
+      duration: 0.1,
+    });
+
+    // hero image float-in
+    if (imgWrapRef.current) {
+      gsap.fromTo(
+        imgWrapRef.current,
+        { yPercent: 80, opacity: 0 },
         {
-          maskPosition: "0% 100%",
-          delay: delayLines,
-          stagger: 0.2,
-          duration: 7,
-          ease: "power2.out",
+          opacity: 1,
+          yPercent: 0,
+          duration: 1.5,
+          delay: hasVisited ? 1.8 : 5.9,
+          ease: "power3.out",
         }
       );
+    }
 
-      if (splitPara) {
-        gsap.from(splitPara.lines, {
-          yPercent: 100,
-          delay: delayPara,
-          duration: 1.4,
-          stagger: 0.04,
-          ease: "power3.out",
-        });
-      }
+    // breadcrumbs slide-up
+    gsap.set(".breadcrumbs", { opacity: 1 });
+    gsap.fromTo(
+      ".breadcrumbs",
+      { y: 50, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, ease: "power3.out", delay: 1.5 }
+    );
 
-      // mobile gradient
-      if (mobileGradientRef.current) {
-        gsap.fromTo(
-          mobileGradientRef.current,
-          { opacity: 0 },
-          { opacity: 1, duration: 3, delay: 1.5, ease: "power3.out" }
-        );
-      }
-
-      // shader fade
-      if (shaderRef.current) {
-        gsap.fromTo(
-          shaderRef.current,
-          { opacity: 0 },
-          { opacity: 1, duration: 3, delay: 1.5, ease: "power3.out" }
-        );
-      }
-
-      // reveal heading & para opacity (mask anim handled above)
-      gsap.to([headingRef.current, paraRef.current], {
-        opacity: 1,
-        duration: 0.1,
-      });
-
-      // hero image float-in
-      if (imgWrapRef.current) {
-        gsap.fromTo(
-          imgWrapRef.current,
-          { yPercent: 80, opacity: 0 },
-          {
-            opacity: 1,
-            yPercent: 0,
-            duration: 1.5,
-            delay: hasVisited ? 1.8 : 5.9,
-            ease: "power3.out",
-          }
-        );
-      }
-
-      // breadcrumbs slide-up
-      gsap.set(".breadcrumbs", {
-        opacity: 1,
-      });
+    // CTA buttons
+    const ctaDelay = hasVisited ? 2 : 6.1;
+    if (btnsRef.current) {
+      const items = btnsRef.current.querySelectorAll(".ctaBtn");
       gsap.fromTo(
-        ".breadcrumbs",
-        { y: 50, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1, ease: "power3.out", delay: 1.5 }
+        items,
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: ctaDelay,
+          stagger: 0.12,
+          ease: "power3.out",
+          onStart: () => forceAriaVisible(btnsRef.current),
+        }
       );
+    }
 
-      const ctaDelay = hasVisited ? 2 : 6.1;
-      if (btnsRef.current) {
-        const items = btnsRef.current.querySelectorAll(".ctaBtn");
-        gsap.fromTo(
-          items,
-          { opacity: 0, y: 20 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            delay: ctaDelay,
-            stagger: 0.12,
-            ease: "power3.out",
-          }
-        );
-      }
-    }, sectionRef);
+    // cleanup: revert paragraph split too
+    return () => {
+      if (splitPara) splitPara.revert();
+    };
+  }, sectionRef);
 
-    return () => ctx.revert();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [heroData.homepage, prefersReducedMotion, hasVisited]);
+  return () => ctx.revert();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [heroData.homepage, prefersReducedMotion, hasVisited]);
+
 
   const lineDelays = useMemo(
     () =>

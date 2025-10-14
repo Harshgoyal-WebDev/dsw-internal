@@ -55,7 +55,7 @@ const Footer = () => {
             <div className="flex justify-between w-1/2 ml-auto gap-10 footer-content max-md:flex-col max-md:w-full">
               {/* Navigation Links */}
               <div>
-                <h5 className="mb-5 text-foreground content-p">NAVIGATION</h5>
+                <p className="mb-5 text-foreground content-p font-head">NAVIGATION</p>
                 <ul className="space-y-3">
                   {NAVIGATION.map((link) => (
                     <li key={link.id} className="text-foreground content-p">
