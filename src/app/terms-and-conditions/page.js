@@ -1,10 +1,12 @@
 import Hero from '@/components/Common/Hero';
 import Layout from '@/components/Layout'
-import Content from '@/components/TermsAndConditions/Content'
+import dynamic from 'next/dynamic'
 import { getPageMetadata } from '@/config/metadata';
 import { WebpageJsonLd } from '@/lib/json-ld';
 import { homepage } from '@/lib/util';
 import React from 'react'
+
+const Content = dynamic(() => import('@/components/TermsAndConditions/Content'))
 
 export const metadata = getPageMetadata({
   title: "DSW Terms & Conditions - Use of Services Agreement",
