@@ -5,8 +5,6 @@ import Copy from "../Animations/Copy";
 const Card = ({ src, content }) => {
   return (
     <div className="flex flex-col max-sm:gap-[5vw] gap-[2vw] max-sm:w-full max-sm:h-fit w-[16vw] max-md:w-[40vw] relative group min-h-[20vh] fadeup">
-      
-
       <div className="w-fit h-[5vw] max-sm:h-[12vh] max-md:h-[12vw]">
         <Image
           src={src}
@@ -14,11 +12,11 @@ const Card = ({ src, content }) => {
           width={60}
           height={60}
           className="h-full w-auto object-cover"
-          />
+        />
       </div>
-                       
+
       <p className="text-white-300 text-12 font-display h-[35%]">{content}</p>
-              <div className="absolute bottom-0 z-[5] max-sm:bottom-0 w-full h-[1px] bg-primary-2 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700"></div>
+      <div className="absolute bottom-0 z-[5] max-sm:bottom-0 w-full h-[1px] bg-primary-2 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700"></div>
       <div className="w-full h-[1px]  lineDraw bg-foreground/30 mt-auto" />
     </div>
   );
@@ -51,19 +49,25 @@ const Outcomes = () => {
   return (
     <section className="w-screen h-fit container space-y-[1.5vw] max-sm:space-y-[7vw] max-md:space-y-[8vw]">
       <h2 className="text-50  max-sm:leading-[1.2] text-white-200 headingAnim w-[50%] max-md:w-[100%] max-sm:!text-[11vw]">
-        <span className="block max-sm:block max-md:inline-block">One Platform. </span>
-        <span className="block max-sm:block max-md:inline-block">AI and GenAI Working Together.</span>
+        <span className="block max-sm:block max-md:inline-block">
+          One Platform.{" "}
+        </span>
+        <span className="block max-sm:block max-md:inline-block">
+          AI and GenAI Working Together.
+        </span>
       </h2>
 
-      <Copy>                
-<p className="w-[40%] text-white-300 max-md:w-[100%]"> One secure platform. Many powerful outcomes.</p>
-      <p className="w-[40%] text-white-300 max-md:w-[100%]">
-       
-        Whether you're deploying fraud models or launching a GenAI assistant for
-        claims, insurAInce brings everything into one secure platform that
-        scales with your business. 
-      </p>
-                </Copy>
+      <Copy>
+        <p className="w-[40%] text-white-300 max-md:w-[100%]">
+          {" "}
+          One secure platform. Many powerful outcomes.
+        </p>
+        <p className="w-[40%] text-white-300 max-md:w-[100%]">
+          Whether you're deploying fraud models or launching a GenAI assistant
+          for claims, insurAInce brings everything into one secure platform that
+          scales with your business. 
+        </p>
+      </Copy>
 
       <div className="flex justify-end w-full pt-[3vw] max-md:pt-[7vw] max-sm:hidden">
         <div className="w-[65%] max-md:w-[100%]">
@@ -76,13 +80,11 @@ const Outcomes = () => {
       </div>
 
       <div className="hidden max-sm:block max-sm:pt-[3vh]">
-            <div className="flex flex-col gap-[10vw]">
-
-               {cardsData.map((card, index) => (
-              <Card key={index} src={card.src} content={card.content} />
-            ))}
-
-            </div>
+        <div className="flex flex-col gap-[10vw]">
+          {cardsData.map((card, index) => (
+            <Card key={index} src={card.src} content={card.content} />
+          ))}
+        </div>
       </div>
     </section>
   );

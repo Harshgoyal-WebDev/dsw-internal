@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef, act } from "react";
+import React, { useState, useRef, act, useEffect } from "react";
 import Image from "next/image";
 import Copy from "../Animations/Copy";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -34,6 +34,15 @@ const capabilities = [
 const Capabilities = () => {
   const swiperRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [mob, setMob] = useState(false);
+
+  useEffect(() => {
+    if (globalThis.innerWidth <= 1024) {
+      setMob(true);
+    } else {
+      setMob(false);
+    }
+  }, [mob]);
 
   const handlePrev = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
@@ -65,82 +74,90 @@ const Capabilities = () => {
           </Copy>
         </div>
 
-        <div className="w-[50%] max-md:hidden">
-          <Copy>
-            <p className="text-white-300">
-              From claim status queries to automated underwriting support,
-              insurAInce gives you over 300 prebuilt GenAI agents that are
-              designed for real insurance workflows. 
-            </p>
-            <p className="text-white-300 text-[1.2vw] py-[2.5vw] font-display">
-              Key Capabilities: 
-            </p>
-          </Copy>
+        {!mob ? (
+          <div className="w-[50%] max-md:hidden">
+            <Copy>
+              <p className="text-white-300">
+                From claim status queries to automated underwriting support,
+                insurAInce gives you over 300 prebuilt GenAI agents that are
+                designed for real insurance workflows. 
+              </p>
+              <p className="text-white-300 text-[1.2vw] py-[2.5vw] font-display">
+                Key Capabilities: 
+              </p>
+            </Copy>
 
-          <div className="">
-            <div className="flex flex-col gap-[4.5vw] pt-[4vw]">
-              {capabilities.map((cap) => (
-                <div key={cap.id} className="relative group pb-[2vw]">
-                  <div className="w-full h-[1px]  bg-[#59595980] absolute top-[-40%] mb-[2vw] lineDraw" />
+            <div className="">
+              <div className="flex flex-col gap-[4.5vw] pt-[4vw]">
+                {capabilities.map((cap) => (
+                  <div key={cap.id} className="relative group pb-[2vw]">
+                    <div className="w-full h-[1px]  bg-[#59595980] absolute top-[-40%] mb-[2vw] lineDraw" />
 
-                  <div className="flex items-start fadeup justify-start gap-[5vw]">
-                    <p className="text-white text-[1vw] font-display">
-                      {cap.id}
-                    </p>
-                    <div className="w-[5.5vw]  h-[5.5vw]">
-                      <Image
-                        src={cap.src}
-                        alt={`capibility-${cap.id}`}
-                        width={40}
-                        height={40}
-                        className="object-contain h-full w-full"
-                      />
+                    <div className="flex items-start fadeup justify-start gap-[5vw]">
+                      <p className="text-white text-[1vw] font-display">
+                        {cap.id}
+                      </p>
+                      <div className="w-[5.5vw]  h-[5.5vw]">
+                        <Image
+                          src={cap.src}
+                          alt={`capibility-${cap.id}`}
+                          width={40}
+                          height={40}
+                          className="object-contain h-full w-full"
+                        />
+                      </div>
+
+                      <p className="text-white-300 max-w-[28vw]">{cap.text}</p>
                     </div>
-
-                    <p className="text-white-300 max-w-[28vw]">{cap.text}</p>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-
-        <div className="hidden max-md:block swiperr pt-[10vw]">
-          <Swiper
-            ref={swiperRef}
-            modules={[Navigation]}
-            spaceBetween={20}
-            slidesPerView={1}
-            onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-            className="w-full"
-          >
-            {capabilities.map((cap, index) => (
-              <SwiperSlide key={index}>
-                <div className="flex gap-[8vw] mt-[8vw] w-full items-center justify-center flex-col fadeup">
-                  <p className="text-white-300 text-[4vw]">{cap.id}</p>
-                  <div className="w-[30%] h-auto relative">
-                    <Image
-                      src={cap.src}
-                      height={200}
-                      width={200}
-                      className="object-contain h-full w-full"
-                      alt={`capability-${cap.id}`}
-                    />
+        ) : (
+          <div className="hidden max-md:block swiperr pt-[10vw]">
+            <Swiper
+              ref={swiperRef}
+              modules={[Navigation]}
+              spaceBetween={20}
+              slidesPerView={1}
+              onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+              className="w-full"
+            >
+              {capabilities.map((cap, index) => (
+                <SwiperSlide key={index}>
+                  <div className="flex gap-[8vw] mt-[8vw] w-full items-center justify-center flex-col fadeup">
+                    <p className="text-white-300 text-[4vw]">{cap.id}</p>
+                    <div className="w-[30%] h-auto relative">
+                      <Image
+                        src={cap.src}
+                        height={200}
+                        width={200}
+                        className="object-contain h-full w-full"
+                        alt={`capability-${cap.id}`}
+                      />
+                    </div>
+                    <p className="text-center text-[4.3vw] text-white-300">
+                      {cap.text}
+                    </p>
                   </div>
-                  <p className="text-center text-[4.3vw] text-white-300">
-                    {cap.text}
-                  </p>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                </SwiperSlide>
+              ))}
+            </Swiper>
 
-          {/* Mobile Nav Buttons */}
-          <div className="flex gap-6 mt-6 max-md:mt-[10vw] max-md:items-center max-md:justify-center">
-            <PreviousButton onClick={handlePrev} isDisabled={activeIndex === 0} />
-            <NextButton onClick={handleNext} isDisabled={capabilities.length -1 === activeIndex} />
+            {/* Mobile Nav Buttons */}
+            <div className="flex gap-6 mt-6 max-md:mt-[10vw] max-md:items-center max-md:justify-center">
+              <PreviousButton
+                onClick={handlePrev}
+                isDisabled={activeIndex === 0}
+              />
+              <NextButton
+                onClick={handleNext}
+                isDisabled={capabilities.length - 1 === activeIndex}
+              />
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
