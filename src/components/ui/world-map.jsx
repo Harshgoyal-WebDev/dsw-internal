@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
 import { motion, useAnimation, useInView } from "motion/react";
+import Image from "next/image";
 
 export function WorldMap() {
   const svgRef = useRef(null);
@@ -37,9 +38,9 @@ export function WorldMap() {
   };
 
   const locations = [
-    { name: "USA",     coords: { lat: 80.9, lng: -150 } },
-    { name: "Ireland", coords: { lat: 97,   lng: -30.2 } },
-    { name: "India",   coords: { lat: 38,   lng: 95 } },
+    { name: "USA", coords: { lat: 80.9, lng: -150 } },
+    { name: "Ireland", coords: { lat: 97, lng: -30.2 } },
+    { name: "India", coords: { lat: 38, lng: 95 } },
   ];
 
   const connections = [
@@ -58,7 +59,9 @@ export function WorldMap() {
 
   return (
     <div className="relative w-full aspect-[2/1] rounded-lg max-sm:p-0">
-      <img
+      <Image
+        width={700}
+        height={500}
         src="/assets/images/contact/contact-map.png"
         className="h-auto w-[90%] max-sm:w-[100%] mx-auto absolute inset-0 object-contain pointer-events-none select-none opacity-80"
         alt="world map"
@@ -90,9 +93,9 @@ export function WorldMap() {
 
         <defs>
           <linearGradient id="path-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%"   stopColor="#F16B0D" stopOpacity="0" />
-            <stop offset="10%"  stopColor="#F16B0D" stopOpacity="1" />
-            <stop offset="90%"  stopColor="#F16B0D" stopOpacity="1" />
+            <stop offset="0%" stopColor="#F16B0D" stopOpacity="0" />
+            <stop offset="10%" stopColor="#F16B0D" stopOpacity="1" />
+            <stop offset="90%" stopColor="#F16B0D" stopOpacity="1" />
             <stop offset="100%" stopColor="#F16B0D" stopOpacity="0" />
           </linearGradient>
         </defs>

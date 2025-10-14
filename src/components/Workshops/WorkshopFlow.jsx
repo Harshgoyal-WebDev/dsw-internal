@@ -37,7 +37,7 @@ export default function WorkshopFlow({ sessionsData, space }) {
   };
 
   return (
-    <section className="relative w-full h-fit space-y-[6vw] container max-md:h-full overflow-hidden">
+    <section className="relative w-full h-fit space-y-[6vw] container max-md:h-full overflow-hidden py-[10%]">
       <div className="w-full flex h-full  gap-[1vw] items-end justify-between max-md:flex-col max-md:items-start">
         <h2 className="text-90 headingAnim max-md:text-center w-[45%] max-md:w-full">
           Workshop Flow & Key Sessions
