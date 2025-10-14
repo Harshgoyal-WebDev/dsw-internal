@@ -1,7 +1,6 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import TiltedCard from "../Animations/TiltedCard";
-import PrimaryButton from "../Button/PrimaryButton";
 import { NextButton, PreviousButton } from "../Button/SliderButtons";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -11,6 +10,7 @@ import WhiteButton from "../Button/WhiteButton";
 const Brochure = () => {
   const swiperRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [mob, setMob] = useState(false);
 
   const handleNext = () => {
     if (swiperRef.current) {
@@ -23,137 +23,151 @@ const Brochure = () => {
       swiperRef.current.slidePrev();
     }
   };
+
+  useEffect(() => {
+    if (globalThis.innerWidth <= 1024) {
+      setMob(true);
+    } else {
+      setMob(false);
+    }
+  }, [mob]);
   return (
-    <section className="w-screen h-fit container" id="brochure">
+    <section className="w-screen h-fit container max-md:min-h-screen" id="brochure">
       <div className="w-full flex flex-col items-center justify-center gap-[5vw] max-md:gap-[10vw] max-sm:gap-[15vw]">
         <h2 className="w-[55%] text-center text-60 text-white-200 headingAnim max-md:w-full max-md:text-left max-md:!text-[9vw] max-sm:!text-[11.5vw]">
           Join the Fastest - Moving Insurers on Their AI Journey 
         </h2>
-        <div className="w-full flex justify-center gap-[3vw] fadeup max-md:hidden">
-          <TiltedCard
-            containerHeight="41vw"
-            containerWidth="33vw"
-            imageHeight="100%"
-            imageWidth="100%"
-            rotateAmplitude={12}
-            scaleOnHover={1.2}
-            showMobileWarning={false}
-            showTooltip={true}
-            displayOverlayContent={true}
-            overlayContent={
-              <div className="w-full h-full px-[4vw] py-[4vw] pb-[5vw] flex flex-col justify-between text-white-300">
-                <h3 className="text-30 w-[85%] h-fit">
-                  25+ proven AI use cases across the policy lifecycle
-                </h3>
-                <div className="w-full flex flex-col h-fit space-y-[1.5vw]">
-                  <h4 className="text-50">AI/ML</h4>
-                  <ul className="list-disc pl-[1vw] space-y-[0.2vw] marker:text-[0.9vw] text-[1.05vw] max-md:text-[2.5vw] max-sm:text-[4vw]">
-                    <li>Fraud detection</li>
-                    <li>​ Claims</li>
-                    <li>​ Underwriting​</li>
-                    <li> Automation & Ops</li>
-                    <li>​ Regulatory and compliance </li>
-                    <li>​ Sales and Marketing​ </li>
-                    <li>CX</li>
-                  </ul>
+        {!mob ? (
+          <div className="w-full flex justify-center gap-[3vw] fadeup max-md:hidden">
+            <TiltedCard
+              containerHeight="41vw"
+              containerWidth="33vw"
+              imageHeight="100%"
+              imageWidth="100%"
+              rotateAmplitude={12}
+              scaleOnHover={1.2}
+              showMobileWarning={false}
+              showTooltip={true}
+              displayOverlayContent={true}
+              overlayContent={
+                <div className="w-full h-full px-[4vw] py-[4vw] pb-[5vw] flex flex-col justify-between text-white-300">
+                  <h3 className="text-30 w-[85%] h-fit">
+                    25+ proven AI use cases across the policy lifecycle
+                  </h3>
+                  <div className="w-full flex flex-col h-fit space-y-[1.5vw]">
+                    <h4 className="text-50">AI/ML</h4>
+                    <ul className="list-disc pl-[1vw] space-y-[0.2vw] marker:text-[0.9vw] text-[1.05vw] max-md:text-[2.5vw] max-sm:text-[4vw]">
+                      <li>Fraud detection</li>
+                      <li>​ Claims</li>
+                      <li>​ Underwriting​</li>
+                      <li> Automation & Ops</li>
+                      <li>​ Regulatory and compliance </li>
+                      <li>​ Sales and Marketing​ </li>
+                      <li>CX</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <WhiteButton
+                      background="border-primary-2 border bg-transparent hover:bg-transparent"
+                      circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
+                      text="Download PDF"
+                      href="#"
+                      className="hover:text-primary-2 text-primary-2"
+                    />
+                  </div>
                 </div>
-                <div>
-                  <WhiteButton
-                    background="border-primary-2 border bg-transparent hover:bg-transparent"
-                    circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
-                    text="Download PDF"
-                    href="#"
-                    className="hover:text-primary-2 text-primary-2"
-                  />
+              }
+            />
+            <TiltedCard
+              containerHeight="41vw"
+              containerWidth="33vw"
+              imageHeight="100%"
+              imageWidth="100%"
+              rotateAmplitude={12}
+              scaleOnHover={1.2}
+              showMobileWarning={false}
+              showTooltip={true}
+              displayOverlayContent={true}
+              overlayContent={
+                <div className="w-full h-full px-[4vw] py-[4vw] pb-[5vw] flex flex-col justify-between text-white-300">
+                  <h3 className="text-30 w-full h-fit">
+                    300+ ready-to-deploy GenAI agents trained on insurance data 
+                  </h3>
+                  <div className="w-full flex flex-col h-fit space-y-[1.5vw]">
+                    <h4 className="text-50">GenAI Agents​</h4>
+                    <ul className="list-disc pl-[1vw] space-y-[0.2vw] marker:text-[0.9vw] text-[1.05vw] max-md:text-[2.5vw] max-sm:text-[4vw]">
+                      <li>Sales and Marketing​</li>
+                      <li>​ Underwriting​</li>
+                      <li>​ Claims</li>
+                      <li> New Business​</li>
+                      <li>​ Operations </li>
+                      <li>​ HR​ </li>
+                      <li>IT</li>
+                      <li>Legal & Compliance ​</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <WhiteButton
+                      background="border-primary-2 border bg-transparent hover:bg-transparent"
+                      circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
+                      text="Download PDF"
+                      href="#"
+                      className="hover:text-primary-2 text-primary-2"
+                    />
+                  </div>
                 </div>
-              </div>
-            }
-          />
-          <TiltedCard
-            containerHeight="41vw"
-            containerWidth="33vw"
-            imageHeight="100%"
-            imageWidth="100%"
-            rotateAmplitude={12}
-            scaleOnHover={1.2}
-            showMobileWarning={false}
-            showTooltip={true}
-            displayOverlayContent={true}
-            overlayContent={
-              <div className="w-full h-full px-[4vw] py-[4vw] pb-[5vw] flex flex-col justify-between text-white-300">
-                <h3 className="text-30 w-full h-fit">
-                  300+ ready-to-deploy GenAI agents trained on insurance data 
-                </h3>
-                <div className="w-full flex flex-col h-fit space-y-[1.5vw]">
-                  <h4 className="text-50">GenAI Agents​</h4>
-                  <ul className="list-disc pl-[1vw] space-y-[0.2vw] marker:text-[0.9vw] text-[1.05vw] max-md:text-[2.5vw] max-sm:text-[4vw]">
-                    <li>Sales and Marketing​</li>
-                    <li>​ Underwriting​</li>
-                    <li>​ Claims</li>
-                    <li> New Business​</li>
-                    <li>​ Operations </li>
-                    <li>​ HR​ </li>
-                    <li>IT</li>
-                    <li>Legal & Compliance ​</li>
-                  </ul>
-                </div>
-                <div>
-                  <WhiteButton
-                    background="border-primary-2 border bg-transparent hover:bg-transparent"
-                    circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
-                    text="Download PDF"
-                    href="#"
-                    className="hover:text-primary-2 text-primary-2"
-                  />
-                </div>
-              </div>
-            }
-          />
-        </div>
-        <div className="h-fit text-white max-md:w-full hidden max-md:block fadeup">
-          <Swiper
-            slidesPerView={1.8}
-            className=" !opacity-100 "
-            onSwiper={(swiper) => (swiperRef.current = swiper)}
-            spaceBetween={50}
-            onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-            speed={1000}
-            breakpoints={{
-              320: {
-                slidesPerView: 1,
-                spaceBetween: 20,
-              },
-              640: {
-                slidesPerView: 1,
-                spaceBetween: 30,
-              },
-              1025: {
-                slidesPerView: 1.8,
-                spaceBetween: 40,
-              },
-              1440: {
-                slidesPerView: 2.5,
-                spaceBetween: 50,
-              },
-            }}
-          >
-            {BrochureData.map((data) => (
-              <SwiperSlide className=" max-md:w-full">
-                <BrochureCard
-                  key={data.id}
-                  title={data.title}
-                  listTitle={data.listTitle}
-                  list={data.list}
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-
-          <div className="flex gap-6 mt-6 max-md:mt-[10vw] max-md:items-center max-md:justify-center">
-            <PreviousButton onClick={handlePrev} isDisabled={activeIndex === 0} />
-            <NextButton onClick={handleNext} isDisabled={1===activeIndex} />
+              }
+            />
           </div>
-        </div>
+        ) : (
+          <div className="h-fit text-white max-md:w-full hidden max-md:block fadeup">
+            <Swiper
+              slidesPerView={1.8}
+              className=" !opacity-100 "
+              onSwiper={(swiper) => (swiperRef.current = swiper)}
+              spaceBetween={50}
+              onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+              speed={1000}
+              breakpoints={{
+                320: {
+                  slidesPerView: 1,
+                  spaceBetween: 20,
+                },
+                640: {
+                  slidesPerView: 1,
+                  spaceBetween: 30,
+                },
+                1025: {
+                  slidesPerView: 1.8,
+                  spaceBetween: 40,
+                },
+                1440: {
+                  slidesPerView: 2.5,
+                  spaceBetween: 50,
+                },
+              }}
+            >
+              {BrochureData.map((data) => (
+                <SwiperSlide className=" max-md:w-full">
+                  <BrochureCard
+                    key={data.id}
+                    title={data.title}
+                    listTitle={data.listTitle}
+                    list={data.list}
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+            <div className="flex gap-6 mt-6 max-md:mt-[10vw] max-md:items-center max-md:justify-center">
+              <PreviousButton
+                onClick={handlePrev}
+                isDisabled={activeIndex === 0}
+              />
+              <NextButton onClick={handleNext} isDisabled={1 === activeIndex} />
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

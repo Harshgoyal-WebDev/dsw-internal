@@ -204,6 +204,7 @@ const Difference = () => {
           <Image
             src={"/assets/images/homepage/gradient-mobile.png"}
             alt="shader-bg-mobile"
+            loading="lazy"
             className="w-full h-full object-cover"
             width={600}
             height={1080}

@@ -12,7 +12,6 @@ const Tour = ({heading,para}) => {
     setActiveTab(tabId);
   };
 
-
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
 
@@ -199,61 +198,6 @@ const Tour = ({heading,para}) => {
             )}
           </AnimatePresence>
         </div>
-        {/* <div className="w-[80%] h-[30vw] relative fadeup mt-[5vw] max-sm:w-full max-sm:h-[60vw] max-sm:mt-[12vw]">
-  <motion.div
-    className="w-full h-full absolute top-0 left-0 aiStudio-container"
-    animate={{
-      opacity: visibleTab === "aiStudio" ? 1 : 0,
-      scale: visibleTab === "aiStudio" ? 1 : 0.5,
-      pointerEvents: activeTab === "aiStudio" ? "auto" : "none",
-      zIndex: visibleTab === "aiStudio" ? 10 : 1,
-    }}
-    transition={{ duration: 0.8, ease: "easeInOut" }}
-  >
-    <Image
-      src={"/assets/images/homepage/tour-img.png"}
-      alt="AI Studio tour image"
-      className="w-full h-full object-cover rounded-lg"
-      width={900}
-      height={400}
-    />
-    <div className="w-full h-full absolute top-0 left-0 flex justify-center items-center">
-      <PrimaryButton
-        text={"Experience AI Studio"}
-        className=""
-        href={"/ai-studio"}
-      />
-    </div>
-  </motion.div>
-
-  <motion.div
-    className="w-full h-full absolute top-0 left-0 genStudio-container"
-    animate={{
-      opacity: visibleTab === "genStudio" ? 1 : 0,
-      scale: visibleTab === "genStudio" ? 1 : 0.5,
-      pointerEvents: activeTab === "genStudio" ? "auto" : "none",
-      zIndex: visibleTab === "genStudio" ? 10 : 1,
-    }}
-    transition={{ duration: 0.8, ease: "easeInOut" }}
-  >
-    <Image
-      src={"/assets/images/homepage/tour-img.png"}
-      alt="GenAI Studio tour image"
-      className="w-full h-full object-cover rounded-lg"
-      width={900}
-      height={400}
-    />
-    <div className="w-full h-full absolute top-0 left-0 flex justify-center items-center">
-      <PrimaryButton
-        text={"Explore GenAI Studio"}
-        className=""
-        href={"/genai-studio"}
-      />
-    </div>
-  </motion.div>
-</div> */}
-
-
       </div>
     </section>
   );
