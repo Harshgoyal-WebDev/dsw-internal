@@ -38,8 +38,9 @@ const Loader = () => {
     }
 
     if (lenis) {
-      lenis._isStopped=true;
+      
       lenis.stop()
+      console.log(lenis)
 
       const ctx = gsap.context(() => {
         const tl = gsap.timeline();
@@ -105,7 +106,6 @@ const Loader = () => {
       });
       return () => ctx.revert();
     }
-
   }
   }, [lenis,showLoader]);
   useEffect(() => {
@@ -188,6 +188,7 @@ const Loader = () => {
           </div>
         )}
       </div>
+      
     </div>
   );
 };
