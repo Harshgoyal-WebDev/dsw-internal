@@ -1,6 +1,5 @@
 import About from "@/components/Homepage/About";
 import Blogs from "@/components/Homepage/Blogs";
-// import Brochure from "@/components/Homepage/Brochure";
 import Connects from "@/components/Homepage/Connects";
 import EnterpriseAI from "@/components/Homepage/EnterpriseAI";
 import Difference from "@/components/Homepage/Difference";
@@ -46,7 +45,6 @@ export default async function Home() {
         <Insuraince />
         <Tour heading={"Take a Lightning Tour"} para={"Your OS for AI- not just for today's use cases, but for tomorrow's vision."} img={'/assets/images/homepage/tour-img.png'}/>
         <Difference />
-        {/* <Brochure /> */}
         <Brochure/>
         <UnifyAi />
         <WhyUnify />

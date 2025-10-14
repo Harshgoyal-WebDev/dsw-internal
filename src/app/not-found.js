@@ -7,12 +7,12 @@ import { Suspense, useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import dynamic from "next/dynamic";
-const DynamicShaderComp = dynamic(
-  () => import("@/components/BgShader/ShaderComp"),
-  {
-    ssr: false,
-  }
-);
+// const DynamicShaderComp = dynamic(
+//   () => import("@/components/BgShader/ShaderComp"),
+//   {
+//     ssr: false,
+//   }
+// );
 
 export default function NotFoundPage() {
   const ShaderRef = useRef();
@@ -115,9 +115,9 @@ export default function NotFoundPage() {
             ref={ShaderRef}
             className="absolute top-[30%] left-0 h-screen w-screen max-sm:hidden "
           >
-            <Suspense>
+            {/* <Suspense>
               <DynamicShaderComp />
-            </Suspense>
+            </Suspense> */}
           </div>
         ) : (
           <div className="absolute top-0 left-0 h-full w-screen hidden max-sm:block max-md:block mobile-shader">

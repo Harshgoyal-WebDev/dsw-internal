@@ -34,7 +34,7 @@ const Page = () => {
   return (
     <>
     <WebpageJsonLd metadata={metadata}/>
-          <BreadcrumbsJSONLD pathname={metadata.url}/>
+    <BreadcrumbsJSONLD pathname={metadata.url}/>
       <Layout>
         <Hero heroData={heroData} breadcrumbs={true}/>
         <Listing/>

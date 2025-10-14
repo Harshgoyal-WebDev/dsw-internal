@@ -182,8 +182,8 @@ const Loader = () => {
               alt="bg-gradient"
               fetchPriority="high"
               className="w-full h-full object-cover"
-              width={600}
-              height={1080}
+              width={300}
+              height={680}
             />
           </div>
         )}

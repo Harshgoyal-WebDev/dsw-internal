@@ -301,10 +301,11 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
           <Image
             src={heroGradient}
             fetchPriority="high"
+            priority={true}
             alt="shader-gradient-mobile"
             className="w-full h-full object-cover"
-            width={600}
-            height={1080}
+            width={300}
+            height={580}
           />
         </div>
       )}
