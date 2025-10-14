@@ -1,6 +1,6 @@
 import Layout from '@/components/Layout'
-import AIPilots from '@/components/PilotProgram/AIPilots'
-import PilotProgramForm from '../../components/PilotForm/PilotProgramForm'
+// import AIPilots from '@/components/PilotProgram/AIPilots'
+// import PilotProgramForm from '../../components/PilotForm/PilotProgramForm'
 import InsidePilotProgram from '@/components/PilotProgram/InsidePilotProgram'
 import Production from '@/components/PilotProgram/Production'
 // import Transform from '@/components/PilotProgram/Transform'
@@ -13,6 +13,12 @@ import { getPageMetadata } from '@/config/metadata'
 import Hero from '@/components/Common/Hero'
 import dynamic from 'next/dynamic'
 const Transform = dynamic(() => import('@/components/PilotProgram/Transform'), {
+  ssr: true,
+})
+const PilotProgramForm = dynamic(() => import('@/components/PilotForm/PilotProgramForm'), {
+  ssr: true,
+})
+const AIPilots = dynamic(() => import('@/components/PilotProgram/AIPilots'), {
   ssr: true,
 })
 
