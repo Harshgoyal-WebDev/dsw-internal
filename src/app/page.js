@@ -15,7 +15,14 @@ import Faqs from "@/components/Common/FAQs";
 import Clients from "@/components/Homepage/Clients";
 import WhyUnifyMobile from "@/components/Homepage/WhyUnifyMobile";
 import FooterCTA from "@/components/Common/FooterCta";
-import { FAQJSONLD, WebpageJsonLd } from "@/lib/json-ld";
+import {
+  FAQJSONLD,
+  ImageObjectJsonLd,
+  LocalBusiness,
+  OrganizationJsonLd,
+  WebpageJsonLd,
+  WebsiteJsonLd,
+} from "@/lib/json-ld";
 import { getAllPosts } from "@/lib/posts";
 import OldHero from "@/components/Common/Hero";
 import dynamic from "next/dynamic";
@@ -37,6 +44,10 @@ export default async function Home() {
   return (
     <>
       <WebpageJsonLd metadata={metadata} />
+      <OrganizationJsonLd />
+      <LocalBusiness />
+      <ImageObjectJsonLd />
+      <WebsiteJsonLd />
       <FAQJSONLD faqs={faqData} />
       <Layout>
         <OldHero heroData={heroData} />

@@ -7,12 +7,22 @@ import { Suspense, useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import dynamic from "next/dynamic";
-// const DynamicShaderComp = dynamic(
-//   () => import("@/components/BgShader/ShaderComp"),
-//   {
-//     ssr: false,
-//   }
-// );
+import { WebpageJsonLd } from "@/lib/json-ld";
+const DynamicShaderComp = dynamic(
+  () => import("@/components/BgShader/ShaderComp"),
+  {
+    ssr: false,
+  }
+);
+
+export const metadata = {
+  title: "DSW UnifyAI – Enterprise AI Platform for Insurance",
+  description:
+    "Launch AI use cases in days — scale fast, reduce cost, deploy GenAI in hours with DSW UnifyAI’s insurance-focused enterprise AI platform.",
+  url: "",
+  date_published: "2025-09-30T00:00",
+  date_modified: "2025-09-30T00:00",
+};
 
 export default function NotFoundPage() {
   const ShaderRef = useRef();
@@ -37,30 +47,30 @@ export default function NotFoundPage() {
       delay: 0.5,
       ease: "power2.out",
     });
-    // gsap.fromTo(
-    //   ShaderRef.current,
-    //   {
-    //     opacity: 0,
-    //   },
-    //   {
-    //     opacity: 1,
-    //     duration: 3,
-    //     delay: 0.5,
-    //     ease: "power3.out",
-    //   }
-    // );
-    // gsap.fromTo(
-    //   ".mobile-shader",
-    //   {
-    //     opacity: 0,
-    //   },
-    //   {
-    //     opacity: 1,
-    //     duration: 3,
-    //     delay: 0.5,
-    //     ease: "power3.out",
-    //   }
-    // );
+    gsap.fromTo(
+      ShaderRef.current,
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 3,
+        delay: 0.5,
+        ease: "power3.out",
+      }
+    );
+    gsap.fromTo(
+      ".mobile-shader",
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 3,
+        delay: 0.5,
+        ease: "power3.out",
+      }
+    );
   });
   useEffect(() => {
     if (globalThis.innerWidth <= 1024) {
@@ -71,6 +81,7 @@ export default function NotFoundPage() {
   }, [mob]);
   return (
     <>
+      <WebpageJsonLd metadata={metadata} />
       <Header />
       <section className="w-screen container relative h-screen  max-sm:pb-0  overflow-hidden">
         <div
@@ -115,9 +126,9 @@ export default function NotFoundPage() {
             ref={ShaderRef}
             className="absolute top-[30%] left-0 h-screen w-screen max-sm:hidden "
           >
-            {/* <Suspense>
+            <Suspense>
               <DynamicShaderComp />
-            </Suspense> */}
+            </Suspense>
           </div>
         ) : (
           <div className="absolute top-0 left-0 h-full w-screen hidden max-sm:block max-md:block mobile-shader">
