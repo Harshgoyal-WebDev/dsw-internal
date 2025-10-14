@@ -12,8 +12,6 @@ const AwardItem = ({ img, title }) => {
             height={146}
             width={128}
             alt={title}
-            quality={70}
-            loading="lazy"
             className="h-full w-full"
           />
         </div>
