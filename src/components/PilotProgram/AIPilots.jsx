@@ -108,6 +108,8 @@ const AIPilots = () => {
                         width={200}
                         className="object-contain h-full w-full"
                         alt={card.title}
+                        loading="lazy"
+                        quality={70}
                       />
                     </div>
                     <div className="space-y-[5vw] w-full">
