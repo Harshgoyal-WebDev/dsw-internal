@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Copy from "../Animations/Copy";
 
-const AwardItem = ({ img, title }) => {
+const AwardItem = React.memo(({ img, title }) => {
   return (
     <>
       <div className="flex-shrink-0 flex items-center justify-center gap-[1vw] w-[25vw] max-md:w-[75vw] max-md:gap-[4vw]">
@@ -13,6 +13,8 @@ const AwardItem = ({ img, title }) => {
             width={128}
             alt={title}
             className="h-full w-full"
+            loading="lazy"
+            quality={70}
           />
         </div>
         <div className="space-y-[1vw]">
@@ -21,8 +23,11 @@ const AwardItem = ({ img, title }) => {
       </div>
     </>
   );
-};
+});
 const Transform = () => {
+
+  const repeatItems = (items) => [...items, ...items];
+
   return (
     <section
       id="transform"
@@ -43,15 +48,7 @@ const Transform = () => {
         <div className="space-y-[5.5vw] max-md:space-y-[10vw]">
           <div className="marquee fadeup  max-md:my-[10vw] gap-[3vw]">
             <div className="marquee__track ">
-              {awards1.map((item, index) => (
-                <AwardItem
-                  key={index}
-                  img={item.img}
-                  title={item.title}
-                  year={item.year}
-                />
-              ))}
-              {awards1.map((item, index) => (
+              {repeatItems(awards1).map((item, index) => (
                 <AwardItem
                   key={index}
                   img={item.img}
@@ -64,15 +61,7 @@ const Transform = () => {
 
           <div className="marquee fadeup  max-md:my-[10vw] gap-[3vw]">
             <div className="marquee__track_reverse">
-              {awards2.map((item, index) => (
-                <AwardItem
-                  key={index}
-                  img={item.img}
-                  title={item.title}
-                  year={item.year}
-                />
-              ))}
-              {awards2.map((item, index) => (
+              {repeatItems(awards2).map((item, index) => (
                 <AwardItem
                   key={index}
                   img={item.img}

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Copy from "../Animations/Copy";
 import Image from "next/image";
 import { ArrowBigLeftIcon } from "lucide-react";
@@ -10,7 +10,7 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { NextButton, PreviousButton } from "../Button/SliderButtons";
 
-const PilotCard = ({ id, icon, title, para }) => {
+const PilotCard = React.memo(({ id, icon, title, para }) => {
   return (
     <>
       <div className=" space-y-[2vw] relative group  max-md:space-y-[10vw] w-[43%]">
@@ -38,11 +38,19 @@ const PilotCard = ({ id, icon, title, para }) => {
       </div>
     </>
   );
-};
+});
 
 const AIPilots = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef(null);
+  const [mob, setMob] = useState(false);
+  useEffect(() => {
+    if (globalThis.innerWidth <= 1024) {
+      setMob(true);
+    } else {
+      setMob(false);
+    }
+  }, [mob]);
 
   const handlePrev = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
@@ -74,62 +82,72 @@ const AIPilots = () => {
               </p>
             </Copy>
           </div>
-          <div className=" w-full max-md:hidden flex flex-col flex-wrap h-[64vw] gap-x-[7vw] justify-between">
-            {data.map((card, index) => (
-              <PilotCard
-                key={index}
-                icon={card.icon}
-                title={card.title}
-                para={card.para}
-                id={card.id}
-              />
-            ))}
-          </div>
 
-          <div className="h-fit hidden max-md:block w-full">
-            <Swiper
-              ref={swiperRef}
-              modules={[Navigation]}
-              spaceBetween={20}
-              slidesPerView={1}
-              onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-              className="w-full"
-            >
+          {mob ? (
+            <div className="h-fit hidden max-md:block w-full">
+              <Swiper
+                ref={swiperRef}
+                modules={[Navigation]}
+                spaceBetween={20}
+                slidesPerView={1}
+                onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+                className="w-full"
+              >
+                {data.map((card, index) => (
+                  <SwiperSlide key={index}>
+                    <div className="flex gap-[8vw] mt-[8vw] w-full items-center justify-center flex-col">
+                      <Copy>
+                        <p className="text-white-300 text-[4vw]">{card.id}</p>
+                      </Copy>
+                      <div className="w-[30%] h-auto relative fadeup">
+                        <Image
+                          src={card.icon}
+                          height={200}
+                          width={200}
+                          className="object-contain h-full w-full"
+                          alt={card.title}
+                          loading="lazy"
+                          quality={70}
+                        />
+                      </div>
+                      <div className="space-y-[5vw] w-full">
+                        <Copy>
+                          <p className="text-center">{card.title}</p>
+                        </Copy>
+                        <Copy>
+                          <p className="text-center text-white-300">
+                            {card.para}
+                          </p>
+                        </Copy>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+          ) : (
+            <div className=" w-full max-md:hidden flex flex-col flex-wrap h-[64vw] gap-x-[7vw] justify-between">
               {data.map((card, index) => (
-                <SwiperSlide key={index}>
-                  <div className="flex gap-[8vw] mt-[8vw] w-full items-center justify-center flex-col">
-                    <Copy>
-                    <p className="text-white-300 text-[4vw]">{card.id}</p>
-                    </Copy>
-                    <div className="w-[30%] h-auto relative fadeup">
-                      <Image
-                        src={card.icon}
-                        height={200}
-                        width={200}
-                        className="object-contain h-full w-full"
-                        alt={card.title}
-                        loading="lazy"
-                        quality={70}
-                      />
-                    </div>
-                    <div className="space-y-[5vw] w-full">
-                      <Copy>
-                      <p className="text-center">{card.title}</p>
-                      </Copy>
-                      <Copy>
-                      <p className="text-center text-white-300">{card.para}</p>
-                      </Copy>
-                    </div>
-                  </div>
-                </SwiperSlide>
+                <PilotCard
+                  key={index}
+                  icon={card.icon}
+                  title={card.title}
+                  para={card.para}
+                  id={card.id}
+                />
               ))}
-            </Swiper>
+            </div>
+          )}
+          <div className=" gap-6 mt-6 max-md:mt-[10vw] max-md:items-center max-md:justify-center hidden max-md:flex">
+            <PreviousButton
+              onClick={handlePrev}
+              isDisabled={activeIndex === 0}
+            />
+            <NextButton
+              onClick={handleNext}
+              isDisabled={data.length - 1 === activeIndex}
+            />
           </div>
-           <div className=" gap-6 mt-6 max-md:mt-[10vw] max-md:items-center max-md:justify-center hidden max-md:flex">
-                      <PreviousButton onClick={handlePrev} isDisabled={activeIndex === 0} />
-                      <NextButton onClick={handleNext} isDisabled={data.length-1 === activeIndex} />
-                    </div>
-       
         </div>
       </section>
     </>
