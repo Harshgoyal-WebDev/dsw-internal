@@ -6,9 +6,9 @@ import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger);
 import { useLenis } from "lenis/react";
 import dynamic from "next/dynamic";
-const DynamicShaderComp = dynamic(() => import("./BgShader/ShaderComp"), {
-  ssr: false,
-});
+// const DynamicShaderComp = dynamic(() => import("./BgShader/ShaderComp"), {
+//   ssr: false,
+// });
 
 const Loader = () => {
 

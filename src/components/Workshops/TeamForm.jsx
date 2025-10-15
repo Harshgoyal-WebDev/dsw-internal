@@ -93,9 +93,9 @@ export default function TeamForm() {
 
 
   return (
-    <section className="mobile:pt-0 overflow-hidden h-fit max-md:pb-[10%] max-sm:pb-0" id="formoem">
-      <div className="w-full h-full mobile:p-0 tablet:p-[6.5vw]">
-        <div className="w-full flex flex-col gap-[2vw] mobile:gap-[5vw] tablet:w-full mobile:px-0 max-md:px-[2vw] mobile:py-[5vw] fadeup">
+    <section className=" overflow-hidden h-fit max-md:pb-[10%] max-sm:pb-0" id="formoem">
+      <div className="w-full h-full ">
+        <div className="w-full flex flex-col gap-[2vw]  max-md:px-[2vw] fadeup">
           <Form {...form}>
             <form
               autoComplete="off"
@@ -192,18 +192,18 @@ export default function TeamForm() {
                 )}
               />
 
-              <div className="w-full flex gap-[1vw] justify-start mobile:justify-start mobile:items-start mobile:gap-3 tablet:block tablet:w-4/5 ">
+              <div className="w-full flex gap-[1vw] justify-start  ">
                 <FormField
                   control={control}
                   name="terms"
                   render={({ field }) => (
                     <FormItem className="">
-                      <div className="flex items-center justify-center gap-3 tablet:gap-1 pl-[0.5vw]">
+                      <div className="flex items-center justify-center gap-3  pl-[0.5vw]">
                         <Checkbox
                           aria-label="checkbox"
                           checked={field.value}
                           onCheckedChange={field.onChange}
-                          className="mobile:mt-[2vw] tablet:mt-[2vw] cursor-pointer max-sm:rounded-[0.5vw] max-md:rounded-[0.5vw]"
+                          className=" cursor-pointer max-sm:rounded-[0.5vw] max-md:rounded-[0.5vw]"
                         />
                         <label className="text-[1.15vw] mt-2  text-[#CACACA] max-sm:text-[3.5vw] max-sm:mt-5 max-md:text-[2.7vw]">
                           I agree to{" "}

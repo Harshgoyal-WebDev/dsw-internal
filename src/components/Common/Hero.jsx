@@ -3,7 +3,6 @@ import React, {
   Suspense,
   useMemo,
   useRef,
-  useLayoutEffect,
   memo,
   useState,
   useEffect,
@@ -20,7 +19,7 @@ import {
   headingAnim,
   lineAnim,
 } from "@/components/Animations/gsapAnimations";
-import heroGradient from "../../../public/assets/images/homepage/gradient-mobile.png";
+// import heroGradient from "../../../public/assets/images/homepage/gradient-mobile.png";
 import AnimatedLine from "./HeroComponents/AnimatedLine";
 import BreadCrumbs from "./HeroComponents/BreadCrumbs";
 
@@ -67,7 +66,7 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // Split & reveal (heading + paragraph)
-useLayoutEffect(() => {
+useEffect(() => {
   gsap.set(".hero-overlay", { opacity: 0 });
 
   initSplit();
@@ -169,12 +168,14 @@ useLayoutEffect(() => {
     }
 
     // breadcrumbs slide-up
-    gsap.set(".breadcrumbs", { opacity: 1 });
-    gsap.fromTo(
-      ".breadcrumbs",
-      { y: 50, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power3.out", delay: 1.5 }
-    );
+    if(breadcrumbs){
+      gsap.set(".breadcrumbs", { opacity: 1 });
+      gsap.fromTo(
+        ".breadcrumbs",
+        { y: 50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1, ease: "power3.out", delay: 1.5 }
+      );
+    }
 
     // CTA buttons
     const ctaDelay = hasVisited ? 2 : 6.1;
@@ -309,12 +310,12 @@ useLayoutEffect(() => {
           <div className="w-screen h-screen absolute top-[30%] left-0 shader-container max-md:hidden">
             <video
             src={"/assets/videos/shader-video.mp4"}
+            poster="/assets/videos/shader-video.webp"
             playsInline
             autoPlay
             muted
             loop
             />
-
           </div>
 
           {/* <div

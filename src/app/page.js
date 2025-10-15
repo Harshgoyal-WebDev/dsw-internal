@@ -36,8 +36,7 @@ export default async function Home() {
   const { posts } = await getAllPosts();
   return (
     <>
-      <WebpageJsonLd metadata={metadata} />
-      
+      <WebpageJsonLd metadata={metadata} />  
       <FAQJSONLD faqs={faqData} />
       <Layout>
         <OldHero heroData={heroData} />

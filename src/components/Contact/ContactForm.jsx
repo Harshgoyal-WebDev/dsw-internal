@@ -99,9 +99,9 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="mobile:pt-0 overflow-hidden" id="formoem">
-      <div className="w-full h-full mobile:p-0 tablet:p-[6.5vw]">
-        <div className="w-full flex flex-col gap-[2vw] mobile:gap-[5vw] tablet:w-full mobile:px-0 max-md:px-[2vw] mobile:py-[5vw] fadeup">
+    <section className=" overflow-hidden" id="formoem">
+      <div className="w-full h-full  ">
+        <div className="w-full flex flex-col gap-[2vw] max-md:px-[2vw] fadeup">
           <Form {...form}>
             <form
               autoComplete="off"

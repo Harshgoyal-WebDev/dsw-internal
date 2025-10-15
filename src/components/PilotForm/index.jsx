@@ -90,9 +90,9 @@ export default function PilotForm() {
   };
 
   return (
-    <section className="mobile:pt-0 overflow-hidden" id="formoem">
-      <div className="w-full h-full mobile:p-0 tablet:p-[6.5vw]">
-        <div className="w-full flex flex-col gap-[2vw] mobile:gap-[5vw] tablet:w-full mobile:px-[3vw] max-md:px-[2vw] mobile:py-[5vw] fadeup">
+    <section className=" overflow-hidden" id="formoem">
+      <div className="w-full h-full">
+        <div className="w-full flex flex-col gap-[2vw]  max-md:px-[2vw] fadeup">
           <Form {...form}>
             <form
               autoComplete="off"
@@ -208,18 +208,18 @@ export default function PilotForm() {
                 )}
               />
 
-              <div className="w-full flex gap-[1vw] justify-start mobile:justify-start mobile:items-start mobile:gap-3 tablet:block tablet:w-4/5 ">
+              <div className="w-full flex gap-[1vw] justify-start  ">
                 <FormField
                   control={control}
                   name="terms"
                   render={({ field }) => (
                     <FormItem className="">
-                      <div className="flex items-center justify-center max-md:gap-[3vw] max-sm:gap-3 gap-3 tablet:gap-1 pl-[0.5vw]">
+                      <div className="flex items-center justify-center max-md:gap-[3vw] max-sm:gap-3 gap-3 pl-[0.5vw]">
                         <Checkbox
                           aria-label="checkbox"
                           checked={field.value}
                           onCheckedChange={field.onChange}
-                          className="mobile:mt-[2vw] max-md:scale-[1.5] max-sm:scale-[1] max-md:mt-[2vw] cursor-pointer max-md:rounded-[0.5vw]"
+                          className=" max-md:scale-[1.5] max-sm:scale-[1] max-md:mt-[2vw] cursor-pointer max-md:rounded-[0.5vw]"
                         />
                         <label className="text-[1.15vw] mt-2   text-[#CACACA] max-sm:text-[3.5vw] max-md:text-[2.7vw] max-md:mt-5">
                           I agree to{" "}
