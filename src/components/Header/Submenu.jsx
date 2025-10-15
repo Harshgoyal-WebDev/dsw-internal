@@ -1,6 +1,16 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+// helper: get the last non-empty segment as "slug"
+const getSlug = (path) =>
+  (path || "/")
+    .split("?")[0]
+    .replace(/\/+$/, "")
+    .split("/")
+    .filter(Boolean)
+    .pop() || "";
 
 const SubmenuNavigation = ({
   section,              // { id, text, href, children? } from NAVIGATION
@@ -12,15 +22,31 @@ const SubmenuNavigation = ({
 }) => {
   if (!section) return null;
 
+  const pathname = usePathname();
+  const currentSlug = getSlug(pathname || "/");
+
   const { id: sectionId, text: title, href: link, children = [] } = section;
   const isOpen = openSection === title;
+
+  // Active-state checks
+  const parentSlug = getSlug(link || "");
+  const childActiveIndex = children.findIndex(
+    (c) =>
+      getSlug(c.href) === currentSlug ||
+      (!!c.href && c.href !== "/" && (pathname || "").startsWith(c.href))
+  );
+  const anyChildActive = childActiveIndex !== -1;
+  const isParentActive =
+    parentSlug === currentSlug ||
+    (!!link && link !== "/" && (pathname || "").startsWith(link));
+  const isActive = isParentActive || anyChildActive;
 
   const handleHeaderClick = () => {
     toggleSection(title);
   };
 
   const handleParentLinkClick = () => {
-    // If you prefer the parent title to only toggle (and NOT navigate), you can preventDefault here:
+    // If you want the parent title to only toggle, prevent default here.
     // e.preventDefault();
     setOpenMobileMenu(false);
     setOpenSection(null);
@@ -34,7 +60,12 @@ const SubmenuNavigation = ({
           className="flex justify-between w-full list-title cursor-pointer items-center"
           onClick={handleHeaderClick}
         >
-          <Link href={link || "#"} onClick={handleParentLinkClick}>
+          <Link
+            href={link || "#"}
+            onClick={handleParentLinkClick}
+            aria-current={isParentActive ? "page" : undefined}
+            className={isActive ? "!text-[#ff6b00]" : ""}
+          >
             {title}
           </Link>
 
@@ -47,10 +78,11 @@ const SubmenuNavigation = ({
               xmlns="http://www.w3.org/2000/svg"
               className="max-sm:h-[5vw] max-sm:w-[5vw] text-primary max-md:w-[3vw] max-md:h-[3vw] ease-in-out transition-all duration-700"
               fill="none"
+
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" className={`${isActive ? "stroke-[#ff6b00]" : ""}`} />
             </svg>
           </div>
         </div>
@@ -58,26 +90,32 @@ const SubmenuNavigation = ({
         {/* Collapsible list */}
         <div
           className={`overflow-hidden transition-all ease-in-out duration-700 mb-[4vw] 
-${
-            isOpen ? "max-h-[80vw] max-sm:h-[25vw] opacity-100 max-md:h-[18vw]" : "max-h-0 h-0 opacity-0"
-          } ${
-            isOpen&&title==="Resources" ? "max-h-[80vw] max-sm:h-[65vw] opacity-100 max-md:h-[48vw]" : "max-h-0 h-0 opacity-0"
-          }`}
+            ${isOpen ? "max-h-[80vw] max-sm:h-[25vw] opacity-100 max-md:h-[18vw]" : "max-h-0 h-0 opacity-0"}
+            ${isOpen && title === "Resources" ? "max-h-[80vw] max-sm:h-[65vw] opacity-100 max-md:h-[48vw]" : ""}
+          `}
         >
-          <ul className="max-sm:text-[4vw] max-md:text-[3vw] max-sm:py-[5vw]  pl-4 max-md:pl-[4vw] max-md:pt-[3vw] flex flex-col items-start justify-center max-sm:gap-[1.5vw] max-md:gap-[1vw] list-disc !font-display">
+          <ul className="max-sm:text-[4vw] max-md:text-[3vw] max-sm:py-[5vw]  pl-4 max-md:pl-[4vw] max-md:pt-[3vw] flex flex-col items-start justify-center max-sm:gap-[1.5vw] max-md:gap-[1vw] list-disc !font-display ">
             {children.map((child, idx) => {
-              // Build a collision-resistant key using multiple stable fields
-              const safeKey = [sectionId, child.id, child.href, child.text, idx].filter(Boolean).join("__");
+              const safeKey = [sectionId, child.id, child.href, child.text, idx]
+                .filter(Boolean)
+                .join("__");
+
+              const childSlug = getSlug(child.href);
+              const childActive =
+                childSlug === currentSlug ||
+                (!!child.href && child.href !== "/" && (pathname || "").startsWith(child.href));
+
               return (
-                <li key={safeKey}>
+                <li key={safeKey} className={`${childActive ? "marker:!text-[#ff6b00]" : ""}`}>
                   <Link
                     href={child.href}
                     onClick={() => {
                       setOpenMobileMenu(false);
                       setOpenSection(null);
-                      // If you have a custom router helper:
-                      // navigateTo?.(child.href);
+                      navigateTo?.(child.href);
                     }}
+                    aria-current={childActive ? "page" : undefined}
+                    className={childActive ? "text-[#ff6b00]" : ""}
                   >
                     {child.text}
                   </Link>
@@ -94,4 +132,3 @@ ${
 };
 
 export default SubmenuNavigation;
-

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
-import Image from "next/image";
+// import Image from "next/image";
 import gsap from "gsap";
 import { usePathname } from "next/navigation";
 import { useLenis } from "lenis/react";

@@ -5,6 +5,28 @@ import SubmenuNavigation from "./Submenu";
 import { SOCIAL_LINKS, NAVIGATION } from "@/constants/siteConfig";
 import SocialLink from "../ui/SocialLink";
 
+// helper: normalize to last non-empty segment ("slug")
+const getSlug = (path) =>
+  (path || "/")
+    .split("?")[0]
+    .replace(/\/+$/, "")
+    .split("/")
+    .filter(Boolean)
+    .pop() || "";
+
+// checks if an href should be considered active given the pathname
+const makeIsActiveHref = (pathname) => {
+  const currentSlug = getSlug(pathname || "/");
+  const safePath = pathname || "/";
+
+  return (href) => {
+    if (!href) return false;
+    if (href === "/") return safePath === "/"; // exact match for home
+    const hrefSlug = getSlug(href);
+    return hrefSlug === currentSlug || safePath.startsWith(href);
+  };
+};
+
 export default function MobileMenu({
   openMobileMenu,
   setOpenMobileMenu,
@@ -16,6 +38,8 @@ export default function MobileMenu({
   const toggleSection = (sectionTitle) => {
     setOpenSection((prev) => (prev === sectionTitle ? null : sectionTitle));
   };
+
+  const isActiveHref = useMemo(() => makeIsActiveHref(pathname), [pathname]);
 
   // Extract items from NAVIGATION
   const {
@@ -58,6 +82,12 @@ export default function MobileMenu({
     setOpenSection(null);
   };
 
+  // small helper to apply active orange & aria-current
+  const linkProps = (href) => ({
+    className: `link-text ${isActiveHref(href) ? "text-[#F16B0D]" : ""}`,
+    "aria-current": isActiveHref(href) ? "page" : undefined,
+  });
+
   return (
     <>
       {/* Backdrop */}
@@ -67,6 +97,8 @@ export default function MobileMenu({
             ? "opacity-100 bg-black/40 backdrop-blur-lg pointer-events-auto"
             : "opacity-0 pointer-events-none"
         }`}
+        onClick={() => setOpenMobileMenu(false)}
+        aria-hidden
       />
 
       {/* Drawer */}
@@ -77,13 +109,20 @@ export default function MobileMenu({
             : "translate-x-[100%] pointer-events-none"
         }`}
       >
-        <div className="h-full w-full relative z-[30] border border-white/40 max-sm:rounded-[10vw] bg-black/30 flex flex-col justify-between py-[10vw] px-[7vw] max-md:rounded-[7vw]">
-          <div data-lenis-prevent className="w-full h-[80vh] overflow-x-hidden flex items-center mt-[7vh] max-md:pt-[22vw] max-md:pr-[2vw] max-sm:pt-0">
-            <div className="flex w-full flex-col max-sm:gap-[4vw] items-start max-md:gap-[3vw] h-fit  justify-center max-md:justify-start">
+        <div
+          data-lenis-prevent
+          className="h-full w-full relative z-[30] border border-white/40 max-sm:rounded-[10vw] bg-black/30 flex flex-col justify-between py-[10vw] px-[7vw] max-md:rounded-[7vw]"
+        >
+          <div className="w-full h-[80vh] overflow-x-hidden flex items-center mt-[7vh] max-md:pt-[22vw] max-md:pr-[2vw] max-sm:pt-0">
+            <div className="flex w-full flex-col max-sm:gap-[4vw] items-start max-md:gap-[3vw] h-fit justify-center max-md:justify-start">
               {/* Home */}
               {homeItem && (
                 <>
-                  <Link href={homeItem.href} className="link-text" onClick={handleDirectLinkClick}>
+                  <Link
+                    href={homeItem.href}
+                    {...linkProps(homeItem.href)}
+                    onClick={handleDirectLinkClick}
+                  >
                     {homeItem.text}
                   </Link>
                   <span className="bg-[#e8e8e8c5] h-[1px] w-full" />
@@ -117,7 +156,11 @@ export default function MobileMenu({
               {/* About */}
               {aboutItem && (
                 <>
-                  <Link href={aboutItem.href} className="link-text" onClick={handleDirectLinkClick}>
+                  <Link
+                    href={aboutItem.href}
+                    {...linkProps(aboutItem.href)}
+                    onClick={handleDirectLinkClick}
+                  >
                     {aboutItem.text}
                   </Link>
                   <span className="bg-[#e8e8e8c5] h-[1px] w-full" />
@@ -139,7 +182,11 @@ export default function MobileMenu({
               {/* Pilot Program */}
               {pilotItem && (
                 <>
-                  <Link href={pilotItem.href} className="link-text" onClick={handleDirectLinkClick}>
+                  <Link
+                    href={pilotItem.href}
+                    {...linkProps(pilotItem.href)}
+                    onClick={handleDirectLinkClick}
+                  >
                     {pilotItem.text}
                   </Link>
                   <span className="bg-[#e8e8e8c5] h-[1px] w-full" />
@@ -149,7 +196,11 @@ export default function MobileMenu({
               {/* Contact */}
               {contactItem && (
                 <>
-                  <Link href={contactItem.href} className="link-text" onClick={handleDirectLinkClick}>
+                  <Link
+                    href={contactItem.href}
+                    {...linkProps(contactItem.href)}
+                    onClick={handleDirectLinkClick}
+                  >
                     {contactItem.text}
                   </Link>
                   <span className="bg-[#e8e8e8c5] h-[1px] w-full" />
@@ -176,10 +227,8 @@ export default function MobileMenu({
 
           {/* Close pill */}
           <div
-            className="w-fit max-sm:px-[6vw] max-sm:py-[3.2vw] max-md:px-[4vw] max-md:py-[2.5vw] flex items-center justify-center rounded-full bg-gradient-to-r from-primary-2 to-primary-3 max-sm:gap-[3.5vw] max-md:gap-[2vw] absolute top-[3%] right-[5%] max-md:text-[3vw] max-sm:text-[4.2vw] text-[4.2vw] "
-            onClick={() => {
-              setOpenMobileMenu(false);
-            }}
+            className="w-fit max-sm:px-[6vw] max-sm:py-[3.2vw] max-md:px-[4vw] max-md:py-[2.5vw] flex items-center justify-center rounded-full bg-gradient-to-r from-primary-2 to-primary-3 max-sm:gap-[3.5vw] max-md:gap-[2vw] absolute top-[3%] right-[5%] max-md:text-[3vw] max-sm:text-[4.2vw] text-[4.2vw]"
+            onClick={() => setOpenMobileMenu(false)}
           >
             <span>Close</span>
             <div className="relative w-[4.5vw] max-md:w-[3vw] max-sm:w-[4.2vw] h-auto flex justify-center items-center rotate-45">
