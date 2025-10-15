@@ -1,27 +1,27 @@
-import About from "@/components/Homepage/About";
-import Blogs from "@/components/Homepage/Blogs";
-import Connects from "@/components/Homepage/Connects";
-import EnterpriseAI from "@/components/Homepage/EnterpriseAI";
-import Difference from "@/components/Homepage/Difference";
-import Insuraince from "@/components/Homepage/Insuraince";
-import Recognized from "@/components/Homepage/Recognized";
-import SuccessStories from "@/components/Homepage/SuccessStories";
-import Tour from "@/components/Common/Tour";
-import TurbochargeG from "@/components/Homepage/TurboChargeG";
-import UnifyAi from "@/components/Homepage/UnifyAi";
-import WhyUnify from "@/components/Homepage/WhyUnify";
-import Layout from "@/components/Layout";
-import Faqs from "@/components/Common/FAQs";
-import Clients from "@/components/Homepage/Clients";
-import WhyUnifyMobile from "@/components/Homepage/WhyUnifyMobile";
-import FooterCTA from "@/components/Common/FooterCta";
 import { FAQJSONLD, WebpageJsonLd } from "@/lib/json-ld";
 import { getAllPosts } from "@/lib/posts";
+import Layout from "@/components/Layout";
 import OldHero from "@/components/Common/Hero";
 import dynamic from "next/dynamic";
-const Brochure = dynamic(() => import("@/components/Homepage/Brochure"), {
-  ssr: true,
-});
+
+// Lazy load below-the-fold components
+const About = dynamic(() => import("@/components/Homepage/About"));
+const Blogs = dynamic(() => import("@/components/Homepage/Blogs"));
+const Connects = dynamic(() => import("@/components/Homepage/Connects"));
+const EnterpriseAI = dynamic(() => import("@/components/Homepage/EnterpriseAI"));
+const Difference = dynamic(() => import("@/components/Homepage/Difference"));
+const Insuraince = dynamic(() => import("@/components/Homepage/Insuraince"));
+const Recognized = dynamic(() => import("@/components/Homepage/Recognized"));
+const SuccessStories = dynamic(() => import("@/components/Homepage/SuccessStories"));
+const Tour = dynamic(() => import("@/components/Common/Tour"));
+const TurbochargeG = dynamic(() => import("@/components/Homepage/TurboChargeG"));
+const UnifyAi = dynamic(() => import("@/components/Homepage/UnifyAi"));
+const WhyUnify = dynamic(() => import("@/components/Homepage/WhyUnify"));
+const Faqs = dynamic(() => import("@/components/Common/FAQs"));
+const Clients = dynamic(() => import("@/components/Homepage/Clients"));
+const WhyUnifyMobile = dynamic(() => import("@/components/Homepage/WhyUnifyMobile"));
+const FooterCTA = dynamic(() => import("@/components/Common/FooterCta"));
+const Brochure = dynamic(() => import("@/components/Homepage/Brochure"));
 
 export const metadata = {
   title: "DSW UnifyAI – Enterprise AI Platform for Insurance",

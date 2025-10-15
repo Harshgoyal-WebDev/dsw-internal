@@ -1,11 +1,17 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import TiltedCard from "../Animations/TiltedCard";
+import dynamic from "next/dynamic";
 import { NextButton, PreviousButton } from "../Button/SliderButtons";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
 import WhiteButton from "../Button/WhiteButton";
+
+// Lazy load heavy components
+const TiltedCard = dynamic(() => import("../Animations/TiltedCard"));
+const Swiper = dynamic(() => import("swiper/react").then(mod => mod.Swiper));
+const SwiperSlide = dynamic(() => import("swiper/react").then(mod => mod.SwiperSlide));
+
+// Import styles only when needed
+import("swiper/css");
+import("swiper/css/navigation");
 
 const Brochure = () => {
   const swiperRef = useRef(null);
