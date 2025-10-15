@@ -26,9 +26,9 @@ import BreadCrumbs from "./HeroComponents/BreadCrumbs";
 
 gsap.registerPlugin(SplitText);
 
-const DynamicShaderComp = dynamic(() => import("../BgShader/ShaderComp"), {
-  ssr: false,
-});
+// const DynamicShaderComp = dynamic(() => import("../BgShader/ShaderComp"), {
+//   ssr: false,
+// });
 
 const LINE_COUNT = 4;
 const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
@@ -306,22 +306,32 @@ useLayoutEffect(() => {
               <AnimatedLine key={i} delay={d} />
             ))}
           </div>
+          <div className="w-screen h-screen absolute top-[30%] left-0 shader-container max-md:hidden">
+            <video
+            src={"/assets/videos/shader-video.mp4"}
+            playsInline
+            autoPlay
+            muted
+            loop
+            />
 
-          <div
+          </div>
+
+          {/* <div
             ref={shaderRef}
             className="absolute top-[30%] left-0 h-screen w-screen max-md:hidden shader-container "
           >
             <Suspense>
               <DynamicShaderComp />
             </Suspense>
-          </div>
+          </div> */}
         </>
       ) : (
         <div
           ref={mobileGradientRef}
           className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-md:block "
         >
-          <Image
+          {/* <Image
             src={heroGradient}
             fetchPriority="high"
             priority={true}
@@ -329,7 +339,7 @@ useLayoutEffect(() => {
             className="w-full h-full object-cover"
             width={300}
             height={580}
-          />
+          /> */}
         </div>
       )}
       <div className="w-screen h-screen absolute inset-0 bg-background z-[801] hero-overlay pointer-events-none opacity-100" />
