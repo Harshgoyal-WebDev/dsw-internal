@@ -194,21 +194,21 @@ const Difference = () => {
         </div>
       </div>
       {!mob ? (
-        // <div className="absolute top-[30%] left-0 h-screen w-screen max-sm:hidden">
-        //   <Suspense>
-        //     <DynamicShaderComp />
-        //   </Suspense>
-        // </div>
-         <div className="w-screen h-screen absolute top-[30%] left-0 ">
-            <video
-            src={"/assets/videos/shader-video.mp4"}
-            playsInline
-            autoPlay
-            muted
-            loop
-            />
+        <div className="absolute top-[30%] left-0 h-screen w-screen max-sm:hidden">
+          <Suspense>
+            <DynamicShaderComp />
+          </Suspense>
+        </div>
+        //  <div className="w-screen h-screen absolute top-[30%] left-0 ">
+        //     <video
+        //     src={"/assets/videos/shader-video.mp4"}
+        //     playsInline
+        //     autoPlay
+        //     muted
+        //     loop
+        //     />
 
-          </div>
+        //   </div>
       ) : (
         <div className="w-screen h-screen absolute top-0 z-[10] left-0 hidden max-sm:block">
           <Image

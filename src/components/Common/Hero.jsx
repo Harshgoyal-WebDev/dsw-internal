@@ -19,15 +19,14 @@ import {
   headingAnim,
   lineAnim,
 } from "@/components/Animations/gsapAnimations";
-// import heroGradient from "../../../public/assets/images/homepage/gradient-mobile.png";
 import AnimatedLine from "./HeroComponents/AnimatedLine";
 import BreadCrumbs from "./HeroComponents/BreadCrumbs";
 
 gsap.registerPlugin(SplitText);
 
-// const DynamicShaderComp = dynamic(() => import("../BgShader/ShaderComp"), {
-//   ssr: false,
-// });
+const DynamicShaderComp = dynamic(() => import("../BgShader/ShaderComp"), {
+  ssr: false,
+});
 
 const LINE_COUNT = 4;
 const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
@@ -307,40 +306,29 @@ useEffect(() => {
               <AnimatedLine key={i} delay={d} />
             ))}
           </div>
-          <div className="w-screen h-screen absolute top-[30%] left-0 shader-container max-md:hidden">
-            <video
-            src={"/assets/videos/shader-video.mp4"}
-            poster="/assets/videos/shader-video.webp"
-            playsInline
-            autoPlay
-            muted
-            loop
-            />
-          </div>
-
-          {/* <div
+          <div
             ref={shaderRef}
             className="absolute top-[30%] left-0 h-screen w-screen max-md:hidden shader-container "
           >
             <Suspense>
               <DynamicShaderComp />
             </Suspense>
-          </div> */}
+          </div>
         </>
       ) : (
         <div
           ref={mobileGradientRef}
           className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-md:block "
         >
-          {/* <Image
-            src={heroGradient}
+          <Image
+            src={"/assets/images/homepage/gradient-mobile.png"}
             fetchPriority="high"
             priority={true}
             alt="shader-gradient-mobile"
             className="w-full h-full object-cover"
             width={300}
             height={580}
-          /> */}
+          />
         </div>
       )}
       <div className="w-screen h-screen absolute inset-0 bg-background z-[801] hero-overlay pointer-events-none opacity-100" />

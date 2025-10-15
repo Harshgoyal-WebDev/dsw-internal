@@ -1,41 +1,57 @@
 "use client";
 
-import PrimaryButton from "../Button/PrimaryButton";
 import { useEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
+import Image from "next/image";
+import gsap from "gsap";
+import { usePathname } from "next/navigation";
+import { useLenis } from "lenis/react";
+
+import PrimaryButton from "../Button/PrimaryButton";
 import NavigationLink from "../ui/NavigationLink";
 import Logo from "../ui/Logo";
 import { NAVIGATION, CTA_BUTTONS } from "@/constants/siteConfig";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import { usePathname } from "next/navigation";
-import { useLenis } from "lenis/react";
-import Image from "next/image";
-import dynamic from "next/dynamic";
 
 const MobileMenu = dynamic(() => import("./MobileMenu"), { ssr: true });
 
-gsap.registerPlugin(ScrollTrigger);
+// Helper: get the last non-empty segment as "slug"
+const getSlug = (path) =>
+  (path || "/")
+    .split("?")[0]
+    .replace(/\/+$/, "")
+    .split("/")
+    .filter(Boolean)
+    .pop() || "";
 
 const Header = () => {
   const [isHidden, setIsHidden] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [openDropdown, setOpenDropdown] = useState(null);
-  const headerRef = useRef(null); // inner container ref (you already had)
-  const headerWrapRef = useRef(null); // NEW: wraps the whole <header> for GSAP
-  const lenis = useLenis();
-  const pathname = usePathname();
   const [openMobileMenu, setOpenMobileMenu] = useState(false);
   const [isHoveringHeader, setIsHoveringHeader] = useState(false);
   const [mob, setMob] = useState(false);
-
-  useEffect(() => {
-    if (globalThis.innerWidth <= 1024) {
-      setMob(true);
-    } else {
-      setMob(false);
+  const [hasVisited] = useState(() => {
+    if (typeof window !== "undefined") {
+      return !!sessionStorage.getItem("hasVisited");
     }
-  }, [mob]);
+    return false;
+  });
 
+  const headerRef = useRef(null);
+  const headerWrapRef = useRef(null);
+  const lenis = useLenis();
+  const pathname = usePathname();
+  const currentSlug = getSlug(pathname || "/");
+
+  // Detect mobile (simple width check)
+  useEffect(() => {
+    const check = () => setMob(globalThis.innerWidth <= 1024);
+    check();
+    globalThis.addEventListener("resize", check, { passive: true });
+    return () => globalThis.removeEventListener("resize", check);
+  }, []);
+
+  // Reset scroll on route change (Next + Lenis)
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
     if (lenis) {
@@ -48,10 +64,9 @@ const Header = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // If mouse is over the header, don't hide it.
       if (isHoveringHeader) {
         setIsHidden(false);
-        setLastScrollY(currentScrollY); // keep baseline fresh to avoid jump after leaving
+        setLastScrollY(currentScrollY);
         return;
       }
 
@@ -68,19 +83,10 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY, isHoveringHeader]);
 
-  const [hasVisited, setHasVisited] = useState(() => {
-    if (typeof window !== "undefined") {
-      return !!sessionStorage.getItem("hasVisited");
-    }
-    return false;
-  });
-
-  // ✅ GSAP replacement for motion.header initial/animate/transition
+  // GSAP intro animation
   useEffect(() => {
     if (!headerWrapRef.current) return;
-    gsap.set(headerWrapRef.current, {
-      opacity: 1,
-    });
+    gsap.set(headerWrapRef.current, { opacity: 1 });
     gsap.fromTo(
       headerWrapRef.current,
       { opacity: 0, y: -50 },
@@ -92,12 +98,11 @@ const Header = () => {
         delay: hasVisited ? 2 : 6.1,
       }
     );
-  }, [pathname]);
+  }, [pathname, hasVisited]);
 
   return (
     <>
       <div className="w-screen overflow-hidden h-screen fixed top-0 z-[900] pointer-events-none ">
-        {/* 🔁 Replaced motion.header with a plain header + GSAP */}
         <header
           ref={headerWrapRef}
           onMouseEnter={() => setIsHoveringHeader(true)}
@@ -114,22 +119,31 @@ const Header = () => {
             {!mob ? (
               <div className="border rounded-full border-white/20 ml-[4vw] max-md:hidden relative">
                 <div className="w-full h-full absolute top-0 left-0 rounded-full bg-black/40 backdrop-blur-md" />
-
                 <ul className="flex items-center justify-between px-[2.5vw] py-[1.5vw] gap-[3vw] text-[1vw]">
                   {NAVIGATION.map((link) => {
                     const hasChildren =
                       Array.isArray(link.children) && link.children.length > 0;
 
+                    const linkSlug = getSlug(link.href || "");
+                    const childMatch =
+                      hasChildren &&
+                      link.children.some(
+                        (c) => getSlug(c.href) === currentSlug
+                      );
+
+                    const isActive =
+                      linkSlug === currentSlug ||
+                      !!childMatch ||
+                      (!!link.href &&
+                        link.href !== "/" &&
+                        (pathname || "").startsWith(link.href));
+
                     return (
                       <li
                         key={link.id}
                         className="relative text-[#E8E8E8] dropdown-links"
-                        onMouseEnter={() => {
-                          setOpenDropdown(link.id);
-                        }}
-                        onMouseLeave={() => {
-                          setOpenDropdown(null);
-                        }}
+                        onMouseEnter={() => setOpenDropdown(link.id)}
+                        onMouseLeave={() => setOpenDropdown(null)}
                       >
                         {/* Top-level link */}
                         <div className="flex items-center gap-[0.5vw] relative z-[10] navlinks">
@@ -137,15 +151,18 @@ const Header = () => {
                             text={link.text}
                             href={link.href}
                             variant="default"
+                            aria-current={isActive ? "page" : undefined}
                             aria-haspopup={hasChildren ? "menu" : undefined}
                             aria-expanded={
                               hasChildren
                                 ? String(openDropdown === link.id)
                                 : undefined
                             }
-                            className={
-                              hasChildren ? "cursor-pointer" : undefined
-                            }
+                            className={[
+                              hasChildren ? "cursor-pointer" : "",
+                              isActive ? "!text-[#Ff6B00]" : "text-[#E8E8E8]",
+                              !isActive ? "hover:text-[#Ff6B00]" : "",
+                            ].join(" ")}
                             onClick={(e) => {
                               if (hasChildren) e.preventDefault();
                             }}
@@ -160,13 +177,23 @@ const Header = () => {
                                 }`}
                               >
                                 <div className="w-[1.5vw] h-auto">
-                                  <Image
-                                    src={"/assets/icons/chevron-down.svg"}
-                                    alt=""
-                                    width={20}
-                                    height={20}
-                                    className="w-full h-full object-contain"
-                                  />
+                                 
+                                  <svg
+                                    width="14"
+                                    height="9"
+                                    className={`w-full h-full  ${isActive ? "fill-[#Ff6B00]" : "fill-[#E8E8E8]"}`}
+                                    viewBox="0 0 14 9"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M12.9502 1.06836C13.217 1.35384 13.2171 1.81326 12.9502 2.09863L7.49512 7.93164C7.36559 8.0701 7.18771 8.15039 7 8.15039C6.81226 8.15035 6.63438 8.07016 6.50488 7.93164L1.0498 2.09863C0.915324 1.95485 0.849609 1.76737 0.849609 1.58301C0.849683 1.39882 0.915526 1.21201 1.0498 1.06836C1.32211 0.777148 1.76871 0.777195 2.04102 1.06836L7 6.37207L11.959 1.06836C12.2313 0.777148 12.6779 0.777196 12.9502 1.06836Z"
+                                      fill="white"
+                                      className={`  ${isActive ? "fill-[#Ff6B00] stroke-[#ff6b00]" : "fill-[#E8E8E8]"}`}
+                                      stroke="white"
+                                      strokeWidth="0.3"
+                                    />
+                                  </svg>
                                 </div>
                               </div>
 
@@ -187,24 +214,32 @@ const Header = () => {
                                 ? "opacity-100"
                                 : "opacity-0 pointer-events-none"
                             }`}
-                            onMouseEnter={() => {
-                              setOpenDropdown(link.id);
-                            }}
-                            onMouseLeave={() => {
-                              setOpenDropdown(null);
-                            }}
+                            onMouseEnter={() => setOpenDropdown(link.id)}
+                            onMouseLeave={() => setOpenDropdown(null)}
                           >
                             <ul className="p-[1.5vw]">
-                              {link.children.map((child) => (
-                                <li key={child.href}>
-                                  <NavigationLink
-                                    text={child.text}
-                                    href={child.href}
-                                    variant="default"
-                                    className="block py-2 transition-colors whitespace-nowrap"
-                                  />
-                                </li>
-                              ))}
+                              {link.children.map((child) => {
+                                const childSlug = getSlug(child.href);
+                                const childActive = childSlug === currentSlug;
+                                return (
+                                  <li key={child.href}>
+                                    <NavigationLink
+                                      text={child.text}
+                                      href={child.href}
+                                      variant="default"
+                                      aria-current={
+                                        childActive ? "page" : undefined
+                                      }
+                                      className={[
+                                        "block py-2 transition-colors whitespace-nowrap",
+                                        childActive
+                                          ? "!text-[#F16B0D]"
+                                          : "text-[#E8E8E8] hover:text-[#F16B0D]",
+                                      ].join(" ")}
+                                    />
+                                  </li>
+                                );
+                              })}
                             </ul>
                           </div>
                         )}
@@ -215,6 +250,7 @@ const Header = () => {
               </div>
             ) : (
               <div className="flex items-center justify-between transition-transform duration-500 pointer-events-auto">
+                {/* Hamburger */}
                 <div
                   className="hidden max-sm:flex max-sm:flex-col gap-[1.5vw] w-[8vw] relative z-[150] max-md:flex max-md:flex-col max-md:w-[4.5vw] max-md:gap-[1vw] max-sm:w-[7vw]"
                   onClick={() => setOpenMobileMenu((prev) => !prev)}
@@ -237,6 +273,7 @@ const Header = () => {
                 </div>
               </div>
             )}
+
             {!mob && (
               <div className="max-md:hidden">
                 <PrimaryButton
@@ -249,12 +286,14 @@ const Header = () => {
           </div>
         </header>
 
-        {mob&&<MobileMenu
-          openMobileMenu={openMobileMenu}
-          setOpenMobileMenu={setOpenMobileMenu}
-          lenis={lenis}
-          pathname={pathname}
-        />}
+        {mob && (
+          <MobileMenu
+            openMobileMenu={openMobileMenu}
+            setOpenMobileMenu={setOpenMobileMenu}
+            lenis={lenis}
+            pathname={pathname}
+          />
+        )}
       </div>
     </>
   );

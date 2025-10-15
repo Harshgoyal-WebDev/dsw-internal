@@ -13,16 +13,7 @@ export const manrope = localFont({
       weight: "500",
       style: "normal",
     },
-    {
-      path: "../app/fonts/manrope-semiBold.woff",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "../app/fonts/manrope-bold.woff",
-      weight: "700",
-      style: "normal",
-    },
+    
   ],
   variable: "--font-body",
   display: "swap",

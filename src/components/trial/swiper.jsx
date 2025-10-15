@@ -511,7 +511,7 @@ export default function OsmoSlider({
                     )}
                 </div>
                 <div className="flex flex-col">
-                    <h3 className="text-white font-semibold text-sm tracking-wide">
+                    <h3 className="text-white  text-sm tracking-wide">
                         {slide.profileName}
                     </h3>
                     <p className="text-gray-400 text-xs font-medium tracking-wider uppercase">

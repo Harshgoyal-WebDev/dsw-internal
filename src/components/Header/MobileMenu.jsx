@@ -176,7 +176,7 @@ export default function MobileMenu({
 
           {/* Close pill */}
           <div
-            className="w-fit max-sm:px-[6vw] max-sm:py-[3.2vw] max-md:px-[4vw] max-md:py-[2.5vw] flex items-center justify-center rounded-full bg-gradient-to-r from-primary-2 to-primary-3 max-sm:gap-[3.5vw] max-md:gap-[2vw] absolute top-[3%] right-[5%] max-md:text-[3vw] max-sm:text-[4.2vw] text-[4.2vw] font-semibold"
+            className="w-fit max-sm:px-[6vw] max-sm:py-[3.2vw] max-md:px-[4vw] max-md:py-[2.5vw] flex items-center justify-center rounded-full bg-gradient-to-r from-primary-2 to-primary-3 max-sm:gap-[3.5vw] max-md:gap-[2vw] absolute top-[3%] right-[5%] max-md:text-[3vw] max-sm:text-[4.2vw] text-[4.2vw] "
             onClick={() => {
               setOpenMobileMenu(false);
             }}
