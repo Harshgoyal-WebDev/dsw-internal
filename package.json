@@ -2,10 +2,6 @@
   "name": "dsw-internal",
   "version": "0.1.0",
   "private": true,
-  "sideEffects": [
-    "*.css",
-    "*.scss"
-  ],
   "scripts": {
     "analyze": "cross-env ANALYZE=true next build",
     "dev": "next dev",

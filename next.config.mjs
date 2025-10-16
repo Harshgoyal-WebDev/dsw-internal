@@ -25,7 +25,7 @@ const nextConfig = {
   },
 
   compress: true,
-  productionBrowserSourceMaps: false, // Disable source maps in production to reduce bundle size
+  productionBrowserSourceMaps: true,
 
   // 👇 Security headers
   async headers() {
@@ -116,34 +116,6 @@ const nextConfig = {
       {
         source: "/:path*",
         headers: securityHeaders,
-      },
-      // Cache static assets aggressively
-      {
-        source: "/assets/:path*",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
-      },
-      {
-        source: "/_next/static/:path*",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
-      },
-      {
-        source: "/seo/:path*",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
       },
     ];
   },
