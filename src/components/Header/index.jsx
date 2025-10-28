@@ -146,7 +146,7 @@ const Header = () => {
                         onMouseLeave={() => setOpenDropdown(null)}
                       >
                         {/* Top-level link */}
-                        <div className="flex items-center gap-[0.5vw] relative z-[10] navlinks">
+                        <div className="flex items-center gap-[0.5vw] relative z-[10] navlinks group">
                           <NavigationLink
                             text={link.text}
                             href={link.href}
@@ -161,7 +161,7 @@ const Header = () => {
                             className={[
                                 hasChildren ? "cursor-pointer" : "",
                               isActive ? "!text-[#Ff6B00]" : "text-[#E8E8E8]",
-                              !isActive ? "hover:!text-[#Ff6B00]" : "",
+                              !isActive ? "group-hover:!text-[#Ff6B00] duration-300 transition-all ease-in" : "",
                             ].join(" ")}
                             onClick={(e) => {
                               if (hasChildren) e.preventDefault();
@@ -177,7 +177,6 @@ const Header = () => {
                                 }`}
                               >
                                 <div className="w-[1.5vw] h-auto">
-                                 
                                   <svg
                                     width="14"
                                     height="9"
@@ -189,7 +188,7 @@ const Header = () => {
                                     <path
                                       d="M12.9502 1.06836C13.217 1.35384 13.2171 1.81326 12.9502 2.09863L7.49512 7.93164C7.36559 8.0701 7.18771 8.15039 7 8.15039C6.81226 8.15035 6.63438 8.07016 6.50488 7.93164L1.0498 2.09863C0.915324 1.95485 0.849609 1.76737 0.849609 1.58301C0.849683 1.39882 0.915526 1.21201 1.0498 1.06836C1.32211 0.777148 1.76871 0.777195 2.04102 1.06836L7 6.37207L11.959 1.06836C12.2313 0.777148 12.6779 0.777196 12.9502 1.06836Z"
                                       fill="white"
-                                      className={`  ${isActive ? "fill-[#Ff6B00] stroke-[#ff6b00]" : "fill-[#E8E8E8]"}`}
+                                      className={`  ${isActive ? "fill-[#Ff6B00] stroke-[#ff6b00]" : "fill-[#E8E8E8]"} group-hover:fill-[#FF6b00] group-hover:stroke-[#FF6B00] duration-300 transition-all ease-in `}
                                       stroke="white"
                                       strokeWidth="0.3"
                                     />
