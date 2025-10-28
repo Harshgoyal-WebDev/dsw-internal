@@ -10,7 +10,7 @@ const Proof = () => {
         <div className='space-y-[1.5vw] max-sm:space-y-[10vw] w-[40%] max-sm:w-full'>
             <h2 className='text-90 headingAnim'>Proof and Recognition</h2>
             <div className='flex gap-6 max-sm:flex-col max-sm:w-fit max-sm:gap-[4vw] fadeup'>
-            <PrimaryButton text={"Read News & Press"} href={"/"}/>
+            <PrimaryButton text={"Read News & Press"} href={"/resources/news-and-pr"}/>
             <WhiteButton text={"View Case Studies"} href={"/"}/>
             </div>
         </div>
