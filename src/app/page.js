@@ -2,13 +2,13 @@ import About from "@/components/Homepage/About";
 import Blogs from "@/components/Homepage/Blogs";
 import Connects from "@/components/Homepage/Connects";
 import EnterpriseAI from "@/components/Homepage/EnterpriseAI";
-import Difference from "@/components/Homepage/Difference";
+// import Difference from "@/components/Homepage/Difference";
 import Insuraince from "@/components/Homepage/Insuraince";
 import Recognized from "@/components/Homepage/Recognized";
 import SuccessStories from "@/components/Homepage/SuccessStories";
 import Tour from "@/components/Common/Tour";
 import TurbochargeG from "@/components/Homepage/TurboChargeG";
-import UnifyAi from "@/components/Homepage/UnifyAi";
+// import UnifyAi from "@/components/Homepage/UnifyAi";
 import WhyUnify from "@/components/Homepage/WhyUnify";
 import Layout from "@/components/Layout";
 import Faqs from "@/components/Common/FAQs";
@@ -20,6 +20,7 @@ import { getAllPosts } from "@/lib/posts";
 import OldHero from "@/components/Common/Hero";
 import dynamic from "next/dynamic";
 import Difference2 from "@/components/Homepage/Difference2";
+import UnifyAiSingle from "@/components/Homepage/UnifyAiSingle";
 const Brochure = dynamic(() => import("@/components/Homepage/Brochure"), {
   ssr: true,
 });
@@ -54,7 +55,8 @@ export default async function Home() {
         {/* <Difference /> */}
         <Difference2/>
         <Brochure />
-        <UnifyAi />
+        <UnifyAiSingle/>
+        {/* <UnifyAi /> */}
         <WhyUnify />
         <WhyUnifyMobile />
         <EnterpriseAI />
