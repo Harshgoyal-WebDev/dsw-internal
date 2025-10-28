@@ -1,13 +1,18 @@
+import TrialLayer from '@/components/TrialLayer'
 import React from 'react'
-import OsmoSlider from '@/components/trial/swiper'
-import SwiperV2 from '@/components/trial/SwiperV2'
-import TechPartners from '@/components/AboutPage/TechPartners'
 
-export default function page() {
-    return (
+const trial = () => {
+  return (
+    <>
+    <div className='h-screen w-screen bg-red'/>
+     <div className='h-screen w-screen bg-red'/>
+     <TrialLayer/>
 
-        // <OsmoSlider />
-        // <SwiperV2 />
-        <TechPartners/>
-    )
+ <div className='h-screen w-screen bg-red'/>
+  <div className='h-screen w-screen bg-red'/>
+   
+    </>
+  )
 }
+
+export default trial

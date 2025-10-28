@@ -54,7 +54,7 @@ const Card=({img,para})=>{
     justify-between p-[2.5vw] max-sm:p-[5vw] px-[1vw] h-[22vw] max-sm:rounded-3xl max-sm:h-[35vh] background-glass backdrop-blur-[1vw]"
           >
             <div
-              className="absolute inset-0 rounded-[2.5vw] 
+              className="absolute inset-0 
       bg-gradient-to-r from-light-blue to-dark-blue 
       opacity-0 group-hover:opacity-100 
       transition-opacity duration-500 ease-in-out"

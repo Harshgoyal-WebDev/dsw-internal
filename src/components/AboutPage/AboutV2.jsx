@@ -51,19 +51,19 @@ export default function AboutV2() {
           </Copy>
           <div className="flex gap-[0.7vw] fadeup max-sm:gap-[5vw]">
             <div className="h-[2.5vw] w-[2.5vw] max-sm:w-[12vw] max-sm:h-[12vw] rounded-full overflow-hidden">
-              <Image src={"/assets/images/about/india.png"} height={48} width={48} alt="india" className="h-full w-full"/>
+              <Image src={"/assets/images/about/india.png"} height={48} width={48} alt="india" className="h-full w-full" quality={100}/>
             </div>
             <span className="h-[2.5vw] w-[1px] bg-[#CACACA75] max-sm:h-[12vw]"/>
              <div className="h-[2.5vw] w-[2.5vw] rounded-full overflow-hidden max-sm:w-[12vw] max-sm:h-[12vw]">
-              <Image src={"/assets/images/about/united-kingdom.png"} height={48} width={48} alt="united-kingdom" className="h-full w-full"/>
+              <Image src={"/assets/images/about/united-kingdom.png"} height={48} width={48} alt="united-kingdom" className="h-full w-full" quality={100}/>
             </div>
             <span className="h-[2.5vw] w-[1px] max-sm:h-[12vw] bg-[#CACACA75]"/>
              <div className="h-[2.5vw] w-[2.5vw] rounded-full overflow-hidden max-sm:w-[12vw] max-sm:h-[12vw]">
-              <Image src={"/assets/images/about/ireland.png"} height={48} width={48} alt="ireland" className="h-full w-full"/>
+              <Image src={"/assets/images/about/ireland.png"} height={48} width={48} alt="ireland" className="h-full w-full" quality={100}/>
             </div>
             <span className="h-[2.5vw] w-[1px] bg-[#CACACA75] max-sm:h-[12vw]"/>
              <div className="h-[2.5vw] w-[2.5vw] rounded-full overflow-hidden max-sm:w-[12vw] max-sm:h-[12vw]">
-              <Image src={"/assets/images/about/usa.png"} height={48} width={48} alt="usa" className="h-full w-full"/>
+              <Image src={"/assets/images/about/usa.png"} height={48} width={48} alt="usa" className="h-full w-full" quality={100}/>
             </div>
 
 
