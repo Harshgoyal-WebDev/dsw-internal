@@ -84,7 +84,7 @@ const heroData = {
 const footerCTAData = {
   heading: "Ready to Unify Your AI? ",
   para: "Launch smarter, faster, safer AI and GenAI use cases with DSW UnifyAI. ",
-  btnText1: "Book a demo",
+  btnText1: "Book a Demo",
   btnLink1: "/#",
   btnText2: "Contact Sales",
   btnLink2: "/#",

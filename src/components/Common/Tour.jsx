@@ -80,7 +80,7 @@ const Tour = ({heading,para}) => {
             id="genStudio"
             onClick={() => handleTabClick("genStudio")}
             transition={{
-              duration: 0.5,
+              duration: 0.4,
               ease: "easeInOut",
             }}
           >
@@ -119,7 +119,7 @@ const Tour = ({heading,para}) => {
                   zIndex: 1,
                 }}
                 transition={{
-                  duration: 0.5,
+                  duration: 0.4,
                   ease: "easeInOut",
                 }}
               >

@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { isValidPhoneNumber } from "react-phone-number-input";
-import { useState } from "react";
+import { useId, useState } from "react";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "../ui/form";
 
 import { Input } from "../ui/input";
@@ -18,6 +18,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
+import { Checkbox } from "../ui/motion-checkbox";
 
 const formSchema = z.object({
   name: z.string().min(3, { message: "Name must be at least 3 characters." }),
@@ -29,6 +30,9 @@ const formSchema = z.object({
     .refine(isValidPhoneNumber, { message: "Invalid phone number" }),
   reason: z.string().min(1, { message: "Reason is required." }),
   message: z.string().optional(),
+   terms: z.boolean().refine((val) => val === true, {
+    message: "You must agree to the terms and conditions",
+  }),
 });
 
 export default function ContactForm() {
@@ -42,12 +46,14 @@ export default function ContactForm() {
       number: "",
       reason:"",
       message: "",
+      terms:false
     },
   });
   const { control, handleSubmit } = form;
   const [isLoading, setIsLoading] = useState(false);
   const [submitted, setIsSubmitted] = useState(false);
   const [notsubmitted, setIsNotSubmitted] = useState(false);
+  const id  = useId();
 
   const onSubmit = async (data) => {
     // if (!domainsLoaded) {
@@ -242,6 +248,40 @@ export default function ContactForm() {
                   </FormItem>
                 )}
               />
+
+               <div className="w-full flex gap-[1vw] justify-start  ">
+                <FormField
+                  control={control}
+                  name="terms"
+                  render={({ field }) => (
+                    <FormItem className="">
+                      <div className="flex items-center justify-center max-md:gap-[3vw] max-sm:gap-3 gap-3 pl-[0.5vw]">
+                         <Checkbox id={id}  aria-label="checkbox"
+                          checked={field.value}
+                          onCheckedChange={field.onChange}  className="data-[state=checked]:bg-[#ff6b00] mt-[0.5vw]    max-md:scale-[1.5] max-sm:scale-[1] max-md:mt-[2vw] cursor-pointer max-md:rounded-[0.5vw] border-white/60" />
+                        {/* <Checkbox
+                          aria-label="checkbox"
+                          checked={field.value}
+                          onCheckedChange={field.onChange}
+                          className=" max-md:scale-[1.5] max-sm:scale-[1] max-md:mt-[2vw] cursor-pointer max-md:rounded-[0.5vw]"
+                        /> */}
+                        <label className="text-[1.15vw] mt-2   text-[#CACACA] max-sm:text-[3.5vw] max-md:text-[2.7vw] max-md:mt-5">
+                          I agree to{" "}
+                          <a href="/privacy-policy" className="border-b border-white/40 hover:border-primary-2 duration-300 ease-in transition-all">
+                            Privacy Policy{" "}
+                          </a>{" "}
+                          and{" "}
+                          <a href="/terms-and-conditions" className="border-b border-white/40 hover:border-primary-2 duration-300 ease-in transition-all">
+                            Terms and Conditions
+                          </a>
+                          .
+                        </label>
+                      </div>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
 
               <Button
                 type="submit"

@@ -91,7 +91,9 @@ const SubmenuNavigation = ({
         <div
           className={`overflow-hidden transition-all ease-in-out duration-700 mb-[4vw] 
             ${isOpen ? "max-h-[80vw] max-sm:h-[25vw] opacity-100 max-md:h-[18vw]" : "max-h-0 h-0 opacity-0"}
-            ${isOpen && title === "Resources" ? "max-h-[80vw] max-sm:h-[65vw] opacity-100 max-md:h-[48vw]" : ""}
+             ${isOpen && title === "Resources" ? "max-h-[80vw] max-sm:h-[65vw] opacity-100 max-md:h-[48vw]" : ""}
+             ${isOpen && title === "Solutions" ? "max-h-[80vw] max-sm:!h-[16vw] opacity-100 max-md:!h-[10vw]" : ""}
+
           `}
         >
           <ul className="max-sm:text-[4vw] max-md:text-[3vw] max-sm:py-[5vw]  pl-4 max-md:pl-[4vw] max-md:pt-[3vw] flex flex-col items-start justify-center max-sm:gap-[1.5vw] max-md:gap-[1vw] list-disc !font-display ">

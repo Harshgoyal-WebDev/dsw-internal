@@ -84,7 +84,7 @@ const heroData = {
 const footerCTAData = {
   heading: "Test drive the purpose - built insurance AI platform  ​",
   para: "",
-  btnText1: "Book a demo",
+  btnText1: "Book a Demo",
   btnLink1: "/#",
   btnText2: "Schedule a Call",
   btnLink2: "/#",

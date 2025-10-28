@@ -45,10 +45,10 @@ const WorkshopDetails = ({ userName, userEmail, userDesignation, userCompany, us
               <Column style={columnHead}>Number</Column>
               <Column style={columnText}>{userNumber}</Column>
             </Row>
-            <Row style={row}>
+            {/* <Row style={row}>
               <Column style={columnHead}>Terms</Column>
               <Column style={columnText}>{userTerms}</Column>
-            </Row>
+            </Row> */}
             
           </Section>
         

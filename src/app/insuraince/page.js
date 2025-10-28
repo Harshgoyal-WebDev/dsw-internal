@@ -78,7 +78,7 @@ const heroData= {
 const footerCTAData={
   heading:"Ready to Launch GenAI in 4 Hours? AI/ML Use Cases in 30 Days? ",
   para:"Let’s transform your insurance business with real AI. From claims to fraud to underwriting, insurAInce helps you deploy AI with speed, security, and impact. ",
-  btnText1:"Book a demo",
+  btnText1:"Book a Demo",
   btnLink1:"/#",
   btnText2:"Schedule a Call",
   btnLink2:"/#",

@@ -65,7 +65,7 @@ const FooterCTA = ({ footerCTAData , width, paraWidth}) => {
   return (
     <div
       ref={containerRef}
-      className="flex items-center justify-between h-[80vh] w-screen overflow-hidden max-md:flex-col-reverse  max-md:h-full container "
+      className="flex items-center justify-between h-[80vh] w-screen  max-md:flex-col-reverse  max-md:h-full container "
       id="footer-cta"
     >
       <div className="w-[48%] max-md:w-full max-md:text-center max-sm:mt-[5vw] max-md:flex max-md:flex-col max-sm:items-center max-md:gap-[3vw] ">
@@ -96,7 +96,7 @@ const FooterCTA = ({ footerCTAData , width, paraWidth}) => {
           )}
         </div>
       </div>
-      <div className="relative w-1/2 h-[50vw] max-md:w-full max-sm:h-[110vw]">
+      <div className="relative w-1/2 h-[50vw] max-md:w-full max-sm:h-[110vw] !overflow-visible">
         <div className="absolute top-1/2 -translate-y-1/2 right-0 -z-10">
           <svg
             className="w-[95%] ml-auto"

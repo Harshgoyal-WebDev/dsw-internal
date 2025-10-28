@@ -29,13 +29,12 @@ export const SITE_CONFIG = {
 // Navigation configuration
 export const NAVIGATION = [
   { text: "Home", href: "/", id: "home" },
-  { text: "Product", href: "#", id: "product" , children:[
-    { text: "Unify AI", href :"/unify" , id:"products-unify"},
-    { text: "Insuraince", href :"/insuraince" , id:"products-insuraince"}
+  { text: "Products", href: "#", id: "product" , children:[
+    { text: "UnifyAI", href :"/unify" , id:"products-unify"},
+    { text: "AgenticAI", href :"/#" , id:"products-agentic"},
   ]},
   { text: "Solutions", href: "#", id: "solutions" , children:[
-    { text: "Solution 1", href :"/#" , id:"solution-1"},
-    { text: "Solution 2", href :"#" , id:"solution-2"}
+    { text: "InsurAInce", href :"/insuraince" , id:"solutions-insuraince"},
   ]},
   { text: "About Us", href: "/about", id: "about" },
   { text: "Resources", href: "#", id: "resources" ,children:[

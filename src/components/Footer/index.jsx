@@ -63,6 +63,7 @@ const Footer = () => {
                         text={link.text}
                         href={link.href}
                         variant="footer"
+                        className="hover:!text-[#Ff6B00]"
                       />
                     </li>
                   ))}
@@ -92,11 +93,11 @@ const Footer = () => {
             <p>
               Copyright © {SITE_CONFIG.name} {SITE_CONFIG.copyright.year}
             </p>
-            <p>
+            <p className="under-multi-parent">
               {SITE_CONFIG.copyright.credits.text}{" "}
               <a
                 href={SITE_CONFIG.copyright.credits.link}
-                className="hover:text-white transition-colors duration-300"
+                className="hover:text-white transition-colors duration-300 under-multi"
               >
                 {SITE_CONFIG.copyright.credits.name}
               </a>

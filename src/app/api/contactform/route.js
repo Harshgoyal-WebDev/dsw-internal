@@ -7,9 +7,9 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(req) {
   try {
     const body = await req.json();
-    const { name, email, designation, company, number,reason, message, } = body;
+    const { name, email, designation, company, number,reason, message, terms} = body;
 
-    if (!name || !email || !company || !reason || !designation || !number ) {
+    if (!name || !email || !company || !reason || !designation || !number || !terms ) {
       return new Response(JSON.stringify({ error: "Required fields missing" }), { status: 400 });
     }
 
@@ -25,6 +25,7 @@ export async function POST(req) {
         userNumber: number,
         userReason:reason,
         userMessage: message || "No message provided",
+        userTerms:terms
       }),
     });
 

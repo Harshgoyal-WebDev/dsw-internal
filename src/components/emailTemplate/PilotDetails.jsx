@@ -50,10 +50,10 @@ const PilotDetails = ({ userName, userEmail, userDesignation, userCompany, userN
               <Column style={columnHead}>Message</Column>
               <Column style={columnText}>{userMessage}</Column>
             </Row>
-            <Row style={row}>
+            {/* <Row style={row}>
               <Column style={columnHead}>Terms</Column>
               <Column style={columnText}>{userTerms}</Column>
-            </Row>
+            </Row> */}
             
           </Section>
         

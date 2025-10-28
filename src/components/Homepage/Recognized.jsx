@@ -44,19 +44,10 @@ const Recognized = () => {
           </Copy>
         </div>
 
-        <div className="w-full flex items-center justify-between px-[5vw] mt-[3vw] fadeup max-md:flex-wrap max-md:mt-[6vw] max-md:gap-y-[5vw] ">
-          <div className="h-[10vw] w-[10vw] max-md:h-[22vw] max-md:w-[22vw]">
+        <div className="w-full flex items-center justify-center px-[5vw] gap-[3vw] mt-[3vw] fadeup max-md:flex-wrap max-md:mt-[6vw] max-md:gap-y-[5vw] max-md:justify-center max-md:gap-[8vw]">
+         <div className="h-[10vw] w-[10vw] max-md:h-[22vw] max-md:w-[22vw]">
             <Image
-              src={"/assets/images/homepage/recognized/soc-complaint-2.png"}
-              height={178}
-              width={178}
-              alt="soc-compliant"
-              className="h-full w-full object-contain"
-            />
-          </div>
-          <div className="h-[10vw] w-[10vw] max-md:h-[22vw] max-md:w-[22vw]">
-            <Image
-              src={"/assets/images/homepage/recognized/iso-certified-2.png"}
+              src={"/assets/images/homepage/recognized/iso-42001-final.png"}
               height={178}
               width={178}
               alt="iso-certified"
@@ -65,7 +56,26 @@ const Recognized = () => {
           </div>
           <div className="h-[10vw] w-[10vw] max-md:h-[22vw] max-md:w-[22vw]">
             <Image
-              src={"/assets/images/homepage/recognized/hipaa-compliant-2.png"}
+              src={"/assets/images/homepage/recognized/soc-compliant-final.png"}
+              height={178}
+              width={178}
+              alt="soc-compliant"
+              className="h-full w-full object-contain"
+            />
+          </div>
+          <div className="h-[10vw] w-[10vw] max-md:h-[22vw] max-md:w-[22vw]">
+            <Image
+              src={"/assets/images/homepage/recognized/iso-27001-final.png"}
+              height={178}
+              width={178}
+              alt="iso-certified"
+              className="h-full w-full object-contain"
+            />
+          </div>
+           
+          <div className="h-[10vw] w-[10vw] max-md:h-[22vw] max-md:w-[22vw]">
+            <Image
+              src={"/assets/images/homepage/recognized/hipaa-compliant-final.png"}
               height={178}
               width={178}
               alt="hipaa-compliant"

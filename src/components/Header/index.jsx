@@ -159,9 +159,9 @@ const Header = () => {
                                 : undefined
                             }
                             className={[
-                              hasChildren ? "cursor-pointer" : "",
+                                hasChildren ? "cursor-pointer" : "",
                               isActive ? "!text-[#Ff6B00]" : "text-[#E8E8E8]",
-                              !isActive ? "hover:text-[#Ff6B00]" : "",
+                              !isActive ? "hover:!text-[#Ff6B00]" : "",
                             ].join(" ")}
                             onClick={(e) => {
                               if (hasChildren) e.preventDefault();
@@ -234,7 +234,7 @@ const Header = () => {
                                         "block py-2 transition-colors whitespace-nowrap",
                                         childActive
                                           ? "!text-[#F16B0D]"
-                                          : "text-[#E8E8E8] hover:text-[#F16B0D]",
+                                          : "text-[#E8E8E8] hover:!text-[#F16B0D]",
                                       ].join(" ")}
                                     />
                                   </li>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Body, Column, Container, Head, Hr, Html, Img, Preview, Row, Section, Text } from "@react-email/components";
 
-const ContactDetails = ({ userName, userEmail, userDesignation, userCompany, userNumber,userReason, userMessage }) => {
+const ContactDetails = ({ userName, userEmail, userDesignation, userCompany, userNumber,userReason, userMessage, userTerms }) => {
 
   return (
     <Html>
@@ -54,6 +54,10 @@ const ContactDetails = ({ userName, userEmail, userDesignation, userCompany, use
               <Column style={columnHead}>Message</Column>
               <Column style={columnText}>{userMessage}</Column>
             </Row>
+             {/* <Row style={row}>
+                          <Column style={columnHead}>Terms</Column>
+                          <Column style={columnText}>{userTerms}</Column>
+                        </Row> */}
           </Section>
         
           <Text style={paragraph}>- Team DSW</Text>

@@ -121,7 +121,7 @@ const UnifyAi = () => {
           </p>
         </Copy>
         <div className="fadeup">
-          <PrimaryButton background="" href={"/"} text={"Book a demo"} />
+          <PrimaryButton background="" href={"/"} text={"Book a Demo"} />
         </div>
       </div>
     </section>
