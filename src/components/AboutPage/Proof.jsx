@@ -8,8 +8,8 @@ const Proof = () => {
    <section className='h-full w-full ' id='proof'>
     <div className='w-full h-[140vh] max-sm:h-[160vh] container space-y-[5vw]'>
         <div className='space-y-[1.5vw] max-sm:space-y-[10vw] w-[40%] max-sm:w-full'>
-            <h2 className='text-90'>Proof and Recognition</h2>
-            <div className='flex gap-6 max-sm:flex-col max-sm:w-fit max-sm:gap-[4vw]'>
+            <h2 className='text-90 headingAnim'>Proof and Recognition</h2>
+            <div className='flex gap-6 max-sm:flex-col max-sm:w-fit max-sm:gap-[4vw] fadeup'>
             <PrimaryButton text={"Read News & Press"} href={"/"}/>
             <WhiteButton text={"View Case Studies"} href={"/"}/>
             </div>
@@ -47,7 +47,7 @@ export default Proof
 const Card=({img,para})=>{
     return(
         <>
-        <div className="flex w-full justify-start">
+        <div className="flex w-full justify-start fadeup">
           <div
             className="relative w-[30vw] max-sm:w-full rounded-[1.5vw] group cursor-pointer
     overflow-hidden flex flex-col items-center border transition-opacity border-[#59595980] 

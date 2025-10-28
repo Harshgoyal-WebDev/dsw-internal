@@ -112,7 +112,7 @@ const Ecosystem = () => {
                   solutions that deliver real-world impact. 
                 </p>
               </Copy>
-              <div className="pt-[3vw]">
+              <div className="pt-[3vw] fadeup">
                 <PrimaryButton href={"/"} text={"Partner With Us"} />
               </div>
             </div>

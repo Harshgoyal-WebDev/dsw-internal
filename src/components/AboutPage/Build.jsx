@@ -34,7 +34,7 @@ export default function CardStack2({ allowMultiple = false }) {
         
          <h2 className="text-90 headingAnim text-center capitalize">what we build</h2>
         
-        <div className="relative z-[10]">
+        <div className="relative z-[10] fadeup">
           {usecaseData.map((f, i) => (
             <AccordionItem
               key={i}
@@ -48,7 +48,7 @@ export default function CardStack2({ allowMultiple = false }) {
             />
           ))}
         </div>
-        <div>
+        <div className="fadeup">
         <PrimaryButton text={"Explore DSW UnifyAI"} href={"/"}/>
       </div>
       </div>

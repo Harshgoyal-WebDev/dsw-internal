@@ -80,7 +80,6 @@ const SectionBreak = ({text, span,textAlign,width}) => {
  <section className="w-full h-fit flex justify-center" id="section-break"  ref={sectionRef}>
       <div className={` flex flex-col items-start justify-start gap-y-[10vw] max-sm:gap-y-[15vw] ${width?width:"w-full"}`}>
         <div className="split__wrapper  space-y-[2vw] max-sm:space-y-[5vw]">
-         
             <div className={`text-white-200 text-break font-head max-md:text-center text-50 ${!span ? "text-left max-sm:text-center" : "text-left"} font-normal leading-[1.4] ${textAlign}`} ref={textRef}>
             {span ?  <span className="w-[20vw] inline-block h-[2px] max-md:hidden" /> : <></>}
              {text}

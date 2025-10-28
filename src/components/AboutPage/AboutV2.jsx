@@ -92,9 +92,9 @@ export default function AboutV2() {
                   </h4>
                 </Copy>
                
-                  <div className="w-[40vw] max-sm:w-full space-y-[1vw] fadeup">
+                  <div className="w-[40vw] max-sm:w-full space-y-[1vw]">
                   {text.map((item,index)=>(
-                    <p key={index} className="text-white-300  max-sm:w-full">{item}</p>
+                    <p key={index} className="text-white-300  max-sm:w-full  fadeup">{item}</p>
                   ))}
                   </div>
                 
