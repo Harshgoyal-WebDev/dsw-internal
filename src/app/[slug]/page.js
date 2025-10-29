@@ -19,15 +19,15 @@ export default async function Page({ params }) {
   const pageMeta = getPageMetadata({
     title: post.metaTitle || post.title,
     description: post.metaDescription || post.excerpt,
-    url: `/resources/${slug}`,
+    url: `/${slug}`,
     date_published: post.date,
     date_modified: post.modified || post.date,
     alternates: {
-      canonical: `/resources/${slug}`,
-      languages: { 'x-default': `/resources/${slug}` },
+      canonical: `/${slug}`,
+      languages: { 'x-default': `/${slug}` },
     },
     openGraph: {
-      url: `/resources/${slug}`,
+      url: `/${slug}`,
       images: post.metaImage
         ? [{ url: post.metaImage.url, width: 1200, height: 630 }]
         : [{ url: `${homepage}seo/blog-detail.png`, width: 1200, height: 630 }],
@@ -37,7 +37,7 @@ export default async function Page({ params }) {
   return (
     <>
       <WebpageJsonLd metadata={pageMeta} />
-      <BreadcrumbsJSONLD pathname={`/resources/${slug}`} />
+      <BreadcrumbsJSONLD pathname={`/${slug}`} />
       <Layout>
         <Hero breadcrumbs post={post}/>
         <BlogContentWp post={post}/>

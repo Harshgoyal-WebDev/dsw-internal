@@ -17,9 +17,9 @@ export const metadata = getPageMetadata({
   date_published: "2025-09-30T00:00",
   date_modified: "2025-09-30T00:00",
   alternates: {
-    canonical: "/career",
+    canonical: "/careers",
     languages: {
-      "x-default": "/career",
+      "x-default": "/careers",
     },
   },
   openGraph: {

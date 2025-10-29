@@ -18,7 +18,7 @@ gsap.registerPlugin(ScrollTrigger);
 const BlogCard = ({ title, date, img ,slug}) => {
   return (
     <>
-      <Link href={`/resources/${slug}`} prefetch={false}>
+      <Link href={`/${slug}`} prefetch={false}>
         <div className="rounded-[2vw] group border-[0.25px] border-white/30 pb-4 bg-white/5 space-y-8 overflow-hidden group cursor-pointer max-sm:pb-0 h-[33vw] max-sm:rounded-[6vw] max-sm:h-[110vw] max-md:h-[70vw] max-md:rounded-[4vw]">
           <div className="w-full h-[65%]  overflow-hidden rounded-3xl max-sm:h-[60%] ">
             <Image
@@ -80,7 +80,7 @@ const Blogs = ({posts}) => {
             </p>
           </Copy>
           <div className="fadeup">
-            <PrimaryButton prefetch={false} text={"View More"} href={"/resources/blog"} />
+            <PrimaryButton prefetch={false} text={"View More"} href={"/blogs"} />
           </div>
         </div>
         <div className="w-[50%] text-white max-sm:w-full max-md:w-[93%] max-md:mt-[10vw] fadeup ">

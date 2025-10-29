@@ -1,92 +1,87 @@
-import Layout from "@/components/Layout";
-// import AIPilots from '@/components/PilotProgram/AIPilots'
-// import PilotProgramForm from '../../components/PilotForm/PilotProgramForm'
-import InsidePilotProgram from "@/components/PilotProgram/InsidePilotProgram";
-import Production from "@/components/PilotProgram/Production";
-// import Transform from '@/components/PilotProgram/Transform'
-import React from "react";
-import FooterCTA from "@/components/Common/FooterCta";
 import Faqs from "@/components/Common/FAQs";
+import SuccessStories from "@/components/Homepage/SuccessStories";
+import Layout from "@/components/Layout";
+import AiEverywhere from "@/components/UnifyPage/AiEverywhere";
+import Diagram from "@/components/UnifyPage/Diagram";
+import OnePlatform from "@/components/UnifyPage/OnePlatForm";
+import PresentationLayer from "@/components/UnifyPage/PresentationLayer";
+import Usecase from "@/components/UnifyPage/Usecase";
+import React from "react";
+import Impact from "@/components/UnifyPage/Impact";
+import FooterCTA from "@/components/Common/FooterCta";
+import UsecaseMobile from "@/components/UnifyPage/UsecaseMobile";
 import { FAQJSONLD, WebpageJsonLd } from "@/lib/json-ld";
 import { homepage } from "@/lib/util";
 import { getPageMetadata } from "@/config/metadata";
 import Hero from "@/components/Common/Hero";
-import dynamic from "next/dynamic";
-const Transform = dynamic(() => import("@/components/PilotProgram/Transform"), {
-  ssr: true,
-});
-const PilotProgramForm = dynamic(
-  () => import("@/components/PilotForm/PilotProgramForm"),
-  {
-    ssr: true,
-  }
-);
-const AIPilots = dynamic(() => import("@/components/PilotProgram/AIPilots"), {
-  ssr: true,
-});
+import UnifyTour from "@/components/UnifyPage/UnifyTour";
 
 export const metadata = getPageMetadata({
-  title: "Pilot Program - Validate AI & GenAI Use Cases Fast",
+  title: "UnifyAI - Operating System for Enterprise AI",
   description:
-    "Join UnifyAI’s Pilot Program: deploy AI/GenAI in record time with governance, support, prebuilt models, and low risk validation across your business.",
-  url: "pilot-program",
+    "Deploy AI use cases in 30 days, GenAI in hours — UnifyAI delivers full-stack, secure, scalable platform for enterprises.",
+  url: "unify",
   date_published: "2025-09-30T00:00",
   date_modified: "2025-09-30T00:00",
   alternates: {
-    canonical: "/pilot-program",
+    canonical: "/unifyai",
     languages: {
-      "x-default": "/pilot-program",
+      "x-default": "/unifyai",
     },
   },
   openGraph: {
-    url: "pilot-program",
+    url: "unify",
     images: [
       {
-        url: `${homepage}seo/pilot-program.png`,
+        url: `${homepage}seo/unify.png`,
         width: 1200,
         height: 630,
       },
     ],
   },
 });
-const page = () => {
+export default function page() {
   return (
     <>
       <WebpageJsonLd metadata={metadata} />
       <FAQJSONLD faqs={faqData} />
       <Layout>
         <Hero heroData={heroData} />
-        <Production />
-        <AIPilots />
-        <Transform />
-        <InsidePilotProgram />
-        <PilotProgramForm />
+        <AiEverywhere />
+        <UnifyTour/>
+        <Usecase />
+        <UsecaseMobile />
+        <PresentationLayer />
+        <Diagram />
+        <Impact />
+        <OnePlatform />
+        <SuccessStories />
         <Faqs data={faqData} />
-        <FooterCTA footerCTAData={footerCTAData} />
+        <FooterCTA
+          footerCTAData={footerCTAData}
+          width={"w-[80%]"}
+          paraWidth={"w-[75%]"}
+        />
       </Layout>
     </>
   );
-};
-
-export default page;
-
+}
 const heroData = {
-  heading: "Pilot AI and GenAI Use Cases. Go Live in Record time. ​ ",
-  para: "Deploy securely with enterprise-grade governance, compliance, and monitoring. ​",
-  paraClass: "",
-  link1: "/unify",
+  heading: "The Operating System for Enterprise AI ",
+  para: "Deploy AI use cases in 30 days, GenAI in a few hours! ​",
+  paraClass: "text-[2.5vw] max-sm:text-[4vw] max-sm:w-[90%]",
+  link1: "/unifyai",
   btnText1: "Start Walkthrough",
   link2: "/#",
   btnText2: "Schedule a Call",
   homepage: false,
 };
-
 const footerCTAData = {
-  heading: "Test drive the purpose - built insurance AI platform  ​",
-  para: "",
+  heading: "Ready to Unify Your AI? ",
+  para: "Launch smarter, faster, safer AI and GenAI use cases with DSW UnifyAI. ",
   btnText1: "Book a Demo",
   btnLink1: "/#",
-  btnText2: "Schedule a Call",
+  btnText2: "Contact Sales",
   btnLink2: "/#",
   img1: "/assets/images/footer/image-1.png",
   img2: "/assets/images/footer/image-2.png",

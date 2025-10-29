@@ -1,6 +1,6 @@
 "use client";
 import Newsletter from "./Newsletter";
-import { NAVIGATION, SOCIAL_LINKS, SITE_CONFIG } from "@/constants/siteConfig";
+import { NAVIGATION, SOCIAL_LINKS, SITE_CONFIG, NAVIGATION_FOOTER } from "@/constants/siteConfig";
 import { Suspense, useEffect, useState } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
@@ -52,12 +52,11 @@ const Footer = () => {
               <Logo variant="footer" className="w-fit" />
               <ContactInfo variant="footer" />
             </div>
-            <div className="flex justify-between w-1/2 ml-auto gap-10 footer-content max-md:flex-col max-md:w-full">
+            <div className="flex justify-between w-[60%] ml-auto gap-10 footer-content max-md:flex-col max-md:w-full">
               {/* Navigation Links */}
               <div>
-                <p className="mb-5 text-foreground content-p font-head">NAVIGATION</p>
-                <ul className="space-y-3">
-                  {NAVIGATION.map((link) => (
+                {/* <ul className="space-y-3">
+                  {NAVIGATION_FOOTER.map((link) => (
                     <li key={link.id} className="text-foreground content-p">
                       <NavigationLink
                         text={link.text}
@@ -67,11 +66,48 @@ const Footer = () => {
                       />
                     </li>
                   ))}
-                </ul>
+                </ul> */}
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                <p className="mb-5 text-foreground content-p font-head">NAVIGATION</p>
+
+  <ul className="space-y-3">
+    {NAVIGATION_FOOTER.slice(0, 6).map((link) => (
+      <li key={link.id} className="text-foreground content-p">
+        <NavigationLink
+          text={link.text}
+          href={link.href}
+          variant="footer"
+          className="hover:!text-[#f16b0d]"
+        />
+      </li>
+    ))}
+  </ul>
+  </div>
+  <div>
+
+  <p className="mb-5 text-foreground content-p font-head">COMPANY</p>
+
+  <ul className="space-y-3">
+    {NAVIGATION_FOOTER.slice(6).map((link) => (
+      <li key={link.id} className="text-foreground content-p">
+        <NavigationLink
+          text={link.text}
+          href={link.href}
+          variant="footer"
+          className="hover:!text-[#f16b0d]"
+        />
+      </li>
+    ))}
+  </ul>
+  </div>
+</div>
+
+               
               </div>
 
               {/* Newsletter Subscription */}
-              <div className="flex flex-col justify-between w-3/5 max-md:w-full">
+              <div className="flex flex-col justify-between w-[40%] max-md:w-full">
                 <Newsletter />
                 {/* Social Media Links */}
                 <ul className="flex gap-3 max-md:items-center max-md:justify-center max-md:mt-[10vw] max-sm:mt-[15vw]">

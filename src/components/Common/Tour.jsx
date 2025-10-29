@@ -142,7 +142,7 @@ const Tour = ({heading,para}) => {
                   <PrimaryButton
                     text={"See it, to believe it! "}
                     className=""
-                    href={"/unify"}
+                    href={"/unifyai"}
                   />
                 </motion.div>
               </motion.div>

@@ -14,9 +14,9 @@ export const metadata = getPageMetadata({
   date_published: "2025-09-30T00:00",
   date_modified: "2025-09-30T00:00",
   alternates: {
-    canonical: "/resources/whitepapers",
+    canonical: "/whitepapers",
     languages: {
-      "x-default": "/resources/whitepapers",
+      "x-default": "/whitepapers",
     },
   },
   openGraph: {
@@ -34,7 +34,7 @@ const Page = () => {
   return (
     <>
     <WebpageJsonLd metadata={metadata}/>
-          <BreadcrumbsJSONLD pathname={metadata.url}/>
+    <BreadcrumbsJSONLD pathname={metadata.url}/>
       <Layout>
         <Hero heroData={heroData} breadcrumbs={true}/>
         <Listing/>

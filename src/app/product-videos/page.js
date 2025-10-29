@@ -14,9 +14,9 @@ export const metadata = getPageMetadata({
   date_published: "2025-09-30T00:00",
   date_modified: "2025-09-30T00:00",
   alternates: {
-    canonical: "/resources/product-videos",
+    canonical: "/product-videos",
     languages: {
-      "x-default": "/resources/product-videos",
+      "x-default": "/product-videos",
     },
   },
   openGraph: {

@@ -29,25 +29,51 @@ export const SITE_CONFIG = {
 // Navigation configuration
 export const NAVIGATION = [
   { text: "Home", href: "/", id: "home" },
-  { text: "Products", href: "#", id: "product" , children:[
-    { text: "UnifyAI", href :"/unify" , id:"products-unify"},
+  { text: "Products", href: "/unifyai", id: "product" , children:[
+    { text: "UnifyAI", href :"/unifyai" , id:"products-unify"},
     { text: "AgenticAI", href :"/#" , id:"products-agentic"},
   ]},
-  { text: "Solutions", href: "#", id: "solutions" , children:[
+  { text: "Solutions", href: "/insuraince", id: "solutions" , children:[
     { text: "InsurAInce", href :"/insuraince" , id:"solutions-insuraince"},
   ]},
   { text: "About Us", href: "/about", id: "about" },
-  { text: "Resources", href: "#", id: "resources" ,children:[
-    { text: "Blogs", href :"/resources/blog" , id:"resources-blog"},
-    { text: "News And PR", href :"/resources/news-and-pr" , id:"resources-news"},
-    { text: "Videos", href :"/resources/product-videos" , id:"resources-videos"},
-    { text: "Webinars And Events", href :"/resources/webinars-and-events" , id:"resources-webinars"},
-    { text: "AI for insurance workshop", href :"/resources/webinars-and-workshops/ai-for-insurance-workshop" , id:"resources-workshops"},
-    { text: "AI & GenAI masterclass", href :"/resources/webinars-and-workshops/ai-and-gen-ai-masterclass" , id:"resources-workshops"},
-    { text: "Whitepapers", href :"/resources/whitepapers" , id:"resources-whitepapers"},
+  { text: "Resources", href: "/blog", id: "resources" ,children:[
+    { text: "Blogs", href :"/blogs" , id:"resources-blog"},
+    { text: "News And PR", href :"/news" , id:"resources-news"},
+    { text: "Videos", href :"/product-videos" , id:"resources-videos"},
+    { text: "Webinars And Events", href :"/webinars-and-events" , id:"resources-webinars"},
+    { text: "AI for insurance workshop", href :"/ai-insurance-workshops" , id:"resources-workshops"},
+    { text: "AI & GenAI masterclass", href :"/dsw-workshop-deeptech-ai-genai-hands-on-masterclass" , id:"resources-workshops"},
+    { text: "Whitepapers", href :"/whitepapers" , id:"resources-whitepapers"},
   ]},
-  { text: "Pilot Program", href: "/pilot-program", id: "pilot" },
+  { text: "Pilot Program", href: "/production-pilot", id: "pilot" },
   { text: "Contact", href: "/contact-us", id: "contact" }
+];
+export const NAVIGATION_FOOTER = [
+  { text: "Home", href: "/", id: "home" },
+  { text: "Products", href: "/unifyai", id: "product" , children:[
+    { text: "UnifyAI", href :"/unifyai" , id:"products-unify"},
+    { text: "AgenticAI", href :"/#" , id:"products-agentic"},
+  ]},
+  { text: "Solutions", href: "/insuraince", id: "solutions" , children:[
+    { text: "InsurAInce", href :"/insuraince" , id:"solutions-insuraince"},
+  ]},
+  { text: "About Us", href: "/about", id: "about" },
+  { text: "Pilot Program", href: "/production-pilot", id: "pilot" },
+  { text: "Contact Us", href: "/contact-us", id: "contact" },
+  { text: "Resources", href: "/blog", id: "resources" ,children:[
+    { text: "Blogs", href :"/blogs" , id:"resources-blog"},
+    { text: "News And PR", href :"/news" , id:"resources-news"},
+    { text: "Videos", href :"/product-videos" , id:"resources-videos"},
+    { text: "Webinars And Events", href :"/webinars-and-events" , id:"resources-webinars"},
+    { text: "AI for insurance workshop", href :"/ai-insurance-workshops" , id:"resources-workshops"},
+    { text: "AI & GenAI masterclass", href :"/dsw-workshop-deeptech-ai-genai-hands-on-masterclass" , id:"resources-workshops"},
+    { text: "Whitepapers", href :"/whitepapers" , id:"resources-whitepapers"},
+  ]},
+  { text: "Careers", href: "/careers", id: "careers" },
+  { text: "Privacy Policy", href: "/privacy-policy", id: "privacy-policy" },
+  { text: "Terms And Conditions", href: "/terms-and-conditions", id: "terms-and-conditions" },
+
 ];
 
 // Social media links

@@ -18,9 +18,9 @@ export const metadata = getPageMetadata({
   date_published: "2025-09-30T00:00",
   date_modified: "2025-09-30T00:00",
   alternates: {
-    canonical: "/resources/webinars-and-events",
+    canonical: "/webinars-and-events",
     languages: {
-      "x-default": "/resources/webinars-and-events",
+      "x-default": "/webinars-and-events",
     },
   },
   openGraph: {

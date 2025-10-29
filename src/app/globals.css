@@ -403,14 +403,14 @@ h4 {
 }
 
 ::selection {
-  background: transparent;
-  color: #f16B0D;
+  background: #f16B0D;
+  color: white;
   text-shadow: none;
 }
 
 ::-moz-selection {
-  background: transparent;
-  color: #f16B0D;
+  background: #f16B0D;
+  color: white;
   text-shadow: none;
 }
 

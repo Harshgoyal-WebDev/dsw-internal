@@ -21,7 +21,7 @@ const Careers = () => {
         {/* </Copy> */}
         </div>
         <div className='max-sm:mt-[6vw]'>
-            <PrimaryButton href="/career" text={"See Open Roles"}/>
+            <PrimaryButton href="/careers" text={"See Open Roles"}/>
         </div>
 
         </div>

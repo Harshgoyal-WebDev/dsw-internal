@@ -12,17 +12,17 @@ import { getAllPosts } from '@/lib/posts';
 export const metadata = getPageMetadata({
   title: "DSW Blog - Insights on AI & Enterprise Innovation",
   description: "Explore DSW’s blog: deep dives on AI, GenAI, insurance innovation, enterprise deployments, use cases, and tech trends.",
-  url: "/blog",
+  url: "resources/blog",
   date_published: "2025-09-30T00:00",
   date_modified: "2025-09-30T00:00",
   alternates: {
-    canonical: "/blog",
+    canonical: "resources/blog",
     languages: {
-      "x-default": "/blog",
+      "x-default": "resources/blog",
     },
   },
   openGraph: {
-    url: "/blog",
+    url: "resources/blog",
     images: [
       {
         url: `${homepage}seo/blog.png`,

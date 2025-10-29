@@ -49,7 +49,7 @@ export default function CardStack2({ allowMultiple = false }) {
           ))}
         </div>
         <div className="fadeup">
-        <PrimaryButton text={"Explore DSW UnifyAI"} href={"/unify"}/>
+        <PrimaryButton text={"Explore DSW UnifyAI"} href={"/unifyai"}/>
       </div>
       </div>
       

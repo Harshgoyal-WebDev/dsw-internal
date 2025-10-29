@@ -19,9 +19,9 @@ export const metadata = getPageMetadata({
   date_published: "2025-09-30T00:00",
   date_modified: "2025-09-30T00:00",
   alternates: {
-    canonical: "/resources/webinars-and-workshops/ai-and-gen-ai-masterclass",
+    canonical: "/webinars-and-workshops/ai-and-gen-ai-masterclass",
     languages: {
-      "x-default": "/resources/webinars-and-workshops/ai-and-gen-ai-masterclass",
+      "x-default": "/webinars-and-workshops/ai-and-gen-ai-masterclass",
     },
   },
   openGraph: {
