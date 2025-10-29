@@ -12,7 +12,7 @@ const Brochure = () => {
   const swiperRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [mob, setMob] = useState(false);
-  const { openWith } = useModal(); 
+  const { openWith } = useModal();
   const handleNext = () => {
     if (swiperRef.current) {
       swiperRef.current.slideNext();
@@ -72,7 +72,7 @@ const Brochure = () => {
                   </div>
                   <div>
                     <WhiteButton
-                     onClick={(e) => {
+                      onClick={(e) => {
                         e.preventDefault();
                         openWith({
                           pdfUrl: "/assets/files/dsw-AI-ML-usecases.pdf",
@@ -193,7 +193,8 @@ const Brochure = () => {
 
 export default Brochure;
 
-const BrochureCard = ({ title, list, listTitle }) => {
+const BrochureCard = ({ title, list, listTitle ,pdfUrl,fileName}) => {
+    const { openWith } = useModal();
   return (
     <>
       {/* <Link href={"#"}> */}
@@ -210,6 +211,13 @@ const BrochureCard = ({ title, list, listTitle }) => {
           </div>
           <div className="mt-[7vw]">
             <WhiteButton
+              onClick={(e) => {
+                e.preventDefault();
+                openWith({
+                  pdfUrl: pdfUrl,
+                  fileName: fileName,
+                });
+              }}
               background="border-primary-2 border bg-transparent hover:bg-transparent"
               circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
               text="Download PDF"
@@ -229,6 +237,8 @@ const BrochureData = [
     id: 1,
     title: "25+ proven AI use cases across the policy lifecycle",
     listTitle: "AI/ML​",
+    pdfUrl: "/assets/files/dsw-AI-ML-usecases.pdf",
+    fileName: "Dsw-AI-Ml-usecase.pdf",
     list: [
       "Fraud detection​",
       "Claims",
@@ -243,6 +253,8 @@ const BrochureData = [
     id: 2,
     title: "300+ ready-to-deploy GenAI agents trained on insurance data ",
     listTitle: "GenAI Agents​​",
+    pdfUrl: "/assets/files/genAI-agents.pdf",
+    fileName: "GenAI-Agents.pdf",
     list: [
       "Sales and Marketing​​",
       "Claims",

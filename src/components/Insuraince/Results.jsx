@@ -1,11 +1,7 @@
 'use client'
 import Image from 'next/image'
-import React, { useEffect, useRef } from 'react'
-import gsap from 'gsap'
-import ScrollTrigger from 'gsap/dist/ScrollTrigger'
+import React, { useRef } from 'react'
 import Copy from '../Animations/Copy'
-
-gsap.registerPlugin(ScrollTrigger);
 
 const results = [
   {
@@ -31,22 +27,8 @@ const results = [
 const Results = () => {
   const cardsRef = useRef([]);
 
-  useEffect(() => {
-    gsap.from(cardsRef.current, {
-      yPercent: 40,
-      opacity: 0,
-      stagger: 0.2,
-      duration: 1.5,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: cardsRef.current[0]?.parentNode, 
-        start: "top 80%",
-      },
-    });
-  }, []);
-
   return (
-    <section className='h-fit w-screen container space-y-[7vw]'>
+    <section className='h-fit w-screen container space-y-[7vw]' id='results'>
 
       <div className='flex justify-center items-center  max-md:w-[100%] w-[82%] mx-auto max-sm:space-y-0 max-md:space-y-[7vw] flex-col gap-[2vw] max-sm:gap-[12vw]'>
         <h2 className='text-90  text-center headingAnim w-[95%]'>
@@ -66,7 +48,7 @@ const Results = () => {
           <div
             key={result.id}
             ref={el => cardsRef.current[i] = el}
-            className='flex flex-col pl-[1.5vw] gap-[1vw] justify-start max-sm:justify-center max-sm:mx-auto max-sm:items-center w-[30%] max-sm:w-[90%] max-md:w-[45%] opacity-100'
+            className='flex flex-col pl-[1.5vw] gap-[1vw] justify-start max-sm:justify-center max-sm:mx-auto max-sm:items-center w-[30%] max-sm:w-[90%] max-md:w-[45%] fadeup'
           >
             <div className='w-[5vw] h-[5vw] mb-[1vw] max-sm:h-[24vw] max-md:h-[15vw] max-md:w-[15vw] max-sm:w-[24vw]'>
               <Image

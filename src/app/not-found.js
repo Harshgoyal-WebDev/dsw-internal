@@ -45,9 +45,7 @@ export default function NotFoundPage() {
       <LocalBusiness />
       <ImageObjectJsonLd />
       <WebsiteJsonLd />
-
       {/* Minimal server fallback so page is fast even if JS fails */}
-
       <Header />
       <FancyNotFound />
       {/* <GlobalPopup/> */}

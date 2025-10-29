@@ -197,7 +197,7 @@ export default function DemoForm() {
       </section>
 
       {submitted && (
-        <p className="text-white text-sm p-2 px-7 bg-green-500 fixed z-[999] top-[20%] rounded-[0.7vw] left-[50%] translate-x-[-50%]">
+        <p className="text-white text-sm p-2 px-7 bg-green-500 fixed z-[999] top-[20%] rounded-[0.7vw] left-[50%] translate-x-[-50%] max-sm:rounded-[2vw]">
           Form submitted successfully!
         </p>
       )}

@@ -92,6 +92,7 @@ const FooterCTA = ({ footerCTAData, width, paraWidth }) => {
                   openModal()
                 }
               }}
+               target={`${footerCTAData.targetPrimary ? "_blank" : ""}`}
               className="max-sm:min-w-[55vw]"
               text={footerCTAData.btnText1}
               href={footerCTAData.btnLink1}

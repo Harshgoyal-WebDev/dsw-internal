@@ -58,7 +58,8 @@ const footerCTAData = {
   heading: "Don’t Miss What’s Next ",
   para: "New videos are added regularly as we release features, run workshops, and scale AI across new industries. ",
   btnText1: "Subscribe to Our YouTube",
-  btnLink1: "/#",
+  btnLink1: "https://www.youtube.com/@DataScienceWizards",
+  targetPrimary:true,
   img1: "/assets/images/footer/image-1.png",
   img2: "/assets/images/footer/image-2.png",
 };

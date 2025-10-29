@@ -3,8 +3,10 @@ import Image from "next/image";
 import React from "react";
 import PrimaryButton from "../Button/PrimaryButton";
 import Copy from "../Animations/Copy";
+import { useModal } from "../Common/ModalProvider";
 
 const UnifyTour = () => {
+  const {openModal} =useModal()
   return (
     <section className="w-screen h-fit container" id="tour">
       <div className="w-full flex flex-col gap-[2vw] items-center max-md:gap-[4vw]">
@@ -15,8 +17,8 @@ const UnifyTour = () => {
           </p>
         </Copy>
 
-        <div className=" relative fadeup mt-[5vw] max-sm:w-full max-sm:h-[60vw] max-md:h-[40vw] max-md:w-full max-sm:mt-[12vw]  flex items-center justify-center">
-            <div className="w-[80%] h-[35vw] rounded-lg overflow-hidden">
+        <div className=" relative fadeup mt-[5vw] max-sm:w-full max-sm:h-fit max-md:h-[40vw] max-md:w-full max-sm:mt-[8vw]  flex items-center justify-center">
+            <div className="w-[80%] h-[35vw] rounded-lg overflow-hidden max-sm:w-full max-sm:h-[50vw]">
              <Image
                     src={'/assets/images/unify/tour.png'}
                     alt="AI Studio tour image"
@@ -27,11 +29,15 @@ const UnifyTour = () => {
                     height={400}
                   />
                   </div>
-                  <div className="absolute top-1/2 left-1/2 z-[99] -translate-x-1/2 -translate-y-1/2">
+                  <div className="absolute top-1/2 left-1/2 z-[99] -translate-x-1/2 -translate-y-1/2 max-sm:w-full max-sm:flex justify-center">
                    <PrimaryButton
                     text={"See it, to believe it!"}
                     className=""
-                    href={"/#"}
+                    onClick={(e)=>{
+                      e.preventDefault()
+                      openModal()
+                    }}
+                    href={"#"}
                   />
                   </div>
         </div>

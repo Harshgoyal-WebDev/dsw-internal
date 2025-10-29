@@ -14,25 +14,25 @@ const data = [
     list: "End-to-End AI Lifecycle Management",
     title: "The Freedom to Own AI",
     para: "The power of OpenAI, but entirely inside your infrastructure with your data, your compliance, and your governance.",
-    link: "#",
+    link: "/unifyAi",
   },
   {
     list: "Multi-Model AI Support",
     title: "Unified AI Lifecycle",
     para: "One platform for the full journey from data to deployment to continuous learning, eliminating silos and execution gaps.",
-    link: "#",
+    link: "/unifyAi",
   },
   {
     list: "Seamless Enterprise Integration",
     title: "Governance by Design",
     para: "Security, compliance, and trust baked in with role-based access, explainability, audit trails, and approval workflows.",
-    link: "#",
+    link: "/unifyAi",
   },
   {
     list: "Scalable Infrastructure",
     title: "Sector-Agnostic, Vertically Accelerated",
     para: "Supports enterprises across industries, combining a sector-agnostic core with domain-focused accelerators to deliver impact at scale.",
-    link: "#",
+    link: "/unifyAi",
   },
 ];
 
@@ -154,7 +154,7 @@ function Accordion({ title, para, link, isOpen, onToggle }) {
                     background="border-primary-2 border bg-transparent hover:bg-transparent"
                     circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
                     text="Know More"
-                    href="#"
+                    href="/unifyai"
                     className="hover:text-primary-2 text-primary-2"
                   />
                 </div>

@@ -68,7 +68,7 @@ const footerCTAData = {
   btnText1: "Download Press Kit",
   btnLink1: "/#",
   btnText2: "Contact",
-  btnLink2: "/#",
+  btnLink2: "/contact-us",
   img1: "/assets/images/footer/image-1.png",
   img2: "/assets/images/footer/image-2.png",
 };
