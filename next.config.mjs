@@ -148,53 +148,38 @@ const nextConfig = {
       source:'/resources/product-videos',
       destination:'/product-videos',
       permanent:true
-
     },
     {
       source:'/resources/webinars-and-events',
       destination:'/webinars-and-events',
       permanent:true
-
-    },
-    {
-      source:'/resources/webinars-and-events',
-      destination:'/webinars-and-events',
-      permanent:true
-
     },
     {
       source:'/resources/webinars-and-workshops/ai-for-insurance-workshop',
       destination:'/ai-insurance-workshops',
       permanent:true
-
     },
     {
-      source:'/resources/webinars-and-workshops/ai-for-insurance-workshop',
-      destination:'/webinars-and-events',
+      source:'/resources/webinars-and-workshops/ai-and-gen-ai-masterclass',
+      destination:'/ai-and-gen-ai-masterclass',
       permanent:true
-
     },
     {
       source:'/resources/whitepapers',
       destination:'/whitepapers',
       permanent:true
-
     },
     {
       source:'/about-v2',
       destination:'/about',
       permanent:true
-
     },
     {
       source:'/career',
       destination:'/careers',
       permanent:true
-
     },
-
   ]
-
   }
 };
 
