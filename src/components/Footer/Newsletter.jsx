@@ -1,9 +1,7 @@
 import Image from "next/image";
-import { useId } from "react";
 import { Input } from "../ui/input";
 
 const Newsletter = () => {
-     const id = useId();
     return (
         // <div className=" text-foreground  max-md:flex max-md:flex-col max-md:justify-center max-md:items-center max-sm:py-[5vw] max-md:py-[3vw] ">
         //     <p  className="mb-6 font-medium max-md:w-[85%] max-sm:w-[95%] ">Subscribe to our newsletter for the latest tech insights and updates.</p>
@@ -27,7 +25,7 @@ const Newsletter = () => {
       >
         <span className='bg-transparent inline-flex text-[0.85vw] max-sm:text-[3vw] max-md:text-[2vw]'>Enter your email</span>
       </label>
-      <Input id={id} type='email' placeholder=' ' className='dark:bg-transparent border-b border-white !rounded-xs' />
+      <Input id="newsletter-input" type='email' placeholder=' ' className='dark:bg-transparent border-b border-white !rounded-xs' />
     </div>
     <button type="button"  className="flex cursor-pointer absolute right-0 items-center gap-1 bottom-2  group hover:scale-[0.95] transition-all duration-300 ease max-md:right-15 max-sm:right-5 bg-gradient-to-r from-primary-2 to-primary-3 text-white rounded-full px-5 py-3 max-md:bottom-8 max-sm:bottom-6 ">
                     <span className="uppercase text-[0.8vw] max-md:text-[2vw] max-sm:text-[2.5vw]">

@@ -75,7 +75,7 @@ const heroData = {
   heading: "The Operating System for Enterprise AI ",
   para: "Deploy AI use cases in 30 days, GenAI in a few hours! ​",
   paraClass: "text-[2.5vw] max-sm:text-[4vw] max-sm:w-[90%]",
-  link1: "/#",
+  link1: "/unify",
   btnText1: "Start Walkthrough",
   link2: "/#",
   btnText2: "Schedule a Call",
