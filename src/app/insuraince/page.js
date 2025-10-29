@@ -39,6 +39,8 @@ export const metadata = getPageMetadata({
     ],
   },
 });
+
+
 export default function Home() {
   return (
     <>
@@ -69,8 +71,9 @@ const heroData= {
   paraClass:"w-[90%]",
   link1:"/unifyai",
   btnText1:"Start Walkthrough",
-  link2:"/#",
+  link2:"https://calendly.com/",
   btnText2:"Schedule a Call",
+  target:true,
   homepage:false,
   headingWidth:"w-[80%]"
 }
@@ -81,7 +84,9 @@ const footerCTAData={
   btnText1:"Book a Demo",
   btnLink1:"/#",
   btnText2:"Schedule a Call",
-  btnLink2:"/#",
+  btnLink2:"https://calendly.com/",
+  book:true,
+  target:true,
   img1:"/assets/images/footer/image-1.png",
   img2:"/assets/images/footer/image-2.png"
 }

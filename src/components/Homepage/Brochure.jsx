@@ -6,12 +6,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import WhiteButton from "../Button/WhiteButton";
+import { useModal } from "../Common/ModalProvider";
 
 const Brochure = () => {
   const swiperRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [mob, setMob] = useState(false);
-
+  const { openWith } = useModal(); 
   const handleNext = () => {
     if (swiperRef.current) {
       swiperRef.current.slideNext();
@@ -32,7 +33,10 @@ const Brochure = () => {
     }
   }, [mob]);
   return (
-    <section className="w-screen h-fit container max-md:min-h-screen" id="brochure">
+    <section
+      className="w-screen h-fit container max-md:min-h-screen"
+      id="brochure"
+    >
       <div className="w-full flex flex-col items-center justify-center gap-[5vw] max-md:gap-[10vw] max-sm:gap-[15vw]">
         <h2 className="w-[55%] text-center text-60 text-white-200 headingAnim max-md:w-full max-md:text-left max-md:!text-[9vw] max-sm:!text-[11.5vw]">
           Join the Fastest - Moving Insurers on Their AI Journey 
@@ -68,6 +72,13 @@ const Brochure = () => {
                   </div>
                   <div>
                     <WhiteButton
+                     onClick={(e) => {
+                        e.preventDefault();
+                        openWith({
+                          pdfUrl: "/assets/files/dsw-AI-ML-usecases.pdf",
+                          fileName: "Dsw-AI-Ml-usecase.pdf",
+                        });
+                      }}
                       background="border-primary-2 border bg-transparent hover:bg-transparent"
                       circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
                       text="Download PDF"
@@ -112,6 +123,13 @@ const Brochure = () => {
                       circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
                       text="Download PDF"
                       href="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        openWith({
+                          pdfUrl: "/assets/files/genAI-agents.pdf",
+                          fileName: "GenAI-Agents.pdf",
+                        });
+                      }}
                       className="hover:text-primary-2 text-primary-2"
                     />
                   </div>

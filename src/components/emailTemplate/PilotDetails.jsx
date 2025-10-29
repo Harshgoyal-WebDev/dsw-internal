@@ -12,9 +12,9 @@ const PilotDetails = ({ userName, userEmail, userDesignation, userCompany, userN
       <Body style={main}>
         <Container style={container}>
           <Img
-            src={"https://dsw-internal.vercel.app/dsw-logo.png"}
+           src={"https://dsw-internal.vercel.app/assets/images/form-logo.png"}
             width="140"
-            height="60"
+            height="80"
             alt="Logo"
             style={logo}
           />

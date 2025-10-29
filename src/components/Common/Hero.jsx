@@ -278,12 +278,14 @@ useEffect(() => {
               },
               {
                 Component: WhiteButton,
+                targetRef:"_blank",
                 text: heroData.btnText2,
                 link: heroData.link2,
               },
-            ].map(({ Component, text, link }, index) => (
+            ].map(({ Component, text, link,targetRef }, index) => (
               <div key={index} className="ctaBtn">
                 <Component
+                  target={heroData.target?targetRef:""}
                   href={link || "#"}
                   text={text}
                   className="max-md:min-w-[20vw] max-sm:min-w-[55vw]"

@@ -5,10 +5,12 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PrimaryButton from "../Button/PrimaryButton";
 import Copy from "../Animations/Copy";
+import { useModal } from "../Common/ModalProvider";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const UnifyAiSingle = () => {
+  const {openModal} = useModal()
   useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -101,7 +103,15 @@ const UnifyAiSingle = () => {
           </p>
         </Copy>
         <div className="fadeup">
-          <PrimaryButton background="" href={"/"} text={"Book a Demo"} />
+          <PrimaryButton
+            background=""
+            href={"/"}
+            text={"Book a Demo"}
+            onClick={(e) => {
+              e.preventDefault();
+              openModal();
+            }}
+          />
         </div>
       </div>
     </section>

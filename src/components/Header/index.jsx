@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
-// import Image from "next/image";
 import gsap from "gsap";
 import { usePathname } from "next/navigation";
 import { useLenis } from "lenis/react";
@@ -11,6 +10,8 @@ import PrimaryButton from "../Button/PrimaryButton";
 import NavigationLink from "../ui/NavigationLink";
 import Logo from "../ui/Logo";
 import { NAVIGATION, CTA_BUTTONS } from "@/constants/siteConfig";
+import { useModal } from "../Common/ModalProvider";
+// import PopupModal from "../Common/PopupModal";
 
 const MobileMenu = dynamic(() => import("./MobileMenu"), { ssr: true });
 
@@ -30,13 +31,14 @@ const Header = () => {
   const [openMobileMenu, setOpenMobileMenu] = useState(false);
   const [isHoveringHeader, setIsHoveringHeader] = useState(false);
   const [mob, setMob] = useState(false);
+  const { openModal } = useModal();
   const [hasVisited] = useState(() => {
     if (typeof window !== "undefined") {
       return !!sessionStorage.getItem("hasVisited");
     }
     return false;
   });
-
+  // const [modalOpen,setModalOpen]=useState(false)
   const headerRef = useRef(null);
   const headerWrapRef = useRef(null);
   const lenis = useLenis();
@@ -159,9 +161,11 @@ const Header = () => {
                                 : undefined
                             }
                             className={[
-                                hasChildren ? "cursor-pointer" : "",
+                              hasChildren ? "cursor-pointer" : "",
                               isActive ? "!text-[#f16b0d]" : "text-[#E8E8E8]",
-                              !isActive ? "group-hover:!text-[#f16b0d] duration-300 transition-all ease-in" : "",
+                              !isActive
+                                ? "group-hover:!text-[#f16b0d] duration-300 transition-all ease-in"
+                                : "",
                             ].join(" ")}
                             onClick={(e) => {
                               if (hasChildren) e.preventDefault();
@@ -276,6 +280,10 @@ const Header = () => {
             {!mob && (
               <div className="max-md:hidden">
                 <PrimaryButton
+                  onClick={(e) => {
+                    e.preventDefault();
+                    openModal();
+                  }}
                   text={CTA_BUTTONS.primary.text}
                   href={CTA_BUTTONS.primary.href}
                   className="primary-button"
@@ -294,6 +302,7 @@ const Header = () => {
           />
         )}
       </div>
+      {/* <PopupModal modalOpen={modalOpen} setModalOpen={setModalOpen}/> */}
     </>
   );
 };

@@ -53,9 +53,11 @@ const footerCTAData = {
   para:
     'Discover how UnifyAI can accelerate your AI/ML and GenAI initiatives with seamless deployment, scalability, and security.',
   btnText1: 'Book a Demo',
+  book:true,
   btnLink1: '/#',
   btnText2: 'Schedule a Call',
-  btnLink2: '/#',
+  target:true,
+  btnLink2: 'https://calendly.com/',
   img1: '/assets/images/footer/image-1.png',
   img2: '/assets/images/footer/image-2.png',
 }

@@ -6,12 +6,13 @@ import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Copy from "../Animations/Copy";
+import { useModal } from "./ModalProvider";
 
-const FooterCTA = ({ footerCTAData , width, paraWidth}) => {
+const FooterCTA = ({ footerCTAData, width, paraWidth }) => {
   const containerRef = useRef(null);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-
+  const { openModal } = useModal();
   const smoothX = useSpring(mouseX, { damping: 20, stiffness: 100 });
   const smoothY = useSpring(mouseY, { damping: 20, stiffness: 100 });
   useEffect(() => {
@@ -69,17 +70,28 @@ const FooterCTA = ({ footerCTAData , width, paraWidth}) => {
       id="footer-cta"
     >
       <div className="w-[48%] max-md:w-full max-md:text-center max-sm:mt-[5vw] max-md:flex max-md:flex-col max-sm:items-center max-md:gap-[3vw] ">
-        <h2 className={` ${width} text-90 font-head mb-[2vw] headingAnim text-white-200 max-sm:mb-[7vw] max-md:w-full`}>
+        <h2
+          className={` ${width} text-90 font-head mb-[2vw] headingAnim text-white-200 max-sm:mb-[7vw] max-md:w-full`}
+        >
           {footerCTAData.heading}
         </h2>
         <Copy>
-          <p data-para-anim className={`text-[#CACACA] mb-12 ${paraWidth ? paraWidth : "w-full"}`}>
+          <p
+            data-para-anim
+            className={`text-[#CACACA] mb-12 ${paraWidth ? paraWidth : "w-full"}`}
+          >
             {footerCTAData.para}
           </p>
         </Copy>
         <div className="flex gap-6 max-md:items-center max-md:justify-center max-sm:flex-col">
           <div className="fadeup">
             <PrimaryButton
+              onClick={(e) => {
+                if (footerCTAData.book) {
+                  e.preventDefault();
+                  openModal()
+                }
+              }}
               className="max-sm:min-w-[55vw]"
               text={footerCTAData.btnText1}
               href={footerCTAData.btnLink1}
@@ -88,7 +100,8 @@ const FooterCTA = ({ footerCTAData , width, paraWidth}) => {
           {footerCTAData.btnText2 && (
             <div className="fadeup">
               <WhiteButton
-              className="max-sm:min-w-[55vw]"
+                target={`${footerCTAData.target ? "_blank" : ""}`}
+                className="max-sm:min-w-[55vw]"
                 text={footerCTAData.btnText2}
                 href={footerCTAData.btnLink2}
               />

@@ -9,7 +9,7 @@ function Input({
 }) {
   return (
     (<div className="relative w-full h-full overflow-hidden ">
-      <input
+      <input 
         type={type}
         data-slot="input"
         className={cn(

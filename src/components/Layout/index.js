@@ -1,7 +1,5 @@
 "use client";
 import React from "react";
-// import Header from "../Header/index";
-// import Footer from "../Footer";
 import KeepScrolling from "../KeepScrolling";
 import {
   ImageObjectJsonLd,
@@ -11,7 +9,8 @@ import {
 } from "@/lib/json-ld";
 import Loader from "../Loader";
 import dynamic from "next/dynamic";
-// import CanvasTunnel from "../Common/CanvasTunnel";
+import PopupModal from "../Common/PopupModal";
+import { ModalProvider, useModal } from "../Common/ModalProvider";
 const Header = dynamic(() => import("../Header/index"), {
   ssr: true,
 });
@@ -19,9 +18,15 @@ const Footer = dynamic(() => import("../Footer"), {
   ssr: true,
 });
 
+function GlobalPopup() {
+  const { open, setOpen } = useModal();
+  return <PopupModal modalOpen={open} setModalOpen={setOpen} />;
+}
+
 const Layout = ({ children }) => {
   return (
     <>
+    <ModalProvider>
       <OrganizationJsonLd />
       <LocalBusiness />
       <ImageObjectJsonLd />
@@ -29,10 +34,10 @@ const Layout = ({ children }) => {
       <Loader />
       <Header />
       {children}
-      {/* <CanvasTunnel/> */}
-      {/* </CanvasTunnel> */}
       <KeepScrolling />
+      <GlobalPopup/>
       <Footer />
+    </ModalProvider>
     </>
   );
 };

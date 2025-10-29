@@ -77,18 +77,22 @@ const heroData = {
   paraClass: "",
   link1: "/unify",
   btnText1: "Start Walkthrough",
-  link2: "/#",
+  link2: "https://calendly.com/",
   btnText2: "Schedule a Call",
   homepage: true,
+  target:true,
 };
 
 const footerCTAData = {
   heading: "Take a lightning tour of the Enterprise AI Platform ",
   para: "Discover how UnifyAI can accelerate your AI/ML and GenAI initiatives with seamless deployment, scalability, and security.",
+  book:true,
   btnText1: "Book a Demo",
+  book:true,
   btnLink1: "/#",
   btnText2: "Schedule a Call",
-  btnLink2: "/#",
+  btnLink2: "https://calendly.com/",
+  target:true,
   img1: "/assets/images/footer/image-1.png",
   img2: "/assets/images/footer/image-2.png",
 };

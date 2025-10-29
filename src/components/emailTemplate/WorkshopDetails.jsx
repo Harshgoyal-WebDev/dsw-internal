@@ -12,9 +12,9 @@ const WorkshopDetails = ({ userName, userEmail, userDesignation, userCompany, us
       <Body style={main}>
         <Container style={container}>
           <Img
-            src={"https://dsw-internal.vercel.app/dsw-logo.png"}
+            src={"https://dsw-internal.vercel.app/assets/images/form-logo.png"}
             width="140"
-            height="40"
+            height="80"
             alt="Logo"
             style={logo}
           />

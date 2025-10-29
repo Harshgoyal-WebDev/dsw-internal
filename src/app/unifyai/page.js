@@ -72,17 +72,19 @@ const heroData = {
   paraClass: "text-[2.5vw] max-sm:text-[4vw] max-sm:w-[90%]",
   link1: "/unifyai",
   btnText1: "Start Walkthrough",
-  link2: "/#",
+  link2: "https://calendly.com/",
   btnText2: "Schedule a Call",
+  target:true,
   homepage: false,
 };
 const footerCTAData = {
   heading: "Ready to Unify Your AI? ",
   para: "Launch smarter, faster, safer AI and GenAI use cases with DSW UnifyAI. ",
   btnText1: "Book a Demo",
+  book:true,
   btnLink1: "/#",
   btnText2: "Contact Sales",
-  btnLink2: "/#",
+  btnLink2: "/contact-us",
   img1: "/assets/images/footer/image-1.png",
   img2: "/assets/images/footer/image-2.png",
 };

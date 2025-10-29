@@ -26,9 +26,9 @@ const SuccessStories = () => {
                 </p>
               </Copy>
             </div>
-            <div className="fadeup">
+            {/* <div className="fadeup">
               <PrimaryButton text={"View All"} href="#" />
-            </div>
+            </div> */}
           </div>
 
           <div className="w-full h-full grid grid-cols-3  gap-y-[1.2vw] gap-x-[1vw] mt-[5vw] max-md:mt-[10vw] max-md:grid-cols-1 max-md:gap-x-[3vw] max-md:gap-y-[3vw] max-sm:gap-y-[5vw]">
@@ -95,8 +95,8 @@ const LinkCard = ({ title, link, width }) => {
   return (
     <>
       <SpotlightCard className="fadeup">
-        <Link href={link}>
-          <div className="h-[20vw] group w-full background-glass cursor-pointer pl-[2.5vw] pr-[1.5vw] pb-[2.5vw] pt-[1.5vw] max-sm:h-[55vw] max-md:h-[50vw] max-sm:pl-[5vw]  max-md:px-[5vw] max-md:py-[5vw]  max-sm:pb-[5vw] max-sm:pr-[3vw] max-sm:pt-[3vw] ">
+        <div>
+          <div className="h-[20vw] group w-full background-glass  pl-[2.5vw] pr-[1.5vw] pb-[2.5vw] pt-[1.5vw] max-sm:h-[55vw] max-md:h-[50vw] max-sm:pl-[5vw]  max-md:px-[5vw] max-md:py-[5vw]  max-sm:pb-[5vw] max-sm:pr-[3vw] max-sm:pt-[3vw] ">
             <div className="h-full w-full flex z-[10] relative">
               <div className={`${width} flex items-end`}>
                 <p className="text-30 text-[#E8E8E8] font-head max-sm:text-[6vw]">
@@ -104,14 +104,14 @@ const LinkCard = ({ title, link, width }) => {
                 </p>
               </div>
 
-              <div className="flex-1 flex items-start justify-end">
+              {/* <div className="flex-1 flex items-start justify-end">
                 <div className="h-[3vw] w-[3vw] background-glass rounded-full max-md:w-[10vw] max-md:h-[10vw] max-sm:h-[15vw] max-sm:w-[15vw]">
                   <ArrowButton />
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
-        </Link>
+        </div>
       </SpotlightCard>
     </>
   );

@@ -66,7 +66,9 @@ const footerCTAData = {
   btnText1: "Book a Demo",
   btnLink1: "/#",
   btnText2: "Schedule a Call",
-  btnLink2: "/#",
+  btnLink2: "https://calendly.com/",
+  book:true,
+  target:true,
   img1: "/assets/images/footer/image-1.png",
   img2: "/assets/images/footer/image-2.png",
 };

@@ -195,7 +195,7 @@ export default function ContactForm() {
                         defaultCountry="IN"
                         international
                         {...field}
-                        className="placeholder:text-[1.15vw] placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw]  "
+                        className="placeholder:text-[1.15vw] placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw]  allForm"
                       />
                     </FormControl>
                     <FormMessage />

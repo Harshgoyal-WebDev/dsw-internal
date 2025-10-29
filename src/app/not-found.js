@@ -10,6 +10,7 @@ import {
   WebpageJsonLd,
   WebsiteJsonLd,
 } from "@/lib/json-ld";
+import { ModalProvider } from "@/components/Common/ModalProvider";
 
 // Lazy load heavy UI only if someone actually hits 404
 const Header = dynamic(() => import("@/components/Header/index"), {
@@ -28,11 +29,17 @@ export const metadata = {
   openGraph: { type: "website" },
   // add canonical/url if available
 };
+// function GlobalPopup() {
+//   const { open, setOpen } = useModal();
+//   return <PopupModal modalOpen={open} setModalOpen={setOpen} />;
+// }
 
 export default function NotFoundPage() {
   return (
     <>
       {/* Server-only JSON-LD keeps the 404 HTML tiny */}
+      <ModalProvider>
+
       <WebpageJsonLd metadata={metadata} />
       <OrganizationJsonLd />
       <LocalBusiness />
@@ -43,6 +50,8 @@ export default function NotFoundPage() {
 
       <Header />
       <FancyNotFound />
+      {/* <GlobalPopup/> */}
+      </ModalProvider>
     </>
   );
 }

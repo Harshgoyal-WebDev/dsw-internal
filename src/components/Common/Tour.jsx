@@ -4,10 +4,11 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PrimaryButton from "../Button/PrimaryButton";
 import Copy from "../Animations/Copy";
+import { useModal } from "./ModalProvider";
 
 const Tour = ({heading,para}) => {
   const [activeTab, setActiveTab] = useState("unifyAI");
-
+  const {openModal} = useModal()
   const handleTabClick = (tabId) => {
     setActiveTab(tabId);
   };
@@ -140,9 +141,13 @@ const Tour = ({heading,para}) => {
                   transition={{ delay: 0.2, duration: 0.3 }}
                 >
                   <PrimaryButton
+                  onClick={(e)=>{
+                    e.preventDefault()
+                    openModal()
+                  }}
                     text={"See it, to believe it! "}
                     className=""
-                    href={"/unifyai"}
+                    href={"#"}
                   />
                 </motion.div>
               </motion.div>
@@ -189,9 +194,13 @@ const Tour = ({heading,para}) => {
                   transition={{ delay: 0.2, duration: 0.3 }}
                 >
                   <PrimaryButton
+                   onClick={(e)=>{
+                    e.preventDefault()
+                    openModal()
+                  }}
                     text={"See it, to believe it!"}
                     className=""
-                    href={"/agenticai"}
+                    href={"#"}
                   />
                 </motion.div>
               </motion.div>

@@ -184,7 +184,7 @@ export default function TeamForm() {
                         defaultCountry="IN"
                         international
                         {...field}
-                        className="placeholder:text-[1.05vw] placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] "
+                        className="placeholder:text-[1.05vw] placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] allForm "
                       />
                     </FormControl>
                     <FormMessage />

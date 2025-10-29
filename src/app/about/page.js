@@ -66,9 +66,10 @@ const heroData = {
     paraClass: "px-[10vw]",
     link1: "/unifyai",
     btnText1: "Start Walkthrough",
-    link2: "/#",
+    link2: "https://calendly.com/",
     btnText2: "Schedule a Call",
-    homepage: false
+    target:true,
+  homepage: false
 }
 const footerCTAData = {
     heading: "Take a lightning tour of the Enterprise AI Platform",
@@ -76,7 +77,9 @@ const footerCTAData = {
     btnText1: "Book a Demo",
     btnLink1: "/#",
     btnText2: "Schedule a Call",
-    btnLink2: "/#",
-    img1: "/assets/images/footer/image-1.png",
+    btnLink2: "https://calendly.com/",
+    book:true,
+  target:true,
+  img1: "/assets/images/footer/image-1.png",
     img2: "/assets/images/footer/image-2.png"
 }
