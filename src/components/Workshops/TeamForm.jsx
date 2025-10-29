@@ -201,7 +201,7 @@ export default function TeamForm() {
                       <div className="flex items-center justify-center max-md:gap-[3vw] max-sm:gap-3 gap-3 pl-[0.5vw]">
                          <Checkbox id="checkbox-teamform"  aria-label="checkbox"
                           checked={field.value}
-                          onCheckedChange={field.onChange}  className="data-[state=checked]:bg-[#ff6b00] mt-[0.5vw]    max-md:scale-[1.5] max-sm:scale-[1] max-md:mt-[2vw] cursor-pointer max-md:rounded-[0.5vw] border-white/60" />
+                          onCheckedChange={field.onChange}  className="data-[state=checked]:bg-[#f16b0d] mt-[0.5vw]    max-md:scale-[1.5] max-sm:scale-[1] max-md:mt-[2vw] cursor-pointer max-md:rounded-[0.5vw] border-white/60" />
                         {/* <Checkbox
                           aria-label="checkbox"
                           checked={field.value}

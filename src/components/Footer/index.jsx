@@ -63,7 +63,7 @@ const Footer = () => {
                         text={link.text}
                         href={link.href}
                         variant="footer"
-                        className="hover:!text-[#Ff6B00]"
+                        className="hover:!text-[#f16b0d]"
                       />
                     </li>
                   ))}

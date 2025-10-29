@@ -402,6 +402,18 @@ h4 {
   color: var(--white-200);
 }
 
+::selection {
+  background: transparent;
+  color: #f16B0D;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background: transparent;
+  color: #f16B0D;
+  text-shadow: none;
+}
+
 @keyframes color-transition {
   0% {
     /* color: var(--background); */

@@ -64,7 +64,7 @@ const SubmenuNavigation = ({
             href={link || "#"}
             onClick={handleParentLinkClick}
             aria-current={isParentActive ? "page" : undefined}
-            className={isActive ? "!text-[#ff6b00]" : ""}
+            className={isActive ? "!text-[#f16b0d]" : ""}
           >
             {title}
           </Link>
@@ -82,7 +82,7 @@ const SubmenuNavigation = ({
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" className={`${isActive ? "stroke-[#ff6b00]" : ""}`} />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" className={`${isActive ? "stroke-[#f16b0d]" : ""}`} />
             </svg>
           </div>
         </div>
@@ -108,7 +108,7 @@ const SubmenuNavigation = ({
                 (!!child.href && child.href !== "/" && (pathname || "").startsWith(child.href));
 
               return (
-                <li key={safeKey} className={`${childActive ? "marker:!text-[#ff6b00]" : ""}`}>
+                <li key={safeKey} className={`${childActive ? "marker:!text-[#f16b0d]" : ""}`}>
                   <Link
                     href={child.href}
                     onClick={() => {
@@ -117,7 +117,7 @@ const SubmenuNavigation = ({
                       navigateTo?.(child.href);
                     }}
                     aria-current={childActive ? "page" : undefined}
-                    className={childActive ? "text-[#ff6b00]" : ""}
+                    className={childActive ? "text-[#f16b0d]" : ""}
                   >
                     {child.text}
                   </Link>

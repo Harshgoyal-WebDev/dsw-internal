@@ -93,10 +93,10 @@ export function WorldMap() {
 
         <defs>
           <linearGradient id="path-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#F16B0D" stopOpacity="0" />
-            <stop offset="10%" stopColor="#F16B0D" stopOpacity="1" />
-            <stop offset="90%" stopColor="#F16B0D" stopOpacity="1" />
-            <stop offset="100%" stopColor="#F16B0D" stopOpacity="0" />
+            <stop offset="0%" stopColor="#f58a3d" stopOpacity="0" />
+            <stop offset="10%" stopColor="#f58a3d" stopOpacity="0.5" />
+            <stop offset="90%" stopColor="#f58a3d" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="#f58a3d" stopOpacity="0" />
           </linearGradient>
         </defs>
       </motion.svg>

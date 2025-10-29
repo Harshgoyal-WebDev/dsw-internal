@@ -44,7 +44,7 @@ const SuccessStories = () => {
               message={
                 "With DSW's insurance-specific solutions on top of its robust AI platform, we’ve been able to move use cases into production quickly. ​"
               }
-              img={"/assets/images/homepage/success-stories/ritesh-rathod.png"}
+              img={"/assets/images/homepage/success-stories/canara-hsbc.png"}
               name={"Ritesh Rathod"}
               designation={"Chief Strategy and Data Officer, Canara HSBC"}
             />
@@ -56,7 +56,7 @@ const SuccessStories = () => {
               message={
                 "DSW UnifyAl simplified our data-driven approach, enabling easy development of Al-powered use cases.​ ​"
               }
-              img={"/assets/images/homepage/success-stories/ritesh-rathod.png"}
+              img={"/assets/images/homepage/success-stories/oxsde.png"}
               name={"Stefano Bonfa"}
               designation={"Director, OxSDE, Europe ​"}
             />
@@ -70,7 +70,7 @@ const SuccessStories = () => {
               message={
                 "With advanced capabilities of the platform's GenAI Studio, Castler’s escrow services became smarter, more efficient - enabling faster, secure, scalable solutions for our BFSI clients.​​"
               }
-              img={"/assets/images/homepage/success-stories/ritesh-rathod.png"}
+              img={"/assets/images/homepage/success-stories/castler.png"}
               name={"Ritesh Tiwari"}
               designation={"Chief Product Officer Castler​"}
             />
@@ -145,13 +145,13 @@ const TestimonialCard = ({ message, img, name, designation }) => {
               <p className="text-[#E8E8E8]">{message}</p>
             </div>
             <div className="flex items-center max-md:justify-between max-sm:justify-center justify-center gap-[1vw] max-md:gap-[3vw] max-sm:gap-[5vw]">
-              <div className="h-[5vw] w-[5vw] rounded-full overflow-hidden relative max-sm:h-[20vw] max-md:w-[15vw] max-md:h-[15vw] max-sm:w-[20vw]">
+              <div className="h-[5vw] w-[5vw] rounded-full overflow-hidden relative max-sm:h-[20vw] max-md:w-[15vw] max-md:h-[15vw] max-sm:w-[20vw] bg-white flex items-center justify-center p-1">
                 <Image
                   src={img}
                   width={400}
                   height={500}
                   alt={name}
-                  className="h-full w-full object-cover"
+                  className="h-auto w-full "
                 />
               </div>
               <div className="w-[78%] space-y-[0.3vw] max-sm:w-[70%]">
