@@ -119,6 +119,83 @@ const nextConfig = {
       },
     ];
   },
+  async redirects() {
+  return[
+    {
+      source:'/unify',
+      destination:'/unifyai',
+      permanent:true
+    },
+    {
+      source:'/pilot-program',
+      destination:'/production-pilot',
+      permanent:true
+
+    },
+    {
+      source:'/resources/blog',
+      destination:'/blogs',
+      permanent:true
+
+    },
+    {
+      source:'/resources/news-and-pr',
+      destination:'/news',
+      permanent:true
+
+    },
+    {
+      source:'/resources/product-videos',
+      destination:'/product-videos',
+      permanent:true
+
+    },
+    {
+      source:'/resources/webinars-and-events',
+      destination:'/webinars-and-events',
+      permanent:true
+
+    },
+    {
+      source:'/resources/webinars-and-events',
+      destination:'/webinars-and-events',
+      permanent:true
+
+    },
+    {
+      source:'/resources/webinars-and-workshops/ai-for-insurance-workshop',
+      destination:'/ai-insurance-workshops',
+      permanent:true
+
+    },
+    {
+      source:'/resources/webinars-and-workshops/ai-for-insurance-workshop',
+      destination:'/webinars-and-events',
+      permanent:true
+
+    },
+    {
+      source:'/resources/whitepapers',
+      destination:'/whitepapers',
+      permanent:true
+
+    },
+    {
+      source:'/about-v2',
+      destination:'/about',
+      permanent:true
+
+    },
+    {
+      source:'/career',
+      destination:'/careers',
+      permanent:true
+
+    },
+
+  ]
+
+  }
 };
 
 const withBundleAnalyzer = bundleAnalyzer({
