@@ -137,7 +137,7 @@ const awards = [
   },
   {
     img: "/assets/images/homepage/recognized/challenger-in-pema-quadrant.png",
-    title: "Challeneger in PeMa Quadrant",
+    title: "Challenger in PeMa Quadrant",
     year: "India 2023",
   },
   {

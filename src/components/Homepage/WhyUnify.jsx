@@ -399,7 +399,7 @@ const WhyUnify = () => {
                   background="border-primary-2 border bg-transparent hover:bg-transparent"
                   circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
                   text="Know More"
-                  href="#"
+                  href="/unify"
                   className="hover:text-primary-2 text-primary-2 "
                 />
               </div>
@@ -419,7 +419,7 @@ const WhyUnify = () => {
                   background="border-primary-2 border bg-transparent hover:bg-transparent"
                   circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
                   text="Know More"
-                  href="#"
+                  href="/unify"
                   className="hover:text-primary-2 text-primary-2"
                 />
               </div>
@@ -439,7 +439,7 @@ const WhyUnify = () => {
                   background="border-primary-2 border bg-transparent hover:bg-transparent"
                   circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
                   text="Know More"
-                  href="#"
+                  href="/unify"
                   className="hover:text-primary-2 text-primary-2"
                 />
               </div>
@@ -460,7 +460,7 @@ const WhyUnify = () => {
                   background="border-primary-2 border bg-transparent hover:bg-transparent"
                   circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
                   text="Know More"
-                  href="#"
+                  href="/unify"
                   className="hover:text-primary-2 text-primary-2"
                 />
               </div>

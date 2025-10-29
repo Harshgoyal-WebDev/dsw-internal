@@ -6,7 +6,7 @@ import PrimaryButton from "../Button/PrimaryButton";
 import Copy from "../Animations/Copy";
 
 const Tour = ({heading,para}) => {
-  const [activeTab, setActiveTab] = useState("aiStudio");
+  const [activeTab, setActiveTab] = useState("unifyAI");
 
   const handleTabClick = (tabId) => {
     setActiveTab(tabId);
@@ -48,7 +48,7 @@ const Tour = ({heading,para}) => {
             <motion.div
               className="w-[13vw] h-full rounded-full bg-blue-1 thumb-button max-sm:w-[40vw] max-md:w-[30vw]"
               animate={{
-                x: activeTab === "aiStudio" ? 0 : (isMobile ? "40vw" : isTablet ? "30vw" : "13vw"),
+                x: activeTab === "unifyAI" ? 0 : (isMobile ? "40vw" : isTablet ? "30vw" : "13vw"),
               }}
               transition={{
                 type: "spring",
@@ -61,24 +61,24 @@ const Tour = ({heading,para}) => {
           {/* AI Studio Tab */}
           <motion.div
             className="w-[13vw] px-[1.5vw] py-[1vw] flex items-center justify-center relative z-[2] cursor-pointer max-sm:w-[40vw] max-md:w-[30vw] max-md:py-[3vw]"
-            id="aiStudio"
-            onClick={() => handleTabClick("aiStudio")}
+            id="unifyAI"
+            onClick={() => handleTabClick("unifyAI")}
           >
             <motion.p
               animate={{
-                color: activeTab === "aiStudio" ? "#ffffff" : "#CACACA",
+                color: activeTab === "unifyAI" ? "#ffffff" : "#CACACA",
               }}
               transition={{ duration: 0.3 }}
             >
-              AI Studio
+             UnifyAI 
             </motion.p>
           </motion.div>
 
           {/* GenAI Studio Tab */}
           <motion.div
             className="w-[13vw] px-[1.5vw] py-[1vw] flex items-center justify-center relative z-[2] cursor-pointer max-md:w-[30vw] max-sm:w-[40vw] max-md:py-[3vw]"
-            id="genStudio"
-            onClick={() => handleTabClick("genStudio")}
+            id="agenticAI"
+            onClick={() => handleTabClick("agenticAI")}
             transition={{
               duration: 0.4,
               ease: "easeInOut",
@@ -86,23 +86,23 @@ const Tour = ({heading,para}) => {
           >
             <motion.p
               animate={{
-                color: activeTab === "genStudio" ? "#f1f1f1" : "#CACACA",
+                color: activeTab === "agenticAI" ? "#f1f1f1" : "#CACACA",
               }}
               transition={{ duration: 0.3 }}
             >
-              GenAI Studio
+              AgenticAI
             </motion.p>
           </motion.div>
         </div>
 
         {/* Content Containers */}
-        <div className="w-[80%] h-[22vw] relative fadeup mt-[5vw] max-sm:w-full max-sm:h-[60vw] max-md:h-[40vw] max-md:w-full max-sm:mt-[12vw]">
+        <div className="w-[80%] h-[35vw] relative fadeup mt-[5vw] max-sm:w-full max-sm:h-[60vw] max-md:h-[40vw] max-md:w-full max-sm:mt-[12vw] rounded-lg overflow-hidden">
           <AnimatePresence mode="wait">
            
-            {activeTab === "aiStudio" && (
+            {activeTab === "unifyAI" && (
               <motion.div
-                key="aiStudio"
-                className="w-full h-full absolute top-0 left-0 aiStudio-container"
+                key="unifyAI"
+                className="w-full h-full absolute top-0 left-0 unifyAI-container"
                 initial={{
                   opacity: 0,
                   scale: 0.9,
@@ -127,7 +127,7 @@ const Tour = ({heading,para}) => {
                     src={'/assets/images/homepage/tour-img.png'}
                     alt="AI Studio tour image"
                     fetchPriority="high"
-                    className="w-full h-full object-cover rounded-lg"
+                    className="w-full h-full object-cover"
                     width={900}
                     height={400}
                   />
@@ -142,17 +142,17 @@ const Tour = ({heading,para}) => {
                   <PrimaryButton
                     text={"See it, to believe it! "}
                     className=""
-                    href={"/ai-studio"}
+                    href={"/unify"}
                   />
                 </motion.div>
               </motion.div>
             )}
 
            
-            {activeTab === "genStudio" && (
+            {activeTab === "agenticAI" && (
               <motion.div
-                key="genStudio"
-                className="w-full h-full absolute top-0 left-0 genStudio-container"
+                key="agenticAI"
+                className="w-full h-full absolute top-0 left-0 agenticAI-container"
                 initial={{
                   opacity: 0,
                   scale: 0.9,
@@ -176,7 +176,7 @@ const Tour = ({heading,para}) => {
                   <Image
                     src={'/assets/images/homepage/tour-img.png'}
                     alt="GenAI Studio tour image"
-                    className="w-full h-full object-cover rounded-lg"
+                    className="w-full h-full object-cover "
                     width={900}
                     height={400}
                   />
@@ -189,9 +189,9 @@ const Tour = ({heading,para}) => {
                   transition={{ delay: 0.2, duration: 0.3 }}
                 >
                   <PrimaryButton
-                    text={"Explore GenAI Studio"}
+                    text={"See it, to believe it!"}
                     className=""
-                    href={"/genai-studio"}
+                    href={"/agenticai"}
                   />
                 </motion.div>
               </motion.div>

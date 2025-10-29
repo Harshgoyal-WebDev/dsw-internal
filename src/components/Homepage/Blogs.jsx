@@ -80,7 +80,7 @@ const Blogs = ({posts}) => {
             </p>
           </Copy>
           <div className="fadeup">
-            <PrimaryButton prefetch={false} text={"View More"} href={"/resources/blogs"} />
+            <PrimaryButton prefetch={false} text={"View More"} href={"/resources/blog"} />
           </div>
         </div>
         <div className="w-[50%] text-white max-sm:w-full max-md:w-[93%] max-md:mt-[10vw] fadeup ">
