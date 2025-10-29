@@ -21,7 +21,7 @@ const UnifyTour = () => {
             <div className="w-[80%] h-[35vw] rounded-lg overflow-hidden max-sm:w-full max-sm:h-[50vw]">
              <Image
                     src={'/assets/images/unify/tour.png'}
-                    alt="AI Studio tour image"
+                    alt="UnifyAI tour image"
                     fetchPriority="high"
                     className="w-full h-full object-cover brightness-30"
                     

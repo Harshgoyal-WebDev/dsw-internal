@@ -6,7 +6,7 @@ import { SOCIAL_LINKS } from "@/constants/siteConfig";
 
 const Form = () => {
   return (
-    <section className="w-screen h-full overflow-hidden relative z-[10] mt-[-20vh] max-md:mt-0">
+    <section className="w-screen h-full overflow-hidden relative z-[10] mt-[-20vh] max-md:mt-0" id="contact-form">
       <div className="h-full w-full flex items-start justify-between  container max-sm:flex-col max-md:flex-col max-sm:gap-[8vw] max-md:gap-[10vw] max-sm:px-[5.5vw] max-md:px-[4vw]">
         <div className="w-[52%] h-full  max-sm:w-full max-md:w-[100%] space-y-[1.5vw] max-md:space-y-[3vw] max-sm:space-y-[4.5vw] flex flex-col justify-between gap-[6.5vw]">
           <div className="h-[35%]  space-y-[1.5vw] max-md:space-y-[5vw]">

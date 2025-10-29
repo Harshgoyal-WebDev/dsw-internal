@@ -137,7 +137,7 @@ function AccordionItem({ title, description,features, isOpen, onToggle,index,z})
  const usecaseData = [
     {
       id: "001",
-      title: "AI Studio ",
+      title: "UnifyAI ",
       description:"Build, test, deploy, and monitor AI/ML models with lightning speed using accelerated workflows: ",
       features: [
         "400+ pre-built connectors for seamless data ingestion and transformation ",
@@ -149,7 +149,7 @@ function AccordionItem({ title, description,features, isOpen, onToggle,index,z})
     },
     {
       id: "002",
-      title: "GenAI Studio ",
+      title: "AgenticAI",
       description:"Design, configure, and launch enterprise-grade GenAI agents with ease:",
       features: [
         "Agentic AI drag and drop workflows and framework for task-based orchestration ",

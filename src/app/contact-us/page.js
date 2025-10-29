@@ -7,6 +7,7 @@ import { homepage } from '@/lib/util';
 import { WebpageJsonLd } from '@/lib/json-ld';
 import { getPageMetadata } from '@/config/metadata';
 import Hero from '@/components/Common/Hero';
+import Help from '@/components/Contact/Help';
 
 export const metadata = getPageMetadata({
   title: "Contact DSW UnifyAI - Get in Touch",
@@ -37,6 +38,7 @@ const Page = () => {
      <WebpageJsonLd metadata={metadata}/>
         <Layout>
         <Hero heroData={heroData} />
+        <Help/>
         <Form />
          <OfficeLocations />
          <FooterCTA footerCTAData={footerCTAData} width={"w-[95%]"}/>
@@ -48,7 +50,7 @@ const Page = () => {
 export default Page
 
 const heroData= {
-  heading:"Let’s Build the Future of AI Together​ ",
+  heading:"Let’s Build the Future of AI Together",
   para:"Whether you're ready to launch your next AI initiative or just exploring possibilities—let’s talk.​",
   paraClass:"",
   homepage:false,

@@ -187,12 +187,12 @@ const cardsData = [
   {
     src: "/assets/icons/insuraince/code-setting.svg",
     content:
-      "Modular, low-code AI Studio for building, deploying, and monitoring models at scale ",
+      "Modular, low-code UnifyAI for building, deploying, and monitoring models at scale ",
   },
   {
     src: "/assets/icons/insuraince/AI.svg",
     content:
-      "GenAI Studio for creating compliant, enterprise-ready GenAI agents in hours ",
+      "AgneticAI for creating compliant, enterprise-ready GenAI agents in hours ",
   },
   {
     src: "/assets/icons/insuraince/deployment.svg",

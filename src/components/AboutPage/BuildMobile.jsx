@@ -13,8 +13,8 @@ const usecaseData = [
       title: "DSW UnifyAI ",
       description:"An enterprise-grade AI platform that integrates data, models, agents, deployment, and governance in one seamless fabric. Build AI solutions in weeks and GenAI applications in hours. Operate with full observability, built-in guardrails, and policy control. Avoid vendor lock-in with flexible deployment options: on-premises, hybrid, or cloud. ",
       features: [
-        " AI Studio",
-        "GenAI Studio",
+        "UnifyAI",
+        "AgenticAI",
         "Feature Store",
         "Prompt Hub",
         "Guardrails",
@@ -29,8 +29,8 @@ const usecaseData = [
       title: "insurAInce ",
       description:"An enterprise-grade AI platform that integrates data, models, agents, deployment, and governance in one seamless fabric. Build AI solutions in weeks and GenAI applications in hours. Operate with full observability, built-in guardrails, and policy control. Avoid vendor lock-in with flexible deployment options: on-premises, hybrid, or cloud. ",
       features: [
-        " AI Studio",
-        "GenAI Studio",
+        "UnifyAI",
+        "AgenticAI",
         "Feature Store",
         "Prompt Hub",
         "Guardrails",
@@ -45,8 +45,8 @@ const usecaseData = [
       title: "BankAI & FSAI ",
       description:"An enterprise-grade AI platform that integrates data, models, agents, deployment, and governance in one seamless fabric. Build AI solutions in weeks and GenAI applications in hours. Operate with full observability, built-in guardrails, and policy control. Avoid vendor lock-in with flexible deployment options: on-premises, hybrid, or cloud. ",
       features: [
-        " AI Studio",
-        "GenAI Studio",
+        "UnifyAI",
+        "AgenticAI",
         "Feature Store",
         "Prompt Hub",
         "Guardrails",

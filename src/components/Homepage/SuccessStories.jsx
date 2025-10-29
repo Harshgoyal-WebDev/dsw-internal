@@ -68,7 +68,7 @@ const SuccessStories = () => {
 
             <TestimonialCard
               message={
-                "With advanced capabilities of the platform's GenAI Studio, Castler’s escrow services became smarter, more efficient - enabling faster, secure, scalable solutions for our BFSI clients.​​"
+                "With advanced capabilities of the platform's AgenticAI, Castler’s escrow services became smarter, more efficient - enabling faster, secure, scalable solutions for our BFSI clients.​​"
               }
               img={"/assets/images/homepage/success-stories/castler.png"}
               name={"Ritesh Tiwari"}

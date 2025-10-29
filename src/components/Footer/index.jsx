@@ -67,7 +67,7 @@ const Footer = () => {
                     </li>
                   ))}
                 </ul> */}
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-2 gap-3 max-md:flex max-md:flex-col max-sm:space-y-[15vw] max-md:space-y-[10vw]">
                   <div>
                 <p className="mb-5 text-foreground content-p font-head">NAVIGATION</p>
 

@@ -65,6 +65,7 @@ export const LinkButton = ({
       <Link
         scroll={false}
         href={href}
+        {...props}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         className={`relative  h-fit w-fit  group cursor-pointer text-primary-2 flex items-center gap-[0.7vw] max-sm:gap-[3vw] max-md:gap-[2vw] ${className}`}

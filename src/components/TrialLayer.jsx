@@ -86,7 +86,7 @@ const TrialLayer = () => {
 
         <div className="w-full h-full flex relative items-center justify-center max-md:static max-md:flex-col max-md:gap-[5vw]">
           <div className="h-fit w-[23%] border border-[#59595980] background-glass rounded-[2vw] space-y-[1vw] max-md:space-y-[3vw] px-[2.5vw] py-[2.5vw] fadeup absolute left-[5%] top-[5%] max-md:w-full max-md:static max-md:px-[5vw] max-md:py-[6vw] max-md:rounded-[4vw] max-md:order-[1]">
-            <p className="text-[#CACACA] leading-[1.5] font-head font-medium"> AI Studio</p>
+            <p className="text-[#CACACA] leading-[1.5] font-head font-medium">Unify AI</p>
             <p className="text-[#CACACA] leading-[1.5]">
               Your All-in-One Playground to Simplify and Accelerate End-to-End
               AI/ML Use Cases
@@ -149,7 +149,7 @@ const TrialLayer = () => {
           </div>
           </div>
           <div className="h-fit w-[23%] border border-[#59595980] background-glass rounded-[2vw] space-y-[1vw] max-md:space-y-[3vw] px-[2.5vw] py-[2.5vw] self-end ml-auto fadeup absolute bottom-[20%] right-[3%]  max-md:w-full max-md:static max-md:px-[5vw] max-md:py-[6vw] max-md:ml-0 max-md:rounded-[4vw] max-md:order-[2]">
-            <p className="text-[#CACACA] leading-[1.5] font-head font-medium">Gen AI Studio</p>
+            <p className="text-[#CACACA] leading-[1.5] font-head font-medium">AgenticAI</p>
 
             <p className="text-[#CACACA] leading-[1.5]">
               An In-built Playground for Rapid and Efficient GenAI Use Case
@@ -170,12 +170,12 @@ const TrialLayer = () => {
             </div>
             <div className="absolute top-[42%] left-[67%] max-sm:left-[70%] max-sm:top-[54%] max-md:top-[50%] max-md:left-[70%]">
               <Copy>
-                <p className="text-[#E8E8E8] text-[1vw] max-md:text-[2.7vw]">Gen AI Studio</p>
+                <p className="text-[#E8E8E8] text-[1vw] max-md:text-[2.7vw]">AgneticAI</p>
               </Copy>
             </div>
             <div className="absolute top-[42%] left-[28%] text-right max-sm:left-0 max-sm:top-[54%] max-md:top-[47%] max-md:left-0">
               <Copy>
-                <p className="text-[#E8E8E8] text-[1vw] max-md:text-[2.7vw]">AI Studio</p>
+                <p className="text-[#E8E8E8] text-[1vw] max-md:text-[2.7vw]">UnifyAI</p>
               </Copy>
             </div>
             <div className="absolute top-[55%] left-[27%] text-right max-sm:left-0 max-sm:top-[58%] max-md:top-[52%] max-md:left-0">

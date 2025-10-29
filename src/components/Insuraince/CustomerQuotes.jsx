@@ -37,7 +37,7 @@ const panelsData = [
     position: "Chief Product Officer ",
     company: "Castler ",
     description:
-      "With advanced capabilities of its GenAI Studio, Castler's escrow services became smarter, more efficient - enabling faster, secure, scalable solutions for our BFSI clients. ",
+      "With advanced capabilities of its AgenticAI, Castler's escrow services became smarter, more efficient - enabling faster, secure, scalable solutions for our BFSI clients. ",
     logo: "/assets/images/insuraince/castler.png",
   },
 ];

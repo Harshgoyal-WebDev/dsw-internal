@@ -11,7 +11,7 @@ export const ContactInfo = ({
 
   const variants = {
     default: "text-foreground",
-    footer: "text-foreground",
+    footer: "text-foreground !font-medium",
     compact: "text-sm text-gray-300"
   };
 
@@ -25,7 +25,7 @@ export const ContactInfo = ({
           <li key={index} className="under-multi-parent">
             <a 
               href={`tel:${phone.number}`} 
-              className="under-multi content-p hover:text-white transition-colors duration-300"
+              className="under-multi content-p hover:text-white transition-colors duration-300 "
             >
               {phone.display}
             </a>
@@ -35,7 +35,7 @@ export const ContactInfo = ({
           <li className="under-multi-parent">
             <a 
               href={`mailto:${contact.email}`} 
-              className="under-multi content-p hover:text-white transition-colors duration-300"
+              className="under-multi content-p hover:text-white transition-colors duration-300 "
             >
               {contact.email}
             </a>

@@ -18,7 +18,7 @@ const Newsletter = () => {
         // </div>
         <div className=" text-foreground  max-md:flex max-md:flex-col max-md:justify-center max-md:items-center max-sm:py-[5vw] max-md:py-[3vw] relative max-sm:items-start ">
              <p  className="mb-6 font-medium max-md:w-[75%] max-sm:w-[95%] ">Subscribe to our newsletter for the latest tech insights and updates.</p>
-        <div className='group relative w-full max-w-[65%] max-sm:max-w-[70%] max-md:max-w-[45%]  max-md:ml-[-10vw]  max-sm:pl-[15vw]'>  
+        <div className='group relative w-full max-w-[60%] max-sm:max-w-[70%] max-md:max-w-[45%]  max-md:ml-[-10vw]  max-sm:pl-[15vw]'>  
       <label
         htmlFor="Newsletter"
         className='origin-start  has-[+input:not(:placeholder-shown)]:text-foreground absolute top-1/2 block -translate-y-1/2 cursor-text px-2 text-sm transition-all group-focus-within:pointer-events-none group-focus-within:top-0 group-focus-within:cursor-default group-focus-within:text-xs group-focus-within:font-medium has-[+input:not(:placeholder-shown)]:pointer-events-none has-[+input:not(:placeholder-shown)]:top-0 has-[+input:not(:placeholder-shown)]:cursor-default has-[+input:not(:placeholder-shown)]:text-xs has-[+input:not(:placeholder-shown)]:font-medium'

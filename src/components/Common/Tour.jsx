@@ -59,7 +59,7 @@ const Tour = ({heading,para}) => {
             />
           </div>
 
-          {/* AI Studio Tab */}
+          {/* UnifyAI Tab */}
           <motion.div
             className="w-[13vw] px-[1.5vw] py-[1vw] flex items-center justify-center relative z-[2] cursor-pointer max-sm:w-[40vw] max-md:w-[30vw] max-md:py-[3vw]"
             id="unifyAI"
@@ -75,7 +75,7 @@ const Tour = ({heading,para}) => {
             </motion.p>
           </motion.div>
 
-          {/* GenAI Studio Tab */}
+          {/* AgenticAI Tab */}
           <motion.div
             className="w-[13vw] px-[1.5vw] py-[1vw] flex items-center justify-center relative z-[2] cursor-pointer max-md:w-[30vw] max-sm:w-[40vw] max-md:py-[3vw]"
             id="agenticAI"
@@ -126,7 +126,7 @@ const Tour = ({heading,para}) => {
               >
                   <Image
                     src={'/assets/images/homepage/tour-img.png'}
-                    alt="AI Studio tour image"
+                    alt="UnifyAI tour image"
                     fetchPriority="high"
                     className="w-full h-full object-cover"
                     width={900}
@@ -180,7 +180,7 @@ const Tour = ({heading,para}) => {
               >
                   <Image
                     src={'/assets/images/homepage/tour-img.png'}
-                    alt="GenAI Studio tour image"
+                    alt="AgenticAI tour image"
                     className="w-full h-full object-cover "
                     width={900}
                     height={400}

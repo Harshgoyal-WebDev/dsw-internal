@@ -2,7 +2,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import SubmenuNavigation from "./Submenu";
-import { SOCIAL_LINKS, NAVIGATION } from "@/constants/siteConfig";
+import { SOCIAL_LINKS,  NAVIGATION_FOOTER } from "@/constants/siteConfig";
 import SocialLink from "../ui/SocialLink";
 
 // helper: normalize to last non-empty segment ("slug")
@@ -47,17 +47,24 @@ export default function MobileMenu({
     aboutItem,
     pilotItem,
     contactItem,
+    careerItem,
+     termsAndConditionsItem,
+     privacyPolicyItem,
     productSection,
     solutionsSection,
     resourcesSection,
+    
   } = useMemo(() => {
-    const findById = (id) => NAVIGATION.find((i) => i.id === id) || null;
+    const findById = (id) => NAVIGATION_FOOTER.find((i) => i.id === id) || null;
 
     return {
       homeItem: findById("home"),
       aboutItem: findById("about"),
       pilotItem: findById("pilot"),
       contactItem: findById("contact"),
+      careerItem:findById("careers"),
+     termsAndConditionsItem:findById("terms-and-conditions"),
+     privacyPolicyItem:findById("privacy-policy"),
       productSection: findById("product"),
       solutionsSection: findById("solutions"),
       resourcesSection: findById("resources"),
@@ -206,6 +213,43 @@ export default function MobileMenu({
                   <span className="bg-[#e8e8e8c5] h-[1px] w-full" />
                 </>
               )}
+              {careerItem && (
+                <>
+                  <Link
+                    href={careerItem.href}
+                    {...linkProps(careerItem.href)}
+                    onClick={handleDirectLinkClick}
+                  >
+                    {careerItem.text}
+                  </Link>
+                  <span className="bg-[#e8e8e8c5] h-[1px] w-full" />
+                </>
+              )}
+              {privacyPolicyItem && (
+                <>
+                  <Link
+                    href={privacyPolicyItem.href}
+                    {...linkProps(privacyPolicyItem.href)}
+                    onClick={handleDirectLinkClick}
+                  >
+                    {privacyPolicyItem.text}
+                  </Link>
+                  <span className="bg-[#e8e8e8c5] h-[1px] w-full" />
+                </>
+              )}
+              {termsAndConditionsItem && (
+                <>
+                  <Link
+                    href={termsAndConditionsItem.href}
+                    {...linkProps(termsAndConditionsItem.href)}
+                    onClick={handleDirectLinkClick}
+                  >
+                    {termsAndConditionsItem.text}
+                  </Link>
+                  <span className="bg-[#e8e8e8c5] h-[1px] w-full" />
+                </>
+              )}
+              
             </div>
           </div>
 
