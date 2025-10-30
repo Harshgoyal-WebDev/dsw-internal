@@ -33,6 +33,7 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
   const sectionRef = useRef(null);
   const headingRef = useRef(null);
   const paraRef = useRef(null);
+  const subheadingRef = useRef(null);
   const imgWrapRef = useRef(null);
   const btnsRef = useRef(null);
   const shaderRef = useRef(null);
@@ -90,12 +91,21 @@ useEffect(() => {
         ? new SplitText(paraRef.current, { type: "lines", mask: "lines" })
         : null;
 
+        const splitSubHeading =  subheadingRef.current
+        ? new SplitText(subheadingRef.current, { type: "lines", mask: "lines" })
+        : null;
+
     // ⬇️ ensure aria-visible for heading + paragraph split wrappers
     forceAriaVisible(headingRef.current);
     if (splitPara) {
       forceAriaVisible(paraRef.current);
       // belt & suspenders: also mark each generated line explicitly
       splitPara.lines.forEach((l) => l.setAttribute("aria-hidden", "false"));
+    }
+    if (splitSubHeading) {
+      forceAriaVisible(subheadingRef.current);
+      // belt & suspenders: also mark each generated line explicitly
+      splitSubHeading.lines.forEach((l) => l.setAttribute("aria-hidden", "false"));
     }
 
     const delayLines = hasVisited ? 0.7 : 4.8;
@@ -126,6 +136,17 @@ useEffect(() => {
         onComplete: () => forceAriaVisible(paraRef.current),
       });
     }
+    if (splitSubHeading) {
+      gsap.from(splitSubHeading.lines, {
+        yPercent: 100,
+        delay: delayPara,
+        duration: 1.4,
+        stagger: 0.04,
+        ease: "power3.out",
+        onStart: () => forceAriaVisible(subheadingRef.current),
+        onComplete: () => forceAriaVisible(subheadingRef.current),
+      });
+    }
 
     // mobile gradient
     if (mobileGradientRef.current) {
@@ -146,7 +167,7 @@ useEffect(() => {
     }
 
     // reveal heading & para opacity (mask anim handled above)
-    gsap.to([headingRef.current, paraRef.current], {
+    gsap.to([headingRef.current, paraRef.current, subheadingRef.current], {
       opacity: 1,
       duration: 0.1,
     });
@@ -254,6 +275,15 @@ useEffect(() => {
               />
             </div>
           ) : null}
+
+ {heroData.subheading &&
+           <p
+            ref={subheadingRef}
+            className={`text-[#CACACA] font-head mx-auto overflow-hidden text-50`}
+          >
+            {heroData.subheading}
+          </p>
+}
 
           <p
             ref={paraRef}

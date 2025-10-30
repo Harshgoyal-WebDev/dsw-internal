@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React from "react";
 import { LinkButton } from "../Button/LinkButton";
+import PrimaryButton from "../Button/PrimaryButton";
 
 
 const Help = () => {
@@ -23,9 +24,9 @@ const Help = () => {
                     <p className="text-white-300 ">
                         Become the backbone of enterprise AI. Just as Linux became the foundation of modern computing, DSW UnifyAI is emerging as the OS for AI - a platform that brings together open innovation
                     </p>
-                    <LinkButton
+                    <PrimaryButton
                         href="#contact-form"
-                        text={"Contact to Sales Team"}
+                        text={"Contact Sales"}
                     />
                 </div>
 
@@ -34,7 +35,7 @@ const Help = () => {
                     <p className="text-white-300 ">
                        Become the backbone of enterprise AI. Just as Linux became the foundation of modern computing, DSW UnifyAI is emerging as the OS for AI - a platform that brings together open innovation
                     </p>
-                    <LinkButton
+                    <PrimaryButton
                         href="https://calendly.com/"
                         text={"Schedule a Call"}
                         target="_blank"

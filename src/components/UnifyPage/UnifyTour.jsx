@@ -8,7 +8,7 @@ import { useModal } from "../Common/ModalProvider";
 const UnifyTour = () => {
   const {openModal} =useModal()
   return (
-    <section className="w-screen h-fit container" id="tour">
+    <section className="w-screen h-fit container" id="tour-unify">
       <div className="w-full flex flex-col gap-[2vw] items-center max-md:gap-[4vw]">
         <h2 className="text-60 headingAnim w-[40%] max-md:w-full text-center">Take a Lightning Tour of DSW UnifyAI</h2>
         <Copy>

@@ -68,9 +68,10 @@ export default function page() {
 }
 const heroData = {
   heading: "The Operating System for Enterprise AI ",
-  para: "Deploy AI use cases in 30 days, GenAI in a few hours! ​",
-  paraClass: "text-[2.5vw] max-sm:text-[4vw] max-sm:w-[90%]",
-  link1: "/unifyai",
+  subheading: "Deploy AI use cases in 30 days, GenAI in a few hours! ​",
+  para:"Launch your AI and GenAI use cases at record speed with one unified, production-grade platform - engineered for scale, security, and speed. Unify every step of the AI lifecycle, from data to deployment, on a single, scalable foundation.",
+  paraClass: "w-[95%]",
+  link1: "#tour-unify",
   btnText1: "Start Walkthrough",
   link2: "https://calendly.com/",
   btnText2: "Schedule a Call",

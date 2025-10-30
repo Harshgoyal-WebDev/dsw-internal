@@ -75,7 +75,7 @@ const heroData = {
   heading: "Launch AI use cases in days. GenAI in hours.​ ",
   para: "The enterprise platform built for speed and scale.​ Go from pilot to production – faster and smarter with DSW UnifyAI​",
   paraClass: "",
-  link1: "/unifyai",
+  link1: "#tour",
   btnText1: "Start Walkthrough",
   link2: "https://calendly.com/",
   btnText2: "Schedule a Call",
