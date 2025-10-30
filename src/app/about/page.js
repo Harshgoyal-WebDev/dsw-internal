@@ -15,6 +15,7 @@ import { getPageMetadata } from '@/config/metadata'
 import Hero from '@/components/Common/Hero'
 import Unifying from '@/components/AboutPage/Unifying'
 import Mission from '@/components/AboutPage/Mission'
+import Join from '@/components/CareerPage/Join'
 
 
 export const metadata = getPageMetadata({
@@ -57,6 +58,7 @@ export default function page() {
             <Guiders heading={"Advisors and Board"}/>
             <Ecosystem/>
             <Careers/>
+            <Join/>
             <FooterCTA footerCTAData={footerCTAData} />
         </Layout>
         </>

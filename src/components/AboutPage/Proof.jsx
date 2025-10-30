@@ -28,7 +28,7 @@ const Proof = () => {
 
       <div className='hidden max-sm:block '>
 
-        <div className='flex flex-col gap-[8vw] px-[6vw] pt-[8vw] h-fit relative'>
+        <div className='flex flex-col gap-[8vw]  pt-[8vw] h-fit relative'>
            <Card para={"Recognized among the leading AI startups in India and Ireland from 2022–2025 by industry bodies and research firms "}/>
            <Card para={"Ranked among Ireland’s top 12 AI companies by F6S in 2025 "}/>
              <Card para={"Trusted by leading enterprises, fully compliant and proven across complex, regulated environments "}/>
@@ -51,7 +51,7 @@ const Card=({img,para})=>{
           <div
             className="relative w-[30vw] max-sm:w-full rounded-[1.5vw] group cursor-pointer
     overflow-hidden flex flex-col items-center border transition-opacity border-[#59595980] 
-    justify-between p-[2.5vw] max-sm:p-[5vw] px-[1vw] h-[22vw] max-sm:rounded-3xl max-sm:h-[35vh] background-glass backdrop-blur-[1vw]"
+    justify-between p-[2.5vw] max-sm:p-[5vw] max-sm:py-[8vw] px-[1vw] h-[22vw] max-sm:rounded-3xl max-sm:h-[35vh] background-glass backdrop-blur-[1vw]"
           >
             <div
               className="absolute inset-0 

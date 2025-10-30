@@ -85,8 +85,8 @@ export default function BuildMobile({ allowMultiple = false }) {
       id="WhyUnify"
     >
       <div className="h-[5vh] relative w-full">
-        <h2 className="text-60 text-center font-light headingAnim">
-          Supercharge Your AI and GenAI Use Cases  
+        <h2 className="text-90 text-center font-light headingAnim capitalize">
+        what we build
         </h2>
       </div>
 
@@ -116,17 +116,17 @@ function Accordion({ title, para, link, features, isOpen, onToggle, id }) {
   // console.log(features);
 
   return (
-    <div className={`w-full group overflow-hidden fadeup`}>
+    <div className={`w-full group overflow-hidden fadeup rounded-[5vw] ${ isOpen ? "bg-gradient-to-r from-light-blue to-dark-blue" :"bg-[#030815]"} `}>
       <div className="w-full mr-auto  ">
         <button
           onClick={onToggle}
           aria-expanded={isOpen}
           className="relative cursor-pointer w-full h-full max-sm:pt-[5vw] max-sm:pb-[5vw] flex items-start justify-between max-md:pt-[5vw] max-md:pb-[5vw]"
         >
-          <div className="w-full flex justify-between ">
-            <div className="flex text-white-200 items-center justify-center gap-[5vw]">
+          <div className={`w-full flex justify-between `}>
+            <div className="flex text-white-200 items-center justify-center gap-[5vw] pl-[3vw]">
               <p className=" text-[3.5vw]">{id}</p>
-              <h3 className="max-sm:text-[5.5vw] font-display capitalize max-md:text-[5.5vw] text-left w-[85%]">
+              <h3 className="text-30 font-display capitalize  text-left w-[85%]">
                 {title}
               </h3>
             </div>
@@ -160,7 +160,7 @@ function Accordion({ title, para, link, features, isOpen, onToggle, id }) {
               }}
               className="overflow-hidden"
             >
-              <div className="w-full flex flex-col max-sm:gap-[2vw] max-sm:pb-[10vw] max-md:items-center max-md:pb-[5vw] max-md:gap-[3vw]">
+              <div className="w-full flex flex-col max-sm:gap-[2vw] max-sm:pb-[10vw] max-md:items-center max-md:pb-[5vw] max-md:gap-[3vw] pl-[3vw]">
                 <div className="py-4 space-y-[4vw]  text-white-200 ">{para}</div>
                 <div className="w-full flex text-white-200 mt-[5vw] flex-col">
                   <ul className="list-disc pl-[5vw] ">

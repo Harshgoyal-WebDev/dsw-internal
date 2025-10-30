@@ -11,6 +11,8 @@ import {
   GrowIcon,
   PurposeDrivenIcon,
 } from "../Icons";
+import Copy from "../Animations/Copy";
+import PrimaryButton from "../Button/PrimaryButton";
 
 const featuresData = [
   {
@@ -49,7 +51,7 @@ const Join = () => {
     }
   };
   return (
-    <section className="w-screen h-fit container relative z-[999] mt-[-15vh] overflow-hidden" id="brochure">
+    <section className="w-screen h-fit container relative  overflow-hidden " id="brochure">
       <div className="w-full flex flex-col items-center justify-center gap-[8vw] max-sm:gap-[10vw]">
         <h2 className="w-[70%] text-center text-90 headingAnim max-md:w-full max-sm:text-left max-sm:!text-[11.5vw]">
           Why Join DSW?
@@ -81,6 +83,7 @@ const Join = () => {
             />
           ))}
         </div>
+        
         <div className="h-fit text-white max-sm:w-full max-sm:mt-[10vw] fadeup max-md:w-screen max-md:px-[7vw] max-sm:px-0 hidden max-md:block">
           <Swiper
             // slidesPerView={1.8}
@@ -124,6 +127,14 @@ const Join = () => {
           <div className="flex gap-6 mt-6 max-sm:mt-10 max-md:items-center max-md:justify-center max-md:mt-[10vw]">
             <PreviousButton onClick={handlePrev} />
             <NextButton onClick={handleNext} />
+          </div>
+        </div>
+        <div className="w-[70%] flex flex-col items-center gap-[3vw] text-center max-md:w-full max-md:gap-[8vw] max-md:text-left">
+          <Copy>
+            <h3 className="text-50 font-head">Join us. Build with purpose. Shape a future driven by research, collaboration, and care.</h3>
+          </Copy>
+          <div>
+            <PrimaryButton href="/careers" text={"See Open Roles"}/>
           </div>
         </div>
       </div>
