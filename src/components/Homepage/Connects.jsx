@@ -112,7 +112,7 @@ const Connects = () => {
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full  max-md:w-[40vw] max-md:h-[40vw] bg-[#121723] h-[18vw] w-[18vw] z-[-2] origin-center max-sm:h-[60vw] max-sm:w-[60vw]"
               ref={circle2}
             />
-            <div className="w-[10vw] h-auto max-sm:w-[50vw] max-md:w-[20vw]">
+            <div className="w-[10vw] h-auto max-sm:w-[50vw] max-md:w-[20vw] space-y-[0.5vw] flex flex-col items-center justify-center">
             <Image
               src="/assets/icons/unify-ai.svg"
               height={65}
@@ -120,7 +120,13 @@ const Connects = () => {
               alt="unify-logo"
               className="fadein scale-[0.8] w-full h-full"
             />
-
+            {/* <Image
+              src="/assets/icons/agentic-ai.png"
+              height={65}
+              width={150}
+              alt="agentic-logo"
+              className="fadein w-full h-full"
+            /> */}
             </div>
           </div>
 

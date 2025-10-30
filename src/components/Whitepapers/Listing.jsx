@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { LinkButton } from "../Button/LinkButton";
 import gsap from "gsap";
 import Copy from "../Animations/Copy";
@@ -60,6 +60,14 @@ const listingData = [
 ];
 const Listing = () => {
 
+  const [hasVisited, setHasVisited] = useState(() => {
+      if (typeof window !== "undefined") {
+        return !!sessionStorage.getItem("hasVisited");
+      }
+      return false;
+    });
+ const delay = hasVisited ? 2 : 5.8;
+
   useEffect(() => {
     if (globalThis.innerWidth > 0) {
       const ctx = gsap.context(() => {
@@ -73,7 +81,7 @@ const Listing = () => {
             },
             opacity: 0,
             y: 50,
-            // delay: id == 0 ? 2 : 0,
+            delay: id == 0 ? delay : 0,
             ease: "power3.out",
             duration: 2,
           });
@@ -86,14 +94,14 @@ const Listing = () => {
   return (
     <section className="container relative z-[10] mt-[-20vh] max-md:mt-0" id="news-listing">
         <div className="space-y-[7vw] max-sm:space-y-[20vw] max-md:space-y-[12vw]">
-        <div className="w-full space-y-[1.5vw] max-sm:space-y-[7vw] max-md:space-y-[4vw]">
+        {/* <div className="w-full space-y-[1.5vw] max-sm:space-y-[7vw] max-md:space-y-[4vw]">
          <h2 className="text-90 headingAnim  max-sm:w-full text-center">Featured Whitepapers</h2>
                 <Copy>
                   <p className="text-[#CACACA] text-center">
                     Watch demo walkthroughs, platform explainers, and customer success stories.
                   </p>
                 </Copy>
-                </div>
+                </div> */}
       <div className="w-full space-y-[4.5vw] max-sm:space-y-[15vw] max-md:space-y-[10vw]">
         {listingData.map((data, id) => (
           <div key={id} className="w-full space-y-[4vw] fadeupListing max-sm:space-y-[10vw] max-md:space-y-[8vw]">

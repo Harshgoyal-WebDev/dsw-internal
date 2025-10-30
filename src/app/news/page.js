@@ -6,8 +6,8 @@ import Annoucements from "@/components/News/Annoucements";
 import { BreadcrumbsJSONLD, WebpageJsonLd } from "@/lib/json-ld";
 import { homepage } from "@/lib/util";
 import { getPageMetadata } from "@/config/metadata";
-import Hero from "@/components/Common/Hero";
 import { getAllNews } from "@/lib/news";
+import InternalHero from "@/components/Common/InternalHero";
 
 
 export const metadata = getPageMetadata({
@@ -41,7 +41,7 @@ export default async function Page() {
     <WebpageJsonLd metadata={metadata}/>
         <BreadcrumbsJSONLD pathname={metadata.url}/>
       <Layout>
-        <Hero heroData={heroData} breadcrumbs={true} />
+        <InternalHero heroData={heroData} breadcrumbs={true} />
         <Listing news={news} />
         <Annoucements />
         <FooterCTA footerCTAData={footerCTAData} />

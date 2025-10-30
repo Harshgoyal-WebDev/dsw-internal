@@ -3,7 +3,6 @@ import Image from "next/image";
 import WhiteButton from "../Button/WhiteButton";
 import Link from "next/link";
 import ArrowButton from "../Button/ArrowButton";
-import Copy from "../Animations/Copy";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { formatDate } from "@/lib/datetime";
@@ -17,7 +16,7 @@ const FeaturedBlog = ({ posts }) => {
       id="featured-blog-container"
       className=" w-screen h-full max-md:gap-[3vh] mt-[-20vh] max-md:mt-0 max-md:flex-col relative z-[20]"
     >
-      <div className="w-full h-full flex fadeup justify-between container !pb-[0.5vw] max-md:flex-col  ">
+      <div className="w-full h-full flex fadeupDelay justify-between container !pb-[0.5vw] max-md:flex-col  ">
         <div className="w-[45%] max-md:w-[85%] max-md:px-0  max-sm:w-full   rounded-3xl h-[30vw] max-md:h-[40vh] max-md:border max-md:border-white/30  relative group overflow-hidden">
           <Link href={featuredPost.slug}>
             <div className="w-full h-full   max-md:h-full max-md:w-full overflow-hidden rounded-3xl">
@@ -38,17 +37,16 @@ const FeaturedBlog = ({ posts }) => {
 
         <div className="w-[55%]  p-[2.5vw] max-md:w-full  space-y-[3vw] max-md:space-y-[5vw] max-md:p-0 max-md:pt-[5vw] max-sm:pt-[7vw]">
           <div className="space-y-[1.8vw] max-md:space-y-[5vw]">
-            <Copy>
+          
               <h3 className="text-30 max-sm:text-[6vw] max-md:text-[4.5vw]">
                 {featuredPost.title}
               </h3>
-            </Copy>
-            <Copy>
+            
               <div
                 className="text-white-300"
                 dangerouslySetInnerHTML={{ __html: featuredPost?.excerpt }}
               />
-            </Copy>
+            
           </div>
 
           <div className="flex max-md:flex-wrap max-md:justify-between  gap-[3.5vw] max-sm:gap-[10vw]">

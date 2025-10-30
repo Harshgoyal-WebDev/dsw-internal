@@ -9,6 +9,7 @@ import { homepage } from "@/lib/util";
 import { BreadcrumbsJSONLD, WebpageJsonLd } from "@/lib/json-ld";
 import { getPageMetadata } from "@/config/metadata";
 import Hero from "@/components/Common/Hero";
+import InternalHero from "@/components/Common/InternalHero";
 
 
 export const metadata = getPageMetadata({

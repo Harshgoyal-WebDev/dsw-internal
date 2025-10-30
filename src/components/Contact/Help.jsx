@@ -9,7 +9,7 @@ const Help = () => {
     return (
         <section
             id="contact-help"
-            className="w-screen h-full container space-y-[3vw] !pb-[15vw] max-md:space-y-[15vw] mt-[-30vh] relative z-[50]"
+            className="w-screen h-full container space-y-[3vw] !pb-[15vw] max-md:space-y-[15vw] mt-[-30vh] relative z-[50] max-md:mt-0"
         >
             <h2 className="text-90 font-head headingAnim">
                 How can we help you?
@@ -24,9 +24,8 @@ const Help = () => {
                         Become the backbone of enterprise AI. Just as Linux became the foundation of modern computing, DSW UnifyAI is emerging as the OS for AI - a platform that brings together open innovation
                     </p>
                     <LinkButton
-                        href="/#"
+                        href="#contact-form"
                         text={"Contact to Sales Team"}
-
                     />
                 </div>
 

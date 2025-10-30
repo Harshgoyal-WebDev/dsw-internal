@@ -44,7 +44,7 @@ const Recognized = () => {
           </Copy>
         </div>
 
-        <div className="w-full flex items-center justify-center px-[5vw] gap-[3vw] mt-[3vw] fadeup max-md:flex-wrap max-md:mt-[6vw] max-md:gap-y-[5vw] max-md:justify-center max-md:gap-[8vw]">
+        <div className="w-full flex items-center justify-center px-[5vw] gap-[3vw] mt-[3vw] fadeup max-md:flex-wrap max-md:mt-[6vw] max-md:gap-y-[5vw] max-md:justify-center max-md:gap-[5vw]">
          <div className="h-[10vw] w-[10vw] max-md:h-[22vw] max-md:w-[22vw]">
             <Image
               src={"/assets/images/homepage/recognized/iso-42001-final.png"}
@@ -75,20 +75,29 @@ const Recognized = () => {
            
           <div className="h-[10vw] w-[10vw] max-md:h-[22vw] max-md:w-[22vw]">
             <Image
-              src={"/assets/images/homepage/recognized/hipaa-compliant-final.png"}
+              src={"/assets/images/homepage/recognized/hipaa.png"}
               height={178}
               width={178}
               alt="hipaa-compliant"
-              className="h-full w-full object-contain scale-[1.12]"
+              className="h-full w-full object-contain scale-[0.9]"
             />
           </div>
-          <div className="h-[10vw] w-[35vw] max-md:h-[30vw] max-md:w-[90vw]">
+          <div className="h-[10vw] w-[10vw] max-md:h-[22vw] max-md:w-[22vw]">
             <Image
-              src={"/assets/images/homepage/recognized/f6s-top-company.png"}
+              src={"/assets/images/homepage/recognized/gdpr-compliance-final.png"}
+              height={178}
+              width={178}
+              alt="gdpr-compliance"
+              className="h-full w-full object-contain scale-[0.9]"
+            />
+          </div>
+          <div className="h-[10vw] w-auto max-md:h-[30vw] max-md:w-[90vw]">
+            <Image
+              src={"/assets/images/homepage/recognized/f6s-top-company-final.png"}
               height={178}
               width={681}
               alt="f6s-top-company"
-              className="h-full w-full object-contain"
+              className="h-full w-full object-contain scale-[0.9] max-sm:scale-[0.8] max-md:scale-[0.7]"
             />
           </div>
         </div>

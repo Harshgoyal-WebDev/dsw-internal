@@ -6,8 +6,8 @@ import FooterCTA from "@/components/Common/FooterCta";
 import { BreadcrumbsJSONLD, WebpageJsonLd } from '@/lib/json-ld'
 import { homepage } from '@/lib/util'
 import { getPageMetadata } from '@/config/metadata'
-import Hero from '@/components/Common/Hero';
 import { getAllPosts } from '@/lib/posts';
+import InternalHero from '@/components/Common/InternalHero';
 
 export const metadata = getPageMetadata({
   title: "DSW Blog - Insights on AI & Enterprise Innovation",
@@ -39,7 +39,8 @@ export default async function page(){
     <WebpageJsonLd metadata={metadata}/>
     <BreadcrumbsJSONLD pathname={metadata.url}/>
         <Layout>
-         <Hero heroData={heroData} breadcrumbs={true} />
+      <InternalHero heroData={heroData} breadcrumbs = {true}/>
+
          <FeaturedBlog posts={posts} />
          <BlogGrid posts={posts} />
          <FooterCTA footerCTAData={footerCTAData} width={"w-[95%]"}/>

@@ -2,8 +2,6 @@
 import { useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Copy from "../Animations/Copy";
-import { lineAnim } from "../Animations/gsapAnimations";
 gsap.registerPlugin(ScrollTrigger);
 
 const POINTS = [
@@ -56,14 +54,15 @@ export default function Expect() {
     }
   }, []);
   
-
   return (
     <section className="w-screen container relative z-[10] " id="expect">
-      <div className="w-full flex flex-col items-center justify-center gap-y-[7vw] max-sm:gap-y-[20vw] max-md:gap-y-[12vw]">
-        <div className="text-center ">
+      <div className="w-full flex flex-col items-center justify-center mt-[-15vh] gap-y-[7vw] max-sm:gap-y-[20vw] max-md:gap-y-[12vw] max-md:mt-0">
+        <div className="text-center">
+          
           <h2 className="text-90 headingAnim text-white-200 max-sm:text-center">
             What to Expect
           </h2>
+          
         </div>
 
         <div className="flex  flex-wrap justify-end gap-y-[5vw] gap-x-[10vw] max-md:w-full max-sm:gap-[15vw] max-md:justify-center max-md:items-center max-md:gap-[7vw]">

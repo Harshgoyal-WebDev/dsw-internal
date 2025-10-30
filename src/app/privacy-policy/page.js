@@ -6,6 +6,7 @@ import { WebpageJsonLd } from '@/lib/json-ld';
 import { homepage } from '@/lib/util';
 import React from 'react'
 import dynamic from 'next/dynamic'
+import InternalHero from '@/components/Common/InternalHero';
 
 const Content = dynamic(() => import('@/components/PrivacyPolicy/Content'))
 
@@ -37,7 +38,7 @@ const page = () => {
     <>
      <WebpageJsonLd metadata={metadata}/>
    <Layout>
-    <Hero heroData={heroData}/>
+    <InternalHero heroData={heroData}/>
     <Content/>
    </Layout>
    </>

@@ -5,6 +5,7 @@ import { getPageMetadata } from '@/config/metadata';
 import { WebpageJsonLd } from '@/lib/json-ld';
 import { homepage } from '@/lib/util';
 import React from 'react'
+import InternalHero from '@/components/Common/InternalHero';
 
 const Content = dynamic(() => import('@/components/TermsAndConditions/Content'))
 
@@ -36,7 +37,7 @@ const page = () => {
     <>
      <WebpageJsonLd metadata={metadata}/>
    <Layout>
-    <Hero heroData={heroData}/>
+    <InternalHero heroData={heroData}/>
     <Content/>
    </Layout>
    </>

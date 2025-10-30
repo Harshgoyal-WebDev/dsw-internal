@@ -6,6 +6,7 @@ import { BreadcrumbsJSONLD, WebpageJsonLd } from "@/lib/json-ld"
 import { homepage } from "@/lib/util";
 import { getPageMetadata } from "@/config/metadata";
 import Hero from "@/components/Common/Hero";
+import InternalHero from "@/components/Common/InternalHero";
 
 export const metadata = getPageMetadata({
   title: "Deep Insights. Real Strategies. Enterprise AI Whitepapers",
@@ -36,7 +37,7 @@ const Page = () => {
     <WebpageJsonLd metadata={metadata}/>
     <BreadcrumbsJSONLD pathname={metadata.url}/>
       <Layout>
-        <Hero heroData={heroData} breadcrumbs={true}/>
+        <InternalHero heroData={heroData} breadcrumbs={true}/>
         <Listing/>
         <FooterCTA footerCTAData={footerCTAData} width={"w-[95%]"} />
       </Layout>

@@ -3,7 +3,6 @@ import Guiders from '@/components/AboutPage/Guiders'
 import FooterCTA from '@/components/Common/FooterCta'
 import Layout from '@/components/Layout'
 import React from 'react'
-import AboutV2 from '@/components/AboutPage/AboutV2'
 import Build from '@/components/AboutPage/Build'
 import Ecosystem from '@/components/AboutPage/Ecosystem'
 import Careers from '@/components/AboutPage/Careers'
@@ -14,6 +13,8 @@ import { WebpageJsonLd } from '@/lib/json-ld'
 import { homepage } from '@/lib/util'
 import { getPageMetadata } from '@/config/metadata'
 import Hero from '@/components/Common/Hero'
+import Unifying from '@/components/AboutPage/Unifying'
+import Mission from '@/components/AboutPage/Mission'
 
 
 export const metadata = getPageMetadata({
@@ -45,7 +46,9 @@ export default function page() {
          <WebpageJsonLd metadata={metadata}/>
         <Layout>
             <Hero heroData={heroData} />
-           <AboutV2/>
+           {/* <AboutV2/> */}
+           <Unifying/>
+           <Mission/>
            <Build/>
            <BuildMobile/>
            <Proof/>

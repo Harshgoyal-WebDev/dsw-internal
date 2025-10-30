@@ -1,9 +1,6 @@
 import React from "react";
-import PrimaryButton from "../Button/PrimaryButton";
 import Image from "next/image";
-import Link from "next/link";
 import SpotlightCard from "./SpotlightCard/SpotLightCard";
-import ArrowButton from "../Button/ArrowButton";
 import Copy from "../Animations/Copy";
 
 const SuccessStories = () => {
@@ -56,7 +53,7 @@ const SuccessStories = () => {
               message={
                 "DSW UnifyAl simplified our data-driven approach, enabling easy development of Al-powered use cases.​ ​"
               }
-              img={"/assets/images/homepage/success-stories/oxsde.png"}
+              img={"/assets/images/homepage/success-stories/oxsde-final.png"}
               name={"Stefano Bonfa"}
               designation={"Director, OxSDE, Europe ​"}
             />
