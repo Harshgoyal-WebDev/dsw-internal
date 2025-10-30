@@ -40,8 +40,8 @@ const PilotCard = ({ id, icon, title, para, spanRef }) => {
   
   return (
     <>
-      <div className=" space-y-[2vw] relative group  max-sm:space-y-[10vw] w-[45%] pb-[6vw]">
-        <div className=" pt-[3vw] gap-[4vw] items-start space-y-[3vw] max-sm:flex max-sm:flex-col max-sm:items-center max-sm:space-y-[6vw] max-sm:mt-[10vw] fadeup">
+      <div className=" space-y-[2vw] relative group  max-sm:space-y-[10vw] w-[45%] pb-[6vw] max-md:w-full">
+        <div className=" pt-[3vw] gap-[4vw] items-start space-y-[3vw] max-sm:flex max-sm:flex-col max-sm:space-y-[6vw] max-sm:mt-[10vw] fadeup">
           <Image
             src={icon}
             height={98}
@@ -49,11 +49,11 @@ const PilotCard = ({ id, icon, title, para, spanRef }) => {
             alt={title}
             className="w-[5vw] h-[5vw] object-contain max-sm:w-[20vw] max-sm:h-[20vw]"
           />
-          <div className="space-y-[2vw]">
-            <h4 className="text-50 text-white-200 max-sm:!text-[7.5vw] max-sm:w-[72%] max-sm:text-center max-sm:h-fit">
+          <div className="space-y-[2vw] max-md:space-y-[4vw]">
+            <h4 className="text-50 text-white-200 max-sm:!text-[7.5vw] max-sm:h-fit">
               {title}
             </h4>
-            <p className="text-white-300 h-[8vw]  max-sm:w-[80%] max-sm:text-center max-sm:h-auto">
+            <p className="text-white-300 h-[8vw]  max-sm:h-auto">
               {para}
             </p>
           </div>
@@ -131,19 +131,19 @@ const Ecosystem = () => {
       <section
         className="h-full w-screen container !pb-[3vw] relative overflow-hidden"
       >
-        <div className="w-full h-full  relative z-[2] space-y-[1.5vw] ">
+        <div className="w-full h-full  relative z-[2] space-y-[1.5vw] max-md:space-y-[8vw]">
           <div className= " space-y-[3vw] ">
-            <h2 className="text-90 headingAnim text-center">
+            <h2 className="text-90 headingAnim text-center max-md:text-left">
               Our Ecosystem
             </h2>
              <Copy>
-                <p className="text-white-300 text-center">
+                <p className="text-white-300 text-center max-md:text-left">
                  We are intentionally building an AI ecosystem that empowers collaboration and innovation. 
                 </p>
               </Copy>
           </div>
 
-          <div className=" w-full  flex flex-wrap  mt-[7vw]  gap-x-[7vw] justify-between">
+          <div className=" w-full  flex flex-wrap  mt-[7vw]  gap-x-[7vw] justify-between max-md:flex-col">
             {data.map((card, index) => (
               <PilotCard
                 key={index}
@@ -156,10 +156,10 @@ const Ecosystem = () => {
             ))}
           </div>
 
-        <div className="flex flex-col items-center justify-center gap-[3vw]">
+        <div className="flex flex-col items-center justify-center gap-[3vw] max-md:gap-[8vw] max-md:items-start">
           <div className="w-[80%] max-sm:w-[100%]">
               <Copy>
-                <p className="text-white-200 text-50 text-center  font-head">
+                <p className="text-white-200 text-50 text-center  font-head max-md:text-left">
                 Our ecosystem is a collective effort, bringing together customers, partners, developers, and thought leaders to build solutions that deliver real-world impact. 
                 </p>
               </Copy>
