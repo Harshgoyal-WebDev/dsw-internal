@@ -116,7 +116,7 @@ function Accordion({ title, para, link, features, isOpen, onToggle, id }) {
   // console.log(features);
 
   return (
-    <div className={`w-full group overflow-hidden fadeup rounded-[5vw] ${ isOpen ? "bg-gradient-to-r from-light-blue to-dark-blue" :"bg-[#030815]"} `}>
+    <div className={`w-full group overflow-hidden fadeup rounded-[5vw] ${ isOpen ? "" :"bg-[#030815]"} `}>
       <div className="w-full mr-auto  ">
         <button
           onClick={onToggle}
@@ -166,7 +166,7 @@ function Accordion({ title, para, link, features, isOpen, onToggle, id }) {
                   <ul className="list-disc pl-[5vw] ">
                     {features &&
                       features.map((feature, index) => (
-                        <li key={index} className="mb-[8vw]">
+                        <li key={index} className="mb-[2vw]">
                           {feature}
                         </li>
                       ))}

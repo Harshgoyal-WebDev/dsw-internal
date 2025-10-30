@@ -129,7 +129,7 @@ const Ecosystem = () => {
   return (
     <>
       <section
-        className="h-full w-screen container !pb-[3vw] relative overflow-hidden"
+        className="h-full w-screen container !py-[4vw] relative overflow-hidden"
       >
         <div className="w-full h-full  relative z-[2] space-y-[1.5vw] max-md:space-y-[8vw]">
           <div className= " space-y-[3vw] ">

@@ -49,7 +49,7 @@ const Card=({img,para})=>{
         <>
         <div className="flex w-full justify-start fadeup">
           <div
-            className="relative w-[30vw] max-sm:w-full rounded-[1.5vw] group cursor-pointer
+            className="relative w-[30vw] max-sm:w-full rounded-[2vw] group cursor-pointer
     overflow-hidden flex flex-col items-center border transition-opacity border-[#59595980] 
     justify-between p-[2.5vw] max-sm:p-[5vw] max-sm:py-[8vw] px-[1vw] h-[22vw] max-sm:rounded-3xl max-sm:h-[35vh] background-glass backdrop-blur-[1vw]"
           >

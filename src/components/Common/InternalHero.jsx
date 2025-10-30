@@ -170,7 +170,7 @@ useEffect(() => {
  const fadeUpDelay = hasVisited ? 2 : 5.8;
 
   useEffect(() => {
-      if (globalThis.innerWidth > 0) {
+      if (globalThis.innerWidth > 1024) {
         const ctx = gsap.context(() => {
           const content = document.querySelectorAll(".fadeupDelay");
           content.forEach((content) => {
@@ -184,6 +184,28 @@ useEffect(() => {
               opacity: 0,
               y:50,
               delay:fadeUpDelay,
+              ease:"power3.out",
+              duration: 2,
+              
+            });
+          });
+        });
+        return () => ctx.revert();
+      }
+      else{
+         const ctx = gsap.context(() => {
+          const content = document.querySelectorAll(".fadeupDelay");
+          content.forEach((content) => {
+            gsap.from(content, {
+              scrollTrigger: {
+                trigger: content,
+                start: "top 90%",
+                // markers:true
+                
+              },
+              opacity: 0,
+              y:50,
+              // delay:0,
               ease:"power3.out",
               duration: 2,
               
