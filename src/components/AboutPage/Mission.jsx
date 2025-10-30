@@ -7,7 +7,7 @@ const Mission = () => {
       <div className="h-full w-full container flex flex-col items-center justify-center space-y-[5vw] max-sm:space-y-[9vw]">
         <div className="space-y-[3vw]  max-sm:space-y-[8vw]">
           <div className="fadeup">
-            <div className="h-full w-full  max-sm:w-full rounded-[2vw] max-sm:rounded-3xl border border-white/20 py-[3vw] max-sm:py-[8vw] max-sm:px-[6vw] px-[3vw]  relative group flex flex-col items-start overflow-hidden border-l-0 border-r-0 hover:border-[#1727FF] duration-300 transition-all ease-in ">
+            <div className="h-full w-full  max-sm:w-full rounded-[2vw] max-sm:rounded-3xl border border-white/20 py-[3vw] max-sm:py-[8vw] max-sm:px-[6vw] px-[3vw]  relative group flex flex-col items-start overflow-hidden  hover:border-[#1727FF] duration-300 transition-all ease-in ">
               <div className="relative z-[10] space-y-[2vw] max-md:space-y-[8vw]">
                 <div className=" h-[4.2vw] w-[4.2vw] flex items-center justify-center text-30 max-md:h-[12vw] max-md:w-[12vw]">
                   <Image
@@ -29,7 +29,7 @@ const Mission = () => {
             </div>
           </div>
           <div className="fadeup">
-            <div className="h-full w-full  max-sm:w-full rounded-[2vw] max-sm:rounded-3xl border border-white/20 py-[3vw] max-sm:py-[8vw] max-sm:px-[6vw] px-[3vw]  relative group flex flex-col items-start overflow-hidden border-l-0 border-r-0 hover:border-[#1727FF] duration-300 transition-all ease-in">
+            <div className="h-full w-full  max-sm:w-full rounded-[2vw] max-sm:rounded-3xl border border-white/20 py-[3vw] max-sm:py-[8vw] max-sm:px-[6vw] px-[3vw]  relative group flex flex-col items-start overflow-hidden  hover:border-[#1727FF] duration-300 transition-all ease-in">
               <div className="relative z-[10] space-y-[2vw] max-md:space-y-[8vw]">
                 <div className=" h-[4.2vw] w-[4.2vw] flex items-center justify-center text-30 max-md:h-[12vw] max-md:w-[12vw]">
                   <Image
@@ -61,7 +61,7 @@ const Mission = () => {
             </div>
           </div>
           <div className="fadeup">
-            <div className="h-full w-full  max-sm:w-full rounded-[2vw] max-sm:rounded-3xl border border-white/20 py-[3vw] max-sm:py-[8vw] max-sm:px-[6vw] px-[3vw]  relative group flex flex-col items-start overflow-hidden border-l-0 border-r-0 hover:border-[#1727FF] duration-300 transition-all ease-in">
+            <div className="h-full w-full  max-sm:w-full rounded-[2vw] max-sm:rounded-3xl border border-white/20 py-[3vw] max-sm:py-[8vw] max-sm:px-[6vw] px-[3vw]  relative group flex flex-col items-start overflow-hidden  hover:border-[#1727FF] duration-300 transition-all ease-in">
               <div className="relative z-[10] space-y-[2vw] max-md:space-y-[8vw]">
                 <div className=" h-[4.2vw] w-[4.2vw] flex items-center justify-center text-30 max-md:h-[12vw] max-md:w-[12vw]">
                   <Image
