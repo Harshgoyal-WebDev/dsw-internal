@@ -34,7 +34,7 @@ export default function UseCase({ allowMultiple = false}) {
      Supercharge Your AI and GenAI Use Case      
  </h2>
         
-        <div className="  relative z-[10]">
+        <div className="  relative z-[10] fadeup">
           {usecaseData.map((f, i) => (
             <AccordionItem
               key={i}
@@ -59,7 +59,7 @@ function AccordionItem({ title, description,features, isOpen, onToggle,index,z})
     <div className={`w-full group overflow-hidden relative faq-tab accordion-block group  ${z} ${index>0 ? "mt-[-2.5vw] ":"mt-0"}`}>
       <div className={`w-full  relative`}>
 
-        <div className={`inset-0 w-full relative border rounded-[2vw] border-white/10 ${ isOpen ? "bg-gradient-to-r from-light-blue to-dark-blue" :"bg-[#030815]"}  `}>
+        <div className={`inset-0 w-full relative border rounded-[2vw] border-white/10 ${ isOpen ? "bg-gradient-to-r from-light-blue to-dark-blue" :"bg-[#030815] "}  `}>
           <div className="relative w-full h-full z-10 px-[3vw]  duration-300 ">
             <button
               onClick={onToggle}

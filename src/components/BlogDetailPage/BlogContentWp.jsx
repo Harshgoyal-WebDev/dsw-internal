@@ -14,15 +14,9 @@ const BlogContentWp = ({ post }) => {
   const [activeSection, setActiveSection] = useState("Introduction");
   const [modifiedHtml, setModifiedHtml] = useState(post?.content || "");
   const [toc, setToc] = useState([]); // [{ id, title }]
-  const contentRef = useRef(null); // scope all queries to the article content
-  // console.log(post);
-  // Change this to match your sticky header total height
-  const getHeaderOffset = () => {
-    // If you have a fixed header, measure it here:
-    // const header = document.querySelector('[data-sticky-header]')
-    // return header ? header.offsetHeight : 0
-    return 100; // default offset; tweak as needed
-  };
+  const contentRef = useRef(null);
+
+  const getHeaderOffset = () => 100;
 
   const slugify = (str) =>
     (str || "")
@@ -35,7 +29,10 @@ const BlogContentWp = ({ post }) => {
       .replace(/\s+/g, "-")
       .replace(/-+/g, "-");
 
-  // Build TOC from h2 and inject ids + scroll-margin-top
+  // NEW: simple truncate helper
+  const truncate = (str, max = 40) =>
+    typeof str === "string" && str.length > max ? `${str.slice(0, 50)}...` : str;
+
   useEffect(() => {
     if (!post?.content || typeof window === "undefined") return;
 
@@ -52,7 +49,6 @@ const BlogContentWp = ({ post }) => {
       while (ids.has(unique)) unique = `${id}-${n++}`;
       ids.add(unique);
       h2.setAttribute("id", unique);
-      // ensure perfect landing despite sticky headers
       h2.setAttribute("style", `scroll-margin-top:${getHeaderOffset()}px;`);
       return { id: unique, title };
     });
@@ -68,7 +64,6 @@ const BlogContentWp = ({ post }) => {
     }
   }, [post?.content]);
 
-  // GSAP ScrollTriggers bound to headings in our content only
   useEffect(() => {
     if (typeof window === "undefined") return;
     if (!toc.length || !contentRef.current) return;
@@ -90,7 +85,6 @@ const BlogContentWp = ({ post }) => {
     return () => triggers.forEach((t) => t.kill());
   }, [toc, modifiedHtml]);
 
-  // Scroll to EXACT pixel position of the target <h2>
   const handleScrollTo = (id) => {
     if (typeof window === "undefined" || !contentRef.current) return;
     const target = contentRef.current.querySelector(`#${CSS.escape(id)}`);
@@ -135,8 +129,10 @@ const BlogContentWp = ({ post }) => {
               </p>
             </Copy>
             <Copy>
-              {post.categories.map((category,id) => (
-                <p className="text-[#626262]" key={id}>{category.name}</p>
+              {post.categories.map((category, id) => (
+                <p className="text-[#626262]" key={id}>
+                  {category.name}
+                </p>
               ))}
             </Copy>
           </div>
@@ -164,7 +160,6 @@ const BlogContentWp = ({ post }) => {
       </div>
 
       {/* TOC */}
-
       <div className="space-y-[2vw] sticky top-[15%] mt-[15vw] max-md:hidden h-full w-[50%] pr-[5vw]">
         {toc[0] && (
           <>
@@ -175,21 +170,21 @@ const BlogContentWp = ({ post }) => {
             </Copy>
             <div
               data-lenis-prevent
-              className="w-fit overflow-y-scroll h-fit max-h-[55vh] max-md:hidden rounded-[2vw] border border-black/10 drop-shadow-lg shadow-background bg-white p-[1vw] fadeup"
+              className="w-fit overflow-y-scroll h-fit max-h=[55vh] max-md:hidden fadeup"
             >
-              <ul className="flex flex-col items-start h-full gap-[1.5vw] list-disc p-[2vw]">
+              <ul className="flex flex-col items-start h-full gap-[1.5vw] list-disc pl-[1vw]">
                 {toc.map((item) => (
                   <li
                     key={item.id}
                     onClick={() => handleScrollTo(item.id)}
-                    className={`text-[1.05vw] max-sm:text-[4vw] max-md:text-[3vw] cursor-pointer transition-all duration-300 hover:text-primary-2 ${
+                    className={`text-[0.9vw] max-sm:text-[4vw] max-md:text-[3vw] cursor-pointer transition-all duration-300 hover:text-primary-2 ${
                       activeSection === item.title
                         ? "text-primary-2"
                         : "text-background"
                     }`}
                     title={item.title}
                   >
-                    {item.title}
+                    {truncate(item.title, 20)}
                   </li>
                 ))}
               </ul>
@@ -200,11 +195,7 @@ const BlogContentWp = ({ post }) => {
 
       {/* Content (scoped for queries) */}
       <div className="h-full w-full flex justify-end text-background">
-        <div
-          id="Introduction"
-          className="w-full border-b h-full"
-          ref={contentRef}
-        >
+        <div id="Introduction" className="w-full border-b h-full" ref={contentRef}>
           <Content content={modifiedHtml} />
         </div>
       </div>

@@ -63,7 +63,7 @@ const PopupModal = ({ modalOpen, setModalOpen }) => {
         modalOpen ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >
-      <div className="relative rounded-[2vw] border border-white/20 bg-black/40 p-[4vw] pt-[6vw] w-[78%] h-[78%] flex justify-between overflow-hidden max-sm:rounded-[6vw] max-md:w-[90%] max-md:h-[80%] max-sm:px-[7vw] max-sm:py-[20vw] max-md:flex-col max-md:rounded-[4vw]">
+      <div className="relative rounded-[2vw] border border-white/20 bg-black/40 p-[4vw] pt-[6vw] w-[78%] h-[78%] flex justify-between overflow-hidden max-sm:rounded-[6vw] max-md:w-[90%] max-md:h-[80%] max-sm:h-[85%] max-sm:px-[7vw] max-sm:py-[15%] max-md:flex-col max-md:rounded-[4vw]">
         <div className="w-[30%] h-full space-y-[2vw] max-md:w-full max-md:space-y-[1vw] max-sm:space-y-[2vw]">
           {payload ? (
             <h2 className="text-90 formhead">Download Pdf</h2>
