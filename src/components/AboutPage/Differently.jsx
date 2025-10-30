@@ -4,44 +4,42 @@ import Copy from '../Animations/Copy'
 const Differently = () => {
   return (
    <section className='h-full w-screen ' id='differently'>
-    <div className='h-full w-full container flex flex-col items-center justify-center space-y-[5vw] max-sm:space-y-[9vw]'>
-      <div className=' space-y-[3vw] max-sm:space-y-[8vw] w-1/2 max-sm:w-full text-center'>
+    <div className='h-full w-full container flex flex-col space-y-[5vw] max-sm:space-y-[9vw]'>
+      <div className=' space-y-[3vw] max-sm:space-y-[8vw] max-sm:w-full'>
         <h2 className='text-90 headingAnim'>Do Differently : An Ode to Builders </h2>
-        <Copy>
-          <p className='text-white-300'>Do Differently. is our commitment to the people who bring AI to life, those who tackle complexity and build systems that matter. </p>
-        </Copy>
+        
 
       </div>
-      <div className='flex items-center max-sm:flex-col justify-center gap-[3vw] max-sm:w-[90%] max-sm:gap-[8vw]'>
-        <div className='h-[25vw] w-[35vw] max-sm:h-[39vh] max-sm:w-full rounded-[1.5vw] max-sm:rounded-3xl border border-white/20 py-[6vw] max-sm:py-[8vw] max-sm:px-[6vw] px-[3vw]  background-glass relative group  fadeup'>
-        <div
-              className="absolute inset-0 h-full w-full rounded-[1.5vw] 
-      bg-gradient-to-r from-light-blue to-dark-blue 
-      opacity-0 group-hover:opacity-100 
-      transition-opacity duration-500 ease-in-out"
-            />
+      <div className=''>
+        <div className=' relative group '>
             <div className='relative z-[10] space-y-[3vw]'>
-          <p className='text-white-200 font-medium'>To the data scientists, data engineers, AI engineers, and business leaders who:</p>
+              <Copy>
+          <p className='text-white-300'>
+            <span className='font-medium'>Do Differently.</span> is our commitment to the people who bring AI to life, those who tackle complexity and build systems that matter. </p>
+        </Copy>
+              <Copy>
+          <p className='text-white-200 '>To the data scientists, data engineers, AI engineers, and business leaders who:</p>
+          </Copy>
+          
           <ul className='list-disc space-y-[0.5vw] ml-[2vw]'>
-            <li className='text-white-200 font-medium'> See patterns where others see chaos.</li>
-            <li className='text-white-200 font-medium'> Turn ideas into enterprise-grade systems.</li>
-            <li className='text-white-200 font-medium'> Push AI from experimentation to production.</li>
+            <Copy>
+            <li className='text-white-200 '> See patterns where others see chaos.</li>
+            </Copy>
+            <Copy>
+            <li className='text-white-200 '> Turn ideas into enterprise-grade systems.</li>
+            </Copy>
+            <Copy>
+            <li className='text-white-200 '> Push AI from experimentation to production.</li>
+            </Copy>
           </ul>
+          
+          <Copy>
+          <p className='text-white-200'>AI doesn’t fail because of technology; it fails when it’s disconnected from the business. Do Differently. celebrates those solving the hardest challenge in AI adoption: moving from isolated use cases to scalable, governed, enterprise-grade solutions.</p>
+          </Copy>
           </div>
 
         </div>
-        <div className='h-[25vw] w-[35vw] max-sm:h-[39vh] max-sm:w-full max-sm:rounded-3xl max-sm:py-[7vw] max-sm:px-[6vw] rounded-[1.5vw] border border-white/20 py-[6vw] px-[3vw] space-y-[3vw] background-glass relative group fadeup' >
-        <div
-              className="absolute inset-0 h-full w-full rounded-[1.5vw] 
-      bg-gradient-to-r from-light-blue to-dark-blue 
-      opacity-0 group-hover:opacity-100 
-      transition-opacity duration-500 ease-in-out"
-            />
-            <div className='relative z-[10] space-y-[3vw]'>
-          <p className='text-white-200 font-medium'>AI doesn’t fail because of technology; it fails when it’s disconnected from the business.</p>
-         <p>Do Differently. celebrates those solving the hardest challenge in AI adoption: moving from isolated use cases to scalable, governed, enterprise-grade solutions.</p>
-         </div>
-</div>
+       
         </div>
 
       </div>

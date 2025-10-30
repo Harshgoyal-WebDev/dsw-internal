@@ -4,6 +4,7 @@ import { useLayoutEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import PrimaryButton from "../Button/PrimaryButton";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -103,6 +104,9 @@ export default function BuildMobile({ allowMultiple = false }) {
             onToggle={() => toggleIndex(i)}
           />
         ))}
+      </div>
+      <div className="fadeup pt-[18vw]">
+        <PrimaryButton text={"Explore DSW UnifyAI"} href={"/unifyai"}/>
       </div>
     </section>
   );

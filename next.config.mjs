@@ -139,6 +139,18 @@ const nextConfig = {
 
     },
     {
+      source:'/resources/blogs',
+      destination:'/blogs',
+      permanent:true
+
+    },
+    {
+      source:'/blog',
+      destination:'/blogs',
+      permanent:true
+
+    },
+    {
       source:'/resources/news-and-pr',
       destination:'/news',
       permanent:true

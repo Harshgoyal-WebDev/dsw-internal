@@ -49,7 +49,7 @@ const Join = () => {
     }
   };
   return (
-    <section className="w-screen h-fit container relative z-[10] overflow-hidden" id="brochure">
+    <section className="w-screen h-fit container relative z-[999] mt-[-15vh] overflow-hidden" id="brochure">
       <div className="w-full flex flex-col items-center justify-center gap-[8vw] max-sm:gap-[10vw]">
         <h2 className="w-[70%] text-center text-90 headingAnim max-md:w-full max-sm:text-left max-sm:!text-[11.5vw]">
           Why Join DSW?
@@ -136,7 +136,7 @@ export default Join;
 const BrochureCard = ({ title, icon,para}) => {
   return (
     <>
-        <div className=" max-sm:h-[65vh] max-sm:rounded-[6.5vw] border border-white/20 py-[10%] px-[7vw] w-full bg-white/5 max-md:h-[60vh] max-md:rounded-[4.5vw]">
+        <div className=" max-sm:h-[65vh] max-sm:rounded-[6.5vw] border border-white/40 py-[10%] px-[7vw] w-full bg-white/5 max-md:h-[60vh] max-md:rounded-[4.5vw]">
           <div className="w-full h-full flex flex-col gap-[3vw] justify-between">
             <div className="h-[20vw] w-[20vw] text-[#1727FF] group-hover:text-[#FFFFFF] transition-all duration-500 ease-out">
                     {icon}

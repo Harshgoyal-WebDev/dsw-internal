@@ -1,13 +1,13 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Copy from "../Animations/Copy";
 import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
 import PrimaryButton from "../Button/PrimaryButton";
-import { NextButton, PreviousButton } from "../Button/SliderButtons";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const data = [
   {
@@ -36,15 +36,12 @@ const data = [
   },
 ];
 
-const PilotCard = ({ id, icon, title, para }) => {
+const PilotCard = ({ id, icon, title, para, spanRef }) => {
+  
   return (
     <>
-      <div className=" space-y-[2vw] relative group  max-sm:space-y-[10vw] w-[50%] pb-[6vw]">
-        <span className="absolute top-0 left-0 w-full h-[1px] bg-[#59595980]  lineDraw"></span>
-        <div className=" pt-[3vw] flex gap-[4vw] items-start space-y-[3vw] max-sm:flex max-sm:flex-col max-sm:items-center max-sm:space-y-[6vw] max-sm:mt-[10vw] fadeup">
-          <div className="pr-[1vw]">
-            <p>{id}</p>
-          </div>
+      <div className=" space-y-[2vw] relative group  max-sm:space-y-[10vw] w-[45%] pb-[6vw]">
+        <div className=" pt-[3vw] gap-[4vw] items-start space-y-[3vw] max-sm:flex max-sm:flex-col max-sm:items-center max-sm:space-y-[6vw] max-sm:mt-[10vw] fadeup">
           <Image
             src={icon}
             height={98}
@@ -56,31 +53,78 @@ const PilotCard = ({ id, icon, title, para }) => {
             <h4 className="text-50 text-white-200 max-sm:!text-[7.5vw] max-sm:w-[72%] max-sm:text-center max-sm:h-fit">
               {title}
             </h4>
-            <p className="text-white-300  max-sm:w-[80%] max-sm:text-center max-sm:h-auto">
+            <p className="text-white-300 h-[8vw]  max-sm:w-[80%] max-sm:text-center max-sm:h-auto">
               {para}
             </p>
           </div>
         </div>
+         <div className="relative w-full h-[0.5px] bg-white/50 opacity-[0.5] group-hover:opacity-[1] transition-all duration-500">
+        <span
+          ref={spanRef}
+          className="absolute top-0 left-0 h-full bg-white/50 w-full scale-x-0 origin-left "
+        />
+        <span className="absolute top-0 left-0 h-full bg-primary-2 w-full scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500" />
+      </div>
       </div>
     </>
   );
 };
 
 const Ecosystem = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const swiperRef = useRef(null);
+ const cardRefs = useRef([]);
+  const sectionRef = useRef();
+  const spanRefs = useRef([]);
 
-  const handlePrev = () => {
-    if (swiperRef.current && swiperRef.current.swiper) {
-      swiperRef.current.swiper.slidePrev();
-    }
-  };
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+      });
 
-  const handleNext = () => {
-    if (swiperRef.current && swiperRef.current.swiper) {
-      swiperRef.current.swiper.slideNext();
-    }
-  };
+      spanRefs.current.forEach((span, i) => {
+        tl.fromTo(
+          span,
+          {
+            scaleX: 0,
+            transformOrigin: "left center",
+          },
+          {
+            scaleX: 1,
+            duration: 1,
+            ease: "power2.out",
+            onComplete: () => {
+              gsap.to(span, {
+                scaleX: 0,
+                duration: 0.2,
+              });
+            },
+          },
+          i * 0.5
+        );
+
+        tl.fromTo(
+          cardRefs.current[i],
+          {
+            opacity: 0,
+            y: 30,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1.2,
+            ease: "power2.out",
+          },
+          i * 0.2
+        );
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
     <>
@@ -88,36 +132,18 @@ const Ecosystem = () => {
         className="h-full w-screen container !pb-[3vw] relative overflow-hidden"
       >
         <div className="w-full h-full  relative z-[2] space-y-[1.5vw] ">
-          <div className="w-[90%] max-sm:w-[100%] ">
-            <h2 className="text-90 headingAnim max-sm:text-center">
+          <div className= " space-y-[3vw] ">
+            <h2 className="text-90 headingAnim text-center">
               Our Ecosystem
             </h2>
-          </div>
-
-          <div className="flex justify-between max-sm:flex-col pt-[4vw] max-sm:pt-[10vw]">
-            <div className="w-[45%] max-sm:w-[100%]">
-              <Copy>
-                <p className="text-white-200 text-50 max-sm:text-center  font-head">
-                  We are intentionally building an AI ecosystem that empowers
-                  collaboration and innovation. 
+             <Copy>
+                <p className="text-white-300 text-center">
+                 We are intentionally building an AI ecosystem that empowers collaboration and innovation. 
                 </p>
               </Copy>
-            </div>
-
-            <div className="w-[50%] max-sm:hidden">
-              <Copy>
-                <p className="text-white-300">
-                  Our ecosystem is a collective effort, bringing together
-                  customers, partners, developers, and thought leaders to build
-                  solutions that deliver real-world impact. 
-                </p>
-              </Copy>
-              <div className="pt-[3vw] fadeup">
-                <PrimaryButton href={"/"} text={"Partner With Us"} />
-              </div>
-            </div>
           </div>
-          <div className=" w-full max-sm:hidden flex flex-col items-end  mt-[7vw]  gap-x-[7vw] justify-between">
+
+          <div className=" w-full  flex flex-wrap  mt-[7vw]  gap-x-[7vw] justify-between">
             {data.map((card, index) => (
               <PilotCard
                 key={index}
@@ -125,56 +151,23 @@ const Ecosystem = () => {
                 title={card.title}
                 para={card.text}
                 id={card.id}
+                 spanRef={(el) => (spanRefs.current[index] = el)}
               />
             ))}
           </div>
 
-          <div className="h-fit hidden max-sm:block w-full">
-            <Swiper
-              ref={swiperRef}
-              modules={[Navigation]}
-              spaceBetween={20}
-              slidesPerView={1}
-              onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-              className="w-full"
-            >
-              {data.map((card, index) => (
-                <SwiperSlide key={index}>
-                  <div className="flex gap-[8vw] mt-[8vw] w-full items-center justify-center flex-col">
-                    <Copy>
-                      <p className="text-white-300 text-[4vw]">{card.id}</p>
-                    </Copy>
-                    <div className="w-[30%] h-auto relative fadeup">
-                      <Image
-                        src={card.src}
-                        height={200}
-                        width={200}
-                        className="object-contain h-full w-full"
-                        alt={card.title}
-                      />
-                    </div>
-                    <div className="space-y-[5vw] w-full">
-                      <Copy>
-                        <p className="text-center">{card.title}</p>
-                      </Copy>
-                      <Copy>
-                        <p className="text-center text-white-300">
-                          {card.text}
-                        </p>
-                      </Copy>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-          <div className="hidden max-md:block">
-
-          <div className="flex gap-6 mt-6 max-md:mt-[10vw] max-md:items-center max-md:justify-center">
-            <PreviousButton onClick={handlePrev} isDisabled={activeIndex === 0} />
-            <NextButton onClick={handleNext} isDisabled={activeIndex === 3} />
-          </div>
-          </div>
+        <div className="flex flex-col items-center justify-center gap-[3vw]">
+          <div className="w-[80%] max-sm:w-[100%]">
+              <Copy>
+                <p className="text-white-200 text-50 text-center  font-head">
+                Our ecosystem is a collective effort, bringing together customers, partners, developers, and thought leaders to build solutions that deliver real-world impact. 
+                </p>
+              </Copy>
+            </div>
+              <div className=" fadeup">
+                <PrimaryButton href={"/contact-us"} text={"Partner With Us"} />
+              </div>
+              </div>
         </div>
       </section>
     </>
