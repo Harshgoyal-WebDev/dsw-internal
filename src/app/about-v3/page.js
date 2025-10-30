@@ -78,6 +78,7 @@ const heroData = {
   link2: "/#",
   btnText2: "Schedule a Call",
   homepage: false,
+  walkthrough:true,
   headingWidth: "w-[60%]",
 };
 const footerCTAData = {

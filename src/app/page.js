@@ -80,6 +80,7 @@ const heroData = {
   link2: "https://calendly.com/",
   btnText2: "Schedule a Call",
   homepage: true,
+  walkthrough:true,
   target:true,
 };
 
