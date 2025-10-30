@@ -1,4 +1,4 @@
-import TrialLayer from '@/components/TrialLayer'
+import TrialLayer from '@/components/EnterpriseLayer'
 import React from 'react'
 
 const trial = () => {
@@ -7,7 +7,6 @@ const trial = () => {
     <div className='h-screen w-screen bg-red'/>
      <div className='h-screen w-screen bg-red'/>
      <TrialLayer/>
-
  <div className='h-screen w-screen bg-red'/>
   <div className='h-screen w-screen bg-red'/>
    

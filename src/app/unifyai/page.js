@@ -30,10 +30,10 @@ export const metadata = getPageMetadata({
     },
   },
   openGraph: {
-    url: "unify",
+    url: "unifyai",
     images: [
       {
-        url: `${homepage}seo/unify.png`,
+        url: `${homepage}seo/unifyai.png`,
         width: 1200,
         height: 630,
       },
