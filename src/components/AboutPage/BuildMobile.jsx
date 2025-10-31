@@ -90,7 +90,7 @@ export default function BuildMobile({ allowMultiple = false }) {
         </h2>
       </div>
 
-      <div className="w-full max-md:pt-[20vw]">
+      <div className="w-full max-sm:pt-[15vw] max-md:pt-[10vw]">
         {usecaseData.map((f, i) => (
           <Accordion
             key={i}
@@ -105,7 +105,7 @@ export default function BuildMobile({ allowMultiple = false }) {
           />
         ))}
       </div>
-      <div className="fadeup pt-[18vw]">
+      <div className="fadeup max-sm:pt-[18vw] max-md:pt-[10vw]">
         <PrimaryButton text={"Explore DSW UnifyAI"} href={"/unifyai"}/>
       </div>
     </section>
@@ -116,7 +116,7 @@ function Accordion({ title, para, link, features, isOpen, onToggle, id }) {
   // console.log(features);
 
   return (
-    <div className={`w-full group overflow-hidden fadeup rounded-[5vw] ${ isOpen ? "" :"bg-[#030815]"} `}>
+    <div className={`w-full group overflow-hidden fadeup  ${ isOpen ? "" :"bg-[#030815]"} `}>
       <div className="w-full mr-auto  ">
         <button
           onClick={onToggle}
@@ -176,8 +176,8 @@ function Accordion({ title, para, link, features, isOpen, onToggle, id }) {
             </motion.div>
           )}
         </AnimatePresence>
-        <div className="w-full h-[1px] bg-[#DADADA]" />
       </div>
+        <div className="!w-full h-[1px] bg-[#DADADA]" />
     </div>
   );
 }

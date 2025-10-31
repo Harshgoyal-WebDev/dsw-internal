@@ -7,7 +7,7 @@ const Careers = () => {
   return (
    <section className='h-full w-screen background-radial' id='careers'>
     <div className='h-full w-full container'>
-        <div className=' w-full  h-full space-y-[5vw]'>
+        <div className=' w-full  h-full space-y-[5vw] max-sm:space-y-[8vw]'>
         <div className=' flex flex-col items-center justify-center space-y-[3vw] max-sm:w-full max-sm:space-y-[5vw] max-md:items-start'>
         <h3 className='text-90  text-white-200'>
             Careers
@@ -22,8 +22,8 @@ const Careers = () => {
         </div>
         </div>
 
-        <div className='w-full h-auto max-sm:w-full rounded-[2vw] border border-white/20 overflow-hidden'>
-        <Image src={"/assets/images/about/careers-final.png"} height={501} width={543} alt='Careers' className='h-full w-full'/>
+        <div className='w-full h-auto max-sm:w-full rounded-[2vw] border border-white/20 overflow-hidden max-sm:h-[60vw] max-sm:rounded-[6vw] max-md:h-[50vw]'>
+        <Image src={"/assets/images/about/careers-final.png"} height={501} width={543} alt='Careers' className='h-full w-full object-cover'/>
         </div>
         <div className='w-[65%] mx-auto max-md:w-full'>
           <Copy>

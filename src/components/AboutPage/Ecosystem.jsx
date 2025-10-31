@@ -40,25 +40,25 @@ const PilotCard = ({ id, icon, title, para, spanRef }) => {
   
   return (
     <>
-      <div className=" space-y-[2vw] relative group  max-sm:space-y-[10vw] w-[45%] pb-[6vw] max-md:w-full">
+      <div className=" space-y-[2vw] relative group  max-sm:space-y-[10vw] w-[45%] pb-[6vw] max-md:w-full max-md:h-fit max-md:space-y-[4vw]">
         <div className=" pt-[3vw] gap-[4vw] items-start space-y-[3vw] max-sm:flex max-sm:flex-col max-sm:space-y-[6vw] max-sm:mt-[10vw] fadeup">
           <Image
             src={icon}
             height={98}
             width={98}
             alt={title}
-            className="w-[5vw] h-[5vw] object-contain max-sm:w-[20vw] max-sm:h-[20vw]"
+            className="w-[5vw] h-[5vw] object-contain max-sm:w-[20vw] max-sm:h-[20vw] max-md:w-[10vw] max-md:h-[10vw]"
           />
-          <div className="space-y-[2vw] max-md:space-y-[4vw]">
+          <div className="space-y-[2vw] max-md:space-y-[4vw] h-fit">
             <h4 className="text-50 text-white-200 max-sm:!text-[7.5vw] max-sm:h-fit">
               {title}
             </h4>
-            <p className="text-white-300 h-[8vw]  max-sm:h-auto">
+            <p className="text-white-300 h-[8vw]   max-md:h-auto">
               {para}
             </p>
           </div>
         </div>
-         <div className="relative w-full h-[0.5px] bg-white/50 opacity-[0.5] group-hover:opacity-[1] transition-all duration-500">
+         <div className="relative w-full h-[1px] bg-white/50 opacity-[0.5] group-hover:opacity-[1] transition-all duration-500">
         <span
           ref={spanRef}
           className="absolute top-0 left-0 h-full bg-white/50 w-full scale-x-0 origin-left "

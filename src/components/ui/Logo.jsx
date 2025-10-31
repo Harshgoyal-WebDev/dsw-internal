@@ -12,8 +12,8 @@ export const Logo = ({
 }) => {
   const variants = {
     default: "w-[20vw] h-auto object-contain",
-    footer: "w-[12vw] max-md:w-auto max-md:h-[20vw] max-sm:w-auto max-sm:h-[30vw]",
-    header: "w-[7vw] h-auto object-contain max-md:w-[20vw] max-md:w-[20vw] max-sm:w-[25vw] max-sm:h-auto",
+    footer: "w-[12vw] max-md:w-auto max-md:h-[15vw] max-sm:w-auto max-sm:h-[25vw]",
+    header: "w-[7vw] h-auto object-contain max-md:w-[15vw] max-sm:w-[20vw] max-sm:h-auto",
     mobile: "w-[25vw] h-auto object-contain"
   };
 

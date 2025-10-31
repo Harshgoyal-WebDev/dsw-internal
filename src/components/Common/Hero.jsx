@@ -296,7 +296,7 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
 
           <div
             ref={btnsRef}
-            className={`flex items-center justify-center gap-6 mt-10 max-md:flex-col max-md:gap-[5vw]  ${
+            className={`flex items-center justify-center gap-6 mt-10 max-md:flex-col max-sm:gap-[5vw]  ${
               heroData.hidebtn ? "hidden" : "flex"
             }`}
           >
