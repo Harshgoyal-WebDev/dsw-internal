@@ -406,6 +406,21 @@ background-color: rgba(0, 0, 0, 0.046) !important;
 .allForm .flagblock{
 background-color: rgba(255, 255, 255, 0.046) !important;
 }
+.keepScrolling-arrow {
+  animation: ArrowAnim 2s ease-in-out infinite;
+}
+
+@keyframes ArrowAnim {
+  0% {
+    transform: translateY(-60%);
+  }
+  50% {
+    transform: translateY(0%);
+  }
+  80%, 100% {
+    transform: translateY(0%); 
+  }
+}
 
 ::selection {
   background: #f16B0D;

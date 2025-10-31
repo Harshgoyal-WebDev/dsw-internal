@@ -3,7 +3,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Image from "next/image";
 import React from "react";
-import Copy from "./Animations/Copy";
+// import Copy from "./Animations/Copy";
 
 const EnterpriseLayer = () => { 
 
@@ -17,7 +17,22 @@ const EnterpriseLayer = () => {
         ease:"power2.out",
         scrollTrigger:{
           trigger:layer,
-          start:"top 70%",
+          start:"top 60%",
+          // markers:true
+        }
+      })
+    })
+    const layerContent = document.querySelectorAll(".layer-content")
+    layerContent.forEach((layerCon)=>{
+      gsap.from(layerCon,{
+        yPercent:20,
+        opacity:0,
+        duration:1.2,
+        ease:"power2.out",
+        scrollTrigger:{
+          trigger:layerCon,
+          start:"top 67%",
+          // markers:true
         }
       })
     })
@@ -103,42 +118,28 @@ const EnterpriseLayer = () => {
             </p>
           </div>
           <div className="">
-            <div className="absolute top-[19%] left-[67%] max-md:top-[12%] max-md:left-0 max-sm:top-[10%]  max-sm:left-0 z-[51]">
-              <Copy>
+            <div className="absolute top-[19%] left-[67%] max-md:top-[12%] max-md:left-0 max-sm:top-[10%]  max-sm:left-0 z-[51] layer-content">
                 <p className="text-[#E8E8E8] text-[1vw] max-md:text-[2.7vw] max-sm:text-[3.5vw] max-md:w-[99%] ">Presentation Layer</p>
-              </Copy>
             </div>
-            <div className="absolute top-[31%] left-[67%] max-md:left-0 max-sm:top-[18%] max-md:top-[20%] z-[51]">
-              <Copy>
+            <div className="absolute top-[31%] left-[67%] max-md:left-0 max-sm:top-[18%] max-md:top-[20%] z-[51] layer-content">
                 <p className="text-[#E8E8E8] text-[1vw] max-md:text-[2.7vw] max-sm:text-[3.5vw]">Use Cases</p>
-              </Copy>
             </div>
-            <div className="absolute top-[42%] left-[67%] max-sm:left-[70%] max-sm:top-[25%] max-md:top-[27%] max-md:left-[80%] z-[51]">
-              <Copy>
+            <div className="absolute top-[42%] left-[67%] max-sm:left-[70%] max-sm:top-[25%] max-md:top-[27%] max-md:left-[80%] z-[51] layer-content">
                 <p className="text-[#E8E8E8] text-[1vw] max-md:text-[2.7vw] max-sm:text-[3.5vw]">AgenticAI</p>
-              </Copy>
             </div>
-            <div className="absolute top-[42%] right-[67%] text-right max-sm:left-0 max-md:right-auto max-sm:top-[25%] max-md:top-[27%] max-md:left-0 z-[51]" >
-              <Copy>
+            <div className="absolute top-[42%] right-[67%] text-right max-sm:left-0 max-md:right-auto max-sm:top-[25%] max-md:top-[27%] max-md:left-0 z-[51] layer-content" >
                 <p className="text-[#E8E8E8] text-[1vw] max-md:text-[2.7vw] max-sm:text-[3.5vw]">AI Studio</p>
-              </Copy>
             </div>
-            <div className="absolute top-[53%] right-[67%] text-right max-sm:left-0 max-md:right-auto max-sm:top-[30%] max-md:top-[33%] max-md:left-0 z-[51]">
-              <Copy>
+            <div className="absolute top-[53%] right-[67%] text-right max-sm:left-0 max-md:right-auto max-sm:top-[30%] max-md:top-[33%] max-md:left-0 z-[51] layer-content">
                 <p className="text-[#E8E8E8] text-[1vw] max-md:text-[2.7vw] max-sm:text-[3.5vw]">InsurAInce</p>
-              </Copy>
             </div>
-            <div className="absolute top-[65%] right-[67%] text-right max-sm:left-0 max-md:right-auto max-sm:top-[35%] max-md:top-[39%] max-md:left-0 z-[51]">
-              <Copy>
+            <div className="absolute top-[65%] right-[67%] text-right max-sm:left-0 max-md:right-auto max-sm:top-[35%] max-md:top-[39%] max-md:left-0 z-[51] layer-content">
                 <p className="text-[#E8E8E8] text-[1vw] max-md:text-[2.7vw] max-sm:text-[3.5vw]">UnifyAI</p>
-              </Copy>
             </div>
-            <div className="absolute top-[77%] right-[67%] text-right max-sm:left-0 max-sm:top-[40%] max-md:right-auto max-sm:w-[30%] max-md:text-left max-md:top-[45%] max-md:left-0 z-[51]">
-              <Copy>
+            <div className="absolute top-[77%] right-[67%] text-right max-sm:left-0 max-sm:top-[40%] max-md:right-auto max-sm:w-[30%] max-md:text-left max-md:top-[45%] max-md:left-0 z-[51] layer-content">
                 <p className="text-[#E8E8E8] text-[1vw] max-md:text-[2.7vw] max-sm:text-[3.5vw]">
                   Infra: On - Premise/Cloud
                 </p>
-              </Copy>
             </div>
           </div>
         </div>

@@ -147,7 +147,7 @@ export default function DemoForm() {
                 <FormField name="name" control={control}  render={({ field }) => (
                   <FormItem><FormControl>
                     <Input placeholder="Name*" autoComplete="off" {...field}
-                      className="placeholder:text-[1.05vw] pl-[2vw] bg-black/5 border border-white/20 rounded-full placeholder:text-[#e8e8e8] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] max-md:pl-[4vw] max-sm:pl-[5vw]" />
+                      className="placeholder:text-[1.05vw] pl-[2vw] bg-black/5 border border-white/30 rounded-full placeholder:text-[#e8e8e8] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] max-md:pl-[4vw] max-sm:pl-[5vw]" />
                   </FormControl><FormMessage /></FormItem>
                 )} />
 
@@ -157,7 +157,7 @@ export default function DemoForm() {
                 <FormField name="email" control={control}  render={({ field }) => (
                   <FormItem><FormControl>
                     <Input placeholder="Business Email*" autoComplete="off" {...field}
-                      className="placeholder:text-[1.05vw] pl-[2vw] bg-black/5 border border-white/20 rounded-full placeholder:text-[#e8e8e8] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] max-md:pl-[4vw] max-sm:pl-[5vw]" />
+                      className="placeholder:text-[1.05vw] pl-[2vw] bg-black/5 border border-white/30 rounded-full placeholder:text-[#e8e8e8] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] max-md:pl-[4vw] max-sm:pl-[5vw]" />
                   </FormControl><FormMessage /></FormItem>
                 )} />
                 </div>
@@ -167,7 +167,7 @@ export default function DemoForm() {
                 <FormField name="designation" control={control}  render={({ field }) => (
                   <FormItem><FormControl>
                     <Input placeholder="Designation*" autoComplete="off" {...field}
-                      className="placeholder:text-[1.05vw] pl-[2vw] bg-black/5 border border-white/20 rounded-full placeholder:text-[#e8e8e8] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] max-md:pl-[4vw] max-sm:pl-[5vw]" />
+                      className="placeholder:text-[1.05vw] pl-[2vw] bg-black/5 border border-white/30 rounded-full placeholder:text-[#e8e8e8] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] max-md:pl-[4vw] max-sm:pl-[5vw]" />
                   </FormControl><FormMessage /></FormItem>
                 )} />
                 </div>
@@ -177,7 +177,7 @@ export default function DemoForm() {
                 <FormField name="company" control={control}  render={({ field }) => (
                   <FormItem><FormControl>
                     <Input placeholder="Company Name*" autoComplete="off" {...field}
-                      className="placeholder:text-[1.05vw] pl-[2vw] bg-black/5 border border-white/20 rounded-full placeholder:text-[#e8e8e8] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] max-md:pl-[4vw] max-sm:pl-[5vw]" />
+                      className="placeholder:text-[1.05vw] pl-[2vw] bg-black/5 border border-white/30 rounded-full placeholder:text-[#e8e8e8] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] max-md:pl-[4vw] max-sm:pl-[5vw]" />
                   </FormControl><FormMessage /></FormItem>
                 )} />
                 </div>
