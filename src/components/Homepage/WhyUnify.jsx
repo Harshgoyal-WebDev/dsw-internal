@@ -267,7 +267,7 @@ const WhyUnify = () => {
 
   return (
     <section
-      className="h-[400vh] w-screen relative bg-[#f8f8f8] z-[10] max-md:hidden"
+      className="h-[400vh] w-screen relative bg-[#f8f8f8] z-[10] max-md:hidden header-dark"
       ref={sectionRef}
       id="WhyUnify"
     >

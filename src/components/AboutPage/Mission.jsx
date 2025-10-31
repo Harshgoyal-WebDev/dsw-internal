@@ -1,7 +1,11 @@
-import React from "react";
+'use client'
+import React, { useState } from "react";
 import Image from "next/image";
 
 const Mission = () => {
+  const [isVisionExpanded, setIsVisionExpanded] = useState(false);
+  const [isValuesExpanded, setIsValuesExpanded] = useState(false);
+
   return (
     <section className="h-full w-screen " id="mission">
       <div className="h-full w-full container flex flex-col items-center justify-center space-y-[5vw] max-sm:space-y-[9vw]">
@@ -23,7 +27,7 @@ const Mission = () => {
                   Enable enterprises to harness AI responsibly and at scale,
                   transforming operations, improving lives, and solving
                   real-world challenges, while fostering a collaborative AI
-                  community that drives innovation forward. 
+                  community that drives innovation forward. 
                 </p>
               </div>
             </div>
@@ -49,13 +53,23 @@ const Mission = () => {
                     innovation, governance, and scale. We are building the
                     next-generation AI infrastructure enterprises can trust,
                     enabling them to adapt, evolve, and serve their customers
-                    with confidence and speed.   
+                    with confidence and speed.   
                   </p>
-                  <p className="text-white-300">
-                    Our vision extends beyond technology, it’s about cultivating
-                    a thriving ecosystem where enterprises, developers, and
-                    partners co-create the future of AI. 
-                  </p>
+                  <div className={`transition-all duration-500 ease-in-out overflow-hidden ${!isVisionExpanded ? 'max-sm:max-h-0 max-sm:opacity-0' : 'max-sm:max-h-[500px] max-sm:opacity-100'}`}>
+                    <p className="text-white-300">
+                      Our vision extends beyond technology, it's about cultivating
+                      a thriving ecosystem where enterprises, developers, and
+                      partners co-create the future of AI. 
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => setIsVisionExpanded(!isVisionExpanded)}
+                    className="sm:hidden text-primary-2 font-medium text-sm flex gap-2 items-center"
+                  >
+        <span className="w-[0.5vw] h-[0.5vw] rounded-full bg-primary-2 block duration-500 ease-in-out max-sm:h-[2vw] max-sm:w-[2vw] max-md:w-[1.2vw] max-md:h-[1.2vw]"/>
+
+                    {isVisionExpanded ? 'Read Less' : 'Read More'}
+                  </button>
                 </div>
               </div>
             </div>
@@ -77,35 +91,45 @@ const Mission = () => {
                   <p>
                     We build solutions with purpose, helping enterprises connect
                     technology to meaningful outcomes that enrich lives and
-                    solve real-world challenges. 
+                    solve real-world challenges. 
                   </p>
-                  <p>
-                    <span className="font-medium">Trust by design</span> : Trust
-                    isn’t just a feature, it’s the foundation. We believe people
-                    don’t buy what you do, they buy why you do it. That’s why we
-                    embed security, privacy, and compliance into every layer,
-                    building AI systems people can rely on today and in the
-                    future.
-                  </p>
-                  <p>
-                    <span className="font-medium">Do Differently</span> : We
-                    honour the builders: data scientists, engineers, and leaders
-                    who turn ideas into scalable, enterprise-grade systems that
-                    push AI from concept to production, changing how business
-                    gets done.
-                  </p>
-                  <p>
-                    <span className="font-medium">Collaborate to build</span> :
-                    We believe the strongest AI solutions are created together.
-                    Our community-driven approach fosters shared knowledge,
-                    partnerships, and contributions that accelerate innovation
-                    and create long-lasting value.
-                  </p>
-                  <p>
-                    Our collective commitment is what allows us to move fast
-                    without compromising trust, innovation without losing sight
-                    of governance, and ambition. 
-                  </p>
+                  <div className={`space-y-[1.5vw] max-sm:space-y-[4vw] transition-all duration-500 ease-in-out overflow-hidden ${!isValuesExpanded ? 'max-sm:max-h-0 max-sm:opacity-0' : 'max-sm:max-h-[1000px] max-sm:opacity-100'}`}>
+                    <p>
+                      <span className="font-medium">Trust by design</span> : Trust
+                      isn't just a feature, it's the foundation. We believe people
+                      don't buy what you do, they buy why you do it. That's why we
+                      embed security, privacy, and compliance into every layer,
+                      building AI systems people can rely on today and in the
+                      future.
+                    </p>
+                    <p>
+                      <span className="font-medium">Do Differently</span> : We
+                      honour the builders: data scientists, engineers, and leaders
+                      who turn ideas into scalable, enterprise-grade systems that
+                      push AI from concept to production, changing how business
+                      gets done.
+                    </p>
+                    <p>
+                      <span className="font-medium">Collaborate to build</span> :
+                      We believe the strongest AI solutions are created together.
+                      Our community-driven approach fosters shared knowledge,
+                      partnerships, and contributions that accelerate innovation
+                      and create long-lasting value.
+                    </p>
+                    <p>
+                      Our collective commitment is what allows us to move fast
+                      without compromising trust, innovation without losing sight
+                      of governance, and ambition. 
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => setIsValuesExpanded(!isValuesExpanded)}
+                    className="sm:hidden text-primary-2 font-medium text-sm hover:underline flex gap-2 items-center"
+                  >
+        <span className="w-[0.5vw] h-[0.5vw] rounded-full bg-primary-2 block duration-500 ease-in max-sm:h-[2vw] max-sm:w-[2vw] max-md:w-[1.2vw] max-md:h-[1.2vw]"/>
+
+                    {isValuesExpanded ? 'Read Less' : 'Read More'}
+                  </button>
                 </div>
               </div>
             </div>

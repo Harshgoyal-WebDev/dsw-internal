@@ -11,6 +11,7 @@ import NavigationLink from "../ui/NavigationLink";
 import Logo from "../ui/Logo";
 import { NAVIGATION, CTA_BUTTONS } from "@/constants/siteConfig";
 import { useModal } from "../Common/ModalProvider";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 // import PopupModal from "../Common/PopupModal";
 
 const MobileMenu = dynamic(() => import("./MobileMenu"), { ssr: true });
@@ -30,6 +31,7 @@ const Header = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [openMobileMenu, setOpenMobileMenu] = useState(false);
   const [isHoveringHeader, setIsHoveringHeader] = useState(false);
+  const [isInverted, setIsInverted] = useState(false);
   const [mob, setMob] = useState(false);
   const { openModal } = useModal();
   const [hasVisited] = useState(() => {
@@ -102,6 +104,27 @@ const Header = () => {
     );
   }, [pathname, hasVisited]);
 
+  // useEffect(() => {
+  //   const triggers = [];
+
+  //   document.querySelectorAll(".header-dark").forEach((section) => {
+  //     const trigger = ScrollTrigger.create({
+  //       trigger: section,
+  //       start: "top top",
+  //       end: "bottom top",
+  //       onEnter: () => setIsInverted(true),
+  //       onEnterBack: () => setIsInverted(true),
+  //       onLeave: () => setIsInverted(false),
+  //       onLeaveBack: () => setIsInverted(false),
+  //     });
+  //     triggers.push(trigger);
+  //   });
+
+  //   return () => {
+  //     triggers.forEach((trigger) => trigger.kill());
+  //   };
+  // }, []);
+
   return (
     <>
       <div className="w-screen overflow-hidden h-screen fixed top-0 z-[900] pointer-events-none ">
@@ -115,7 +138,7 @@ const Header = () => {
             className={`flex items-center justify-between px-[4vw] py-6 w-full transition-transform duration-500 pointer-events-auto max-sm:px-[7vw] max-md:bg-black/20 max-sm:py-[3vw] max-sm:pt-[5vw] max-md:backdrop-blur-md ${isHidden ? "-translate-y-full" : "translate-y-0"}`}
             ref={headerRef}
           >
-            <Logo variant="header" className="dsw-logo" />
+            <Logo variant="header" className={`dsw-logo `} />
 
             {/* Desktop navigation */}
             {!mob ? (
