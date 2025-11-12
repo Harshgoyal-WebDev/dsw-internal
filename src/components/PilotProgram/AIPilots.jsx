@@ -126,7 +126,7 @@ const AIPilots = () => {
               </Swiper>
             </div>
           ) : (
-            <div className=" w-full max-md:hidden flex flex-col flex-wrap h-[64vw] gap-x-[7vw] justify-between">
+            <div className=" w-full max-md:hidden flex flex-wrap h-[64vw] gap-x-[7vw] justify-between">
               {data.map((card, index) => (
                 <PilotCard
                   key={index}

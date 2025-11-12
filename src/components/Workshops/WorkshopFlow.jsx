@@ -54,6 +54,7 @@ export default function WorkshopFlow({ sessionsData, space }) {
           modules={[Navigation]}
           spaceBetween={35}
           freeMode={true}
+          draggable={true}
           onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
           className="w-full !overflow-visible"
           breakpoints={{

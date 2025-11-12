@@ -84,11 +84,11 @@ export default function Guiders({heading}) {
           spaceBetween={35}
           // slidesPerView={4}
           onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-          className="w-full !overflow-visible"
+          className="!overflow-visible max-sm:!pt-[5vh] max-md:!pt-[5vw] !pl-[27%] max-md:!pl-0 max-md:w-full max-sm:mb-[5%] max-md:mb-[10%]"
           breakpoints={{
-            640: {
-              slidesPerView: 2,
-              spaceBetween: 20,
+            0: {
+              slidesPerView: 1.5,
+              spaceBetween: 30,
             },
             768: {
               slidesPerView: 1.6,
@@ -101,14 +101,14 @@ export default function Guiders({heading}) {
           }}
         >
           {GuidersData.map((card, index) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide key={index} className="!w-[20vw] max-md:!w-[50vw]  max-sm:!w-[60vw] experts-cards  ">
               <Link
                 href={card.link}
                 target="_blank"
                 key={index}
-                className="w-full flex-shrink-0 experts-cards"
+                className="w-full flex-shrink-0 "
               >
-                <div className="relative rounded-[1.5vw] overflow-hidden max-sm:w-full h-[20vw] max-sm:h-[38vh] max-sm:rounded-[6vw] max-md:rounded-[3vw] max-md:h-[42vh] max-md:w-auto max-md:mx-auto">
+                <div className="relative rounded-[1.5vw] overflow-hidden max-sm:w-full h-[20vw] max-sm:h-[32vh] max-sm:rounded-[6vw] max-md:rounded-[3vw] max-md:h-[42vh] max-md:w-auto max-md:mx-auto">
                   <Image
                     src={card.src}
                     width={100}
@@ -127,7 +127,7 @@ export default function Guiders({heading}) {
                   </div>
                 </div>
                <div className="space-y-[.5vw] w-full mt-[1vw] max-md:mt-[5vw] max-sm:pl-[2vw] max-md:space-y-[2.5vw] max-sm:mt-[5vw] max-md:pl-[1vw]">
-                  <p className="text-30 max-sm:text-[7vw]">{card.name}</p>
+                  <p className="text-30 max-sm:text-[5.5vw]">{card.name}</p>
                   <p className="w-[75%] max-md:w-[80%] max-sm:w-[95%]  font-medium ">{card.role}</p>
                 </div>
               </Link>

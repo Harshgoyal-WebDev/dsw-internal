@@ -62,7 +62,7 @@ export default function Experts({ heading }) {
         className="!overflow-visible max-sm:!pt-[5vh] max-md:!pt-[5vw] !pl-[27%] max-md:!pl-0 max-md:w-full max-sm:mb-[5%] max-md:mb-[10%] "
         breakpoints={{
           0: {
-            slidesPerView: 1,
+            slidesPerView: 1.5,
             spaceBetween: 30,
           },
           768: {
@@ -82,10 +82,10 @@ export default function Experts({ heading }) {
         {cardsData.map((card, index) => (
           <SwiperSlide
             key={index}
-            className="!w-[20vw] max-md:!w-[50vw]  max-sm:!w-full  experts-cards flex-shrink-0"
+            className="!w-[20vw] max-md:!w-[50vw]  max-sm:!w-[60vw]  experts-cards "
           >
             <Link href={card.link} key={index} target="_blank" className="w-full flex-shrink-0">
-              <div className="relative rounded-[1.5vw] max-sm:w-full max-sm:mx-auto overflow-hidden w-[95%] h-[22vw] max-md:mx-auto max-sm:h-[42vh] max-md:h-[38vh] max-md:w-auto max-sm:rounded-[6vw] max-md:rounded-[3vw]">
+              <div className="relative rounded-[1.5vw] max-sm:w-full max-sm:mx-auto overflow-hidden w-[95%] h-[22vw] max-md:mx-auto max-sm:h-[32vh] max-md:h-[38vh] max-md:w-auto max-sm:rounded-[6vw] max-md:rounded-[3vw]">
                 <Image
                   src={card.src}
                   width={1000}
@@ -104,7 +104,7 @@ export default function Experts({ heading }) {
                 </div>
               </div>
               <div className="space-y-[.5vw] w-full mt-[1vw] max- max-md:mt-[5vw]  max-sm:pl-[2vw] max-sm:space-y-[2.5vw] max-sm:mt-[5vw] max-md:pl-[1vw]">
-                <p className="text-30 max-sm:text-[7vw]">{card.name}</p>
+                <p className="text-30 max-sm:text-[5.5vw]">{card.name}</p>
                 <p className="w-[75%] font-medium">{card.role}</p>
               </div>
             </Link>

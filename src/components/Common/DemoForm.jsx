@@ -186,7 +186,7 @@ export default function DemoForm() {
 
                 <FormField name="number" control={control}  render={({ field }) => (
                   <FormItem><FormControl>
-                    <PhoneInput placeholder="Phone Number*" defaultCountry="IN" international {...field}
+                    <PhoneInput placeholder="Phone Number*" autoComplete="off" defaultCountry="IN" international {...field}
                       className="placeholder:text-[1.05vw] placeholder:text-[#e8e8e8] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] demophone" />
                   </FormControl><FormMessage /></FormItem>
                 )} />

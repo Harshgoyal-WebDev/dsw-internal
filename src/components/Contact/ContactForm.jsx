@@ -191,6 +191,7 @@ export default function ContactForm() {
                   <FormItem>
                     <FormControl>
                       <PhoneInput
+                      autoComplete="off"
                         placeholder="Phone Number*"
                         defaultCountry="IN"
                         international

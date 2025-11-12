@@ -62,11 +62,11 @@ const Brochure = () => {
                     <h4 className="text-50">AI/ML</h4>
                     <ul className="list-disc pl-[1vw] space-y-[0.2vw] marker:text-[0.9vw] text-[1.05vw] max-md:text-[2.5vw] max-sm:text-[4vw]">
                       <li>Fraud detection</li>
-                      <li>​ Claims</li>
-                      <li>​ Underwriting​</li>
-                      <li> Automation & Ops</li>
-                      <li>​ Regulatory and compliance </li>
-                      <li>​ Sales and Marketing​ </li>
+                      <li>​Claims</li>
+                      <li>​Underwriting​</li>
+                      <li>Automation & Ops</li>
+                      <li>​Regulatory and compliance </li>
+                      <li>​Sales and Marketing​ </li>
                       <li>CX</li>
                     </ul>
                   </div>
@@ -108,11 +108,11 @@ const Brochure = () => {
                     <h4 className="text-50">GenAI Agents​</h4>
                     <ul className="list-disc pl-[1vw] space-y-[0.2vw] marker:text-[0.9vw] text-[1.05vw] max-md:text-[2.5vw] max-sm:text-[4vw]">
                       <li>Sales and Marketing​</li>
-                      <li>​ Underwriting​</li>
-                      <li>​ Claims</li>
-                      <li> New Business​</li>
-                      <li>​ Operations </li>
-                      <li>​ HR​ </li>
+                      <li>​Underwriting​</li>
+                      <li>​Claims</li>
+                      <li>New Business​</li>
+                      <li>​Operations </li>
+                      <li>​HR​ </li>
                       <li>IT</li>
                       <li>Legal & Compliance ​</li>
                     </ul>
@@ -198,7 +198,7 @@ const BrochureCard = ({ title, list, listTitle ,pdfUrl,fileName}) => {
   return (
     <>
       {/* <Link href={"#"}> */}
-      <div className="bg-gradient-to-r from-[#09183e] to-[#1626FD] max-sm:rounded-[7.5vw] max-md:rounded-[5vw] max-md:h-[80vh] max-sm:h-[65vh]  border border-white/40 py-[10%] px-[7vw]">
+      <div className="bg-gradient-to-r from-[#09183e] to-[#1626FD] max-sm:rounded-[7.5vw] max-md:rounded-[5vw] max-md:h-[80vh] max-sm:h-[70vh]  border border-white/40 py-[10%] px-[7vw]">
         <div className="w-full h-full flex flex-col gap-[3vw] justify-between">
           <div>
             <h3 className="text-30">{title}</h3>
