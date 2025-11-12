@@ -30,7 +30,11 @@ const PopupModal = ({ modalOpen, setModalOpen }) => {
     const tl = gsap.timeline({ defaults: { ease: "power2.out", duration: 1 } });
     tl.from(headEl.lines, { yPercent: 100, stagger: 0.1, delay: 0.3 })
       .from(paraEl.lines, { yPercent: 100, stagger: 0.1 }, "-=0.7")
-      .from(".formfade", { yPercent: 30, opacity: 0, duration: 0.7, stagger: 0.1 }, "-=1");
+      .from(
+        ".formfade",
+        { yPercent: 30, opacity: 0, duration: 0.7, stagger: 0.1 },
+        "-=1"
+      );
 
     return () => tl.kill();
   }, [modalOpen, lenis]);
@@ -70,25 +74,44 @@ const PopupModal = ({ modalOpen, setModalOpen }) => {
           ) : (
             <h2 className="text-90 formhead">Get a Full Demo</h2>
           )}
-          <p className="text-white-200 formpara max-md:pl-[1vw]">Fill out the form</p>
+          <p className="text-white-200 formpara max-md:pl-[1vw]">
+            Fill out the form
+          </p>
         </div>
 
         <div className="w-[60%] max-md:w-full">
           <DemoForm />
         </div>
 
-        <div className="formfade absolute top-[5%] right-[5%] max-md:top-[2.5%] max-sm:right-[4%] max-md:right-[2.5%]">
-          <button
-            onClick={handleClose}
-            className="px-[1.5vw] py-[0.5vw] border border-white/30 bg-black/10 rounded-full text-[0.9vw] cursor-pointer hover:scale-[0.95] duration-300 max-sm:text-[3.5vw] max-sm:px-[5vw] max-sm:py-[2vw] max-md:text-[2.2vw] max-md:px-[3vw] max-md:py-[1vw]"
-          >
-            Close
-          </button>
-        </div>
       </div>
+        <div className="formfade absolute top-[3%] right-[3%] max-md:top-[2.5%] max-sm:right-[4%] max-md:right-[2.5%]">
+         
+           <div
+            onClick={handleClose}
+            className={` h-auto group  max-sm:w-[12vw] rounded-full   p-[2vw]  transition-all  ease-out max-sm:p-[6vw]  bg-gradient-to-br from-[#F16B0D] to-[#E61216] cursor-pointer max-md:p-[4vw] `}
+          >
+            <div
+              style={{
+                transitionTimingFunction: "cubic-bezier(0.625, 0.05, 0, 1)",
+              }}
+              className="rotate-45 group-hover:rotate-[225deg] duration-700"
+            >
+              <span
+                className={`w-[1.5vw] rounded-full h-[2px] bg-[#ffffff] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-300 transform-origin-center max-sm:w-[5vw] max-sm:h-[1.5px] rotate-90 max-md:w-[3vw]`}
+              ></span>
+
+              <span
+                className={`w-[1.5vw] rounded-full h-[2px] bg-[#ffffff] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-300 transform-origin-center max-sm:w-[5vw] max-sm:h-[1.5px] max-md:w-[3vw]`}
+              ></span>
+            </div>
+          </div>
+        </div>
 
       {/* Background click closes modal */}
-      <div className="w-screen h-screen fixed inset-0 z-[-1]" onClick={handleClose} />
+      <div
+        className="w-screen h-screen fixed inset-0 z-[-1]"
+        onClick={handleClose}
+      />
     </section>
   );
 };

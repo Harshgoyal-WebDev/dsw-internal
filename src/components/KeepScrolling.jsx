@@ -50,7 +50,7 @@ const KeepScrolling = () => {
   }
 
   return (
-    <div className="fixed bottom-[5.5%] right-10 z-[99] pointer-events-none max-sm:right-5 max-sm:bottom-[5%] max-md:bottom-[7%]">
+    <div className="fixed bottom-[5.5%] right-10 z-[99] pointer-events-none max-sm:right-5 max-sm:bottom-[5%] max-md:bottom-[7%] max-md:hidden">
       <div className="text-[1vw] h-fit relative overflow-hidden flex gap-[1vw] scrolling max-sm:text-[3.5vw] max-md:text-[2.2vw]">
         <div className="scroll-content flex gap-[1vw] max-sm:gap-[2vw]">
           <span className={`inline-block shimmer`}>

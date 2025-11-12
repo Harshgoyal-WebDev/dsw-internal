@@ -11,6 +11,7 @@ import Loader from "../Loader";
 import dynamic from "next/dynamic";
 import PopupModal from "../Common/PopupModal";
 import { ModalProvider, useModal } from "../Common/ModalProvider";
+import ScrollToTop from "../ScrollToTop";
 const Header = dynamic(() => import("../Header/index"), {
   ssr: true,
 });
@@ -37,6 +38,8 @@ const Layout = ({ children }) => {
       <KeepScrolling />
       <GlobalPopup/>
       <Footer />
+      <ScrollToTop/>
+      
     </ModalProvider>
     </>
   );

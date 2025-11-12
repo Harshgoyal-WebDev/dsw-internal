@@ -181,7 +181,7 @@ const Tour = ({ heading, para }) => {
             </div>
           )}
           <div
-            className={`absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-[20] tourbtnfade max-sm:w-full max-sm:left-[42%]`}
+            className={`absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-[20] tourbtnfade max-sm:w-full max-sm:left-[65%]`}
           >
             <PrimaryButton
               onClick={(e) => {
