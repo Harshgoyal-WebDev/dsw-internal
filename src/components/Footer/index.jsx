@@ -72,7 +72,7 @@ const Footer = () => {
                     <p className="mb-5 text-foreground content-p font-head">NAVIGATION</p>
 
                     <ul className="space-y-3">
-                      {NAVIGATION_FOOTER.slice(0, 6).map((link) => (
+                      {NAVIGATION_FOOTER.slice(0, 5).map((link) => (
                         <li key={link.id} className="text-foreground content-p">
                           <NavigationLink
                             text={link.text}
@@ -89,7 +89,7 @@ const Footer = () => {
                     <p className="mb-5 text-foreground content-p font-head">COMPANY</p>
 
                     <ul className="space-y-3">
-                      {NAVIGATION_FOOTER.slice(6).map((link) => (
+                      {NAVIGATION_FOOTER.slice(5).map((link) => (
                         <li key={link.id} className="text-foreground content-p">
                           <NavigationLink
                             text={link.text}

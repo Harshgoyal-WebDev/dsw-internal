@@ -67,18 +67,7 @@ export default function Unifying() {
                       quality={100}
                     />
                   </div>
-                  <span className="h-[2.5vw] w-[1px] bg-[#CACACA75] max-sm:h-[12vw] max-md:h-[7.5vw]" />
-                  <div className="h-[2.5vw] w-[2.5vw] rounded-full overflow-hidden max-sm:w-[12vw] max-sm:h-[12vw] max-md:w-[7vw] max-md:h-[7vw]">
-                    <Image
-                      src={"/assets/images/about/united-kingdom.png"}
-                      height={48}
-                      width={48}
-                      alt="united-kingdom"
-                      className="h-full w-full"
-                      quality={100}
-                    />
-                  </div>
-                  <span className="h-[2.5vw] w-[1px] max-sm:h-[12vw] bg-[#CACACA75] max-md:h-[7.5vw]" />
+                   <span className="h-[2.5vw] w-[1px] max-sm:h-[12vw] bg-[#CACACA75] max-md:h-[7.5vw]" />
                   <div className="h-[2.5vw] w-[2.5vw] rounded-full overflow-hidden max-sm:w-[12vw] max-sm:h-[12vw] max-md:w-[7vw] max-md:h-[7vw]">
                     <Image
                       src={"/assets/images/about/ireland.png"}
@@ -89,6 +78,8 @@ export default function Unifying() {
                       quality={100}
                     />
                   </div>
+                  
+                 
                   <span className="h-[2.5vw] w-[1px] bg-[#CACACA75] max-sm:h-[12vw] max-md:h-[7.5vw]" />
                   <div className="h-[2.5vw] w-[2.5vw] rounded-full overflow-hidden max-sm:w-[12vw] max-sm:h-[12vw] max-md:w-[7vw] max-md:h-[7vw]">
                     <Image

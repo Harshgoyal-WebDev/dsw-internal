@@ -15,6 +15,7 @@ import { FAQJSONLD, WebpageJsonLd } from "@/lib/json-ld";
 import { homepage } from "@/lib/util";
 import { getPageMetadata } from "@/config/metadata";
 import Hero from "@/components/Common/Hero";
+import SuccessStories from "@/components/Homepage/SuccessStories";
 
 export const metadata = getPageMetadata({
   title: "Enterprise AI for Insurance - insurAInce by DSW",
@@ -52,6 +53,7 @@ export default function Home() {
       <Features />
       <Capabilities />
       <Results />
+      <SuccessStories />
       <PlatformCapabilities />
       <Outcomes />
       <Efficiency />
@@ -66,8 +68,8 @@ export default function Home() {
 
 const heroData= {
   heading:" Enterprise AI Platform for Insurance",
-  img:"/assets/icons/insuraince/insuraince.svg",
-  subheading:"Purpose-Built, Proven, and Production-Ready.",
+  img:"/assets/images/insuraince/insuraince-new.png",
+  // subheading:"Purpose-Built, Proven, and Production-Ready.",
   para:"Purpose-Built, Proven, and Production-Ready . InsurAInce is the enterprise AI platform designed for insurers to build GenAI agents in hours, deploy AI use cases in days, and scale confidently with compliance, speed, and accuracy – all through your policy lifecycle.​",
   paraClass:"w-[90%]",
   link1:"/unifyai",
@@ -81,7 +83,7 @@ const heroData= {
 }
 
 const footerCTAData={
-  heading:"Ready to Launch GenAI in 4 Hours? AI/ML Use Cases in 30 Days? ",
+  heading:"Ready to Launch GenAI in few Hours? AI/ML Use Cases in 30 Days? ",
   para:"Let’s transform your insurance business with real AI. From claims to fraud to underwriting, insurAInce helps you deploy AI with speed, security, and impact. ",
   btnText1:"Book a Demo",
   btnLink1:"/#",

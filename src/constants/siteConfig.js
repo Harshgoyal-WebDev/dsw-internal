@@ -31,7 +31,7 @@ export const NAVIGATION = [
   // { text: "Home", href: "/", id: "home" },
   { text: "Products", href: "/unifyai", id: "product" , children:[
     { text: "UnifyAI", href :"/unifyai" , id:"products-unify"},
-    { text: "AgenticAI", href :"/#" , id:"products-agentic"},
+    { text: "AgenticAI", href :"#" , id:"products-agentic"},
   ]},
   { text: "Solutions", href: "/insuraince", id: "solutions" , children:[
     { text: "InsurAInce", href :"/insuraince" , id:"solutions-insuraince"},
@@ -50,7 +50,7 @@ export const NAVIGATION = [
   { text: "Contact", href: "/contact-us", id: "contact" }
 ];
 export const NAVIGATION_FOOTER = [
-  { text: "Home", href: "/", id: "home" },
+  // { text: "Home", href: "/", id: "home" },
   { text: "Products", href: "/unifyai", id: "product" , children:[
     { text: "UnifyAI", href :"/unifyai" , id:"products-unify"},
     { text: "AgenticAI", href :"/#" , id:"products-agentic"},
@@ -58,9 +58,8 @@ export const NAVIGATION_FOOTER = [
   { text: "Solutions", href: "/insuraince", id: "solutions" , children:[
     { text: "InsurAInce", href :"/insuraince" , id:"solutions-insuraince"},
   ]},
-  { text: "About Us", href: "/about", id: "about" },
+
   { text: "Pilot Program", href: "/production-pilot", id: "pilot" },
-  { text: "Contact Us", href: "/contact-us", id: "contact" },
   { text: "Resources", href: "/blog", id: "resources" ,children:[
     { text: "Blogs", href :"/blogs" , id:"resources-blog"},
     { text: "News And PR", href :"/news" , id:"resources-news"},
@@ -70,7 +69,11 @@ export const NAVIGATION_FOOTER = [
     { text: "AI & GenAI masterclass", href :"/dsw-workshop-deeptech-ai-genai-hands-on-masterclass" , id:"resources-workshops"},
     { text: "Whitepapers", href :"/whitepapers" , id:"resources-whitepapers"},
   ]},
-  { text: "Careers", href: "/careers", id: "careers" },
+  
+
+  { text: "Contact Us", href: "/contact-us", id: "contact" },
+  
+  { text: "About Us", href: "/about", id: "about" },
   { text: "Privacy Policy", href: "/privacy-policy", id: "privacy-policy" },
   { text: "Terms And Conditions", href: "/terms-and-conditions", id: "terms-and-conditions" },
 
