@@ -47,7 +47,7 @@ export default function Experts({ heading }) {
 
         <div className="flex fadeup gap-6 mt-12 max-sm:mt-0 max-md:mt-[10vw] max-md:items-center max-md:justify-center max-md:absolute max-md:bottom-0 max-sm:bottom-0  max-md:right-[8%] ">
           <PreviousButton onClick={handlePrev} isDisabled={activeIndex===0} />
-          <NextButton onClick={handleNext} isDisabled={activeIndex === totalSlides - 1} />
+          <NextButton onClick={handleNext} isDisabled={activeIndex === totalSlides} />
         </div>
       </div>
       {/* Swiper */}
@@ -59,10 +59,10 @@ export default function Experts({ heading }) {
         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
         onInit={(swiper) => setTotalSlides(swiper.slides.length)}
         freeMode={true}
-        className="!overflow-visible max-sm:!pt-[5vh] max-md:!pt-[5vw] !pl-[27%] max-md:!pl-0 max-md:w-full max-sm:mb-[5%] max-md:mb-[10%] "
+        className="!overflow-visible max-sm:!pt-[5vh] max-md:!pt-[5vw] !pl-[27%] max-md:!pl-0 max-md:w-full max-sm:mb-[5%] max-md:mb-[10%] max-sm:pr-[20%] "
         breakpoints={{
           0: {
-            slidesPerView: 1.5,
+            slidesPerView: 1.37,
             spaceBetween: 30,
           },
           768: {
@@ -74,10 +74,7 @@ export default function Experts({ heading }) {
             spaceBetween: 30,
           },
         }}
-        // style={{
-        //   paddingLeft: "27%",
-        //   paddingRight: "0px",
-        // }}
+       
       >
         {cardsData.map((card, index) => (
           <SwiperSlide

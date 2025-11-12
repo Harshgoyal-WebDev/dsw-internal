@@ -242,7 +242,7 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
   return (
     <section
       ref={sectionRef}
-      className="h-[70vw] w-screen relative bg-background max-md:h-screen max-md:px-[7vw]"
+      className="min-h-screen w-screen relative bg-background max-md:h-screen max-md:px-[7vw]"
       id="hero"
     >
       <div className="flex flex-col items-center justify-start w-full h-full pt-[30vh] relative z-[12] max-md:pt-[15vh]  content-container">

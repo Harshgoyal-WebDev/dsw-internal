@@ -58,14 +58,14 @@ export default function MobileMenu({
     const findById = (id) => NAVIGATION_FOOTER.find((i) => i.id === id) || null;
 
     return {
-      homeItem: findById("home"),
-      aboutItem: findById("about"),
+      // homeItem: findById("home"),
+      productSection: findById("product"),
       pilotItem: findById("pilot"),
       contactItem: findById("contact"),
-      careerItem:findById("careers"),
+      aboutItem: findById("about"),
+      // careerItem:findById("careers"),
      termsAndConditionsItem:findById("terms-and-conditions"),
      privacyPolicyItem:findById("privacy-policy"),
-      productSection: findById("product"),
       solutionsSection: findById("solutions"),
       resourcesSection: findById("resources"),
     };
@@ -120,7 +120,7 @@ export default function MobileMenu({
           data-lenis-prevent
           className="h-full w-full relative z-[30] border border-white/40 max-sm:rounded-[10vw] bg-black/30 flex flex-col justify-between py-[10vw] px-[7vw] max-md:rounded-[7vw]"
         >
-          <div className="w-full h-[80vh] overflow-x-hidden flex items-center mt-[7vh] max-md:pt-[60vw] max-sm:pt-[35vw] max-md:pr-[2vw] max-md:h-fit">
+          <div className="w-full h-[80vh] overflow-x-hidden flex items-center mt-[7vh] max-md:pt-[60vw] max-sm:pt-[10vw] max-md:pr-[2vw] max-md:h-fit">
             <div className="flex w-full flex-col max-sm:gap-[4vw] items-start max-md:gap-[3vw] h-fit justify-center max-md:justify-start">
               {/* Home */}
               {homeItem && (
@@ -160,15 +160,16 @@ export default function MobileMenu({
                 />
               )}
 
-              {/* About */}
-              {aboutItem && (
+            
+                 {/* Pilot Program */}
+              {pilotItem && (
                 <>
                   <Link
-                    href={aboutItem.href}
-                    {...linkProps(aboutItem.href)}
+                    href={pilotItem.href}
+                    {...linkProps(pilotItem.href)}
                     onClick={handleDirectLinkClick}
                   >
-                    {aboutItem.text}
+                    {pilotItem.text}
                   </Link>
                   <span className="bg-[#e8e8e8c5] h-[1px] w-full" />
                 </>
@@ -186,15 +187,15 @@ export default function MobileMenu({
                 />
               )}
 
-              {/* Pilot Program */}
-              {pilotItem && (
+           
+              {aboutItem && (
                 <>
                   <Link
-                    href={pilotItem.href}
-                    {...linkProps(pilotItem.href)}
+                    href={aboutItem.href}
+                    {...linkProps(aboutItem.href)}
                     onClick={handleDirectLinkClick}
                   >
-                    {pilotItem.text}
+                    {aboutItem.text}
                   </Link>
                   <span className="bg-[#e8e8e8c5] h-[1px] w-full" />
                 </>
@@ -213,6 +214,7 @@ export default function MobileMenu({
                   <span className="bg-[#e8e8e8c5] h-[1px] w-full" />
                 </>
               )}
+              
               {careerItem && (
                 <>
                   <Link

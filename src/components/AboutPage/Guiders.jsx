@@ -87,7 +87,7 @@ export default function Guiders({heading}) {
           className="!overflow-visible max-sm:!pt-[5vh] max-md:!pt-[5vw] !pl-[27%] max-md:!pl-0 max-md:w-full max-sm:mb-[5%] max-md:mb-[10%]"
           breakpoints={{
             0: {
-              slidesPerView: 1.5,
+              slidesPerView: 1.37,
               spaceBetween: 30,
             },
             768: {

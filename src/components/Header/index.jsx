@@ -155,7 +155,7 @@ const Header = () => {
                       link.children.some(
                         (c) => getSlug(c.href) === currentSlug
                       );
-
+                     
                     const isActive =
                       linkSlug === currentSlug ||
                       !!childMatch ||
@@ -166,7 +166,8 @@ const Header = () => {
                     return (
                       <li
                         key={link.id}
-                        className="relative text-[#E8E8E8] dropdown-links"
+
+                        className={`relative text-[#E8E8E8] dropdown-links ${link.href=="/contact-us"?"hidden":""}`}
                         onMouseEnter={() => setOpenDropdown(link.id)}
                         onMouseLeave={() => setOpenDropdown(null)}
                       >
@@ -303,12 +304,8 @@ const Header = () => {
             {!mob && (
               <div className="max-md:hidden">
                 <PrimaryButton
-                  onClick={(e) => {
-                    e.preventDefault();
-                    openModal();
-                  }}
-                  text={CTA_BUTTONS.primary.text}
-                  href={CTA_BUTTONS.primary.href}
+                  text={"Contact Us"}
+                  href={"/contact-us"}
                   className="primary-button"
                 />
               </div>

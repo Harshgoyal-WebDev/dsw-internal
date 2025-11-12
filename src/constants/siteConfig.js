@@ -28,7 +28,7 @@ export const SITE_CONFIG = {
 
 // Navigation configuration
 export const NAVIGATION = [
-  { text: "Home", href: "/", id: "home" },
+  // { text: "Home", href: "/", id: "home" },
   { text: "Products", href: "/unifyai", id: "product" , children:[
     { text: "UnifyAI", href :"/unifyai" , id:"products-unify"},
     { text: "AgenticAI", href :"/#" , id:"products-agentic"},
@@ -36,8 +36,8 @@ export const NAVIGATION = [
   { text: "Solutions", href: "/insuraince", id: "solutions" , children:[
     { text: "InsurAInce", href :"/insuraince" , id:"solutions-insuraince"},
   ]},
-  { text: "About Us", href: "/about", id: "about" },
-  { text: "Resources", href: "/blog", id: "resources" ,children:[
+   { text: "Pilot Program", href: "/production-pilot", id: "pilot" },
+    { text: "Resources", href: "/blog", id: "resources" ,children:[
     { text: "Blogs", href :"/blogs" , id:"resources-blog"},
     { text: "News And PR", href :"/news" , id:"resources-news"},
     { text: "Videos", href :"/product-videos" , id:"resources-videos"},
@@ -46,7 +46,7 @@ export const NAVIGATION = [
     { text: "AI & GenAI masterclass", href :"/dsw-workshop-deeptech-ai-genai-hands-on-masterclass" , id:"resources-workshops"},
     { text: "Whitepapers", href :"/whitepapers" , id:"resources-whitepapers"},
   ]},
-  { text: "Pilot Program", href: "/production-pilot", id: "pilot" },
+  { text: "About Us", href: "/about", id: "about" },
   { text: "Contact", href: "/contact-us", id: "contact" }
 ];
 export const NAVIGATION_FOOTER = [
