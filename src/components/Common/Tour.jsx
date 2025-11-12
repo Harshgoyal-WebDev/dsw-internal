@@ -4,11 +4,9 @@ import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import PrimaryButton from "../Button/PrimaryButton";
 import Copy from "../Animations/Copy";
-import { useModal } from "./ModalProvider";
 
 const Tour = ({ heading, para }) => {
   const [activeTab, setActiveTab] = useState("unifyAI");
-  const { openModal } = useModal();
 
   const handleTabClick = (tabId) => {
     setActiveTab(tabId);
@@ -184,11 +182,7 @@ const Tour = ({ heading, para }) => {
             className={`absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-[20] tourbtnfade max-sm:w-full max-sm:left-[65%]`}
           >
             <PrimaryButton
-              onClick={(e) => {
-                e.preventDefault();
-                openModal();
-              }}
-              text={"See it, to believe it! "}
+              text={"Start Walkthrough"}
               className=""
               href={"#"}
             />

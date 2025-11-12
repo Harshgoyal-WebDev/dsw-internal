@@ -244,7 +244,7 @@ export function FAQJSONLD({ faqs }) {
       "name": faq.question,
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": stripHTML(faq.answer),
+        "text": faq.answer,
       },
     })),
   };

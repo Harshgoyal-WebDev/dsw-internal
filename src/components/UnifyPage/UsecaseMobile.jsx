@@ -21,20 +21,20 @@ const usecaseData = [
       ],
       z:"z-[100]",
     },
+    // {
+    //   id: "002",
+    //   title: "AgenticAI",
+    //   description:"Design, configure, and launch enterprise-grade GenAI agents with ease:",
+    //   features: [
+    //     "Agentic AI drag and drop workflows and framework for task-based orchestration ",
+    //     "LLM model plug-ins with customizable tools, memory, and prompts ",
+    //     "Secure integration with internal knowledge bases and APIs ",
+    //     "Guardrails and governance by design for safe, compliant outputs "
+    //   ],
+    //   z:"z-[200]",
+    // },
     {
       id: "002",
-      title: "AgenticAI",
-      description:"Design, configure, and launch enterprise-grade GenAI agents with ease:",
-      features: [
-        "Agentic AI drag and drop workflows and framework for task-based orchestration ",
-        "LLM model plug-ins with customizable tools, memory, and prompts ",
-        "Secure integration with internal knowledge bases and APIs ",
-        "Guardrails and governance by design for safe, compliant outputs "
-      ],
-      z:"z-[200]",
-    },
-    {
-      id: "003",
       title: "Unified Ops ",
       description:"One platform. One centralized AI ecosystem. Total control.",
       features: [
@@ -73,7 +73,7 @@ export default function UsecaseMobile({ allowMultiple = false }) {
     >
       <div className="h-[5vh] relative w-full">
         <h2 className="text-60 text-center font-light headingAnim">
-          Supercharge Your AI and GenAI Use Cases  
+          Supercharge Your AI/ML Use Cases  
         </h2>
       </div>
 

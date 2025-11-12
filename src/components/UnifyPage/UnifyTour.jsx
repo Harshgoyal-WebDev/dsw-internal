@@ -3,10 +3,9 @@ import Image from "next/image";
 import React from "react";
 import PrimaryButton from "../Button/PrimaryButton";
 import Copy from "../Animations/Copy";
-import { useModal } from "../Common/ModalProvider";
+
 
 const UnifyTour = () => {
-  const {openModal} =useModal()
   return (
     <section className="w-screen h-fit container" id="tour-unify">
       <div className="w-full flex flex-col gap-[2vw] items-center max-md:gap-[4vw]">
@@ -31,12 +30,8 @@ const UnifyTour = () => {
                   </div>
                   <div className="absolute top-1/2 left-1/2 z-[99] -translate-x-1/2 -translate-y-1/2 max-sm:w-full max-sm:flex justify-center">
                    <PrimaryButton
-                    text={"See it, to believe it!"}
+                    text={"Start Walkthrough"}
                     className=""
-                    onClick={(e)=>{
-                      e.preventDefault()
-                      openModal()
-                    }}
                     href={"#"}
                   />
                   </div>

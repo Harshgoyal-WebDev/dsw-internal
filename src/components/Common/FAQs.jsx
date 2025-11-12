@@ -99,8 +99,11 @@ function AccordionItem({ question, answer, isOpen, onToggle }) {
                   transition={{ duration: 0.3, ease: "easeOut" }}
                   className="overflow-hidden"
                 >
-                  <div className="pb-[3.5vw] text-[#CACACA] w-[90%] max-sm:pb-[8vw] max-sm:w-[95%] max-sm:text-[4.2vw]">
-                    <p>{answer}</p>
+                  <div className="pb-[3.5vw] text-[#CACACA] w-[90%] max-sm:pb-[8vw] max-sm:w-[95%] max-sm:text-[4.2vw] space-y-[1vw]">
+                    {answer.map((item,index)=>(
+                       <p key={index} dangerouslySetInnerHTML={{__html:item}}/>
+                    ))}
+                    
                   </div>
                 </motion.div>
               )}

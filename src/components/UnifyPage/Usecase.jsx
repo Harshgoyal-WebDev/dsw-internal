@@ -30,8 +30,8 @@ export default function UseCase({ allowMultiple = false}) {
       id="cardstack"
     >
       <div className="flex flex-col items-center gap-[5vw] ">
-        <h2 className="text-60 headingAnim w-[45%] text-center">
-     Supercharge Your AI and GenAI Use Case      
+        <h2 className="text-60 headingAnim w-[40%] text-center">
+     Supercharge Your AI/ML Use Cases      
  </h2>
         
         <div className="  relative z-[10] fadeup">
@@ -147,20 +147,20 @@ function AccordionItem({ title, description,features, isOpen, onToggle,index,z})
       ],
       z:"z-[100]",
     },
+    // {
+    //   id: "002",
+    //   title: "AgenticAI",
+    //   description:"Design, configure, and launch enterprise-grade GenAI agents with ease:",
+    //   features: [
+    //     "Agentic AI drag and drop workflows and framework for task-based orchestration ",
+    //     "LLM model plug-ins with customizable tools, memory, and prompts ",
+    //     "Secure integration with internal knowledge bases and APIs ",
+    //     "Guardrails and governance by design for safe, compliant outputs "
+    //   ],
+    //   z:"z-[200]",
+    // },
     {
       id: "002",
-      title: "AgenticAI",
-      description:"Design, configure, and launch enterprise-grade GenAI agents with ease:",
-      features: [
-        "Agentic AI drag and drop workflows and framework for task-based orchestration ",
-        "LLM model plug-ins with customizable tools, memory, and prompts ",
-        "Secure integration with internal knowledge bases and APIs ",
-        "Guardrails and governance by design for safe, compliant outputs "
-      ],
-      z:"z-[200]",
-    },
-    {
-      id: "003",
       title: "Unified Ops ",
       description:"One platform. One centralized AI ecosystem. Total control.",
       features: [

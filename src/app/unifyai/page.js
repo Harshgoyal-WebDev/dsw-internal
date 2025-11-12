@@ -67,9 +67,9 @@ export default function page() {
   );
 }
 const heroData = {
-  heading: "The Operating System for Enterprise AI-ML",
-  subheading: "Deploy AI use cases in 30 days, GenAI in a few hours!",
-  para:"Launch your AI and GenAI use cases at record speed with one unified, production-grade platform - engineered for scale, security, and speed. Unify every step of the AI lifecycle, from data to deployment, on a single, scalable foundation.",
+  heading: "The Operating System for Enterprise AI/ML",
+  subheading: "Deploy AI use cases in 30 days.",
+  para:"Launch your AI/ML  use cases at record speed with one unified, production-grade platform - engineered for scale, security, and speed. Unify every step of the AI lifecycle, from data to deployment, on a single, scalable foundation.",
   paraClass: "w-[95%]",
   link1: "#tour-unify",
   btnText1: "Start Walkthrough",
@@ -80,7 +80,7 @@ const heroData = {
   homepage: false,
 };
 const footerCTAData = {
-  heading: "Ready to Unify Your AI? ",
+  heading: "Ready to Unify Your AI/ML? ",
   para: "Launch smarter, faster, safer AI and GenAI use cases with DSW UnifyAI. ",
   btnText1: "Book a Demo",
   book:true,
@@ -94,26 +94,26 @@ const faqData = [
   {
     question: "What is UnifyAI?",
     answer:
-      "UnifyAI is an enterprise AI platform that enables businesses to develop, deploy, and manage AI models seamlessly. It supports machine learning, Generative AI, and large language models (LLMs) while ensuring security, compliance, and scalability.",
+      ["UnifyAI is an enterprise AI platform that enables businesses to develop, deploy, and manage AI models seamlessly. It supports machine learning, Generative AI, and large language models (LLMs) while ensuring security, compliance, and scalability."],
   },
   {
     question: "Who can use UnifyAI?",
     answer:
-      "UnifyAI is an enterprise AI platform that enables businesses to develop, deploy, and manage AI models seamlessly. It supports machine learning, Generative AI, and large language models (LLMs) while ensuring security, compliance, and scalability.",
+      ["UnifyAI is an enterprise AI platform that enables businesses to develop, deploy, and manage AI models seamlessly. It supports machine learning, Generative AI, and large language models (LLMs) while ensuring security, compliance, and scalability."],
   },
   {
     question: "How does UnifyAI integrate with existing systems?",
     answer:
-      "UnifyAI is an enterprise AI platform that enables businesses to develop, deploy, and manage AI models seamlessly. It supports machine learning, Generative AI, and large language models (LLMs) while ensuring security, compliance, and scalability.",
+      ["UnifyAI is an enterprise AI platform that enables businesses to develop, deploy, and manage AI models seamlessly. It supports machine learning, Generative AI, and large language models (LLMs) while ensuring security, compliance, and scalability."],
   },
   {
     question: "Is UnifyAI secure?",
     answer:
-      "UnifyAI is an enterprise AI platform that enables businesses to develop, deploy, and manage AI models seamlessly. It supports machine learning, Generative AI, and large language models (LLMs) while ensuring security, compliance, and scalability.",
+      ["UnifyAI is an enterprise AI platform that enables businesses to develop, deploy, and manage AI models seamlessly. It supports machine learning, Generative AI, and large language models (LLMs) while ensuring security, compliance, and scalability."],
   },
   {
     question: "What types of AI models does UnifyAI support?",
     answer:
-      "UnifyAI is an enterprise AI platform that enables businesses to develop, deploy, and manage AI models seamlessly. It supports machine learning, Generative AI, and large language models (LLMs) while ensuring security, compliance, and scalability.",
+      ["UnifyAI is an enterprise AI platform that enables businesses to develop, deploy, and manage AI models seamlessly. It supports machine learning, Generative AI, and large language models (LLMs) while ensuring security, compliance, and scalability."],
   },
-];
+]
