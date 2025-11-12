@@ -55,7 +55,7 @@ export default function PresentationLayer() {
             rotationX: "60",
             yPercent: -70,
             opacity: 0,
-            xPercent: -8,
+            // xPercent: -8,
           },
           0
         )
@@ -83,7 +83,7 @@ export default function PresentationLayer() {
   }, [isMobile]);
 
   const ToolItem = ({ tool }) => (
-    <div className="flex flex-shrink-0 max-md:w-[25%] items-center w-[15%] justify-center flex-col space-y-[1vw] text-center h-auto">
+    <div className="flex flex-shrink-0 max-md:w-[40%] items-center w-[15%] justify-center flex-col space-y-[1vw] text-center h-auto">
       <div className="w-[4vw] max-md:w-[10vw] h-auto">
         <Image
           width={100}
@@ -93,7 +93,7 @@ export default function PresentationLayer() {
           alt={tool.name}
         />
       </div>
-      <p className="text-[1vw] max-md:text-[2.8vw] text-white-300 max-md:w-full w-[150%]">
+      <p className="text-[1vw] max-md:text-[2.8vw] text-white-300 max-md:w-full w-[80%]">
         {tool.name}
       </p>
     </div>
@@ -139,11 +139,11 @@ export default function PresentationLayer() {
         }}
         className="h-fit flex max-md:flex-col max-md:gap-[3vw] gap-[.8vw] w-full"
       >
-        <div ref={AIStudioRef} className="h-full overflow-hidden ">
-          <div className="h-fit p-[1.5vw] py-[2vw] text-center w-full bg-gradient-to-r from-white/8 to bg-white/0 border-white/20 rounded-[2vw] max-md:rounded-[4vw] flex flex-col max-md:p-[4vw] items-center gap-[1vw] border">
+        <div ref={AIStudioRef} className="h-full overflow-hidden w-full ">
+          <div className="h-fit p-[1.5vw] py-[2vw] text-center w-full bg-gradient-to-r from-white/8 to bg-white/0 border-white/20 rounded-[2vw] max-md:rounded-[4vw] flex flex-col max-md:p-[4vw] items-center gap-[1vw] border px-[5vw]">
             <div className="w-full h-full">
-              <p className="text-[1.5vw] max-md:text-[5.5vw] ">AI Studio</p>
-              <div className="py-[3.5vw] max-md:py-[6vw] border-b relative border-white/20 flex justify-evenly items-center w-full pl-[5vw]">
+              <p className="text-[1.5vw] max-md:text-[5.5vw]">AI Studio</p>
+              <div className="py-[3.5vw] max-md:py-[6vw] border-b relative border-white/20 flex  items-start w-full pl-[5vw]  max-md:pl-[10vw] max-md:flex-wrap max-md:gap-5">
                 <p className=" absolute top-1/2 max-md:left-[-10%] max-md:!text-[4.2vw] left-[-5%] translate-y-[-50%] rotate-[-90deg]">
                   Core Tools
                 </p>
@@ -154,11 +154,11 @@ export default function PresentationLayer() {
             </div>
 
             <div className="w-full h-full">
-              <div className="py-[1vw] max-md:py-[6vw] flex-nowrap relative flex justify-evenly items-start w-full pl-[5vw]">
+              <div className="py-[1vw] max-md:py-[6vw] flex-nowrap relative flex  items-start w-full">
                 <p className=" absolute top-1/2 max-md:left-[-10%] max-md:!text-[4.2vw] left-[-5%] translate-y-[-50%] rotate-[-90deg]">
                   Capabilities
                 </p>
-                <div className="flex-row flex-wrap justify-center gap-x-[5vw] gap-[2vw] max-md:gap-y-[4vw] flex w-full items-center">
+                <div className="flex-wrap justify-evenly max-md:gap-y-[4vw] flex w-full items-center max-md:pl-[10vw]">
                   {capabilities.map((tool, index) => (
                     <ToolItem key={index} tool={tool} />
                   ))}
@@ -168,7 +168,7 @@ export default function PresentationLayer() {
           </div>
         </div>
 
-        <div ref={GenAIStudioRef} className="h-full w-full">
+        {/* <div ref={GenAIStudioRef} className="h-full w-full">
           <div className="h-fit bg-gradient-to-l from-white/8 to bg-white/0 p-[1.5vw] py-[2vw] max-md:p-[4vw] text-center w-full border-white/20 max-md:rounded-[4vw] rounded-[2vw] flex flex-col items-center gap-[.5vw] border">
             <div className="w-full h-full">
               <p className="text-[1.5vw] max-md:text-[5.5vw]">Gen AI Studio</p>
@@ -196,7 +196,7 @@ export default function PresentationLayer() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div
