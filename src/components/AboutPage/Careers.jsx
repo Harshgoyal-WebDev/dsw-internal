@@ -22,7 +22,7 @@ const Careers = () => {
         </div>
         </div>
 
-        <div className='w-full h-auto max-sm:w-full rounded-[2vw] border border-white/20 overflow-hidden max-sm:h-[60vw] max-sm:rounded-[6vw] max-md:h-[50vw]'>
+        <div className='w-full h-[40vw] max-sm:w-full rounded-[2vw] border border-white/20 overflow-hidden max-sm:h-[60vw] max-sm:rounded-[6vw] max-md:h-[50vw] fadeup'>
         <Image src={"/assets/images/about/careers-final.png"} height={501} width={543} alt='Careers' className='h-full w-full object-cover'/>
         </div>
         <div className='w-[65%] mx-auto max-md:w-full'>

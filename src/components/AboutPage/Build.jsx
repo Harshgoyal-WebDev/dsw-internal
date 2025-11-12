@@ -48,8 +48,10 @@ export default function CardStack2({ allowMultiple = false }) {
             />
           ))}
         </div>
-        <div className="fadeup">
+        <div className="fadeup flex w-full justify-evenly">
         <PrimaryButton text={"Explore DSW UnifyAI"} href={"/unifyai"}/>
+        <PrimaryButton text={"Explore AgenticAI"} href={"#"}/>
+        <PrimaryButton text={"Explore insurAInce"} href={"/insuraince"}/>
       </div>
       </div>
       
@@ -75,7 +77,7 @@ function AccordionItem({ title, description,features, isOpen, onToggle,index,z})
                  <p className="">
                   {`00${index+1}`}
                 </p>
-              <h4 className="text-30  text-left leading-[1.2] capitalize">
+              <h4 className="text-30  text-left leading-[1.2]">
                 {title}
               </h4>
               </div>
@@ -159,7 +161,7 @@ function AccordionItem({ title, description,features, isOpen, onToggle,index,z})
     },
     {
       id: "002",
-      title: "insurAInce ",
+      title: "DSW insurAInce ",
       description:"An enterprise-grade AI platform that integrates data, models, agents, deployment, and governance in one seamless fabric. Build AI solutions in weeks and GenAI applications in hours. Operate with full observability, built-in guardrails, and policy control. Avoid vendor lock-in with flexible deployment options: on-premises, hybrid, or cloud. ",
       features: [
         "UnifyAI",
