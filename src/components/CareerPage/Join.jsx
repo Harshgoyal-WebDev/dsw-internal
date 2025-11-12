@@ -51,7 +51,7 @@ const Join = () => {
     }
   };
   return (
-    <section className="w-screen h-fit container relative !py-0  overflow-hidden max-sm:!py-[15%] " id="brochure">
+    <section className="w-screen h-fit container relative !py-0  overflow-hidden max-sm:!py-[15%] !pb-[4vw]" id="brochure">
       <div className="w-full flex flex-col items-center justify-center gap-[8vw] max-sm:gap-[15vw]">
         <h2 className="w-[70%] text-center text-60 headingAnim max-md:w-full max-sm:text-left max-sm:!text-[11.5vw]">
           Why Join DSW?
@@ -133,7 +133,7 @@ const Join = () => {
           <Copy>
             <h3 className="text-50 font-head">Join us. Build with purpose. Shape a future driven by research, collaboration, and care.</h3>
           </Copy>
-          <div>
+          <div className="fadeup">
             <PrimaryButton href="#" text={"See Open Roles"}/>
           </div>
         </div>

@@ -69,41 +69,40 @@ const Footer = () => {
                 </ul> */}
                 <div className="grid grid-cols-2 gap-3 max-md:flex max-md:flex-col max-sm:space-y-[15vw] max-md:space-y-[10vw]">
                   <div>
-                <p className="mb-5 text-foreground content-p font-head">NAVIGATION</p>
+                    <p className="mb-5 text-foreground content-p font-head">NAVIGATION</p>
 
-  <ul className="space-y-3">
-    {NAVIGATION_FOOTER.slice(0, 6).map((link) => (
-      <li key={link.id} className="text-foreground content-p">
-        <NavigationLink
-          text={link.text}
-          href={link.href}
-          variant="footer"
-          className="hover:!text-[#f16b0d]"
-        />
-      </li>
-    ))}
-  </ul>
-  </div>
-  <div>
+                    <ul className="space-y-3">
+                      {NAVIGATION_FOOTER.slice(0, 6).map((link) => (
+                        <li key={link.id} className="text-foreground content-p">
+                          <NavigationLink
+                            text={link.text}
+                            href={link.href}
+                            variant="footer"
+                            className="hover:!text-[#f16b0d]"
+                          />
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
 
-  <p className="mb-5 text-foreground content-p font-head">COMPANY</p>
+                    <p className="mb-5 text-foreground content-p font-head">COMPANY</p>
 
-  <ul className="space-y-3">
-    {NAVIGATION_FOOTER.slice(6).map((link) => (
-      <li key={link.id} className="text-foreground content-p">
-        <NavigationLink
-          text={link.text}
-          href={link.href}
-          variant="footer"
-          className="hover:!text-[#f16b0d]"
-        />
-      </li>
-    ))}
-  </ul>
-  </div>
-</div>
+                    <ul className="space-y-3">
+                      {NAVIGATION_FOOTER.slice(6).map((link) => (
+                        <li key={link.id} className="text-foreground content-p">
+                          <NavigationLink
+                            text={link.text}
+                            href={link.href}
+                            variant="footer"
+                            className="hover:!text-[#f16b0d]"
+                          />
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
 
-               
               </div>
 
               {/* Newsletter Subscription */}
@@ -132,6 +131,7 @@ const Footer = () => {
             <p className="under-multi-parent">
               {SITE_CONFIG.copyright.credits.text}{" "}
               <a
+                target="_blank"
                 href={SITE_CONFIG.copyright.credits.link}
                 className="hover:text-white transition-colors duration-300 under-multi"
               >

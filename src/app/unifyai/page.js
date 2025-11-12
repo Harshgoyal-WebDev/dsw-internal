@@ -67,8 +67,8 @@ export default function page() {
   );
 }
 const heroData = {
-  heading: "The Operating System for Enterprise AI ",
-  subheading: "Deploy AI use cases in 30 days, GenAI in a few hours! ​",
+  heading: "The Operating System for Enterprise AI-ML",
+  subheading: "Deploy AI use cases in 30 days, GenAI in a few hours!",
   para:"Launch your AI and GenAI use cases at record speed with one unified, production-grade platform - engineered for scale, security, and speed. Unify every step of the AI lifecycle, from data to deployment, on a single, scalable foundation.",
   paraClass: "w-[95%]",
   link1: "#tour-unify",

@@ -203,11 +203,11 @@ export default function PresentationLayer() {
         ref={UnifyRef}
         className="w-full flex items-center justify-center bg-gradient-to-r from-white/0 to-white/4 border-white/20 max-md:py-[2vw] rounded-[2vw] max-md:rounded-[3vw] border"
       >
-        <div className="h-auto max-md:w-[20vw]  mt-[.5vw] w-[8vw]">
+        <div className="h-auto max-md:w-[20vw] my-[1.5vw] w-[10vw]">
           <Image
             width={100}
             height={100}
-            src="/assets/icons/unify-ai.svg"
+            src="/assets/icons/dsw-unifyAi.png"
             className="w-full h-full object-contain"
             alt="Logo"
           />

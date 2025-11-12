@@ -52,8 +52,8 @@ export default async function Home() {
           }
           img={"/assets/images/homepage/tour-img.png"}
         />
+        <Difference2 />
         {/* <Difference /> */}
-        <Difference2/>
         <Brochure />
         <UnifyAiSingle/>
         <WhyUnify />

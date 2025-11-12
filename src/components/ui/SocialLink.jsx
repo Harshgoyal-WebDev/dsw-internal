@@ -29,6 +29,7 @@ export const SocialLink = ({
 
   return (
     <Link 
+      target="_blank"
       href={href} 
       aria-label={label}
       className={`${baseClasses} ${className}`}

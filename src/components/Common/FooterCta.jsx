@@ -15,6 +15,7 @@ const FooterCTA = ({ footerCTAData, width, paraWidth }) => {
   const { openModal } = useModal();
   const smoothX = useSpring(mouseX, { damping: 20, stiffness: 100 });
   const smoothY = useSpring(mouseY, { damping: 20, stiffness: 100 });
+  
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.to(".scrolling", {

@@ -17,7 +17,6 @@ import Unifying from '@/components/AboutPage/Unifying'
 import Mission from '@/components/AboutPage/Mission'
 import Join from '@/components/CareerPage/Join'
 
-
 export const metadata = getPageMetadata({
   title: "About DSW UnifyAI - Deep-Tech AI for Enterprises",
   description: "Learn about Data Science Wizards: mission, vision, team & enterprise AI platform UnifyAI that powers scalable, secure, real-world AI deployments.",
@@ -42,50 +41,50 @@ export const metadata = getPageMetadata({
   },
 });
 export default function page() {
-    return (
-        <>
-         <WebpageJsonLd metadata={metadata}/>
-        <Layout>
-            <Hero heroData={heroData} />
-           {/* <AboutV2/> */}
-           <Unifying/>
-           <Mission/>
-           <Build/>
-           <BuildMobile/>
-           <Proof/>
-           <Differently/>
-            <Experts heading={"Meet the Team"}/>
-            <Guiders heading={"Advisors and Board"}/>
-            <Ecosystem/>
-            <Careers/>
-            <Join/>
-            <FooterCTA footerCTAData={footerCTAData} />
-        </Layout>
-        </>
-    )
+  return (
+    <>
+      <WebpageJsonLd metadata={metadata} />
+      <Layout>
+        <Hero heroData={heroData} />
+        {/* <AboutV2/> */}
+        <Unifying />
+        <Mission />
+        <Build />
+        <BuildMobile />
+        <Proof />
+        <Differently />
+        <Experts heading={"Meet the Team"} />
+        <Guiders heading={"Advisors and Board"} />
+        <Ecosystem />
+        <Careers />
+        <Join />
+        <FooterCTA footerCTAData={footerCTAData} />
+      </Layout>
+    </>
+  )
 }
 
 const heroData = {
-    heading: "Building the Future of AI, One Enterprise at a Time",
-    para: "We’re Data Science Wizards — a deep-tech AI company enabling businesses to move from experimentation to real-world impact with scalable, secure, and production-ready AI.​",
-    paraClass: "px-[10vw] max-sm:px-[2vw]",
-    link1: "/unifyai",
-    btnText1: "Start Walkthrough",
-    link2: "https://calendly.com/",
-    btnText2: "Schedule a Call",
-    target:true,
-    walkthrough:true,
+  heading: "Building the Future of AI, One Enterprise at a Time",
+  para: "We’re Data Science Wizards — a deep-tech AI company enabling businesses to move from experimentation to real-world impact with scalable, secure, and production-ready AI.​",
+  paraClass: "px-[10vw] max-sm:px-[2vw]",
+  link1: "/unifyai",
+  btnText1: "Start Walkthrough",
+  link2: "https://calendly.com/",
+  btnText2: "Schedule a Call",
+  target: true,
+  walkthrough: true,
   homepage: false
 }
 const footerCTAData = {
-    heading: "Take a lightning tour of the Enterprise AI Platform",
-    para: "Discover how UnifyAI can accelerate your AI/ML and GenAI initiatives with seamless deployment, scalability, and security.",
-    btnText1: "Book a Demo",
-    btnLink1: "/#",
-    btnText2: "Schedule a Call",
-    btnLink2: "https://calendly.com/",
-    book:true,
-  target:true,
+  heading: "Take a lightning tour of the Enterprise AI Platform",
+  para: "Discover how UnifyAI can accelerate your AI/ML and GenAI initiatives with seamless deployment, scalability, and security.",
+  btnText1: "Book a Demo",
+  btnLink1: "/#",
+  btnText2: "Schedule a Call",
+  btnLink2: "https://calendly.com/",
+  book: true,
+  target: true,
   img1: "/assets/images/footer/image-1.png",
-    img2: "/assets/images/footer/image-2.png"
+  img2: "/assets/images/footer/image-2.png"
 }

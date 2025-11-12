@@ -521,7 +521,7 @@ background-color: rgba(255, 255, 255, 0.046) !important;
 
 @media (max-width: 542px) {
   :root {
-    --text-100: 12.5vw;
+    --text-100: 12vw;
     --text-90: 11vw;
     --text-60: 9vw;
     --text-50: 7.5vw;
