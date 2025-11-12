@@ -71,7 +71,11 @@ export default function Guiders({heading}) {
             </div>
             <div className=" space-y-[1vw] w-full mt-[1vw]">
               <p className="text-30 ">{guider.name}</p>
+              <div className="space-y-[0.5vw]">
               <p className="w-[85%] font-medium">{guider.role}</p>
+              <p className="w-full font-medium">{guider.company}</p>
+              </div>
+
             </div>
           </Link>
         ))}
@@ -128,7 +132,11 @@ export default function Guiders({heading}) {
                 </div>
                <div className="space-y-[.5vw] w-full mt-[1vw] max-md:mt-[5vw] max-sm:pl-[2vw] max-md:space-y-[2.5vw] max-sm:mt-[5vw] max-md:pl-[1vw]">
                   <p className="text-30 max-sm:text-[5.5vw]">{card.name}</p>
+                  <div className="space-y-[0.5vw] max-md:space-y-[0.5vw]">
                   <p className="w-[75%] max-md:w-[80%] max-sm:w-[95%]  font-medium ">{card.role}</p>
+                  <p className="w-[75%] max-md:w-[80%] max-sm:w-[95%]  font-medium ">{card.company}</p>
+                  </div>
+
                 </div>
               </Link>
             </SwiperSlide>
@@ -147,25 +155,29 @@ const GuidersData = [
   {
     src: "/assets/images/guiders/javed.png",
     name: "Javed Tapia",
-    role: "Founder, Chairman Clover InfoTech,Clover Realty,Ex-CEO RedHat India",
+    role: "Founder, Chairman",
+    company:"Clover InfoTech,Clover Realty",
     link:"https://www.linkedin.com/in/javedtapia/"
   },
   {
     src: "/assets/images/guiders/hemant.png",
     name: "Hemant Kenia",
-    role: "Founder and CEO,SK International",
+    role: "Founder and CEO",
+    company:"SK International",
     link:"https://www.linkedin.com/in/hemant-kenia-2829a155/"
   },
   {
     src: "/assets/images/guiders/sharad.png",
     name: "Sharad Sanghi",
-    role: "Chairman NTT, Global Data India,Ex-CEO and Managing Director of Netmagic",
+    role: "Chairman NTT",
+    company:"Global Data India",
     link:"http://linkedin.com/in/sharadsanghi"
   },
   {
     src: "/assets/images/guiders/upendra.png",
     name: "Dr. Upendra Rao",
-    role: "Independent Director,IDBI-Intech,Ex-CTO State Bank of India",
+    role: "Independent Director",
+    company:"IDBI-Intech",
     link:"https://www.linkedin.com/in/seethala-upendra-rao-03802736/"
   },
 ];
