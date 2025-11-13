@@ -71,18 +71,18 @@ const featuresData=[
   },
   {
     
-    icon: "/assets/icons/workshops/data-science-icon.svg",
+    icon: "/assets/icons/workshops/data-science-and-analytics.svg",
     title: "Data Science & Analytics Teams",
     para: "Explore hands-on methods to train, fine-tune, and deploy models tailored for fraud detection, claims automation, and more. ",
   },
   {
    
-    icon: "/assets/icons/workshops/data-science-icon.svg",
+    icon: "/assets/icons/workshops/risk-compliance.svg",
     title: "Risk, Compliance & IT Professionals",
     para: "Understand governance frameworks, model explainability, and security protocols that align with industry regulations like SOC 2, ISO 27001, HIPAA, and GDPR.",
   },
   {
-    icon: "/assets/icons/workshops/business-icon.svg",
+    icon: "/assets/icons/workshops/innovation-icon.svg",
     title: "Innovation, Product & Strategy Leaders",
     para: "Identify high-impact AI use cases and learn how to bring GenAI projects from concept to production in days—not months.",
   },

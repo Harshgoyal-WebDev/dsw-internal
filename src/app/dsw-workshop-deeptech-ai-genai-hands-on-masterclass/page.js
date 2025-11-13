@@ -71,18 +71,18 @@ const featuresData=[
   },
   {
     
-    icon: "/assets/icons/workshops/data-science-icon.svg",
+    icon: "/assets/icons/workshops/data-science-and-analytics.svg",
     title: "Product, Risk & Compliance Leaders",
     para: "Gain critical knowledge of AI explainability, bias mitigation, and regulatory compliance (SOC 2, GDPR, HIPAA, ISO 27001). Discover how to bring secure and trustworthy AI solutions to market while staying aligned with internal policies.",
   },
   {
    
-    icon: "/assets/icons/workshops/data-science-icon.svg",
+    icon: "/assets/icons/workshops/risk-compliance.svg",
     title: "Data Science, Engineering & ML Ops Teams",
     para: "Get hands-on experience with building, deploying, and managing GenAI and ML models in production. Learn to scale infrastructure, operationalize models faster, and integrate securely with enterprise systems—all within days.",
   },
   {
-    icon: "/assets/icons/workshops/business-icon.svg",
+    icon: "/assets/icons/workshops/innovation-icon.svg",
     title: "AI Strategy & Transformation Consultants",
     para: "Understand how to scope, prioritize, and scale GenAI initiatives for enterprise clients. Gain access to frameworks, best practices, and deployment blueprints trusted by Fortune 500 firms and leading insurers.",
   },
