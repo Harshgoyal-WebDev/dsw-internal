@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { isValidPhoneNumber } from "react-phone-number-input";
-import {useState } from "react";
+import { useState } from "react";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "../ui/form";
 
 import { Input } from "../ui/input";
@@ -30,7 +30,7 @@ const formSchema = z.object({
     .refine(isValidPhoneNumber, { message: "Invalid phone number" }),
   reason: z.string().min(1, { message: "Reason is required." }),
   message: z.string().optional(),
-   terms: z.boolean().refine((val) => val === true, {
+  terms: z.boolean().refine((val) => val === true, {
     message: "You must agree to the terms and conditions",
   }),
 });
@@ -44,9 +44,9 @@ export default function ContactForm() {
       designation: "",
       company: "",
       number: "",
-      reason:"",
+      reason: "",
       message: "",
-      terms:false
+      terms: false
     },
   });
   const { control, handleSubmit } = form;
@@ -83,10 +83,10 @@ export default function ContactForm() {
         },
       });
 
-      
-    // const responseData = await res.json();
-    // console.log("API Response:", responseData);
-    // console.log("Status:", res.status);
+
+      // const responseData = await res.json();
+      // console.log("API Response:", responseData);
+      // console.log("Status:", res.status);
 
       if (!res.ok) throw new Error("Failed to send message");
 
@@ -104,7 +104,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section className=" overflow-hidden" id="formoem">
+    <section className=" h-full w-full " id="formoem">
       <div className="w-full h-full  ">
         <div className="w-full flex flex-col gap-[2vw] max-md:px-[2vw] fadeup">
           <Form {...form}>
@@ -119,12 +119,21 @@ export default function ContactForm() {
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
-                      <Input
+                      {/* <Input
                         placeholder="Name*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw] bg-white/5 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw]  max-md:pl-[5vw]"
-                      />
+                        className="placeholder:text-[1.15vw] pl-[2vw] max-sm:pl-[5vw] bg-white/5 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw]  max-md:pl-[5vw]"
+                      /> */}
+                      <div className='group relative w-full'>
+                        <label
+                          htmlFor="name"
+                          className='origin-start text-muted-foreground group-focus-within:text-foreground has-[+input:not(:placeholder-shown)]:text-foreground absolute top-1/2 block -translate-y-1/2 cursor-text px-2 text-sm transition-all group-focus-within:pointer-events-none group-focus-within:top-0 group-focus-within:cursor-default group-focus-within:text-xs group-focus-within:font-medium has-[+input:not(:placeholder-shown)]:pointer-events-none has-[+input:not(:placeholder-shown)]:top-0 has-[+input:not(:placeholder-shown)]:cursor-default has-[+input:not(:placeholder-shown)]:text-xs has-[+input:not(:placeholder-shown)]:font-medium ml-[1.5vw] max-md:ml-[3vw] '
+                        >
+                          <span className='bg-[#030815] inline-flex px-1 text-[1.15vw] max-md:text-[2.7vw] max-sm:text-[3.5vw] text-[#CACACA]'>Name*</span>
+                        </label>
+                        <Input {...field} autoComplete="off" id="name" type='text' placeholder=' ' className='dark:bg-transparent border-[#B0B0B080] border  !bg-[#030815]  !rounded-full  pl-[2vw] max-sm:pl-[5vw] ' />
+                      </div>
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -137,12 +146,21 @@ export default function ContactForm() {
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
-                      <Input
+                      {/* <Input
                         placeholder="Business Email*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/5 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw]  max-md:pl-[5vw]"
-                      />
+                        className="placeholder:text-[1.15vw] pl-[2vw] max-sm:pl-[5vw]  bg-white/5 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw]  max-md:pl-[5vw]"
+                      /> */}
+                      <div className='group relative w-full'>
+                        <label
+                          htmlFor="email"
+                          className='origin-start text-muted-foreground group-focus-within:text-foreground has-[+input:not(:placeholder-shown)]:text-foreground absolute top-1/2 block -translate-y-1/2 cursor-text px-2 text-sm transition-all group-focus-within:pointer-events-none group-focus-within:top-0 group-focus-within:cursor-default group-focus-within:text-xs group-focus-within:font-medium has-[+input:not(:placeholder-shown)]:pointer-events-none has-[+input:not(:placeholder-shown)]:top-0 has-[+input:not(:placeholder-shown)]:cursor-default has-[+input:not(:placeholder-shown)]:text-xs has-[+input:not(:placeholder-shown)]:font-medium ml-[1.5vw] max-md:ml-[3vw]'
+                        >
+                          <span className='bg-[#030815] inline-flex px-1 text-[1.15vw] max-md:text-[2.7vw] max-sm:text-[3.5vw] text-[#CACACA]'>Business Email*</span>
+                        </label>
+                        <Input {...field} autoComplete="off" id="email" type='email' placeholder=' ' className='dark:bg-transparent border-[#B0B0B080] border  !bg-[#030815]  !rounded-full  pl-[2vw] max-sm:pl-[5vw] ' />
+                      </div>
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -154,12 +172,21 @@ export default function ContactForm() {
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
-                      <Input
+                      {/* <Input
                         placeholder="Designation*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/5 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw]   max-md:pl-[5vw]"
-                      />
+                        className="placeholder:text-[1.15vw] pl-[2vw] max-sm:pl-[5vw]  bg-white/5 border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw]   max-md:pl-[5vw]"
+                      /> */}
+                      <div className='group relative w-full'>
+                        <label
+                          htmlFor="designation"
+                          className='origin-start text-muted-foreground group-focus-within:text-foreground has-[+input:not(:placeholder-shown)]:text-foreground absolute top-1/2 block -translate-y-1/2 cursor-text px-2 text-sm transition-all group-focus-within:pointer-events-none group-focus-within:top-0 group-focus-within:cursor-default group-focus-within:text-xs group-focus-within:font-medium has-[+input:not(:placeholder-shown)]:pointer-events-none has-[+input:not(:placeholder-shown)]:top-0 has-[+input:not(:placeholder-shown)]:cursor-default has-[+input:not(:placeholder-shown)]:text-xs has-[+input:not(:placeholder-shown)]:font-medium ml-[1.5vw] max-md:ml-[3vw]'
+                        >
+                          <span className='bg-[#030815] inline-flex px-1 text-[1.15vw] max-md:text-[2.7vw] max-sm:text-[3.5vw] text-[#CACACA]'>Designation*</span>
+                        </label>
+                        <Input {...field} autoComplete="off" id="designation" type='text' placeholder=' ' className='dark:bg-transparent border-[#B0B0B080] border  !bg-[#030815]  !rounded-full  pl-[2vw] max-sm:pl-[5vw] ' />
+                      </div>
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -172,12 +199,21 @@ export default function ContactForm() {
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
-                      <Input
+                      {/* <Input
                         placeholder="Company Name*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw]  bg-white/5  border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw]  max-md:pl-[5vw]"
-                      />
+                        className="placeholder:text-[1.15vw] pl-[2vw] max-sm:pl-[5vw]  bg-white/5  border !border-[#B0B0B080] rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw]  max-md:pl-[5vw]"
+                      /> */}
+                      <div className='group relative w-full'>
+                        <label
+                          htmlFor="company"
+                          className='origin-start text-muted-foreground group-focus-within:text-foreground has-[+input:not(:placeholder-shown)]:text-foreground absolute top-1/2 block -translate-y-1/2 cursor-text px-2 text-sm transition-all group-focus-within:pointer-events-none group-focus-within:top-0 group-focus-within:cursor-default group-focus-within:text-xs group-focus-within:font-medium has-[+input:not(:placeholder-shown)]:pointer-events-none has-[+input:not(:placeholder-shown)]:top-0 has-[+input:not(:placeholder-shown)]:cursor-default has-[+input:not(:placeholder-shown)]:text-xs has-[+input:not(:placeholder-shown)]:font-medium ml-[1.5vw] max-md:ml-[3vw]'
+                        >
+                          <span className='bg-[#030815] inline-flex px-1 text-[1.15vw] max-md:text-[2.7vw] max-sm:text-[3.5vw] text-[#CACACA]'>Company Name*</span>
+                        </label>
+                        <Input {...field} autoComplete="off" id="company" type='text' placeholder=' ' className='dark:bg-transparent border-[#B0B0B080] border  !bg-[#030815]  !rounded-full  pl-[2vw] max-sm:pl-[5vw] ' />
+                      </div>
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -191,12 +227,12 @@ export default function ContactForm() {
                   <FormItem>
                     <FormControl>
                       <PhoneInput
-                      autoComplete="off"
+                        autoComplete="off"
                         placeholder="Phone Number*"
                         defaultCountry="IN"
                         international
                         {...field}
-                        className="placeholder:text-[1.15vw] placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw]  allForm"
+                        className="placeholder:text-[1.15vw] placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw] allForm !bg-background"
                       />
                     </FormControl>
                     <FormMessage />
@@ -204,17 +240,19 @@ export default function ContactForm() {
                 )}
               />
 
-                <FormField
+              <FormField
                 control={control}
                 name="reason"
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
+                       
                         <SelectTrigger
-                          className="w-full placeholder:!text-[3.15vw] px-[2vw] bg-white/5 border !border-[#B0B0B080] rounded-full text-[#CACACA] max-md:placeholder:text-[5vw] max-md:pl-[5vw] max-md:pr-[4vw]"
+                          className="w-full placeholder:!text-[3.15vw] px-[2vw] bg-background border !border-[#B0B0B080] rounded-full text-[#CACACA] max-md:placeholder:text-[5vw] max-md:pl-[5vw] max-md:pr-[4vw]"
                         >
-                          <SelectValue placeholder="Reason*" className='placeholder:!text-[3.5vw]' />
+                          
+                        <SelectValue placeholder="Reason*" className='placeholder:!text-[3.5vw]' />
                         </SelectTrigger>
                         <SelectContent className="bg-black/20 backdrop-blur-md max-md:placeholder:!text-[2.5vw] text-[#CACACA] border !border-[#B0B0B080] rounded-[1.5vw] p-[1vw] max-sm:rounded-[3vw] max-sm:p-[3vw] max-md:rounded-[2.5vw] max-md:p-[1.5vw]">
                           <SelectItem value="support">Support</SelectItem>
@@ -235,30 +273,40 @@ export default function ContactForm() {
                 name="message"
                 render={({ field }) => (
                   <FormItem>
-                    
+
                     <FormControl>
-                      <Textarea
+                      <div className='group relative w-full'>
+                        <label
+                          htmlFor={"message"}
+                          className='origin-start text-muted-foreground/70 group-focus-within:text-foreground has-[+textarea:not(:placeholder-shown)]:text-foreground has-aria-invalid:ring-destructive/20 dark:has-aria-invalid:ring-destructive/40 has-aria-invalid:border-destructive absolute top-0 block translate-y-2 cursor-text px-2 text-sm transition-all group-focus-within:pointer-events-none group-focus-within:-translate-y-1/2 group-focus-within:cursor-default group-focus-within:text-xs group-focus-within:font-medium has-[+textarea:not(:placeholder-shown)]:pointer-events-none has-[+textarea:not(:placeholder-shown)]:-translate-y-1/2 has-[+textarea:not(:placeholder-shown)]:cursor-default has-[+textarea:not(:placeholder-shown)]:text-xs has-[+textarea:not(:placeholder-shown)]:font-medium z-[5] ml-[1vw] max-md:ml-[3vw] max-md:mt-[1vw]'
+                        >
+                          <span className='bg-[#030815] inline-flex px-1 text-[1.15vw] max-md:text-[2.7vw] max-sm:text-[3.5vw] text-[#CACACA]'>Message</span>
+                        </label>
+                        <Textarea autoComplete="off"
+                          {...field} id="messsage" placeholder=' ' className=' py-4 dark:bg-transparent border-[#B0B0B080] border  !bg-[#030815]  !rounded-[2vw]  pl-[2vw] max-sm:pl-[5vw] max-md:!rounded-[5vw] ' />
+                      </div>
+                      {/* <Textarea
                         placeholder="Message"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw] pt-[1vw]  bg-white/5 border !border-[#B0B0B080] rounded-[2vw] placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw]  max-md:pl-[5vw] max-sm:pt-[3vw] max-md:rounded-[5vw] max-md:pt-[2vw]"
-                      />
+                        className="placeholder:text-[1.15vw] pl-[2vw] max-sm:pl-[5vw] pt-[1vw]  bg-white/5 border !border-[#B0B0B080] rounded-[2vw] placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw]  max-md:pl-[5vw] max-sm:pt-[3vw] max-md:rounded-[5vw] max-md:pt-[2vw]"
+                      /> */}
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
 
-               <div className="w-full flex gap-[1vw] justify-start  ">
+              <div className="w-full flex gap-[1vw] justify-start  ">
                 <FormField
                   control={control}
                   name="terms"
                   render={({ field }) => (
                     <FormItem className="">
                       <div className="flex items-center justify-center max-md:gap-[3vw] max-sm:gap-3 gap-3 pl-[0.5vw]">
-                         <Checkbox id="contact-checkbox"  aria-label="checkbox"
+                        <Checkbox id="contact-checkbox" aria-label="checkbox"
                           checked={field.value}
-                          onCheckedChange={field.onChange}  className="data-[state=checked]:bg-[#f16b0d] mt-[0.5vw]    max-md:scale-[1.5] max-sm:scale-[1] max-md:mt-[2vw] cursor-pointer max-md:rounded-[0.5vw] border-white/60" />
+                          onCheckedChange={field.onChange} className="data-[state=checked]:bg-[#f16b0d] mt-[0.5vw]    max-md:scale-[1.5] max-sm:scale-[1] max-md:mt-[2vw] cursor-pointer max-md:rounded-[0.5vw] border-white/60" />
                         {/* <Checkbox
                           aria-label="checkbox"
                           checked={field.value}
