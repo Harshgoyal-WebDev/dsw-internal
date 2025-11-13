@@ -54,7 +54,7 @@ const SubmenuNavigation = ({
 
   return (
     <div className="w-full">
-      <div className="flex w-full flex-col mt-[0.5vw]">
+      <div className="flex w-full flex-col">
         {/* Header row */}
         <div
           className="flex justify-between w-full list-title cursor-pointer items-center"
@@ -64,7 +64,7 @@ const SubmenuNavigation = ({
             href={link || "#"}
             onClick={handleParentLinkClick}
             aria-current={isParentActive ? "page" : undefined}
-            className={isActive ? "!text-[#f16b0d]" : ""}
+            className={`${isActive ? "!text-[#f16b0d]" : ""} max-sm:text-[4.5vw]`}
           >
             {title}
           </Link>

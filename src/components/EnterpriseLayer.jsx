@@ -131,7 +131,7 @@ const EnterpriseLayer = () => {
                 <p className="text-[#E8E8E8] text-[1vw] max-md:text-[2.7vw] max-sm:text-[3.5vw]">AI Studio</p>
             </div>
             <div className="absolute top-[53%] right-[67%] text-right max-sm:left-0 max-md:right-auto max-sm:top-[30%] max-md:top-[33%] max-md:left-0 z-[51] layer-content">
-                <p className="text-[#E8E8E8] text-[1vw] max-md:text-[2.7vw] max-sm:text-[3.5vw]">InsurAInce</p>
+                <p className="text-[#E8E8E8] text-[1vw] max-md:text-[2.7vw] max-sm:text-[3.5vw]">insurAInce</p>
             </div>
             <div className="absolute top-[65%] right-[67%] text-right max-sm:left-0 max-md:right-auto max-sm:top-[35%] max-md:top-[39%] max-md:left-0 z-[51] layer-content">
                 <p className="text-[#E8E8E8] text-[1vw] max-md:text-[2.7vw] max-sm:text-[3.5vw]">UnifyAI</p>

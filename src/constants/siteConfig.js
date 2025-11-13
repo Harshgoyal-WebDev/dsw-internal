@@ -34,7 +34,7 @@ export const NAVIGATION = [
     { text: "AgenticAI", href :"#" , id:"products-agentic"},
   ]},
   { text: "Solutions", href: "/insuraince", id: "solutions" , children:[
-    { text: "InsurAInce", href :"/insuraince" , id:"solutions-insuraince"},
+    { text: "insurAInce", href :"/insuraince" , id:"solutions-insuraince"},
   ]},
    { text: "Pilot Program", href: "/production-pilot", id: "pilot" },
     { text: "Resources", href: "/blog", id: "resources" ,children:[
@@ -56,7 +56,7 @@ export const NAVIGATION_FOOTER = [
     { text: "AgenticAI", href :"/#" , id:"products-agentic"},
   ]},
   { text: "Solutions", href: "/insuraince", id: "solutions" , children:[
-    { text: "InsurAInce", href :"/insuraince" , id:"solutions-insuraince"},
+    { text: "insurAInce", href :"/insuraince" , id:"solutions-insuraince"},
   ]},
 
   { text: "Pilot Program", href: "/production-pilot", id: "pilot" },

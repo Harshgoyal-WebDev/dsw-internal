@@ -62,7 +62,10 @@ export default async function Home() {
         <Recognized />
         <Connects />
         <Clients />
+        <div className="mt-[-20vh]">
         <SuccessStories />
+
+        </div>
         <Blogs posts={posts} />
         <Faqs data={faqData} />
         <FooterCTA footerCTAData={footerCTAData} width={"w-[95%]"} />
@@ -110,7 +113,7 @@ const faqData = [
   {
     question: "What are the key benefits of adopting Agentic AI for businesses?",
     answer:
-      ["Agentic AI drives operational transformation and delivers rapid financial returns by enabling autonomous, complex workflows. The core benefits include: <br/> <ul class='pl-8 py-3 space-y-4 list-disc'> <li>Significant cost reduction </li> <li> Speed and scalability </li>  <li> Consistent quality </li> </ul>"],
+      ["Agentic AI drives operational transformation and delivers rapid financial returns by enabling autonomous, complex workflows. The core benefits include: <br/> <ul class='pl-8 py-3 space-y-2 list-disc'> <li>Significant cost reduction </li> <li> Speed and scalability </li>  <li> Consistent quality </li> </ul>"],
   },
   {
     question: "Do Agentic AI systems collaborate, and if so, how do they communicate with each other?",

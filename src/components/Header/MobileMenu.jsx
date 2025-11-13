@@ -168,6 +168,7 @@ export default function MobileMenu({
                     href={pilotItem.href}
                     {...linkProps(pilotItem.href)}
                     onClick={handleDirectLinkClick}
+                    className="max-sm:text-[4.5vw]"
                   >
                     {pilotItem.text}
                   </Link>
@@ -194,6 +195,7 @@ export default function MobileMenu({
                     href={aboutItem.href}
                     {...linkProps(aboutItem.href)}
                     onClick={handleDirectLinkClick}
+                    className="max-sm:text-[4.5vw]"
                   >
                     {aboutItem.text}
                   </Link>
@@ -208,21 +210,9 @@ export default function MobileMenu({
                     href={contactItem.href}
                     {...linkProps(contactItem.href)}
                     onClick={handleDirectLinkClick}
+                    className="max-sm:text-[4.5vw]"
                   >
                     {contactItem.text}
-                  </Link>
-                  <span className="bg-[#e8e8e8c5] h-[1px] w-full" />
-                </>
-              )}
-              
-              {careerItem && (
-                <>
-                  <Link
-                    href={careerItem.href}
-                    {...linkProps(careerItem.href)}
-                    onClick={handleDirectLinkClick}
-                  >
-                    {careerItem.text}
                   </Link>
                   <span className="bg-[#e8e8e8c5] h-[1px] w-full" />
                 </>
@@ -233,6 +223,7 @@ export default function MobileMenu({
                     href={privacyPolicyItem.href}
                     {...linkProps(privacyPolicyItem.href)}
                     onClick={handleDirectLinkClick}
+                    className="max-sm:text-[4.5vw]"
                   >
                     {privacyPolicyItem.text}
                   </Link>
@@ -245,6 +236,7 @@ export default function MobileMenu({
                     href={termsAndConditionsItem.href}
                     {...linkProps(termsAndConditionsItem.href)}
                     onClick={handleDirectLinkClick}
+                    className="max-sm:text-[4.5vw]"
                   >
                     {termsAndConditionsItem.text}
                   </Link>

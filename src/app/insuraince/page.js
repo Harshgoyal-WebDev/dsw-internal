@@ -70,7 +70,7 @@ const heroData= {
   heading:" Enterprise AI Platform for Insurance",
   img:"/assets/images/insuraince/insuraince-new.png",
   // subheading:"Purpose-Built, Proven, and Production-Ready.",
-  para:"Purpose-Built, Proven, and Production-Ready . insurAInce is the enterprise AI platform designed for insurers to build GenAI agents in hours, deploy AI use cases in days, and scale confidently with compliance, speed, and accuracy – all through your policy lifecycle.​",
+  para:"Purpose-Built, Proven, and Production-Ready. insurAInce is the enterprise AI platform designed for insurers to build GenAI agents in hours, deploy AI use cases in days, and scale confidently with compliance, speed, and accuracy – all through your policy lifecycle.​",
   paraClass:"w-[90%]",
   link1:"/unifyai",
   btnText1:"Start Walkthrough",

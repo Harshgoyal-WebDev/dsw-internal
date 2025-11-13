@@ -261,7 +261,7 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
           {heroData.img ? (
             <div
               ref={imgWrapRef}
-              className="h-auto w-[16vw] mx-auto max-sm:w-[50vw] max-md:w-[28vw]  will-change-transform will-change-opacity"
+              className="h-auto w-[20vw] mx-auto max-sm:w-[60vw] max-md:w-[45vw]  will-change-transform will-change-opacity"
             >
               <Image
                 src={heroData.img}

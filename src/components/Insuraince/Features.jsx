@@ -42,7 +42,7 @@ const Card = ({ srcc, content, isActive, onHover }) => {
 
 const MobileCard = ({ srcc, content }) => {
   return (
-    <div className="max-md:h-[40vh] max-sm:h-[35vh] mx-auto background-glass flex-shrink-0 max-md:w-[47%] border border-[#88888880] py-[5vw] max-sm:w-[85vw] max-sm:rounded-[6vw] max-md:rounded-[3.5vw] flex flex-col max-md:gap-[6vw] max-sm:gap-[5vw] items-start max-md:justify-between max-sm:justify-between max-sm:px-[7vw] fadeup max-md:px-[4vw] max-sm:py-[10vw]">
+    <div className="max-md:h-[40vh] max-sm:h-fit mx-auto background-glass flex-shrink-0 max-md:w-[47%] border border-[#88888880] py-[5vw] max-sm:w-[85vw] max-sm:rounded-[6vw] max-md:rounded-[3.5vw] flex flex-col max-md:gap-[6vw] max-sm:gap-[5vw] items-start max-md:justify-between max-sm:justify-between max-sm:px-[7vw] fadeup max-md:px-[4vw] max-sm:py-[10vw]">
       <div className="max-sm:w-[25vw] max-md:w-auto max-md:h-[15vw] max-sm:h-auto h-auto">
         <Image
           src={srcc}

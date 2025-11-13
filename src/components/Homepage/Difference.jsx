@@ -169,7 +169,7 @@ const Difference = () => {
               ref={cardsRef2}
             >
               <h3 className="text-center text-40 headingAnim text-white-200 max-sm:text-left">
-                InsurAInce
+                insurAInce
               </h3>
               <div className="w-full flex-col flex max-sm:mt-0 gap-[0.5vw]  max-md:gap-[3vw]">
                 <div className=" text-[1.05vw] stacked-card w-full text-white-300 text-center h-[11vh]  max-sm:py-[2.5vw] max-sm:h-[9vh] max-sm:rounded-[4.5vw]  border border-white/20 rounded-[1.6vw]  flex items-center justify-center  background-glass-diff max-sm:text-[3.2vw] max-md:text-[2.5vw] max-md:rounded-[3vw] max-sm:px-[7vw] max-sm:text-left max-sm:justify-start backdrop-blur-[5px]  ">

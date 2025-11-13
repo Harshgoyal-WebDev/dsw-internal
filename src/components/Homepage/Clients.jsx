@@ -87,7 +87,7 @@ export default function Clients() {
         id="clientblur"
         className="relative w-screen max-sm:static  h-[400vh] text-center"
       >
-        <div className="sticky w-full top-0 h-screen flex items-center justify-center">
+        <div className="sticky w-full top-0 h-screen flex items-center justify-center mt-[-35vh]">
           <h2 className="text-60 w-[40%]  max-sm:w-[90%] max-md:w-[80%] text-[#E8E8E8] headingAnim">
             Trusted by Innovators, Built for Industry Disruptors.
           </h2>

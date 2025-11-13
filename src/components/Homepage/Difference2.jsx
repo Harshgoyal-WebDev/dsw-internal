@@ -35,7 +35,7 @@ const Difference2 = () => {
                  Traditional AI Platforms
                 </h3>
                 <h3 className="text-50 font-head text-[#F26B0D] font-normal border border-white/10  pl-[3vw] border-t-0 border-r-0 pb-[1vw] max-md:pb-[4vw] max-md:text-[6vw]">
-                 InsurAInce
+                 insurAInce
                 </h3>
 
                 {/* Row 1 */}
