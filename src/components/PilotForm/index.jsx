@@ -93,7 +93,7 @@ export default function PilotForm() {
   return (
     <section className="" id="formoem">
       <div className="w-full h-full">
-        <div className="w-full flex flex-col gap-[2vw]  max-md:px-[2vw] fadeup">
+        <div className="w-full flex flex-col gap-[2vw] fadeup">
           <Form {...form}>
             <form
               autoComplete="off"
@@ -110,7 +110,7 @@ export default function PilotForm() {
                         placeholder="Name*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw] max-sm:pl-[5vw] bg-white/5 border !border-white/20 rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw] max-md:pl-[5vw]"
+                        className="placeholder:text-[1.15vw] pl-[2vw] max-sm:pl-[6vw] max-md:pl-[5vw] bg-white/5 border !border-white/20 rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw] max-md:pl-[5vw]"
                       /> */}
                       <div className='group relative w-full'>
                         <label
@@ -119,7 +119,7 @@ export default function PilotForm() {
                         >
                           <span className='bg-[#030815] inline-flex px-1 text-[1.15vw] max-md:text-[2.7vw] max-sm:text-[3.5vw] text-[#CACACA]'>Name*</span>
                         </label>
-                        <Input {...field} autoComplete="off" id="name" type='text' placeholder=' ' className='dark:bg-transparent border-[#B0B0B080] border  !bg-[#030815]  !rounded-full  pl-[2vw] max-sm:pl-[5vw] ' />
+                        <Input {...field} autoComplete="off" id="name" type='text' placeholder=' ' className='dark:bg-transparent border-[#B0B0B080] border  !bg-[#030815]  !rounded-full  pl-[2vw] max-sm:pl-[6vw] max-md:pl-[5vw] ' />
                       </div>
                     </FormControl>
                     <FormMessage />
@@ -137,7 +137,7 @@ export default function PilotForm() {
                         placeholder="Business Email*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw] max-sm:pl-[5vw]  bg-white/5 border !border-white/20 rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw] max-md:pl-[5vw]"
+                        className="placeholder:text-[1.15vw] pl-[2vw] max-sm:pl-[6vw] max-md:pl-[5vw]  bg-white/5 border !border-white/20 rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw] max-md:pl-[5vw]"
                       /> */}
                       <div className='group relative w-full'>
                         <label
@@ -146,7 +146,7 @@ export default function PilotForm() {
                         >
                           <span className='bg-[#030815] inline-flex px-1 text-[1.15vw] max-md:text-[2.7vw] max-sm:text-[3.5vw] text-[#CACACA]'>Business Email*</span>
                         </label>
-                        <Input {...field} autoComplete="off" id="email" type='email' placeholder=' ' className='dark:bg-transparent border-[#B0B0B080] border  !bg-[#030815]  !rounded-full  pl-[2vw] max-sm:pl-[5vw] ' />
+                        <Input {...field} autoComplete="off" id="email" type='email' placeholder=' ' className='dark:bg-transparent border-[#B0B0B080] border  !bg-[#030815]  !rounded-full  pl-[2vw] max-sm:pl-[6vw] max-md:pl-[5vw] ' />
                       </div>
                     </FormControl>
                     <FormMessage />
@@ -163,7 +163,7 @@ export default function PilotForm() {
                         placeholder="Designation*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw] max-sm:pl-[5vw]  bg-white/5 border !border-white/20 rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw] max-md:pl-[5vw]"
+                        className="placeholder:text-[1.15vw] pl-[2vw] max-sm:pl-[6vw] max-md:pl-[5vw]  bg-white/5 border !border-white/20 rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw] max-md:pl-[5vw]"
                       /> */}
                       <div className='group relative w-full'>
                         <label
@@ -172,7 +172,7 @@ export default function PilotForm() {
                         >
                           <span className='bg-[#030815] inline-flex px-1 text-[1.15vw] max-md:text-[2.7vw] max-sm:text-[3.5vw] text-[#CACACA]'>Designation*</span>
                         </label>
-                        <Input {...field} autoComplete="off" id="designation" type='text' placeholder=' ' className='dark:bg-transparent border-[#B0B0B080] border  !bg-[#030815]  !rounded-full  pl-[2vw] max-sm:pl-[5vw] ' />
+                        <Input {...field} autoComplete="off" id="designation" type='text' placeholder=' ' className='dark:bg-transparent border-[#B0B0B080] border  !bg-[#030815]  !rounded-full  pl-[2vw] max-sm:pl-[6vw] max-md:pl-[5vw] ' />
                       </div>
                     </FormControl>
                     <FormMessage />
@@ -190,7 +190,7 @@ export default function PilotForm() {
                         placeholder="Company Name*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw] max-sm:pl-[5vw]  bg-white/5  border !border-white/20 rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw] max-md:pl-[5vw]"
+                        className="placeholder:text-[1.15vw] pl-[2vw] max-sm:pl-[6vw] max-md:pl-[5vw]  bg-white/5  border !border-white/20 rounded-full placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw] max-md:pl-[5vw]"
                       /> */}
                       <div className='group relative w-full'>
                         <label
@@ -199,7 +199,7 @@ export default function PilotForm() {
                         >
                           <span className='bg-[#030815] inline-flex px-1 text-[1.15vw] max-md:text-[2.7vw] max-sm:text-[3.5vw] text-[#CACACA]'>Company Name*</span>
                         </label>
-                        <Input {...field} autoComplete="off" id="company" type='text' placeholder=' ' className='dark:bg-transparent border-[#B0B0B080] border  !bg-[#030815]  !rounded-full  pl-[2vw] max-sm:pl-[5vw] ' />
+                        <Input {...field} autoComplete="off" id="company" type='text' placeholder=' ' className='dark:bg-transparent border-[#B0B0B080] border  !bg-[#030815]  !rounded-full  pl-[2vw] max-sm:pl-[6vw] max-md:pl-[5vw] ' />
                       </div>
                     </FormControl>
                     <FormMessage />
@@ -238,7 +238,7 @@ export default function PilotForm() {
                         placeholder="Message"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.15vw] pl-[2vw] max-sm:pl-[5vw] pt-[1vw]  bg-white/5 border !border-white/20 rounded-[2vw] placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw]  max-md:pl-[5vw] max-sm:pt-[3vw] max-md:rounded-[5vw] max-md:pt-[2vw] max-md:text-[2.7vw] max-sm:text-[3.5vw]"
+                        className="placeholder:text-[1.15vw] pl-[2vw] max-sm:pl-[6vw] max-md:pl-[5vw] pt-[1vw]  bg-white/5 border !border-white/20 rounded-[2vw] placeholder:text-[#CACACA] max-md:placeholder:text-[2.7vw] max-sm:placeholder:text-[3.5vw]  max-md:pl-[5vw] max-sm:pt-[3vw] max-md:rounded-[5vw] max-md:pt-[2vw] max-md:text-[2.7vw] max-sm:text-[3.5vw]"
                       /> */}
                       <div className='group relative w-full'>
                         <label
@@ -248,7 +248,7 @@ export default function PilotForm() {
                           <span className='bg-[#030815] inline-flex px-1 text-[1.15vw] max-md:text-[2.7vw] max-sm:text-[3.5vw] text-[#CACACA]'>Message</span>
                         </label>
                         <Textarea autoComplete="off"
-                          {...field} id="messsage" placeholder=' ' className=' dark:bg-transparent border-[#B0B0B080] border  !bg-[#030815]  !rounded-[2vw]  pl-[2vw] max-sm:pl-[5vw] max-md:rounded-[5vw]' />
+                          {...field} id="messsage" placeholder=' ' className=' dark:bg-transparent border-[#B0B0B080] border  !bg-[#030815]  !rounded-[2vw]  pl-[2vw] max-sm:pl-[6vw] max-md:pl-[5vw] max-md:!rounded-[5vw] py-4 max-sm:text-[3.5vw] max-md:text-[2.7vw] max-md:py-[3.5vw] max-sm:py-[5vw]' />
                       </div>
                     </FormControl>
                     <FormMessage />

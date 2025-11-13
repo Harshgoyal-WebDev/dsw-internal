@@ -113,7 +113,7 @@ export default function TeamForm() {
                         placeholder="Name*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.05vw] pl-[2vw] max-sm:pl-[5vw] bg-white/5 border border-white/20 rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] max-md:pl-[4vw] max-sm:pl-[5vw]"
+                        className="placeholder:text-[1.05vw] pl-[2vw] max-sm:pl-[6vw] max-md:pl-[5vw] bg-white/5 border border-white/20 rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] max-md:pl-[4vw] max-sm:pl-[5vw]"
                       /> */}
                       <div className='group relative w-full'>
                         <label
@@ -122,7 +122,7 @@ export default function TeamForm() {
                         >
                           <span className='bg-[#030815] inline-flex px-1 text-[1.15vw] max-md:text-[2.7vw] max-sm:text-[3.5vw] text-[#CACACA]'>Name*</span>
                         </label>
-                        <Input {...field} autoComplete="off" id="name" type='text' placeholder=' ' className='dark:bg-transparent border-[#B0B0B080] border  !bg-[#030815]  !rounded-full  pl-[2vw] max-sm:pl-[5vw] ' />
+                        <Input {...field} autoComplete="off" id="name" type='text' placeholder=' ' className='dark:bg-transparent border-[#B0B0B080] border  !bg-[#030815]  !rounded-full  pl-[2vw] max-sm:pl-[6vw] max-md:pl-[5vw] ' />
                       </div>
                     </FormControl>
                     <FormMessage />
@@ -140,7 +140,7 @@ export default function TeamForm() {
                         placeholder="Business Email*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.05vw] pl-[2vw] max-sm:pl-[5vw]  bg-white/5 border border-white/20 rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] max-md:pl-[4vw] max-sm:pl-[5vw]"
+                        className="placeholder:text-[1.05vw] pl-[2vw] max-sm:pl-[6vw] max-md:pl-[5vw]  bg-white/5 border border-white/20 rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] max-md:pl-[4vw] max-sm:pl-[5vw]"
                       /> */}
                       <div className='group relative w-full'>
                         <label
@@ -149,7 +149,7 @@ export default function TeamForm() {
                         >
                           <span className='bg-[#030815] inline-flex px-1 text-[1.15vw] max-md:text-[2.7vw] max-sm:text-[3.5vw] text-[#CACACA]'>Business Email*</span>
                         </label>
-                        <Input {...field} autoComplete="off" id="email" type='email' placeholder=' ' className='dark:bg-transparent border-[#B0B0B080] border  !bg-[#030815]  !rounded-full  pl-[2vw] max-sm:pl-[5vw] ' />
+                        <Input {...field} autoComplete="off" id="email" type='email' placeholder=' ' className='dark:bg-transparent border-[#B0B0B080] border  !bg-[#030815]  !rounded-full  pl-[2vw] max-sm:pl-[6vw] max-md:pl-[5vw] ' />
                       </div>
                     </FormControl>
                     <FormMessage />
@@ -166,7 +166,7 @@ export default function TeamForm() {
                         placeholder="Designation*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.05vw] pl-[2vw] max-sm:pl-[5vw]  bg-white/5 border border-white/20 rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] max-md:pl-[4vw] max-sm:pl-[5vw]"
+                        className="placeholder:text-[1.05vw] pl-[2vw] max-sm:pl-[6vw] max-md:pl-[5vw]  bg-white/5 border border-white/20 rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] max-md:pl-[4vw] max-sm:pl-[5vw]"
                       /> */}
                       <div className='group relative w-full'>
                         <label
@@ -175,7 +175,7 @@ export default function TeamForm() {
                         >
                           <span className='bg-[#030815] inline-flex px-1 text-[1.15vw] max-md:text-[2.7vw] max-sm:text-[3.5vw] text-[#CACACA]'>Designation*</span>
                         </label>
-                        <Input {...field} autoComplete="off" id="designation" type='text' placeholder=' ' className='dark:bg-transparent border-[#B0B0B080] border  !bg-[#030815]  !rounded-full  pl-[2vw] max-sm:pl-[5vw] ' />
+                        <Input {...field} autoComplete="off" id="designation" type='text' placeholder=' ' className='dark:bg-transparent border-[#B0B0B080] border  !bg-[#030815]  !rounded-full  pl-[2vw] max-sm:pl-[6vw] max-md:pl-[5vw] ' />
                       </div>
                     </FormControl>
                     <FormMessage />
@@ -193,7 +193,7 @@ export default function TeamForm() {
                         placeholder="Company Name*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.05vw] pl-[2vw] max-sm:pl-[5vw]  bg-white/5  border border-white/20 rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] max-md:pl-[4vw] max-sm:pl-[5vw]"
+                        className="placeholder:text-[1.05vw] pl-[2vw] max-sm:pl-[6vw] max-md:pl-[5vw]  bg-white/5  border border-white/20 rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] max-md:pl-[4vw] max-sm:pl-[5vw]"
                       /> */}
                       <div className='group relative w-full'>
                         <label
@@ -202,7 +202,7 @@ export default function TeamForm() {
                         >
                           <span className='bg-[#030815] inline-flex px-1 text-[1.15vw] max-md:text-[2.7vw] max-sm:text-[3.5vw] text-[#CACACA]'>Company Name*</span>
                         </label>
-                        <Input {...field} autoComplete="off" id="company" type='text' placeholder=' ' className='dark:bg-transparent border-[#B0B0B080] border  !bg-[#030815]  !rounded-full  pl-[2vw] max-sm:pl-[5vw] ' />
+                        <Input {...field} autoComplete="off" id="company" type='text' placeholder=' ' className='dark:bg-transparent border-[#B0B0B080] border  !bg-[#030815]  !rounded-full  pl-[2vw] max-sm:pl-[6vw] max-md:pl-[5vw] ' />
                       </div>
                     </FormControl>
                     <FormMessage />
