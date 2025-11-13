@@ -12,69 +12,136 @@ gsap.registerPlugin(ScrollTrigger);
 const UnifyAiSingle = () => {
   const {openModal} = useModal()
   useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#unifyAi",
-        start: "top 40%",
-        end: "90% 40%",
-        scrub: true,
-      },
-    });
-    // existing title animations
-    tl.fromTo(
-      ".unify-title",
-      {
-        yPercent: 350,
-      },
-      {
-        duration: 1.5,
-        yPercent: 0,
-        ease: "power4.out",
-      }
-    );
-    tl.fromTo(
-      ".unify-title",
-      {
-        scale: 0.2,
-      },
-      {
-        duration: 6,
-        scale: 55,
-        translateX: "-150%",
-        ease: "power2.inOut",
-      },
-      "<"
-    );
-
-    // gradient transition timeline (3 stages)
-    tl.to(".unifyblock", {
-      "--c1": "#f8f8f8",
-      "--c2": "#f8f8f8",
-      delay: -3,
-      // "--c3": "#030815",
-    });
-
-    // Stage 2 -> Stage 3 (final white-out)
-    tl.to(".unifyblock", {
-      "--c3": "#f8f8f8",
-      delay: -3,
-    });
-
-    const bl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#unifyAi",
-        start: "55% 50%",
-        end: "75% 50%",
-        scrub: true,
-      },
-    });
-    // Radius expansion (can overlap above)
-    bl.to(".unifyblock", {
-      "--rx": "90%",
-      "--ry": "120%",
-    });
-
-    bl.to(".unifyContainer", { backgroundColor: "#f8f8f8" }, "<");
+    if(globalThis.innerWidth>1024){
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#unifyAi",
+          start: "top 40%",
+          end: "90% 40%",
+          scrub: true,
+        },
+      });
+      // existing title animations
+      tl.fromTo(
+        ".unify-title",
+        {
+          yPercent: 350,
+        },
+        {
+          duration: 1.5,
+          yPercent: 0,
+          ease: "power4.out",
+        }
+      );
+      tl.fromTo(
+        ".unify-title",
+        {
+          scale: 0.2,
+        },
+        {
+          duration: 6,
+          scale: 55,
+          translateX: "-150%",
+          ease: "power2.inOut",
+        },
+        "<"
+      );
+  
+      // gradient transition timeline (3 stages)
+      tl.to(".unifyblock", {
+        "--c1": "#f8f8f8",
+        "--c2": "#f8f8f8",
+        delay: -3,
+        // "--c3": "#030815",
+      });
+  
+      // Stage 2 -> Stage 3 (final white-out)
+      tl.to(".unifyblock", {
+        "--c3": "#f8f8f8",
+        delay: -3,
+      });
+  
+      const bl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#unifyAi",
+          start: "55% 50%",
+          end: "75% 50%",
+          scrub: true,
+        },
+      });
+      // Radius expansion (can overlap above)
+      bl.to(".unifyblock", {
+        "--rx": "90%",
+        "--ry": "120%",
+      });
+  
+      bl.to(".unifyContainer", { backgroundColor: "#f8f8f8" }, "<");
+    }
+    else{
+       const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#unifyAi",
+          start: "top top",
+          end: "80% top",
+          scrub: true,
+        },
+      });
+      // existing title animations
+      tl.fromTo(
+        ".unify-title",
+        {
+          yPercent: 350,
+        },
+        {
+          duration: 1.5,
+          yPercent: 0,
+          ease: "power4.out",
+        }
+      );
+      tl.fromTo(
+        ".unify-title",
+        {
+          scale: 0.2,
+        },
+        {
+          duration: 6,
+          scale: 55,
+          translateX: "-150%",
+          ease: "power2.inOut",
+        },
+        "<"
+      );
+  
+      // gradient transition timeline (3 stages)
+      tl.to(".unifyblock", {
+        "--c1": "#f8f8f8",
+        "--c2": "#f8f8f8",
+        delay: -3,
+        // "--c3": "#030815",
+      });
+  
+      // Stage 2 -> Stage 3 (final white-out)
+      tl.to(".unifyblock", {
+        "--c3": "#f8f8f8",
+        delay: -3,
+      });
+  
+      const bl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#unifyAi",
+          start: "55% 50%",
+          end: "75% 50%",
+          scrub: true,
+        },
+      });
+      // Radius expansion (can overlap above)
+      bl.to(".unifyblock", {
+        "--rx": "90%",
+        "--ry": "120%",
+      });
+  
+      bl.to(".unifyContainer", { backgroundColor: "#f8f8f8" }, "<");
+    }
   });
 
   return (

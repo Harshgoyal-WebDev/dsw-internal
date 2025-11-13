@@ -53,7 +53,6 @@ export default async function Home() {
           img={"/assets/images/homepage/tour-img.png"}
         />
         <Difference2 />
-        {/* <Difference /> */}
         <Brochure />
         <UnifyAiSingle/>
         <WhyUnify />
@@ -62,9 +61,8 @@ export default async function Home() {
         <Recognized />
         <Connects />
         <Clients />
-        <div className="mt-[-20vh]">
+        <div className="mt-[-20vh] max-sm:mt-0">
         <SuccessStories />
-
         </div>
         <Blogs posts={posts} />
         <Faqs data={faqData} />
