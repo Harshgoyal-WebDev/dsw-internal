@@ -106,8 +106,17 @@ export default function BuildMobile({ allowMultiple = false }) {
           />
         ))}
       </div>
-      <div className="fadeup max-sm:pt-[18vw] max-md:pt-[10vw]">
+      <div className="flex flex-col max-sm:gap-[7vw] max-md:gap-[4vw] max-sm:pt-[18vw] max-md:pt-[10vw]">
+
+      <div className="fadeup  ">
         <PrimaryButton text={"Explore DSW UnifyAI"} href={"/unifyai"}/>
+      </div>
+      <div className="fadeup  ">
+        <PrimaryButton text={"Explore DSW AgenticAI"} href={"#"}/>
+      </div>
+      <div className="fadeup  ">
+        <PrimaryButton text={"Explore DSW insurAInce"} href={"/insuraince"}/>
+      </div>
       </div>
     </section>
   );
@@ -127,7 +136,7 @@ function Accordion({ title, para, link, features, isOpen, onToggle, id }) {
           <div className={`w-full flex justify-between `}>
             <div className="flex text-white-200 items-center justify-center gap-[5vw] pl-[3vw]">
               <p className=" text-[3.5vw]">{id}</p>
-              <h3 className="text-30 font-display capitalize  text-left w-[85%]">
+              <h3 className="text-30 font-display  text-left w-[85%]">
                 {title}
               </h3>
             </div>

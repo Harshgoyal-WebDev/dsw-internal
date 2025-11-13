@@ -218,7 +218,7 @@ useEffect(() => {
   return (
     <section
       ref={sectionRef}
-      className="h-[50vw] w-screen relative bg-background max-md:h-screen max-md:px-[7vw]"
+      className="h-[50vw] w-screen relative bg-background max-md:min-h-screen max-md:h-fit max-sm:pb-[25%] max-md:px-[7vw]"
       id="hero"
     >
       <div className="flex flex-col items-center justify-start w-full h-full pt-[30vh] relative z-[12] max-md:pt-[15vh]  content-container">

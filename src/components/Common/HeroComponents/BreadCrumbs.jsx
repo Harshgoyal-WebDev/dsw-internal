@@ -35,7 +35,7 @@ const BreadCrumbs = () => {
   );
 
   return (
-    <div className="breadcrumbs overflow-hidden w-fit flex items-start justify-start text-[1vw] text-[#CACACA] max-md:text-[2.5vw] max-sm:text-[3.5vw] max-md:h-fit absolute left-[5%] top-[74.7%] max-md:top-[90%] z-[800] opacity-0">
+    <div className="breadcrumbs overflow-hidden w-fit flex items-start justify-start text-[1vw] text-[#CACACA] max-md:text-[2.5vw] max-sm:text-[3.5vw] max-md:h-fit absolute left-[5%] top-[74.7%] max-md:top-[95%] z-[800] opacity-0">
       <div ref={crumbsRef} className="flex gap-3 items-center">
         {/* Static 'resources' (not a link) */}
         <span className="opacity-60">Resources</span>

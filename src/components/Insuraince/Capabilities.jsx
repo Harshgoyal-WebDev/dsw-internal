@@ -67,7 +67,7 @@ const Capabilities = () => {
       <div className="flex justify-between max-md:flex-col pt-[4vw] max-md:pt-[10vw]">
         <div className="w-[45%] max-md:w-[100%]">
           <Copy>
-            <p className="text-white-200 text-50 max-md:text-center  font-head">
+            <p className="text-white-200 text-50 max-md:text-center  font-head max-sm:text-[6vw]">
               These aren’t chatbots. They’re intelligent teammates for your
               operations. 
             </p>

@@ -50,7 +50,7 @@ export default Page;
 const heroData = {
   heading: "Deep Insights. Real Strategies. Enterprise-Ready AI Intelligence.",
   para: "Our curated collection of whitepapers gives you actionable insights, frameworks, and technical guidance to navigate enterprise AI adoption with confidence. Whether you’re evaluating platforms, planning your compliance roadmap, or scaling AI across departments, these research-backed resources will help you make strategic, future-proof decisions.​",
-  paraClass: "w-[80%]",
+  paraClass: "w-[80%] max-sm:w-[90%]",
   homepage: false,
   hidebtn: true,
   headingWidth:"w-[80%]"

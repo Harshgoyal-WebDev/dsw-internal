@@ -35,6 +35,7 @@ function ScrollToTop() {
     if (!btn) return;
 
     gsap.set(btn, { opacity: 0, scale: 0.9, pointerEvents: "none" });
+    gsap.set(".topbtn",{opacity:1})
 
     const st = ScrollTrigger.create({
       trigger: "#footer",
@@ -70,9 +71,9 @@ function ScrollToTop() {
       tabIndex={0}
       onClick={handleClick}
       onKeyDown={handleKeyDown}
-      className="w-fit h-fit fixed bottom-[5%] right-[2%] group cursor-pointer z-[888] max-sm:bottom-[2%]"
+      className="w-fit h-fit fixed bottom-[5%] right-[2%] group cursor-pointer z-[888] max-sm:bottom-[2%] "
     >
-      <div className="w-[3vw] h-[3vw] min-w-10 min-h-10 rounded-full max-md:w-[8vw] max-md:h-[8vw] bg-white/70 backdrop-blur flex justify-center items-center  p-[1vw] cursor-pointer shadow-lg group-hover:bg-white duration-300  max-md:p-[2.5vw]">
+      <div className="w-[3vw] h-[3vw] min-w-10 min-h-10 rounded-full max-md:w-[8vw] max-md:h-[8vw] bg-white/70 backdrop-blur flex justify-center items-center  p-[1vw] cursor-pointer shadow-lg group-hover:bg-white duration-300  max-md:p-[3vw] opacity-0 topbtn ">
         <Image
           src="/assets/icons/arrow-left.svg"
           alt=""

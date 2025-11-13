@@ -97,7 +97,7 @@ const ExpandablePanels = () => {
   };
 
   return (
-    <section className="container h-fit background-radial space-y-[8vw] max-sm:space-y-[12vw] !pb-0">
+    <section className="container h-fit background-radial space-y-[8vw] max-sm:space-y-[12vw] !pb-0 max-md:!pb-[15%]">
       <h2 className="text-60 text-white-200 text-center headingAnim">
         Real Customer Quotes
       </h2>

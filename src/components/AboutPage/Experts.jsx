@@ -66,7 +66,7 @@ export default function Experts({ heading }) {
             spaceBetween: 30,
           },
           768: {
-            slidesPerView: 1.5,
+            slidesPerView: 1.65,
             spaceBetween: 30,
           },
           1025: {

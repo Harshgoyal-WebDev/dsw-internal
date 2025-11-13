@@ -43,12 +43,12 @@ export default function WorkshopFlow({ sessionsData, space }) {
           Workshop Flow & Key Sessions
         </h2>
 
-        <div className="flex fadeup gap-6 mt-12 max-md:mt-[15vw]  max-md:items-center max-md:justify-center max-md:absolute max-md:top-[85%] max-md:left-[50%] max-md:translate-x-[-50%]">
+        <div className="flex fadeup gap-6 mt-12 max-md:hidden">
           <PreviousButton onClick={handlePrev} isDisabled={activeIndex === 0} />
           <NextButton onClick={handleNext} isDisabled={sessionsData.length-1 === activeIndex } />
         </div>
       </div>
-      <div className="h-fit flex  items-center justify-center  w-full max-md:my-[15vw]">
+      <div className="h-fit flex flex-col  items-center justify-center  w-full max-sm:my-[15vw] max-md:mt-[7vw]">
         <Swiper
           ref={swiperRef}
           modules={[Navigation]}
@@ -85,6 +85,10 @@ export default function WorkshopFlow({ sessionsData, space }) {
             </SwiperSlide>
           ))}
         </Swiper>
+        <div className="max-md:flex fadeup gap-6 mt-12 hidden w-full justify-center">
+          <PreviousButton onClick={handlePrev} isDisabled={activeIndex === 0} />
+          <NextButton onClick={handleNext} isDisabled={sessionsData.length-1 === activeIndex } />
+        </div>
       </div>
     </section>
   );
@@ -94,7 +98,7 @@ const SwiperCard = ({ title, list, duration, onHover, isActive, space }) => {
   return (
     <>
       <div
-        className="relative py-[3vw] background-glass max-md:py-[8vw] max-md:px-[8vw] rounded-[1.5vw] overflow-hidden w-[34vw] px-[3vw] h-[38vw] max-md:min-h-[70vh] max-sm:min-h-[70vh] max-md:w-full max-md:rounded-[6vw] border border-white/20 group "
+        className="relative py-[3vw] background-glass max-md:py-[8vw] max-md:px-[8vw] rounded-[1.5vw] overflow-hidden w-[34vw] px-[3vw] h-[38vw] max-md:min-h-[60vh] max-sm:min-h-[70vh] max-md:h-fit max-md:w-full max-md:rounded-[6vw] border border-white/20 group "
         onMouseEnter={onHover}
       >
         <div

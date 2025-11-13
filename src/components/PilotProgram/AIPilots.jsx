@@ -70,7 +70,7 @@ const AIPilots = () => {
         id="ai-pilots"
         className="h-full w-screen  relative overflow-hidden  background-radial"
       >
-        <div className="w-full h-full  relative z-[2] space-y-[7vw] container">
+        <div className="w-full h-full  relative z-[2] space-y-[7vw] container !pb-0 max-md:!pb-[15%]">
           <div className="space-y-5 mt-10 max-md:space-y-10">
             <h2 className="text-90 headingAnim text-white-200 max-md:text-center">
               AI Pilots Built for Your Industry
@@ -126,7 +126,7 @@ const AIPilots = () => {
               </Swiper>
             </div>
           ) : (
-            <div className=" w-full max-md:hidden flex flex-wrap h-[64vw] gap-x-[7vw] justify-between">
+            <div className=" w-full max-md:hidden flex flex-wrap h-fit gap-x-[7vw] justify-between">
               {data.map((card, index) => (
                 <PilotCard
                   key={index}

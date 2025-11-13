@@ -120,7 +120,7 @@ export default function MobileMenu({
           data-lenis-prevent
           className="h-full w-full relative z-[30] border border-white/40 max-sm:rounded-[10vw] bg-black/30 flex flex-col justify-between py-[10vw] px-[7vw] max-md:rounded-[7vw]"
         >
-          <div className="w-full h-[80vh] overflow-x-hidden flex items-center mt-[7vh] max-md:pt-[60vw] max-sm:pt-[10vw] max-md:pr-[2vw] max-md:h-fit">
+          <div className="w-full h-[80vh] overflow-x-hidden mt-[7vh]  max-md:pr-[2vw] max-md:h-fit">
             <div className="flex w-full flex-col max-sm:gap-[4vw] items-start max-md:gap-[3vw] h-fit justify-center max-md:justify-start">
               {/* Home */}
               {homeItem && (
