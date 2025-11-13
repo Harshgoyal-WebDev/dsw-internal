@@ -14,7 +14,7 @@ const usecaseData = [
       title: "DSW UnifyAI ",
       description:"An enterprise-grade AI platform that integrates data, models, agents, deployment, and governance in one seamless fabric. Build AI solutions in weeks and GenAI applications in hours. Operate with full observability, built-in guardrails, and policy control. Avoid vendor lock-in with flexible deployment options: on-premises, hybrid, or cloud. ",
       features: [
-        "UnifyAI",
+        " UnifyAI",
         "AgenticAI",
         "Feature Store",
         "Prompt Hub",
@@ -27,34 +27,35 @@ const usecaseData = [
     },
     {
       id: "002",
-      title: "insurAInce ",
-      description:"An enterprise-grade AI platform that integrates data, models, agents, deployment, and governance in one seamless fabric. Build AI solutions in weeks and GenAI applications in hours. Operate with full observability, built-in guardrails, and policy control. Avoid vendor lock-in with flexible deployment options: on-premises, hybrid, or cloud. ",
-      features: [
-        "UnifyAI",
-        "AgenticAI",
-        "Feature Store",
-        "Prompt Hub",
-        "Guardrails",
-        "Model & Agent Monitoring",
-        "One-click Deployment",
-        "Multi-cloud & On-prem Support"
-      ],
+      title: "DSW insurAInce ",
+      description:"A vertical AI solution built on DSW UnifyAI that accelerates innovation across underwriting, claims, fraud detection, and customer experience. Prebuilt workflows, domain-specific logic, and governance frameworks enable insurers to move confidently from pilot to production.",
+      // features: [
+      //   "UnifyAI",
+      //   "AgenticAI",
+      //   "Feature Store",
+      //   "Prompt Hub",
+      //   "Guardrails",
+      //   "Model & Agent Monitoring",
+      //   "One-click Deployment",
+      //   "Multi-cloud & On-prem Support"
+      // ],
       z:"z-[200]",
     },
     {
       id: "003",
       title: "BankAI & FSAI ",
-      description:"An enterprise-grade AI platform that integrates data, models, agents, deployment, and governance in one seamless fabric. Build AI solutions in weeks and GenAI applications in hours. Operate with full observability, built-in guardrails, and policy control. Avoid vendor lock-in with flexible deployment options: on-premises, hybrid, or cloud. ",
-      features: [
-        "UnifyAI",
-        "AgenticAI",
-        "Feature Store",
-        "Prompt Hub",
-        "Guardrails",
-        "Model & Agent Monitoring",
-        "One-click Deployment",
-        "Multi-cloud & On-prem Support"
-      ],
+      description:"Expanding into Banking and Financial Services, our AI-driven platforms provide secure, scalable, and compliant solutions designed for lending, payments, risk management, and customer engagement - helping enterprises unlock value quickly and sustainably. <br/> <br/> With solutions grounded in deep domain expertise and cross-functional collaboration, we help our clients transform their industries with AI-powered precision.",
+      description2:"",
+      // features: [
+      //   " UnifyAI",
+      //   "AgenticAI",
+      //   "Feature Store",
+      //   "Prompt Hub",
+      //   "Guardrails",
+      //   "Model & Agent Monitoring",
+      //   "One-click Deployment",
+      //   "Multi-cloud & On-prem Support"
+      // ],
       z:"z-[300]"
     },
    
@@ -161,16 +162,18 @@ function Accordion({ title, para, link, features, isOpen, onToggle, id }) {
               className="overflow-hidden"
             >
               <div className="w-full flex flex-col max-sm:gap-[2vw] max-sm:pb-[10vw] max-md:items-center max-md:pb-[5vw] max-md:gap-[3vw] pl-[3vw]">
-                <div className="py-4 space-y-[4vw]  text-white-200 ">{para}</div>
+                <div className="py-4 space-y-[4vw]  text-white-200 " dangerouslySetInnerHTML={{__html:para}}/>
                 <div className="w-full flex text-white-200 mt-[5vw] flex-col">
+                   {features &&
                   <ul className="list-disc pl-[5vw] ">
-                    {features &&
-                      features.map((feature, index) => (
+                   
+                      {features.map((feature, index) => (
                         <li key={index} className="mb-[2vw]">
                           {feature}
                         </li>
                       ))}
                   </ul>
+}
                 </div>
               </div>
             </motion.div>

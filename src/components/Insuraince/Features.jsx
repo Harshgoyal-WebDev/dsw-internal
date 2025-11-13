@@ -192,7 +192,7 @@ const cardsData = [
   {
     src: "/assets/icons/insuraince/AI.svg",
     content:
-      "AgneticAI for creating compliant, enterprise-ready GenAI agents in hours ",
+      "AgenticAI for creating compliant, enterprise-ready GenAI agents in hours ",
   },
   {
     src: "/assets/icons/insuraince/deployment.svg",

@@ -95,7 +95,7 @@ const Mission = () => {
                   </p>
                   <div className={`space-y-[1.5vw] max-sm:space-y-[4vw] transition-all duration-500 ease-in-out overflow-hidden ${!isValuesExpanded ? 'max-sm:max-h-0 max-sm:opacity-0' : 'max-sm:max-h-[1000px] max-sm:opacity-100'}`}>
                     <p>
-                      <span className="font-medium">Trust by design</span> : Trust
+                      <span className="font-semibold">Trust by design</span> : Trust
                       isn't just a feature, it's the foundation. We believe people
                       don't buy what you do, they buy why you do it. That's why we
                       embed security, privacy, and compliance into every layer,
@@ -103,14 +103,14 @@ const Mission = () => {
                       future.
                     </p>
                     <p>
-                      <span className="font-medium">Do Differently</span> : We
+                      <span className="font-semibold">Do Differently</span> : We
                       honour the builders: data scientists, engineers, and leaders
                       who turn ideas into scalable, enterprise-grade systems that
                       push AI from concept to production, changing how business
                       gets done.
                     </p>
                     <p>
-                      <span className="font-medium">Collaborate to build</span> :
+                      <span className="font-semibold">Collaborate to build</span> :
                       We believe the strongest AI solutions are created together.
                       Our community-driven approach fosters shared knowledge,
                       partnerships, and contributions that accelerate innovation

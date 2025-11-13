@@ -15,26 +15,21 @@ const Differently = () => {
             <div className='relative z-[10] space-y-[3vw]'>
               <Copy>
           <p className='text-white-300'>
-            <span className='font-medium'>Do Differently.</span> is our commitment to the people who bring AI to life, those who tackle complexity and build systems that matter. </p>
+            <span className='font-semibold'>Do Differently.</span> is our commitment to the people who bring AI to life, those who tackle complexity and build systems that matter. </p>
         </Copy>
               <Copy>
           <p className='text-white-200 '>To the data scientists, data engineers, AI engineers, and business leaders who:</p>
           </Copy>
           
-          <ul className='list-disc space-y-[0.5vw] ml-[2vw]'>
-            <Copy>
+          <ul className='list-disc space-y-[0.5vw] ml-[2vw] fadeup'>
             <li className='text-white-200 '> See patterns where others see chaos.</li>
-            </Copy>
-            <Copy>
             <li className='text-white-200 '> Turn ideas into enterprise-grade systems.</li>
-            </Copy>
-            <Copy>
             <li className='text-white-200 '> Push AI from experimentation to production.</li>
-            </Copy>
           </ul>
           
+          
           <Copy>
-          <p className='text-white-200'>AI doesn’t fail because of technology; it fails when it’s disconnected from the business. Do Differently. celebrates those solving the hardest challenge in AI adoption: moving from isolated use cases to scalable, governed, enterprise-grade solutions.</p>
+          <p className='text-white-200'>AI doesn’t fail because of technology; it fails when it’s disconnected from the business.<span className='font-semibold'> Do Differently.</span> celebrates those solving the hardest challenge in AI adoption: moving from isolated use cases to scalable, governed, enterprise-grade solutions.</p>
           </Copy>
           </div>
 

@@ -82,8 +82,8 @@ function AccordionItem({ title, description,features, isOpen, onToggle,index,z})
               </h4>
               </div>
               
-              <div className={`w-[55%] ${ isOpen ? "opacity-100" :"opacity-0"} `}>
-              <p className="text-left">{description}</p>
+              <div className={`w-[55%]  space-y-4  ${ isOpen ? "opacity-100 h-full" :"opacity-0 h-[15vh]"} `}>
+              <div className="text-left" dangerouslySetInnerHTML={{__html:description}}/>
               </div>
               </div>
 
@@ -121,8 +121,9 @@ function AccordionItem({ title, description,features, isOpen, onToggle,index,z})
                   className="overflow-hidden relative"
                 >
                     <span className="bg-white w-[80%] h-[1px] absolute top-0 left-1/2 translate-x-[-50%]"></span>
-                  <div className="py-[3.5vw] text-[#CACACA] w-[90%]  pb-[7vw]">
-                    <ul className="ml-[9vw] list-disc flex flex-wrap gap-x-[5vw] gap-y-[3vw]">
+                  <div className="py-[3.5vw] text-[#CACACA] w-[90%] ">
+                    {features &&
+                    <ul className={`ml-[9vw] list-disc flex flex-wrap gap-x-[5vw] gap-y-[3vw] pb-[7vw]`}>
                         {features.map((item,index)=>(
                             <li key={index} className="flex items-center gap-[0.5vw]">
                                 <span className="rounded-full bg-white h-[0.3vw] w-[0.3vw] mr-[0.8vw]"></span>
@@ -131,6 +132,7 @@ function AccordionItem({ title, description,features, isOpen, onToggle,index,z})
                             </li>
                         ))}
                     </ul >
+}
                   </div>
                 </motion.div>
               )}
@@ -162,33 +164,34 @@ function AccordionItem({ title, description,features, isOpen, onToggle,index,z})
     {
       id: "002",
       title: "DSW insurAInce ",
-      description:"An enterprise-grade AI platform that integrates data, models, agents, deployment, and governance in one seamless fabric. Build AI solutions in weeks and GenAI applications in hours. Operate with full observability, built-in guardrails, and policy control. Avoid vendor lock-in with flexible deployment options: on-premises, hybrid, or cloud. ",
-      features: [
-        "UnifyAI",
-        "AgenticAI",
-        "Feature Store",
-        "Prompt Hub",
-        "Guardrails",
-        "Model & Agent Monitoring",
-        "One-click Deployment",
-        "Multi-cloud & On-prem Support"
-      ],
+      description:"A vertical AI solution built on DSW UnifyAI that accelerates innovation across underwriting, claims, fraud detection, and customer experience. Prebuilt workflows, domain-specific logic, and governance frameworks enable insurers to move confidently from pilot to production.",
+      // features: [
+      //   "UnifyAI",
+      //   "AgenticAI",
+      //   "Feature Store",
+      //   "Prompt Hub",
+      //   "Guardrails",
+      //   "Model & Agent Monitoring",
+      //   "One-click Deployment",
+      //   "Multi-cloud & On-prem Support"
+      // ],
       z:"z-[200]",
     },
     {
       id: "003",
       title: "BankAI & FSAI ",
-      description:"An enterprise-grade AI platform that integrates data, models, agents, deployment, and governance in one seamless fabric. Build AI solutions in weeks and GenAI applications in hours. Operate with full observability, built-in guardrails, and policy control. Avoid vendor lock-in with flexible deployment options: on-premises, hybrid, or cloud. ",
-      features: [
-        " UnifyAI",
-        "AgenticAI",
-        "Feature Store",
-        "Prompt Hub",
-        "Guardrails",
-        "Model & Agent Monitoring",
-        "One-click Deployment",
-        "Multi-cloud & On-prem Support"
-      ],
+      description:"Expanding into Banking and Financial Services, our AI-driven platforms provide secure, scalable, and compliant solutions designed for lending, payments, risk management, and customer engagement - helping enterprises unlock value quickly and sustainably. <br/> <br/> With solutions grounded in deep domain expertise and cross-functional collaboration, we help our clients transform their industries with AI-powered precision.",
+      description2:"",
+      // features: [
+      //   " UnifyAI",
+      //   "AgenticAI",
+      //   "Feature Store",
+      //   "Prompt Hub",
+      //   "Guardrails",
+      //   "Model & Agent Monitoring",
+      //   "One-click Deployment",
+      //   "Multi-cloud & On-prem Support"
+      // ],
       z:"z-[300]"
     },
    
