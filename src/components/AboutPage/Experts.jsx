@@ -59,7 +59,7 @@ export default function Experts({ heading }) {
         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
         onInit={(swiper) => setTotalSlides(swiper.slides.length)}
         freeMode={true}
-        className="!overflow-visible max-sm:!pt-[5vh] max-md:!pt-[5vw] !pl-[27%] max-md:!pl-0 max-md:w-full max-sm:mb-[5%] max-md:mb-[10%] max-sm:pr-[20%] "
+        className="!overflow-visible max-md:!pt-[5vw] !pl-[27%] max-md:!pl-0 max-md:w-full max-sm:mb-[5%] max-md:mb-[10%] max-sm:pr-[20%] "
         breakpoints={{
           0: {
             slidesPerView: 1.37,

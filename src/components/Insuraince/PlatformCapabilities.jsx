@@ -139,7 +139,7 @@ const PlatformCapabilities = () => {
           className="flex justify-center items-center flex-col  w-full max-md:gap-[3vw] gap-[1vw] pt-[2vw] max-sm:hidden"
           ref={cardsRef}
         >
-          <div className="w-[34vw] h-[11vw] max-md:h-[17vw] max-md:w-[65vw] border card-1 z-[4] bg-white/5 background-glass backdrop-blur-sm border-white/15 rounded-[2vw] max-md:rounded-3xl flex justify-center max-md:justify-between max-md:px-[3vw] max-md:gap-[4vw] gap-[2.5vw] items-center">
+          <div className="w-[34vw] h-[11vw] max-md:h-[17vw] max-md:w-[65vw] border card-1 z-[4] bg-white/5 background-glass backdrop-blur-sm border-white/15 rounded-[2vw] max-md:rounded-3xl flex justify-center max-md:justify-between max-md:px-[3vw] max-md:gap-[4vw] gap-[2.5vw] items-center fadeup cap-top-card ">
             <div className="h-[5.5vw] w-[5.5vw] max-md:h-[7vw] max-md:w-[7vw]">
               <Image
                 src="/assets/icons/insuraince/code-setting.svg"

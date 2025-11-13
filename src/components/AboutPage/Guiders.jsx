@@ -39,7 +39,7 @@ export default function Guiders({heading}) {
     });
   });
   return (
-    <section className="container w-[95%] max-sm:pb-[10vh] max-md:w-full max-sm:!px-[7vw] mx-auto space-y-[6.5vw] max-md:pt-[35vw] relative overflow-hidden">
+    <section className="container w-[95%] max-sm:pb-[10vh] max-md:w-full max-sm:!px-[7vw] mx-auto space-y-[6.5vw] max-md:pt-[35vw] relative overflow-hidden max-md:space-y-0">
       <h2 className="text-90 w-full max-sm:px-0 text-center headingAnim max-md:text-left">
        
         {heading}
@@ -81,7 +81,7 @@ export default function Guiders({heading}) {
         ))}
       </div>
 
-      <div className="h-fit  items-center justify-center  w-full max-md:mt-[7vw] max-sm:mt-10 hidden max-md:block">
+      <div className="h-fit  items-center justify-center  w-full max-md:mt-[5vw] max-sm:mt-0 hidden max-md:block">
         <Swiper
           ref={swiperRef}
           modules={[Navigation]}

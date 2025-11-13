@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const Careers = () => {
   return (
-   <section className='h-full w-screen background-radial' id='careers'>
+   <section className='h-full w-screen background-radial py-[7%]' id='careers'>
     <div className='h-full w-full container'>
         <div className=' w-full  h-full space-y-[5vw] max-sm:space-y-[8vw]'>
         <div className=' flex flex-col items-center justify-center space-y-[3vw] max-sm:w-full max-sm:space-y-[5vw] max-md:items-start'>
