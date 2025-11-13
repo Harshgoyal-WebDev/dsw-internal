@@ -50,8 +50,8 @@ export default function CardStack2({ allowMultiple = false }) {
         </div>
         <div className="fadeup flex w-full justify-evenly">
         <PrimaryButton text={"Explore DSW UnifyAI"} href={"/unifyai"}/>
-        <PrimaryButton text={"Explore AgenticAI"} href={"#"}/>
-        <PrimaryButton text={"Explore insurAInce"} href={"/insuraince"}/>
+        <PrimaryButton text={"Explore DSW AgenticAI"} href={"#"}/>
+        <PrimaryButton text={"Explore DSW insurAInce"} href={"/insuraince"}/>
       </div>
       </div>
       
