@@ -21,7 +21,7 @@ const Newsletter = () => {
           id="newsletter-input"
           type="email"
           placeholder=" "
-          className="dark:bg-transparent border-b border-white !rounded-xs"
+          className="dark:bg-transparent border border-white border-l-0 border-r-0 border-t-0  !rounded-xs"
         />
       </div>
       <button

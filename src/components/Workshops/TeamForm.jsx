@@ -27,6 +27,7 @@ const formSchema = z.object({
   designation: z.string().min(2, { message: "Designation is required." }),
   company: z.string().min(2, { message: "Company name is required." }),
   terms: z.boolean().refine((val) => val === true, {
+     message: "You must agree to the terms and conditions."
   }),
 });
 
@@ -93,7 +94,7 @@ export default function TeamForm() {
 
 
   return (
-    <section className=" overflow-hidden h-fit max-md:pb-[10%] max-sm:pb-0" id="formoem">
+    <section className="h-fit max-md:pb-[10%] max-sm:pb-0" id="formoem">
       <div className="w-full h-full ">
         <div className="w-full flex flex-col gap-[2vw]  max-md:px-[2vw] fadeup">
           <Form {...form}>
@@ -108,12 +109,21 @@ export default function TeamForm() {
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
-                      <Input
+                      {/* <Input
                         placeholder="Name*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.05vw] pl-[2vw] bg-white/5 border border-white/20 rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] max-md:pl-[4vw] max-sm:pl-[5vw]"
-                      />
+                        className="placeholder:text-[1.05vw] pl-[2vw] max-sm:pl-[5vw] bg-white/5 border border-white/20 rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] max-md:pl-[4vw] max-sm:pl-[5vw]"
+                      /> */}
+                      <div className='group relative w-full'>
+                        <label
+                          htmlFor="name"
+                          className='origin-start text-muted-foreground group-focus-within:text-foreground has-[+input:not(:placeholder-shown)]:text-foreground absolute top-1/2 block -translate-y-1/2 cursor-text px-2 text-sm transition-all group-focus-within:pointer-events-none group-focus-within:top-0 group-focus-within:cursor-default group-focus-within:text-xs group-focus-within:font-medium has-[+input:not(:placeholder-shown)]:pointer-events-none has-[+input:not(:placeholder-shown)]:top-0 has-[+input:not(:placeholder-shown)]:cursor-default has-[+input:not(:placeholder-shown)]:text-xs has-[+input:not(:placeholder-shown)]:font-medium ml-[1.5vw] max-md:ml-[3vw]'
+                        >
+                          <span className='bg-[#030815] inline-flex px-1 text-[1.15vw] max-md:text-[2.7vw] max-sm:text-[3.5vw] text-[#CACACA]'>Name*</span>
+                        </label>
+                        <Input {...field} autoComplete="off" id="name" type='text' placeholder=' ' className='dark:bg-transparent border-[#B0B0B080] border  !bg-[#030815]  !rounded-full  pl-[2vw] max-sm:pl-[5vw] ' />
+                      </div>
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -126,12 +136,21 @@ export default function TeamForm() {
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
-                      <Input
+                      {/* <Input
                         placeholder="Business Email*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.05vw] pl-[2vw]  bg-white/5 border border-white/20 rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] max-md:pl-[4vw] max-sm:pl-[5vw]"
-                      />
+                        className="placeholder:text-[1.05vw] pl-[2vw] max-sm:pl-[5vw]  bg-white/5 border border-white/20 rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] max-md:pl-[4vw] max-sm:pl-[5vw]"
+                      /> */}
+                      <div className='group relative w-full'>
+                        <label
+                          htmlFor="email"
+                          className='origin-start text-muted-foreground group-focus-within:text-foreground has-[+input:not(:placeholder-shown)]:text-foreground absolute top-1/2 block -translate-y-1/2 cursor-text px-2 text-sm transition-all group-focus-within:pointer-events-none group-focus-within:top-0 group-focus-within:cursor-default group-focus-within:text-xs group-focus-within:font-medium has-[+input:not(:placeholder-shown)]:pointer-events-none has-[+input:not(:placeholder-shown)]:top-0 has-[+input:not(:placeholder-shown)]:cursor-default has-[+input:not(:placeholder-shown)]:text-xs has-[+input:not(:placeholder-shown)]:font-medium ml-[1.5vw] max-md:ml-[3vw]'
+                        >
+                          <span className='bg-[#030815] inline-flex px-1 text-[1.15vw] max-md:text-[2.7vw] max-sm:text-[3.5vw] text-[#CACACA]'>Business Email*</span>
+                        </label>
+                        <Input {...field} autoComplete="off" id="email" type='email' placeholder=' ' className='dark:bg-transparent border-[#B0B0B080] border  !bg-[#030815]  !rounded-full  pl-[2vw] max-sm:pl-[5vw] ' />
+                      </div>
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -143,12 +162,21 @@ export default function TeamForm() {
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
-                      <Input
+                      {/* <Input
                         placeholder="Designation*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.05vw] pl-[2vw]  bg-white/5 border border-white/20 rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] max-md:pl-[4vw] max-sm:pl-[5vw]"
-                      />
+                        className="placeholder:text-[1.05vw] pl-[2vw] max-sm:pl-[5vw]  bg-white/5 border border-white/20 rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] max-md:pl-[4vw] max-sm:pl-[5vw]"
+                      /> */}
+                      <div className='group relative w-full'>
+                        <label
+                          htmlFor="designation"
+                          className='origin-start text-muted-foreground group-focus-within:text-foreground has-[+input:not(:placeholder-shown)]:text-foreground absolute top-1/2 block -translate-y-1/2 cursor-text px-2 text-sm transition-all group-focus-within:pointer-events-none group-focus-within:top-0 group-focus-within:cursor-default group-focus-within:text-xs group-focus-within:font-medium has-[+input:not(:placeholder-shown)]:pointer-events-none has-[+input:not(:placeholder-shown)]:top-0 has-[+input:not(:placeholder-shown)]:cursor-default has-[+input:not(:placeholder-shown)]:text-xs has-[+input:not(:placeholder-shown)]:font-medium ml-[1.5vw] max-md:ml-[3vw]'
+                        >
+                          <span className='bg-[#030815] inline-flex px-1 text-[1.15vw] max-md:text-[2.7vw] max-sm:text-[3.5vw] text-[#CACACA]'>Designation*</span>
+                        </label>
+                        <Input {...field} autoComplete="off" id="designation" type='text' placeholder=' ' className='dark:bg-transparent border-[#B0B0B080] border  !bg-[#030815]  !rounded-full  pl-[2vw] max-sm:pl-[5vw] ' />
+                      </div>
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -161,12 +189,21 @@ export default function TeamForm() {
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
-                      <Input
+                      {/* <Input
                         placeholder="Company Name*"
                         autoComplete="off"
                         {...field}
-                        className="placeholder:text-[1.05vw] pl-[2vw]  bg-white/5  border border-white/20 rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] max-md:pl-[4vw] max-sm:pl-[5vw]"
-                      />
+                        className="placeholder:text-[1.05vw] pl-[2vw] max-sm:pl-[5vw]  bg-white/5  border border-white/20 rounded-full placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] max-md:pl-[4vw] max-sm:pl-[5vw]"
+                      /> */}
+                      <div className='group relative w-full'>
+                        <label
+                          htmlFor="company"
+                          className='origin-start text-muted-foreground group-focus-within:text-foreground has-[+input:not(:placeholder-shown)]:text-foreground absolute top-1/2 block -translate-y-1/2 cursor-text px-2 text-sm transition-all group-focus-within:pointer-events-none group-focus-within:top-0 group-focus-within:cursor-default group-focus-within:text-xs group-focus-within:font-medium has-[+input:not(:placeholder-shown)]:pointer-events-none has-[+input:not(:placeholder-shown)]:top-0 has-[+input:not(:placeholder-shown)]:cursor-default has-[+input:not(:placeholder-shown)]:text-xs has-[+input:not(:placeholder-shown)]:font-medium ml-[1.5vw] max-md:ml-[3vw]'
+                        >
+                          <span className='bg-[#030815] inline-flex px-1 text-[1.15vw] max-md:text-[2.7vw] max-sm:text-[3.5vw] text-[#CACACA]'>Company Name*</span>
+                        </label>
+                        <Input {...field} autoComplete="off" id="company" type='text' placeholder=' ' className='dark:bg-transparent border-[#B0B0B080] border  !bg-[#030815]  !rounded-full  pl-[2vw] max-sm:pl-[5vw] ' />
+                      </div>
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -185,7 +222,7 @@ export default function TeamForm() {
                         defaultCountry="IN"
                         international
                         {...field}
-                        className="placeholder:text-[1.05vw] placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] allForm "
+                        className="placeholder:text-[1.05vw] placeholder:text-[#CACACA] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] allForm !bg-background"
                       />
                     </FormControl>
                     <FormMessage />
