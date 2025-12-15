@@ -117,7 +117,7 @@ function AccordionItem({ title, description,features, isOpen, onToggle,index,z})
                   <div className="pt-[1vw] text-[#CACACA] w-[90%] pb-[7vw]">
                     <ul className="ml-[13vw] list-disc flex  gap-x-[5vw] gap-y-[3vw]">
                         {features.map((item,index)=>(
-                            <li key={index} className="w-1/5 marker:text-sm">
+                            <li key={index} className=" marker:text-sm">
                                 <p>{item}</p>
                                 
                             </li>

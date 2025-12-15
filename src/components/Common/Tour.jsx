@@ -4,9 +4,11 @@ import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import PrimaryButton from "../Button/PrimaryButton";
 import Copy from "../Animations/Copy";
+import { useModal } from "./ModalProvider";
 
 const Tour = ({ heading, para }) => {
   const [activeTab, setActiveTab] = useState("unifyAI");
+  const { openModal } = useModal();
 
   const handleTabClick = (tabId) => {
     setActiveTab(tabId);
@@ -185,6 +187,10 @@ const Tour = ({ heading, para }) => {
               text={"Start Walkthrough"}
               className=""
               href={"#"}
+               onClick={(e) => {
+              e.preventDefault();
+              openModal();
+            }}
             />
           </div>
 

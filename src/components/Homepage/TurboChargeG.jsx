@@ -7,10 +7,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const TurbochargeG = () => {
   const turboChargeContainer = useRef(null);
-
+  
   useEffect(() => {
     const ctx = gsap.context(() => {
-
       const bl = gsap.timeline({
         scrollTrigger: {
           trigger: "#turbo",
@@ -34,8 +33,6 @@ const TurbochargeG = () => {
       bl.from(".turbo-img", {
         opacity: 0,
         duration: 0.5,
-
-
       });
       bl.from(".img-1", {
         yPercent: -40,
@@ -71,8 +68,6 @@ const TurbochargeG = () => {
           },
           "<"
         );
-
-
 
       bl.from(".img-1", {
         rotateX: 45,
@@ -120,9 +115,14 @@ const TurbochargeG = () => {
   }, []);
 
   return (
-    <section id="turbo" className="w-screen h-full bg-background max-md:relative max-md:z-[12] max-md:bg-transparent">
+    <section
+      id="turbo"
+      className="w-screen h-full bg-background max-md:relative max-md:z-[12] max-md:bg-transparent"
+    >
       <div className="flex flex-col items-center p-10 w-full space-y-[3vw] max-md:px-[7vw]">
-        <h2 className="text-90 headingAnim text-[#E8E8E8] max-md:text-center">Unifying AI and Business ​</h2>
+        <h2 className="text-90 headingAnim text-[#E8E8E8] max-md:text-center">
+          Unifying AI and Business ​
+        </h2>
         <div className="w-[70%] text-center space-y-15 py-15 max-md:w-full">
           <div
             className="w-full h-fit rounded-[1vw] relative  perspective-[800px] max-md:hidden"
@@ -142,7 +142,9 @@ const TurbochargeG = () => {
             {/* Dashboard Image with perspective */}
             <div className="absolute top-0 w-[8.8vw] h-[37vw] left-0 z-[1] rounded-[0.5vw] overflow-hidden img-1 turbo-img">
               <Image
-                src={"/assets/images/homepage/turbocharge/turbo-charge-sidebar.png"}
+                src={
+                  "/assets/images/homepage/turbocharge/turbo-charge-sidebar.png"
+                }
                 width={120}
                 height={900}
                 className="w-full h-full object-contain"
@@ -153,7 +155,9 @@ const TurbochargeG = () => {
             {/* Graph Image */}
             <div className="absolute w-[37vw] h-[17vw] top-[10%] left-[15%] z-[1] img-2 turbo-img">
               <Image
-                src={"/assets/images/homepage/turbocharge/turbo-charge-graph.png"}
+                src={
+                  "/assets/images/homepage/turbocharge/turbo-charge-graph.png"
+                }
                 width={500}
                 height={800}
                 className="w-full h-full object-contain"
@@ -164,7 +168,9 @@ const TurbochargeG = () => {
             {/* Details Image */}
             <div className="absolute w-[37vw] h-[17vw] bottom-0 left-[15%] z-[1] img-3 turbo-img">
               <Image
-                src={"/assets/images/homepage/turbocharge/turbo-charge-details.png"}
+                src={
+                  "/assets/images/homepage/turbocharge/turbo-charge-details.png"
+                }
                 width={500}
                 height={900}
                 className="w-full h-full object-contain"
@@ -175,7 +181,9 @@ const TurbochargeG = () => {
             {/* Ratings Image */}
             <div className="absolute w-[19vw] h-[34vw] right-0 top-[7%] z-[1] img-4 turbo-img">
               <Image
-                src={"/assets/images/homepage/turbocharge/turbo-charge-ratings.png"}
+                src={
+                  "/assets/images/homepage/turbocharge/turbo-charge-ratings.png"
+                }
                 width={200}
                 height={700}
                 fetchPriority="high"
@@ -185,11 +193,14 @@ const TurbochargeG = () => {
             </div>
           </div>
           <div className="w-full h-[50vw] rounded-[2vw] overflow-hidden hidden max-md:block ">
-          <Image src={"/assets/images/homepage/turbocharge/dashboard-mob.png"} alt="unify-ai-dashboard-mobile" className="w-full h-full object-cover fadeup " width={600} height={400} />
-
+            <Image
+              src={"/assets/images/homepage/turbocharge/dashboard-mob.png"}
+              alt="unify-ai-dashboard-mobile"
+              className="w-full h-full object-cover fadeup "
+              width={600}
+              height={400}
+            />
           </div>
-
-
         </div>
       </div>
     </section>

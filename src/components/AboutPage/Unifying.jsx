@@ -14,7 +14,7 @@ export default function Unifying() {
           </h2>
         </div>
         <div className="space-y-[5vw] max-sm:space-y-[10vw]  ">
-          <div className="flex justify-between items-center  max-md:flex-col max-md:gap-[7vw]">
+          <div className="flex justify-between max-md:flex-col max-md:gap-[7vw]">
             <div className="w-[45%] fadeup max-md:w-full">
               <p className="font-head text-[1.4vw] max-md:text-30 leading-[1.3]">
                 At DSW, we are redefining how enterprises transform AI from a

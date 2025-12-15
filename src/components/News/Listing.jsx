@@ -5,7 +5,7 @@ import { LinkButton } from "../Button/LinkButton";
 import { formatDate } from "@/lib/datetime";
 
 const Listing = ({news}) => {
-  
+  console.log(news)
   return (
     <section className="container relative z-[10] max-md:mt-0 mt-[-20vh]" id="news-listing">
       <div className="w-full space-y-[4.5vw] max-md:space-y-[15vw] fadeupDelay">
@@ -30,7 +30,7 @@ const Listing = ({news}) => {
                 {/* <p className="max-md:order-1 text-white-300">{news.excerpt}</p> */}
                 <div className="max-md:order-1 text-white-300" dangerouslySetInnerHTML={{__html:news.excerpt}}/>
                 <LinkButton
-                  href={news.slug}
+                  href={`news/${news.slug}`}
                   text={"Read More"}
                   className="order-4"
                 />

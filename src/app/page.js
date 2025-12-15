@@ -48,7 +48,7 @@ export default async function Home() {
         <Tour
           heading={"Take a Lightning Tour"}
           para={
-            "Your OS for AI- not just for today's use cases, but for tomorrow's vision."
+            "Your OS for AI-not just for today's use cases, but for tomorrow's vision."
           }
           img={"/assets/images/homepage/tour-img.png"}
         />

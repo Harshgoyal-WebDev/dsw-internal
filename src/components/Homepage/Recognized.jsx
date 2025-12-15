@@ -54,7 +54,7 @@ const Recognized = () => {
               className="h-full w-full object-contain"
             />
           </div>
-          <div className="h-[10vw] w-[10vw] max-md:h-[22vw] max-md:w-[22vw]">
+          <div className="h-[10.3vw] w-[10.3vw] max-md:h-[22vw] max-md:w-[22vw]">
             <Image
               src={"/assets/images/homepage/recognized/soc-compliant-final.png"}
               height={178}
@@ -63,7 +63,7 @@ const Recognized = () => {
               className="h-full w-full object-contain"
             />
           </div>
-          <div className="h-[10vw] w-[10vw] max-md:h-[22vw] max-md:w-[22vw]">
+          <div className="h-[10.3vw] w-[10.3vw] max-md:h-[22vw] max-md:w-[22vw]">
             <Image
               src={"/assets/images/homepage/recognized/iso-27001-final.png"}
               height={178}
@@ -73,7 +73,7 @@ const Recognized = () => {
             />
           </div>
            
-          <div className="h-[10vw] w-[10vw] max-md:h-[22vw] max-md:w-[22vw]">
+          <div className="h-[10.3vw] w-[10.3vw] max-md:h-[22vw] max-md:w-[22vw]">
             <Image
               src={"/assets/images/homepage/recognized/hipaa.png"}
               height={178}
@@ -82,7 +82,7 @@ const Recognized = () => {
               className="h-full w-full object-contain scale-[0.9]"
             />
           </div>
-          <div className="h-[10vw] w-[10vw] max-md:h-[22vw] max-md:w-[22vw]">
+          <div className="h-[10.3vw] w-[10.3vw] max-md:h-[22vw] max-md:w-[22vw]">
             <Image
               src={"/assets/images/homepage/recognized/gdpr-compliance-final.png"}
               height={178}
@@ -91,7 +91,7 @@ const Recognized = () => {
               className="h-full w-full object-contain scale-[0.9]"
             />
           </div>
-          <div className="h-[10vw] w-auto max-md:h-[30vw] max-md:w-[90vw]">
+          <div className="h-[10.3vw] w-auto max-md:h-[30vw] max-md:w-[90vw]">
             <Image
               src={"/assets/images/homepage/recognized/f6s-top-company-final.png"}
               height={178}

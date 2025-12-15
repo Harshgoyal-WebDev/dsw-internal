@@ -3,10 +3,12 @@ import React, { useState, useRef } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import "swiper/css/scrollbar";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { NextButton, PreviousButton } from "../Button/SliderButtons";
 import Link from "next/link";
+import { FreeMode, Scrollbar } from "swiper/modules";
 
 export default function Experts({ heading }) {
   useGSAP(() => {
@@ -55,10 +57,16 @@ export default function Experts({ heading }) {
       <Swiper
         ref={swiperRef}
         slidesPerView={"auto"}
+        modules={[ FreeMode, Scrollbar]}
         // spaceBetween={20}
+         scrollbar={{
+            el: ".workshop-scrollbar",
+            draggable: true,
+            hide: false, // ✅ keep thumb visible
+          }}
         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
         onInit={(swiper) => setTotalSlides(swiper.slides.length)}
-        freeMode={true}
+        freeMode
         className="!overflow-visible max-md:!pt-[5vw] !pl-[27%] max-md:!pl-0 max-md:w-full max-sm:mb-[5%] max-md:mb-[10%] max-sm:pr-[20%] "
         breakpoints={{
           0: {
@@ -108,6 +116,11 @@ export default function Experts({ heading }) {
           </SwiperSlide>
         ))}
       </Swiper>
+      <div className="w-full flex justify-end">
+        <div className="workshop-scrollbar mt-10 w-[75%] cursor-grab max-md:w-full max-md:hidden" />
+
+      </div>
+
 
       </div>
        {/* <div className="flex fadeup gap-6 mt-12 max-sm:mt-0 max-md:mt-[10vw] max-md:items-center max-md:justify-end max-md:static  absolute top-[17%] right-[4%] ">

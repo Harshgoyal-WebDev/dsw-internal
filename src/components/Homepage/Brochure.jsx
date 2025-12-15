@@ -54,7 +54,7 @@ const Brochure = () => {
               showTooltip={true}
               displayOverlayContent={true}
               overlayContent={
-                <div className="w-full h-full px-[4vw] py-[4vw] pb-[5vw] flex flex-col justify-between text-white-300">
+                <div className="w-full h-full px-[4vw] py-[4vw] pb-[5vw] flex flex-col gap-[3vw] text-white-300">
                   <h3 className="text-30 w-[85%] h-fit">
                     25+ proven AI use cases across the policy lifecycle
                   </h3>
@@ -100,7 +100,7 @@ const Brochure = () => {
               showTooltip={true}
               displayOverlayContent={true}
               overlayContent={
-                <div className="w-full h-full px-[4vw] py-[4vw] pb-[5vw] flex flex-col justify-between text-white-300">
+                <div className="w-full h-full px-[4vw] py-[4vw] pb-[5vw] flex flex-col gap-[3vw] text-white-300">
                   <h3 className="text-30 w-full h-fit">
                     300+ ready-to-deploy GenAI agents trained on insurance data 
                   </h3>

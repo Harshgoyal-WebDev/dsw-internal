@@ -12,7 +12,7 @@ import gsap from "gsap";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 
-export default function Hero({ breadcrumbs, post }) {
+export default function Hero({ breadcrumbs, news }) {
   const router = useRouter();
 
   headingAnim();
@@ -60,20 +60,30 @@ export default function Hero({ breadcrumbs, post }) {
         <Image
           width={1920}
           height={1080}
-          src={post?.featuredImage?.sourceUrl}
+          src={news?.featuredImage?.sourceUrl}
           alt="Blog hero background"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b to-black/50 from-black/90 max-md:from-black/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-b to-black/30 from-black/90 max-md:from-black/20"></div>
       </div>
 
       <h1 className="text-100 headingAnim relative z-10 text-white-200 text-center opacity-0 hero-head w-[85%] max-md:text-background max-md:text-left max-md:w-full">
-        {post?.title}
+        {news?.title}
       </h1>
 
       {breadcrumbs && (
-        <div className="breadcrumbs overflow-hidden w-full flex items-start justify-start text-[1vw] text-[#CACACA] max-md:text-[2.7vw] max-sm:text-[4vw] max-md:h-fit absolute left-[5%] bottom-[8%] max-sm:bottom-[3%] z-[999] opacity-0 hero-crumb max-md:text-background">
-          <div className="flex gap-3 breadcrumbsContainer">
+        <div className="breadcrumbs overflow-hidden w-full flex items-start justify-start text-[1vw] text-[#CACACA] max-md:text-[2.7vw] max-sm:text-[4vw] max-md:h-fit absolute left-[5%] bottom-[8%] max-md:bottom-[2%] z-[999] opacity-0 hero-crumb max-md:text-background">
+          <div className="flex gap-3 breadcrumbsContainer items-center">
+            <a href="#">Resources</a>{" "}
+            <span className=" w-2 h-2">
+              <Image
+                src={"/assets/icons/breadcrumbs.svg"}
+                alt="braedcrumb icon"
+                width={20}
+                height={20}
+                className="w-full h-full object-contain"
+              />
+            </span>{" "}
             {pathArray
               .filter((segment) => segment && segment.toLowerCase() !== "home")
               .map((segment, index, arr) => {
@@ -86,26 +96,7 @@ export default function Hero({ breadcrumbs, post }) {
                 return (
                   <div key={href} className="flex items-center gap-2">
                     {index > 0 && <span>&gt;</span>}
-                    <a href="#">resources</a>{" "}
-                    <span className=" w-3 h-3">
-                      <Image
-                        src={"/assets/icons/breadcrumbs.svg"}
-                        alt="braedcrumb icon"
-                        width={20}
-                        height={20}
-                        className="w-full h-full object-contain"
-                      />
-                    </span>{" "}
-                    <a href="/blogs">blog</a>{" "}
-                     <span className=" w-3 h-3">
-                      <Image
-                        src={"/assets/icons/breadcrumbs.svg"}
-                        alt="braedcrumb icon"
-                        width={20}
-                        height={20}
-                        className="w-full h-full object-contain"
-                      />
-                    </span>{" "}
+
                     {isLast ? (
                       <span title={fullLabel}>{shortLabel}</span>
                     ) : (

@@ -29,7 +29,7 @@ export default function PresentationLayer() {
 
   useEffect(() => {
     if (isMobile) return;
-    
+
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -83,7 +83,7 @@ export default function PresentationLayer() {
   }, [isMobile]);
 
   const ToolItem = ({ tool }) => (
-    <div className="flex flex-shrink-0 max-md:w-[40%] items-center w-[15%] justify-center flex-col space-y-[1vw] text-center h-auto">
+    <div className="flex flex-shrink-0 max-md:w-[18vw] max-sm:w-[19vw] items-center w-[9vw] justify-center flex-col space-y-[1vw] text-center h-auto">
       <div className="w-[4vw] max-md:w-[10vw] h-auto">
         <Image
           width={100}
@@ -93,7 +93,7 @@ export default function PresentationLayer() {
           alt={tool.name}
         />
       </div>
-      <p className="text-[1vw] max-md:text-[2.8vw] text-white-300 max-md:w-full w-[80%]">
+      <p className="text-[1vw] max-md:text-[2.8vw] text-white-300 max-md:w-full w-full">
         {tool.name}
       </p>
     </div>
@@ -143,12 +143,14 @@ export default function PresentationLayer() {
           <div className="h-fit p-[1.5vw] py-[2vw] text-center w-full bg-gradient-to-r from-white/8 to bg-white/0 border-white/20 rounded-[2vw] max-md:rounded-[4vw] flex flex-col max-md:p-[4vw] items-center gap-[1vw] border px-[5vw]">
             <div className="w-full h-full">
               <p className="text-[1.5vw] max-md:text-[5.5vw]">AI Studio</p>
-              <div className="py-[3.5vw] max-md:py-[6vw] border-b relative border-white/20 flex  items-start w-full pl-[5vw]  max-md:pl-[10vw] max-md:flex-wrap max-md:gap-5">
+              <div className="py-[3.5vw] max-md:py-[6vw] border-b relative border-white/20 flex pl-[2vw] gap-x-[2vw]  items-start w-full  max-md:pl-[10vw] max-md:flex-wrap max-md:gap-5">
                 <p className=" absolute top-1/2 max-md:left-[-10%] max-md:!text-[4.2vw] left-[-5%] translate-y-[-50%] rotate-[-90deg]">
                   Core Tools
                 </p>
                 {coreTools.map((tool, index) => (
-                  <ToolItem key={index} tool={tool} />
+                  <div className="w-fit mx-[1vw] max-sm:mx-0" key={index}>
+                    <ToolItem tool={tool} />
+                  </div>
                 ))}
               </div>
             </div>
@@ -158,9 +160,11 @@ export default function PresentationLayer() {
                 <p className=" absolute top-1/2 max-md:left-[-10%] max-md:!text-[4.2vw] left-[-5%] translate-y-[-50%] rotate-[-90deg]">
                   Capabilities
                 </p>
-                <div className="flex-wrap justify-evenly max-md:gap-y-[4vw] flex w-full items-center max-md:pl-[10vw]">
+                <div className="flex-wrap max-md:gap-y-[4vw] gap-x-[2vw] flex w-full items-start max-md:pl-[10vw] pl-[2vw] max-md:gap-5 ">
                   {capabilities.map((tool, index) => (
-                    <ToolItem key={index} tool={tool} />
+                    <div className="w-fit mx-[1vw] max-sm:mx-0" key={index}>
+                      <ToolItem key={index} tool={tool} />
+                    </div>
                   ))}
                 </div>
               </div>

@@ -25,6 +25,11 @@ const getSlug = (path) =>
     .filter(Boolean)
     .pop() || "";
 
+const isPathActive = (pathname, href) => {
+  if (!href || !pathname) return false;
+  if (href === "/") return pathname === "/";
+  return pathname === href || pathname.startsWith(href + "/");
+};
 const Header = () => {
   const [isHidden, setIsHidden] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -104,27 +109,6 @@ const Header = () => {
     );
   }, [pathname, hasVisited]);
 
-  // useEffect(() => {
-  //   const triggers = [];
-
-  //   document.querySelectorAll(".header-dark").forEach((section) => {
-  //     const trigger = ScrollTrigger.create({
-  //       trigger: section,
-  //       start: "top top",
-  //       end: "bottom top",
-  //       onEnter: () => setIsInverted(true),
-  //       onEnterBack: () => setIsInverted(true),
-  //       onLeave: () => setIsInverted(false),
-  //       onLeaveBack: () => setIsInverted(false),
-  //     });
-  //     triggers.push(trigger);
-  //   });
-
-  //   return () => {
-  //     triggers.forEach((trigger) => trigger.kill());
-  //   };
-  // }, []);
-
   return (
     <>
       <div className="w-screen overflow-hidden h-screen fixed top-0 z-[900] pointer-events-none ">
@@ -155,19 +139,17 @@ const Header = () => {
                       link.children.some(
                         (c) => getSlug(c.href) === currentSlug
                       );
-                     
-                    const isActive =
-                      linkSlug === currentSlug ||
-                      !!childMatch ||
-                      (!!link.href &&
-                        link.href !== "/" &&
-                        (pathname || "").startsWith(link.href));
 
+                    const isActive =
+                      isPathActive(pathname, link.href) ||
+                      (hasChildren &&
+                        link.children.some((child) =>
+                          isPathActive(pathname, child.href)
+                        ));
                     return (
                       <li
                         key={link.id}
-
-                        className={`relative text-[#E8E8E8] dropdown-links ${link.href=="/contact-us"?"hidden":""}`}
+                        className={`relative text-[#E8E8E8] dropdown-links ${link.href == "/contact-us" ? "hidden" : ""}`}
                         onMouseEnter={() => setOpenDropdown(link.id)}
                         onMouseLeave={() => setOpenDropdown(null)}
                       >
@@ -246,8 +228,9 @@ const Header = () => {
                           >
                             <ul className="p-[1.5vw]">
                               {link.children.map((child) => {
-                                const childSlug = getSlug(child.href);
-                                const childActive = childSlug === currentSlug;
+                                // const childSlug = getSlug(child.href);
+                               const childActive = isPathActive(pathname, child.href);
+
                                 return (
                                   <li key={child.href}>
                                     <NavigationLink

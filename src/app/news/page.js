@@ -9,10 +9,10 @@ import { getPageMetadata } from "@/config/metadata";
 import { getAllNews } from "@/lib/news";
 import InternalHero from "@/components/Common/InternalHero";
 
-
 export const metadata = getPageMetadata({
   title: "DSW News & Press — Media Features & Announcements",
-  description: "Read DSW’s latest press coverage, announcements, interviews, and media features highlighting our enterprise AI innovations and market impact.",
+  description:
+    "Read DSW’s latest press coverage, announcements, interviews, and media features highlighting our enterprise AI innovations and market impact.",
   url: "/news",
   date_published: "2025-09-30T00:00",
   date_modified: "2025-09-30T00:00",
@@ -34,12 +34,12 @@ export const metadata = getPageMetadata({
   },
 });
 export default async function Page() {
-  const {news} = await getAllNews()
+  const { news } = await getAllNews();
   // console.log(news)
   return (
     <>
-    <WebpageJsonLd metadata={metadata}/>
-        <BreadcrumbsJSONLD pathname={metadata.url}/>
+      <WebpageJsonLd metadata={metadata} />
+      <BreadcrumbsJSONLD pathname={metadata.url} />
       <Layout>
         <InternalHero heroData={heroData} breadcrumbs={true} />
         <Listing news={news} />
@@ -48,8 +48,7 @@ export default async function Page() {
       </Layout>
     </>
   );
-};
-
+}
 
 const heroData = {
   heading: "In the Media​ ",

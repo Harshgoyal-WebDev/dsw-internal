@@ -4,7 +4,7 @@ import Copy from "../Animations/Copy";
 
 const Card = ({ src, content }) => {
   return (
-    <div className="flex flex-col max-sm:gap-[5vw] gap-[2vw] max-sm:w-full max-sm:h-fit w-[16vw] max-md:w-[40vw] relative group min-h-[20vh] fadeup">
+    <div className="flex flex-col max-sm:gap-[5vw] gap-[2vw] max-sm:w-full max-sm:h-fit w-[17vw] max-md:w-[40vw] relative group min-h-[20vh] fadeup">
       <div className="w-fit h-[5vw] max-sm:h-[12vh] max-md:h-[12vw]">
         <Image
           src={src}

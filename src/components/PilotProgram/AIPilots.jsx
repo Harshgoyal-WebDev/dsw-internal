@@ -76,7 +76,7 @@ const AIPilots = () => {
               AI Pilots Built for Your Industry
             </h2>
             <Copy>
-              <p className=" text-white-300 w-[30%] leading-[1.5] max-md:w-full  max-md:text-center">
+              <p className=" text-white-300 w-[35%] leading-[1.5] max-md:w-full  max-md:text-center">
                 Validate use cases across industries, prove ROI early, and build
                 a scalable path to production.
               </p>
