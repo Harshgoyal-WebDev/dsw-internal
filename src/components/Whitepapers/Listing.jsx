@@ -13,7 +13,7 @@ const listingData = [
     description:
       "Learn how enterprises can move from experimentation to full-scale deployment of AI/ML and GenAI—while meeting compliance and governance standards.",
     imgSrc: "/assets/images/whitepapers/from-pilot-to-production.png",
-    link: "/",
+    link: "#",
     btnText:"Download Now"
   },
   {
@@ -22,7 +22,7 @@ const listingData = [
     description:
       "Explore GenAI architecture, risk mitigation techniques, and deployment best practices across industries like insurance and healthcare.",
     imgSrc: "/assets/images/whitepapers/deploying-genai.png",
-    link: "/",
+    link: "#",
     btnText:"Get the Whitepaper"
 
   },
@@ -32,7 +32,7 @@ const listingData = [
     description:
       "Understand the technical and procedural safeguards needed to deploy AI solutions that are audit-ready and enterprise-secure.",
     imgSrc: "/assets/images/whitepapers/security-by-design.png",
-    link: "/",
+    link: "#",
     btnText:"Download Now"
 
   },
@@ -43,7 +43,7 @@ const listingData = [
     description:
       "Future-proof your strategy with predictions, investment trends, and use cases transforming the insurance sector.",
     imgSrc: "/assets/images/whitepapers/ai-in-insurance.png",
-    link: "/",
+    link: "#",
     btnText:"Download Now"
 
   },
@@ -53,7 +53,7 @@ const listingData = [
     description:
       "Understand the technical and procedural safeguards needed to deploy AI solutions that are audit-ready and enterprise-secure.",
     imgSrc: "/assets/images/whitepapers/building-ai.png",
-    link: "/",
+    link: "#",
     btnText:"Download Now"
 
   },
