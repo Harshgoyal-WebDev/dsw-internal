@@ -14,12 +14,12 @@ const SuccessStories = () => {
           <div className="w-full flex items-end justify-between max-md:flex-col max-md:items-start max-md:gap-[5vw] max-sm:gap-[10vw]">
             <div className="space-y-5 mt-10 w-[35%] max-md:w-full">
               <h2 className="text-60 w-[85%] headingAnim text-[#E8E8E8] max-md:w-[75%]">
-                View Our Success Stories
+                Trusted by Leaders in BFSI and Beyond​
               </h2>
               <Copy>
                 <p className=" text-[#CACACA] leading-[1.5]">
-                  Explore how we&apos;ve helped businesses like yours achieve
-                  success with innovative technology solutions.
+                  Explore how we’ve helped businesses like yours achieve success
+                  with innovative technology solutions.
                 </p>
               </Copy>
             </div>
@@ -30,7 +30,7 @@ const SuccessStories = () => {
 
           <div className="w-full h-full grid grid-cols-3  gap-y-[1.2vw] gap-x-[1vw] mt-[5vw] max-md:mt-[10vw] max-md:grid-cols-1 max-md:gap-x-[3vw] max-md:gap-y-[3vw] max-sm:gap-y-[5vw]">
             <LinkCard
-              title={"80% faster model deployment with CI/CD automation"}
+              title={"Canara HSBC achieves faster deployment on persistency prediction and customer retention"}
               link={"#"}
               width={"w-[85%] max-md:w-[80%] max-sm:w-[90%]"}
             />
@@ -58,9 +58,9 @@ const SuccessStories = () => {
               designation={"Director, OxSDE, Europe ​"}
             />
             <LinkCard
-              title={"90% Drop in Manual Effort​"}
+              title={"Customers In Production – Canara HSBC, Manipal Cigna, Mahindra, Castler, ​Wealthright, FSS"}
               link={"#"}
-              width={"w-[50%] max-md:w-[80%] max-sm:w-[50%]"}
+              width={"w-[80%] max-md:w-[80%] max-sm:w-[50%]"}
             />
 
             <TestimonialCard
@@ -72,9 +72,9 @@ const SuccessStories = () => {
               designation={"Chief Product Officer Castler​"}
             />
             <LinkCard
-              title={"3x faster time-to-production"}
+              title={"Manipal Health Cigna in production with over 5 use cases of AI/ML and GenAI"}
               link={"#"}
-              width={"w-[50%] max-md:w-[80%] max-sm:w-[50%]"}
+              width={"w-[80%] max-md:w-[80%] max-sm:w-[60%]"}
             />
             <ImageCard
               img={"/assets/images/homepage/success-stories/success-img.png"}

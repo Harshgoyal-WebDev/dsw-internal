@@ -15,6 +15,7 @@ import { homepage } from "@/lib/util";
 import { getPageMetadata } from "@/config/metadata";
 import Hero from "@/components/Common/Hero";
 import UnifyTour from "@/components/UnifyPage/UnifyTour";
+import UnifyTable from "@/components/UnifyPage/UnifyTable";
 
 export const metadata = getPageMetadata({
   title: "UnifyAI - Operating System for Enterprise AI",
@@ -54,7 +55,9 @@ export default function page() {
         <PresentationLayer />
         <Diagram />
         <Impact />
-        <OnePlatform />
+        {/* <OnePlatform /> */}
+        <UnifyTable />
+
         <SuccessStories />
         <Faqs data={faqData} />
         <FooterCTA

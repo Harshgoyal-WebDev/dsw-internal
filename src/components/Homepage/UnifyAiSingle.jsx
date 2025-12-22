@@ -19,6 +19,7 @@ const UnifyAiSingle = () => {
           start: "top 40%",
           end: "90% 40%",
           scrub: true,
+          
         },
       });
       // existing title animations
@@ -152,11 +153,11 @@ const UnifyAiSingle = () => {
       {/* remove Tailwind gradient utilities here; keep only layout classes */}
       <div className="w-full h-screen sticky top-0 flex justify-center items-center unifyblock max-md:overflow-hidden">
         <h2 className="text-[6vw] unify-title text-[#f8f8f8] max-md:text-[8vw]">
-          Powered by DSW UnifyAI
+          Two Powerful Platforms
         </h2>
       </div>
 
-      <div className="w-screen h-fit absolute bottom-0 flex flex-col py-[15%] items-center gap-[3.5vw] max-md:px-[7vw] max-md:gap-[8vw]">
+      {/* <div className="w-screen h-fit absolute bottom-0 flex flex-col py-[15%] items-center gap-[3.5vw] max-md:px-[7vw] max-md:gap-[8vw]">
         <h2 className="text-90 text-primary-1 headingAnim max-md:text-center">
           One Platform. Infinite Possibilities.
         </h2>
@@ -180,7 +181,7 @@ const UnifyAiSingle = () => {
             }}
           />
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

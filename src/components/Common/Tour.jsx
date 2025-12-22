@@ -6,7 +6,7 @@ import PrimaryButton from "../Button/PrimaryButton";
 import Copy from "../Animations/Copy";
 import { useModal } from "./ModalProvider";
 
-const Tour = ({ heading, para }) => {
+const Tour = ({ heading, para, btnText }) => {
   const [activeTab, setActiveTab] = useState("unifyAI");
   const { openModal } = useModal();
 
@@ -108,11 +108,11 @@ const Tour = ({ heading, para }) => {
   return (
     <section className="w-screen h-fit container" id="tour">
       <div className="w-full flex flex-col gap-[2vw] items-center max-md:gap-[4vw]">
-        <h2 className="text-60 headingAnim w-[40%] max-md:w-full text-center">
+        <h2 className="text-60 headingAnim w-[40%] max-md:w-full text-center tour-heading">
           {heading}
         </h2>
         <Copy>
-          <p className="text-[#CACACA] text-center">{para}</p>
+          <p className="text-[#CACACA] text-center tour-para">{para}</p>
         </Copy>
 
         {/* Tab Switcher */}
@@ -157,7 +157,7 @@ const Tour = ({ heading, para }) => {
         {/* Content Containers */}
         <div
           ref={containersWrapRef}
-          className="w-[80%] h-[35vw] relative fadeup mt-[5vw] max-sm:w-full max-sm:h-[60vw] max-md:h-[40vw] max-md:w-full max-sm:mt-[12vw] rounded-lg overflow-hidden"
+          className="w-[85%] h-[35vw] relative fadeup mt-[5vw] max-sm:w-full max-sm:h-[60vw] max-md:h-[40vw] max-md:w-full max-sm:mt-[12vw] rounded-lg overflow-hidden"
         >
           {activeTab === "unifyAI" && (
             <div
@@ -166,7 +166,7 @@ const Tour = ({ heading, para }) => {
               style={{ opacity: 0, transform: "scale(0.9)" }}
             >
               <Image
-                src={"/assets/images/homepage/tour-img.png"}
+                src={"/assets/images/homepage/tour2.png"}
                 alt="UnifyAI tour image"
                 fetchPriority="high"
                 className="w-full h-full object-cover"
@@ -184,7 +184,7 @@ const Tour = ({ heading, para }) => {
             className={`absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-[20] tourbtnfade max-sm:w-full max-sm:left-[65%]`}
           >
             <PrimaryButton
-              text={"Start Walkthrough"}
+              text={btnText || "Start Walkthrough"}
               className=""
               href={"#"}
                onClick={(e) => {

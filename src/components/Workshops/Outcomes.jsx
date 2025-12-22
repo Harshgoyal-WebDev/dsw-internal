@@ -5,9 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Copy from "../Animations/Copy";
 gsap.registerPlugin(ScrollTrigger);
 
-
-
-export default function Outcomes({outcomesData}) {
+export default function Outcomes({ outcomesData, showDescription = true , marginTop = "mt-[0vw]"}) {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -57,22 +55,26 @@ export default function Outcomes({outcomesData}) {
   }, []);
 
   return (
-    <section className="w-screen container background-radial" id="about">
+    <section className={`w-screen container background-radial ${marginTop}`} id="about">
       <div className="w-full flex flex-col items-center justify-center gap-y-[5vw] max-md:gap-y-[15vw]">
-        <div className="mx-auto w-[55%] max-md:w-full space-y-[4vw] max-md:space-y-[5vw]">
-          <h2 className="text-60 headingAnim text-white-200 max-md:text-center w-[90%] max-md:w-full">
+        <div className={`mx-auto ${outcomesData.headingWidth ? outcomesData.headingWidth : "w-[55%] max-md:w-full"} space-y-[4vw] max-md:space-y-[5vw]`}>
+          <h2 className={`text-60 headingAnim text-white-200 max-md:text-center  ${outcomesData.headingCenter ? "text-center" : ""}`}>
             {outcomesData.heading}
           </h2>
-          <div className="space-y-[1vw] max-sm:space-y-[7vw]">
-          <Copy>
-            <p className="text-white-300 max-md:text-center">
-            {outcomesData.para}
-            </p>
-          </Copy>
-          <Copy>
-            <p className="text-white-300 max-md:text-center max-md:w-full">{outcomesData.para2}</p>
-          </Copy>
-          </div>
+          {showDescription && (
+            <div className="space-y-[1vw] max-sm:space-y-[7vw]">
+              <Copy>
+                <p className="text-white-300 max-md:text-center">
+                  {outcomesData.para}
+                </p>
+              </Copy>
+              <Copy>
+                <p className="text-white-300 max-md:text-center max-md:w-full">
+                  {outcomesData.para2}
+                </p>
+              </Copy>
+            </div>
+          )}
         </div>
 
         <div className="flex flex-col items-center gap-[4vw] max-md:w-full max-md:gap-[15vw]">

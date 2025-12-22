@@ -3,12 +3,14 @@ import Image from "next/image";
 import React from "react";
 
 
-export default function Clients() {
+export default function Clients({showHeading = true}) {
   return (
-    <section id="clients" className="container h-fit space-y-[5vw] w-full overflow-hidden">
-      <h2 className="w-full text-center headingAnim text-60">
-        Memberships & Community Partners
-      </h2>
+    <section id="clients" className={`container ${showHeading ? 'mt-[0vw]' : 'mt-[-8vw]'} h-fit space-y-[5vw] w-full overflow-hidden`}>
+      {showHeading && (
+        <h2 className="w-full text-center headingAnim text-60">
+          Memberships & Community Partners
+        </h2>
+      )}
       <div className="flex items-start fadeup justify-start clients-marquee  gap-[3vw]">
         <div className="flex items-start justify-start gap-[5vw] clients-marquee__track">
           {clientData.map((client, index) => (
