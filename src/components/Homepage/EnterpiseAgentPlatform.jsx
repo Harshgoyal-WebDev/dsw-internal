@@ -288,7 +288,7 @@ const EnterpiseAgentPlatform = () => {
       }
     );
     tl.fromTo(
-      ".tour-heading, #enterpriseAgentPlatform p ",
+      ".tour-heading, #enterpriseAgentPlatform ",
       {
         color: "#111111",
       },
@@ -298,9 +298,9 @@ const EnterpiseAgentPlatform = () => {
       "<"
     );
     tl.fromTo(
-      ".tour-para, #enterpriseAgentPlatform p",
+      ".tour-para, #enterpriseAgentPlatform .btncomp",
       {
-        color: "#111111",
+        color: "#1626fd",
       },
       {
         color: "#e8e8e8",
@@ -472,7 +472,7 @@ const EnterpiseAgentPlatform = () => {
                   circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
                   text="Explore AgenticAI"
                   href="/production-pilot"
-                  className="hover:text-primary-1 text-primary-1 "
+                  className="hover:text-primary-1 btncomp text-primary-1 "
                 />
               </div>
 
@@ -492,7 +492,7 @@ const EnterpiseAgentPlatform = () => {
                   circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
                   text="Explore AgenticAI"
                   href="/production-pilot"
-                  className="hover:text-primary-1 text-primary-1"
+                  className="hover:text-primary-1 btncomp text-primary-1"
                 />
               </div>
 
@@ -512,7 +512,7 @@ const EnterpiseAgentPlatform = () => {
                   circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
                   text="Explore AgenticAI"
                   href="/production-pilot"
-                  className="hover:text-primary-1 text-primary-1"
+                  className="hover:text-primary-1 btncomp text-primary-1"
                 />
               </div>
 
@@ -532,7 +532,7 @@ const EnterpiseAgentPlatform = () => {
                   circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
                   text="Explore AgenticAI"
                   href="/production-pilot"
-                  className="hover:text-primary-1 text-primary-1"
+                  className="hover:text-primary-1 btncomp text-primary-1"
                 />
               </div>
             </div>

@@ -16,25 +16,25 @@ const data = [
     list: "Deploy agents fast",
     title: "Deploy agents fast",
     para: "Launch production-grade agents, tasks, and workflows in hours.",
-    link: "/unifyAi",
+    link: "/production-pilot",
   },
   {
     list: "Advanced RAG pipelines",
     title: "Advanced RAG pipelines",
     para: "Build high-accuracy retrieval workflows with evaluation and controls.",
-    link: "/unifyAi",
+    link: "/production-pilot",
   },
   {
     list: "Agent orchestration",
     title: "Agent orchestration",
     para: "Coordinate multi-agent plans, A2A collaboration, and enterprise workflows.",
-    link: "/unifyAi",
+    link: "/production-pilot",
   },
   {
     list: "Governed intelligence",
     title: "Governed intelligence",
     para: "Runtime guardrails, audit trails, and native human-in-the-loop oversight.",
-    link: "/unifyAi",
+    link: "/production-pilot",
   },
 ];
 
@@ -226,7 +226,7 @@ function Accordion({ title, para, link, isOpen, onToggle }) {
                     background="border-primary-2 border bg-transparent hover:bg-transparent"
                     circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
                     text="Know More"
-                    href="/unifyai"
+                    href="/production-pilot"
                     className="hover:text-primary-2 text-primary-2"
                   />
                 </div>

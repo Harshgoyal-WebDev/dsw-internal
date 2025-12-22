@@ -419,7 +419,7 @@ const EnterpriseAIPlatform = () => {
                   circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
                   text="Explore UnifyAI"
                   href="/unifyai"
-                  className="hover:text-primary-1 text-primary-1 "
+                  className="hover:text-primary-1  text-primary-1 "
                 />
               </div>
 
@@ -438,7 +438,7 @@ const EnterpriseAIPlatform = () => {
                   circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
                   text="Explore UnifyAI"
                   href="/unifyai"
-                  className="hover:text-primary-1 text-primary-1"
+                  className="hover:text-primary-1 btncom text-primary-1"
                 />
               </div>
 
@@ -457,7 +457,7 @@ const EnterpriseAIPlatform = () => {
                   circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
                   text="Explore UnifyAI"
                   href="/unifyai"
-                  className="hover:text-primary-1 text-primary-1"
+                  className="hover:text-primary-1  text-primary-1"
                 />
               </div>
 
@@ -476,7 +476,7 @@ const EnterpriseAIPlatform = () => {
                   circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
                   text="Explore UnifyAI"
                   href="/unifyai"
-                  className="hover:text-primary-1 text-primary-1"
+                  className="hover:text-primary-1  text-primary-1"
                 />
               </div>
             </div>
