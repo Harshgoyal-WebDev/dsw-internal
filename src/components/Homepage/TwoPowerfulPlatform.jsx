@@ -27,17 +27,17 @@ export default function TwoPowerfulPlatform() {
         />
             <div className="w-[15vw] h-auto relative z-10 max-md:w-[25vw]">
               <Image
-                className="h-full w-full object-contain"
+                className="h-full w-full object-contain transition-all duration-500" 
                 src={activeCard === 'enterprise' ? "/assets/icons/dswUnifyWhite.png" : "/assets/icons/dswUnifyBlue.png"}
                 alt="enterprise-ai-platform"
                 width={150}
                 height={60}
               />
             </div>
-            <h3 className={`text-40 ${activeCard === 'enterprise' ? 'text-white' : 'text-primary-1'} relative z-10 max-md:text-[6vw]`}>
+            <h3 className={`text-40 ${activeCard === 'enterprise' ? 'text-white' : 'text-background'} relative z-10 w-[60%] max-sm:w-full max-md:text-[6vw]`}>
               The Enterprise AI Platform
             </h3>
-            <p className={`w-[100%] ${activeCard === 'enterprise' ? 'text-white' : 'text-primary-1'} relative z-10 max-md:text-[4vw]`}>
+            <p className={`w-[100%] ${activeCard === 'enterprise' ? 'text-white' : 'text-background'} relative z-10 max-md:text-[4vw]`}>
               Your foundation for building, governing, and scaling AI/ML + GenAI
               across the enterprise.
             </p>
@@ -54,17 +54,17 @@ export default function TwoPowerfulPlatform() {
         />
             <div className="w-[15vw] h-auto relative z-10 max-md:w-[25vw]">
               <Image
-                className="h-full w-full object-contain"
-                src={activeCard === 'agentic' ? "/assets/icons/dswAgencticWhiteTheme.png" : "/assets/icons/dswAgencticBlueTheme.png"}
+                className="h-full w-full object-contain transition-all duration-500" 
+                src={activeCard === 'agentic' ? "/assets/icons/dswAgenticWhite.png" : "/assets/icons/dswAgencticBlueTheme.png"}
                 alt="enterprise-ai-platform"
                 width={150}
                 height={60}
               />
             </div>
-                <h3 className={`text-40 ${activeCard === 'agentic' ? 'text-white' : 'text-primary-1'} relative z-10 max-md:text-[6vw]`}>
+                <h3 className={`text-40 ${activeCard === 'agentic' ? 'text-white' : 'text-background'} relative z-10 max-md:text-[6vw]`}>
               The Enterprise Agentic AI Platform
             </h3>
-            <p className={`w-[100%] ${activeCard === 'agentic' ? 'text-white' : 'text-primary-1'} relative z-10 max-md:text-[4vw]`}>
+            <p className={`w-[100%] ${activeCard === 'agentic' ? 'text-white' : 'text-background'} relative z-10 max-md:text-[4vw]`}>
               Deploy GenAI agents, multi-agent workflows, and A2A orchestration
               in hours with full auditability.
             </p>
