@@ -257,8 +257,8 @@ const heroData = {
 };
 
 const footerCTAData = {
-  heading: "Take a lightning tour of the Enterprise AI Platform ",
-  para: "Discover how UnifyAI can accelerate your AI/ML and GenAI initiatives with seamless deployment, scalability, and security.",
+  heading: "AI Isn’t About Just Use Cases. It’s About a Smarter System. ​ ",
+  para: "Where every model, agent, workflow, and decision runs under unified governance.​",
   book: true,
   btnText1: "Book a Demo",
   book: true,
