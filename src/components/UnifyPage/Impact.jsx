@@ -9,25 +9,25 @@ const POINTS = [
   {
     id: "01",
     title: "Connect",
-    text: "Integrate data pipelines, APIs, and enterprise systems ",
+    text: "Integrate data pipelines, APIs, and enterprise systems",
     width: "w-full",
   },
   {
     id: "02",
     title: "Configure",
-    text: "Build or select from pre-designed model/agent blueprints ",
+    text: "Build or select from pre-designed model/agent blueprints",
     width: "w-full",
   },
   {
     id: "03",
     title: "Deploy",
-    text: "Launch with production-grade infrastructure, fast ",
+    text: "Launch with production-grade infrastructure, fast",
     width: "w-full",
   },
   {
     id: "04",
     title: "Govern",
-    text: "Monitor usage, ensure compliance, and scale on demand ",
+    text: "Monitor usage, ensure compliance, and scale on demand",
     width: "w-[60%] max-md:w-full",
   },
 ];
@@ -86,11 +86,11 @@ export default function Impact() {
       <div className="w-full flex flex-col items-center justify-center gap-y-[5vw] max-md:gap-[10vw] max-sm:gap-y-[15vw]">
         <div className="text-center space-y-[2vw] max-md:space-y-[5vw]">
           <h2 className="text-50 headingAnim text-white-200 max-md:text-center">
-            From Idea to Impact  
+            Accelerate AI/ML Into Production with Enterprise Confidence
           </h2>
           <Copy>
             <p className="text-white-300">
-              Here’s how UnifyAI gets you from build to business outcomes
+              UnifyAI gives you a complete, ready-to-run path to enterprise AI/ML.
             </p>
           </Copy>
         </div>

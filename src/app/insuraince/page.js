@@ -1,5 +1,5 @@
 
-import About  from "@/components/Insuraince/About";
+import About from "@/components/Insuraince/About";
 import Features from "@/components/Insuraince/Features";
 import Capabilities from "@/components/Insuraince/Capabilities";
 import Results from "@/components/Insuraince/Results";
@@ -45,54 +45,52 @@ export const metadata = getPageMetadata({
 export default function Home() {
   return (
     <>
-     <WebpageJsonLd metadata={metadata}/>
-     <FAQJSONLD faqs={faqData}/>
+      <WebpageJsonLd metadata={metadata} />
+      <FAQJSONLD faqs={faqData} />
       <Layout>
-      <Hero heroData={heroData}/>
-      <About />
-      <Features />
-      <Capabilities />
-      <Results />
-      <SuccessStories />
-      <PlatformCapabilities />
-      <Outcomes />
-      <Efficiency />
-      <CustomerQuotes />
-      <FutureScope />
-      <Faqs data={faqData}/>
-      <FooterCTA footerCTAData={footerCTAData} paraWidth={"w-[85%]"}/>
+        <Hero heroData={heroData} />
+        <About />
+        <Features />
+        <Capabilities />
+        <Results />
+        <SuccessStories />
+        <PlatformCapabilities />
+        <Outcomes />
+        <Efficiency />
+        <CustomerQuotes />
+        <FutureScope />
+        <Faqs data={faqData} />
+        <FooterCTA footerCTAData={footerCTAData} paraWidth={"w-[85%]"} />
       </Layout>
     </>
   );
 }
 
-const heroData= {
-  heading:" Enterprise AI Platform for Insurance",
-  img:"/assets/images/insuraince/insuraince-new.png",
+const heroData = {
+  heading: "Deploy Insurance AI in Days. Scale Agentic AI in Hours.",
+  // img:"/assets/images/insuraince/insuraince-new.png",
   // subheading:"Purpose-Built, Proven, and Production-Ready.",
-  para:"Purpose-Built, Proven, and Production-Ready. insurAInce is the enterprise AI platform designed for insurers to build GenAI agents in hours, deploy AI use cases in days, and scale confidently with compliance, speed, and accuracy – all through your policy lifecycle.​",
-  paraClass:"w-[90%]",
-  link1:"/unifyai",
-  btnText1:"Start Walkthrough",
-  link2:"https://calendly.com/",
-  btnText2:"Schedule a Call",
-  target:true,
-  walkthrough:true,
-  homepage:false,
-  headingWidth:"w-[80%]"
+  para: "Purpose-built and production-proven. Drive speed and accuracy across the insurance value chain with an AI solution designed for rigorous compliance.",
+  paraClass: "w-[90%]",
+  link1: "/contact-us",
+  btnText1: "Book a Demo",
+  target: true,
+  book: true,
+  homepage: false,
+  headingWidth: "w-[80%]"
 }
 
-const footerCTAData={
-  heading:"Ready to Launch GenAI in few Hours? AI/ML Use Cases in 30 Days? ",
-  para:"Let’s transform your insurance business with real AI. From claims to fraud to underwriting, insurAInce helps you deploy AI with speed, security, and impact. ",
-  btnText1:"Book a Demo",
-  btnLink1:"/#",
-  btnText2:"Schedule a Call",
-  btnLink2:"https://calendly.com/",
-  book:true,
-  target:true,
-  img1:"/assets/images/footer/image-1.png",
-  img2:"/assets/images/footer/image-2.png"
+const footerCTAData = {
+  heading: "Ready to Launch GenAI in few Hours? AI/ML Use Cases in 30 Days? ",
+  para: "Let’s transform your insurance business with real AI. From claims to fraud to underwriting, insurAInce helps you deploy AI with speed, security, and impact. ",
+  btnText1: "Book a Demo",
+  btnLink1: "#",
+  btnText2: "Schedule a Call",
+  btnLink2: "https://calendly.com/",
+  book: true,
+  target: true,
+  img1: "/assets/images/footer/image-1.png",
+  img2: "/assets/images/footer/image-2.png"
 }
 const faqData = [
   {

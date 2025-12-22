@@ -247,9 +247,8 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
     >
       <div className="flex flex-col items-center justify-start w-full h-full pt-[30vh] relative z-[12] max-md:pt-[15vh]  content-container">
         <div
-          className={`text-center space-y-6 pb-5 max-md:w-[100%] max-md:space-y-[7vw] ${
-            heroData.headingWidth || "w-[70%]"
-          }`}
+          className={`text-center space-y-6 pb-5 max-md:w-[100%] max-md:space-y-[7vw] ${heroData.headingWidth || "w-[70%]"
+            }`}
         >
           <h1
             ref={headingRef}
@@ -287,18 +286,16 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
 
           <p
             ref={paraRef}
-            className={`text-[#CACACA] font-head mx-auto overflow-hidden  ${
-              heroData.paraClass ? heroData.paraClass : "w-full"
-            }`}
+            className={`text-[#CACACA] font-head mx-auto overflow-hidden  ${heroData.paraClass ? heroData.paraClass : "w-full"
+              }`}
           >
             {heroData.para}
           </p>
 
           <div
             ref={btnsRef}
-            className={`flex items-center justify-center gap-6 mt-10 max-md:flex-col max-sm:gap-[5vw]  ${
-              heroData.hidebtn ? "hidden" : "flex"
-            }`}
+            className={`flex items-center justify-center gap-6 mt-10 max-md:flex-col max-sm:gap-[5vw]  ${heroData.hidebtn ? "hidden" : "flex"
+              }`}
           >
             {/* Primary */}
             <div className="ctaBtn">
@@ -323,14 +320,16 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
             </div>
 
             {/* Secondary / White */}
-            <div className="ctaBtn">
-              <WhiteButton
-                target={heroData.target ? "_blank" : ""}
-                href={heroData.link2 || "#"}
-                text={heroData.btnText2}
-                className="max-md:min-w-[20vw] max-sm:min-w-[55vw]"
-              />
-            </div>
+            {heroData.btnText2 && (
+              <div className="ctaBtn">
+                <WhiteButton
+                  target={heroData.target ? "_blank" : ""}
+                  href={heroData.link2 || "#"}
+                  text={heroData.btnText2}
+                  className="max-md:min-w-[20vw] max-sm:min-w-[55vw]"
+                />
+              </div>
+            )}
           </div>
         </div>
       </div>
