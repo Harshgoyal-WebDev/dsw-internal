@@ -90,7 +90,7 @@ const SwiperCard = ({ usecase, onHover, isActive, space }) => {
   return (
     <>
       <div
-        className="relative py-[3vw] background-glass max-md:py-[8vw] min-h-[75vh] max-md:px-[8vw] rounded-[2vw] overflow-hidden w-[28vw] px-[3vw] h-fit max-md:min-h-[60vh] max-sm:min-h-[70vh] max-md:h-fit max-md:w-full max-md:rounded-[4vw] max-sm:rounded-[6vw] border group border-white/20 group cursor-grab "
+        className="relative py-[1vw] pt-[2.5vw] background-glass max-md:py-[8vw] min-h-[63vh] max-md:px-[8vw] rounded-[2vw] overflow-hidden w-[30vw] px-[3vw] h-fit max-md:min-h-[60vh] max-sm:min-h-[70vh] max-md:h-fit max-md:w-full max-md:rounded-[4vw] max-sm:rounded-[6vw] border group border-white/20 group cursor-grab "
         onMouseEnter={onHover}
       >
          <div
@@ -98,7 +98,7 @@ const SwiperCard = ({ usecase, onHover, isActive, space }) => {
             isActive ? "opacity-100" : "opacity-0"
           }`}
         />
-        <div className={`h-[5vw] relative z-[10]  w-[5vw] max-sm:mb-[6vw] mb-[2vw] ${isActive ? "text-white" : "text-primary-1"} max-md:h-[20vw] max-md:w-[20vw]`}>
+        <div className={`h-[4vw] relative z-[10]  w-[4vw] max-sm:mb-[6vw] mb-[2vw] ${isActive ? "text-white" : "text-primary-1"} max-md:h-[20vw] max-md:w-[20vw]`}>
             {usecase.icon}
         </div>
 
@@ -150,7 +150,7 @@ const IntelligentUseCases = ({ sessionsData }) => {
             Intelligent AI Use Cases Across BFSI and Beyond
           </h2>
           <Copy>
-            <p className="text-[#CACACA] w-[90%] leading-[1.4] max-md:w-[92%] max-sm:w-full">
+            <p className="text-[#CACACA] w-[95%] leading-[1.4] max-md:w-[92%] max-sm:w-full">
               From BFSI to telecom, retail, healthcare, and more - unlock AI and
               Agentic AI use cases that enhance decisions, streamline
               operations, and deliver measurable business value.
@@ -182,11 +182,11 @@ const IntelligentUseCases = ({ sessionsData }) => {
                 spaceBetween: 30,
               },
               1025: {
-                slidesPerView: 1.8,
+                slidesPerView: 1.7,
                 spaceBetween: 15,
               },
               1440: {
-                slidesPerView: 1.8,
+                slidesPerView: 1.7,
                 spaceBetween: 15,
               },
             }}

@@ -40,11 +40,11 @@ export default function NextAIInitiative() {
           with governance, monitoring, and measurable KPIs.
         </p>
       </Copy>
-      <div className="flex items-center justify-center gap-[2vw] max-md:flex-col max-md:gap-[4vw] max-md:w-full">
-        <PrimaryButton text="Try our Production Pilot Program " href="#" />
-        <WhiteButton text="Talk to our Solutions Team " href="#" />
+      <div className="flex items-center justify-center gap-[2vw] max-md:flex-col max-md:gap-[4vw] max-md:w-full fadeup">
+        <PrimaryButton text="Try our Production Pilot Program " href="/production-pilot" />
+        <WhiteButton text="Talk to our Solutions Team " href="/contact-us" />
       </div>
-      <div className="flex items-center mt-[5vw] max-md:mt-[10vw] justify-center gap-[.2vw] max-md:flex-col max-md:gap-[4vw]">
+      <div className="flex items-center mt-[5vw] max-md:mt-[10vw] justify-center gap-[.2vw] max-md:flex-col max-md:gap-[4vw] fadeup">
         {steps.map((step, index) => (
           <React.Fragment key={index}>
             <div
@@ -53,13 +53,13 @@ export default function NextAIInitiative() {
               onMouseLeave={() => setHoveredIndex(index)}
             >
               <div
-                className={`absolute inset-0 bg-gradient-to-r from-light-blue to-dark-blue transition-opacity ease-in-out duration-500 ${
+                className={`absolute inset-0 bg-gradient-to-r from-light-blue to-dark-blue transition-opacity ease-in duration-500 ${
                   step.gradient || hoveredIndex === index
                     ? "opacity-100"
                     : "opacity-0"
                 }`}
               />
-                <div className={`w-[5vw] max-md:w-[15vw] h-auto relative z-[2] ${step.gradient || hoveredIndex === index ? 'text-white' : 'text-primary-1'} flex items-center justify-center`}>
+                <div className={`w-[5vw] max-md:w-[15vw] h-auto relative z-[2] transition-all duration-500 ease-in-out ${step.gradient || hoveredIndex === index ? 'text-white' : 'text-primary-1'} flex items-center justify-center`}>
                   {step.icon}
               </div>
               <p className="w-[100%] relative z-[2] max-md:text-[3.5vw]">{step.text}</p>

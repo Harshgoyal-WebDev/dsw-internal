@@ -95,7 +95,7 @@ export default function Outcomes({ outcomesData, showDescription = true , margin
                   {title}
                 </p>
 
-                <p className="text-white-300 w-[90%] max-md:w-full">{text}</p>
+                <p className="text-white-300 w-[100%] max-md:w-full">{text}</p>
               </div>
             </div>
           ))}

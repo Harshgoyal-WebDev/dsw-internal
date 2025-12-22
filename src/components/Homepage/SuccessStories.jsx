@@ -30,9 +30,9 @@ const SuccessStories = () => {
 
           <div className="w-full h-full grid grid-cols-3  gap-y-[1.2vw] gap-x-[1vw] mt-[5vw] max-md:mt-[10vw] max-md:grid-cols-1 max-md:gap-x-[3vw] max-md:gap-y-[3vw] max-sm:gap-y-[5vw]">
             <LinkCard
-              title={"Canara HSBC achieves faster deployment on persistency prediction and customer retention"}
+              title={"Canara HSBC achieves <span class='text-primary-2'>faster deployment</span> on persistency prediction and customer retention"}
               link={"#"}
-              width={"w-[85%] max-md:w-[80%] max-sm:w-[90%]"}
+              width={"w-[80%] max-md:w-[80%] max-sm:w-[90%]"}
             />
             <ImageCard
               img={"/assets/images/homepage/success-stories/success-img.png"}
@@ -58,7 +58,7 @@ const SuccessStories = () => {
               designation={"Director, OxSDE, Europe ​"}
             />
             <LinkCard
-              title={"Customers In Production – Canara HSBC, Manipal Cigna, Mahindra, Castler, ​Wealthright, FSS"}
+              title={"<span class='text-primary-2'> Customers In Production </span> – Canara HSBC, Manipal Cigna, Mahindra, Castler, ​Wealthright, FSS"}
               link={"#"}
               width={"w-[80%] max-md:w-[80%] max-sm:w-[50%]"}
             />
@@ -72,9 +72,9 @@ const SuccessStories = () => {
               designation={"Chief Product Officer Castler​"}
             />
             <LinkCard
-              title={"Manipal Health Cigna in production with over 5 use cases of AI/ML and GenAI"}
+              title={"Manipal Health Cigna in production with <span class='text-primary-2'> over 5 use cases </span> of AI/ML and GenAI"}
               link={"#"}
-              width={"w-[80%] max-md:w-[80%] max-sm:w-[60%]"}
+              width={"w-[75%] max-md:w-[80%] max-sm:w-[60%]"}
             />
             <ImageCard
               img={"/assets/images/homepage/success-stories/success-img.png"}
@@ -96,9 +96,7 @@ const LinkCard = ({ title, link, width }) => {
           <div className="h-[20vw] group w-full background-glass  pl-[2.5vw] pr-[1.5vw] pb-[2.5vw] pt-[1.5vw] max-sm:h-[55vw] max-md:h-[50vw] max-sm:pl-[5vw]  max-md:px-[5vw] max-md:py-[5vw]  max-sm:pb-[5vw] max-sm:pr-[3vw] max-sm:pt-[3vw] ">
             <div className="h-full w-full flex z-[10] relative">
               <div className={`${width} flex items-end`}>
-                <p className="text-30 text-[#E8E8E8] font-head max-sm:text-[6vw]">
-                  {title}
-                </p>
+                <div className="text-30 text-[#E8E8E8] font-head max-sm:text-[6vw]" dangerouslySetInnerHTML={{__html:title}}/>
               </div>
 
               {/* <div className="flex-1 flex items-start justify-end">
