@@ -468,11 +468,11 @@ const EnterpiseAgentPlatform = () => {
                   hours.​
                 </p>
                 <WhiteButton
-                  background="border-primary-2 border bg-transparent hover:bg-transparent"
-                  circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
+                  background="border-primary-1 border bg-transparent hover:bg-transparent"
+                  circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
                   text="Explore AgenticAI"
-                  href="/unifyai"
-                  className="hover:text-primary-2 text-primary-2 "
+                  href="/production-pilot"
+                  className="hover:text-primary-1 text-primary-1 "
                 />
               </div>
 
@@ -488,11 +488,11 @@ const EnterpiseAgentPlatform = () => {
                   controls.
                 </p>
                 <WhiteButton
-                  background="border-primary-2 border bg-transparent hover:bg-transparent"
-                  circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
+                  background="border-primary-1 border bg-transparent hover:bg-transparent"
+                  circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
                   text="Explore AgenticAI"
-                  href="/unifyai"
-                  className="hover:text-primary-2 text-primary-2"
+                  href="/production-pilot"
+                  className="hover:text-primary-1 text-primary-1"
                 />
               </div>
 
@@ -508,11 +508,11 @@ const EnterpiseAgentPlatform = () => {
                   enterprise workflows.
                 </p>
                 <WhiteButton
-                  background="border-primary-2 border bg-transparent hover:bg-transparent"
-                  circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
+                  background="border-primary-1 border bg-transparent hover:bg-transparent"
+                  circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
                   text="Explore AgenticAI"
-                  href="/unifyai"
-                  className="hover:text-primary-2 text-primary-2"
+                  href="/production-pilot"
+                  className="hover:text-primary-1 text-primary-1"
                 />
               </div>
 
@@ -528,11 +528,11 @@ const EnterpiseAgentPlatform = () => {
                   oversight.
                 </p>
                 <WhiteButton
-                  background="border-primary-2 border bg-transparent hover:bg-transparent"
-                  circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
+                  background="border-primary-1 border bg-transparent hover:bg-transparent"
+                  circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
                   text="Explore AgenticAI"
-                  href="/unifyai"
-                  className="hover:text-primary-2 text-primary-2"
+                  href="/production-pilot"
+                  className="hover:text-primary-1 text-primary-1"
                 />
               </div>
             </div>

@@ -268,7 +268,7 @@ const EnterpriseAIPlatform = () => {
 
   return (
     <section
-      className="h-[400vh] w-screen relative bg-[#f8f8f8] z-[10] max-md:hidden header-dark"
+      className="h-[400vh] w-screen pt-[10vh] relative bg-[#f8f8f8] z-[10] max-md:hidden header-dark"
       ref={sectionRef}
       id="WhyUnify"
     >
@@ -415,11 +415,11 @@ const EnterpriseAIPlatform = () => {
                   Launch AI/ML use cases in under 30 days.​
                 </p>
                 <WhiteButton
-                  background="border-primary-2 border bg-transparent hover:bg-transparent"
-                  circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
+                  background="border-primary-1 border bg-transparent hover:bg-transparent"
+                  circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
                   text="Explore UnifyAI"
                   href="/unifyai"
-                  className="hover:text-primary-2 text-primary-2 "
+                  className="hover:text-primary-1 text-primary-1 "
                 />
               </div>
 
@@ -434,11 +434,11 @@ const EnterpriseAIPlatform = () => {
                   Train, version, test, monitor and deploy models on one click
                 </p>
                 <WhiteButton
-                  background="border-primary-2 border bg-transparent hover:bg-transparent"
-                  circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
+                  background="border-primary-1 border bg-transparent hover:bg-transparent"
+                  circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
                   text="Explore UnifyAI"
                   href="/unifyai"
-                  className="hover:text-primary-2 text-primary-2"
+                  className="hover:text-primary-1 text-primary-1"
                 />
               </div>
 
@@ -453,11 +453,11 @@ const EnterpriseAIPlatform = () => {
                   Drift detection, lineage and performance alerts built-in.
                 </p>
                 <WhiteButton
-                  background="border-primary-2 border bg-transparent hover:bg-transparent"
-                  circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
+                  background="border-primary-1 border bg-transparent hover:bg-transparent"
+                  circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
                   text="Explore UnifyAI"
                   href="/unifyai"
-                  className="hover:text-primary-2 text-primary-2"
+                  className="hover:text-primary-1 text-primary-1"
                 />
               </div>
 
@@ -472,11 +472,11 @@ const EnterpriseAIPlatform = () => {
                 Run anywhere. On-prem, cloud, hybrid, or air-gapped. 
                 </p>
                 <WhiteButton
-                  background="border-primary-2 border bg-transparent hover:bg-transparent"
-                  circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
+                  background="border-primary-1 border bg-transparent hover:bg-transparent"
+                  circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
                   text="Explore UnifyAI"
                   href="/unifyai"
-                  className="hover:text-primary-2 text-primary-2"
+                  className="hover:text-primary-1 text-primary-1"
                 />
               </div>
             </div>
