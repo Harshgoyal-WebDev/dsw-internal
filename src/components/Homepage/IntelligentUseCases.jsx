@@ -12,13 +12,14 @@ import ArrowButton from "../Button/ArrowButton";
 import Copy from "../Animations/Copy";
 import Link from "next/link";
 import { FastTrackMainIcon, FeatureCraftMainIcon, SupportAiIcon } from "../Icons";
+import { Banking, InsuranceSpecific, Telecom, ReatilIcon, ManufacturingIndustryIcon, HealthcareIcon } from "../Icons";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const usecases = [
   {
     id: 1,
-    icon: <FastTrackMainIcon />,
+    icon: <Banking />,
     title: "Banking and FS for AI and agentic intelligence",
     items: [
       "KYC/AML intelligence & continuous monitoring​",
@@ -30,7 +31,7 @@ const usecases = [
   },
   {
     id: 2,
-    icon: <FeatureCraftMainIcon />,
+    icon: <InsuranceSpecific />,
     title: "Insurance-specific for AI, GenAI, agentic workflows",
     items: [
       "Early claim fraud detection ​",
@@ -42,7 +43,7 @@ const usecases = [
   },
   {
     id: 3,
-    icon: <SupportAiIcon />,
+    icon: <Telecom />,
     title: "Telecom for network, customer, and field-ops intelligence",
     items: [
       "Predictive maintenance​",
@@ -53,7 +54,7 @@ const usecases = [
   },
   {
     id: 4,
-    icon: <FastTrackMainIcon />,
+    icon: <ReatilIcon />,
     title: "Retail & E-commerce for personalization, forecasting, and operational AI",
     items: [
       "Demand forecasting​",
@@ -64,7 +65,7 @@ const usecases = [
   },
   {
     id: 5,
-    icon: <FastTrackMainIcon />,
+    icon: <HealthcareIcon />,
     title: "Healthcare for clinical and operational decision intelligence",
     items: [
       "Clinical summarization​",
@@ -75,7 +76,7 @@ const usecases = [
   },
   {
     id: 6,
-    icon: <FastTrackMainIcon />,
+    icon: <ManufacturingIndustryIcon />,
     title: "Manufacturing & Industrial for predictive, preventive, and production intelligence",
     items: [
       "Predictive maintenance​",
@@ -98,7 +99,7 @@ const SwiperCard = ({ usecase, onHover, isActive, space }) => {
             isActive ? "opacity-100" : "opacity-0"
           }`}
         />
-        <div className={`h-[4vw] relative z-[10]  w-[4vw] max-sm:mb-[6vw] mb-[2vw] ${isActive ? "text-white" : "text-primary-1"} max-md:h-[20vw] max-md:w-[20vw]`}>
+        <div className={`!h-[4vw] relative z-[10]  !w-[4vw] max-sm:mb-[6vw] !mb-[2vw] ${isActive ? "text-white" : "text-primary-1"} max-md:h-[20vw] max-md:w-[20vw]`}>
             {usecase.icon}
         </div>
 
