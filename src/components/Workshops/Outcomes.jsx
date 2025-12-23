@@ -81,7 +81,7 @@ export default function Outcomes({ outcomesData, showDescription = true , margin
           {outcomesData.points.map(({ id, text, width, title }) => (
             <div
               key={id}
-              className="w-[60%] max-md:w-[100%] flex gap-[3.2vw] items-center about-item"
+              className="w-[60%] max-md:w-[100%] flex gap-[3.2vw] max-sm:gap-[6vw] items-center about-item"
             >
               <div className="w-[15%]  relative max-md:w-[30%]">
                 <div className="relative w-[6.5vw] h-[6.5vw] border border-primary-1 rounded-full flex items-center justify-center max-md:w-[18vw] max-md:h-[18vw]">
