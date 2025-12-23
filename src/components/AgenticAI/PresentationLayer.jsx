@@ -161,7 +161,7 @@ export default function AgenticAIDiagram() {
         ref={UnifyRef}
         className="w-full flex items-center justify-center bg-gradient-to-r from-white/0 to-white/4 border-white/20 max-md:py-[2vw] rounded-[2vw] max-md:rounded-[3vw] border"
       >
-        <div className="h-[2vw] max-md:w-[40vw] my-[1.5vw] w-auto">
+        <div className="h-[2vw] max-md:h-[5vw] my-[1.5vw] w-auto">
           <Image
             width={1000}
             height={100}
