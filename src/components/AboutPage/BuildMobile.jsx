@@ -12,53 +12,40 @@ const usecaseData = [
     {
       id: "001",
       title: "DSW UnifyAI ",
-      description:"An enterprise-grade AI platform that integrates data, models, agents, deployment, and governance in one seamless fabric. Build AI solutions in weeks and GenAI applications in hours. Operate with full observability, built-in guardrails, and policy control. Avoid vendor lock-in with flexible deployment options: on-premises, hybrid, or cloud. ",
+      description:"The enterprise AI platform that unifies data, models, agents, and deployment in one place. ​ UnifyAI accelerates the AI lifecycle, provides complete observability and governance, and supports flexible deployment across on-prem, hybrid, and cloud environments, a key requirement for BFSI and other regulated sectors.​",
       features: [
-        " UnifyAI",
-        "AgenticAI",
+        " Data Ingestion Toolkit with 300+ connectors inbuilt",
         "Feature Store",
-        "Prompt Hub",
-        "Guardrails",
-        "Model & Agent Monitoring",
+        "SmartEDA",
+        "Centralized Development IDE",
+        "Model Monitoring",
+        "Data and Model Lineage",
         "One-click Deployment",
-        "Multi-cloud & On-prem Support"
+        "On-prem",
+        "Cloud or Hybrid Setup "
       ],
       z:"z-[100]",
+      btnName:"Explore UnifyAI",
+      btnLink:"/unifyai"
     },
     {
       id: "002",
-      title: "DSW insurAInce ",
-      description:"A vertical AI solution built on DSW UnifyAI that accelerates innovation across underwriting, claims, fraud detection, and customer experience. Prebuilt workflows, domain-specific logic, and governance frameworks enable insurers to move confidently from pilot to production.",
-      // features: [
-      //   "UnifyAI",
-      //   "AgenticAI",
-      //   "Feature Store",
-      //   "Prompt Hub",
-      //   "Guardrails",
-      //   "Model & Agent Monitoring",
-      //   "One-click Deployment",
-      //   "Multi-cloud & On-prem Support"
-      // ],
+      title: "DSW AgenticAI",
+      description:"The platform for governed, explainable, and auditable enterprise AI agents. AgenticAI orchestrates agentic tasks and ML workflows across real enterprise systems, with human-in-the-loop oversight, strong governance, and enterprise-grade security. These capabilities are essential for high stakes decisioning in Insurance, Banking, and Financial Services",
+      features: [
+        "End to end Agent Builder with Knowledge Base",
+        "Memory, Prompt Hub",
+        "LLM Hub and Finetuning",
+        "Agent Monitoring",
+        "Multi-agent Orchestration",
+        "Workflow Builder",
+        "Advanced RAG Capabilities and Guardrails",
+        "In-built Security and AI Governance"
+      ],
       z:"z-[200]",
-    },
-    {
-      id: "003",
-      title: "BankAI & FSAI ",
-      description:"Expanding into Banking and Financial Services, our AI-driven platforms provide secure, scalable, and compliant solutions designed for lending, payments, risk management, and customer engagement - helping enterprises unlock value quickly and sustainably. <br/> <br/> With solutions grounded in deep domain expertise and cross-functional collaboration, we help our clients transform their industries with AI-powered precision.",
-      description2:"",
-      // features: [
-      //   " UnifyAI",
-      //   "AgenticAI",
-      //   "Feature Store",
-      //   "Prompt Hub",
-      //   "Guardrails",
-      //   "Model & Agent Monitoring",
-      //   "One-click Deployment",
-      //   "Multi-cloud & On-prem Support"
-      // ],
-      z:"z-[300]"
-    },
-   
+      btnName:"Explore AgenticAI",
+      btnLink:"/agentic-ai"
+    }
   ];
 
 export default function BuildMobile({ allowMultiple = false }) {
@@ -101,28 +88,18 @@ export default function BuildMobile({ allowMultiple = false }) {
             para={f.description}
             link={f.features}
             features={f.features}
+            btnLink={f.btnLink}
+            btnName={f.btnName}
             isOpen={openIndexes.includes(i)}
             onToggle={() => toggleIndex(i)}
           />
         ))}
       </div>
-      <div className="flex flex-col max-sm:gap-[7vw] max-md:gap-[4vw] max-sm:pt-[18vw] max-md:pt-[10vw]">
-
-      <div className="fadeup  ">
-        <PrimaryButton text={"Explore DSW UnifyAI"} href={"/unifyai"}/>
-      </div>
-      <div className="fadeup  ">
-        <PrimaryButton text={"Explore DSW AgenticAI"} href={"#"}/>
-      </div>
-      <div className="fadeup  ">
-        <PrimaryButton text={"Explore DSW insurAInce"} href={"/insuraince"}/>
-      </div>
-      </div>
     </section>
   );
 }
 
-function Accordion({ title, para, link, features, isOpen, onToggle, id }) {
+function Accordion({ title, para, link, features, isOpen, onToggle, id, btnName, btnLink }) {
   // console.log(features);
 
   return (
@@ -182,9 +159,12 @@ function Accordion({ title, para, link, features, isOpen, onToggle, id }) {
                         </li>
                       ))}
                   </ul>
-}
+                    }
                 </div>
               </div>
+              <div className="flex items-start justify-start pb-[7vw]">
+                 <PrimaryButton text={btnName} href={btnLink}/>
+                 </div>
             </motion.div>
           )}
         </AnimatePresence>

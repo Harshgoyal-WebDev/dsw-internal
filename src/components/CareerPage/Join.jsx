@@ -131,7 +131,7 @@ const Join = () => {
         </div>
         <div className="w-[70%] flex flex-col items-center gap-[3vw] text-center max-md:w-full max-md:gap-[8vw] max-md:text-left max-md:items-start">
           <Copy>
-            <h3 className="text-50 font-head">Join us. Build with purpose. Shape a future driven by research, collaboration, and care.</h3>
+            <h3 className="text-50 font-head">Join a deep-tech company shaping the future of enterprise AI. ​Build systems used by real enterprises, work across advanced AI and agent technologies, and contribute to solutions powering next-generation BFSI and multi-industry innovation. </h3>
           </Copy>
           <div className="fadeup">
             <PrimaryButton href="#" text={"See Open Roles"}/>

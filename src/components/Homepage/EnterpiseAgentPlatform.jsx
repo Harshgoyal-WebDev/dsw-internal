@@ -341,10 +341,8 @@ const EnterpiseAgentPlatform = () => {
               The Enterprise Agents Platform​
             </h2>
             <Copy>
-              <p className="text-background w-[70%] text-center">
-                Get governed, explainable, production-ready AI agents and
-                orchestrated multi-agent workflows - with full oversight and
-                operational control.​
+              <p className="text-background  text-center">
+                Get governed, explainable, production-ready AI agents and orchestrated <br/> multi-agent workflows - with full oversight and operational control.​
               </p>
             </Copy>
           </div>

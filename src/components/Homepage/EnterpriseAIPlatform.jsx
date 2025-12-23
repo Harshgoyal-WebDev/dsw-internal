@@ -289,10 +289,8 @@ const EnterpriseAIPlatform = () => {
               The Enterprise AI Platform
             </h3>
             <Copy>
-              <p className="text-background w-[68%] text-center">
-                Accelerate AI and ML across your business with end-to-end
-                lifecycle governance, observability, and deployment flexibility
-                - all in one operating layer.
+              <p className="text-background  text-center">
+                Accelerate AI and ML across your business with end-to-end lifecycle governance,<br/> observability, and deployment flexibility - all in one operating layer.
               </p>
             </Copy>
           </div>

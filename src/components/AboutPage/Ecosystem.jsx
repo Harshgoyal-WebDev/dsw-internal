@@ -132,13 +132,13 @@ const Ecosystem = () => {
         className="h-full w-screen container !py-[4vw] relative overflow-hidden"
       >
         <div className="w-full h-full  relative z-[2] space-y-[1.5vw] max-md:space-y-[8vw]">
-          <div className= " space-y-[3vw] ">
+          <div className= " flex items-center justify-center gap-[3vw] flex-col">
             <h2 className="text-90 headingAnim text-center max-md:text-left">
               Our Ecosystem
             </h2>
              <Copy>
-                <p className="text-white-300 text-center max-md:text-left">
-                 We are intentionally building an AI ecosystem that empowers collaboration and innovation. 
+                <p className="text-white-300 w-[40%] text-center max-md:w-full">
+                 We are intentionally building an AI ecosystem that empowers collaboration and innovation.  
                 </p>
               </Copy>
           </div>
@@ -160,7 +160,7 @@ const Ecosystem = () => {
           <div className="w-[80%] max-sm:w-[100%]">
               <Copy>
                 <p className="text-white-200 text-50 text-center  font-head max-md:text-left">
-                Our ecosystem is a collective effort, bringing together customers, partners, developers, and thought leaders to build solutions that deliver real-world impact. 
+                We collaborate with partners across infrastructure, talent, and technology to accelerate secure and responsible AI adoption. This includes initiatives focused on BFSI-grade readiness for AI-driven transformation. ​
                 </p>
               </Copy>
             </div>

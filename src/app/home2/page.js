@@ -31,6 +31,7 @@ import Clients from "@/components/AboutPage/Clients";
 import IntelligentUseCases from "@/components/Homepage/IntelligentUseCases";
 import EnterpriseAgentPlatformMobile from "@/components/Homepage/EnterpriseAgentPlatformMobile";
 import EnterpriseAIPlatformMobile from "@/components/Homepage/EnterpriseAIPlatformMobile";
+import Architecture from "@/components/Homepage/Architecture";
 const Brochure = dynamic(() => import("@/components/Homepage/Brochure"), {
   ssr: true,
 });
@@ -61,7 +62,6 @@ export default async function Home() {
         <RealOutcomes />
         <UnifyAiSingle />
         <TwoPowerfulPlatform />
-        
         <EnterpriseAIPlatform />
         <EnterpriseAIPlatformMobile />
         <EnterpiseAgentPlatform />
@@ -81,8 +81,8 @@ export default async function Home() {
         {/* <Connects /> */}
         {/* <Clients /> */}
         <IntelligentUseCases sessionsData={sessionsData} />
-
-        <div className="mt-[-20vh] max-sm:mt-0">
+         <Architecture/>
+        <div className=" max-sm:mt-0">
           <SuccessStories />
         </div>
         {/* <Faqs data={faqData} /> */}
@@ -247,9 +247,9 @@ const heroData = {
   headingWidth: "w-[80%]",
   para: " Production-ready platforms designed for intelligence, scale and real-world outcomes. ​",
   paraClass: "",
-  link1: "#tour",
+  link1: "/unifyai",
   btnText1: "DSW UnifyAI",
-  link2: "https://calendly.com/",
+  link2: "/agentic-ai",
   btnText2: "DSW AgenticAI ",
   homepage: true,
   walkthrough: true,

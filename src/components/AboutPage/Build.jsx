@@ -42,24 +42,21 @@ export default function CardStack2({ allowMultiple = false }) {
               title={f.title}
               description={f.description}
               features={f.features}
+              btnName={f.btnName}
+              btnLink={f.btnLink}
               isOpen={openIndexes.includes(i)}
               onToggle={() => toggleIndex(i)}
               z={f.z}
             />
           ))}
         </div>
-        <div className="fadeup flex w-full justify-evenly">
-        <PrimaryButton text={"Explore DSW UnifyAI"} href={"/unifyai"}/>
-        <PrimaryButton text={"Explore DSW AgenticAI"} href={"#"}/>
-        <PrimaryButton text={"Explore DSW insurAInce"} href={"/insuraince"}/>
-      </div>
       </div>
       
     </section>
   );
 }
 
-function AccordionItem({ title, description,features, isOpen, onToggle,index,z}) {
+function AccordionItem({ title, description,features, isOpen, onToggle,index,z,btnName,btnLink }) {
 
   return (
     <div className={`w-full group  overflow-hidden relative faq-tab accordion-block group  ${z} ${index>0 ? "mt-[-2vw] ":"mt-0"}`}>
@@ -84,6 +81,9 @@ function AccordionItem({ title, description,features, isOpen, onToggle,index,z})
               
               <div className={`w-[55%]  space-y-4  ${ isOpen ? "opacity-100 h-full" :"opacity-0 h-[15vh]"} `}>
               <div className="text-left" dangerouslySetInnerHTML={{__html:description}}/>
+              <div className="flex items-start">
+                <PrimaryButton text={btnName} href={btnLink}/>
+              </div>
               </div>
               </div>
 
@@ -123,7 +123,7 @@ function AccordionItem({ title, description,features, isOpen, onToggle,index,z})
                     <span className="bg-white w-[80%] h-[1px] absolute top-0 left-1/2 translate-x-[-50%]"></span>
                   <div className="py-[3.5vw] text-[#CACACA] w-[90%] ">
                     {features &&
-                    <ul className={`ml-[9vw] list-disc flex flex-wrap gap-x-[5vw] gap-y-[3vw] pb-[7vw]`}>
+                    <ul className={`ml-[9vw] list-disc flex flex-wrap gap-x-[3vw] gap-y-[2vw] pb-[5vw]`}>
                         {features.map((item,index)=>(
                             <li key={index} className="flex items-center gap-[0.5vw]">
                                 <span className="rounded-full bg-white h-[0.3vw] w-[0.3vw] mr-[0.8vw]"></span>
@@ -148,51 +148,38 @@ function AccordionItem({ title, description,features, isOpen, onToggle,index,z})
     {
       id: "001",
       title: "DSW UnifyAI ",
-      description:"An enterprise-grade AI platform that integrates data, models, agents, deployment, and governance in one seamless fabric. Build AI solutions in weeks and GenAI applications in hours. Operate with full observability, built-in guardrails, and policy control. Avoid vendor lock-in with flexible deployment options: on-premises, hybrid, or cloud. ",
+      description:"The enterprise AI platform that unifies data, models, agents, and deployment in one place. ​ UnifyAI accelerates the AI lifecycle, provides complete observability and governance, and supports flexible deployment across on-prem, hybrid, and cloud environments, a key requirement for BFSI and other regulated sectors.​",
       features: [
-        " UnifyAI",
-        "AgenticAI",
+        " Data Ingestion Toolkit with 300+ connectors inbuilt",
         "Feature Store",
-        "Prompt Hub",
-        "Guardrails",
-        "Model & Agent Monitoring",
+        "SmartEDA",
+        "Centralized Development IDE",
+        "Model Monitoring",
+        "Data and Model Lineage",
         "One-click Deployment",
-        "Multi-cloud & On-prem Support"
+        "On-prem",
+        "Cloud or Hybrid Setup "
       ],
       z:"z-[100]",
+      btnName:"Explore UnifyAI",
+      btnLink:"/unifyai"
     },
     {
       id: "002",
-      title: "DSW insurAInce ",
-      description:"A vertical AI solution built on DSW UnifyAI that accelerates innovation across underwriting, claims, fraud detection, and customer experience. Prebuilt workflows, domain-specific logic, and governance frameworks enable insurers to move confidently from pilot to production.",
-      // features: [
-      //   "UnifyAI",
-      //   "AgenticAI",
-      //   "Feature Store",
-      //   "Prompt Hub",
-      //   "Guardrails",
-      //   "Model & Agent Monitoring",
-      //   "One-click Deployment",
-      //   "Multi-cloud & On-prem Support"
-      // ],
+      title: "DSW AgenticAI",
+      description:"The platform for governed, explainable, and auditable enterprise AI agents. AgenticAI orchestrates agentic tasks and ML workflows across real enterprise systems, with human-in-the-loop oversight, strong governance, and enterprise-grade security. These capabilities are essential for high stakes decisioning in Insurance, Banking, and Financial Services",
+      features: [
+        "End to end Agent Builder with Knowledge Base",
+        "Memory, Prompt Hub",
+        "LLM Hub and Finetuning",
+        "Agent Monitoring",
+        "Multi-agent Orchestration",
+        "Workflow Builder",
+        "Advanced RAG Capabilities and Guardrails",
+        "In-built Security and AI Governance"
+      ],
       z:"z-[200]",
-    },
-    {
-      id: "003",
-      title: "BankAI & FSAI ",
-      description:"Expanding into Banking and Financial Services, our AI-driven platforms provide secure, scalable, and compliant solutions designed for lending, payments, risk management, and customer engagement - helping enterprises unlock value quickly and sustainably. <br/> <br/> With solutions grounded in deep domain expertise and cross-functional collaboration, we help our clients transform their industries with AI-powered precision.",
-      description2:"",
-      // features: [
-      //   " UnifyAI",
-      //   "AgenticAI",
-      //   "Feature Store",
-      //   "Prompt Hub",
-      //   "Guardrails",
-      //   "Model & Agent Monitoring",
-      //   "One-click Deployment",
-      //   "Multi-cloud & On-prem Support"
-      // ],
-      z:"z-[300]"
-    },
-   
+      btnName:"Explore AgenticAI",
+      btnLink:"/agentic-ai"
+    }
   ];
