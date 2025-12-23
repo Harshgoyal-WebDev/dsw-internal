@@ -50,7 +50,7 @@ export default function page() {
         <Hero heroData={heroData} />
         <AiEverywhere />
         <UnifyTour/>
-        <Usecase />
+        <Usecase data={usecaseData} />
         <UsecaseMobile />
         <PresentationLayer />
         <Diagram />
@@ -122,3 +122,33 @@ const faqData = [
       ["UnifyAI is an enterprise AI platform that enables businesses to develop, deploy, and manage AI models seamlessly. It supports machine learning, Generative AI, and large language models (LLMs) while ensuring security, compliance, and scalability."],
   },
 ]
+
+const usecaseData =
+[
+    {
+      id: "001",
+      title: "UnifyAI ",
+      description:"Build, test, deploy, and monitor AI/ML models with lightning speed using accelerated workflows ",
+      features: [
+        "400+ pre-built connectors for seamless data ingestion and transformation ",
+        "Core AI/ML engine with built-in model selection and evaluation ",
+        "Real-time monitoring with performance, drift, and anomaly tracking",
+        "One-click deployment to production environments "
+      ],
+      z:"z-[100]",
+    },
+   
+    {
+      id: "002",
+      title: "Unified Ops ",
+      description:"One platform. One centralized AI ecosystem. Total control.",
+      features: [
+        "Centralized observability across models and agents ",
+        "Built-in compliance – ISO 42001, SOC 2, ISO 27001, HIPAA, GDPR",
+        "Full traceability with logs, alerts, and audit trails  ",
+      ],
+      z:"z-[300]"
+    },
+   
+  ];
+

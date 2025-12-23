@@ -52,7 +52,7 @@ export default function Home() {
         <About />
         <Features />
         <Capabilities />
-        <Results />
+        <Results heading='AI That Drives Results in Underwriting, Claims, Fraud, and CX  ' description='Go live in 30 days with enterprise-grade models that work from day one. insurAInce brings a library of ready-to-deploy AI/ML models designed specifically for insurers to solve core challenges across the policy lifecycle.' results={resultsData} />
         <SuccessStories />
         <PlatformCapabilities />
         <Outcomes />
@@ -117,5 +117,26 @@ const faqData = [
     question: "What types of AI models does UnifyAI support?",
     answer:
       ["UnifyAI is an enterprise AI platform that enables businesses to develop, deploy, and manage AI models seamlessly. It supports machine learning, Generative AI, and large language models (LLMs) while ensuring security, compliance, and scalability."],
+  },
+]
+
+const resultsData = [
+  {
+    id: "01",
+    src: "/assets/icons/insuraince/underwriting.svg",
+    title: 'Underwriting',
+    description: "Predict risk, segment customers, and reduce manual decisioning ",
+  },
+  {
+    id: "02",
+    src: "/assets/icons/insuraince/claims.svg",
+    title: 'Claims',
+    description: "Classify documents, assess claim legitimacy, and optimize settlement cycles ",
+  },
+  {
+    id: "03",
+    src: "/assets/icons/insuraince/fraud.svg",
+    title: 'Fraud',
+    description: "Detect early signs of fraud with real-time pattern recognition ",
   },
 ]

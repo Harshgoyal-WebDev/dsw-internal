@@ -7,10 +7,10 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 
-export default function UseCase({
+export default function AgenticUsecase({
   data = [],
   allowMultiple = false,
-  isVisible = true,
+  
 }) {
   const [openIndexes, setOpenIndexes] = useState([0]);
 
@@ -34,8 +34,8 @@ export default function UseCase({
       id="cardstack"
     >
       <div className="flex flex-col items-center gap-[5vw] ">
-        <h2 className="text-60 headingAnim w-[40%] text-center">
-     Supercharge Your AI/ML Use Cases      
+        <h2 className="text-60 headingAnim w-[95%] text-center">
+     Turn proofs-of-concept into auditable, production-grade automation with explainable agents, deterministic governance, and enterprise-grade security.       
  </h2>
         
         <div className="  relative z-[10] fadeup">
@@ -71,7 +71,7 @@ function AccordionItem({ title, description,features, isOpen, onToggle,index,z})
               className={`cursor-pointer w-full h-full py-[3.5vw] pb-[5vw] flex items-start justify-between`}
             >
                 <div className="flex items-start justify-between">
-                <div className="flex items-center gap-[8vw] w-[45vw]">
+                <div className="flex items-center gap-[8vw]  !w-[40vw]">
                  <p className="">
                   {`00${index+1}`}
                 </p>
@@ -79,10 +79,33 @@ function AccordionItem({ title, description,features, isOpen, onToggle,index,z})
                 {title}
               </h4>
               </div>
-              
-              <div className={`w-[40%] `}>
+
+              <div className="h-[6vw] w-[40vw]">
+
+             
+
+               <AnimatePresence initial={false}>
+              {isOpen && (
+                <motion.div
+                  key="content"
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  onAnimationComplete={() => {
+                    ScrollTrigger.refresh();
+                  }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  className=" relative  "
+                >
+                    <div className={`w-full  `}>
               <p className="text-left">{description}</p>
               </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+             </div>
+              
+              
               </div>
 
               <div
@@ -104,33 +127,7 @@ function AccordionItem({ title, description,features, isOpen, onToggle,index,z})
               </div>
             </button>
 
-            <AnimatePresence initial={false}>
-              {isOpen && (
-                <motion.div
-                  key="content"
-                  initial={{ height: 0, opacity: 0, y: 20 }}
-                  animate={{ height: "auto", opacity: 1, y: 0 }}
-                  onAnimationComplete={() => {
-                    ScrollTrigger.refresh();
-                  }}
-                  exit={{ height: 0, opacity: 0, y: 20 }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
-                  className=" relative "
-                >
-                    <span className="bg-white w-[75%] h-[1px] absolute top-0 left-1/2 translate-x-[-50%] mt-[-2vw]"></span>
-                  <div className="pt-[1vw] text-[#CACACA] w-[90%] pb-[7vw]">
-                    <ul className="ml-[13vw] list-disc flex  gap-x-[5vw] gap-y-[3vw]">
-                        {features.map((item,index)=>(
-                            <li key={index} className=" marker:text-sm">
-                                <p>{item}</p>
-                                
-                            </li>
-                        ))}
-                    </ul >
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+           
           </div>
         </div>
       </div>

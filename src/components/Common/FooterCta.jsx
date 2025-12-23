@@ -8,7 +8,7 @@ import gsap from "gsap";
 import Copy from "../Animations/Copy";
 import { useModal } from "./ModalProvider";
 
-const FooterCTA = ({ footerCTAData, width, paraWidth }) => {
+const FooterCTA = ({ footerCTAData, width, paraWidth, isSubheading=false }) => {
   const containerRef = useRef(null);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -76,6 +76,15 @@ const FooterCTA = ({ footerCTAData, width, paraWidth }) => {
         >
           {footerCTAData.heading}
         </h2>
+
+        {isSubheading && (
+          <Copy>
+            <h4 className={`text-40 text-white-300 mb-6 max-sm:mb-[5vw] w-[90%] max-md:w-full ${paraWidth ? paraWidth : "w-full"}`} >
+              {footerCTAData.subHeading}
+            </h4>
+          </Copy>
+        )}
+
         <Copy>
           <p
             data-para-anim
