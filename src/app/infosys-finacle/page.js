@@ -2,18 +2,14 @@ import Layout from "@/components/Layout";
 
 import FooterCTA from "@/components/Common/FooterCta";
 import { FAQJSONLD, WebpageJsonLd } from "@/lib/json-ld";
-import { getAllPosts } from "@/lib/posts";
-import AgenticHero from "@/components/AgenticAI/Hero";
-import dynamic from "next/dynamic";
 import Faqs from "@/components/Common/FAQs";
 import AgenticFeatures from "@/components/AgenticAI/AgenticFeatures";
-import AgenticAi from "../../../public/assets/icons/agentic-ai.png";
-import AgenticUsecase from "@/components/AgenticAI/AgenticUsecase";
-import CoreCapabilities from "@/components/AgenticAI/CoreCapabilities";
-import Results from "@/components/Insuraince/Results";
-import Outcomes from "@/components/Workshops/Outcomes";
 import SuccessStories from "@/components/Homepage/SuccessStories";
-import AgenticAIDiagram from "@/components/AgenticAI/PresentationLayer";
+import InfosysHero from "@/components/InfosysFinacle/InfosysHero";
+import Deployments from "@/components/InfosysFinacle/Deployments";
+import Recognized from "@/components/InfosysFinacle/Recognized";
+import DeliveringSuccess from "@/components/InfosysFinacle/DeliveringSuccess";
+import Expertise from "@/components/InfosysFinacle/Expertise";
 
 export const metadata = {
   title: "DSW UnifyAI – Enterprise AI Platform for Insurance",
@@ -24,20 +20,20 @@ export const metadata = {
   date_modified: "2025-09-30T00:00",
 };
 
-export default async function AgenticAI() {
+export default async function InfosysFinacle() {
   return (
     <>
       <WebpageJsonLd metadata={metadata} />
       <FAQJSONLD faqs={faqData} />
-
       <Layout>
-        <AgenticHero heroData={heroData} />
+        <InfosysHero/>
+        <Deployments/>
+        <Recognized/>
+        <DeliveringSuccess/>
+        <Expertise/>
+
+
         <AgenticFeatures />
-        <AgenticUsecase data={usecaseData} />
-        <CoreCapabilities />
-        <Results heading='BFSI Use Cases & Vertical Accelerators ' results={resultsData} />
-        <Outcomes outcomesData={outcomesData} />
-        < AgenticAIDiagram />
         <SuccessStories />
         <Faqs data={faqData}  />
         <FooterCTA isSubheading={true} footerCTAData={footerCTAData} width={"w-[70%]"} paraWidth={"w-[80%]"} />
@@ -45,19 +41,6 @@ export default async function AgenticAI() {
     </>
   );
 }
-
-const heroData = {
-  heading: "Governed, explainable, production- ready agents for banking & insurance",
-  headingWidth: "w-[85%]",
-  subheading: "Deploy AI Agents in hours",
-  paraClass: "",
-  img: AgenticAi,
-  link1: "#",
-  btnText1: "Book a Demo!",
-  homepage: true,
-  walkthrough: true,
-  target: true,
-};
 
 const footerCTAData = {
   heading: "DSW AgenticAI for BFSI​ ",
