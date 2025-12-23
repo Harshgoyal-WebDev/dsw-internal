@@ -1,115 +1,129 @@
 "use client";
-import Image from "next/image";
-import React, {  useState } from "react";
+import React from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Copy from "../Animations/Copy";
 gsap.registerPlugin(ScrollTrigger);
 
-const Card = ({ srcc, content, isActive, onHover }) => {
-  return (
-    <div
-      onMouseEnter={onHover}
-      className="card relative border border-[#88888880] h-[36vh] cursor-pointer w-[21vw] rounded-[2vw] py-[2vw] px-[2vw] overflow-hidden group"
-    >
-      <div className="absolute inset-0 background-glass transition-opacity duration-500" />
-
-      <div
-        className={`absolute inset-0 bg-gradient-to-r from-light-blue to-dark-blue transition-opacity ease-in-out duration-500 ${
-          isActive ? "opacity-100" : "opacity-0"
-        }`}
-      />
-
-      <div className="relative h-full w-full ">
-        <div className="w-[5.2vw]">
-          <Image
-            src={srcc}
-            height={300}
-            width={300}
-            alt="card-svg"
-            className={`w-full h-full object-cover transition duration-500 ${
-              isActive ? "brightness-0 invert" : ""
-            }`}
-          />
-        </div>
-        <div className="pt-[3.5vw]">
-          <p className="text-white-300">{content}</p>
-        </div>
-      </div>
-    </div>
-  );
-};
-
 const EngagementModel = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-//   useEffect(() => {
-//     const ctx = gsap.context(() => {
-//       const cards = gsap.utils.toArray(".card");
-
-//       if (!isMobile) {
-//         const horizAnim = gsap.to(cardsContainerRef.current, {
-//           x: "0",
-//           ease: "none",
-//           scrollTrigger: {
-//             trigger: featuresRef.current,
-//             start: "top 50%",
-//             end: "70% 40%",
-//             scrub: true,
-//             // markers: true,
-//           },
-//         });
-//         cards.forEach((card, i) => {
-//           gsap.fromTo(
-//             card,
-//             { rotateY: 65, opacity: 0, scale: 0.8, transformPerspective: 900 },
-//             {
-//               rotateY: 0,
-//               opacity: 1,
-//               scale: 1,
-//               duration: 1.5,
-//               ease: "none",
-//               scrollTrigger: {
-//                 containerAnimation: horizAnim, // <-- tie to horizontal scroll
-//                 trigger: card,
-//                 scrub: true,
-//                 start: "-100% 100%",
-//                 end: "190% 90%",
-//                 toggleActions: "play none none reverse",
-//                 // markers: true,
-//               },
-//             }
-//           );
-//         });
-//       }
-//     }, featuresRef);
-
-//     return () => ctx.revert();
-//   }, []);
-
   return (
-    <section
-      className="h-full w-full relative"
-    >
-      <div className="bg-primary  max-sm:relative top-0 h-fit flex flex-col container !px-0">
-        <div className=" max-md:w-[90%] pl-[5vw] max-sm:pl-0  max-sm:mx-auto max-md:space-y-[7vw] space-y-[1.5vw] max-sm:space-y-[6vw] max-md:pl-[7vw]">
-          <h2 className="text-90 headingAnim w-[100%] text-center text-white-200 max-md:!text-[9vw]">
-            Engagement Model  
-          </h2>
+    <section className="container overflow-hidden future-section h-fit max-md:h-full relative max-md:gap-[5vw] flex flex-col gap-[2.8vw] justify-center items-center">
+      <h2 className="text-90 headingAnim text-center text-white-200">
+        Engagement Models
+      </h2>
+
+      
+
+      <div className=" future-card inset-0 flex px-[8vw] gap-[2vw] items-start max-md:flex-col max-md:px-0 max-md:static max-md:gap-[8vw] max-sm:mt-[15vw] max-md:mt-[7.5vw] fadeup">
+        <div className="flex w-fit justify-start max-md:justify-center">
+          <div
+            className="relative w-[27.5vw] rounded-[2.5vw]  group cursor-pointer
+    overflow-hidden flex flex-col border transition-opacity border-[#59595980] max-md:p-[5vw]
+    justify-between p-[2.5vw] h-[27vw] background-glass backdrop-blur-[10px] max-md:w-[60vw] max-md:h-fit max-md:backdrop-blur-none max-md:rounded-[3.5vw] max-sm:w-full max-sm:rounded-[6vw] max-sm:p-[7vw]"
+          >
+            {/* gradient overlay */}
+            <div
+              className="absolute inset-0 rounded-[2.5vw] 
+      bg-gradient-to-r from-light-blue to-dark-blue 
+      opacity-0 group-hover:opacity-100 
+      transition-opacity duration-500 ease-in-out"
+            />
+
+            <div className="relative z-10 flex flex-col justify-between h-full max-md:space-y-[10vw]  ">
+              <p
+                className="flex  justify-center items-center text-[1.5vw] border  max-md:text-[5.5vw] font-head max-md:h-[14vw] max-md:w-[14vw]
+        transition-all duration-500 ease-in-out
+        group-hover:border-white group-hover:text-white-300 
+        border-[#175CFE] text-[#175CFE] tracking-wider 
+        h-[5.5vw] w-[5.5vw] rounded-full max-sm:text-[7.5vw] max-sm:w-[20vw] max-sm:h-[20vw]"
+              >
+                01
+              </p>
+
+              <p className="text-30">Managed Open Source Services</p>
+
+              <p
+                className="text-white-300 w-[95%] pb-[1vw] 
+        transition-colors duration-500 ease-in-out"
+              >
+                End-to-end deployment, monitoring, patching, and optimization of
+                Finacle open-source components.
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div className="w-full  block  pb-[1.2vw] pt-[4vw]">
-          <div className="flex gap-[2vw]"
+        <div className="flex w-fit justify-center">
+          <div
+            className="relative w-[27.5vw] rounded-[2.5vw] fadeup group cursor-pointer
+    overflow-hidden flex flex-col border border-[#59595980] 
+    justify-between p-[2.5vw] h-[27vw] background-glass backdrop-blur-[10px] max-md:w-[60vw] max-md:h-fit max-md:backdrop-blur-none max-md:rounded-[3.5vw] max-sm:w-full max-sm:rounded-[6vw] max-sm:p-[7vw] max-md:p-[5vw]"
           >
-            {cardsData.map((card, index) => (
-              <Card
-                key={index}
-                srcc={card.src}
-                content={card.content}
-                isActive={activeIndex === index}
-                onHover={() => setActiveIndex(index)}
-              />
-            ))}
+            {/* gradient overlay */}
+            <div
+              className="absolute inset-0 rounded-[2.5vw] 
+      bg-gradient-to-r from-light-blue to-dark-blue 
+      opacity-0 group-hover:opacity-100 
+      transition-opacity duration-500 ease-in-out"
+            />
+
+            <div className="relative z-10 flex flex-col justify-between h-full max-md:space-y-[10vw]">
+              <p
+                className="flex justify-center items-center text-[1.5vw] border max-md:text-[5.5vw] font-head max-md:h-[14vw] max-md:w-[14vw] 
+        transition-all duration-500 ease-in-out
+        group-hover:border-white group-hover:text-white-300 
+        border-[#175CFE] text-[#175CFE] tracking-wider 
+        h-[5.5vw] w-[5.5vw] rounded-full max-sm:text-[7.5vw] max-sm:w-[20vw] max-sm:h-[20vw]"
+              >
+                02
+              </p>
+
+              <p className="text-30">Skill Enablement</p>
+
+              <p
+                className="text-white-300 w-[90%] pb-[1vw] 
+        transition-colors duration-500 ease-in-out"
+              >
+                Ongoing workshops, certifications, and co-created enablement programs to strengthen Finacle and client teams.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex w-fit justify-end max-md:justify-center">
+          <div
+            className="relative w-[27.5vw] rounded-[2.5vw] fadeup group cursor-pointer
+    overflow-hidden flex flex-col border border-[#59595980] 
+    justify-between p-[2.5vw] h-[27vw] background-glass backdrop-blur-[10px] max-md:w-[60vw] max-md:h-fit max-md:backdrop-blur-none max-md:rounded-[3.5vw] max-sm:w-full max-sm:rounded-[6vw] max-sm:p-[7vw] max-md:p-[5vw]"
+          >
+            {/* gradient overlay */}
+            <div
+              className="absolute inset-0 rounded-[2.5vw] 
+      bg-gradient-to-r from-light-blue to-dark-blue 
+      opacity-0 group-hover:opacity-100 
+      transition-opacity duration-500 ease-in-out"
+            />
+
+            <div className="relative z-10 flex flex-col justify-between h-full max-md:space-y-[10vw]">
+              <p
+                className="flex justify-center items-center text-[1.5vw] border max-md:text-[5.5vw] font-head max-md:h-[14vw] max-md:w-[14vw] 
+        transition-all duration-500 ease-in-out
+        group-hover:border-white group-hover:text-white-300 
+        border-[#175CFE] text-[#175CFE] tracking-wider 
+        h-[5.5vw] w-[5.5vw] rounded-full max-sm:text-[7.5vw] max-sm:w-[20vw] max-sm:h-[20vw]"
+              >
+                03
+              </p>
+
+               <p className="text-30">Innovation Catalyst</p>
+
+              <p
+                className="text-white-300 w-[90%] pb-[1vw] 
+        transition-colors duration-500 ease-in-out"
+              >
+                Continuous research and evaluation of emerging open-source technologies to enrich Finacle’s global roadmap and performance benchmarks.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -118,27 +132,3 @@ const EngagementModel = () => {
 };
 
 export default EngagementModel;
-
-const cardsData = [
-  {
-    src: "/assets/icons/rollouts.svg",
-    content:
-      "Predictable and accelerated Finacle rollouts at scale. ",
-  },
-  {
-    src: "/assets/icons/reduced.svg",
-    content:
-      "Reduced total cost of ownership (TCO) for core banking stacks. ",
-  },
-  {
-    src: "/assets/icons/enterprise-grade.svg",
-    content:
-      "Enterprise-grade reliability with modernized, open architectures. ",
-  },
-  {
-    src: "/assets/icons/skilled-team.svg",
-    content:
-      "Skilled teams ready to operate, extend, and innovate with Finacle. ",
-  },
-  
-];

@@ -12,6 +12,9 @@ import DeliveringSuccess from "@/components/InfosysFinacle/DeliveringSuccess";
 import Expertise from "@/components/InfosysFinacle/Expertise";
 import CohesiveValue from "@/components/InfosysFinacle/CohesiveValue";
 import EngagementModel from "@/components/InfosysFinacle/EngagementModel";
+import Outcomes from "@/components/InfosysFinacle/Outcomes";
+
+import { de } from "zod/v4/locales";
 
 export const metadata = {
   title: "DSW UnifyAI – Enterprise AI Platform for Insurance",
@@ -31,7 +34,8 @@ export default async function InfosysFinacle() {
         <InfosysHero/>
         <Deployments/>
         <Recognized/>
-        <DeliveringSuccess/>
+       
+            <Outcomes />
         <Expertise/>
         <EngagementModel/>
         <CohesiveValue/>
@@ -45,7 +49,7 @@ export default async function InfosysFinacle() {
 
 const footerCTAData = {
   heading: "DSW AgenticAI for BFSI​ ",
-  subHeading:'Turn AI pilots into auditable, production-grade agents ',
+  subHeading:'Launch smarter, faster, safer AI and GenAI use cases with DSW UnifyAI.  ',
   para: "Unify data, models and agent orchestration with pre-built BFSI playbooks, audit-first governance and human-in-the-loop controls - built for regulated financial services.​",
   book: true,
   btnText1: "Book a Demo",
@@ -150,34 +154,10 @@ const usecaseData = [
    
   ];
 
-  const resultsData = [
-  {
-    id: "01",
-     src: "/assets/icons/insuraince/underwriting.svg",
-    title: "InsurAInce",
-    description:
-      "Purpose-built for insurers: claims orchestration, fraud triage, underwriting augmentation and customer engagement automation.",
-  },
-  {
-    id: "02",
-    src: "/assets/icons/insuraince/claims.svg",
-    title: "BankAI",
-    description:
-      "For banks & financial institutions: lending decision support, compliance automation, fraud monitoring and risk remediation.",
-  },
-  {
-    id: "03",
-    src: "/assets/icons/agentic-ai/roadmap.svg",
-    title: "Roadmap",
-    description:
-      "Next: telecom, healthcare and other regulated industries where auditability and governance are critical.",
-  },
-];
-
-const outcomesData = {
-  heading: "How AgenticAI Works",
+  const outcomesData = {
+  heading: "Delivering Finacle Success Through Open-Source Expertise ",
   headingWidth: "w-[60%]",
-  showDescription: false,
+  description:'As a strategic open-source consulting partner to Infosys Finacle,  DSW helps global banks modernize, optimize, and scale Finacle deployments through enterprise-grade open-source adoption. ',
   headingCenter: true,
   points: [
     {
@@ -202,6 +182,32 @@ const outcomesData = {
     },
   ],
 };
+
+  const resultsData = [
+  {
+    id: "01",
+     src: "/assets/icons/insuraince/underwriting.svg",
+    title: "InsurAInce",
+    description:
+      "Purpose-built for insurers: claims orchestration, fraud triage, underwriting augmentation and customer engagement automation.",
+  },
+  {
+    id: "02",
+    src: "/assets/icons/insuraince/claims.svg",
+    title: "BankAI",
+    description:
+      "For banks & financial institutions: lending decision support, compliance automation, fraud monitoring and risk remediation.",
+  },
+  {
+    id: "03",
+    src: "/assets/icons/agentic-ai/roadmap.svg",
+    title: "Roadmap",
+    description:
+      "Next: telecom, healthcare and other regulated industries where auditability and governance are critical.",
+  },
+];
+
+
 
 
 

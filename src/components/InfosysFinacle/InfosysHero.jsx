@@ -265,7 +265,7 @@ const InfosysHero = memo(function Hero({ heroData, breadcrumbs }) {
           <div ref={imgWrapRef} className="flex items-center justify-center gap-10">
            <div
               
-              className="h-auto w-[8vw]  max-sm:w-[60vw] max-md:w-[45vw]  will-change-transform will-change-opacity"
+              className="h-auto w-[8vw]  max-sm:w-[25vw] max-md:w-[45vw]  will-change-transform will-change-opacity"
             >
               <Image
                 src={"/assets/images/infosys-finacle/infosys-finacle.png"}
@@ -278,7 +278,7 @@ const InfosysHero = memo(function Hero({ heroData, breadcrumbs }) {
               />
             </div>
             <div
-              className="h-auto w-[8vw]  max-sm:w-[60vw] max-md:w-[45vw]  will-change-transform will-change-opacity"
+              className="h-auto w-[8vw]  max-sm:w-[25vw] max-md:w-[45vw]  will-change-transform will-change-opacity"
             >
               <Image
                 src={"/assets/images/infosys-finacle/only-dsw.png"}

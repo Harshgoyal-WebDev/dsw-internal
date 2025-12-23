@@ -42,8 +42,8 @@ const Card = ({ srcc, content, isActive, onHover }) => {
 
 const MobileCard = ({ srcc, content }) => {
   return (
-    <div className="max-md:h-[40vh] max-sm:h-fit mx-auto background-glass flex-shrink-0 max-md:w-[47%] border border-[#88888880] py-[5vw] max-sm:w-[85vw] max-sm:rounded-[6vw] max-md:rounded-[3.5vw] flex flex-col max-md:gap-[6vw] max-sm:gap-[5vw] items-start max-md:justify-between max-sm:justify-between max-sm:px-[7vw] fadeup max-md:px-[4vw] max-sm:py-[10vw]">
-      <div className="max-sm:w-[25vw] max-md:w-auto max-md:h-[15vw] max-sm:h-auto h-auto">
+    <div className="max-md:h-[40vh] max-sm:h-fit mx-auto background-glass flex-shrink-0 max-md:w-[47%] border border-[#88888880] py-[5vw] max-sm:w-[85vw] max-sm:rounded-[6vw] max-md:rounded-[3.5vw] flex flex-col max-md:gap-[6vw] max-sm:gap-[8vw] items-start max-md:justify-between max-sm:justify-between max-sm:px-[7vw] fadeup max-md:px-[4vw] max-sm:py-[10vw]">
+      <div className="max-sm:w-[20vw] max-md:w-auto max-md:h-[15vw] max-sm:h-auto h-auto">
         <Image
           src={srcc}
           alt="card-svg"
@@ -125,7 +125,7 @@ const CohesiveValue = () => {
     <section
       id="features-section"
       ref={featuresRef}
-      className="h-[200vh] max-sm:mt-[25vh] max-sm:h-full w-full relative"
+      className="h-[200vh] max-sm:mt-[5vh] max-sm:h-full w-full relative"
     >
       <div className="bg-primary features-div sticky max-sm:relative top-0 h-fit flex flex-col container !px-0">
         <div className="w-[60%] max-md:w-[90%] pl-[5vw] max-sm:pl-0  max-sm:mx-auto max-md:space-y-[7vw] space-y-[1.5vw] max-sm:space-y-[6vw] max-md:pl-[7vw]">
@@ -152,7 +152,7 @@ const CohesiveValue = () => {
         </div>
 
         <div className="hidden max-md:block w-full max-md:pt-[10vw] max-sm:pt-[20vw]">
-          <div className="flex max-sm:flex-col max-md:flex-wrap max-sm:px-0 max-md:px-[4vw]  gap-[7vw] mx-auto max-md:gap-y-[4vw] max-md:gap-0">
+          <div className="flex max-sm:flex-col max-md:flex-wrap max-sm:px-0 max-md:px-[4vw]  gap-[7vw] mx-auto max-md:gap-y-[10vw] max-md:gap-0">
             {cardsData.map((card, index) => (
               <MobileCard key={index} srcc={card.src} content={card.content} />
             ))}
