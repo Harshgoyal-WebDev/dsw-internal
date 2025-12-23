@@ -7,11 +7,11 @@ const AwardItem = ({ img}) => {
   return (
     <>
       <div className="flex-shrink-0 flex items-center justify-center gap-[1vw] w-[15vw] max-md:w-[70vw] max-sm:w-fit  max-md:gap-[2vw]">
-        <div className="w-[7vw] h-auto max-md:w-[18vw] max-sm:w-[20vw]">
+        <div className="w-[12vw] h-auto max-md:w-[18vw] max-sm:w-[20vw]">
           <Image
             src={img}
-            height={146}
-            width={128}
+            height={130}
+            width={190}
             alt={"open source"}
             className="h-full w-full"
           />
@@ -29,7 +29,7 @@ const Expertise = () => {
       id="recognized"
       className="h-full w-screen  relative overflow-hidden container bg-white !py-[8%]"
     >
-      <div className="w-full h-full flex flex-col items-center justify-center relative z-[2] space-y-[3vw]">
+      <div className="w-full h-full flex flex-col items-center justify-center relative z-[2]">
         <div className="text-center  space-y-5  max-md:space-y-10">
           <h2 className="text-60  headingAnim text-primary-1">
             Core Open-Source Expertise 
@@ -38,7 +38,7 @@ const Expertise = () => {
         </div>
        
         
-       <div className="marquee fadeup mt-[3vw] max-md:my-[7vw]">
+       <div className="marquee fadeup max-md:my-[7vw]">
           <div className="marquee__track opens-source max-md:space-x-[7vw] max-sm:space-x-[10vw]">
             {firstHalfAwards.map((item, index) => (
               <AwardItem
@@ -56,7 +56,7 @@ const Expertise = () => {
             </div>
           </div>
 
-          <div className="marquee fadeup mt-[3vw] max-md:my-[7vw]">
+          <div className="marquee fadeup max-md:my-[7vw]">
           <div className="marquee__track_reverse opens-source max-md:space-x-[7vw] max-sm:space-x-[10vw]">
             {secondHalfAwards.map((item, index) => (
               <AwardItem
@@ -106,7 +106,7 @@ const awards = [
     img:"/assets/images/infosys-finacle/open-source/Haproxy-logo.png"
   },
   {
-    img:"/assets/images/infosys-finacle/open-source/HDFS-logo.svg"
+    img:"/assets/images/infosys-finacle/open-source/HDFS-logo.png"
   },
   {
     img:"/assets/images/infosys-finacle/open-source/iReport-logo.png"
@@ -127,7 +127,7 @@ const awards = [
     img:"/assets/images/infosys-finacle/open-source/Kafka_logo.png"
   },
   {
-    img:"/assets/images/infosys-finacle/open-source/kibana.svg"
+    img:"/assets/images/infosys-finacle/open-source/kibana.png"
   },
   {
     img:"/assets/images/infosys-finacle/open-source/Kubernetes_logo.png"
