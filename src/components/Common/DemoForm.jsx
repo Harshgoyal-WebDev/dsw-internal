@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -28,12 +28,75 @@ export default function DemoForm() {
     defaultValues: { name: "", email: "", number: "", designation: "", company: "" },
   });
 
-  const { control, handleSubmit } = form;
+  const { control, handleSubmit, setError, clearErrors, getValues } = form;
   const [isLoading, setIsLoading] = useState(false);
   const [submitted, setIsSubmitted] = useState(false);
   const [notsubmitted, setIsNotSubmitted] = useState(false);
+  const [emailVerifying, setEmailVerifying] = useState(false);
+  const [emailVerified, setEmailVerified] = useState(false);
 
   const { payload /* { pdfUrl, fileName } */, closeModal } = useModal();
+
+  // Email verification function - only called on blur or submit
+  const verifyEmail = useCallback(async (email) => {
+    // Basic email format check first
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRegex.test(email)) {
+      setEmailVerified(false);
+      return false;
+    }
+
+    setEmailVerifying(true);
+    clearErrors("email");
+
+    try {
+      const response = await fetch("/api/verify-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.valid) {
+        setEmailVerified(true);
+        clearErrors("email");
+        return true;
+      } else {
+        setEmailVerified(false);
+        let errorMessage = "Please enter a valid business email address.";
+
+        if (data.didYouMean) {
+          errorMessage = `Did you mean ${data.didYouMean}?`;
+        } else if (data.status === "invalid") {
+          errorMessage = "This email address is invalid.";
+        } else if (data.status === "spamtrap" || data.status === "abuse") {
+          errorMessage = "This email address cannot be used.";
+        } else if (data.freeEmail) {
+          errorMessage = "Please use your business email address.";
+        }
+
+        setError("email", {
+          type: "manual",
+          message: errorMessage,
+        });
+        return false;
+      }
+    } catch (error) {
+      console.error("Email verification error:", error);
+      // On error, don't block the form but log the error
+      setEmailVerified(true);
+      clearErrors("email");
+      return true;
+    } finally {
+      setEmailVerifying(false);
+    }
+  }, [setError, clearErrors]);
+
+  // Handle email blur event
+  const handleEmailBlur = useCallback(async (email) => {
+    await verifyEmail(email);
+  }, [verifyEmail]);
 
   const downloadPdf = async (url, fileName) => {
   // Always normalize to an absolute same-origin URL.
@@ -81,6 +144,32 @@ export default function DemoForm() {
 };
 
   const onSubmit = async (data) => {
+    // If email hasn't been verified yet, verify it now
+    if (!emailVerified && !emailVerifying) {
+      const isValid = await verifyEmail(data.email);
+      if (!isValid) {
+        return; // Stop submission if email is invalid
+      }
+    }
+
+    // Check if email verification is still pending
+    if (emailVerifying) {
+      setError("email", {
+        type: "manual",
+        message: "Please wait for email verification to complete.",
+      });
+      return;
+    }
+
+    // Check if email is verified
+    if (!emailVerified) {
+      setError("email", {
+        type: "manual",
+        message: "Please enter a valid business email address.",
+      });
+      return;
+    }
+
     setIsLoading(true);
 
     // compute optional pdf info
@@ -111,6 +200,8 @@ export default function DemoForm() {
       setIsSubmitted(true);
       setTimeout(() => setIsSubmitted(false), 5000);
       form.reset();
+      setEmailVerified(false);
+      setEmailVerifying(false);
 
       // Download the PDF after successful submit
       if (pdfUrl) {
@@ -156,8 +247,23 @@ export default function DemoForm() {
 
                 <FormField name="email" control={control}  render={({ field }) => (
                   <FormItem><FormControl>
-                    <Input placeholder="Business Email*" autoComplete="off" {...field}
-                      className="placeholder:text-[1.05vw] pl-[2vw] bg-black/5 border border-white/30 rounded-full placeholder:text-[#e8e8e8] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] max-md:pl-[4vw] max-sm:pl-[5vw]" />
+                    <div className="relative">
+                      <Input
+                        placeholder="Business Email*"
+                        autoComplete="off"
+                        {...field}
+                        onBlur={(e) => {
+                          field.onBlur();
+                          handleEmailBlur(e.target.value);
+                        }}
+                        className="placeholder:text-[1.05vw] pl-[2vw] bg-black/5 border border-white/30 rounded-full placeholder:text-[#e8e8e8] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] max-md:pl-[4vw] max-sm:pl-[5vw]"
+                      />
+                      {emailVerifying && (
+                        <span className="absolute right-[2vw] top-1/2 transform -translate-y-1/2 text-[#e8e8e8] text-[0.9vw] max-sm:text-[3vw] max-md:text-[2vw] max-md:right-[4vw]">
+                          Verifying...
+                        </span>
+                      )}
+                    </div>
                   </FormControl><FormMessage /></FormItem>
                 )} />
                 </div>

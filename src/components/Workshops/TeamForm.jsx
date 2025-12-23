@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { isValidPhoneNumber } from "react-phone-number-input";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import {
   Form,
   FormControl,
@@ -43,22 +43,95 @@ export default function TeamForm() {
       terms: false,
     },
   });
-  const { control, handleSubmit } = form;
+  const { control, handleSubmit, setError, clearErrors } = form;
   const [isLoading, setIsLoading] = useState(false);
   const [submitted, setIsSubmitted] = useState(false);
   const [notsubmitted, setIsNotSubmitted] = useState(false);
+  const [emailVerifying, setEmailVerifying] = useState(false);
+  const [emailVerified, setEmailVerified] = useState(false);
+
+  // Email verification function - only called on blur or submit
+  const verifyEmail = useCallback(async (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRegex.test(email)) {
+      setEmailVerified(false);
+      return false;
+    }
+
+    setEmailVerifying(true);
+    clearErrors("email");
+
+    try {
+      const response = await fetch("/api/verify-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.valid) {
+        setEmailVerified(true);
+        clearErrors("email");
+        return true;
+      } else {
+        setEmailVerified(false);
+        let errorMessage = "Please enter a valid business email address.";
+
+        if (data.didYouMean) {
+          errorMessage = `Did you mean ${data.didYouMean}?`;
+        } else if (data.status === "invalid") {
+          errorMessage = "This email address is invalid.";
+        } else if (data.status === "spamtrap" || data.status === "abuse") {
+          errorMessage = "This email address cannot be used.";
+        } else if (data.freeEmail) {
+          errorMessage = "Please use your business email address.";
+        }
+
+        setError("email", {
+          type: "manual",
+          message: errorMessage,
+        });
+        return false;
+      }
+    } catch (error) {
+      console.error("Email verification error:", error);
+      setEmailVerified(true);
+      clearErrors("email");
+      return true;
+    } finally {
+      setEmailVerifying(false);
+    }
+  }, [setError, clearErrors]);
+
+  const handleEmailBlur = useCallback(async (email) => {
+    await verifyEmail(email);
+  }, [verifyEmail]);
 
   const onSubmit = async (data) => {
-  //   // if (!domainsLoaded) {
-  //   //   form.setError("email", { type: "manual", message: "Please wait until the page is fully loaded." });
-  //   //   return;
-  //   // }
+    // If email hasn't been verified yet, verify it now
+    if (!emailVerified && !emailVerifying) {
+      const isValid = await verifyEmail(data.email);
+      if (!isValid) {
+        return;
+      }
+    }
 
-  //   // const emailDomain = data.email.split("@")[1]?.toLowerCase();
-  //   // if (!emailDomain || blockedDomains.includes(emailDomain)) {
-  //   //   form.setError("email", { type: "manual", message: "Enter a business email." });
-  //   //   return;
-  //   // }
+    if (emailVerifying) {
+      setError("email", {
+        type: "manual",
+        message: "Please wait for email verification to complete.",
+      });
+      return;
+    }
+
+    if (!emailVerified) {
+      setError("email", {
+        type: "manual",
+        message: "Please enter a valid business email address.",
+      });
+      return;
+    }
 
     setIsLoading(true);
 
@@ -83,6 +156,8 @@ export default function TeamForm() {
       setTimeout(() => setIsSubmitted(false), 7000);
       // console.log(data)
       form.reset();
+      setEmailVerified(false);
+      setEmailVerifying(false);
     } catch (error) {
       setIsNotSubmitted(true);
       setTimeout(() => setIsNotSubmitted(false), 7000);
@@ -149,7 +224,23 @@ export default function TeamForm() {
                         >
                           <span className='bg-[#030815] inline-flex px-1 text-[1.15vw] max-md:text-[2.7vw] max-sm:text-[3.5vw] text-[#CACACA]'>Business Email*</span>
                         </label>
-                        <Input {...field} autoComplete="off" id="email" type='email' placeholder=' ' className='dark:bg-transparent border-[#B0B0B080] border  !bg-[#030815]  !rounded-full  pl-[2vw] max-sm:pl-[6vw] max-md:pl-[5vw] ' />
+                        <Input
+                          {...field}
+                          autoComplete="off"
+                          id="email"
+                          type='email'
+                          placeholder=' '
+                          onBlur={(e) => {
+                            field.onBlur();
+                            handleEmailBlur(e.target.value);
+                          }}
+                          className='dark:bg-transparent border-[#B0B0B080] border  !bg-[#030815]  !rounded-full  pl-[2vw] max-sm:pl-[6vw] max-md:pl-[5vw] '
+                        />
+                        {emailVerifying && (
+                          <span className="absolute right-[2vw] top-1/2 transform -translate-y-1/2 text-[#CACACA] text-[0.9vw] max-sm:text-[3vw] max-md:text-[2vw] max-md:right-[4vw]">
+                            Verifying...
+                          </span>
+                        )}
                       </div>
                     </FormControl>
                     <FormMessage />
