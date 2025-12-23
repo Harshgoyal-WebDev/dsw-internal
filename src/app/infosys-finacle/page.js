@@ -10,6 +10,8 @@ import Deployments from "@/components/InfosysFinacle/Deployments";
 import Recognized from "@/components/InfosysFinacle/Recognized";
 import DeliveringSuccess from "@/components/InfosysFinacle/DeliveringSuccess";
 import Expertise from "@/components/InfosysFinacle/Expertise";
+import CohesiveValue from "@/components/InfosysFinacle/CohesiveValue";
+import EngagementModel from "@/components/InfosysFinacle/EngagementModel";
 
 export const metadata = {
   title: "DSW UnifyAI – Enterprise AI Platform for Insurance",
@@ -31,9 +33,8 @@ export default async function InfosysFinacle() {
         <Recognized/>
         <DeliveringSuccess/>
         <Expertise/>
-
-
-        <AgenticFeatures />
+        <EngagementModel/>
+        <CohesiveValue/>
         <SuccessStories />
         <Faqs data={faqData}  />
         <FooterCTA isSubheading={true} footerCTAData={footerCTAData} width={"w-[70%]"} paraWidth={"w-[80%]"} />

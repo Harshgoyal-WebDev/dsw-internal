@@ -27,10 +27,10 @@ const Expertise = () => {
   return (
     <section
       id="recognized"
-      className="h-full w-screen  relative overflow-hidden container bg-white"
+      className="h-full w-screen  relative overflow-hidden container bg-white !py-[8%]"
     >
       <div className="w-full h-full flex flex-col items-center justify-center relative z-[2] space-y-[3vw]">
-        <div className="text-center  space-y-5 mt-10 max-md:space-y-10">
+        <div className="text-center  space-y-5  max-md:space-y-10">
           <h2 className="text-60  headingAnim text-primary-1">
             Core Open-Source Expertise 
           </h2>
@@ -39,7 +39,7 @@ const Expertise = () => {
        
         
        <div className="marquee fadeup mt-[3vw] max-md:my-[7vw]">
-          <div className="marquee__track recognized max-md:space-x-[7vw] max-sm:space-x-[10vw]">
+          <div className="marquee__track opens-source max-md:space-x-[7vw] max-sm:space-x-[10vw]">
             {firstHalfAwards.map((item, index) => (
               <AwardItem
                 key={index}
@@ -57,7 +57,7 @@ const Expertise = () => {
           </div>
 
           <div className="marquee fadeup mt-[3vw] max-md:my-[7vw]">
-          <div className="marquee__track recognized max-md:space-x-[7vw] max-sm:space-x-[10vw]">
+          <div className="marquee__track_reverse opens-source max-md:space-x-[7vw] max-sm:space-x-[10vw]">
             {secondHalfAwards.map((item, index) => (
               <AwardItem
                 key={index}
