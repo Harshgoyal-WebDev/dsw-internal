@@ -4,7 +4,6 @@ import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
-import AgenticAi from "../../../public/assets/icons/agentic-ai.png";
 
 export default function AgenticAIDiagram() {
   const presentationLayerRef = useRef(null);
@@ -136,7 +135,7 @@ export default function AgenticAIDiagram() {
               </p>
 
               {/* Top Row - Core Tools */}
-              <div className="flex max-md:flex-wrap justify-center max-md:gap-x-[4vw] max-md:gap-y-[4vw] py-[2vw] max-md:py-[4vw] w-full  ">
+              <div className="flex max-md:flex-wrap justify-center max-md:gap-x-[4vw] max-md:gap-y-[6vw] py-[2vw] max-md:py-[6vw] w-full   ">
                 {topRowTools.map((tool, index) => (
                   <div className="w-fit" key={index}>
                     <ToolItem tool={tool} />
@@ -145,7 +144,7 @@ export default function AgenticAIDiagram() {
               </div>
 
               {/* Bottom Row - Capabilities */}
-              <div className="flex max-md:flex-wrap justify-center max-md:gap-x-[4vw] max-md:gap-y-[4vw] py-[2vw] max-md:py-[4vw] w-full border-t border-white/20">
+              <div className="flex max-md:flex-wrap justify-center max-md:gap-x-[4vw] max-md:gap-y-[6vw] py-[2vw] max-md:py-[6vw] w-full border-t border-white/20">
                 {bottomRowTools.map((tool, index) => (
                   <div className="w-fit" key={index}>
                     <ToolItem tool={tool} />

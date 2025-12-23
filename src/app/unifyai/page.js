@@ -51,7 +51,7 @@ export default function page() {
         <AiEverywhere />
         <UnifyTour/>
         <Usecase data={usecaseData} />
-        <UsecaseMobile />
+        <UsecaseMobile usecaseData={usecaseData} heading='Supercharge Your AI/ML Use Cases ' headingHeight='h-[5vw]' />
         <PresentationLayer />
         <Diagram />
         <Impact />

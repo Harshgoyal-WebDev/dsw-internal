@@ -20,7 +20,7 @@ const Card = ({ srcc, content, isActive, onHover }) => {
         }`}
       />
 
-      <div className="relative h-full w-full">
+      <div className="relative h-full w-full ">
         <div className="w-[5.2vw]">
           <Image
             src={srcc}
@@ -125,11 +125,11 @@ const AgenticFeatures = () => {
     <section
       id="features-section"
       ref={featuresRef}
-      className="h-[200vh] max-sm:h-full w-full relative"
+      className="h-[200vh] max-sm:mt-[25vh] max-sm:h-full w-full relative"
     >
       <div className="bg-primary features-div sticky max-sm:relative top-0 h-fit flex flex-col container !px-0">
         <div className="w-[60%] max-md:w-[90%] pl-[5vw] max-sm:pl-0  max-sm:mx-auto max-md:space-y-[7vw] space-y-[1.5vw] max-sm:space-y-[6vw] max-md:pl-[7vw]">
-          <h2 className="text-50 headingAnim w-[100%] max-sm:text-center text-white-200 max-sm:!text-[11.5vw]">
+          <h2 className="text-50 headingAnim w-[100%] max-sm:text-center text-white-200 max-md:!text-[9vw]">
             Built on the proven DSW UnifyAI foundation, DSW AgenticAI brings agent orchestration, audit-first governance, and human-in-the-loop controls to regulated enterprises.  
           </h2>
 

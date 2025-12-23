@@ -8,46 +8,10 @@ import WhiteButton from "../Button/WhiteButton";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const usecaseData = [
-    {
-      id: "001",
-      title: "UnifyAI ",
-      description:"Build, test, deploy, and monitor AI/ML models with lightning speed using accelerated workflows: ",
-      features: [
-        "400+ pre-built connectors for seamless data ingestion and transformation ",
-        "Core AI/ML engine with built-in model selection and evaluation ",
-        "Real-time monitoring with performance, drift, and anomaly tracking",
-        "One-click deployment to production environments "
-      ],
-      z:"z-[100]",
-    },
-    // {
-    //   id: "002",
-    //   title: "AgenticAI",
-    //   description:"Design, configure, and launch enterprise-grade GenAI agents with ease:",
-    //   features: [
-    //     "Agentic AI drag and drop workflows and framework for task-based orchestration ",
-    //     "LLM model plug-ins with customizable tools, memory, and prompts ",
-    //     "Secure integration with internal knowledge bases and APIs ",
-    //     "Guardrails and governance by design for safe, compliant outputs "
-    //   ],
-    //   z:"z-[200]",
-    // },
-    {
-      id: "002",
-      title: "Unified Ops ",
-      description:"One platform. One centralized AI ecosystem. Total control.",
-      features: [
-        "Centralized observability across models and agents ",
-        "Built-in compliance – ISO 42001, SOC 2, ISO 27001, HIPAA, GDPR",
-        "Full traceability with logs, alerts, and audit trails  ",
-      ],
-      z:"z-[300]"
-    },
-   
-  ];
 
-export default function UsecaseMobile({ allowMultiple = false }) {
+
+export default function UsecaseMobile({ usecaseData, heading, allowMultiple = false, headingWidth='5vw'
+ }) {
   const [openIndexes, setOpenIndexes] = useState([0]);
   const sectionRef = useRef(null);
 
@@ -71,9 +35,10 @@ export default function UsecaseMobile({ allowMultiple = false }) {
       className="px-[7vw] max-sm:py-[15%] w-full h-fit relative max-md:py-[7%] hidden max-md:block "
       id="WhyUnify"
     >
-      <div className="h-[5vh] relative w-full">
+      <div className={` relative w-full ${headingWidth}`}>
         <h2 className="text-60 text-center font-light headingAnim">
-          Supercharge Your AI/ML Use Cases  
+          {heading}
+          
         </h2>
       </div>
 

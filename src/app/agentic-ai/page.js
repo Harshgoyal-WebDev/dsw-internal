@@ -14,6 +14,7 @@ import Results from "@/components/Insuraince/Results";
 import Outcomes from "@/components/Workshops/Outcomes";
 import SuccessStories from "@/components/Homepage/SuccessStories";
 import AgenticAIDiagram from "@/components/AgenticAI/PresentationLayer";
+import UsecaseMobile from "@/components/UnifyPage/UsecaseMobile";
 
 export const metadata = {
   title: "DSW UnifyAI – Enterprise AI Platform for Insurance",
@@ -30,11 +31,11 @@ export default async function Home() {
     <>
       <WebpageJsonLd metadata={metadata} />
       <FAQJSONLD faqs={faqData} />
-
       <Layout>
         <AgenticHero heroData={heroData} />
         <AgenticFeatures />
         <AgenticUsecase data={usecaseData} />
+        <UsecaseMobile usecaseData={usecaseData} heading='Turn proofs-of-concept into auditable, production-grade automation with explainable agents, deterministic governance, and enterprise-grade security.' headingWidth="h-[40vh]" />
         <CoreCapabilities />
         <Results heading='BFSI Use Cases & Vertical Accelerators ' results={resultsData} />
         <Outcomes outcomesData={outcomesData} />

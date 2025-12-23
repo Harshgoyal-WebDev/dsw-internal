@@ -55,8 +55,6 @@ const cardsData = [
   },
 ];
 
-
-
 const CoreCapabilities = () => {
   const swiperRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -93,7 +91,7 @@ const CoreCapabilities = () => {
           start: "20% bottom",
           end: "bottom 75%",
           scrub: true,
-        //   markers: true,
+          //   markers: true,
         },
       });
 
@@ -175,14 +173,12 @@ const CoreCapabilities = () => {
                 alt="cap-logo"
               />
             </div>
-          <div className="flex flex-col gap-4 w-full ">
-                <p className="font-body text-30">
-                    {cardsData[0].heading}
-                </p>
-              <p className="text-white-300 !text-[1.1vw]  max-md:w-[80%]">
+            <div className="flex flex-col max-md:w-full  gap-4 w-full ">
+              <p className="font-body text-30">{cardsData[0].heading}</p>
+              <p className="text-white-300  !text-[1.1vw]  max-md:w-[100%]">
                 {cardsData[0].text}
               </p>
-                </div>
+            </div>
           </div>
 
           {cardsData.slice(1).map((card, index) => (
@@ -200,13 +196,9 @@ const CoreCapabilities = () => {
                 />
               </div>
               <div className="flex flex-col gap-4 w-full ">
-                <p className="font-body text-30">
-                    {card.heading}
-                </p>
-              <p className="text-white-300 !text-[1.1vw]  ">
-                {card.text}
-              </p>
-                </div>
+                <p className="font-body text-30">{card.heading}</p>
+                <p className="text-white-300 !text-[1.1vw]  ">{card.text}</p>
+              </div>
             </div>
           ))}
         </div>
@@ -222,8 +214,8 @@ const CoreCapabilities = () => {
           >
             {cardsData.map((card, index) => (
               <SwiperSlide key={index}>
-                <div className="w-full h-[28vh] border  z-[4] bg-white/5 background-glass backdrop-blur-sm border-white/15 rounded-[2vw] max-sm:rounded-[7vw] flex max-sm:flex-col max-sm:justify-between max-sm:gap-[5vw] max-sm:py-[8vw] justify-center gap-[2.5vw] items-center">
-                  <div className="h-[5.5vw] w-[5.5vw] max-sm:h-[24vw] max-sm:w-auto">
+                <div className="w-full h-[38vh] border px-[4vw] z-[4] bg-white/5 background-glass backdrop-blur-sm border-white/15 rounded-[2vw] max-sm:rounded-[7vw] flex max-sm:flex-col max-sm:justify-between max-sm:gap-[5vw] max-sm:py-[8vw] justify-center gap-[2.5vw] items-center">
+                  <div className="h-[5.5vw] w-[5.5vw] max-sm:h-[20vw] max-sm:w-auto">
                     <Image
                       src={card.icon}
                       width={300}
@@ -232,9 +224,16 @@ const CoreCapabilities = () => {
                       alt="cap-logo"
                     />
                   </div>
-                  <p className="text-white-300 w-[20vw]  max-sm:text-center">
+                  <div className="flex flex-col justify-center items-center gap-[5vw]">
+
+                    <p className="text-[6vw] leading-[1.2] text-center">
+                      {card.heading}
+                    </p>
+
+                  <p className="text-white-300  max-sm:w-full  max-sm:text-center">
                     {card.text}
                   </p>
+                  </div>
                 </div>
               </SwiperSlide>
             ))}
@@ -248,7 +247,7 @@ const CoreCapabilities = () => {
             />
             <NextButton
               onClick={handleNext}
-              isDisabled={cardsData.length === activeIndex}
+              isDisabled={cardsData.length -1 === activeIndex}
             />
           </div>
         </div>
