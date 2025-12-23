@@ -29,36 +29,37 @@ const nextConfig = {
     const csp = [
       "default-src 'self'",
 
-      // ✅ allow next runtime + vercel analytics script host
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: https://va.vercel-scripts.com",
+      // ✅ Scripts (Next + Vercel + Google)
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: https://va.vercel-scripts.com https://www.googletagmanager.com https://www.google-analytics.com",
 
-      // ✅ styles (tailwind inline styles etc.)
+      // ✅ Styles
       "style-src 'self' 'unsafe-inline'",
 
-      // ✅ images
-      "img-src 'self' data: blob: https://bisque-okapi-883422.hostingersite.com https://i.ytimg.com",
+      // ✅ Images (GA uses pixels)
+      "img-src 'self' data: blob: https://bisque-okapi-883422.hostingersite.com https://i.ytimg.com https://www.google-analytics.com https://www.googletagmanager.com",
 
-      // ✅ fonts
+      // ✅ Fonts
       "font-src 'self' data:",
 
-      // ✅ fetch/xhr/ws (analytics + general https)
-      "connect-src 'self' https: https://va.vercel-scripts.com",
+      // ✅ Analytics & fetch requests
+      "connect-src 'self' https: https://va.vercel-scripts.com https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net",
 
-      // ✅ media playback (youtube streams)
+      // ✅ Media
       "media-src 'self' blob: https://www.youtube.com https://*.googlevideo.com",
 
-      // ✅ iframe embeds (youtube)
-      "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com",
+      // ✅ Iframes (GTM preview + YouTube)
+      "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://www.googletagmanager.com",
 
-      // ✅ workers
+      // ✅ Workers
       "worker-src 'self' blob:",
 
-      // ✅ security
+      // ✅ Security hardening
       "object-src 'none'",
       "frame-ancestors 'self'",
       "upgrade-insecure-requests",
       "base-uri 'self'",
     ].join("; ");
+
 
     const securityHeaders = [
       {

@@ -6,6 +6,7 @@ import { siteViewport } from "@/config/viewport";
 import LayoutTransition from "@/components/LayoutTransition";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 // Use external metadata configuration like working project
 export const metadata = siteMetadata;
@@ -23,8 +24,13 @@ export default function RootLayout({ children }) {
         </html>
         {/* </ReactLenis> */}
       </LenisSmoothScroll>
+
+      {/* Vercel Analytics */}
       <SpeedInsights />
       <Analytics />
+      
+      {/* Google Analytics */}
+      <GoogleAnalytics gaId="G-Z5CT0M9533" />
     </>
   );
 }
