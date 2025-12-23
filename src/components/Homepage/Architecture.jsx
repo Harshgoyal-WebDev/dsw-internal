@@ -253,7 +253,7 @@ export default function Architecture() {
   return (
     <section
       ref={sectionRef}
-      className="h-fit flex flex-col items-center justify-center space-y-[3vw] max-md:space-y-[5vw] max-md:px-[7vw] max-md:py-[15%] container relative background-radial"
+      className="h-fit flex flex-col items-center justify-center space-y-[3vw] max-md:space-y-[5vw] max-md:px-[7vw] max-md:py-[15%] container relative background-radial max-md:hidden block"
     >
       <h2 className="text-center text-white-200 headingAnim w-[65%] max-md:w-[100%] text-90 max-md:text-[7vw]">
         A Unified Architecture for Governed Enterprise AI​

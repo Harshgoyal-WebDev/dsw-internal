@@ -99,7 +99,7 @@ const SwiperCard = ({ usecase, onHover, isActive, space }) => {
             isActive ? "opacity-100" : "opacity-0"
           }`}
         />
-        <div className={`!h-[4vw] relative z-[10]  !w-[4vw] max-sm:mb-[6vw] !mb-[2vw] ${isActive ? "text-white" : "text-primary-1"} max-md:h-[20vw] max-md:w-[20vw]`}>
+        <div className={`!h-[4vw] relative z-[10]  !w-[4vw] max-sm:mb-[6vw] !mb-[2vw] ${isActive ? "text-white" : "text-primary-1"} max-md:!h-[25vw] max-md:!w-[20vw]`}>
             {usecase.icon}
         </div>
 
