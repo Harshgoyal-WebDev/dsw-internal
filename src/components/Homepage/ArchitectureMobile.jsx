@@ -170,7 +170,7 @@ export default function ArchitectureMobile({showHeading2 = false}) {
             Industry Specific Solutions
           </p> */}
 
-        <div className="w-full flex flex-col gap-3 relative">
+        <div className="w-full flex flex-col gap-3 relative"> 
           {industries.map((industry, idx) => (
             <div
               key={idx}
