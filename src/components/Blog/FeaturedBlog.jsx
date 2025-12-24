@@ -9,22 +9,26 @@ import { formatDate } from "@/lib/datetime";
 gsap.registerPlugin(ScrollTrigger);
 
 const FeaturedBlog = ({ posts }) => {
-  const featuredPost = posts.find((post) => post.isSticky === true) || null;
-  // console.log(featuredPost);
+  const featuredPost = posts.find((post) => post.isSticky === true) || posts[0] || null;
+  
+  if (!featuredPost) {
+    return null;
+  }
+
   return (
     <section
       id="featured-blog-container"
-      className=" w-screen h-full max-md:gap-[3vh] mt-[-20vh] max-md:mt-0 max-md:flex-col relative z-[20]"
+      className=" w-screen h-full max-md:gap-[3vh] mb-[1vw] max-md:mb-0 mt-[-20vh] max-md:mt-0 max-md:flex-col relative z-[20]"
     >
       <div className="w-full h-full flex fadeupDelay justify-between container !pb-[0.5vw] max-md:flex-col  ">
         <div className="w-[45%] max-md:w-[85%] max-md:px-0  max-sm:w-full   rounded-3xl h-[30vw] max-md:h-[40vh] max-md:border max-md:border-white/30  relative group overflow-hidden">
           <Link href={featuredPost.slug}>
-            <div className="w-full h-full   max-md:h-full max-md:w-full overflow-hidden rounded-3xl">
+            <div className="w-full h-[90%]   max-md:h-full max-md:w-full overflow-hidden rounded-3xl">
               <Image
-                src={featuredPost.featuredImage.sourceUrl}
+                src={featuredPost.featuredImage?.sourceUrl || "/assets/images/blog/ai-blog.png"}
                 width={800}
                 height={800}
-                alt="ai-img"
+                alt={featuredPost.featuredImage?.altText || featuredPost.title || "Featured blog image"}
                 className="w-full h-full object-cover max-md:h-full  group-hover:scale-[1.1] duration-700 ease-in-out transition-all"
               />
             </div>
@@ -55,7 +59,9 @@ const FeaturedBlog = ({ posts }) => {
                 Category
               </p>
               <p className="text-white-200 text-[1.05vw] max-md:text-[2.5vw] max-sm:text-[4vw]">
-                AI
+                {featuredPost.categories && featuredPost.categories.length > 0 
+                  ? featuredPost.categories[0].name 
+                  : "AI"}
               </p>
             </div>
 
@@ -73,7 +79,7 @@ const FeaturedBlog = ({ posts }) => {
                 Author
               </p>
               <p className="text-white-200 text-[1.05vw] max-md:text-[2.5vw] max-sm:text-[4vw]">
-                Jane Smith
+                {featuredPost.author || "Jane Smith"}
               </p>
             </div>
           </div>

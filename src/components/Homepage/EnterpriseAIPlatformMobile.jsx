@@ -61,7 +61,7 @@ export default function EnterpriseAIPlatformMobile({ allowMultiple = false }) {
       className="px-[7vw] max-sm:py-[15%] w-full h-fit bg-[#F8F8F8] relative max-md:py-[15%] hidden max-md:block text-[#111111]"
       id="WhyUnify"
     >
-      <div className="h-[5vh] relative w-full">
+      <div className="h-[30vw] relative w-full">
         <div className="space-y-[5vw] flex flex-col items-center justify-center">
           <div className="w-[25vw] h-auto headingAnim relative">
             <Image
@@ -76,6 +76,11 @@ export default function EnterpriseAIPlatformMobile({ allowMultiple = false }) {
           <h3 className="text-60 text-primary-1 text-center font-light headingAnim">
             The Enterprise AI Platform
           </h3>
+          <Copy>
+            <p className="text-background  w-[100%] text-30 text-center">
+              Built for enterprises that need safe, auditable, large-scale agentic automation.
+            </p>
+          </Copy>
           <Copy>
             <p className="text-background w-[100%] text-center">
               Accelerate AI and ML across your business with end-to-end

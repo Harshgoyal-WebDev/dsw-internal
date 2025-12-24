@@ -16,6 +16,8 @@ import { getPageMetadata } from "@/config/metadata";
 import Hero from "@/components/Common/Hero";
 import UnifyTour from "@/components/UnifyPage/UnifyTour";
 import UnifyTable from "@/components/UnifyPage/UnifyTable";
+import Architecture from "@/components/Homepage/Architecture";
+import ArchitectureMobile from "@/components/Homepage/ArchitectureMobile";
 
 export const metadata = getPageMetadata({
   title: "UnifyAI - Operating System for Enterprise AI",
@@ -53,7 +55,8 @@ export default function page() {
         <Usecase data={usecaseData} />
         <UsecaseMobile usecaseData={usecaseData} heading='Supercharge Your AI/ML Use Cases ' headingHeight='h-[5vw]' />
         <PresentationLayer />
-        <Diagram />
+        <Architecture showHeading2={true}/>
+        <ArchitectureMobile showHeading2={true}/>
         <Impact />
         {/* <OnePlatform /> */}
         <UnifyTable />

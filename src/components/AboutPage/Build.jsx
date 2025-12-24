@@ -59,7 +59,7 @@ export default function CardStack2({ allowMultiple = false }) {
 function AccordionItem({ title, description,features, isOpen, onToggle,index,z,btnName,btnLink }) {
 
   return (
-    <div className={`w-full group  overflow-hidden relative faq-tab accordion-block group  ${z} ${index>0 ? "mt-[-2vw] ":"mt-0"}`}>
+    <div className={`w-full   overflow-hidden relative faq-tab accordion-block group/parent   ${z} ${index>0 ? "mt-[-2vw] ":"mt-0"}`}>
       <div className={`w-full mr-auto relative`}>
 
         <div className={`inset-0 w-full relative border rounded-[1.5vw] border-white/10 ${ isOpen ? "bg-gradient-to-r from-light-blue to-dark-blue" :"bg-[#030815]"}  `}>
@@ -89,7 +89,7 @@ function AccordionItem({ title, description,features, isOpen, onToggle,index,z,b
 
               <div
                 className={` h-auto relative duration-500 max-sm:w-[12vw] rounded-full border-[1.5px] ml-[3vw] p-[2vw]  transition-all  ease-out  ${ isOpen ? "border bg-white" :" background-glass border-white/20"}  ${
-                  !isOpen ? "group-hover:rotate-[180deg]" : "group-hover:rotate-[315deg] rotate-[45deg]"
+                  !isOpen ? "group-hover/parent:rotate-[180deg]" : "group-hover/parent:rotate-[315deg] rotate-[45deg]"
                 }`}
               >
                 <span className={`w-[1.5vw] rounded-full h-[2px] bg-[#ffffff] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-300 transform-origin-center  ${

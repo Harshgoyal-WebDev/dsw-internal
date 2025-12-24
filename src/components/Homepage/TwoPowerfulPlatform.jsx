@@ -12,7 +12,7 @@ export default function TwoPowerfulPlatform() {
     </section> */}
       <section className="min-h-screen h-fit flex flex-col items-center justify-center space-y-[5vw] bg-[#f8f8f8] container max-md:min-h-fit max-md:space-y-[8vw] max-md:py-[10vw]">
         <h2 className="text-center  headingAnim text-primary-1 text-90 max-md:w-[90%] max-md:text-[8vw]">
-          Two Powerful Platforms. <br /> One Intelligent Layer for your Enterprise.
+         One Intelligent Layer for your Enterprise.
         </h2>
         <div className="w-full h-full flex items-center  justify-center gap-[2.5vw] max-md:flex-col max-md:w-[90%] max-md:gap-[5vw]">
           <div

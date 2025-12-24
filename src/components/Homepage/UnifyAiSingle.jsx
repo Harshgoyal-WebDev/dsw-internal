@@ -147,7 +147,7 @@ const UnifyAiSingle = () => {
 
   return (
     <section
-      className="w-screen h-[250vh] relative max-md:overflow-hidden unifyContainer header-dark"
+      className="w-screen h-[250vh] relative  unifyContainer header-dark"
       id="unifyAi"
     >
       {/* remove Tailwind gradient utilities here; keep only layout classes */}

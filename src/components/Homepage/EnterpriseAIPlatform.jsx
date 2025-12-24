@@ -274,7 +274,7 @@ const EnterpriseAIPlatform = () => {
     >
       <div className="flex flex-col items-center w-full pb-[7vw] space-y-30 px-10 sticky h-screen top-[5%] z-[2]">
         <div className="gap-[5vw] w-full flex flex-col items-center justify-center">
-          <div className="space-y-[2vw] flex flex-col items-center justify-center">
+          <div className="space-y-[1.5vw] flex flex-col items-center justify-center">
             <div className="w-[17vw] h-auto headingAnim relative">
               <Image
                 className="h-full w-full object-contain transition-all duration-700 ease-default-ease group-hover:opacity-0"
@@ -289,8 +289,17 @@ const EnterpriseAIPlatform = () => {
               The Enterprise AI Platform
             </h3>
             <Copy>
+              <p className="text-background  w-[100%] text-30 text-center">
+                Built for enterprises that need AI to be governed, explainable, <br />
+                and production-ready, at scale.
+              </p>
+            </Copy>
+            <Copy>
               <p className="text-background  text-center">
-                Accelerate AI and ML across your business with end-to-end lifecycle governance,<br/> observability, and deployment flexibility - all in one operating layer.
+                Accelerate AI and ML across your business with end-to-end
+                lifecycle governance,
+                <br /> observability, and deployment flexibility - all in one
+                operating layer.
               </p>
             </Copy>
           </div>
@@ -385,7 +394,7 @@ const EnterpriseAIPlatform = () => {
                   src="/assets/images/homepage/whyunify/unify-dashboard-1.png"
                   height={390}
                   width={382}
-                  className="h-[14vw] w-[16vw] object-cover"
+                  className="h-[13vw] w-[15vw] object-cover"
                   alt="unify-ai-graph"
                 />
               </div>
@@ -394,7 +403,7 @@ const EnterpriseAIPlatform = () => {
                   src="/assets/images/homepage/whyunify/unify-dashboard-2.png"
                   height={247}
                   width={283}
-                  className="h-[13vw] w-[15vw] object-cover"
+                  className="h-[12vw] w-[14vw] object-cover"
                   alt="unify-ai-dashboard"
                 />
               </div>
@@ -402,6 +411,11 @@ const EnterpriseAIPlatform = () => {
 
             {/* Right: Content Blocks */}
             <div className="w-[40vw] relative">
+              {/* <p className="w-[80%] text-black">
+                Built for enterprises that need AI to be governed, explainable,
+                and production-ready, at scale.{" "}
+              </p> */}
+
               <div
                 ref={addToContentRefs}
                 className="step-block absolute top-20 left-0 pointer-events-auto"
@@ -464,10 +478,10 @@ const EnterpriseAIPlatform = () => {
                 className="step-block absolute top-10 left-0 pointer-events-none"
               >
                 <h3 className="text-50 text-black font-head ">
-                Flexible deployment
+                  Flexible deployment
                 </h3>
                 <p className="text-black content-p w-[88%] py-8">
-                Run anywhere. On-prem, cloud, hybrid, or air-gapped. 
+                  Run anywhere. On-prem, cloud, hybrid, or air-gapped.
                 </p>
                 <WhiteButton
                   background="border-primary-1 border bg-transparent hover:bg-transparent"
