@@ -5,14 +5,18 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Copy from "../Animations/Copy";
 gsap.registerPlugin(ScrollTrigger);
 
+
 const EngagementModel = () => {
+
+
   return (
-    <section className="container overflow-hidden future-section h-fit max-md:h-full relative max-md:gap-[5vw] flex flex-col gap-[2.8vw] justify-center items-center">
+    <section
+      id="engagement-model"
+      className="container  overflow-hidden future-section h-fit  max-md:h-full relative max-md:gap-[5vw] flex flex-col gap-[9vw] justify-center items-center"
+    >
       <h2 className="text-90 headingAnim text-center text-white-200">
         Engagement Models
       </h2>
-
-      
 
       <div className=" future-card inset-0 flex px-[8vw] gap-[2vw] items-start max-md:flex-col max-md:px-0 max-md:static max-md:gap-[8vw] max-sm:mt-[15vw] max-md:mt-[7.5vw] fadeup">
         <div className="flex w-fit justify-start max-md:justify-center">
@@ -84,7 +88,8 @@ const EngagementModel = () => {
                 className="text-white-300 w-[90%] pb-[1vw] 
         transition-colors duration-500 ease-in-out"
               >
-                Ongoing workshops, certifications, and co-created enablement programs to strengthen Finacle and client teams.
+                Ongoing workshops, certifications, and co-created enablement
+                programs to strengthen Finacle and client teams.
               </p>
             </div>
           </div>
@@ -115,13 +120,15 @@ const EngagementModel = () => {
                 03
               </p>
 
-               <p className="text-30">Innovation Catalyst</p>
+              <p className="text-30">Innovation Catalyst</p>
 
               <p
                 className="text-white-300 w-[90%] pb-[1vw] 
         transition-colors duration-500 ease-in-out"
               >
-                Continuous research and evaluation of emerging open-source technologies to enrich Finacle’s global roadmap and performance benchmarks.
+                Continuous research and evaluation of emerging open-source
+                technologies to enrich Finacle’s global roadmap and performance
+                benchmarks.
               </p>
             </div>
           </div>

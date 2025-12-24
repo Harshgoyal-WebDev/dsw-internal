@@ -1,13 +1,17 @@
+'use client';
 import Image from "next/image";
-import React from "react";
-import Copy from "../Animations/Copy";
-import Clients from "../AboutPage/Clients";
+import React, { useRef } from "react";
+
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+import { useGSAP } from "@gsap/react";
 
 const AwardItem = ({ img}) => {
   return (
     <>
-      <div className="flex-shrink-0 flex items-center justify-center gap-[1vw] w-[15vw] max-md:w-[70vw] max-sm:w-fit  max-md:gap-[2vw]">
-        <div className="w-[12vw] h-auto max-md:w-[18vw] max-sm:w-[20vw]">
+      <div className="flex-shrink-0 flex items-center justify-center gap-[1vw] w-[15vw] max-md:w-[70vw] max-sm:!w-[30vw]  max-md:gap-[2vw]">
+        <div className="w-[12vw] h-auto max-md:w-[18vw] max-sm:!w-[30vw]">
           <Image
             src={img}
             height={130}
@@ -20,58 +24,157 @@ const AwardItem = ({ img}) => {
     </>
   );
 };
+
 const Expertise = () => {
-    const firstHalfAwards = awards.slice(0, Math.ceil(awards.length / 2));
+  const firstHalfAwards = awards.slice(0, Math.ceil(awards.length / 2));
   const secondHalfAwards = awards.slice(Math.ceil(awards.length / 2));
+  
+  const marqueeRef1 = useRef(null);
+  const marqueeRef2 = useRef(null);
+
+  const [isMobile, setIsMobile] = React.useState(false);
+
+React.useEffect(() => {
+  const check = () => setIsMobile(window.innerWidth <= 768);
+  check();
+  window.addEventListener("resize", check);
+  return () => window.removeEventListener("resize", check);
+}, []);
+
+
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#engagement-model",
+        start:"30% bottom",
+        end:  "40% 30%",
+        markers: false,
+        scrub: true,
+      },
+    });
+    tl.fromTo(
+      "#engagement-model, #finacle-expertise",
+      {
+        backgroundColor: "#ffffff",
+      },
+      {
+        backgroundColor: "#03091D",
+      }
+    );
+    tl.fromTo(
+      '#engagement-model h2',
+      {
+        color: "#111111",
+      },
+      {
+        color: "#ffffff",
+      }, '<'
+    )
+    
+    // First marquee - left to right
+    if (marqueeRef1.current) {
+      const track = marqueeRef1.current;
+      const trackWidth = track.scrollWidth / 3; // Divide by 2 because content is duplicated
+      
+      gsap.to(track, {
+        x: -trackWidth  ,
+        duration: 25,
+        ease: "none",
+        repeat: -1,
+      });
+    }
+    
+    // Second marquee - right to left (reverse)
+    if (marqueeRef2.current) {
+      const track = marqueeRef2.current;
+      const trackWidth = track.scrollWidth / 3; // Divide by 3 because content is duplicated
+      
+      gsap.fromTo(track, 
+        {
+          x: -trackWidth,
+        },
+        {
+          x: 0,
+          duration: 25,
+          ease: "none",
+          repeat: -1,
+        }
+      );
+    }
+  
+  },
+ { dependencies: [isMobile] } );
 
   return (
     <section
-      id="recognized"
-      className="h-full w-screen  relative overflow-hidden container bg-white !py-[8%]"
+      id="finacle-expertise"
+      className="min-h-screen  h-fit flex flex-col items-center justify-center w-screen  relative overflow-hidden container  !py-[8%]"
     >
-      <div className="w-full h-full flex flex-col items-center justify-center relative z-[2]">
+      <div className="w-full h-full flex flex-col items-center justify-center gap-32 relative z-[2]">
         <div className="text-center  space-y-5  max-md:space-y-10">
           <h2 className="text-60  headingAnim text-primary-1">
-            Core Open-Source Expertise 
+            Core Open-Source Expertise 
           </h2>
          
         </div>
+
+        <div className="space-y-28 max-sm:!space-y-15">
        
-        
-       <div className="marquee fadeup max-md:my-[7vw]">
-          <div className="marquee__track opens-source max-md:space-x-[7vw] max-sm:space-x-[10vw]">
-            {firstHalfAwards.map((item, index) => (
-              <AwardItem
-                key={index}
-                img={item.img}
-                
-              />
-            ))}
-            {firstHalfAwards.map((item, index) => (
-              <AwardItem
-                key={index}
-                img={item.img}
-              />
-            ))}
+          <div className="overflow-hidden fadeup max-md:my-[7vw] w-fit">
+            <div 
+              ref={marqueeRef1}
+              className="flex o space-x-1  max-md:space-x-[7vw] max-sm:space-x-[5vw]"
+            >
+              {firstHalfAwards.map((item, index) => (
+                <AwardItem
+                  key={index}
+                  img={item.img}
+                  
+                />
+              ))}
+              {firstHalfAwards.map((item, index) => (
+                <AwardItem
+                  key={`duplicate-${index}`}
+                  img={item.img}
+                />
+              ))}
+              {firstHalfAwards.map((item, index) => (
+                <AwardItem
+                  key={`duplicate-${index}`}
+                  img={item.img}
+                />
+              ))}
+              
             </div>
           </div>
 
-          <div className="marquee fadeup max-md:my-[7vw]">
-          <div className="marquee__track_reverse opens-source max-md:space-x-[7vw] max-sm:space-x-[10vw]">
-            {secondHalfAwards.map((item, index) => (
-              <AwardItem
-                key={index}
-                img={item.img}
-              />
-            ))}
-            {secondHalfAwards.map((item, index) => (
-              <AwardItem
-                key={index}
-                img={item.img}
-              />
-            ))}
+          <div className="overflow-hidden fadeup max-md:my-[7vw] max-sm:space-x-[5vw] w-fit">
+            <div 
+              ref={marqueeRef2}
+              className="flex opens-source max-md:space-x-[7vw] max-sm:space-x-[10vw]"
+            >
+              {secondHalfAwards.map((item, index) => (
+                <AwardItem
+                  key={index}
+                  img={item.img}
+                />
+              ))}
+              {secondHalfAwards.map((item, index) => (
+                <AwardItem
+                  key={`duplicate-${index}`}
+                  img={item.img}
+                />
+              ))}
+              {secondHalfAwards.map((item, index) => (
+                <AwardItem
+                  key={`duplicate-${index}`}
+                  img={item.img}
+                />
+              ))}
             </div>
           </div>
+
+        </div>
       
       </div>
     </section>
