@@ -53,7 +53,7 @@ const Join = () => {
   return (
     <section className="w-screen h-fit container relative !py-0 !pb-[10%]  overflow-hidden max-sm:!py-[15%] max-sm:!pb-[25%]" id="brochure">
       <div className="w-full flex flex-col items-center justify-center gap-[5vw] max-sm:gap-[15vw]">
-        <h2 className="w-[70%] text-center text-60 headingAnim max-md:w-full max-sm:text-left max-sm:!text-[11.5vw]">
+        <h2 className="w-[70%]  text-center text-60 headingAnim max-md:w-full max-sm:text-left max-sm:!text-[11.5vw]">
           Why Join DSW?
         </h2>
         <div className="w-full flex flex-wrap justify-center gap-[2vw] fadeup max-md:hidden">

@@ -12,7 +12,7 @@ const Differently = () => {
       </div>
       <div className=''>
         <div className=' relative group '>
-            <div className='relative z-[10] space-y-[3vw] max-md:space-y-[7vw]'>
+            <div className='relative z-[10] w-[75%] max-sm:w-full space-y-[3vw] max-md:space-y-[7vw]'>
               <Copy>
           <p className='text-white-300 '>AI reaches its full potential when woven into the enterprise fabric with the <span className='font-semibold'>scale, governance, and predictability </span> that regulated industries demand. We turn the complexity of AI into the certainty of production,moving beyond innovation to true integration.</p>
           </Copy>
