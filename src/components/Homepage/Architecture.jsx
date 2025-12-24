@@ -79,8 +79,9 @@ export default function Architecture({ showHeading2 = false }) {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 60%",
+          start: "10% 60%",
           end: "bottom bottom",
+          markers:false,
           toggleActions: "play none none reverse",
         },
       });
@@ -186,16 +187,17 @@ export default function Architecture({ showHeading2 = false }) {
 
         // 3) THEN CARDS (AFTER ARROWS)
         .to(
-          [leftCardRef.current, rightCardRef.current],
+          leftCardRef.current,
           {
             opacity: 1,
             y: 0,
+            delay: 0,
             duration: 0.55,
             ease: "power3.out",
-            stagger: 0.15,
           },
           "+=0.15"
         )
+        
         .to(
           [arrowTopRef.current, arrowBottomRef.current],
           {
@@ -206,6 +208,16 @@ export default function Architecture({ showHeading2 = false }) {
             stagger: 0.12,
           },
           "-=0.25"
+        )
+        .to(
+          rightCardRef.current,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.55,
+            ease: "power3.out",
+          },
+         
         )
 
         // 4) FINALLY INDUSTRY BOX
@@ -280,7 +292,7 @@ export default function Architecture({ showHeading2 = false }) {
       )}
 
       {/* Steps cards */}
-      <div className="flex items-center mt-[5vw] max-md:mt-[10vw] mb-[30vh] justify-center gap-[.2vw] max-md:flex-col max-md:gap-[4vw] fadeup">
+      <div className="flex items-center mt-[5vw] max-md:mt-[10vw] mb-[20vh] justify-center gap-[.2vw] max-md:flex-col max-md:gap-[4vw] fadeup">
         {steps.map((step, index) => (
           <React.Fragment key={index}>
             <div
