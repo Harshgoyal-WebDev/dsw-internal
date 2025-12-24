@@ -32,6 +32,7 @@ import IntelligentUseCases from "@/components/Homepage/IntelligentUseCases";
 import EnterpriseAgentPlatformMobile from "@/components/Homepage/EnterpriseAgentPlatformMobile";
 import EnterpriseAIPlatformMobile from "@/components/Homepage/EnterpriseAIPlatformMobile";
 import Architecture from "@/components/Homepage/Architecture";
+import ArchitectureMobile from "@/components/Homepage/ArchitectureMobile";
 const Brochure = dynamic(() => import("@/components/Homepage/Brochure"), {
   ssr: true,
 });
@@ -82,6 +83,7 @@ export default async function Home() {
         {/* <Clients /> */}
         <IntelligentUseCases sessionsData={sessionsData} />
          <Architecture/>
+         <ArchitectureMobile />
         <div className=" max-sm:mt-0">
           <SuccessStories />
         </div>

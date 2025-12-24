@@ -327,7 +327,7 @@ const EnterpiseAgentPlatform = () => {
     >
       <div className="flex flex-col items-center w-full pb-[7vw] pt-[10vh] space-y-30 px-10 sticky h-[120vh] top-[-3%] z-[2]">
         <div className="gap-[5vw] w-full flex flex-col items-center justify-center">
-          <div className="space-y-[2vw] flex flex-col items-center justify-center">
+          <div className="space-y-[1.5vw] flex flex-col items-center justify-center">
             <div className="w-[17vw] h-auto headingAnim relative">
               <Image
                 className="h-full w-full object-contain transition-all duration-700 ease-default-ease group-hover:opacity-0"
@@ -340,6 +340,12 @@ const EnterpiseAgentPlatform = () => {
             <h2 className="text-60 text-primary-1 text-center font-light headingAnim">
               The Enterprise Agents Platform​
             </h2>
+            <Copy>
+              <p className="text-background  w-[100%] text-30 text-center">
+              Built for enterprises that need safe, auditable, large-scale <br /> agentic automation.
+              </p>
+            </Copy>
+
             <Copy>
               <p className="text-background  text-center">
                 Get governed, explainable, production-ready AI agents and orchestrated <br/> multi-agent workflows - with full oversight and operational control.​
@@ -437,7 +443,7 @@ const EnterpiseAgentPlatform = () => {
                   src="/assets/images/homepage/whyunify/unify-dashboard-1.png"
                   height={390}
                   width={382}
-                  className="h-[14vw] w-[16vw] object-cover"
+                  className="h-[13vw] w-[15vw] object-cover"
                   alt="unify-ai-graph"
                 />
               </div>
@@ -446,7 +452,7 @@ const EnterpiseAgentPlatform = () => {
                   src="/assets/images/homepage/whyunify/unify-dashboard-2.png"
                   height={247}
                   width={283}
-                  className="h-[13vw] w-[15vw] object-cover"
+                  className="h-[12vw] w-[14vw] object-cover"
                   alt="unify-ai-dashboard"
                 />
               </div>

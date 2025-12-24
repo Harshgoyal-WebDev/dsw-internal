@@ -20,6 +20,7 @@ const Proof = () => {
               para={
                 "Ranked among Ireland’s Top AI Companies by F6S in 2025 ​"
               }
+              ImageSrc={"/assets/images/homepage/recognized/top-10.png"}
             />
           </div>
           <div className="col-start-2 row-start-2 -mt-[35%] max-md:mt-0 max-md:w-full ">
@@ -27,13 +28,15 @@ const Proof = () => {
               para={
                 "Recognized by industry and research bodies across India and Ireland from 2022 to 2025 "
               }
-            />
+              ImageSrc={"/assets/images/homepage/recognized/top-10.png"}
+              />
           </div>
           <div className="col-start-3 row-start-3 -mt-[70%] max-md:mt-0 max-md:w-full">
             <Card
               para={
                 "Proven and compliant across regulated environments, including BFSI, with seamless integration into legacy enterprise systems ​"
               }
+              ImageSrc={"/assets/images/homepage/recognized/top-10.png"}
             />
           </div>
         </div>
@@ -44,7 +47,7 @@ const Proof = () => {
 
 export default Proof;
 
-const Card=({para})=>{
+const Card=({para, ImageSrc})=>{
     return(
         <>
         <div className="flex w-full justify-start fadeup">
@@ -62,7 +65,7 @@ const Card=({para})=>{
 
             <div className="relative z-10 flex flex-col items-center justify-between h-full max-md:gap-[7vw]">
                 <div className='h-[8vw] w-[8vw] max-md:h-[18vw] max-md:w-[18vw]'>
-              <Image src={"/assets/images/homepage/recognized/top-10.png"} height={192} width={153} alt='award'/>
+              <Image src={ImageSrc} height={192} width={153} alt='award'/>
               </div>
 
               <p
