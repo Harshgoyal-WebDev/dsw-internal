@@ -37,8 +37,7 @@ const POINTS = [
 
 export default function Outcomes({ aboutData }) {
   const [isMobile, setIsMobile] = useState(false);
- 
-  
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       setIsMobile(window.innerWidth <= 768);
@@ -86,19 +85,22 @@ export default function Outcomes({ aboutData }) {
     });
   }, []);
 
-   useGSAP(() => {
-
-    const tl = gsap.timeline({
+  useEffect(() => {
+    const EntryChange = gsap.timeline({
       scrollTrigger: {
         trigger: "#finacle-expertise",
-        start: isMobile ? "80% 10%" : "top 100%",
-        end: isMobile ? "10% 30%" : "10% 30%",
+        start: "top center",
+        end: "50% center",
         markers: false,
-        scrub: true,
+        scrub: 1.05,
       },
     });
-    tl.fromTo(
-      "#finacle-expertise",
+    // gsap.set("#finacle-outcomes", {
+    //   backgroundColor: "#03091D",
+    // });
+   
+    EntryChange.fromTo(
+      "#finacle-outcomes",
       {
         backgroundColor: "#03091D",
       },
@@ -106,8 +108,8 @@ export default function Outcomes({ aboutData }) {
         backgroundColor: "#ffffff",
       }
     );
-    tl.fromTo(
-      "#finacle-outcomes",
+    EntryChange.fromTo(
+      "#finacle-expertise",
       {
         backgroundColor: "#03091D",
       },
@@ -116,22 +118,96 @@ export default function Outcomes({ aboutData }) {
       },
       "<"
     );
-    tl.fromTo(
-      "#finacle-outcomes, #enterpriseAgentPlatform .btncomp",
+  }, []);
+
+  useEffect(() => {
+    const ExitAnimation = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#engagement-model",
+        start: "0% center",
+        end: "50% center",
+        markers: false,
+        scrub: 1.05,
+      },
+    });
+    ExitAnimation.fromTo(
+      "#finacle-expertise",
       {
-        color: "#ffffff",
+        backgroundColor: "#ffffff",
       },
       {
-        color: "#111111",
+        backgroundColor: "#03091D",
+      }
+    );
+    ExitAnimation.fromTo(
+      "#engagement-model",
+      {
+        backgroundColor: "#ffffff",
+      },
+      {
+        backgroundColor: "#03091D",
       },
       "<"
     );
-    // ScrollTrigger.refresh();
-  
-  },
-        { dependencies: [isMobile] } 
+  }, []);
 
-);
+  //   () => {
+  //     const tl = gsap.timeline({
+  //       scrollTrigger: {
+  //         trigger: "#finacle-expertise",
+  //         start: isMobile ? "top center" : "top 100%",
+  //         end: isMobile ? "10% center" : "10% 30%",
+  //         markers: true,
+  //         scrub: true,
+  //       },
+  //     });
+  //     // tl.fromTo(
+  //     //   "#finacle-expertise",
+  //     //   {
+  //     //     backgroundColor: "#03091D",
+  //     //   },
+  //     //   {
+  //     //     backgroundColor: "#ffffff",
+  //     //   }
+  //     // );
+  //     tl.fromTo(
+  //       "#finacle-outcomes",
+  //       {
+  //         backgroundColor: "#03091D",
+  //       },
+  //       {
+  //         backgroundColor: "#ffffff",
+  //       },
+  //       "<"
+  //     );
+
+  //     // ScrollTrigger.refresh();
+  //   },
+  //   { dependencies: [isMobile] }
+  // );
+
+  // useGSAP(() => {
+
+  // const exitTimeLine = gsap.timeline({
+  //   scrollTrigger: {
+  //     trigger: "#finacle-expertise",
+  //     start: "top 100%",
+  //     end: "bottom 30%",
+  //     markers: true,
+  //     scrub: true,
+  //   },
+  // });
+  //   exitTimeLine.fromTo(
+  //     "#finacle-outcomes, #enterpriseAgentPlatform .btncomp",
+  //     {
+  //       color: "#ffffff",
+  //     },
+  //     {
+  //       color: "#111111",
+  //     },
+  //     "<"
+  //   );
+  // });
 
   return (
     <section className="w-screen container" id="finacle-outcomes">

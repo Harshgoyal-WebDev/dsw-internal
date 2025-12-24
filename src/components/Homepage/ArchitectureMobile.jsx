@@ -153,7 +153,7 @@ export default function ArchitectureMobile({showHeading2 = false}) {
           </React.Fragment>
         ))}
       </div>
-      <div className="w-full h-auto relative">
+      <div className="w-full h-auto fadeup relative">
         <Image
           src="/assets/images/homepage/architecture/MobileArchitecture.png"
           alt="Architecture"
@@ -164,7 +164,7 @@ export default function ArchitectureMobile({showHeading2 = false}) {
       </div>
       <div
         //   ref={industryBoxRef}
-        className="px-[2vw] max-md:px-[5vw] h-fit w-full p-3 max-md:min-h-[25vw] gap-[2vw] max-md:gap-[4vw] rounded-[2vw] max-md:rounded-[5vw] background-glass text-center flex items-center justify-center flex-col max-md:py-[6vw] border border-white/20 overflow-hidden "
+        className="px-[2vw] fadeup max-md:px-[5vw] h-fit w-full p-3 max-md:min-h-[25vw] gap-[2vw] max-md:gap-[4vw] rounded-[2vw] max-md:rounded-[5vw] background-glass text-center flex items-center justify-center flex-col max-md:py-[6vw] border border-white/20 overflow-hidden "
       >
         {/* <p className="w-[100%] relative z-[2] text-30">
             Industry Specific Solutions

@@ -79,7 +79,7 @@ export default function Architecture({ showHeading2 = false }) {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "10% 60%",
+          start: "0% 100%",
           end: "bottom bottom",
           markers:false,
           toggleActions: "play none none reverse",
@@ -123,54 +123,54 @@ export default function Architecture({ showHeading2 = false }) {
       tl.to(firstLayerRef.current, {
         opacity: 1,
         y: 0,
-        duration: 0.6,
+        duration: 0.4,
         ease: "power3.out",
       })
         .to(
           firstTextRef.current,
-          { opacity: 1, duration: 0.45, ease: "power3.out" },
-          "-=0.2"
+          { opacity: 1, duration: 0.3, ease: "power3.out" },
+          "-=0.15"
         )
 
         .to(secondLayerRef.current, {
           opacity: 1,
           y: 0,
-          duration: 0.6,
+          duration: 0.4,
           ease: "power3.out",
         })
         .to(
           secondTextRef.current,
-          { opacity: 1, duration: 0.45, ease: "power3.out" },
-          "-=0.2"
+          { opacity: 1, duration: 0.3, ease: "power3.out" },
+          "-=0.15"
         )
 
         .to(thirdLayerRef.current, {
           opacity: 1,
           y: 0,
-          duration: 0.6,
+          duration: 0.4,
           ease: "power3.out",
         })
         .to(
           [thirdTextLeftRef.current, thirdTextRightRef.current],
           {
             opacity: 1,
-            duration: 0.45,
+            duration: 0.3,
             ease: "power3.out",
-            stagger: 0.12,
+            stagger: 0.08,
           },
-          "-=0.25"
+          "-=0.2"
         )
 
         .to(fourthLayerRef.current, {
           opacity: 1,
           y: -20,
-          duration: 0.6,
+          duration: 0.4,
           ease: "power3.out",
         })
         .to(
           fourthTextRef.current,
-          { opacity: 1, duration: 0.45, ease: "power3.out" },
-          "-=0.2"
+          { opacity: 1, duration: 0.3, ease: "power3.out" },
+          "-=0.15"
         )
 
         // 2) THEN ARROWS
@@ -179,10 +179,10 @@ export default function Architecture({ showHeading2 = false }) {
           {
             opacity: 1,
             y: 0,
-            duration: 0.5,
+            duration: 0.35,
             ease: "power3.out",
           },
-          "+=0.2"
+          "+=0.1"
         )
 
         // 3) THEN CARDS (AFTER ARROWS)
@@ -192,10 +192,10 @@ export default function Architecture({ showHeading2 = false }) {
             opacity: 1,
             y: 0,
             delay: 0,
-            duration: 0.55,
+            duration: 0.4,
             ease: "power3.out",
           },
-          "+=0.15"
+          "+=0.1"
         )
         
         .to(
@@ -203,18 +203,18 @@ export default function Architecture({ showHeading2 = false }) {
           {
             opacity: 1,
             y: 0,
-            duration: 0.5,
+            duration: 0.35,
             ease: "power3.out",
-            stagger: 0.12,
+            stagger: 0.08,
           },
-          "-=0.25"
+          "-=0.2"
         )
         .to(
           rightCardRef.current,
           {
             opacity: 1,
             y: 0,
-            duration: 0.55,
+            duration: 0.4,
             ease: "power3.out",
           },
          
@@ -224,7 +224,7 @@ export default function Architecture({ showHeading2 = false }) {
         .to(industryBoxRef.current, {
           opacity: 1,
           y: 0,
-          duration: 0.6,
+          duration: 0.4,
           ease: "power3.out",
         });
     }, sectionRef);
@@ -253,7 +253,7 @@ export default function Architecture({ showHeading2 = false }) {
         gsap.fromTo(
           tooltipTextRef.current,
           { opacity: 0.3 },
-          { opacity: 1, duration: 0.2, ease: "power2.out" }
+          { opacity: 1, duration: 0.15, ease: "power2.out" }
         );
       }
       setActiveIndustry(hoveredIndustry);
@@ -264,7 +264,7 @@ export default function Architecture({ showHeading2 = false }) {
       gsap.killTweensOf(tooltipRef.current);
       gsap.to(tooltipRef.current, {
         y: hoveredIndustry * TOOLTIP_STEP_Y_PX,
-        duration: 0.25,
+        duration: 0.18,
         ease: "power3.out",
       });
     }
@@ -564,7 +564,7 @@ export default function Architecture({ showHeading2 = false }) {
                 className="relative"
               >
                 <div
-                  className={`w-full h-full py-4 rounded-xl border transition-all duration-300 text-center flex items-center justify-center relative cursor-pointer ${
+                  className={`w-full h-full py-4 rounded-xl border transition-all duration-200 text-center flex items-center justify-center relative cursor-pointer ${
                     hoveredIndustry === idx
                       ? "border-primary-1"
                       : "border-white/50"

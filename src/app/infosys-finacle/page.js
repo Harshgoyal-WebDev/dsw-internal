@@ -31,17 +31,21 @@ export default async function InfosysFinacle() {
       <WebpageJsonLd metadata={metadata} />
       <FAQJSONLD faqs={faqData} />
       <Layout>
-        <InfosysHero/>
-        <Deployments/>
-        <Recognized/>
-       
-            <Outcomes />
-        <Expertise/>
-        <EngagementModel/>
-        <CohesiveValue/>
+        <InfosysHero />
+        <Deployments />
+        <Recognized />
+        <Outcomes />
+        <Expertise />
+        <EngagementModel />
+        <CohesiveValue />
         <SuccessStories />
-        <Faqs data={faqData}  />
-        <FooterCTA isSubheading={true} footerCTAData={footerCTAData} width={"w-[70%]"} paraWidth={"w-[80%]"} />
+        <Faqs data={faqData} />
+        <FooterCTA
+          isSubheading={true}
+          footerCTAData={footerCTAData}
+          width={"w-[70%]"}
+          paraWidth={"w-[80%]"}
+        />
       </Layout>
     </>
   );
@@ -49,7 +53,8 @@ export default async function InfosysFinacle() {
 
 const footerCTAData = {
   heading: "DSW AgenticAI for BFSI​ ",
-  subHeading:'Launch smarter, faster, safer AI and GenAI use cases with DSW UnifyAI.  ',
+  subHeading:
+    "Launch smarter, faster, safer AI and GenAI use cases with DSW UnifyAI.  ",
   para: "Unify data, models and agent orchestration with pre-built BFSI playbooks, audit-first governance and human-in-the-loop controls - built for regulated financial services.​",
   book: true,
   btnText1: "Book a Demo",
@@ -116,48 +121,51 @@ const faqData = [
 ];
 
 const usecaseData = [
-    {
-      id: "001",
-      title: "DataOps ",
-      description:"Real-time ingestion, automated validation, lineage tracking, quality checks, and graph-native pipelines with explainability and proactive alerting.  ",
-      features: [
-        "400+ pre-built connectors for seamless data ingestion and transformation ",
-        "Core AI/ML engine with built-in model selection and evaluation ",
-        "Real-time monitoring with performance, drift, and anomaly tracking",
-        "One-click deployment to production environments "
-      ],
-      z:"z-[100]",
-    },
-    {
-      id: "002",
-      title: "AgenticAI Studio",
-      description:"Design, configure, and launch enterprise-grade GenAI agents with ease",
-      features: [
-        "Agentic AI drag and drop workflows and framework for task-based orchestration ",
-        "LLM model plug-ins with customizable tools, memory, and prompts ",
-        "Secure integration with internal knowledge bases and APIs ",
-        "Guardrails and governance by design for safe, compliant outputs "
-      ],
-      z:"z-[200]",
-    },
-    {
-      id: "003",
-      title: "AgenticAI Workflow Builder ",
-      description:"Real-time ingestion, automated validation, lineage tracking, quality checks, and graph-native pipelines with explainability and proactive alerting. ",
-      features: [
-        "Centralized observability across models and agents ",
-        "Built-in compliance – ISO 42001, SOC 2, ISO 27001, HIPAA, GDPR",
-        "Full traceability with logs, alerts, and audit trails  ",
-      ],
-      z:"z-[300]"
-    },
-   
-  ];
+  {
+    id: "001",
+    title: "DataOps ",
+    description:
+      "Real-time ingestion, automated validation, lineage tracking, quality checks, and graph-native pipelines with explainability and proactive alerting.  ",
+    features: [
+      "400+ pre-built connectors for seamless data ingestion and transformation ",
+      "Core AI/ML engine with built-in model selection and evaluation ",
+      "Real-time monitoring with performance, drift, and anomaly tracking",
+      "One-click deployment to production environments ",
+    ],
+    z: "z-[100]",
+  },
+  {
+    id: "002",
+    title: "AgenticAI Studio",
+    description:
+      "Design, configure, and launch enterprise-grade GenAI agents with ease",
+    features: [
+      "Agentic AI drag and drop workflows and framework for task-based orchestration ",
+      "LLM model plug-ins with customizable tools, memory, and prompts ",
+      "Secure integration with internal knowledge bases and APIs ",
+      "Guardrails and governance by design for safe, compliant outputs ",
+    ],
+    z: "z-[200]",
+  },
+  {
+    id: "003",
+    title: "AgenticAI Workflow Builder ",
+    description:
+      "Real-time ingestion, automated validation, lineage tracking, quality checks, and graph-native pipelines with explainability and proactive alerting. ",
+    features: [
+      "Centralized observability across models and agents ",
+      "Built-in compliance – ISO 42001, SOC 2, ISO 27001, HIPAA, GDPR",
+      "Full traceability with logs, alerts, and audit trails  ",
+    ],
+    z: "z-[300]",
+  },
+];
 
-  const outcomesData = {
+const outcomesData = {
   heading: "Delivering Finacle Success Through Open-Source Expertise ",
   headingWidth: "w-[60%]",
-  description:'As a strategic open-source consulting partner to Infosys Finacle,  DSW helps global banks modernize, optimize, and scale Finacle deployments through enterprise-grade open-source adoption. ',
+  description:
+    "As a strategic open-source consulting partner to Infosys Finacle,  DSW helps global banks modernize, optimize, and scale Finacle deployments through enterprise-grade open-source adoption. ",
   headingCenter: true,
   points: [
     {
@@ -183,10 +191,10 @@ const usecaseData = [
   ],
 };
 
-  const resultsData = [
+const resultsData = [
   {
     id: "01",
-     src: "/assets/icons/insuraince/underwriting.svg",
+    src: "/assets/icons/insuraince/underwriting.svg",
     title: "InsurAInce",
     description:
       "Purpose-built for insurers: claims orchestration, fraud triage, underwriting augmentation and customer engagement automation.",
@@ -206,8 +214,3 @@ const usecaseData = [
       "Next: telecom, healthcare and other regulated industries where auditability and governance are critical.",
   },
 ];
-
-
-
-
-
