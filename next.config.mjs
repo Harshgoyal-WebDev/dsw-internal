@@ -124,6 +124,7 @@ const nextConfig = {
   async redirects() {
     return [
       { source: "/unify", destination: "/unifyai", permanent: true },
+      { source: "/unify-ai", destination: "/unifyai", permanent: true },
       { source: "/pilot-program", destination: "/production-pilot", permanent: true },
       { source: "/resources/blog", destination: "/blogs", permanent: true },
       { source: "/resources/blogs", destination: "/blogs", permanent: true },
