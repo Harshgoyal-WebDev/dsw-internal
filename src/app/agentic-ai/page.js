@@ -37,8 +37,8 @@ export default async function AgenticAI() {
         <UsecaseMobile usecaseData={usecaseData} heading='Turn proofs-of-concept into auditable, production-grade automation with explainable agents, deterministic governance, and enterprise-grade security.' headingWidth="h-[40vh]" />
         <CoreCapabilities />
         <Results heading='BFSI Use Cases & Vertical Accelerators ' results={resultsData} />
+         <AgenticAIDiagram />
         <Outcomes outcomesData={outcomesData} />
-        < AgenticAIDiagram />
         <SuccessStories />
         <Faqs data={faqData}  />
         <FooterCTA isSubheading={true} footerCTAData={footerCTAData} width={"w-[70%]"} paraWidth={"w-[80%]"} />

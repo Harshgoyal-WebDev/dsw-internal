@@ -13,7 +13,7 @@ const SuccessStories = () => {
         <div className="w-full h-full max-sm:space-y-[15vw]">
           <div className="w-full flex items-end justify-between max-md:flex-col max-md:items-start max-md:gap-[5vw] max-sm:gap-[10vw]">
             <div className="space-y-5 mt-10 w-[35%] max-md:w-full">
-              <h2 className="text-60 w-[85%] headingAnim text-[#E8E8E8] max-md:w-[75%]">
+              <h2 className="text-60 w-[95%] headingAnim text-[#E8E8E8] max-md:w-[75%]">
                 Trusted by Leaders in BFSI and Beyond​
               </h2>
               <Copy>

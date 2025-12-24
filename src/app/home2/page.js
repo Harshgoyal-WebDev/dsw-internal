@@ -15,7 +15,7 @@ import Faqs from "@/components/Common/FAQs";
 import WhyUnifyMobile from "@/components/Homepage/WhyUnifyMobile";
 import FooterCTA from "@/components/Common/FooterCta";
 import { FAQJSONLD, WebpageJsonLd } from "@/lib/json-ld";
-import { getAllPosts } from "@/lib/posts";
+// import { getAllPosts } from "@/lib/posts";
 import OldHero from "@/components/Common/Hero";
 import dynamic from "next/dynamic";
 import Difference2 from "@/components/Homepage/Difference2";
@@ -46,7 +46,7 @@ export const metadata = {
 };
 
 export default async function Home() {
-  const { posts } = await getAllPosts();
+  // const { posts } = await getAllPosts();
   return (
     <>
       <WebpageJsonLd metadata={metadata} />

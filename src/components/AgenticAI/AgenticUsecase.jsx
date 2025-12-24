@@ -80,10 +80,7 @@ function AccordionItem({ title, description,features, isOpen, onToggle,index,z})
               </h4>
               </div>
 
-              <div className="h-[6vw] w-[40vw]">
-
-             
-
+              <div className="h-[6vw] w-[45vw]">
                <AnimatePresence initial={false}>
               {isOpen && (
                 <motion.div
@@ -108,8 +105,8 @@ function AccordionItem({ title, description,features, isOpen, onToggle,index,z})
               
               </div>
 
-              <div
-                className={` h-auto relative duration-500 max-sm:w-[12vw] rounded-full border-[1.5px] p-[2vw] transition-all  ease-out ml-[3vw]  ${ isOpen ? "border bg-white" :" background-glass border-white/20"}  ${
+              {/* <div
+                className={` h-auto relative duration-500 max-sm:w-[12vw] rounded-full border-[1.5px] p-[2vw]  transition-all  ease-out ml-[3vw]  ${ isOpen ? "border bg-white" :" background-glass border-white/20"}  ${
                   !isOpen ? "group-hover:rotate-[180deg]" : "group-hover:rotate-[315deg] rotate-[45deg]"
                 }`}
               >
@@ -124,7 +121,7 @@ function AccordionItem({ title, description,features, isOpen, onToggle,index,z})
                     isOpen ? "bg-black" : "bg-white"
                   }`}
                 ></span>
-              </div>
+              </div> */}
             </button>
 
            

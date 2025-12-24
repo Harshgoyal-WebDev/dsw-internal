@@ -34,7 +34,7 @@ export const metadata = getPageMetadata({
   },
 });
 export default async function Page() {
-  const { news } = await getAllNews();
+  // const { news } = await getAllNews();
   // console.log(news)
   return (
     <>
@@ -42,7 +42,7 @@ export default async function Page() {
       <BreadcrumbsJSONLD pathname={metadata.url} />
       <Layout>
         <InternalHero heroData={heroData} breadcrumbs={true} />
-        <Listing news={news} />
+        {/* <Listing news={news} /> */}
         <Annoucements />
         <FooterCTA footerCTAData={footerCTAData} />
       </Layout>

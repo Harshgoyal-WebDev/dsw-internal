@@ -34,7 +34,7 @@ export const metadata = getPageMetadata({
   },
 });
 export default async function page() {
-  const { posts } = await getAllPosts();
+  // const { posts } = await getAllPosts();
   return (
     <>
       <WebpageJsonLd metadata={metadata} />
@@ -42,8 +42,8 @@ export default async function page() {
       <Layout>
         <InternalHero heroData={heroData} breadcrumbs={true} />
 
-        <FeaturedBlog posts={posts} />
-        <BlogGrid posts={posts} />
+        {/* <FeaturedBlog posts={posts} /> */}
+        {/* <BlogGrid posts={posts} /> */}
         <FooterCTA footerCTAData={footerCTAData} width={"w-[95%]"} />
       </Layout>
     </>

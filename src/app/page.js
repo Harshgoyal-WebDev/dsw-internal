@@ -16,7 +16,7 @@ import Clients from "@/components/Homepage/Clients";
 import WhyUnifyMobile from "@/components/Homepage/WhyUnifyMobile";
 import FooterCTA from "@/components/Common/FooterCta";
 import { FAQJSONLD, WebpageJsonLd } from "@/lib/json-ld";
-import { getAllPosts } from "@/lib/posts";
+// import { getAllPosts } from "@/lib/posts";
 import OldHero from "@/components/Common/Hero";
 import dynamic from "next/dynamic";
 import Difference2 from "@/components/Homepage/Difference2";
@@ -35,7 +35,7 @@ export const metadata = {
 };
 
 export default async function Home() {
-  const { posts } = await getAllPosts();
+  // const { posts } = await getAllPosts();
   return (
     <>
       <WebpageJsonLd metadata={metadata} />  
@@ -64,7 +64,7 @@ export default async function Home() {
         <div className="mt-[-20vh] max-sm:mt-0">
         <SuccessStories />
         </div>
-        <Blogs posts={posts} />
+        {/* <Blogs posts={posts} /> */}
         <Faqs data={faqData} />
         <FooterCTA footerCTAData={footerCTAData} width={"w-[95%]"} />
       </Layout>

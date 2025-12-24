@@ -31,7 +31,7 @@ export const NAVIGATION = [
   // { text: "Home", href: "/", id: "home" },
   { text: "Products", href: "/unifyai", id: "product" , children:[
     { text: "UnifyAI", href :"/unifyai" , id:"products-unify"},
-    { text: "AgenticAI", href :"#" , id:"products-agentic"},
+    { text: "AgenticAI", href :"/agentic-ai" , id:"products-agentic"},
   ]},
   { text: "Solutions", href: "/insuraince", id: "solutions" , children:[
     { text: "insurAInce", href :"/insuraince" , id:"solutions-insuraince"},
@@ -53,7 +53,7 @@ export const NAVIGATION_FOOTER = [
   // { text: "Home", href: "/", id: "home" },
   { text: "Products", href: "/unifyai", id: "product" , children:[
     { text: "UnifyAI", href :"/unifyai" , id:"products-unify"},
-    { text: "AgenticAI", href :"/#" , id:"products-agentic"},
+    { text: "AgenticAI", href :"/agentic-ai" , id:"products-agentic"},
   ]},
   { text: "Solutions", href: "/insuraince", id: "solutions" , children:[
     { text: "insurAInce", href :"/insuraince" , id:"solutions-insuraince"},
