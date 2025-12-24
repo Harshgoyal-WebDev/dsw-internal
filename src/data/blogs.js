@@ -32,7 +32,7 @@ export const POST_FIELDS = gql`
 
 export const QUERY_ALL_POSTS = gql`
   query AllPosts {
-    posts {
+    posts(first: 100, where: { orderby: { field: DATE, order: DESC } })  {
       edges {
         node {
           id
@@ -55,6 +55,63 @@ export const QUERY_ALL_POSTS = gql`
   }
 `;
 
+// export const QUERY_POST_BY_SLUG = gql`
+//   query PostBySlug($slug: ID!) {
+//     post(id: $slug, idType: SLUG) {
+//       excerpt
+//       id
+//       featuredImage {
+//         node {
+//           altText
+//           sourceUrl
+//           srcSet
+//           sizes
+//         }
+//       }
+//       blogFields {
+//         relatedBlogs {
+//           edges {
+//             node {
+//               ... on Post {
+//                 id
+//                 featuredImage {
+//                   node {
+//                     sourceUrl
+//                     sizes
+//                     srcSet
+//                     altText
+//                   }
+//                 }
+//                 excerpt
+//                 date
+//                 slug
+//                 title
+//               }
+//             }
+//           }
+//         }
+//       }
+//       categories {
+//         edges {
+//           node {
+//             databaseId
+//             id
+//             name
+//             slug
+//           }
+//         }
+//       }
+//       modified
+//       content
+//       date
+//       title
+//       slug
+//       isSticky
+//     }
+//   }
+// `;
+
+
 export const QUERY_POST_BY_SLUG = gql`
   query PostBySlug($slug: ID!) {
     post(id: $slug, idType: SLUG) {
@@ -66,29 +123,6 @@ export const QUERY_POST_BY_SLUG = gql`
           sourceUrl
           srcSet
           sizes
-        }
-      }
-      blogFields {
-        relatedBlogs {
-          edges {
-            node {
-              ... on Post {
-                id
-                featuredImage {
-                  node {
-                    sourceUrl
-                    sizes
-                    srcSet
-                    altText
-                  }
-                }
-                excerpt
-                date
-                slug
-                title
-              }
-            }
-          }
         }
       }
       categories {
@@ -110,6 +144,8 @@ export const QUERY_POST_BY_SLUG = gql`
     }
   }
 `;
+
+
 
 export const QUERY_POST_SEO_BY_SLUG = gql`
   query PostSEOBySlug($slug: ID!) {

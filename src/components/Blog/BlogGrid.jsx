@@ -11,6 +11,7 @@ const BlogCard = ({ title, date ,slug,featuredImage}) => {
       <Link href={slug}>
         <div className="rounded-[1.8vw] fadeup relative group border-[0.25px] border-white/20 h-[33vw]  background-glass space-y-[2vw] max-sm:space-y-[8vw] overflow-hidden group cursor-pointer max-sm:pb-0 max-sm:h-[110vw] max-md:h-[80vw] max-md:rounded-[4vw] max-sm:rounded-[6vw] max-md:space-y-[5vw]">
           <div className="w-full h-[64%] max-sm:h-[60%] overflow-hidden max-sm:rounded-3xl rounded-[1.8vw] ">
+            {featuredImage &&
             <Image
               src={featuredImage.sourceUrl}
               width={531}
@@ -18,6 +19,7 @@ const BlogCard = ({ title, date ,slug,featuredImage}) => {
               alt={title}
               className="object-cover h-full w-full group-hover:scale-[1.1] duration-700 ease-in-out transition-all max-sm:w-full max-sm:h-full "
             />
+}
           </div>
           <div className="space-y-[1vw] max-sm:space-y-[4vw] px-5 max-md:w-full w-[90%] max-sm:w-[100%] max-md:px-[2.5vw] max-md:space-y-[2vw]">
             <p className=" font-medium text-[#E8E8E8] leading-[1.5] max-md:w-[80%] max-sm:w-full max-md:text-[3vw] max-sm:text-[4.5vw]">
