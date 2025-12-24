@@ -129,7 +129,7 @@ const Join = () => {
             <NextButton onClick={handleNext} />
           </div>
         </div>
-        <div className="w-[70%] flex flex-col items-center gap-[3vw] text-center max-md:w-full max-md:gap-[8vw] max-md:text-left max-md:items-start">
+        <div className="w-[80%] flex flex-col items-center gap-[3vw] text-center max-md:w-full max-md:gap-[8vw] max-md:text-left max-md:items-start">
           <Copy>
             <h3 className="text-50 font-head">Join a deep-tech company shaping the future of enterprise AI. ​Build systems used by real enterprises, work across advanced AI and agent technologies, and contribute to solutions powering next-generation BFSI and multi-industry innovation. </h3>
           </Copy>

@@ -170,7 +170,8 @@ function AccordionItem({ title, description,features, isOpen, onToggle,index,z,b
       description:"The platform for governed, explainable, and auditable enterprise AI agents. AgenticAI orchestrates agentic tasks and ML workflows across real enterprise systems, with human-in-the-loop oversight, strong governance, and enterprise-grade security. These capabilities are essential for high stakes decisioning in Insurance, Banking, and Financial Services",
       features: [
         "End to end Agent Builder with Knowledge Base",
-        "Memory, Prompt Hub",
+        "Memory",
+        "Prompt Hub",
         "LLM Hub and Finetuning",
         "Agent Monitoring",
         "Multi-agent Orchestration",

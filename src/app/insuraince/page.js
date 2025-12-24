@@ -71,7 +71,7 @@ const heroData = {
   // img:"/assets/images/insuraince/insuraince-new.png",
   // subheading:"Purpose-Built, Proven, and Production-Ready.",
   para: "Purpose-built and production-proven. Drive speed and accuracy across the insurance value chain with an AI solution designed for rigorous compliance.",
-  paraClass: "w-[90%]",
+  paraClass: "w-[60%]",
   link1: "/contact-us",
   btnText1: "Book a Demo",
   target: true,

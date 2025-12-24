@@ -24,7 +24,7 @@ const Mission = () => {
                 </div>
                 <h3 className="text-50 font-head"> Mission</h3>
                 <p className="text-white-300 font-medium">
-                 Make AI adoption real, scalable, and responsible for every enterprise. Enable businesses to harness AI responsibly, transforming operations, improving lives, and solving real-world challenges, while fostering a collaborative AI community that drives innovation forward
+                 Make AI adoption real, scalable, and responsible for every enterprise. Enable businesses to harness AI responsibly, transforming operations, improving lives, and solving real-world challenges, while fostering a collaborative AI community that drives innovation forward.
                 </p>
               </div>
             </div>

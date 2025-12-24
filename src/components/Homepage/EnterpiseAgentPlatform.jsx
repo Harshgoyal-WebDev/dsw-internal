@@ -469,7 +469,7 @@ const EnterpiseAgentPlatform = () => {
                   background="border-primary-1 border bg-transparent hover:bg-transparent"
                   circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
                   text="Explore AgenticAI"
-                  href="/production-pilot"
+                  href="/agentic-ai"
                   className="hover:text-primary-1 btncomp text-primary-1 "
                 />
               </div>
@@ -489,7 +489,7 @@ const EnterpiseAgentPlatform = () => {
                   background="border-primary-1 border bg-transparent hover:bg-transparent"
                   circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
                   text="Explore AgenticAI"
-                  href="/production-pilot"
+                  href="/agentic-ai"
                   className="hover:text-primary-1 btncomp text-primary-1"
                 />
               </div>
@@ -509,7 +509,7 @@ const EnterpiseAgentPlatform = () => {
                   background="border-primary-1 border bg-transparent hover:bg-transparent"
                   circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
                   text="Explore AgenticAI"
-                  href="/production-pilot"
+                  href="/agentic-ai"
                   className="hover:text-primary-1 btncomp text-primary-1"
                 />
               </div>
@@ -529,7 +529,7 @@ const EnterpiseAgentPlatform = () => {
                   background="border-primary-1 border bg-transparent hover:bg-transparent"
                   circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
                   text="Explore AgenticAI"
-                  href="/production-pilot"
+                  href="/agentic-ai"
                   className="hover:text-primary-1 btncomp text-primary-1"
                 />
               </div>

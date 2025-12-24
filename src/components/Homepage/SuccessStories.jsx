@@ -69,7 +69,7 @@ const SuccessStories = () => {
               }
               img={"/assets/images/homepage/success-stories/castler.png"}
               name={"Ritesh Tiwari"}
-              designation={"Chief Product Officer Castler​"}
+              designation={"Chief Product Officer, Castler​"}
             />
             <LinkCard
               title={"Manipal Health Cigna in production with <span class='text-primary-2'> over 5 use cases </span> of AI/ML and GenAI"}

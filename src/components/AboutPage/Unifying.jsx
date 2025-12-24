@@ -23,7 +23,7 @@ export default function Unifying() {
               </Copy>
                <Copy>
               <p className="font-head text-[1.4vw] max-md:text-30 leading-[1.3]">
-               Our platforms-DSW UnifyAI and DSW AgenticAI, provide a unified foundation to build, deploy, and govern AI across mission-critical applications, workflows, and decisioning systems. On top of this foundation, DSW delivers industry-specific vertical solutions for insurance, banking, and other regulated domains, purpose-built to accelerate production adoption while meeting strict requirements around trust, compliance, an explainability. ​
+               Our platforms-DSW UnifyAI and DSW AgenticAI, provide a unified foundation to build, deploy, and govern AI across mission-critical applications, workflows, and decisioning systems. On top of this foundation, DSW delivers <span className="font-semibold">industry-specific vertical solutions </span> for insurance, banking, and other regulated domains, purpose-built to accelerate production adoption while meeting strict requirements around trust, compliance, an explainability. ​
               </p>
               </Copy>
                <Copy>
@@ -33,7 +33,7 @@ export default function Unifying() {
               </Copy>
                <Copy>
               <p className="font-head text-[1.4vw] max-md:text-30 leading-[1.3]">
-               In core banking modernization, DSW partners with Infosys Finacle to deliver open-source-driven banking platforms for global financial institutions. DSW is also recognized by Infosys Finacle as its Open-Source Services Partner for FY25, reinforcing our expertise in building scalable, future-ready banking systems. 
+               In core banking modernization, DSW partners with <span className="font-semibold">Infosys Finacle </span> to deliver open-source-driven banking platforms for global financial institutions. DSW is also recognized by Infosys Finacle as its <span className="font-semibold">Open-Source Services Partner for FY25</span>, reinforcing our expertise in building scalable, future-ready banking systems. 
               </p>
               </Copy>
             

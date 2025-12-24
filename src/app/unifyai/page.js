@@ -75,6 +75,7 @@ const heroData = {
   // subheading: "Deploy AI use cases in 30 days.",
   para:"No more delays. No more stalled pilots. Just production-ready AI/ML in weeks.",
   paraClass: "w-[95%]",
+  headingWidth:"w-[80%]",
   link1: "#tour-unify",
   btnText1: "Start Walkthrough",
   link2: "https://calendly.com/",
