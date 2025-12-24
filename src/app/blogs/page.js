@@ -6,7 +6,7 @@ import FooterCTA from "@/components/Common/FooterCta";
 import { BreadcrumbsJSONLD, WebpageJsonLd } from "@/lib/json-ld";
 import { homepage } from "@/lib/util";
 import { getPageMetadata } from "@/config/metadata";
-import { getAllPosts } from "@/lib/posts";
+// import { getAllPosts } from "@/lib/posts";
 import InternalHero from "@/components/Common/InternalHero";
 
 export const metadata = getPageMetadata({
@@ -42,8 +42,8 @@ export default async function page() {
       <Layout>
         <InternalHero heroData={heroData} breadcrumbs={true} />
 
-        {/* <FeaturedBlog posts={posts} /> */}
-        {/* <BlogGrid posts={posts} /> */}
+        {/* <FeaturedBlog posts={posts} />
+        <BlogGrid posts={posts} /> */}
         <FooterCTA footerCTAData={footerCTAData} width={"w-[95%]"} />
       </Layout>
     </>

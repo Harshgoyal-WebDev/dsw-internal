@@ -18,10 +18,16 @@ export function getApolloClient() {
  * createApolloClient
  */
 
+
 export function _createApolloClient() {
   return new ApolloClient({
     link: new HttpLink({
       uri: removeLastTrailingSlash(process.env.WORDPRESS_GRAPHQL_ENDPOINT),
+       fetch,
+       headers: {
+        "Content-Type": "application/json",
+        "User-Agent": "NextJS-Apollo",
+      },
     }),
     cache: new InMemoryCache({
       typePolicies: {
