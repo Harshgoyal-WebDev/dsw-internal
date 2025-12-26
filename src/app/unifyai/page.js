@@ -1,23 +1,68 @@
-import Faqs from "@/components/Common/FAQs";
-import SuccessStories from "@/components/Homepage/SuccessStories";
+import dynamic from "next/dynamic";
+
 import Layout from "@/components/Layout";
-import AiEverywhere from "@/components/UnifyPage/AiEverywhere";
-import Diagram from "@/components/UnifyPage/Diagram";
-import OnePlatform from "@/components/UnifyPage/OnePlatForm";
-import PresentationLayer from "@/components/UnifyPage/PresentationLayer";
-import Usecase from "@/components/UnifyPage/Usecase";
+const AiEverywhere = dynamic(
+  () => import("@/components/UnifyPage/AiEverywhere"),
+  { ssr: true }
+);
+
+const Usecase = dynamic(
+  () => import("@/components/UnifyPage/Usecase"),
+  { ssr: true }
+);
+
+const UsecaseMobile = dynamic(
+  () => import("@/components/UnifyPage/UsecaseMobile"),
+  { ssr: true }
+);
 import React from "react";
-import Impact from "@/components/UnifyPage/Impact";
-import FooterCTA from "@/components/Common/FooterCta";
-import UsecaseMobile from "@/components/UnifyPage/UsecaseMobile";
+const Impact = dynamic(
+  () => import("@/components/UnifyPage/Impact"),
+  { ssr: true }
+);
+
+const UnifyTable = dynamic(
+  () => import("@/components/UnifyPage/UnifyTable"),
+  { ssr: true }
+);
+
+const SuccessStories = dynamic(
+  () => import("@/components/Homepage/SuccessStories"),
+  { ssr: true }
+);
 import { FAQJSONLD, WebpageJsonLd } from "@/lib/json-ld";
 import { homepage } from "@/lib/util";
 import { getPageMetadata } from "@/config/metadata";
 import Hero from "@/components/Common/Hero";
-import UnifyTour from "@/components/UnifyPage/UnifyTour";
-import UnifyTable from "@/components/UnifyPage/UnifyTable";
-import Architecture from "@/components/Homepage/Architecture";
-import ArchitectureMobile from "@/components/Homepage/ArchitectureMobile";
+const UnifyTour = dynamic(
+  () => import("@/components/UnifyPage/UnifyTour"),
+  { ssr: true }
+);
+
+const PresentationLayer = dynamic(
+  () => import("@/components/UnifyPage/PresentationLayer"),
+  { ssr: true }
+);
+const Architecture = dynamic(
+  () => import("@/components/Homepage/Architecture"),
+  { ssr: true }
+);
+
+const ArchitectureMobile = dynamic(
+  () => import("@/components/Homepage/ArchitectureMobile"),
+  { ssr: true }
+);
+
+const Faqs = dynamic(
+  () => import("@/components/Common/FAQs"),
+  { ssr: true }
+);
+
+const FooterCTA = dynamic(
+  () => import("@/components/Common/FooterCta"),
+  { ssr: true }
+);
+
 
 export const metadata = getPageMetadata({
   title: "UnifyAI - Operating System for Enterprise AI",
