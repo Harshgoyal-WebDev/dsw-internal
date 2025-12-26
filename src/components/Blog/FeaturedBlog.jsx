@@ -22,7 +22,9 @@ const FeaturedBlog = ({ posts }) => {
     >
       <div className="w-full h-full flex fadeupDelay justify-between container !pb-[0.5vw] max-md:flex-col  ">
         <div className="w-[45%] max-md:w-[85%] max-md:px-0  max-sm:w-full   rounded-3xl h-[30vw] max-md:h-[40vh] max-md:border max-md:border-white/30  relative group overflow-hidden">
-          <Link href={featuredPost.slug}>
+          <Link href={featuredPost.slug}
+          aria-label={`Read blog post: ${featuredPost.title}`}
+          >
             <div className="w-full h-[90%]   max-md:h-full max-md:w-full overflow-hidden rounded-3xl">
               <Image
                 src={featuredPost.featuredImage?.sourceUrl || "/assets/images/blog/ai-blog.png"}
@@ -92,6 +94,7 @@ const FeaturedBlog = ({ posts }) => {
               text="Read More"
               href={featuredPost.slug}
               className="hover:text-primary-2 text-primary-2"
+              
             />
           </div>
 
