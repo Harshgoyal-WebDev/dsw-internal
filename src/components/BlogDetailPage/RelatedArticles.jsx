@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -14,10 +14,10 @@ import { formatDate } from "@/lib/datetime";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const BlogCard = ({ title, date, img,slug }) => {
+const BlogCard = ({ title, date, img, slug }) => {
   return (
     <>
-      <Link href={slug}>
+      <Link href={`/${slug}`}>
         <div className="rounded-3xl group border-[0.25px] border-stone-600 pb-4 bg-white/5 space-y-8 overflow-hidden group cursor-pointer max-sm:pb-0 h-[33vw] max-sm:h-[110vw] max-md:h-[70vw] max-md:rounded-[4vw] max-sm:rounded-[6vw]">
           <div className="w-full h-[65%] overflow-hidden rounded-3xl max-sm:h-[60%]">
             <Image
@@ -44,15 +44,11 @@ const BlogCard = ({ title, date, img,slug }) => {
     </>
   );
 };
-const RelatedArticles = ({post}) => {
+const RelatedArticles = ({post, relatedPosts: relatedPostsProp}) => {
   const swiperRef = useRef(null);
   const relatedArticlesRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const relatedBlogs = post?.blogFields?.relatedBlogs?.edges
-
-  console.log(post, "POST.....")
-
- 
+  const relatedBlogs = relatedPostsProp || [];
 
   const handleNext = () => {
     if (swiperRef.current) {
@@ -65,6 +61,12 @@ const RelatedArticles = ({post}) => {
       swiperRef.current.slidePrev();
     }
   };
+
+  // Don't render if there are no related blogs
+  if (!relatedBlogs || relatedBlogs.length === 0) {
+    return null;
+  }
+
   return (
     <section
       id="relatedArticles"
@@ -79,7 +81,7 @@ const RelatedArticles = ({post}) => {
 
           <div className="flex gap-6 max-sm:absolute max-sm:left-1/2 max-sm:translate-x-[-50%] max-sm:bottom-0 mt-12 max-sm:mt-10 max-sm:items-center max-sm:justify-center">
             <PreviousButton onClick={handlePrev} isDisabled={activeIndex === 0} />
-            <NextButton onClick={handleNext} isDisabled={RelatedArticlesData.length-1 === activeIndex} />
+            <NextButton onClick={handleNext} isDisabled={relatedBlogs.length <= 3 || activeIndex + 3 >= relatedBlogs.length} />
           </div>
         </div>
         <div className="w-[100%] max-sm:py-[15vw] text-white fadeup ">
@@ -109,12 +111,11 @@ const RelatedArticles = ({post}) => {
               },
             }}
           >
-            {relatedBlogs?.map((blog) => (
-              <SwiperSlide className="w-[26vw] h-full pr-1 max-sm:w-full">
+            {relatedBlogs.map((blog) => (
+              <SwiperSlide key={blog.node.id} className="w-[26vw] h-full pr-1 max-sm:w-full">
                 <BlogCard
-                  key={blog.node.id}
                   title={blog.node.title}
-                  img={blog.node.featuredImage.node.sourceUrl}
+                  img={blog.node.featuredImage?.node?.sourceUrl}
                   date={blog.node.date}
                   slug={blog.node.slug}
                 />
@@ -128,42 +129,3 @@ const RelatedArticles = ({post}) => {
 };
 
 export default RelatedArticles;
-
-const RelatedArticlesData = [
-  {
-    id: 1,
-    title: "How Generative AI is Revolutionizing Insurance",
-    date: "6 March, 2025",
-    img: "/assets/images/homepage/blogs/blog-1.png",
-  },
-  {
-    id: 2,
-    title: "Best Practices for AI Deployment in Regulated Industries",
-    date: "6 March, 2025",
-    img: "/assets/images/homepage/blogs/blog-2.png",
-  },
-  {
-    id: 3,
-    title: "How Generative AI is Revolutionizing Insurance",
-    date: "6 March, 2025",
-    img: "/assets/images/homepage/blogs/blog-1.png",
-  },
-  {
-    id: 4,
-    title: "Best Practices for AI Deployment in Regulated Industries",
-    date: "6 March, 2025",
-    img: "/assets/images/homepage/blogs/blog-2.png",
-  },
-  {
-    id: 5,
-    title: "How Generative AI is Revolutionizing Insurance",
-    date: "6 March, 2025",
-    img: "/assets/images/homepage/blogs/blog-1.png",
-  },
-  {
-    id: 6,
-    title: "Best Practices for AI Deployment in Regulated Industries",
-    date: "6 March, 2025",
-    img: "/assets/images/homepage/blogs/blog-2.png",
-  },
-];

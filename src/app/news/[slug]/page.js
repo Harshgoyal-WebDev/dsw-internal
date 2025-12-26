@@ -111,7 +111,7 @@ export default async function Page({ params }) {
       <Layout>
         <Hero breadcrumbs news={news} />
         <NewsContentWp news={news} />
-        <BlogContentWp news={news} />
+        {/* <BlogContentWp news={news} /> */}
         <RelatedArticleNews news={news} relatedNews={relatedNews} />
         <FooterCTA footerCTAData={footerCTAData} width="w-[95%]" />
       </Layout>

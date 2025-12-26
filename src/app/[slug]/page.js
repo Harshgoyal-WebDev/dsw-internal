@@ -5,7 +5,7 @@ import FooterCTA from '@/components/Common/FooterCta'
 import Layout from '@/components/Layout'
 import { getPageMetadata } from '@/config/metadata'
 import { BreadcrumbsJSONLD, WebpageJsonLd } from '@/lib/json-ld'
-import { getPostBySlug } from '@/lib/posts'
+import { getPostBySlug, getAllPosts } from '@/lib/posts'
 import { homepage, stripHtml } from '@/lib/util'
 import { notFound } from 'next/navigation'
 
@@ -44,7 +44,28 @@ export default async function Page({ params }) {
   const { post } = await getPostBySlug(slug)
 
   if (!post) return notFound()
-    // console.log(post)
+  
+  // Get related posts by fetching all posts and excluding current
+  const { posts: allPosts } = await getAllPosts()
+  const relatedPosts = allPosts
+    .filter((item) => item.slug !== slug)
+    .slice(0, 6)
+    .map((item) => ({
+      node: {
+        id: item.id,
+        title: item.title,
+        slug: item.slug,
+        date: item.date,
+        featuredImage: {
+          node: {
+            sourceUrl: item.featuredImage?.sourceUrl || "",
+            altText: item.featuredImage?.altText || "",
+            srcSet: item.featuredImage?.srcSet || "",
+            sizes: item.featuredImage?.sizes || "",
+          },
+        },
+      },
+    }))
 
   const pageMeta = getPageMetadata({
     title: post.metaTitle || post.title,
@@ -71,7 +92,7 @@ export default async function Page({ params }) {
       <Layout>
         <Hero breadcrumbs post={post}/>
         <BlogContentWp post={post}/>
-        {/* <RelatedArticles post={post} /> */}
+        <RelatedArticles post={post} relatedPosts={relatedPosts} />
         <FooterCTA footerCTAData={footerCTAData} width="w-[95%]" />
       </Layout>
     </>
