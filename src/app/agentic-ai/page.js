@@ -2,6 +2,8 @@ import dynamic from "next/dynamic";
 import Layout from "@/components/Layout";
 import AgenticHero from "@/components/AgenticAI/Hero";
 import { WebpageJsonLd, FAQJSONLD } from "@/lib/json-ld";
+import { homepage } from "@/lib/util";
+import { getPageMetadata } from "@/config/metadata";
 
 const AgenticFeatures = dynamic(
   () => import("@/components/AgenticAI/AgenticFeatures"),
@@ -53,15 +55,31 @@ const FooterCTA = dynamic(
   () => import("@/components/Common/FooterCta"),
   { ssr: true }
 );
-
-export const metadata = {
-  title: "DSW UnifyAI – Enterprise AI Platform for Insurance",
+export const metadata = getPageMetadata({
+  title: "DSW AgenticAI – Governed Enterprise AI Agents for BFSI",
   description:
-    "Launch AI use cases in days — scale fast, reduce cost, deploy GenAI in hours with DSW UnifyAI’s insurance-focused enterprise AI platform.",
-  url: "",
+    "Deploy governed, explainable, production-ready AI agents for banking and insurance. Turn AI pilots into auditable, compliant automation with DSW AgenticAI.",
+  url: "agentic-ai",
   date_published: "2025-09-30T00:00",
   date_modified: "2025-09-30T00:00",
-};
+  alternates: {
+    canonical: "/agentic-ai",
+    languages: {
+      "x-default": "/agentic-ai",
+    },
+  },
+  openGraph: {
+    url: "agentic-ai",
+    images: [
+      {
+        url: `${homepage}seo/agentic-ai.png`,
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+});
+
 
 export default async function AgenticAI() {
   return (
