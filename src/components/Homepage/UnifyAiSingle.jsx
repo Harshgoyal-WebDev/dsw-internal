@@ -30,7 +30,7 @@ const UnifyAiSingle = () => {
         },
         {
           duration: 1.5,
-          yPercent: 0,
+          yPercent: -40,
           ease: "power4.out",
         }
       );
@@ -95,7 +95,7 @@ const UnifyAiSingle = () => {
         },
         {
           duration: 1.5,
-          yPercent: 0,
+          yPercent: -40,
           ease: "power4.out",
         }
       );

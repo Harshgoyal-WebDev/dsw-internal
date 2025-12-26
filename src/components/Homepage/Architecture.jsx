@@ -78,10 +78,10 @@ export default function Architecture({ showHeading2 = false }) {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "0% 100%",
+          trigger: "#ArchitectureDiagram",
+          start: "10% 100%",
           end: "bottom bottom",
-          markers:false,
+          markers: false,
           toggleActions: "play none none reverse",
         },
       });
@@ -197,7 +197,7 @@ export default function Architecture({ showHeading2 = false }) {
           },
           "+=0.1"
         )
-        
+
         .to(
           [arrowTopRef.current, arrowBottomRef.current],
           {
@@ -209,16 +209,12 @@ export default function Architecture({ showHeading2 = false }) {
           },
           "-=0.2"
         )
-        .to(
-          rightCardRef.current,
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.4,
-            ease: "power3.out",
-          },
-         
-        )
+        .to(rightCardRef.current, {
+          opacity: 1,
+          y: 0,
+          duration: 0.4,
+          ease: "power3.out",
+        })
 
         // 4) FINALLY INDUSTRY BOX
         .to(industryBoxRef.current, {
@@ -273,7 +269,7 @@ export default function Architecture({ showHeading2 = false }) {
   return (
     <section
       ref={sectionRef}
-      className="h-fit flex flex-col items-center justify-center space-y-[3vw] max-md:space-y-[5vw] max-md:px-[7vw] max-md:py-[15%] container relative background-radial max-md:hidden block"
+      className="h-fit flex flex-col  overflow-x-hidden items-center justify-center space-y-[3vw] max-md:space-y-[5vw] max-md:px-[7vw] max-md:py-[15%] container relative background-radial max-md:hidden block"
     >
       {!showHeading2 && (
         <h2 className="text-center text-white-200 headingAnim w-[65%] max-md:w-[100%] text-90 max-md:text-[7vw]">
@@ -292,7 +288,7 @@ export default function Architecture({ showHeading2 = false }) {
       )}
 
       {/* Steps cards */}
-      <div className="flex items-center mt-[5vw] max-md:mt-[10vw] mb-[20vh] justify-center gap-[.2vw] max-md:flex-col max-md:gap-[4vw] fadeup">
+      <div  className="flex items-center mt-[5vw] max-md:mt-[10vw] mb-[20vh] justify-center gap-[.2vw] max-md:flex-col max-md:gap-[4vw] fadeup">
         {steps.map((step, index) => (
           <React.Fragment key={index}>
             <div
@@ -319,7 +315,7 @@ export default function Architecture({ showHeading2 = false }) {
         ))}
       </div>
 
-      <div className="h-full w-full flex items-center justify-center py-10 relative min-h-[800px]">
+      <div id="ArchitectureDiagram" className="h-full w-full flex items-center justify-center py-10 relative min-h-[800px]">
         <div className="flex flex-col space-y-[-0.5vw] items-center justify-center">
           <div ref={firstLayerRef} className="w-[75%] relative z-[30]">
             <Image
@@ -331,7 +327,7 @@ export default function Architecture({ showHeading2 = false }) {
             />
             <p
               ref={firstTextRef}
-              className="absolute top-[55%] left-[37%] text-20"
+              className="absolute top-[65%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-20"
             >
               Presentation Layer
             </p>
@@ -347,7 +343,7 @@ export default function Architecture({ showHeading2 = false }) {
             />
             <p
               ref={secondTextRef}
-              className="absolute top-[58%] left-[42%] text-20"
+              className="absolute top-[65%] translate-x-[-50%] translate-y-[-50%] left-[50%] text-20"
             >
               Use Cases
             </p>
@@ -362,7 +358,7 @@ export default function Architecture({ showHeading2 = false }) {
             />
             <p
               ref={secondTextRef}
-              className="absolute top-[58%] left-[25%] w-full text-20"
+              className="absolute top-[65%] translate-x-[-50%] translate-y-[-50%] left-[50%] w-full text-20 text-center"
             >
               Industry Specific Solutions
             </p>
@@ -383,16 +379,16 @@ export default function Architecture({ showHeading2 = false }) {
 
               <div
                 ref={thirdTextLeftRef}
-                className="absolute top-[50%] left-[15%] flex flex-col items-center gap-4"
+                className="absolute top-[65%] translate-x-[-50%] translate-y-[-50%] left-[25%] w-full flex flex-col items-center gap-4"
               >
                 <p className="text-20">AI Studio</p>
               </div>
 
               <div
                 ref={thirdTextRightRef}
-                className="absolute top-[50%] left-[55%] flex flex-col items-center gap-4"
+                className="absolute  top-[65%] translate-x-[-50%] translate-y-[-50%] left-[78%] w-[40%] flex flex-col items-center gap-4"
               >
-                <p className="text-20">AgenticAI Studio</p>
+                <p className="text-20 leading-[1.1]">AgenticAI Studio</p>
               </div>
             </div>
 
@@ -402,12 +398,12 @@ export default function Architecture({ showHeading2 = false }) {
                 height={160}
                 width={681}
                 alt="architecture-third-layer"
-                className="h-full translate-y-[-20%]  w-full"
+                className="h-full translate-y-[-25%]  w-full"
               />
 
               <div
                 ref={thirdTextLeftRef}
-                className="absolute top-[33%] left-[5%] flex flex-col items-center gap-4"
+                className="absolute top-[35%] translate-x-[-50%] translate-y-[-50%] left-[25%] w-full flex flex-col items-center gap-4"
               >
                 <Image
                   src={"/assets/icons/dswUnifyWhite.png"}
@@ -421,7 +417,7 @@ export default function Architecture({ showHeading2 = false }) {
 
             <div
               ref={thirdTextRightRef}
-              className="absolute top-[67%] left-[53%] z-[25] flex flex-col items-center gap-4"
+              className="absolute top-[70%] translate-x-[-50%] translate-y-[-50%] left-[62%] z-[25] w-full flex flex-col items-center gap-4"
             >
               <Image
                 src={"/assets/icons/dswAgenticWhite.png"}
@@ -429,18 +425,6 @@ export default function Architecture({ showHeading2 = false }) {
                 width={208}
                 alt="AgenticAI"
                 className="w-33 h-auto"
-              />
-            </div>
-
-            <div
-              ref={arrowLeftRef}
-              className="absolute scale-y-[-1] top-[27%] left-[-27%]"
-            >
-              <Image
-                src={"/assets/images/homepage/architecture/arrow.svg"}
-                height={77}
-                width={339}
-                alt="arrow"
               />
             </div>
           </div>
@@ -458,7 +442,7 @@ export default function Architecture({ showHeading2 = false }) {
             />
             <p
               ref={fourthTextRef}
-              className="absolute top-[45%] left-[16%] text-20 w-[70%] text-center"
+              className="absolute top-[65%] translate-x-[-50%] translate-y-[-50%] left-[50%] text-20 w-[70%] text-center"
             >
               Infra: On-Prem / Cloud​ CPU / GPU​
             </p>
@@ -477,7 +461,7 @@ export default function Architecture({ showHeading2 = false }) {
 
         <div
           ref={rightCardRef}
-          className="px-[2vw] max-md:px-[5vw] h-[12vw] w-[15vw] p-3 max-md:min-h-[25vw] gap-[2vw] max-md:gap-[4vw] rounded-[2vw] max-md:rounded-[3vw] background-glass text-center flex items-center justify-center flex-col max-md:py-[6vw] border border-white/20 overflow-hidden absolute top-[70%] left-[82%]"
+          className="px-[2vw] max-md:px-[5vw] h-[12vw] w-[15vw] p-3 max-md:min-h-[25vw] gap-[2vw] max-md:gap-[4vw] rounded-[2vw] max-md:rounded-[3vw] background-glass text-center flex items-center justify-center flex-col max-md:py-[6vw] border border-white/20 overflow-hidden absolute top-[70%] right-[4%]"
         >
           <p className="w-[100%] relative z-[2] max-md:text-[3.5vw]">
             Build, deploy, orchestrate Agentic AI with RAG, MCP and A2A protocol
@@ -485,7 +469,10 @@ export default function Architecture({ showHeading2 = false }) {
         </div>
 
         {/* Arrows */}
-        <div ref={arrowTopRef} className="absolute top-[37%] left-[66%] z-[40]">
+        <div
+          ref={arrowTopRef}
+          className="absolute top-[40%] translate-x-[-50%] translate-y-[-50%] left-[77%] z-[40]"
+        >
           <Image
             src={"/assets/images/homepage/architecture/arrow-top.svg"}
             height={77}
@@ -495,13 +482,28 @@ export default function Architecture({ showHeading2 = false }) {
           />
         </div>
 
-        <div ref={arrowBottomRef} className="absolute top-[58%] left-[64%]">
+        <div
+          ref={arrowBottomRef}
+          className="absolute top-[62%] translate-x-[-50%] translate-y-[-50%] left-[75.5%]"
+        >
           <Image
             src={"/assets/images/homepage/architecture/arrow.svg"}
             height={77}
             width={339}
             alt="arrow"
             className="rotate-180"
+          />
+        </div>
+
+        <div
+          ref={arrowLeftRef}
+          className="absolute scale-y-[-1] top-[62%] translate-x-[-50%] translate-y-[-50%] left-[24%]"
+        >
+          <Image
+            src={"/assets/images/homepage/architecture/arrow.svg"}
+            height={77}
+            width={339}
+            alt="arrow"
           />
         </div>
 
@@ -549,7 +551,7 @@ export default function Architecture({ showHeading2 = false }) {
         {/* Industry box */}
         <div
           ref={industryBoxRef}
-          className="px-[2vw] max-md:px-[5vw] h-fit w-[20vw] p-3 max-md:min-h-[25vw] gap-[2vw] max-md:gap-[4vw] rounded-[2vw] max-md:rounded-[3vw] background-glass text-center flex items-center justify-center flex-col max-md:py-[6vw] border border-white/20 overflow-hidden absolute top-[-2%] right-[0%]"
+          className="px-[2vw] max-md:px-[5vw] h-fit w-fit p-3  gap-[2vw] max-md:gap-[4vw] rounded-[2vw] max-md:rounded-[3vw] background-glass text-center flex bg-red-500 items-center justify-center flex-col max-md:py-[6vw] border border-white/20 overflow-hidden absolute top-[-7%] right-[1%]"
         >
           {/* <p className="w-[100%] relative z-[2] text-30">
             Industry Specific Solutions
@@ -564,7 +566,7 @@ export default function Architecture({ showHeading2 = false }) {
                 className="relative"
               >
                 <div
-                  className={`w-full h-full py-4 rounded-xl border transition-all duration-200 text-center flex items-center justify-center relative cursor-pointer ${
+                  className={`w-full min-w-[15vw] h-full py-4 rounded-xl border transition-all duration-200 text-center flex items-center justify-center relative cursor-pointer ${
                     hoveredIndustry === idx
                       ? "border-primary-1"
                       : "border-white/50"

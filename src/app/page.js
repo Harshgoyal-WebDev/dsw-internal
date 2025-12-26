@@ -1,8 +1,6 @@
 import dynamic from "next/dynamic";
-
 const Tour = dynamic(() => import("@/components/Common/Tour"));
 import Layout from "@/components/Layout";
-
 import { FAQJSONLD, WebpageJsonLd } from "@/lib/json-ld";
 import OldHero from "@/components/Common/Hero";
 import UnifyAiSingle from "@/components/Homepage/UnifyAiSingle";
@@ -22,9 +20,6 @@ import EnterpriseAgentPlatformMobile from "@/components/Homepage/EnterpriseAgent
 import EnterpriseAIPlatformMobile from "@/components/Homepage/EnterpriseAIPlatformMobile";
 import Architecture from "@/components/Homepage/Architecture";
 import ArchitectureMobile from "@/components/Homepage/ArchitectureMobile";
-const Brochure = dynamic(() => import("@/components/Homepage/Brochure"), {
-  ssr: true,
-});
 
 export const metadata = {
   title: "DSW UnifyAI – Enterprise AI Platform for Insurance",
