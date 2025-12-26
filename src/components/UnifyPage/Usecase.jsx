@@ -75,9 +75,9 @@ function AccordionItem({ title, description,features, isOpen, onToggle,index,z})
                  <p className="">
                   {`00${index+1}`}
                 </p>
-              <h4 className="text-30 text-left leading-[1.2] capitalize">
+              <h3 className="text-30 text-left leading-[1.2] capitalize">
                 {title}
-              </h4>
+              </h3>
               </div>
               
               <div className={`w-[40%] `}>

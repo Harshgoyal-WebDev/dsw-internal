@@ -50,9 +50,9 @@ const PilotCard = ({ id, icon, title, para, spanRef }) => {
             className="w-[5vw] h-[5vw] object-contain max-sm:w-[20vw] max-sm:h-[20vw] max-md:w-[10vw] max-md:h-[10vw]"
           />
           <div className="space-y-[2vw] max-md:space-y-[4vw] h-fit">
-            <h4 className="text-50 text-white-200 max-sm:!text-[7.5vw] max-sm:h-fit">
+            <h3 className="text-50 text-white-200 max-sm:!text-[7.5vw] max-sm:h-fit">
               {title}
-            </h4>
+            </h3>
             <p className="text-white-300 h-[8vw]   max-md:h-auto">
               {para}
             </p>

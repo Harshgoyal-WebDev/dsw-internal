@@ -1,21 +1,27 @@
-import Experts from '@/components/AboutPage/Experts'
-import Guiders from '@/components/AboutPage/Guiders'
-import FooterCTA from '@/components/Common/FooterCta'
+import dynamic from "next/dynamic";
+
+
 import Layout from '@/components/Layout'
 import React from 'react'
 import Build from '@/components/AboutPage/Build'
-import Ecosystem from '@/components/AboutPage/Ecosystem'
-import Careers from '@/components/AboutPage/Careers'
-import Proof from '@/components/AboutPage/Proof'
-import Differently from '@/components/AboutPage/Differently'
 import BuildMobile from '@/components/AboutPage/BuildMobile'
 import { WebpageJsonLd } from '@/lib/json-ld'
 import { homepage } from '@/lib/util'
 import { getPageMetadata } from '@/config/metadata'
 import Hero from '@/components/Common/Hero'
-import Unifying from '@/components/AboutPage/Unifying'
-import Mission from '@/components/AboutPage/Mission'
-import Join from '@/components/CareerPage/Join'
+
+const Unifying = dynamic(() => import('@/components/AboutPage/Unifying'), { ssr: true });
+const Mission = dynamic(() => import('@/components/AboutPage/Mission'), { ssr: true });
+const Proof = dynamic(() => import('@/components/AboutPage/Proof'), { ssr: true });
+const Differently = dynamic(() => import('@/components/AboutPage/Differently'), { ssr: true });
+const Experts = dynamic(() => import('@/components/AboutPage/Experts'), { ssr: true });
+const Guiders = dynamic(() => import('@/components/AboutPage/Guiders'), { ssr: true });
+const Ecosystem = dynamic(() => import('@/components/AboutPage/Ecosystem'), { ssr: true });
+const Careers = dynamic(() => import('@/components/AboutPage/Careers'), { ssr: true });
+const Join = dynamic(() => import('@/components/CareerPage/Join'), { ssr: true });
+const FooterCTA = dynamic(() => import('@/components/Common/FooterCta'), { ssr: true });
+
+
 
 export const metadata = getPageMetadata({
   title: "About DSW UnifyAI - Deep-Tech AI for Enterprises",

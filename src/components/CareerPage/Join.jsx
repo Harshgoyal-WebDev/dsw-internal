@@ -75,7 +75,7 @@ const Join = () => {
                     {card.icon}
                   </div>
                   <div className="w-full flex flex-col h-[19vw] space-y-[3vw]">
-                    <h4 className="text-40">{card.title}</h4>
+                    <h3 className="text-40">{card.title}</h3>
                     <p>{card.para}</p>
                   </div>
                 </div>
