@@ -1,16 +1,44 @@
-import Faqs from '@/components/Common/FAQs'
-import FooterCTA from '@/components/Common/FooterCta'
-import Hero from '@/components/Common/Hero'
-import Layout from '@/components/Layout'
-import Empower from '@/components/Workshops/Empower'
-import Features from '@/components/Workshops/Features'
-import KeyLearnings from '@/components/Workshops/KeyLearnings'
-import Outcomes from '@/components/Workshops/Outcomes'
-import WorkshopFlow from '@/components/Workshops/WorkshopFlow'
-import { getPageMetadata } from '@/config/metadata'
-import { BreadcrumbsJSONLD, WebpageJsonLd } from '@/lib/json-ld'
-import { homepage } from '@/lib/util'
-import React from 'react'
+import dynamic from "next/dynamic";
+import Layout from "@/components/Layout";
+import Hero from "@/components/Common/Hero";
+import { getPageMetadata } from "@/config/metadata";
+import { BreadcrumbsJSONLD, WebpageJsonLd } from "@/lib/json-ld";
+import { homepage } from "@/lib/util";
+
+const Features = dynamic(
+  () => import("@/components/Workshops/Features"),
+  { ssr: true }
+);
+
+const KeyLearnings = dynamic(
+  () => import("@/components/Workshops/KeyLearnings"),
+  { ssr: true }
+);
+
+const WorkshopFlow = dynamic(
+  () => import("@/components/Workshops/WorkshopFlow"),
+  { ssr: true }
+);
+
+const Outcomes = dynamic(
+  () => import("@/components/Workshops/Outcomes"),
+  { ssr: true }
+);
+
+const Empower = dynamic(
+  () => import("@/components/Workshops/Empower"),
+  { ssr: true }
+);
+
+const Faqs = dynamic(
+  () => import("@/components/Common/FAQs"),
+  { ssr: true }
+);
+
+const FooterCTA = dynamic(
+  () => import("@/components/Common/FooterCta"),
+  { ssr: true }
+);
 
 export const metadata = getPageMetadata({
   title: "AI & GenAI Masterclass | DSW",

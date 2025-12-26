@@ -1,12 +1,19 @@
-import React from "react";
+import dynamic from "next/dynamic";
 import Layout from "@/components/Layout";
-import FooterCTA from "@/components/Common/FooterCta";
-import Listing from "@/components/Whitepapers/Listing";
-import { BreadcrumbsJSONLD, WebpageJsonLd } from "@/lib/json-ld"
+import InternalHero from "@/components/Common/InternalHero";
+import { BreadcrumbsJSONLD, WebpageJsonLd } from "@/lib/json-ld";
 import { homepage } from "@/lib/util";
 import { getPageMetadata } from "@/config/metadata";
-import Hero from "@/components/Common/Hero";
-import InternalHero from "@/components/Common/InternalHero";
+
+const Listing = dynamic(
+  () => import("@/components/Whitepapers/Listing"),
+  { ssr: true }
+);
+
+const FooterCTA = dynamic(
+  () => import("@/components/Common/FooterCta"),
+  { ssr: true }
+);
 
 export const metadata = getPageMetadata({
   title: "Deep Insights. Real Strategies. Enterprise AI Whitepapers",
