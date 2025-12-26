@@ -27,6 +27,7 @@ const WhiteButton = ({
       <span
         className={`absolute inset-0 group-hover:scale-95 transition-transform duration-500 rounded-full bg-foreground ${background}`}
       />
+      <div className="w-[1px] h-[1px] overflow-hidden">{ariaLabel}</div>
     </Link>
   );
 };

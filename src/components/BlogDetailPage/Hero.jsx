@@ -6,6 +6,9 @@ import {
   headingAnim,
   lineAnim,
   paraAnim,
+  useFadeUp,
+  useHeadingAnim,
+  useImgAnim,
 } from "../Animations/gsapAnimations";
 import { initSplit } from "../splitTextUtils";
 import gsap from "gsap";
@@ -20,6 +23,7 @@ export default function Hero({ breadcrumbs, post }) {
   fadeUp();
   fadeIn();
   lineAnim();
+
 
   useEffect(() => {
     initSplit();

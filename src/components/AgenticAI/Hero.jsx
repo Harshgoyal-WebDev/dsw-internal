@@ -18,6 +18,9 @@ import {
   fadeUp,
   headingAnim,
   lineAnim,
+  useFadeUp,
+  useHeadingAnim,
+  useImgAnim,
 } from "@/components/Animations/gsapAnimations";
 import AnimatedLine from "../Common/HeroComponents/AnimatedLine";
 import BreadCrumbs from "../Common/HeroComponents/BreadCrumbs";
@@ -59,6 +62,8 @@ const AgenticHero = memo(function Hero({ heroData, breadcrumbs }) {
   headingAnim();
   fadeUp();
   lineAnim();
+
+ 
   // prefers-reduced-motion to skip heavy animation on users who ask for it
   const prefersReducedMotion =
     typeof window !== "undefined" &&
