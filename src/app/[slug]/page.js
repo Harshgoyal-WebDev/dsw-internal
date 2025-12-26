@@ -6,8 +6,38 @@ import Layout from '@/components/Layout'
 import { getPageMetadata } from '@/config/metadata'
 import { BreadcrumbsJSONLD, WebpageJsonLd } from '@/lib/json-ld'
 import { getPostBySlug } from '@/lib/posts'
-import { homepage } from '@/lib/util'
+import { homepage, stripHtml } from '@/lib/util'
 import { notFound } from 'next/navigation'
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params
+  const { post } = await getPostBySlug(slug)
+
+  if (!post) {
+    return {
+      title: 'Post Not Found',
+      description: 'The requested post could not be found.',
+    }
+  }
+
+  return getPageMetadata({
+    title: post.metaTitle || post.title,
+    description: stripHtml(post.metaDescription || post.excerpt),
+    url: `/${slug}`,
+    date_published: post.date,
+    date_modified: post.modified || post.date,
+    alternates: {
+      canonical: `/${slug}`,
+      languages: { 'x-default': `/${slug}`},
+    },
+    openGraph: {
+      url: `/${slug}`,
+      images: post.metaImage
+        ? [{ url: post.metaImage.url, width: 1200, height: 630 }]
+        : [{ url: `${homepage}seo/blog-detail.png`, width: 1200, height: 630 }],
+    },
+  })
+}
 
 export default async function Page({ params }) {
   const { slug } = await params
