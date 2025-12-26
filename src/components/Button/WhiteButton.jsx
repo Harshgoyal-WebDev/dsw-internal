@@ -5,11 +5,13 @@ const WhiteButton = ({
   background = "",
   className = "",
   circleColor,
+  "aria-label": ariaLabel,
   ...props
 }) => {
   return (
     <Link
       {...props}
+      aria-label={ariaLabel} 
       data-letters-delay
       data-split="letters"
       className={`buttonSplit relative inline-flex h-[4vw] group min-w-[10vw] px-[2vw] items-center gap-3 rounded-full text-[#0A0A0A] group max-sm:h-fit max-sm:py-[5vw] max-sm:px-[6vw] max-sm:gap-[4vw] max-sm:min-w-[30vw] max-md:gap-[2vw]  max-md:py-[5vw] max-md:px-[4vw] ${className}`}

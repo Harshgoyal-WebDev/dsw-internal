@@ -94,7 +94,7 @@ const FeaturedBlog = ({ posts }) => {
               text="Read More"
               href={featuredPost.slug}
               className="hover:text-primary-2 text-primary-2"
-              aria-label={`Read more about ${featuredPost.title}`}
+              aria-label={`Read more about ${featuredPost.title}`} 
             />
           </div>
 
