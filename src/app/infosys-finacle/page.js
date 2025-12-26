@@ -4,11 +4,11 @@ import Layout from "@/components/Layout";
 import FooterCTA from "@/components/Common/FooterCta";
 import { FAQJSONLD, WebpageJsonLd } from "@/lib/json-ld";
 import Faqs from "@/components/Common/FAQs";
-// import AgenticFeatures from "@/components/AgenticAI/AgenticFeatures";
+import { homepage } from "@/lib/util";
+import { getPageMetadata } from "@/config/metadata";
 import InfosysHero from "@/components/InfosysFinacle/InfosysHero";
 import Deployments from "@/components/InfosysFinacle/Deployments";
 import Recognized from "@/components/InfosysFinacle/Recognized";
-// import DeliveringSuccess from "@/components/InfosysFinacle/DeliveringSuccess";
 import EngagementModel from "@/components/InfosysFinacle/EngagementModel";
 import Outcomes from "@/components/InfosysFinacle/Outcomes";
 
@@ -16,16 +16,30 @@ const SuccessStories = dynamic(() => import("@/components/Homepage/SuccessStorie
 const Expertise = dynamic(() => import("@/components/InfosysFinacle/Expertise"));
 const CohesiveValue = dynamic(() => import("@/components/InfosysFinacle/CohesiveValue"));
 
-import { de } from "zod/v4/locales";
 
-export const metadata = {
-  title: "DSW UnifyAI – Enterprise AI Platform for Insurance",
-  description:
-    "Launch AI use cases in days — scale fast, reduce cost, deploy GenAI in hours with DSW UnifyAI's insurance-focused enterprise AI platform.",
-  url: "",
+export const metadata = getPageMetadata({
+  title: "Infosys Finacle Open Source Partner – DSW",
+  description: "DSW is a strategic open-source consulting partner for Infosys Finacle, helping global banks modernize, deploy, and operate Finacle at scale with enterprise-grade governance.",
+  url: "infosys-finacle",
   date_published: "2025-09-30T00:00",
   date_modified: "2025-09-30T00:00",
-};
+  alternates: {
+    canonical: "/infosys-finacle",
+    languages: {
+      "x-default": "/infosys-finacle",
+    },
+  },
+  openGraph: {
+    url: "infosys-finacle",
+    images: [
+      {
+        url: `${homepage}seo/infosys-finacle.png`,
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+});
 
 export default async function InfosysFinacle() {
   return (
