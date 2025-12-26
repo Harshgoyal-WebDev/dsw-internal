@@ -10,7 +10,7 @@ const Newsletter = () => {
       </p>
       <div className="group relative w-full max-w-[55%] max-sm:max-w-[70%] max-md:max-w-[45%]  max-md:ml-[-10vw]  max-sm:pl-[15vw]">
         <label
-          htmlFor="Newsletter"
+          htmlFor="newsletter-input"
           className="origin-start pointer-events-none font-medium  has-[+input:not(:placeholder-shown)]:text-foreground absolute top-1/2 block -translate-y-1/2 cursor-text px-2 text-sm transition-all group-focus-within:pointer-events-none group-focus-within:top-0 group-focus-within:cursor-default group-focus-within:text-xs group-focus-within:font-medium has-[+input:not(:placeholder-shown)]:pointer-events-none has-[+input:not(:placeholder-shown)]:top-0 has-[+input:not(:placeholder-shown)]:cursor-default has-[+input:not(:placeholder-shown)]:text-xs has-[+input:not(:placeholder-shown)]:font-medium"
         >
           <span className="bg-transparent inline-flex text-[0.85vw] max-sm:text-[3vw] max-md:text-[2vw] ">
