@@ -50,12 +50,11 @@ const InternalHero = memo(function Hero({ heroData, breadcrumbs }) {
     }
   }, [mob]);
 
-//   useEffect(() => {
   
-// }, []);
-headingAnim();
+  headingAnim();
   fadeUp();
   lineAnim();
+}, []);
 
 
   const prefersReducedMotion =

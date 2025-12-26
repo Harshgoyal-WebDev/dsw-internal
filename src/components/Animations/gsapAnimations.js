@@ -35,7 +35,6 @@ export function headingAnim() {
   },[]);
       
 }
-
 export function imgAnim(){
 
   useEffect(()=>{

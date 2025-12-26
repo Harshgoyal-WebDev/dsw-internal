@@ -22,7 +22,7 @@ const BlogCard = ({ title, date ,slug,featuredImage}) => {
 }
           </div>
           <div className="space-y-[1vw] max-sm:space-y-[4vw] px-5 max-md:w-full w-[90%] max-sm:w-[100%] max-md:px-[2.5vw] max-md:space-y-[2vw]">
-            <p className=" font-medium text-[#E8E8E8] leading-[1.5] max-md:w-[80%] max-sm:w-full max-md:text-[3vw] max-sm:text-[4.5vw]">
+            <p className=" font-medium text-[#E8E8E8] h-20 leading-[1.5] max-md:w-[80%] max-sm:w-full max-md:text-[3vw] max-sm:text-[4.5vw]">
               <span className=" pb-0.5">{title}</span>
             </p>
             <p className="text-[1.145vw] font-medium text-white/40 max-md:text-[2vw] max-sm:text-[3.5vw] ">
