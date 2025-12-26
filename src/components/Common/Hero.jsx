@@ -57,11 +57,11 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
 
   // // keep your existing base hooks (these set up global triggers, etc.)
   // useEffect(() => {
-  requestIdleCallback(() => {
+  // requestIdleCallback(() => {
     headingAnim();
     fadeUp();
     lineAnim();
-  });
+  // });
 // }, []);
 
   // prefers-reduced-motion to skip heavy animation on users who ask for it
