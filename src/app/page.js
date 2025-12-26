@@ -252,8 +252,8 @@ const footerCTAData = {
   btnText2: "Schedule a Call",
   btnLink2: "https://calendly.com/",
   target: true,
-  img1: "/assets/images/footer/1new.png",
-  img2: "/assets/images/footer/2new.png",
+  img1: "/assets/images/footer/1.png",
+  img2: "/assets/images/footer/2.png",
 };
 const faqData = [
   {

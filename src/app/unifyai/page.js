@@ -141,8 +141,8 @@ const footerCTAData = {
   btnLink1: "/#",
   btnText2: "Contact Sales",
   btnLink2: "/contact-us",
-  img1: "/assets/images/footer/image-1.png",
-  img2: "/assets/images/footer/image-2.png",
+  img1: "/assets/images/footer/3.png",
+  img2: "/assets/images/footer/4.png",
 };
 const faqData = [
   {
