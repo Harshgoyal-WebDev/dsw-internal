@@ -1,21 +1,68 @@
+import dynamic from "next/dynamic";
 
-import About from "@/components/Insuraince/About";
-import Features from "@/components/Insuraince/Features";
-import Capabilities from "@/components/Insuraince/Capabilities";
-import Results from "@/components/Insuraince/Results";
-import PlatformCapabilities from "@/components/Insuraince/PlatformCapabilities";
-import Outcomes from "@/components/Insuraince/Outcomes";
-import Efficiency from "@/components/Insuraince/Efficiency";
-import CustomerQuotes from "@/components/Insuraince/CustomerQuotes";
-import FutureScope from "@/components/Insuraince/FutureScope";
+const About = dynamic(
+  () => import("@/components/Insuraince/About"),
+  { ssr: true }
+);
+
+const Features = dynamic(
+  () => import("@/components/Insuraince/Features"),
+  { ssr: true }
+);
+
+const Capabilities = dynamic(
+  () => import("@/components/Insuraince/Capabilities"),
+  { ssr: true }
+);
+
+const Results = dynamic(
+  () => import("@/components/Insuraince/Results"),
+  { ssr: true }
+);
+
+const SuccessStories = dynamic(
+  () => import("@/components/Homepage/SuccessStories"),
+  { ssr: true }
+);
+const PlatformCapabilities = dynamic(
+  () => import("@/components/Insuraince/PlatformCapabilities"),
+  { ssr: true }
+);
+
+const Outcomes = dynamic(
+  () => import("@/components/Insuraince/Outcomes"),
+  { ssr: true }
+);
+
+const Efficiency = dynamic(
+  () => import("@/components/Insuraince/Efficiency"),
+  { ssr: true }
+);
+
+const CustomerQuotes = dynamic(
+  () => import("@/components/Insuraince/CustomerQuotes"),
+  { ssr: true }
+);
+
+const FutureScope = dynamic(
+  () => import("@/components/Insuraince/FutureScope"),
+  { ssr: true }
+);
+
+const Faqs = dynamic(
+  () => import("@/components/Common/FAQs"),
+  { ssr: true }
+);
+
+const FooterCTA = dynamic(
+  () => import("@/components/Common/FooterCta"),
+  { ssr: true }
+);
 import Layout from "@/components/Layout";
-import Faqs from "@/components/Common/FAQs";
-import FooterCTA from "@/components/Common/FooterCta";
 import { FAQJSONLD, WebpageJsonLd } from "@/lib/json-ld";
 import { homepage } from "@/lib/util";
 import { getPageMetadata } from "@/config/metadata";
 import Hero from "@/components/Common/Hero";
-import SuccessStories from "@/components/Homepage/SuccessStories";
 
 export const metadata = getPageMetadata({
   title: "Enterprise AI for Insurance - insurAInce by DSW",

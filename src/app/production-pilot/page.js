@@ -1,29 +1,49 @@
+import dynamic from "next/dynamic";
 import Layout from "@/components/Layout";
-// import AIPilots from '@/components/PilotProgram/AIPilots'
-// import PilotProgramForm from '../../components/PilotForm/PilotProgramForm'
-import InsidePilotProgram from "@/components/PilotProgram/InsidePilotProgram";
-import Production from "@/components/PilotProgram/Production";
-// import Transform from '@/components/PilotProgram/Transform'
-import React from "react";
-import FooterCTA from "@/components/Common/FooterCta";
-import Faqs from "@/components/Common/FAQs";
-import { FAQJSONLD, WebpageJsonLd } from "@/lib/json-ld";
+import Hero from "@/components/Common/Hero";
+import { WebpageJsonLd, FAQJSONLD } from "@/lib/json-ld";
 import { homepage } from "@/lib/util";
 import { getPageMetadata } from "@/config/metadata";
-import Hero from "@/components/Common/Hero";
-import dynamic from "next/dynamic";
-const Transform = dynamic(() => import("@/components/PilotProgram/Transform"), {
-  ssr: true,
-});
+
+/* -------------------- */
+/* Dynamic SSR imports  */
+/* -------------------- */
+
+const Production = dynamic(
+  () => import("@/components/PilotProgram/Production"),
+  { ssr: true }
+);
+
+const AIPilots = dynamic(
+  () => import("@/components/PilotProgram/AIPilots"),
+  { ssr: true }
+);
+
+const Transform = dynamic(
+  () => import("@/components/PilotProgram/Transform"),
+  { ssr: true }
+);
+
+const InsidePilotProgram = dynamic(
+  () => import("@/components/PilotProgram/InsidePilotProgram"),
+  { ssr: true }
+);
+
 const PilotProgramForm = dynamic(
   () => import("@/components/PilotForm/PilotProgramForm"),
-  {
-    ssr: true,
-  }
+  { ssr: true }
 );
-const AIPilots = dynamic(() => import("@/components/PilotProgram/AIPilots"), {
-  ssr: true,
-});
+
+const Faqs = dynamic(
+  () => import("@/components/Common/FAQs"),
+  { ssr: true }
+);
+
+const FooterCTA = dynamic(
+  () => import("@/components/Common/FooterCta"),
+  { ssr: true }
+);
+
 
 export const metadata = getPageMetadata({
   title: "Pilot Program - Validate AI & GenAI Use Cases Fast",
