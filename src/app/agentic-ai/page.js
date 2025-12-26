@@ -1,20 +1,58 @@
-import Layout from "@/components/Layout";
-
-import FooterCTA from "@/components/Common/FooterCta";
-import { FAQJSONLD, WebpageJsonLd } from "@/lib/json-ld";
-import { getAllPosts } from "@/lib/posts";
-import AgenticHero from "@/components/AgenticAI/Hero";
 import dynamic from "next/dynamic";
-import Faqs from "@/components/Common/FAQs";
-import AgenticFeatures from "@/components/AgenticAI/AgenticFeatures";
+import Layout from "@/components/Layout";
+import AgenticHero from "@/components/AgenticAI/Hero";
+import { WebpageJsonLd, FAQJSONLD } from "@/lib/json-ld";
+
+const AgenticFeatures = dynamic(
+  () => import("@/components/AgenticAI/AgenticFeatures"),
+  { ssr: true }
+);
 import AgenticAi from "../../../public/assets/icons/agentic-ai.png";
-import AgenticUsecase from "@/components/AgenticAI/AgenticUsecase";
-import CoreCapabilities from "@/components/AgenticAI/CoreCapabilities";
-import Results from "@/components/Insuraince/Results";
-import Outcomes from "@/components/Workshops/Outcomes";
-import SuccessStories from "@/components/Homepage/SuccessStories";
-import AgenticAIDiagram from "@/components/AgenticAI/PresentationLayer";
-import UsecaseMobile from "@/components/UnifyPage/UsecaseMobile";
+
+const AgenticUsecase = dynamic(
+  () => import("@/components/AgenticAI/AgenticUsecase"),
+  { ssr: true }
+);
+
+const UsecaseMobile = dynamic(
+  () => import("@/components/UnifyPage/UsecaseMobile"),
+  { ssr: true }
+);
+
+const CoreCapabilities = dynamic(
+  () => import("@/components/AgenticAI/CoreCapabilities"),
+  { ssr: true }
+);
+
+const Results = dynamic(
+  () => import("@/components/Insuraince/Results"),
+  { ssr: true }
+);
+
+const AgenticAIDiagram = dynamic(
+  () => import("@/components/AgenticAI/PresentationLayer"),
+  { ssr: true }
+);
+
+const Outcomes = dynamic(
+  () => import("@/components/Workshops/Outcomes"),
+  { ssr: true }
+);
+
+const SuccessStories = dynamic(
+  () => import("@/components/Homepage/SuccessStories"),
+  { ssr: true }
+);
+
+const Faqs = dynamic(
+  () => import("@/components/Common/FAQs"),
+  { ssr: true }
+);
+
+const FooterCTA = dynamic(
+  () => import("@/components/Common/FooterCta"),
+  { ssr: true }
+);
 
 export const metadata = {
   title: "DSW UnifyAI – Enterprise AI Platform for Insurance",
