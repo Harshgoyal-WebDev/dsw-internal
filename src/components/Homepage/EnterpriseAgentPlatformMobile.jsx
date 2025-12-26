@@ -97,16 +97,16 @@ export default function EnterpriseAgentPlatformMobile({
       },
       "<"
     );
-    gsap.to(".enterprise-bg", {
-      opacity: 1,
-      scrollTrigger: {
-        trigger: "#enterpriseAI",
-        start: "30% 50%",
-        end: "35% 20% ",
-        scrub: true,
-        // markers: true,
-      },
-    });
+    // gsap.to(".enterprise-bg", {
+    //   opacity: 1,
+    //   scrollTrigger: {
+    //     trigger: "#enterpriseAI",
+    //     start: "30% 50%",
+    //     end: "35% 20% ",
+    //     scrub: true,
+    //     // markers: true,
+    //   },
+    // });
   });
 
   return (

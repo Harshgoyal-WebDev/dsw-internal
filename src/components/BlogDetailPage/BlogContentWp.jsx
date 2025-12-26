@@ -16,7 +16,7 @@ const BlogContentWp = ({ post }) => {
   const [toc, setToc] = useState([]); // [{ id, title }]
   const [readingTime, setReadingTime] = useState("1 min");
   const contentRef = useRef(null);
-
+console.log(post,"AUTHOR.....");
   const getHeaderOffset = () => 100;
 
   const slugify = (str) =>

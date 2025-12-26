@@ -20,6 +20,7 @@ const Mission = () => {
                     width={80}
                     alt="mission icon"
                     className=" group-hover:brightness-[100] duration-500 ease-in-out"
+                    style={{ width: "auto", height: "auto" }}
                   />
                 </div>
                 <h3 className="text-50 font-head"> Mission</h3>
@@ -39,6 +40,7 @@ const Mission = () => {
                     width={80}
                     alt="vision icon"
                     className="group-hover:brightness-[100] duration-500 ease-in-out"
+                    style={{ width: "auto", height: "auto" }}
                   />
                 </div>
                 <h3 className="text-50 font-head"> Vision</h3>
@@ -60,6 +62,7 @@ const Mission = () => {
                     width={80}
                     alt="values icon"
                     className="group-hover:!text-white group-hover:brightness-[100] duration-500 ease-in-out"
+                    style={{ width: "auto", height: "auto" }}
                   />
                 </div>
                 <h3 className="text-50 font-head"> Values</h3>

@@ -201,7 +201,7 @@ const Tour = ({ heading, para, btnText }) => {
               style={{ opacity: 0, transform: "scale(0.9)" }}
             >
               <Image
-                src={"/assets/images/homepage/tour-img.png"}
+                src={"/assets/images/homepage/AgenticTour.png"}
                 alt="AgenticAI tour image"
                 className="w-full h-full object-cover "
                 width={900}

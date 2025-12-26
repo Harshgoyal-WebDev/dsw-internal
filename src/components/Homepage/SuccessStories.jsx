@@ -35,7 +35,7 @@ const SuccessStories = () => {
               width={"w-[80%] max-md:w-[80%] max-sm:w-[90%]"}
             />
             <ImageCard
-              img={"/assets/images/homepage/success-stories/success-img.png"}
+              img={"/assets/images/homepage/success-stories/stories1.png"}
             />
             <TestimonialCard
               message={
@@ -47,7 +47,7 @@ const SuccessStories = () => {
             />
 
             <ImageCard
-              img={"/assets/images/homepage/success-stories/success-img.png"}
+              img={"/assets/images/homepage/success-stories/stories2.png"}
             />
             <TestimonialCard
               message={
@@ -77,7 +77,7 @@ const SuccessStories = () => {
               width={"w-[75%] max-md:w-[80%] max-sm:w-[60%]"}
             />
             <ImageCard
-              img={"/assets/images/homepage/success-stories/success-img.png"}
+              img={"/assets/images/homepage/success-stories/stories3.png"}
             />
           </div>
         </div>

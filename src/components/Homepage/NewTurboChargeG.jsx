@@ -58,16 +58,16 @@ const NewTurboChargeG = () => {
           },
           "<"
         )
-        .from(
-          ".img-4",
-          {
-            yPercent: -45,
-            xPercent: 75,
-            transformOrigin: "right center",
-            duration: 1,
-          },
-          "<"
-        );
+        // .from(
+        //   ".img-4",
+        //   {
+        //     yPercent: -45,
+        //     xPercent: 75,
+        //     transformOrigin: "right center",
+        //     duration: 1,
+        //   },
+        //   "<"
+        // );
 
       bl.from(".img-1", {
         rotateX: 45,
@@ -101,15 +101,15 @@ const NewTurboChargeG = () => {
           },
           "<"
         )
-        .from(
-          ".img-4",
-          {
-            rotateX: 45,
-            transformOrigin: "right center",
-            duration: 1,
-          },
-          "<"
-        );
+        // .from(
+        //   ".img-4",
+        //   {
+        //     rotateX: 45,
+        //     transformOrigin: "right center",
+        //     duration: 1,
+        //   },
+        //   "<"
+        // );
     });
     return () => ctx.revert();
   }, []);

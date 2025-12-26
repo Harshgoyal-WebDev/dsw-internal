@@ -32,7 +32,7 @@ export const POST_FIELDS = gql`
 
 export const QUERY_ALL_POSTS = gql`
   query AllPosts {
-    posts(first: 100, where: { orderby: { field: DATE, order: DESC } })  {
+    posts(first: 100, where: { orderby: { field: DATE, order: DESC } }) {
       edges {
         node {
           id
@@ -111,7 +111,6 @@ export const QUERY_ALL_POSTS = gql`
 //   }
 // `;
 
-
 export const QUERY_POST_BY_SLUG = gql`
   query PostBySlug($slug: ID!) {
     post(id: $slug, idType: SLUG) {
@@ -125,6 +124,7 @@ export const QUERY_POST_BY_SLUG = gql`
           sizes
         }
       }
+
       categories {
         edges {
           node {
@@ -144,8 +144,6 @@ export const QUERY_POST_BY_SLUG = gql`
     }
   }
 `;
-
-
 
 export const QUERY_POST_SEO_BY_SLUG = gql`
   query PostSEOBySlug($slug: ID!) {

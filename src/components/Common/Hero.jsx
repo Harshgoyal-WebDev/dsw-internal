@@ -56,20 +56,13 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
   }, [mob]);
 
   // // keep your existing base hooks (these set up global triggers, etc.)
-  useEffect(() => {
-    const run = () => {
-      headingAnim();
-      fadeUp();
-      lineAnim();
-    };
-  
-    if (typeof window !== "undefined" && "requestIdleCallback" in window) {
-      window.requestIdleCallback(run);
-    } else {
-      // iOS Safari fallback
-      setTimeout(run, 0);
-    }
-  }, []);
+  // useEffect(() => {
+  // requestIdleCallback(() => {
+    headingAnim();
+    fadeUp();
+    lineAnim();
+  // });
+// }, []);
 
   // prefers-reduced-motion to skip heavy animation on users who ask for it
   const prefersReducedMotion =

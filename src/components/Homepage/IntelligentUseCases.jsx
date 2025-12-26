@@ -11,8 +11,19 @@ import { NextButton, PreviousButton } from "../Button/SliderButtons";
 import ArrowButton from "../Button/ArrowButton";
 import Copy from "../Animations/Copy";
 import Link from "next/link";
-import { FastTrackMainIcon, FeatureCraftMainIcon, SupportAiIcon } from "../Icons";
-import { Banking, InsuranceSpecific, Telecom, ReatilIcon, ManufacturingIndustryIcon, HealthcareIcon } from "../Icons";
+import {
+  FastTrackMainIcon,
+  FeatureCraftMainIcon,
+  SupportAiIcon,
+} from "../Icons";
+import {
+  Banking,
+  InsuranceSpecific,
+  Telecom,
+  ReatilIcon,
+  ManufacturingIndustryIcon,
+  HealthcareIcon,
+} from "../Icons";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -26,8 +37,8 @@ const usecases = [
       "Credit risk modelling & portfolio scoring​",
       "Collections optimization & delinquency prediction​",
       "Agentic copilots for relationship managers, ops, and compliance​",
-      "Enterprise GenAI knowledge systems for teams​"
-    ]
+      "Enterprise GenAI knowledge systems for teams​",
+    ],
   },
   {
     id: 2,
@@ -38,8 +49,8 @@ const usecases = [
       "Claims decisioning & straight-through processing ​",
       "Underwriting triage & risk scoring ​",
       "Customer service copilots (policy queries, documentation, endorsements) ​",
-      "Agentic workflows for FNOL, claims routing, policy servicing​"
-    ]
+      "Agentic workflows for FNOL, claims routing, policy servicing​",
+    ],
   },
   {
     id: 3,
@@ -49,19 +60,20 @@ const usecases = [
       "Predictive maintenance​",
       "NOC automation with agentic workflows​",
       "Churn prediction & customer retention​",
-      "Field engineer copilots​"
-    ]
+      "Field engineer copilots​",
+    ],
   },
   {
     id: 4,
     icon: <ReatilIcon />,
-    title: "Retail & E-commerce for personalization, forecasting, and operational AI",
+    title:
+      "Retail & E-commerce for personalization, forecasting, and operational AI",
     items: [
       "Demand forecasting​",
       "Dynamic pricing​",
       "Recommendation systems​",
-      "GenAI customer support copilots​"
-    ]
+      "GenAI customer support copilots​",
+    ],
   },
   {
     id: 5,
@@ -71,48 +83,52 @@ const usecases = [
       "Clinical summarization​",
       "Claims & coding optimization​",
       "Operational efficiency modelling​",
-      "GenAI medical knowledge assistants​"
-    ]
+      "GenAI medical knowledge assistants​",
+    ],
   },
   {
     id: 6,
     icon: <ManufacturingIndustryIcon />,
-    title: "Manufacturing & Industrial for predictive, preventive, and production intelligence",
+    title:
+      "Manufacturing & Industrial for predictive, preventive, and production intelligence",
     items: [
       "Predictive maintenance​",
       "Process optimization​",
       "Energy/throughput modelling​",
-      "GenAI copilots for SOPs and troubleshooting​"
-    ]
+      "GenAI copilots for SOPs and troubleshooting​",
+    ],
   },
 ];
 
-const SwiperCard = ({ usecase, onHover, isActive, space }) => {
+const SwiperCard = ({ usecase, onHover, isActive, space, index }) => {
   return (
     <>
       <div
-        className="relative py-[1vw] pt-[2.5vw] background-glass max-md:py-[8vw] min-h-[63vh] max-md:px-[8vw] rounded-[2vw] overflow-hidden w-[30vw] px-[3vw] h-fit max-md:min-h-[60vh] max-sm:min-h-[70vh] max-md:h-fit max-md:w-full max-md:rounded-[4vw] max-sm:rounded-[6vw] border group border-white/20 group cursor-grab "
+        className="relative py-[1vw] pt-[2.5vw] background-glass max-md:py-[8vw] min-h-[70vh] max-md:px-[8vw] rounded-[2vw] overflow-hidden w-[30vw] px-[3vw] h-fit max-md:min-h-[60vh] max-sm:min-h-[70vh] max-md:h-fit max-md:w-full max-md:rounded-[4vw] max-sm:rounded-[6vw] border group border-white/20 group cursor-grab "
         onMouseEnter={onHover}
       >
-         <div
+        <div
           className={`absolute inset-0 bg-gradient-to-r from-light-blue to-dark-blue transition-opacity ease-in-out duration-500 ${
             isActive ? "opacity-100" : "opacity-0"
           }`}
         />
-        <div className={`!h-[4vw] relative z-[10]  !w-[4vw] max-sm:mb-[6vw] !mb-[2vw] ${isActive ? "text-white" : "text-primary-1"} max-md:!h-[25vw] max-md:!w-[20vw]`}>
-            {usecase.icon}
+        <div
+          className={`relative z-[10] ${index === 1 ? "!h-[3.5vw]   !w-[3.5vw]" : "!h-[4vw]   !w-[4vw]"} max-sm:mb-[6vw] !mb-[2vw] ${isActive ? "text-white" : "text-primary-1"} max-md:!h-[25vw] max-md:!w-[20vw]`}
+        >
+          {usecase.icon}
         </div>
 
         <div className="h-full flex flex-col justify-between relative z-[10]">
           <div className="w-[100%] max-md:w-[100%]">
-            <h3 className="text-40 text-white-200">
-              {usecase.title}
-            </h3>
+            <h3 className="text-40 text-white-200">{usecase.title}</h3>
           </div>
           <div className="w-full  max-md:space-y-[3vw]  py-[2vw] max-sm:mt-[8vw] mt-[1vw]">
             <ul className={`list-disc text-white-200 pl-[2vw] ${space}`}>
               {usecase.items.map((item, index) => (
-                <li key={index} className="text-white-300 text-[1vw] max-md:text-[2.5vw] max-sm:text-[4vw]">
+                <li
+                  key={index}
+                  className="text-white-300 text-[1vw] max-md:text-[2.5vw] max-sm:text-[4vw]"
+                >
                   {item}
                 </li>
               ))}
@@ -193,12 +209,16 @@ const IntelligentUseCases = ({ sessionsData }) => {
             }}
           >
             {usecases.map((usecase, index) => (
-              <SwiperSlide key={usecase.id} className="experts-cards w-full h-full">
-                <SwiperCard 
-                space="space-y-[1vw]"
+              <SwiperSlide
+                key={usecase.id}
+                className="experts-cards w-full h-full"
+              >
+                <SwiperCard
+                  space="space-y-[1vw]"
                   usecase={usecase}
                   onHover={() => setActiveIndex(index)}
-                  isActive={activeIndex === index} 
+                  isActive={activeIndex === index}
+                  index={index}
                 />
               </SwiperSlide>
             ))}

@@ -24,6 +24,12 @@ const EnterpiseAgentPlatform = () => {
   const tagRefs = useRef([]);
   tagRefs.current = [];
 
+  const imageRefs = useRef([]);
+  imageRefs.current = [];
+
+  const bottomImageRefs = useRef([]);
+  bottomImageRefs.current = [];
+
   const timelineRef = useRef(null);
 
   // flag to disable snap during programmatic scrolls (tag clicks)
@@ -38,6 +44,12 @@ const EnterpiseAgentPlatform = () => {
   };
   const addToTagRefs = (el) => {
     if (el && !tagRefs.current.includes(el)) tagRefs.current.push(el);
+  };
+  const addToImageRefs = (el) => {
+    if (el && !imageRefs.current.includes(el)) imageRefs.current.push(el);
+  };
+  const addToBottomImageRefs = (el) => {
+    if (el && !bottomImageRefs.current.includes(el)) bottomImageRefs.current.push(el);
   };
 
   // Helper: toggle pointer-events based on active step
@@ -113,6 +125,26 @@ const EnterpiseAgentPlatform = () => {
                 // optional a11y state
                 tag.setAttribute("aria-pressed", isReached ? "true" : "false");
               });
+
+              // Images fade in/out based on active step
+              imageRefs.current.forEach((img, i) => {
+                const isActive = i === activeIndex;
+                gsap.to(img, {
+                  opacity: isActive ? 1 : 0,
+                  duration: 0.5,
+                  overwrite: true,
+                });
+              });
+
+              // Bottom images fade in/out based on active step
+              bottomImageRefs.current.forEach((img, i) => {
+                const isActive = i === activeIndex;
+                gsap.to(img, {
+                  opacity: isActive ? 1 : 0,
+                  duration: 0.5,
+                  overwrite: true,
+                });
+              });
             },
           },
         });
@@ -159,6 +191,16 @@ const EnterpiseAgentPlatform = () => {
           tag.style.cursor = "pointer";
           tag.setAttribute("role", "button");
           tag.setAttribute("tabIndex", "0");
+        });
+
+        // Initial image states - only first visible
+        imageRefs.current.forEach((img, i) => {
+          gsap.set(img, { opacity: i === 0 ? 1 : 0 });
+        });
+
+        // Initial bottom image states - only first visible
+        bottomImageRefs.current.forEach((img, i) => {
+          gsap.set(img, { opacity: i === 0 ? 1 : 0 });
         });
 
         // Timeline step-to-step transitions
@@ -307,16 +349,15 @@ const EnterpiseAgentPlatform = () => {
       },
       "<"
     );
-    gsap.to(".enterprise-bg", {
-      opacity: 1,
-      scrollTrigger: {
-        trigger: "#enterpriseAI",
-        start: "30% 50%",
-        end: "35% 20% ",
-        scrub: true,
-        // markers: true,
-      },
-    });
+    // gsap.to(".enterprise-bg", {
+    //   opacity: 1,
+    //   scrollTrigger: {
+    //     trigger: "#enterpriseAI",
+    //     start: "30% 50%",
+    //     end: "35% 20% ",
+    //     scrub: true,
+    //   },
+    // });
   });
 
   return (
@@ -437,24 +478,78 @@ const EnterpiseAgentPlatform = () => {
             </div>
 
             {/* Middle: Images */}
-            <div className="w-[30%] flex flex-col gap-[1.5vw]">
+            <div className="w-[30%] flex flex-col gap-[1.5vw] relative">
               <div className="rounded-2xl overflow-hidden h-fit w-fit">
                 <Image
+                  ref={addToImageRefs}
                   src="/assets/images/homepage/whyunify/unify-dashboard-1.png"
                   height={390}
                   width={382}
-                  className="h-[13vw] w-[15vw] object-cover"
+                  className="h-[13vw] w-[15vw] object-cover absolute top-0 left-0"
                   alt="unify-ai-graph"
                 />
-              </div>
-              <div className="rounded-2xl overflow-hidden h-fit w-fit ml-[7vw]">
                 <Image
+                  ref={addToImageRefs}
+                  src="/assets/images/homepage/whyunify/unify-dashboard-2.png"
+                  height={390}
+                  width={382}
+                  className="h-[13vw] w-[15vw] object-cover absolute top-0 left-0"
+                  alt="unify-ai-lifecycle"
+                />
+                <Image
+                  ref={addToImageRefs}
+                  src="/assets/images/homepage/whyunify/unify-dashboard-1.png"
+                  height={390}
+                  width={382}
+                  className="h-[13vw] w-[15vw] object-cover absolute top-0 left-0"
+                  alt="unify-ai-governance"
+                />
+                <Image
+                  ref={addToImageRefs}
+                  src="/assets/images/homepage/whyunify/unify-dashboard-2.png"
+                  height={390}
+                  width={382}
+                  className="h-[13vw] w-[15vw] object-cover absolute top-0 left-0"
+                  alt="unify-ai-deployment"
+                />
+                {/* Spacer to maintain layout */}
+                <div className="h-[13vw] w-[15vw]"></div>
+              </div>
+              <div className="rounded-2xl overflow-hidden h-fit w-fit ml-[7vw] relative">
+                <Image
+                  ref={addToBottomImageRefs}
                   src="/assets/images/homepage/whyunify/unify-dashboard-2.png"
                   height={247}
                   width={283}
-                  className="h-[12vw] w-[14vw] object-cover"
-                  alt="unify-ai-dashboard"
+                  className="h-[12vw] w-[14vw] object-cover absolute top-0 left-0"
+                  alt="unify-ai-dashboard-1"
                 />
+                <Image
+                  ref={addToBottomImageRefs}
+                  src="/assets/images/homepage/whyunify/unify-dashboard-1.png"
+                  height={247}
+                  width={283}
+                  className="h-[12vw] w-[14vw] object-cover absolute top-0 left-0"
+                  alt="unify-ai-dashboard-2"
+                />
+                <Image
+                  ref={addToBottomImageRefs}
+                  src="/assets/images/homepage/whyunify/unify-dashboard-2.png"
+                  height={247}
+                  width={283}
+                  className="h-[12vw] w-[14vw] object-cover absolute top-0 left-0"
+                  alt="unify-ai-dashboard-3"
+                />
+                <Image
+                  ref={addToBottomImageRefs}
+                  src="/assets/images/homepage/whyunify/unify-dashboard-1.png"
+                  height={247}
+                  width={283}
+                  className="h-[12vw] w-[14vw] object-cover absolute top-0 left-0"
+                  alt="unify-ai-dashboard-4"
+                />
+                {/* Spacer to maintain layout */}
+                <div className="h-[12vw] w-[14vw]"></div>
               </div>
             </div>
 
