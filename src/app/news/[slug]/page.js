@@ -1,6 +1,4 @@
-// import BlogContentWp from '@/components/NewsDetail/NewsContentWp'
 import Hero from "@/components/NewsDetail/Hero";
-// import RelatedArticles from '@/components/NewsDetail/RelatedArticles'
 import FooterCTA from "@/components/Common/FooterCta";
 import Layout from "@/components/Layout";
 import { getPageMetadata } from "@/config/metadata";
@@ -9,7 +7,6 @@ import { getNewsBySlug, getAllNews } from "@/lib/news";
 import { homepage, stripHtml } from "@/lib/util";
 import { notFound } from "next/navigation";
 import NewsContentWp from "@/components/NewsDetail/NewsContentWp";
-import BlogContentWp from "@/components/BlogDetailPage/BlogContentWp";
 import RelatedArticleNews from "@/components/News/RelatedArticleNews";
 
 export async function generateMetadata({ params }) {
@@ -37,48 +34,8 @@ export async function generateMetadata({ params }) {
   });
 }
 
-// export default async function Page({ params }) {
-//   const { slug } = await params
-//   const { news } = await getNewsBySlug(slug)
-
-//   if (!news) return notFound()
-//     // console.log(news)
-
-//   const pageMeta = getPageMetadata({
-//     title: news.metaTitle || news.title,
-//     description: news.metaDescription || news.excerpt,
-//     url: `/${slug}`,
-//     date_published: news.date,
-//     date_modified: news.modified || news.date,
-//     alternates: {
-//       canonical: `/${slug}`,
-//       languages: { 'x-default': `/${slug}` },
-//     },
-//     openGraph: {
-//       url: `/${slug}`,
-//       images: news.metaImage
-//         ? [{ url: news.metaImage.url, width: 1200, height: 630 }]
-//         : [{ url: `${homepage}seo/blog-detail.png`, width: 1200, height: 630 }],
-//     },
-//   })
-
-//   return (
-//     <>
-//       <WebpageJsonLd metadata={pageMeta} />
-//       <BreadcrumbsJSONLD pathname={`/${slug}`} />
-//       <Layout>
-//         <Hero breadcrumbs news={news}/>
-//         <NewsContentWp news={news} />
-//         <BlogContentWp news={news}/>
-//         {/* <RelatedArticles news={news} /> */}
-//         <FooterCTA footerCTAData={footerCTAData} width="w-[95%]" />
-//       </Layout>
-//     </>
-//   )
-// }
-
 export default async function Page({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
   const { news } = await getNewsBySlug(slug);
 
   if (!news) return notFound();
@@ -112,7 +69,6 @@ export default async function Page({ params }) {
       <Layout>
         <Hero breadcrumbs news={news} />
         <NewsContentWp news={news} />
-        {/* <BlogContentWp news={news} /> */}
         <RelatedArticleNews news={news} relatedNews={relatedNews} />
         <FooterCTA footerCTAData={footerCTAData} width="w-[95%]" />
       </Layout>

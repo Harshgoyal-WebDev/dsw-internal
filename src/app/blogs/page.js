@@ -35,9 +35,8 @@ export const metadata = getPageMetadata({
 });
 export default async function page() {
   const { posts } = await getAllPosts();
-  // const posts = blogDummyData;
   return (
-    <>
+    <> 
       <WebpageJsonLd metadata={metadata} />
       <BreadcrumbsJSONLD pathname={metadata.url} />
       <Layout>

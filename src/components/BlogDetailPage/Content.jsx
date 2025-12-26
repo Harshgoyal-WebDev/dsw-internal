@@ -16,7 +16,7 @@ const Content = ({ content }) => {
                 </div>
             </section>
         </>
-    )
+    ) 
 }
 
 export default Content;

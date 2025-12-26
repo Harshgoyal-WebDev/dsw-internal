@@ -149,7 +149,7 @@ console.log(post,"AUTHOR.....");
               </p>
             </Copy>
             <Copy>
-              <p className="text-[#626262]">{formatDate(post.date)}</p>
+              {/* <p className="text-[#626262]">{formatDate(post.date)}</p> */}
             </Copy>
           </div>
           <div className="text-[1.05vw] max-sm:text-[4vw] max-md:text-[3vw] space-y-[.8vw] w-[50%] max-md:w-[40%]">
@@ -159,11 +159,11 @@ console.log(post,"AUTHOR.....");
               </p>
             </Copy>
             <Copy>
-              {post.categories.map((category, id) => (
+              {/* {post.categories.map((category, id) => (
                 <p className="text-[#626262]" key={id}>
                   {category.name}
                 </p>
-              ))}
+              ))} */}
             </Copy>
           </div>
           <div className="text-[1.05vw] max-sm:text-[4vw] max-md:text-[3vw] space-y-[.8vw] w-[50%] max-md:w-[40%]">
@@ -183,7 +183,7 @@ console.log(post,"AUTHOR.....");
               </p>
             </Copy>
             <Copy>
-              <p className="text-[#626262]">Sandeep khuperkar</p>
+              <p className="text-[#626262]">{post.author}</p>
             </Copy>
           </div>
         </div>
