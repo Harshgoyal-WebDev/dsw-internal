@@ -1,13 +1,30 @@
-import React from 'react';
-import Layout from '@/components/Layout'
-import Form from '@/components/Contact/Form';
-import OfficeLocations from '@/components/Contact/OfficeLocations';
-import FooterCTA from "@/components/Common/FooterCta";
-import { homepage } from '@/lib/util';
-import { WebpageJsonLd } from '@/lib/json-ld';
-import { getPageMetadata } from '@/config/metadata';
-import Hero from '@/components/Common/Hero';
-import Help from '@/components/Contact/Help';
+import dynamic from "next/dynamic";
+import Layout from "@/components/Layout";
+import Hero from "@/components/Common/Hero";
+import { WebpageJsonLd } from "@/lib/json-ld";
+import { homepage } from "@/lib/util";
+import { getPageMetadata } from "@/config/metadata";
+
+
+const Help = dynamic(
+  () => import("@/components/Contact/Help"),
+  { ssr: true }
+);
+
+const Form = dynamic(
+  () => import("@/components/Contact/Form"),
+  { ssr: true }
+);
+
+const OfficeLocations = dynamic(
+  () => import("@/components/Contact/OfficeLocations"),
+  { ssr: true }
+);
+
+const FooterCTA = dynamic(
+  () => import("@/components/Common/FooterCta"),
+  { ssr: true }
+);
 
 export const metadata = getPageMetadata({
   title: "Contact DSW UnifyAI - Get in Touch",
