@@ -115,7 +115,7 @@ const RelatedArticleNews = ({news, relatedNews: relatedNewsProp}) => {
                 <BlogCard
                   title={newsItem.node.title}
                   img={newsItem.node.featuredImage?.node?.sourceUrl}
-                  date={newsItem.node.date}
+                  date={newsItem.node.newsDate?.newsDate || newsItem.node.date}
                   slug={newsItem.node.slug}
                 />
               </SwiperSlide>

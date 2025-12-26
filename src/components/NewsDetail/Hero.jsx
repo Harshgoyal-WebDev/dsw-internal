@@ -67,7 +67,7 @@ export default function Hero({ breadcrumbs, news }) {
         <div className="absolute inset-0 bg-gradient-to-b to-black/30 from-black/90 max-md:from-black/20"></div>
       </div>
 
-      <h1 className="text-100 headingAnim relative z-10 text-white-200 text-center opacity-0 hero-head w-[85%] max-md:text-background max-md:text-left max-md:w-full">
+      <h1 className="text-100 headingAnim max-md:!text-[8vw] relative z-10 text-white-200 text-center opacity-0 hero-head w-[85%] max-md:text-background max-md:text-left max-md:w-full">
         {news?.title}
       </h1>
 

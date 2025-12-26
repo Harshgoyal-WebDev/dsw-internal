@@ -94,6 +94,7 @@ export default async function Page({ params }) {
         title: item.title,
         slug: item.slug,
         date: item.date,
+        newsDate: item.newsDate || null,
         featuredImage: {
           node: {
             sourceUrl: item.featuredImage?.sourceUrl || "",

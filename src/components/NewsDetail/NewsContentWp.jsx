@@ -112,7 +112,7 @@ const NewsContentWp = ({ news }) => {
     >
       {/* Info strip */}
       <div className="h-fit absolute max-md:relative max-sm:py-[15vw] max-md:!pt-[0vw] max-md:pb-[10vw] max-md:w-full w-fit blog-info">
-        <div className="flex flex-wrap items-center max-md:items-start max-md:justify-between max-md:flex-row-reverse gap-y-[2.5vw] max-md:gap-y-[5vw]">
+        <div className="flex flex-wrap items-center  max-md:items-start max-md:justify-between max-md:flex-row gap-y-[2.5vw] max-md:gap-y-[5vw]">
           <div className="text-[1.05vw] max-sm:text-[4vw] max-md:text-[3vw] space-y-[.8vw] w-full max-md:w-[40%]">
             <Copy>
               <p className="text-background max-md:font-normal font-medium">
@@ -120,7 +120,7 @@ const NewsContentWp = ({ news }) => {
               </p>
             </Copy>
             <Copy>
-              <p className="text-[#626262]">{formatDate(news.date)}</p>
+              <p className="text-[#626262]">{formatDate(news.newsDate.newsDate)}</p>
             </Copy>
           </div>
           

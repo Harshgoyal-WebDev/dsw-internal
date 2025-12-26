@@ -25,7 +25,7 @@ const Listing = ({news}) => {
                 />
               </div>
               <div className="w-[60%] flex flex-col gap-[1.5vw] mt-[2vw] max-md:w-full max-md:gap-[7vw]">
-                <p className="max-md:order-3 text-white-200 text-[1.05vw] max-md:text-[2.5vw] max-sm:text-[4vw]">{formatDate(news.date)}</p>
+                <p className="max-md:order-3 text-white-200 text-[1.05vw] max-md:text-[2.5vw] max-sm:text-[4vw]">{formatDate(news.newsDate.newsDate)}</p>
                 <h3 className="text-30 ordder-2 text-white-200 max-sm:text-[5.5vw] max-sm:w-[90%]">{news.title}</h3>
                 {/* <p className="max-md:order-1 text-white-300">{news.excerpt}</p> */}
                 <div className="max-md:order-1 text-white-300" dangerouslySetInnerHTML={{__html:news.excerpt}}/>

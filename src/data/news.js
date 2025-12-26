@@ -1,7 +1,5 @@
 // import { gql } from "@apollo/client";
 
-
-
 // export const QUERY_ALL_NEWS = gql`
 //   query AllNews {
 //     allNews {
@@ -62,7 +60,6 @@
 //   }
 // `;
 
-
 import { gql } from "@apollo/client";
 
 // Query all news posts (assuming 'news' is a custom post type)
@@ -84,6 +81,9 @@ export const QUERY_ALL_NEWS = gql`
             }
           }
           date
+          newsDate {
+            newsDate
+          }
         }
       }
     }
@@ -109,6 +109,9 @@ export const QUERY_NEWS_BY_SLUG = gql`
       title
       date
       modified
+      newsDate {
+        newsDate
+      }
     }
   }
 `;
