@@ -1,4 +1,3 @@
-import Hero from '@/components/Common/Hero';
 import Layout from '@/components/Layout'
 import dynamic from 'next/dynamic'
 import { getPageMetadata } from '@/config/metadata';
