@@ -100,7 +100,7 @@ const Tour = ({ heading, para, btnText }) => {
         y:10,
         opacity: 0,
         duration: 1,
-        ease: "power2.out",
+        ease: "power1.out",
       });
     });
     return () => ctx.revert();
@@ -201,9 +201,9 @@ const Tour = ({ heading, para, btnText }) => {
               style={{ opacity: 0, transform: "scale(0.9)" }}
             >
               <Image
-                src={"/assets/images/homepage/AgenticTour.png"}
+                src={"/assets/images/homepage/agenticTour2.png"}
                 alt="AgenticAI tour image"
-                className="w-full h-full object-cover "
+                className="w-auto h-[100%] object-contain "
                 width={900}
                 height={400}
               />
