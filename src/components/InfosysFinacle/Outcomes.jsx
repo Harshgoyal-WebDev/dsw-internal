@@ -102,7 +102,7 @@ export default function Outcomes({ aboutData }) {
     EntryChange.fromTo(
       "#finacle-outcomes",
       {
-        backgroundColor: "#03091D",
+        backgroundColor: "#030815",
       },
       {
         backgroundColor: "#ffffff",
@@ -111,7 +111,7 @@ export default function Outcomes({ aboutData }) {
     EntryChange.fromTo(
       "#finacle-expertise",
       {
-        backgroundColor: "#03091D",
+        backgroundColor: "#030815",
       },
       {
         backgroundColor: "#ffffff",
@@ -136,7 +136,7 @@ export default function Outcomes({ aboutData }) {
         backgroundColor: "#ffffff",
       },
       {
-        backgroundColor: "#03091D",
+        backgroundColor: "#030815",
       }
     );
     ExitAnimation.fromTo(
@@ -145,7 +145,7 @@ export default function Outcomes({ aboutData }) {
         backgroundColor: "#ffffff",
       },
       {
-        backgroundColor: "#03091D",
+        backgroundColor: "#030815",
       },
       "<"
     );

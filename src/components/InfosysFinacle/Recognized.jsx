@@ -16,7 +16,7 @@ const Recognized = () => {
        
 
         <div className='w-[45%] h-[35vw] max-sm:w-full rounded-[2vw] overflow-hidden max-sm:h-[60vw] max-sm:rounded-[6vw] max-md:h-[50vw] fadeup'>
-        <Image src={"/assets/images/infosys-finacle/recognized.png"} height={501} width={543} alt='Careers' className='h-full w-full object-cover'/>
+        <Image src={"/assets/images/infosys-finacle/recognized.png"} quality={50} height={501} width={543} alt='Careers' className='h-full w-full object-cover'/>
         </div>
         </div>
 

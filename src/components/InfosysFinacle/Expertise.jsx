@@ -80,14 +80,14 @@ const Expertise = () => {
 
   useEffect(() => {
     gsap.set("#finacle-expertise", {
-      backgroundColor: "#03091D",
+      backgroundColor: "#030815",
     });
   }, []);
 
   return (
     <section
       id="finacle-expertise"
-      className="min-h-screen   bg-[#03091D] h-fit flex flex-col items-center justify-center w-screen  relative overflow-hidden container  !py-[8%]"
+      className="min-h-screen   bg-[#030815] h-fit flex flex-col items-center justify-center w-screen  relative overflow-hidden container  !py-[8%]"
     >
       <div className="w-full h-full flex flex-col items-center  justify-center gap-32 relative z-[2]">
         <div className="text-center  space-y-5  max-md:space-y-10">

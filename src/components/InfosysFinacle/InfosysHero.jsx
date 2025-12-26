@@ -18,7 +18,6 @@ import {
   lineAnim,
 } from "@/components/Animations/gsapAnimations";
 import BreadCrumbs from "../Common/HeroComponents/BreadCrumbs";
-import AnimatedLine from "../Common/HeroComponents/AnimatedLine";
 
 
 gsap.registerPlugin(SplitText);
@@ -269,9 +268,11 @@ const InfosysHero = memo(function Hero({ heroData, breadcrumbs }) {
             >
               <Image
                 src={"/assets/images/infosys-finacle/infosys-finacle.png"}
+                quality={50}
                 height={46}
                 width={297}
-                alt="insurance"
+                alt="infosys-finacle"
+                priority
                 className="h-full w-full object-cover"
                 // hint Next/Image for better responsive layout
                 sizes="(max-width: 640px) 50vw, (max-width: 768px) 28vw, 13vw"
@@ -282,9 +283,11 @@ const InfosysHero = memo(function Hero({ heroData, breadcrumbs }) {
             >
               <Image
                 src={"/assets/images/infosys-finacle/only-dsw.png"}
+                quality={50}
                 height={46}
                 width={297}
-                alt="insurance"
+                priority
+                alt="dsw"
                 className="h-full w-full object-cover"
                 // hint Next/Image for better responsive layout
                 sizes="(max-width: 640px) 50vw, (max-width: 768px) 28vw, 13vw"

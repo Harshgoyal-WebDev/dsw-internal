@@ -1,25 +1,27 @@
+import dynamic from "next/dynamic";
 import Layout from "@/components/Layout";
 
 import FooterCTA from "@/components/Common/FooterCta";
 import { FAQJSONLD, WebpageJsonLd } from "@/lib/json-ld";
 import Faqs from "@/components/Common/FAQs";
-import AgenticFeatures from "@/components/AgenticAI/AgenticFeatures";
-import SuccessStories from "@/components/Homepage/SuccessStories";
+// import AgenticFeatures from "@/components/AgenticAI/AgenticFeatures";
 import InfosysHero from "@/components/InfosysFinacle/InfosysHero";
 import Deployments from "@/components/InfosysFinacle/Deployments";
 import Recognized from "@/components/InfosysFinacle/Recognized";
-import DeliveringSuccess from "@/components/InfosysFinacle/DeliveringSuccess";
-import Expertise from "@/components/InfosysFinacle/Expertise";
-import CohesiveValue from "@/components/InfosysFinacle/CohesiveValue";
+// import DeliveringSuccess from "@/components/InfosysFinacle/DeliveringSuccess";
 import EngagementModel from "@/components/InfosysFinacle/EngagementModel";
 import Outcomes from "@/components/InfosysFinacle/Outcomes";
+
+const SuccessStories = dynamic(() => import("@/components/Homepage/SuccessStories"));
+const Expertise = dynamic(() => import("@/components/InfosysFinacle/Expertise"));
+const CohesiveValue = dynamic(() => import("@/components/InfosysFinacle/CohesiveValue"));
 
 import { de } from "zod/v4/locales";
 
 export const metadata = {
   title: "DSW UnifyAI – Enterprise AI Platform for Insurance",
   description:
-    "Launch AI use cases in days — scale fast, reduce cost, deploy GenAI in hours with DSW UnifyAI’s insurance-focused enterprise AI platform.",
+    "Launch AI use cases in days — scale fast, reduce cost, deploy GenAI in hours with DSW UnifyAI's insurance-focused enterprise AI platform.",
   url: "",
   date_published: "2025-09-30T00:00",
   date_modified: "2025-09-30T00:00",
@@ -52,10 +54,10 @@ export default async function InfosysFinacle() {
 }
 
 const footerCTAData = {
-  heading: "DSW AgenticAI for BFSI​ ",
+  heading: "DSW AgenticAI for BFSI​ ",
   subHeading:
-    "Launch smarter, faster, safer AI and GenAI use cases with DSW UnifyAI.  ",
-  para: "Unify data, models and agent orchestration with pre-built BFSI playbooks, audit-first governance and human-in-the-loop controls - built for regulated financial services.​",
+    "Launch smarter, faster, safer AI and GenAI use cases with DSW UnifyAI.  ",
+  para: "Unify data, models and agent orchestration with pre-built BFSI playbooks, audit-first governance and human-in-the-loop controls - built for regulated financial services.​",
   book: true,
   btnText1: "Book a Demo",
   book: true,
@@ -125,7 +127,7 @@ const usecaseData = [
     id: "001",
     title: "DataOps ",
     description:
-      "Real-time ingestion, automated validation, lineage tracking, quality checks, and graph-native pipelines with explainability and proactive alerting.  ",
+      "Real-time ingestion, automated validation, lineage tracking, quality checks, and graph-native pipelines with explainability and proactive alerting.  ",
     features: [
       "400+ pre-built connectors for seamless data ingestion and transformation ",
       "Core AI/ML engine with built-in model selection and evaluation ",
@@ -136,7 +138,7 @@ const usecaseData = [
   },
   {
     id: "002",
-    title: "AgenticAI Studio",
+    title: "AgenticAI Studio",
     description:
       "Design, configure, and launch enterprise-grade GenAI agents with ease",
     features: [
@@ -149,23 +151,23 @@ const usecaseData = [
   },
   {
     id: "003",
-    title: "AgenticAI Workflow Builder ",
+    title: "AgenticAI Workflow Builder ",
     description:
-      "Real-time ingestion, automated validation, lineage tracking, quality checks, and graph-native pipelines with explainability and proactive alerting. ",
+      "Real-time ingestion, automated validation, lineage tracking, quality checks, and graph-native pipelines with explainability and proactive alerting. ",
     features: [
       "Centralized observability across models and agents ",
       "Built-in compliance – ISO 42001, SOC 2, ISO 27001, HIPAA, GDPR",
-      "Full traceability with logs, alerts, and audit trails  ",
+      "Full traceability with logs, alerts, and audit trails  ",
     ],
     z: "z-[300]",
   },
 ];
 
 const outcomesData = {
-  heading: "Delivering Finacle Success Through Open-Source Expertise ",
+  heading: "Delivering Finacle Success Through Open-Source Expertise ",
   headingWidth: "w-[60%]",
   description:
-    "As a strategic open-source consulting partner to Infosys Finacle,  DSW helps global banks modernize, optimize, and scale Finacle deployments through enterprise-grade open-source adoption. ",
+    "As a strategic open-source consulting partner to Infosys Finacle,  DSW helps global banks modernize, optimize, and scale Finacle deployments through enterprise-grade open-source adoption. ",
   headingCenter: true,
   points: [
     {
