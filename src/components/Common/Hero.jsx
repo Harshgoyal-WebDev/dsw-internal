@@ -328,7 +328,7 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
             {heroData.btnText2 && (
               <div className="ctaBtn">
                 <WhiteButton
-                  // target={heroData.target ? "_blank" : ""}
+                  target={heroData.target ? "_blank" : ""}
                   href={heroData.link2 || "#"}
                   text={heroData.btnText2}
                   className="max-md:min-w-[20vw] max-sm:min-w-[55vw]"

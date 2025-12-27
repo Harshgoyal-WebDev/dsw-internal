@@ -239,7 +239,7 @@ const heroData = {
   btnText2: "DSW AgenticAI ",
   homepage: true,
   walkthrough: true,
-  target: true,
+  target: false,
 };
 
 const footerCTAData = {

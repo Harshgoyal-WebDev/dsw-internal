@@ -79,7 +79,7 @@ export default function EnterpriseAgentPlatformMobile({
     tl.fromTo(
       "#tour, #enterpriseAgentPlatformMobile",
       {
-        backgroundColor: "#f8f8f8",
+        backgroundColor: "#ffffff",
       },
       {
         backgroundColor: "#030815",
@@ -120,12 +120,12 @@ export default function EnterpriseAgentPlatformMobile({
   return (
     <section
       ref={sectionRef}
-      className="px-[7vw] max-sm:py-[15%] w-full h-fit bg-[#F8F8F8] relative max-md:py-[15%] hidden max-md:block text-[#111111]"
+      className="px-[7vw] max-sm:py-[15%] w-full h-fit bg-white relative max-md:py-[15%] hidden max-md:block text-[#111111]"
       id="enterpriseAgentPlatformMobile"
     >
       <div className="h-[30vw] relative w-full">
         <div className="space-y-[5vw] flex flex-col items-center justify-center">
-          <div className="w-[25vw] h-auto headingAnim relative">
+          <div className="w-[40vw] h-auto headingAnim relative">
             <Image
               className="h-full w-full object-contain transition-all duration-700 ease-default-ease group-hover:opacity-0"
               src="/assets/icons/dswAgencticBlueTheme.png"
@@ -239,11 +239,11 @@ function Accordion({ title, para, link, isOpen, onToggle, img1, img2 }) {
                 <div className="py-4 space-y-[4vw] ">{para}</div>
                 <div className="w-full mt-[5vw] max-md:mt-[1vw] max-sm:mt-[5vw]">
                   <WhiteButton
-                    background="border-primary-2 border bg-transparent hover:bg-transparent"
-                    circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
+                    background="border-primary-1 border bg-transparent hover:bg-transparent"
+                    circleColor={"bg-primary-1 group-hover:!bg-primary-1"}
                     text="Explore AgenticAI"
                     href="/agentic-ai"
-                    className="hover:text-primary-2 text-primary-2"
+                    className="hover:text-primary-1 text-primary-1"
                   />
                 </div>
               </div>

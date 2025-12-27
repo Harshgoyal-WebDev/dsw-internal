@@ -196,7 +196,7 @@ const FooterCTA = ({ footerCTAData, width, paraWidth, isSubheading=false }) => {
         </div>
         <motion.div
           style={{ x: image1X, y: image1Y }}
-          className="absolute w-[40%] top-[20%] left-[20%] rounded-2xl border border-white/20 max-md:border-white/10 overflow-hidden max-sm:w-[50%] max-sm:top-[5%] max-md:w-[35%] max-sm:left-[10%] max-md:left-[13.5%] max-sm:rounded-[3vw]
+          className="absolute w-[35%] top-[20%] left-[20%] rounded-2xl border border-white/20 max-md:border-white/10 overflow-hidden max-sm:w-[50%] max-sm:top-[5%] max-md:w-[35%] max-sm:left-[10%] max-md:left-[13.5%] max-sm:rounded-[3vw]
                     max-md:top-[-18%] fadeup "
         >
           <Image

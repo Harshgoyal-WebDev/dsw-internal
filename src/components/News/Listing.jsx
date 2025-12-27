@@ -12,7 +12,7 @@ const Listing = ({news}) => {
         {news.map((news,id) => (
           <div
             key={id}
-            className="w-full space-y-[4vw]  max-md:space-y-[10vw]"
+            className="w-full space-y-[4vw] fadeup max-md:space-y-[10vw]"
           >
             <div className="w-full h-fit flex gap-[2.5vw] max-md:flex-col max-md:gap-[5vw]">
               <div className="w-[30vw] h-[20vw] rounded-[2vw] overflow-hidden max-md:w-full max-sm:h-[30vh] max-md:h-[55vw] max-md:rounded-[3vw] max-sm:rounded-[5vw]">

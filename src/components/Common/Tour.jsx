@@ -157,7 +157,7 @@ const Tour = ({ heading, para, btnText }) => {
         {/* Content Containers */}
         <div
           ref={containersWrapRef}
-          className="w-[80%] h-[38vw] relative fadeup mt-[5vw] max-sm:w-full max-sm:h-[60vw] max-md:h-[40vw] max-md:w-full max-sm:mt-[12vw] rounded-lg overflow-hidden"
+          className="w-[75%] h-[38vw] relative fadeup mt-[5vw] max-sm:w-full max-sm:h-[60vw] max-md:h-[40vw] max-md:w-full max-sm:mt-[12vw] rounded-lg overflow-hidden"
         >
           {activeTab === "unifyAI" && (
             <div

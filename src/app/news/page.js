@@ -8,6 +8,7 @@ import { homepage } from "@/lib/util";
 import { getPageMetadata } from "@/config/metadata";
 import { getAllNews } from "@/lib/news";
 import InternalHero from "@/components/Common/InternalHero";
+import { fadeUp } from "@/components/Animations/gsapAnimations";
 
 export const metadata = getPageMetadata({
   title: "DSW News & Press — Media Features & Announcements",

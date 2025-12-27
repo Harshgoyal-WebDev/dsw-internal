@@ -35,6 +35,7 @@ export const metadata = getPageMetadata({
 });
 export default async function page() {
   const { posts } = await getAllPosts();
+  const grid = posts.slice(1);
   return (
     <> 
       <WebpageJsonLd metadata={metadata} />
@@ -42,7 +43,7 @@ export default async function page() {
       <Layout>
         <InternalHero heroData={heroData} breadcrumbs={true} />
         <FeaturedBlog posts={posts} />
-        <BlogGrid posts={posts} />
+        <BlogGrid posts={posts.slice(1)} />
         <FooterCTA footerCTAData={footerCTAData} width={"w-[95%]"} />
       </Layout>
     </>

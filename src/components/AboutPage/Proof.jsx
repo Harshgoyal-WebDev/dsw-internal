@@ -11,7 +11,7 @@ const Proof = () => {
           <h2 className="text-90 headingAnim w-[40%] max-md:w-full">Proof and Recognition</h2>
           <div className="flex gap-6 max-md:flex-col max-md:w-fit max-sm:gap-[4vw] fadeup">
             <PrimaryButton text={"Read News & Press"} href={"/news"} />
-            <WhiteButton text={"View Case Studies"} href={"/"} />
+            <WhiteButton text={"View Case Studies"} href={"#"} />
           </div>
         </div>
         <div className="h-fit grid grid-cols-3 grid-rows-6 gap-x-[1.5vw] max-md:flex max-md:flex-wrap max-sm:flex-col max-md:gap-[4vw] max-sm:gap-[8vw] max-md:justify-center">

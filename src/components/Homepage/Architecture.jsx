@@ -507,56 +507,11 @@ export default function Architecture({ showHeading2 = false }) {
           />
         </div>
 
-        {/* Smooth Hover Tooltip (transform-based movement) */}
-        {/* <div
-          className={`absolute left-[55%] flex items-center gap-4 z-50 transition-opacity duration-200 ease-out will-change-transform ${
-            showTooltip
-              ? "opacity-100 pointer-events-none"
-              : "opacity-0 pointer-events-none"
-          }`}
-          style={{ top: `${TOOLTIP_BASE_TOP_PERCENT}%` }}
-        >
-          <div
-            ref={tooltipRef}
-            className="flex items-center gap-4"
-            style={{ transform: "translate3d(0,0,0)" }}
-          >
-            <div className="mt-[40%] mr-[-40%]">
-              <div className="border border-white/20 background-glass backdrop-blur-sm rounded-[1.5vw] px-8 py-6 w-[280px]">
-                <div ref={tooltipTextRef}>
-                  <p className="text-white text-22 font-medium">
-                    {activeIndustry === null
-                      ? ""
-                      : industries[activeIndustry].name}
-                  </p>
-                  <p className="text-white text-18 mt-3">
-                    {activeIndustry === null
-                      ? ""
-                      : industries[activeIndustry].content}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <Image
-              src={"/assets/images/homepage/architecture/dotted.svg"}
-              height={77}
-              width={200}
-              alt="arrow-to-solution"
-              className="h-auto w-60"
-            />
-          </div>
-        </div> */}
-
         {/* Industry box */}
         <div
           ref={industryBoxRef}
-          className="px-[2vw] max-md:px-[5vw] h-fit w-fit p-3  gap-[2vw] max-md:gap-[4vw] rounded-[2vw] max-md:rounded-[3vw] background-glass text-center flex bg-red-500 items-center justify-center flex-col max-md:py-[6vw] border border-white/20 overflow-hidden absolute top-[-7%] right-[1%]"
+          className="px-[2vw] max-md:px-[5vw] h-fit w-fit p-3  gap-[2vw] max-md:gap-[4vw] rounded-[2vw] max-md:rounded-[3vw] background-glass text-center flex  items-center justify-center flex-col max-md:py-[6vw] border border-white/20 overflow-hidden absolute top-[-7%] right-[1%]"
         >
-          {/* <p className="w-[100%] relative z-[2] text-30">
-            Industry Specific Solutions
-          </p> */}
-
           <div className="w-full flex flex-col gap-3 relative">
             {industries.map((industry, idx) => (
               <div
