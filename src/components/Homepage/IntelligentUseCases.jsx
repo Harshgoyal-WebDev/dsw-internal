@@ -104,7 +104,7 @@ const SwiperCard = ({ usecase, onHover, isActive, space, index }) => {
   return (
     <>
       <div
-        className="relative py-[1vw] pt-[2.5vw] background-glass max-md:py-[8vw] min-h-[70vh] max-md:px-[8vw] rounded-[2vw] overflow-hidden w-[30vw] px-[3vw] h-fit max-md:min-h-[60vh] max-sm:min-h-[70vh] max-md:h-fit max-md:w-full max-md:rounded-[4vw] max-sm:rounded-[6vw] border group border-white/20 group cursor-grab "
+        className="relative py-[1vw] pt-[2.5vw] background-glass max-md:py-[8vw] min-h-[65vh] max-md:px-[8vw] rounded-[2vw] overflow-hidden w-[30vw] px-[3vw] h-fit max-md:min-h-[60vh] max-sm:min-h-[70vh] max-md:h-fit max-md:w-full max-md:rounded-[4vw] max-sm:rounded-[6vw] border group border-white/20 group cursor-grab "
         onMouseEnter={onHover}
       >
         <div

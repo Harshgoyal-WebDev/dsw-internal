@@ -536,7 +536,7 @@ background-color: var(--background);
 @media (max-width: 542px) {
   :root {
     --text-100: 12vw;
-    --text-90: 11vw;
+    --text-90: 10vw;
     --text-60: 9vw;
     --text-50: 7.5vw;
     --text-40: 7.5vw;

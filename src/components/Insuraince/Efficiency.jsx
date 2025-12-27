@@ -54,7 +54,7 @@ const Efficiency = () => {
       left: ["0", "2", "4", "5"],
       right: ["0", "5", "0", "0"],
       suffix: "%",
-      text: "faster time to market for AI and GenAI use cases",
+      text: "faster time to market for AI and Agentic AI use cases",
     },
     {
       left: ["0", "2", "4", "6"],
@@ -72,7 +72,7 @@ const Efficiency = () => {
       left: ["0", "1", "2", "3"],
       right: ["0", "4", "7", "0"],
       suffix: "",
-      text: "days or less to go live with AI use cases & GenAI in hours",
+      text: "days or less to go live with AI use cases and Agentic AI in hours.",
     },
   ];
 
@@ -90,7 +90,7 @@ const Efficiency = () => {
 
         <Copy>
           <p className="text-center text-white-300">
-            insurAInce is proven across diverse insurance environments to
+            This purpose-built solution is proven across diverse insurance environments to
             <br />
             drive speed, efficiency, and accuracy where it counts the most. 
           </p>
@@ -101,7 +101,7 @@ const Efficiency = () => {
         {stats.map((stat, idx) => (
           <div
             key={idx}
-            className="flex flex-col items-start gap-[1vw] w-[20%] max-md:w-[45%] max-md:items-center max-sm:w-full max-sm:gap-[5vw]"
+            className="flex flex-col items-start gap-[1vw] w-[22%] max-md:w-[45%] max-md:items-center max-sm:w-full max-sm:gap-[5vw]"
           >
             <div className="overflow-hidden h-[10vh] w-fit items-center flex justify-start">
               {/* Left Digits */}

@@ -323,7 +323,7 @@ const EnterpiseAgentPlatform = () => {
     tl.fromTo(
       "#tour, #enterpriseAgentPlatform",
       {
-        backgroundColor: "#f8f8f8",
+        backgroundColor: "#ffffff",
       },
       {
         backgroundColor: "#030815",
@@ -362,7 +362,7 @@ const EnterpiseAgentPlatform = () => {
 
   return (
     <section
-      className="h-[400vh] w-screen relative   bg-[#f8f8f8] z-[10] max-md:hidden header-dark"
+      className="h-[400vh] w-screen relative   bg-white z-[10] max-md:hidden header-dark"
       ref={sectionRef}
       id="enterpriseAgentPlatform"
     >
@@ -479,10 +479,10 @@ const EnterpiseAgentPlatform = () => {
 
             {/* Middle: Images */}
             <div className="w-[30%] flex flex-col gap-[1.5vw] relative">
-              <div className="rounded-2xl overflow-hidden h-fit w-fit">
+              <div className="rounded-2xl overflow-hidden h-fit w-fit relative">
                 <Image
                   ref={addToImageRefs}
-                  src="/assets/images/homepage/whyunify/unify-dashboard-1.png"
+                  src="/assets/images/homepage/whyunify/agentic-1.png"
                   height={390}
                   width={382}
                   className="h-[13vw] w-[15vw] object-cover absolute top-0 left-0"
@@ -490,7 +490,7 @@ const EnterpiseAgentPlatform = () => {
                 />
                 <Image
                   ref={addToImageRefs}
-                  src="/assets/images/homepage/whyunify/unify-dashboard-2.png"
+                  src="/assets/images/homepage/whyunify/agentic-8.png"
                   height={390}
                   width={382}
                   className="h-[13vw] w-[15vw] object-cover absolute top-0 left-0"
@@ -498,7 +498,7 @@ const EnterpiseAgentPlatform = () => {
                 />
                 <Image
                   ref={addToImageRefs}
-                  src="/assets/images/homepage/whyunify/unify-dashboard-1.png"
+                  src="/assets/images/homepage/whyunify/agentic-2.png"
                   height={390}
                   width={382}
                   className="h-[13vw] w-[15vw] object-cover absolute top-0 left-0"
@@ -506,7 +506,7 @@ const EnterpiseAgentPlatform = () => {
                 />
                 <Image
                   ref={addToImageRefs}
-                  src="/assets/images/homepage/whyunify/unify-dashboard-2.png"
+                  src="/assets/images/homepage/whyunify/agentic-7.png"
                   height={390}
                   width={382}
                   className="h-[13vw] w-[15vw] object-cover absolute top-0 left-0"
@@ -518,7 +518,7 @@ const EnterpiseAgentPlatform = () => {
               <div className="rounded-2xl overflow-hidden h-fit w-fit ml-[7vw] relative">
                 <Image
                   ref={addToBottomImageRefs}
-                  src="/assets/images/homepage/whyunify/unify-dashboard-2.png"
+                  src="/assets/images/homepage/whyunify/agentic-3.png"
                   height={247}
                   width={283}
                   className="h-[12vw] w-[14vw] object-cover absolute top-0 left-0"
@@ -526,7 +526,7 @@ const EnterpiseAgentPlatform = () => {
                 />
                 <Image
                   ref={addToBottomImageRefs}
-                  src="/assets/images/homepage/whyunify/unify-dashboard-1.png"
+                  src="/assets/images/homepage/whyunify/agentic-6.png"
                   height={247}
                   width={283}
                   className="h-[12vw] w-[14vw] object-cover absolute top-0 left-0"
@@ -534,7 +534,7 @@ const EnterpiseAgentPlatform = () => {
                 />
                 <Image
                   ref={addToBottomImageRefs}
-                  src="/assets/images/homepage/whyunify/unify-dashboard-2.png"
+                  src="/assets/images/homepage/whyunify/agentic-4.png"
                   height={247}
                   width={283}
                   className="h-[12vw] w-[14vw] object-cover absolute top-0 left-0"
@@ -542,7 +542,7 @@ const EnterpiseAgentPlatform = () => {
                 />
                 <Image
                   ref={addToBottomImageRefs}
-                  src="/assets/images/homepage/whyunify/unify-dashboard-1.png"
+                  src="/assets/images/homepage/whyunify/agentic-5.png"
                   height={247}
                   width={283}
                   className="h-[12vw] w-[14vw] object-cover absolute top-0 left-0"

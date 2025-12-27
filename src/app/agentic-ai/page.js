@@ -106,14 +106,16 @@ export default async function AgenticAI() {
 const heroData = {
   heading: "Governed, explainable, production- ready agents for banking & insurance",
   headingWidth: "w-[85%]",
-  subheading: "Deploy AI Agents in hours",
+  para: "Deploy AI Agents in hours",
   paraClass: "",
   img: AgenticAi,
-  link1: "#",
-  btnText1: "Book a Demo!",
   homepage: true,
   walkthrough: true,
   target: true,
+  link1: "#",
+  btnText1: "Start Walkthrough",
+  link2: "https://calendly.com/",
+  btnText2: "Schedule a Call",
 };
 
 const footerCTAData = {
@@ -125,8 +127,8 @@ const footerCTAData = {
   book: true,
   btnLink1: "/#",
   target: true,
-  img1: "/assets/images/footer/5.png",
-  img2: "/assets/images/footer/1.png",
+  img1: "/assets/images/footer/cta-5.png",
+  img2: "/assets/images/footer/cta-6.png",
 };
 
 const faqData = [
@@ -249,7 +251,7 @@ const usecaseData = [
 
 const outcomesData = {
   heading: "How AgenticAI Works",
-  headingWidth: "w-[60%]",
+  headingWidth: "w-[60%] max-md:w-full",
   showDescription: false,
   headingCenter: true,
   points: [

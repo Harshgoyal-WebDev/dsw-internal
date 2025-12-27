@@ -16,24 +16,32 @@ const data = [
     title: "Fast time-to-value",
     para: "Launch AI/ML use cases in under 30 days.",
     link: "/unifyAi",
+    img1:"/assets/images/homepage/whyunify/unify-1.png",
+    img2:"/assets/images/homepage/whyunify/unify-2.png"
   },
   {
     list: "Full model lifecycle",
     title: "Full model lifecycle",
     para: "Train, version, test, monitor and deploy models on one click.",
     link: "/unifyAi",
+    img1:"/assets/images/homepage/whyunify/unify-10.png",
+    img2:"/assets/images/homepage/whyunify/unify-4.png"
   },
   {
     list: "Production reliability",
     title: "Production reliability",
     para: "Drift detection, lineage and performance alerts built-in.",
     link: "/unifyAi",
+    img1:"/assets/images/homepage/whyunify/unify-5.png",
+    img2:"/assets/images/homepage/whyunify/unify-6.png"
   },
   {
     list: "Flexible deployment",
     title: "Flexible deployment",
     para: "Run anywhere. On-prem, cloud, hybrid, or air-gapped.",
     link: "/unifyAi",
+    img1:"/assets/images/homepage/whyunify/unify-7.png",
+    img2:"/assets/images/homepage/whyunify/unify-8.png"
   },
 ];
 
@@ -102,6 +110,8 @@ export default function EnterpriseAIPlatformMobile({ allowMultiple = false }) {
             title={f.title}
             para={f.para}
             link={f.link}
+            img1={f.img1}
+            img2={f.img2}
             isOpen={openIndexes.includes(i)}
             onToggle={() => toggleIndex(i)}
           />
@@ -111,7 +121,7 @@ export default function EnterpriseAIPlatformMobile({ allowMultiple = false }) {
   );
 }
 
-function Accordion({ title, para, link, isOpen, onToggle }) {
+function Accordion({ title, para, link, isOpen, onToggle,img1,img2 }) {
   return (
     <div className={`w-full group overflow-hidden fadeup`}>
       <div className="w-full mr-auto  ">
@@ -154,7 +164,7 @@ function Accordion({ title, para, link, isOpen, onToggle }) {
                 <div className="w-full flex  flex-col gap-[5vw] ">
                   <div className="rounded-2xl max-sm:rounded-2xl max-md:rounded-3xl overflow-hidden h-fit w-fit">
                     <Image
-                      src="/assets/images/homepage/whyunify/unify-dashboard-1.png"
+                      src={img1}
                       height={390}
                       width={382}
                       className="h-[14vw] w-[16vw] object-contain max-sm:h-[35vw] max-sm:w-[40vw] max-md:w-[30vw] max-md:h-[30vw]"
@@ -163,7 +173,7 @@ function Accordion({ title, para, link, isOpen, onToggle }) {
                   </div>
                   <div className="rounded-2xl max-sm:rounded-2xl max-md:rounded-3xl overflow-hidden h-fit w-fit ml-[25vw]">
                     <Image
-                      src="/assets/images/homepage/whyunify/unify-dashboard-2.png"
+                      src={img2}
                       height={247}
                       width={283}
                       className="h-[13vw] w-[15vw] object-contain max-sm:h-[35vw] max-sm:w-[40vw]  max-md:w-[30vw] max-md:h-[30vw]"
@@ -177,7 +187,7 @@ function Accordion({ title, para, link, isOpen, onToggle }) {
                   <WhiteButton
                     background="border-primary-2 border bg-transparent hover:bg-transparent"
                     circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
-                    text="Know More"
+                    text="Explore UnifyAI"
                     href="/unifyai"
                     className="hover:text-primary-2 text-primary-2"
                   />

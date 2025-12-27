@@ -40,7 +40,7 @@ const Transform = () => {
           </h2>
           <Copy>
             <p className=" text-[#CACACA] w-[80%] mx-auto leading-[1.5] max-md:w-full">
-              Build AI and GenAI Use Cases Across the Enterprise Lifecycle
+             Build AI and Agentic AI use cases across the Enterprise Lifecycle
             </p>
           </Copy>
         </div>

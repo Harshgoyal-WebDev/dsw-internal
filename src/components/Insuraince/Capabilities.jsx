@@ -78,8 +78,7 @@ const Capabilities = () => {
           <div className="w-[50%] max-md:hidden">
             <Copy>
               <p className="text-white-300">
-                From claim status queries to automated underwriting support,
-                insurAInce gives you over 300 prebuilt GenAI agents that are
+                From claim status queries to automated underwriting support, this solution gives you 300 pre-built GenAI agents that are
                 designed for real insurance workflows. 
               </p>
               <p className="text-white-300 text-[1.2vw] py-[2.5vw] font-display">

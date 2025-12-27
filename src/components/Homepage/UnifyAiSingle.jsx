@@ -3,8 +3,6 @@ import React from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import PrimaryButton from "../Button/PrimaryButton";
-import Copy from "../Animations/Copy";
 import { useModal } from "../Common/ModalProvider";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -19,6 +17,7 @@ const UnifyAiSingle = () => {
           start: "top 40%",
           end: "90% 40%",
           scrub: true,
+          // markers:true
           
         },
       });
@@ -82,9 +81,10 @@ const UnifyAiSingle = () => {
        const tl = gsap.timeline({
         scrollTrigger: {
           trigger: "#unifyAi",
-          start: "top top",
-          end: "80% top",
+          start: "10% 50%",
+          end: "80% 50%",
           scrub: true,
+          // markers:true
         },
       });
       // existing title animations
@@ -117,14 +117,14 @@ const UnifyAiSingle = () => {
       tl.to(".unifyblock", {
         "--c1": "#f8f8f8",
         "--c2": "#f8f8f8",
-        delay: -3,
+        delay: -4,
         // "--c3": "#030815",
       });
   
       // Stage 2 -> Stage 3 (final white-out)
       tl.to(".unifyblock", {
         "--c3": "#f8f8f8",
-        delay: -3,
+        delay: -4
       });
   
       const bl = gsap.timeline({
@@ -147,7 +147,7 @@ const UnifyAiSingle = () => {
 
   return (
     <section
-      className="w-screen h-[250vh] relative  unifyContainer header-dark"
+      className="w-screen h-[250vh] relative  unifyContainer header-dark max-sm:h-[150vh]"
       id="unifyAi"
     >
       {/* remove Tailwind gradient utilities here; keep only layout classes */}
@@ -156,32 +156,6 @@ const UnifyAiSingle = () => {
           Two Powerful Platforms
         </h2>
       </div>
-
-      {/* <div className="w-screen h-fit absolute bottom-0 flex flex-col py-[15%] items-center gap-[3.5vw] max-md:px-[7vw] max-md:gap-[8vw]">
-        <h2 className="text-90 text-primary-1 headingAnim max-md:text-center">
-          One Platform. Infinite Possibilities.
-        </h2>
-        <Copy>
-          <p className="text-center w-[43%] text-[#111111] max-md:w-full">
-            AI is everywhere. But it&apos;s not working everywhere. Why?​
-            <br />
-            Because AI and business still operate in silos. DSW UnifyAI changes
-            that. ​The intelligent layer between your data, teams, and
-            production — turning isolated models into living business processes.
-          </p>
-        </Copy>
-        <div className="fadeup">
-          <PrimaryButton
-            background=""
-            href={"#"}
-            text={"Book a Demo"}
-            onClick={(e) => {
-              e.preventDefault();
-              openModal();
-            }}
-          />
-        </div>
-      </div> */}
     </section>
   );
 };

@@ -99,7 +99,7 @@ export default function Home() {
         <About />
         <Features />
         <Capabilities />
-        <Results heading='AI That Drives Results in Underwriting, Claims, Fraud, and CX  ' description='Go live in 30 days with enterprise-grade models that work from day one. insurAInce brings a library of ready-to-deploy AI/ML models designed specifically for insurers to solve core challenges across the policy lifecycle.' results={resultsData} />
+        <Results heading='AI That Drives Results in Underwriting, Claims, Fraud, and CX  ' description='Go live with AI/ML use cases in 30 days and Agentic AI use cases in just few hours with enterprise-grade readiness right from day one.  The purpose-built solution brings a library of ready-to-deploy AI/ML models and GenAI agents specifically designed for insurers to solve core challenges across the policy lifecycle.' results={resultsData} />
         <SuccessStories />
         <PlatformCapabilities />
         <Outcomes />
@@ -118,26 +118,26 @@ const heroData = {
   // img:"/assets/images/insuraince/insuraince-new.png",
   // subheading:"Purpose-Built, Proven, and Production-Ready.",
   para: "Purpose-built and production-proven. Drive speed and accuracy across the insurance value chain with an AI solution designed for rigorous compliance.",
-  paraClass: "w-[60%]",
+  paraClass: "w-[60%] max-md:w-full",
   link1: "/contact-us",
   btnText1: "Book a Demo",
   target: true,
   book: true,
   homepage: false,
-  headingWidth: "w-[80%]"
+  headingWidth: "w-[80%] max-md:w-full"
 }
 
 const footerCTAData = {
-  heading: "Ready to Launch GenAI in few Hours? AI/ML Use Cases in 30 Days? ",
-  para: "Let’s transform your insurance business with real AI. From claims to fraud to underwriting, insurAInce helps you deploy AI with speed, security, and impact. ",
+  heading: "Ready to Launch Agentic AI in few Hours? AI/ML Use Cases in 30 Days? ",
+  para: "Let’s transform your insurance business with real AI. From claims to fraud to underwriting, this solution helps you deploy AI with speed, security, and impact. ",
   btnText1: "Book a Demo",
   btnLink1: "#",
   btnText2: "Schedule a Call",
   btnLink2: "https://calendly.com/",
   book: true,
   target: true,
-  img1: "/assets/images/footer/7.png",
-  img2: "/assets/images/footer/1.png"
+  img1: "/assets/images/footer/cta-1.png",
+  img2: "/assets/images/footer/cta-3.png"
 }
 const faqData = [
   {

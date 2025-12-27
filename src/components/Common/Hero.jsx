@@ -328,7 +328,7 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
             {heroData.btnText2 && (
               <div className="ctaBtn">
                 <WhiteButton
-                  target={heroData.target ? "_blank" : ""}
+                  // target={heroData.target ? "_blank" : ""}
                   href={heroData.link2 || "#"}
                   text={heroData.btnText2}
                   className="max-md:min-w-[20vw] max-sm:min-w-[55vw]"
@@ -363,7 +363,7 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
       ) : (
         <div
           ref={mobileGradientRef}
-          className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-md:block "
+          className="w-screen h-[70vh] absolute top-[30%] z-[5] left-0 hidden max-md:block "
         >
           <Image
             src={"/assets/images/homepage/gradient-mobile.png"}

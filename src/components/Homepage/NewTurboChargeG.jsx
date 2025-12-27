@@ -143,7 +143,7 @@ const NewTurboChargeG = () => {
             {/* Dashboard Image with perspective */}
             <div className="absolute top-0 w-[15vw] h-[38vw] left-[-1.2vw] z-[1] rounded-[0.5vw] overflow-hidden img-1 turbo-img">
               <Image
-                src={"/assets/images/TurboChargeNew/nav.png"}
+                src={"/assets/images/TurboChargeNew/navigation.png"}
                 width={120}
                 height={900}
                 className="w-full h-full object-contain"

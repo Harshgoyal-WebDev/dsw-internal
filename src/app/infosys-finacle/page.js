@@ -77,8 +77,8 @@ const footerCTAData = {
   book: true,
   btnLink1: "/#",
   target: true,
-  img1: "/assets/images/footer/3.png",
-  img2: "/assets/images/footer/1.png",
+  img1: "/assets/images/footer/cta-4.png",
+  img2: "/assets/images/footer/cta-1.png",
 };
 
 const faqData = [

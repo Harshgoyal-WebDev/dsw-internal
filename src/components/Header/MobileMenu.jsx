@@ -47,6 +47,7 @@ export default function MobileMenu({
     aboutItem,
     pilotItem,
     contactItem,
+    insurainceItem,
     careerItem,
      termsAndConditionsItem,
      privacyPolicyItem,
@@ -66,7 +67,7 @@ export default function MobileMenu({
       // careerItem:findById("careers"),
      termsAndConditionsItem:findById("terms-and-conditions"),
      privacyPolicyItem:findById("privacy-policy"),
-      solutionsSection: findById("solutions"),
+      insurainceItem: findById("insuraince"),
       resourcesSection: findById("resources"),
     };
   }, []);
@@ -148,17 +149,21 @@ export default function MobileMenu({
                 />
               )}
 
-              {/* Solutions (submenu) */}
-              {solutionsSection && solutionsSection.children?.length > 0 && (
-                <SubmenuNavigation
-                  section={solutionsSection}
-                  openSection={openSection}
-                  setOpenSection={setOpenSection}
-                  setOpenMobileMenu={setOpenMobileMenu}
-                  navigateTo={navigateTo}
-                  toggleSection={toggleSection}
-                />
+              
+              {insurainceItem && (
+                <>
+                  <Link
+                    href={insurainceItem.href}
+                    {...linkProps(insurainceItem.href)}
+                    onClick={handleDirectLinkClick}
+                    className="max-sm:text-[4.5vw]"
+                  >
+                    {insurainceItem.text}
+                  </Link>
+                  <span className="bg-[#e8e8e8c5] h-[1px] w-full" />
+                </>
               )}
+
 
             
                  {/* Pilot Program */}

@@ -60,13 +60,13 @@ const heroData = {
 
 const footerCTAData = {
   heading: "Take a lightning tour of the Enterprise AI Platform ",
-  para: "Discover how UnifyAI can accelerate your AI/ML and GenAI initiatives with seamless deployment, scalability, and security. ",
+  para: "Discover how DSW UnifyAI & DSW AgenticAI can accelerate your AI/ML and GenAI initiatives with seamless deployment, scalability, and security. ",
   btnText1: "Book a Demo",
   btnLink1: "/#",
   btnText2: "Schedule a Call",
   btnLink2: "https://calendly.com/",
   book: true,
   target: true,
-  img1: "/assets/images/footer/3.png",
-  img2: "/assets/images/footer/4.png",
+  img1: "/assets/images/footer/cta-3.png",
+  img2: "/assets/images/footer/cta-6.png",
 };

@@ -5,9 +5,9 @@ import Image from "next/image";
 
 const Proof = () => {
   return (
-    <section className="h-[150vh] w-full  max-sm:pt-[15%] container max-sm:h-[130vh]" id="proof">
+    <section className="h-[150vh] w-full  max-sm:pt-[15%] container max-sm:h-[140vh]" id="proof">
       <div className="w-full h-fit space-y-[7vw] max-sm:space-y-[15vw] max-md:space-y-[10vw]">
-        <div className="space-y-[2.5vw] max-sm:space-y-[10vw] w-full max-md:space-y-[7vw]  max-sm:px-[7vw]">
+        <div className="space-y-[2.5vw] max-sm:space-y-[10vw] w-full max-md:space-y-[7vw]">
           <h2 className="text-90 headingAnim w-[40%] max-md:w-full">Proof and Recognition</h2>
           <div className="flex gap-6 max-md:flex-col max-md:w-fit max-sm:gap-[4vw] fadeup">
             <PrimaryButton text={"Read News & Press"} href={"/news"} />

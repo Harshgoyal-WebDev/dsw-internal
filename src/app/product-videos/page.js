@@ -61,6 +61,6 @@ const footerCTAData = {
   btnText1: "Subscribe to Our YouTube",
   btnLink1: "https://www.youtube.com/@DataScienceWizards",
   targetPrimary:true,
-  img1: "/assets/images/footer/3.png",
-  img2: "/assets/images/footer/7.png",
+  img1: "/assets/images/footer/cta-3.png",
+  img2: "/assets/images/footer/cta-6.png",
 };

@@ -42,7 +42,7 @@ export default function UsecaseMobile({ usecaseData, heading, allowMultiple = fa
         </h2>
       </div>
 
-      <div className="w-full max-md:pt-[20vw]">
+      <div className="w-full max-md:pt-[40vw]">
         {usecaseData.map((f, i) => (
           <Accordion
             key={i}

@@ -17,24 +17,32 @@ const data = [
     title: "Deploy agents fast",
     para: "Launch production-grade agents, tasks, and workflows in hours.",
     link: "/production-pilot",
+    img1:"/assets/images/homepage/whyunify/agentic-1.png",
+    img2:"/assets/images/homepage/whyunify/agentic-8.png"
   },
   {
     list: "Advanced RAG pipelines",
     title: "Advanced RAG pipelines",
     para: "Build high-accuracy retrieval workflows with evaluation and controls.",
     link: "/production-pilot",
+    img1:"/assets/images/homepage/whyunify/agentic-2.png",
+    img2:"/assets/images/homepage/whyunify/agentic-7.png"
   },
   {
     list: "Agent orchestration",
     title: "Agent orchestration",
     para: "Coordinate multi-agent plans, A2A collaboration, and enterprise workflows.",
     link: "/production-pilot",
+    img1:"/assets/images/homepage/whyunify/agentic-3.png",
+    img2:"/assets/images/homepage/whyunify/agentic-6.png"
   },
   {
     list: "Governed intelligence",
     title: "Governed intelligence",
     para: "Runtime guardrails, audit trails, and native human-in-the-loop oversight.",
     link: "/production-pilot",
+    img1:"/assets/images/homepage/whyunify/agentic-4.png",
+    img2:"/assets/images/homepage/whyunify/agentic-5.png"
   },
 ];
 
@@ -156,6 +164,8 @@ export default function EnterpriseAgentPlatformMobile({
             title={f.title}
             para={f.para}
             link={f.link}
+            img1={f.img1}
+            img2={f.img2}
             isOpen={openIndexes.includes(i)}
             onToggle={() => toggleIndex(i)}
           />
@@ -165,7 +175,7 @@ export default function EnterpriseAgentPlatformMobile({
   );
 }
 
-function Accordion({ title, para, link, isOpen, onToggle }) {
+function Accordion({ title, para, link, isOpen, onToggle, img1, img2 }) {
   return (
     <div className={`w-full group overflow-hidden fadeup`}>
       <div className="w-full mr-auto  ">
@@ -208,7 +218,7 @@ function Accordion({ title, para, link, isOpen, onToggle }) {
                 <div className="w-full flex  flex-col gap-[5vw] ">
                   <div className="rounded-2xl max-sm:rounded-2xl max-md:rounded-3xl overflow-hidden h-fit w-fit">
                     <Image
-                      src="/assets/images/homepage/whyunify/unify-dashboard-1.png"
+                      src={img1}
                       height={390}
                       width={382}
                       className="h-[14vw] w-[16vw] object-contain max-sm:h-[35vw] max-sm:w-[40vw] max-md:w-[30vw] max-md:h-[30vw]"
@@ -217,7 +227,7 @@ function Accordion({ title, para, link, isOpen, onToggle }) {
                   </div>
                   <div className="rounded-2xl max-sm:rounded-2xl max-md:rounded-3xl overflow-hidden h-fit w-fit ml-[25vw]">
                     <Image
-                      src="/assets/images/homepage/whyunify/unify-dashboard-2.png"
+                      src={img2}
                       height={247}
                       width={283}
                       className="h-[13vw] w-[15vw] object-contain max-sm:h-[35vw] max-sm:w-[40vw]  max-md:w-[30vw] max-md:h-[30vw]"
@@ -231,8 +241,8 @@ function Accordion({ title, para, link, isOpen, onToggle }) {
                   <WhiteButton
                     background="border-primary-2 border bg-transparent hover:bg-transparent"
                     circleColor={"bg-primary-2 group-hover:!bg-primary-2"}
-                    text="Know More"
-                    href="/production-pilot"
+                    text="Explore AgenticAI"
+                    href="/agentic-ai"
                     className="hover:text-primary-2 text-primary-2"
                   />
                 </div>

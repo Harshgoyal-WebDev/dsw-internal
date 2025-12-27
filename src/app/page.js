@@ -39,7 +39,7 @@ export default async function Home() {
       <Layout>
         <OldHero heroData={heroData} />
         <Outcomes
-          marginTop="max-md:mt-[50vw]"
+          marginTop="max-md:mt-[-5vw]"
           showDescription={false}
           outcomesData={outcomesData}
         />
@@ -252,8 +252,8 @@ const footerCTAData = {
   btnText2: "Schedule a Call",
   btnLink2: "https://calendly.com/",
   target: true,
-  img1: "/assets/images/footer/1.png",
-  img2: "/assets/images/footer/2.png",
+  img1: "/assets/images/footer/cta-1.png",
+  img2: "/assets/images/footer/cta-2.png",
 };
 const faqData = [
   {

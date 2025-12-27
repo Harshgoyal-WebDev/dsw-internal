@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 
 export default function TwoPowerfulPlatform() {
@@ -10,13 +11,14 @@ export default function TwoPowerfulPlatform() {
       {/* <section className="background-radial min-h-[40vh] container h-fit flex items-center justify-center ">
         <h2 className="text-100 headingAnim">Two Powerful Platforms</h2>
     </section> */}
-      <section className="min-h-screen h-fit flex flex-col mt-[-90vh] max-md:mt-0 items-center justify-center space-y-[5vw] bg-[#f8f8f8] container max-md:min-h-fit max-md:space-y-[8vw] max-md:py-[10vw]">
+      <section className="min-h-screen h-fit flex flex-col mt-[-90vh] max-md:mt-0 max-sm:mt-[-50vh] items-center justify-center space-y-[5vw] bg-[#f8f8f8] container max-md:min-h-fit max-md:space-y-[8vw] max-md:py-[10vw]">
         <h2 className="text-center  headingAnim relative z-10 text-primary-1 text-90 max-md:w-[90%] max-md:text-[8vw]">
          One Intelligent Layer for your Enterprise.
         </h2>
         <div className="w-full h-full flex items-center  justify-center gap-[2.5vw] max-md:flex-col max-md:w-[90%] max-md:gap-[5vw]">
-          <div
-            className="w-[40%] h-fit min-h-[20vw] overflow-hidden relative flex items-start justify-center flex-col px-[3vw] py-[2vw] text-background space-y-[3vw] border border-[#88888880] rounded-[2vw] cursor-pointer max-md:w-full max-md:min-h-[50vw] max-md:px-[6vw] max-md:py-[6vw] max-md:space-y-[5vw] max-md:rounded-[4vw] max-md:items-center max-md:text-center"
+          
+          <Link href={"/unifyai"} 
+            className="w-[40%] h-fit min-h-[20vw] overflow-hidden relative flex items-start justify-center flex-col px-[3vw] py-[2vw] text-background space-y-[3vw] border border-[#88888880] rounded-[2vw] max-md:w-full max-md:min-h-[50vw] max-md:px-[6vw] max-md:py-[6vw] max-md:space-y-[5vw] max-md:rounded-[4vw] max-md:items-center max-md:text-center"
             onMouseEnter={() => setActiveCard('enterprise')}
             onMouseLeave={() => setActiveCard('enterprise')}
           >
@@ -40,9 +42,11 @@ export default function TwoPowerfulPlatform() {
               Your foundation for building, governing, and scaling AI/ML + GenAI
               across the enterprise.
             </p>
-          </div>
-          <div
-            className="w-[40%] h-fit min-h-[20vw] overflow-hidden relative flex items-start justify-center flex-col px-[3vw] py-[2vw] text-background space-y-[3vw] border border-[#88888880] rounded-[2vw] cursor-pointer max-md:w-full max-md:min-h-[50vw] max-md:px-[6vw] max-md:py-[6vw] max-md:space-y-[5vw] max-md:rounded-[4vw] max-md:items-center max-md:text-center"
+          </Link>
+          
+          
+          <Link href={"/agentic-ai"}
+            className="w-[40%] h-fit min-h-[20vw] overflow-hidden relative flex items-start justify-center flex-col px-[3vw] py-[2vw] text-background space-y-[3vw] border border-[#88888880] rounded-[2vw] max-md:w-full max-md:min-h-[50vw] max-md:px-[6vw] max-md:py-[6vw] max-md:space-y-[5vw] max-md:rounded-[4vw] max-md:items-center max-md:text-center"
             onMouseEnter={() => setActiveCard('agentic')}
             onMouseLeave={() => setActiveCard('agentic')}
           >
@@ -66,7 +70,8 @@ export default function TwoPowerfulPlatform() {
               Deploy GenAI agents, multi-agent workflows, and A2A orchestration
               in hours with full auditability.
             </p>
-          </div>
+          </Link>
+          
         </div>
       </section>
     </>

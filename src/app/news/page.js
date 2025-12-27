@@ -65,8 +65,8 @@ const footerCTAData = {
   btnLink1: "/#",
   btnText2: "Contact",
   btnLink2: "/contact-us",
-  img1: "/assets/images/footer/5.png",
-  img2: "/assets/images/footer/6.png",
+  img1: "/assets/images/footer/cta-5.png",
+  img2: "/assets/images/footer/cta-6.png",
 };
 // const news = [
 //   {

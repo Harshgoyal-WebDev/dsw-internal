@@ -128,16 +128,14 @@ const Features = () => {
       className="h-[200vh] max-sm:h-full w-full relative"
     >
       <div className="bg-primary features-div sticky max-sm:relative top-0 h-fit flex flex-col container !px-0">
-        <div className="w-[47%] max-md:w-[90%] pl-[5vw] max-sm:pl-0  max-sm:mx-auto max-md:space-y-[7vw] space-y-[1.5vw] max-sm:space-y-[6vw] max-md:pl-[7vw]">
+        <div className="w-3/5 max-md:w-[90%] pl-[5vw] max-sm:pl-0  max-sm:mx-auto max-md:space-y-[7vw] space-y-[1.5vw] max-sm:space-y-[6vw] max-md:pl-[7vw]">
           <h2 className="text-60 headingAnim w-[100%] max-sm:text-center text-white-200 max-sm:!text-[11.5vw]">
-            The Unified AI Platform Built for Insurance Enterprises
+          The Unified AI solution engineered and designed for Insurers.
           </h2>
 
           <Copy>
             <p className="text-white-300 w-[80%] max-sm:text-center max-md:w-[100%]">
-              insurAInce brings together everything insurers need to rapidly
-              operationalize AI and GenAI — all on one secure, enterprise-grade
-              platform.
+             The purpose-built solution brings together everything insurers need to rapidly operationalize AI and Agentic AI - all together as one secure, enterprise-grade vertical solution built on top of DSW UnifyAI & DSW AgenticAI platforms.
             </p>
           </Copy>
         </div>

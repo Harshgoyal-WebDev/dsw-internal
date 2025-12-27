@@ -35,7 +35,7 @@ const SuccessStories = () => {
               width={"w-[80%] max-md:w-[80%] max-sm:w-[90%]"}
             />
             <ImageCard
-              img={"/assets/images/homepage/success-stories/stories.png"}
+              img={"/assets/images/homepage/success-stories/testimonial-1.png"}
             />
             <TestimonialCard
               message={
@@ -47,7 +47,7 @@ const SuccessStories = () => {
             />
 
             <ImageCard
-              img={"/assets/images/homepage/success-stories/storiess.png"}
+              img={"/assets/images/homepage/success-stories/testimonial-2.png"}
             />
             <TestimonialCard
               message={
@@ -77,7 +77,7 @@ const SuccessStories = () => {
               width={"w-[75%] max-md:w-[80%] max-sm:w-[60%]"}
             />
             <ImageCard
-              img={"/assets/images/homepage/success-stories/stories-three.png"}
+              img={"/assets/images/homepage/success-stories/testimonial-3.png"}
             />
           </div>
         </div>
@@ -122,7 +122,7 @@ const ImageCard = ({ img }) => {
             height={459}
             width={568}
             alt="success-stories-placeholder-img"
-            className="object-cover h-full w-full scale-[1.05] group-hover:scale-[1] transition-all duration-500 ease-out"
+            className="object-cover h-full w-full scale-[1.03] group-hover:scale-[1] transition-all duration-500 ease-out"
           />
         </div>
       </div>

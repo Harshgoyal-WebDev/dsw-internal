@@ -246,8 +246,8 @@ const footerCTAData = {
   btnLink2: "https://calendly.com/",
   book: true,
   target: true,
-  img1: "/assets/images/footer/5.png",
-  img2: "/assets/images/footer/1.png",
+  img1: "/assets/images/footer/cta-6.png",
+  img2: "/assets/images/footer/cta-1.png",
 };
 
 const faqData = [

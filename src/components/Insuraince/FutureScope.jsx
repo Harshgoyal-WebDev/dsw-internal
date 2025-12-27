@@ -16,10 +16,9 @@ const FutureScope = () => {
 
       <Copy>
         <p className="text-white-300 w-[55%] max-md:w-[100%] text-center max-md:px-[2vw] mb-[5vw]">
-          insurAInce isn’t just built for today’s problems. It’s built for
+         This purpose-built solution for insurers isn't just built for today's problems. It’s built for
           tomorrow’s scale. AI in insurance is moving beyond pilots and isolated
-          use cases. insurAInce is building what’s next — an integrated
-          operating system with domain-specific capabilities like:
+          use cases. This solution is building what's next- an integrated operating system with domain-specific capabilities like:
         </p>
       </Copy>
 

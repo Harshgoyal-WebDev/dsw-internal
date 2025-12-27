@@ -91,6 +91,6 @@ const footerCTAData = {
   btnLink2: "https://calendly.com/",
   book: true,
   target: true,
-  img1: "/assets/images/footer/5.png",
-  img2: "/assets/images/footer/4.png"
+  img1: "/assets/images/footer/cta-5.png",
+  img2: "/assets/images/footer/cta-4.png"
 }

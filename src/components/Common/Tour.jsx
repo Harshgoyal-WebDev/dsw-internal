@@ -157,19 +157,20 @@ const Tour = ({ heading, para, btnText }) => {
         {/* Content Containers */}
         <div
           ref={containersWrapRef}
-          className="w-[85%] h-[35vw] relative fadeup mt-[5vw] max-sm:w-full max-sm:h-[60vw] max-md:h-[40vw] max-md:w-full max-sm:mt-[12vw] rounded-lg overflow-hidden"
+          className="w-[80%] h-[38vw] relative fadeup mt-[5vw] max-sm:w-full max-sm:h-[60vw] max-md:h-[40vw] max-md:w-full max-sm:mt-[12vw] rounded-lg overflow-hidden"
         >
           {activeTab === "unifyAI" && (
             <div
               key="unifyAI"
-              className="w-full h-full absolute top-0 left-0 unifyAI-container"
+              className="w-full h-full absolute top-0 left-0 unifyAI-container "
               style={{ opacity: 0, transform: "scale(0.9)" }}
             >
+              <div className="h-full w-full bg-black/80 absolute top-0 left-0"/>
               <Image
-                src={"/assets/images/homepage/tour2.png"}
+                src={"/assets/images/homepage/unify-tour.png"}
                 alt="UnifyAI tour image"
                 fetchPriority="high"
-                className="w-full h-full object-cover"
+                className="w-full h-full "
                 width={900}
                 height={400}
               />
@@ -200,10 +201,11 @@ const Tour = ({ heading, para, btnText }) => {
               className="w-full h-full absolute top-0 left-0 agenticAI-container"
               style={{ opacity: 0, transform: "scale(0.9)" }}
             >
+               <div className="h-full w-full bg-black/80 absolute top-0 left-0"/>
               <Image
-                src={"/assets/images/homepage/agenticTour2.png"}
+                src={"/assets/images/homepage/agentic-tour.png"}
                 alt="AgenticAI tour image"
-                className="w-auto h-[100%] object-contain "
+                className="w-full h-full"
                 width={900}
                 height={400}
               />

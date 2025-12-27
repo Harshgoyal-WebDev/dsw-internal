@@ -33,9 +33,7 @@ export const NAVIGATION = [
     { text: "UnifyAI", href :"/unifyai" , id:"products-unify"},
     { text: "AgenticAI", href :"/agentic-ai" , id:"products-agentic"},
   ]},
-  { text: "Solutions", href: "/insuraince", id: "solutions" , children:[
-    { text: "insurAInce", href :"/insuraince" , id:"solutions-insuraince"},
-  ]},
+  { text: "InsurAInce", href: "/insuraince", id: "insuraince"},
    { text: "Pilot Program", href: "/production-pilot", id: "pilot" },
     { text: "Resources", href: "/blog", id: "resources" ,children:[
     { text: "Blogs", href :"/blogs" , id:"resources-blog"},
@@ -55,10 +53,7 @@ export const NAVIGATION_FOOTER = [
     { text: "UnifyAI", href :"/unifyai" , id:"products-unify"},
     { text: "AgenticAI", href :"/agentic-ai" , id:"products-agentic"},
   ]},
-  { text: "Solutions", href: "/insuraince", id: "solutions" , children:[
-    { text: "insurAInce", href :"/insuraince" , id:"solutions-insuraince"},
-  ]},
-
+  { text: "InsurAInce", href: "/insuraince", id: "insuraince"},
   { text: "Pilot Program", href: "/production-pilot", id: "pilot" },
   { text: "Resources", href: "/blog", id: "resources" ,children:[
     { text: "Blogs", href :"/blogs" , id:"resources-blog"},

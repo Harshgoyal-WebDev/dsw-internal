@@ -25,7 +25,7 @@ const Card = ({ src, content }) => {
 const cardsData = [
   {
     src: "/assets/icons/insuraince/AI.svg",
-    content: "Unified GenAI and AI Studios for faster development",
+    content: "Unified Agentic AI and AI Studios for faster development",
   },
   {
     src: "/assets/icons/insuraince/verified.svg",
@@ -50,22 +50,20 @@ const Outcomes = () => {
     <section className="w-screen h-fit container space-y-[1.5vw] max-sm:space-y-[7vw] max-md:space-y-[8vw]">
       <h2 className="text-50  max-sm:leading-[1.2] text-white-200 headingAnim w-[50%] max-md:w-[100%] max-sm:!text-[11vw]">
         <span className="block max-sm:block max-md:inline-block">
-          One Platform.{" "}
+          One Solution{" "}
         </span>
         <span className="block max-sm:block max-md:inline-block">
-          AI and GenAI Working Together.
+          AI and Agentic AI Working Together. 
         </span>
       </h2>
 
       <Copy>
-        <p className="w-[40%] text-white-300 max-md:w-[100%]">
+        <p className="w-[45%] text-white-300 max-md:w-[100%]">
           {" "}
-          One secure platform. Many powerful outcomes.
+          Two secure platforms. One Vertical Solution. Many powerful outcomes.
         </p>
         <p className="w-[40%] text-white-300 max-md:w-[100%]">
-          Whether you're deploying fraud models or launching a GenAI assistant
-          for claims, insurAInce brings everything into one secure platform that
-          scales with your business. 
+         Whether your deploying fraud models or launching an agent for claims assistance, this solution brings everything into one secure solution that scales with your insurance business.
         </p>
       </Copy>
 

@@ -431,10 +431,10 @@ const EnterpriseAIPlatform = () => {
 
             {/* Middle: Images */}
             <div className="w-[30%] flex flex-col gap-[1.5vw] relative">
-              <div className="rounded-2xl overflow-hidden h-fit w-fit">
+              <div className="rounded-2xl overflow-hidden h-fit w-fit relative">
                 <Image
                   ref={addToImageRefs}
-                  src="/assets/images/homepage/whyunify/unify-dashboard-1.png"
+                  src="/assets/images/homepage/whyunify/unify-1.png"
                   height={390}
                   width={382}
                   className="h-[13vw] w-[15vw] object-cover absolute top-0 left-0"
@@ -442,7 +442,7 @@ const EnterpriseAIPlatform = () => {
                 />
                 <Image
                   ref={addToImageRefs}
-                  src="/assets/images/homepage/whyunify/unify-dashboard-2.png"
+                  src="/assets/images/homepage/whyunify/unify-2.png"
                   height={390}
                   width={382}
                   className="h-[13vw] w-[15vw] object-cover absolute top-0 left-0"
@@ -450,7 +450,7 @@ const EnterpriseAIPlatform = () => {
                 />
                 <Image
                   ref={addToImageRefs}
-                  src="/assets/images/homepage/whyunify/unify-dashboard-1.png"
+                  src="/assets/images/homepage/whyunify/unify-10.png"
                   height={390}
                   width={382}
                   className="h-[13vw] w-[15vw] object-cover absolute top-0 left-0"
@@ -458,7 +458,7 @@ const EnterpriseAIPlatform = () => {
                 />
                 <Image
                   ref={addToImageRefs}
-                  src="/assets/images/homepage/whyunify/unify-dashboard-2.png"
+                  src="/assets/images/homepage/whyunify/unify-4.png"
                   height={390}
                   width={382}
                   className="h-[13vw] w-[15vw] object-cover absolute top-0 left-0"
@@ -470,7 +470,7 @@ const EnterpriseAIPlatform = () => {
               <div className="rounded-2xl overflow-hidden h-fit w-fit ml-[7vw] relative">
                 <Image
                   ref={addToBottomImageRefs}
-                  src="/assets/images/homepage/whyunify/unify-dashboard-2.png"
+                  src="/assets/images/homepage/whyunify/unify-7.png"
                   height={247}
                   width={283}
                   className="h-[12vw] w-[14vw] object-cover absolute top-0 left-0"
@@ -478,7 +478,7 @@ const EnterpriseAIPlatform = () => {
                 />
                 <Image
                   ref={addToBottomImageRefs}
-                  src="/assets/images/homepage/whyunify/unify-dashboard-1.png"
+                  src="/assets/images/homepage/whyunify/unify-6.png"
                   height={247}
                   width={283}
                   className="h-[12vw] w-[14vw] object-cover absolute top-0 left-0"
@@ -486,7 +486,7 @@ const EnterpriseAIPlatform = () => {
                 />
                 <Image
                   ref={addToBottomImageRefs}
-                  src="/assets/images/homepage/whyunify/unify-dashboard-2.png"
+                  src="/assets/images/homepage/whyunify/unify-5.png"
                   height={247}
                   width={283}
                   className="h-[12vw] w-[14vw] object-cover absolute top-0 left-0"
@@ -494,7 +494,7 @@ const EnterpriseAIPlatform = () => {
                 />
                 <Image
                   ref={addToBottomImageRefs}
-                  src="/assets/images/homepage/whyunify/unify-dashboard-1.png"
+                  src="/assets/images/homepage/whyunify/unify-8.png"
                   height={247}
                   width={283}
                   className="h-[12vw] w-[14vw] object-cover absolute top-0 left-0"
