@@ -17,6 +17,7 @@ export async function POST(req) {
       downloaded,
       downloadedPdfName,
       downloadedPdfUrl,
+      pageUrl,
     } = body;
 
     if (!name || !email || !company || !designation || !number) {
@@ -24,11 +25,11 @@ export async function POST(req) {
     }
       const subject ="Demo Walkthrough"
 
-      
+
 
     // Send notification email to your team
     const { error: teamEmailError } = await resend.emails.send({
-      from: "Acme <onboarding@resend.dev>",
+      from:"Web Forms <no-reply@datasciencewizards.ai>",
       to: ["vidushi@weareenigma.com"],
       // from:"DSW Team<contact@datasciencewizards.ai>",
       // to:"contact@datasciencewizards.ai",
@@ -40,6 +41,7 @@ export async function POST(req) {
         userCompany: company,
         userNumber: number,
         downloadedPdfName: downloaded ? downloadedPdfName : undefined,
+        pageUrl: pageUrl || "Not provided",
       }),
     });
 
@@ -53,7 +55,7 @@ export async function POST(req) {
       const autoResponseSubject="Thank you for taking the UnifyAI Product Walkthrough!"
 
     const { error: autoResponseError } = await resend.emails.send({
-      from: "Acme <onboarding@resend.dev>",
+      from:"DSW Team <no-reply@datasciencewizards.ai>",
       to: [email],
       subject: autoResponseSubject,
       react: WalkthroughAutoResponse({

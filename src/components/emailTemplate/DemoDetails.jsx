@@ -1,8 +1,8 @@
 // components/emailTemplate/DemoDetails.jsx
 import React from "react";
-import { 
-  Body, Column, Container, Head, Hr, Html, Img, 
-  Preview, Row, Section, Text 
+import {
+  Body, Column, Container, Head, Hr, Html, Img, Link,
+  Preview, Row, Section, Text
 } from "@react-email/components";
 
 const DemoDetails = ({
@@ -11,6 +11,7 @@ const DemoDetails = ({
   userDesignation,
   userCompany,
   userNumber,
+  pageUrl,
 }) => {
   return (
     <Html>
@@ -58,10 +59,11 @@ const DemoDetails = ({
           <Text style={paragraph}>
             Please reach out to them within 24-48 hours.
           </Text>
-          
+
           <Text style={paragraph}>Thanks,</Text>
           <Text style={paragraph}>Admin</Text>
           <Hr style={hr} />
+          <Text style={footer}>This form is submitted from the page - <Link href={pageUrl}>{pageUrl}</Link></Text>
           <Text style={footer}>Data Science Wizards | India</Text>
         </Container>
       </Body>

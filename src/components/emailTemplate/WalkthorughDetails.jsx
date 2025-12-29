@@ -1,6 +1,6 @@
 // components/emailTemplate/DemoDetails.jsx
 import React from "react";
-import { Body, Column, Container, Head, Hr, Html, Img, Preview, Row, Section, Text } from "@react-email/components";
+import { Body, Column, Container, Head, Hr, Html, Img, Link, Preview, Row, Section, Text } from "@react-email/components";
 
 const WalkthroughDetails = ({
   userName,
@@ -9,6 +9,7 @@ const WalkthroughDetails = ({
   userCompany,
   userNumber,
   downloadedPdfName, // 👈 optional
+  pageUrl,
 }) => {
   // const previewText = downloadedPdfName
   //   ? `Someone just filled demo details and downloaded a PDF (${downloadedPdfName}) on DSW Website.`
@@ -67,6 +68,7 @@ const previewText = "Demo Walkthrough"
           <Text style={paragraph}>Thanks</Text>
           <Text style={paragraph}>- Admin</Text>
           <Hr style={hr} />
+          <Text style={footer}>This form is submitted from the page - <Link href={pageUrl}>{pageUrl}</Link></Text>
           <Text style={footer}>India</Text>
         </Container>
       </Body>

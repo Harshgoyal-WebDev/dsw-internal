@@ -1,7 +1,7 @@
 import React from "react";
-import { Body, Column, Container, Head, Hr, Html, Img, Preview, Row, Section, Text } from "@react-email/components";
+import { Body, Column, Container, Head, Hr, Html, Img, Link, Preview, Row, Section, Text } from "@react-email/components";
 
-const PilotDetails = ({ userName, userEmail, userDesignation, userCompany, userNumber,userTerms, userMessage }) => {
+const PilotDetails = ({ userName, userEmail, userDesignation, userCompany, userNumber, userTerms, userMessage, pageUrl }) => {
 
   return (
     <Html>
@@ -56,9 +56,10 @@ const PilotDetails = ({ userName, userEmail, userDesignation, userCompany, userN
             </Row> */}
             
           </Section>
-        
+
           <Text style={paragraph}>- Team DSW</Text>
           <Hr style={hr} />
+          <Text style={footer}>This form is submitted from the page - <Link href={pageUrl}>{pageUrl}</Link></Text>
           <Text style={footer}>India</Text>
         </Container>
       </Body>

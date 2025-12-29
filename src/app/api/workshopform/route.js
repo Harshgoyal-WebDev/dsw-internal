@@ -7,7 +7,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(req) {
   try {
     const body = await req.json();
-    const { name, email, designation, company, number, terms } = body;
+    const { name, email, designation, company, number, terms, pageUrl } = body;
 
     if (!name || !email || !company || !terms || !designation || !number) {
       return new Response(JSON.stringify({ error: "Required fields missing" }), { status: 400 });
@@ -15,7 +15,7 @@ export async function POST(req) {
 
     // Send notification email to your team
     const { error: teamEmailError } = await resend.emails.send({
-      from: "Acme <onboarding@resend.dev>",
+      from:"Web Forms <no-reply@datasciencewizards.ai>",
       to: ["vidushi@weareenigma.com"],
       subject: "New Workshop Form Submission",
       react: WorkshopDetails({
@@ -25,6 +25,7 @@ export async function POST(req) {
         userCompany: company,
         userNumber: number,
         userTerms: terms,
+        pageUrl: pageUrl || "Not provided",
       }),
     });
 
@@ -35,7 +36,7 @@ export async function POST(req) {
 
     // Send auto-response email to the user
     const { error: autoResponseError } = await resend.emails.send({
-      from: "Acme <onboarding@resend.dev>",
+      from:"DSW Team <no-reply@datasciencewizards.ai>",
       to: [email],
       subject: "Workshop Registration - DSW",
       react: WorkshopAutoResponse({ userName: name }),

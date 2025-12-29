@@ -192,6 +192,7 @@ export default function WalkthroughForm() {
     // include extra fields ONLY if a pdf payload exists
     const formattedData = {
       ...data,
+      pageUrl: typeof window !== 'undefined' ? window.location.href : '',
       ...(pdfUrl && {
         downloaded: true,
         downloadedPdfName: pdfName,

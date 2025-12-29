@@ -153,7 +153,8 @@ export default function ContactForm() {
     setIsLoading(true);
 
     const formattedData = {
-      ...data
+      ...data,
+      pageUrl: typeof window !== 'undefined' ? window.location.href : '',
     };
 
     // console.log(data);

@@ -8,7 +8,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(req) {
   try {
     const body = await req.json();
-    const { name, email, designation, company, number, reason, message, terms } = body;
+    const { name, email, designation, company, number, reason, message, terms, pageUrl } = body;
 
     if (!name || !email || !company || !reason || !designation || !number || !terms) {
       return new Response(JSON.stringify({ error: "Required fields missing" }), { status: 400 });
@@ -16,8 +16,6 @@ export async function POST(req) {
 
     // Send notification email to your team
     const { error: teamEmailError } = await resend.emails.send({
-      // from: "DSW Contact Form <onboarding@resend.dev>",
-      // from:"DSW Team <onboarding@resend.dev>",
       from:"Web Forms <no-reply@datasciencewizards.ai>",
       to: ["hitesh@weareenigma.com"],
       subject: "New Contact Form Submission",
@@ -29,7 +27,7 @@ export async function POST(req) {
         userNumber: number,
         userReason: reason,
         userMessage: message || "No message provided",
-        userTerms: terms
+        pageUrl: pageUrl || "Not provided"
       }),
     });
 
@@ -40,7 +38,6 @@ export async function POST(req) {
 
     // Send auto-response email to the user
     const { error: autoResponseError } = await resend.emails.send({
-      // from: "DSW Team <onboarding@resend.dev>",
       from:"DSW Team <no-reply@datasciencewizards.ai>",
       to: [email],
       subject: "Thank you for contacting DSW",

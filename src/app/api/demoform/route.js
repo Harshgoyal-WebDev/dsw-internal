@@ -8,19 +8,19 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(req) {
   try {
     const body = await req.json();
-    const { name, email, designation, company, number } = body;
+    const { name, email, designation, company, number, pageUrl } = body;
 
     if (!name || !email || !company || !designation || !number) {
       return new Response(
-        JSON.stringify({ error: "Required fields missing" }), 
+        JSON.stringify({ error: "Required fields missing" }),
         { status: 400 }
       );
     }
 
     // Send notification email to your team
     const { error: teamEmailError } = await resend.emails.send({
-      from: "DSW Team <onboarding@resend.dev>",
-      to: ["vidushi@weareenigma.com"],
+      from:"Web Forms <no-reply@datasciencewizards.ai>",
+      to: ["hitesh@weareenigma.com"],
       subject: "New Demo Request Received",
       react: DemoDetails({
         userName: name,
@@ -28,6 +28,7 @@ export async function POST(req) {
         userDesignation: designation,
         userCompany: company,
         userNumber: number,
+        pageUrl: pageUrl || "Not provided",
       }),
     });
 
@@ -41,7 +42,7 @@ export async function POST(req) {
 
     // Send auto-response email to the user
     const { error: autoResponseError } = await resend.emails.send({
-      from: "DSW Team <onboarding@resend.dev>",
+      from:"DSW Team <no-reply@datasciencewizards.ai>",
       to: [email],
       subject: "We've Received Your Demo Request",
       react: DemoAutoResponse({ userName: name }),

@@ -7,7 +7,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(req) {
   try {
     const body = await req.json();
-    const { name, email, designation, company, number, terms, message } = body;
+    const { name, email, designation, company, number, terms, message, pageUrl } = body;
 
     if (!name || !email || !company || !terms || !designation || !number) {
       return new Response(JSON.stringify({ error: "Required fields missing" }), { status: 400 });
@@ -15,8 +15,8 @@ export async function POST(req) {
 
     // Send notification email to your team
     const { error: teamEmailError } = await resend.emails.send({
-      from: "Acme <onboarding@resend.dev>",
-      to: ["vidushi@weareenigma.com"],
+      from:"Web Forms <no-reply@datasciencewizards.ai>",
+      to: ["hitesh@weareenigma.com"],
       subject: "New Pilot Form Submission",
       react: PilotDetails({
         userName: name,
@@ -26,6 +26,7 @@ export async function POST(req) {
         userNumber: number,
         userTerms: terms,
         userMessage: message || "No message provided",
+        pageUrl: pageUrl || "Not provided",
       }),
     });
 
@@ -36,7 +37,7 @@ export async function POST(req) {
 
     // Send auto-response email to the user
     const { error: autoResponseError } = await resend.emails.send({
-      from: "Acme <onboarding@resend.dev>",
+      from:"DSW Team <no-reply@datasciencewizards.ai>",
       to: [email],
       subject: "We've Received Your Pilot Program Request",
       react: PilotAutoResponse({ userName: name }),

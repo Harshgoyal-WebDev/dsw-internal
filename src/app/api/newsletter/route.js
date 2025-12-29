@@ -94,8 +94,8 @@ export async function POST(req) {
 console.log("Attempting to send email to:", email);
 
 const { data: mailData, error: mailError } = await resend.emails.send({
-  from: "onboarding@resend.dev",
-  to: email,
+  from:"DSW Team <no-reply@datasciencewizards.ai>",
+  to: [email],
   subject: "Welcome to DSW Newsletter 🎉",
   react: NewsletterAutoResponse({ userName: userName || "there" }),
 });

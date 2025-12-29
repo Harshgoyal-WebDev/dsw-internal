@@ -52,7 +52,7 @@ const NewsletterAutoResponse = ({ userName = "there" }) => {
           <Text style={footer}>
             This is an automated message. Please do not reply to this email.
           </Text>
-          <Text style={footer}>DSW | India</Text>
+          <Text style={footer}>Data Science Wizards</Text>
         </Container>
       </Body>
     </Html>
