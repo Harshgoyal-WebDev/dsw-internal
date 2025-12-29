@@ -8,11 +8,11 @@ const Listing = ({news}) => {
   // console.log(news)
   return (
     <section className="container relative z-[10] max-md:mt-0 mt-[-20vh]" id="news-listing">
-      <div className="w-full space-y-[4.5vw] max-md:space-y-[15vw] fadeupDelay">
+      <div className="w-full space-y-[4.5vw] max-sm:space-y-[15vw] max-md:space-y-[5vw] fadeupDelay">
         {news.map((news,id) => (
           <div
             key={id}
-            className="w-full space-y-[4vw] fadeup max-md:space-y-[10vw]"
+            className="w-full space-y-[4vw] fadeup max-md:space-y-[4vw] max-sm:space-y-[10vw]"
           >
             <div className="w-full h-fit flex gap-[2.5vw] max-md:flex-col max-md:gap-[5vw]">
               <div className="w-[30vw] h-[20vw] rounded-[2vw] overflow-hidden max-md:w-full max-sm:h-[30vh] max-md:h-[55vw] max-md:rounded-[3vw] max-sm:rounded-[5vw]">

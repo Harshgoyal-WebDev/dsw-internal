@@ -81,7 +81,7 @@ const Deployments = () => {
   return (
     <section
       id="insuraince"
-      className="w-screen h-full overflow-hidden container max-sm:mt-[50vw] max-md:mt-[25vw]"
+      className="w-screen h-full overflow-hidden container max-sm:mt-[50vw] max-md:mt-[30vw]"
       ref={sectionRef}
     >
       <div className="w-full space-y-[7vw] max-md:space-y-[10vw] max-sm:space-y-[12vw]">

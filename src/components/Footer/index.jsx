@@ -128,15 +128,18 @@ const Footer = () => {
             <p>
               Copyright © {SITE_CONFIG.name} {SITE_CONFIG.copyright.year}
             </p>
-            <p className="under-multi-parent">
+            <p className="">
               {SITE_CONFIG.copyright.credits.text}{" "}
+              <span className="inline-block under-multi-parent">
               <a
                 target="_blank"
                 href={SITE_CONFIG.copyright.credits.link}
-                className="hover:text-white transition-colors duration-300 under-multi"
+                className="hover:text-white transition-colors duration-300 w-fit under-multi"
               >
                 {SITE_CONFIG.copyright.credits.name}
               </a>
+
+              </span>
             </p>
           </div>
         </div>

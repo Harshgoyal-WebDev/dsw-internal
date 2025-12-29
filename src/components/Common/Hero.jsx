@@ -250,7 +250,7 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
       className="min-h-screen w-screen relative bg-background max-md:h-screen max-md:px-[7vw] z-[10]"
       id="hero"
     >
-      <div className="flex flex-col items-center justify-start w-full h-full pt-[30vh] relative z-[12] max-md:pt-[15vh]  content-container">
+      <div className="flex flex-col items-center justify-start w-full h-full pt-[30vh]  relative z-[12] max-md:pt-[15vh]  content-container">
         <div
           className={`text-center space-y-6 pb-5 max-md:w-[100%] max-md:space-y-[7vw] ${heroData.headingWidth || "w-[70%]"
             }`}
@@ -364,7 +364,7 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
       ) : (
         <div
           ref={mobileGradientRef}
-          className="w-screen h-[70vh] absolute top-[30%] z-[5] left-0 hidden max-md:block "
+          className="w-screen h-[100vh] absolute top-0 z-[5] left-0 hidden max-md:block "
         >
           <Image
             src={"/assets/images/homepage/gradient-mobile.png"}
