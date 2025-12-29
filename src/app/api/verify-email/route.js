@@ -1,4 +1,6 @@
 // app/api/verify-email/route.js
+import { verifyEmailWithZeroBounce } from "@/lib/emailVerification";
+
 export async function POST(req) {
   try {
     const body = await req.json();
@@ -11,53 +13,23 @@ export async function POST(req) {
       );
     }
 
-    const apiKey = process.env.ZEROBOUNCE_API_KEY;
+    const result = await verifyEmailWithZeroBounce(email);
 
-    if (!apiKey) {
-      console.error("ZEROBOUNCE_API_KEY is not configured");
+    return new Response(
+      JSON.stringify(result),
+      { status: 200 }
+    );
+
+  } catch (err) {
+    console.error("Email Verification Error:", err?.message || err);
+
+    if (err.message?.includes("not configured")) {
       return new Response(
         JSON.stringify({ error: "Email verification service not configured" }),
         { status: 500 }
       );
     }
 
-    // Call ZeroBounce API
-    const zerobounceUrl = `https://api.zerobounce.net/v2/validate?api_key=${apiKey}&email=${encodeURIComponent(email)}`;
-
-    const response = await fetch(zerobounceUrl);
-
-    if (!response.ok) {
-      throw new Error(`ZeroBounce API error: ${response.status}`);
-    }
-
-    const data = await response.json();
-
-    // ZeroBounce status values:
-    // - valid: Email is valid
-    // - invalid: Email is invalid
-    // - catch-all: Domain accepts all emails
-    // - unknown: Cannot determine validity
-    // - spamtrap: Email is a spam trap
-    // - abuse: Email is an abuse email
-    // - do_not_mail: Do not mail this address
-
-    const isValid = data.status === "valid" || data.status === "catch-all";
-
-    return new Response(
-      JSON.stringify({
-        valid: isValid,
-        status: data.status,
-        subStatus: data.sub_status,
-        account: data.account,
-        domain: data.domain,
-        didYouMean: data.did_you_mean,
-        freeEmail: data.free_email,
-      }),
-      { status: 200 }
-    );
-
-  } catch (err) {
-    console.error("Email Verification Error:", err?.message || err);
     return new Response(
       JSON.stringify({ error: "Email verification failed" }),
       { status: 500 }
