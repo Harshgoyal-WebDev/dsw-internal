@@ -225,13 +225,13 @@ export default function DemoForm() {
 
   return (
     <>
-      <section className="overflow-hidden h-fit max-md:pb-[10%] max-sm:pb-0" id="formoem">
+      <section className="overflow-hidden h-fit max-md:pb-[4%] max-sm:pb-0" id="formoem">
         <div className="w-full h-full">
           <div className="w-full flex flex-col gap-[2vw]">
             <Form {...form}>
               <form
                 autoComplete="off"
-                className="space-y-[1vw] max-sm:space-y-[4vw] max-md:space-y-[2vw]"
+                className="space-y-[1vw] max-sm:space-y-[4vw] max-md:space-y-[3vw]"
                 onSubmit={handleSubmit(onSubmit)}
               >
                 <div className="formfade">
@@ -299,7 +299,7 @@ export default function DemoForm() {
                 </div>
                <div className="formfade">
                 <Button type="submit" aria-label="submit form" 
-                  className="cursor-pointer mt-[3vw] pb-[3vw] max-sm:mt-[10vw] max-sm:pb-[8vw] max-md:mt-[4vw] px-0 ">
+                  className="cursor-pointer mt-[3vw] max-md:mt-[5vw] pb-[3vw] max-sm:mt-[10vw] max-sm:pb-[8vw] px-0 ">
                   <div className="relative inline-flex items-center h-[4vw] min-w-[10vw] px-[2vw] gap-3 rounded-full overflow-hidden text-white-200 group max-sm:h-fit max-sm:py-[4vw] max-sm:px-[6vw] max-sm:min-w-[30vw] max-md:px-[4.5vw] max-md:py-[3vw] max-md:h-fit max-sm:gap-[4vw]">
                     <span className="bg-foreground rounded-full h-2 w-2 max-sm:w-[2.5vw] max-sm:h-[2.5vw] z-[1] max-md:w-[1.2vw] max-md:h-[1.2vw]" />
                     <div className="overflow-clip leading-[1.4] mt-[-4px] max-sm:mt-0 z-[1]">
