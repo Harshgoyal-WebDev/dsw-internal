@@ -12,6 +12,7 @@ import dynamic from "next/dynamic";
 import PopupModal from "../Common/PopupModal";
 import { ModalProvider, useModal } from "../Common/ModalProvider";
 import ScrollToTop from "../ScrollToTop";
+import WalkthroughPopup from "../Common/WalkthorughPopup";
 const Header = dynamic(() => import("../Header/index"), {
   ssr: true,
 });
@@ -22,6 +23,11 @@ const Footer = dynamic(() => import("../Footer"), {
 function GlobalPopup() {
   const { open, setOpen } = useModal();
   return <PopupModal modalOpen={open} setModalOpen={setOpen} />;
+}
+
+function GlobalWalkthroughPopup(){
+  const{openWalkThrough , setOpenWalkThrough}=useModal();
+  return <WalkthroughPopup modalOpen={openWalkThrough} setModalOpen={setOpenWalkThrough} />
 }
 
 const Layout = ({ children }) => {
@@ -37,9 +43,9 @@ const Layout = ({ children }) => {
       {children}
       <KeepScrolling />
       <GlobalPopup/>
+      <GlobalWalkthroughPopup/>
       <Footer />
       <ScrollToTop/>
-      
     </ModalProvider>
     </>
   );

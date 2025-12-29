@@ -18,7 +18,7 @@ const ContactDetails = ({ userName, userEmail, userDesignation, userCompany, use
             alt="Logo"
             style={logo}
           />
-          <Text style={paragraph}>Hi,</Text>
+          <Text style={paragraph}>Hi Team,</Text>
           <Text style={paragraph}>
             You have a new contact form submission on the DSW website.
             <br />

@@ -1,21 +1,12 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, {useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import Image from "next/image";
-import PrimaryButton from "../Button/PrimaryButton";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { NextButton, PreviousButton } from "../Button/SliderButtons";
-import ArrowButton from "../Button/ArrowButton";
 import Copy from "../Animations/Copy";
-import Link from "next/link";
-import {
-  FastTrackMainIcon,
-  FeatureCraftMainIcon,
-  SupportAiIcon,
-} from "../Icons";
 import {
   Banking,
   InsuranceSpecific,
@@ -24,6 +15,7 @@ import {
   ManufacturingIndustryIcon,
   HealthcareIcon,
 } from "../Icons";
+import { LinkButton } from "../Button/LinkButton";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -173,12 +165,9 @@ const IntelligentUseCases = ({ sessionsData }) => {
               operations, and deliver measurable business value.
             </p>
           </Copy>
-          <a href="#" className="fadeup flex items-center gap-2">
-            <div className="h-2 w-2 rounded-full bg-primary-2"></div>
-            <p className="text-primary-2 text-[1.05vw] font-medium max-md:text-[2.5vw] max-sm:text-[4vw]">
-              Download Enterprise Use Cases
-            </p>
-          </a>
+          <LinkButton
+          href={"#"}
+          text={" Download Enterprise Use Cases"}/>
         </div>
         <div className="w-[55%] text-white max-sm:w-full max-md:w-[93%] max-md:mt-[10vw] fadeup ">
           <Swiper
@@ -241,42 +230,3 @@ const IntelligentUseCases = ({ sessionsData }) => {
 };
 
 export default IntelligentUseCases;
-
-const BlogsData = [
-  {
-    id: 1,
-    title: "How Generative AI is Revolutionizing Insurance",
-    date: "6 March, 2025",
-    img: "/assets/images/homepage/blogs/blog-1.png",
-  },
-  {
-    id: 2,
-    title: "Best Practices for AI Deployment in Regulated Industries",
-    date: "6 March, 2025",
-    img: "/assets/images/homepage/blogs/blog-2.png",
-  },
-  {
-    id: 3,
-    title: "How Generative AI is Revolutionizing Insurance",
-    date: "6 March, 2025",
-    img: "/assets/images/homepage/blogs/blog-1.png",
-  },
-  {
-    id: 4,
-    title: "Best Practices for AI Deployment in Regulated Industries",
-    date: "6 March, 2025",
-    img: "/assets/images/homepage/blogs/blog-2.png",
-  },
-  {
-    id: 5,
-    title: "How Generative AI is Revolutionizing Insurance",
-    date: "6 March, 2025",
-    img: "/assets/images/homepage/blogs/blog-1.png",
-  },
-  {
-    id: 6,
-    title: "Best Practices for AI Deployment in Regulated Industries",
-    date: "6 March, 2025",
-    img: "/assets/images/homepage/blogs/blog-2.png",
-  },
-];

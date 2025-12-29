@@ -18,9 +18,9 @@ const WorkshopDetails = ({ userName, userEmail, userDesignation, userCompany, us
             alt="Logo"
             style={logo}
           />
-          <Text style={paragraph}>Hi,</Text>
+          <Text style={paragraph}>Hi Team,</Text>
           <Text style={paragraph}>
-            You have a new workshop form submission on the DSW website.
+            We have a new workshop form submission on the DSW website.
             <br />
             Below are the details.
           </Text>

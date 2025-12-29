@@ -18,9 +18,9 @@ const PilotDetails = ({ userName, userEmail, userDesignation, userCompany, userN
             alt="Logo"
             style={logo}
           />
-          <Text style={paragraph}>Hi,</Text>
+          <Text style={paragraph}>Hi Team,</Text>
           <Text style={paragraph}>
-            You have a new pilot form submission on the DSW website.
+            We have a new pilot form submission on the DSW website.
             <br />
             Below are the details.
           </Text>

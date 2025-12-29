@@ -10,6 +10,7 @@ const AgenticFeatures = dynamic(
   { ssr: true }
 );
 import AgenticAi from "../../../public/assets/icons/agentic-ai.png";
+import AgenticTour from "@/components/AgenticAI/agenticTour";
 
 const AgenticUsecase = dynamic(
   () => import("@/components/AgenticAI/AgenticUsecase"),
@@ -91,6 +92,7 @@ export default async function AgenticAI() {
         <AgenticFeatures />
         <AgenticUsecase data={usecaseData} />
         <UsecaseMobile usecaseData={usecaseData} heading='Turn proofs-of-concept into auditable, production-grade automation with explainable agents, deterministic governance, and enterprise-grade security.' headingWidth="h-[40vh]" />
+        <AgenticTour/>
         <CoreCapabilities />
         <Results heading='BFSI Use Cases & Vertical Accelerators ' results={resultsData} />
          <AgenticAIDiagram />
@@ -112,7 +114,7 @@ const heroData = {
   homepage: true,
   walkthrough: true,
   target: true,
-  link1: "#",
+  link1: "#agentic-tour",
   btnText1: "Start Walkthrough",
   link2: "https://calendly.com/",
   btnText2: "Schedule a Call",

@@ -6,13 +6,13 @@ import Copy from "../Animations/Copy";
 import { useModal } from "../Common/ModalProvider";
 
 
-const UnifyTour = () => {
+const AgenticTour = () => {
     const { openWalkThroughModal } = useModal();
   
   return (
-    <section className="w-screen h-fit container" id="tour-unify">
+    <section className="w-screen h-fit container" id="agentic-tour">
       <div className="w-full flex flex-col gap-[2vw] items-center max-md:gap-[4vw]">
-        <h2 className="text-60 headingAnim w-[40%] max-md:w-full text-center">Take a Lightning Tour of DSW UnifyAI</h2>
+        <h2 className="text-60 headingAnim w-[40%] max-md:w-full text-center">Take a Lightning Tour of DSW AgneticAI</h2>
         <Copy>
           <p className="text-[#CACACA] text-center">
            Your AI foundation — not just for today’s use cases, but for tomorrow’s vision.
@@ -20,14 +20,13 @@ const UnifyTour = () => {
         </Copy>
 
         <div className=" relative fadeup mt-[5vw] max-sm:w-full max-sm:h-fit max-md:h-[40vw] max-md:w-full max-sm:mt-[8vw]  flex items-center justify-center">
-            <div className="w-[80%] h-[40vw] rounded-lg overflow-hidden max-sm:w-full max-sm:h-[50vw] relative">
+            <div className="w-[75%] h-[38vw] relative fadeup mt-[5vw] max-sm:w-full max-sm:h-[60vw] max-md:h-[40vw] max-md:w-full max-sm:mt-[12vw] rounded-lg overflow-hidden">
               <div className="w-full h-full bg-black/80 absolute top-0 left-0 z-[5]"/>
              <Image
-                    src={'/assets/images/homepage/unify-tour.png'}
-                    alt="UnifyAI tour image"
+                    src={'/assets/images/homepage/agentic-tour.png'}
+                    alt="Agentic tour image"
                     fetchPriority="high"
-                    className="w-full h-full object-contain brightness-100"
-                    
+                    className="w-full h-full brightness-100"
                     width={900}
                     height={400}
                   />
@@ -49,4 +48,4 @@ const UnifyTour = () => {
   );
 };
 
-export default UnifyTour;
+export default AgenticTour;

@@ -18,9 +18,6 @@ import {
   fadeUp,
   headingAnim,
   lineAnim,
-  useFadeUp,
-  useHeadingAnim,
-  useImgAnim,
 } from "@/components/Animations/gsapAnimations";
 import AnimatedLine from "../Common/HeroComponents/AnimatedLine";
 import BreadCrumbs from "../Common/HeroComponents/BreadCrumbs";

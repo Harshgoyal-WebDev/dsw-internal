@@ -35,7 +35,6 @@ export const metadata = getPageMetadata({
 });
 export default async function page() {
   const { posts } = await getAllPosts();
-  const grid = posts.slice(1);
   return (
     <> 
       <WebpageJsonLd metadata={metadata} />

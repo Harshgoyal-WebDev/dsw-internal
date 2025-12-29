@@ -8,7 +8,7 @@ import { useModal } from "./ModalProvider";
 
 const Tour = ({ heading, para, btnText }) => {
   const [activeTab, setActiveTab] = useState("unifyAI");
-  const { openModal } = useModal();
+  const { openWalkThroughModal } = useModal();
 
   const handleTabClick = (tabId) => {
     setActiveTab(tabId);
@@ -189,9 +189,9 @@ const Tour = ({ heading, para, btnText }) => {
               className=""
               href={"#"}
                onClick={(e) => {
-              e.preventDefault();
-              openModal();
-            }}
+  e.preventDefault();
+  openWalkThroughModal();
+}}
             />
           </div>
 

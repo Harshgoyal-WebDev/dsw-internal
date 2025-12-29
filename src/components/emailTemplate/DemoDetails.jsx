@@ -1,6 +1,9 @@
 // components/emailTemplate/DemoDetails.jsx
 import React from "react";
-import { Body, Column, Container, Head, Hr, Html, Img, Preview, Row, Section, Text } from "@react-email/components";
+import { 
+  Body, Column, Container, Head, Hr, Html, Img, 
+  Preview, Row, Section, Text 
+} from "@react-email/components";
 
 const DemoDetails = ({
   userName,
@@ -8,32 +11,23 @@ const DemoDetails = ({
   userDesignation,
   userCompany,
   userNumber,
-  downloadedPdfName, // 👈 optional
 }) => {
-  const previewText = downloadedPdfName
-    ? `Someone just filled demo details and downloaded a PDF (${downloadedPdfName}) on DSW Website.`
-    : `Someone just filled demo details on DSW Website.`;
-
   return (
     <Html>
       <Head />
-      <Preview>{previewText}</Preview>
+      <Preview>New demo request from {userName} at {userCompany}</Preview>
       <Body style={main}>
         <Container style={container}>
           <Img
-            src={"https://dsw-internal.vercel.app/assets/images/form-logo.png"}
+            src="https://dsw-internal.vercel.app/assets/images/form-logo.png"
             width="140"
             height="80"
-            alt="Logo"
+            alt="DSW Logo"
             style={logo}
           />
-          <Text style={paragraph}>Hi,</Text>
+          <Text style={paragraph}>Hi Team,</Text>
           <Text style={paragraph}>
-            {downloadedPdfName ? (
-              <>You have a new demo form submission on the DSW website, and they downloaded <b>{downloadedPdfName}</b>. Below are the details.</>
-            ) : (
-              <>You have a new demo form submission on the DSW website. Below are the details.</>
-            )}
+            You have received a new demo request. Please find the details below:
           </Text>
 
           <Section>
@@ -56,21 +50,19 @@ const DemoDetails = ({
               <Column style={columnText}>{userCompany}</Column>
             </Row>
             <Row style={row}>
-              <Column style={columnHead}>Number</Column>
+              <Column style={columnHead}>Phone Number</Column>
               <Column style={columnText}>{userNumber}</Column>
             </Row>
-
-            {downloadedPdfName && (
-              <Row style={row}>
-                <Column style={columnHead}>Downloaded PDF</Column>
-                <Column style={columnText}>{downloadedPdfName}</Column>
-              </Row>
-            )}
           </Section>
 
-          <Text style={paragraph}>- Team DSW</Text>
+          <Text style={paragraph}>
+            Please reach out to them within 24-48 hours.
+          </Text>
+          
+          <Text style={paragraph}>Thanks,</Text>
+          <Text style={paragraph}>Admin</Text>
           <Hr style={hr} />
-          <Text style={footer}>India</Text>
+          <Text style={footer}>Data Science Wizards | India</Text>
         </Container>
       </Body>
     </Html>
@@ -79,12 +71,34 @@ const DemoDetails = ({
 
 export default DemoDetails;
 
-const main = { backgroundColor: "#ffffff", fontFamily: '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif' };
-const container = { margin: "0 auto", padding: "20px 0 48px" };
-const logo = { margin: "0 auto" };
-const paragraph = { fontSize: "16px", lineHeight: "26px" };
-const row = { borderLeft: "1px solid #f2f2f2", borderRight: "1px solid #f2f2f2", borderTop: "1px solid #f2f2f2" };
-const columnHead = { textAlign: "left", fontSize: "16px", lineHeight: "26px", fontWeight: "500", width: "120px", padding: "10px 15px", borderRight: "1px solid #f2f2f2" };
-const columnText = { textAlign: "left", fontSize: "15px", lineHeight: "26px", padding: "10px 15px", color: "#6a6a6a" };
-const hr = { borderColor: "#cccccc", margin: "20px 0" };
-const footer = { color: "#8898aa", fontSize: "12px" };
+const main = { 
+  backgroundColor: "#ffffff", 
+  fontFamily: '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif' 
+};
+const container = { margin: "0 auto", padding: "20px 0 48px", maxWidth: "580px" };
+const logo = { margin: "0 auto 30px", display: "block" };
+const paragraph = { fontSize: "16px", lineHeight: "26px", marginBottom: "16px" };
+const row = { 
+  borderLeft: "1px solid #f2f2f2", 
+  borderRight: "1px solid #f2f2f2", 
+  borderTop: "1px solid #f2f2f2" 
+};
+const columnHead = { 
+  textAlign: "left", 
+  fontSize: "16px", 
+  lineHeight: "26px", 
+  fontWeight: "600", 
+  width: "140px", 
+  padding: "12px 16px", 
+  borderRight: "1px solid #f2f2f2",
+  backgroundColor: "#f9f9f9"
+};
+const columnText = { 
+  textAlign: "left", 
+  fontSize: "15px", 
+  lineHeight: "26px", 
+  padding: "12px 16px", 
+  color: "#333333" 
+};
+const hr = { borderColor: "#cccccc", margin: "30px 0 20px" };
+const footer = { color: "#8898aa", fontSize: "12px", marginTop: "8px" };
