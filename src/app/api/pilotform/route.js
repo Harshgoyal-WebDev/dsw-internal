@@ -16,7 +16,7 @@ export async function POST(req) {
     // Send notification email to your team
     const { error: teamEmailError } = await resend.emails.send({
       from:"Web Forms <no-reply@datasciencewizards.ai>",
-      to: ["hitesh@weareenigma.com"],
+      to: ["vidushi@weareenigma.com","contact@datasciencewizards.ai"],
       subject: "New Pilot Form Submission",
       react: PilotDetails({
         userName: name,
