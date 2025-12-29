@@ -4,7 +4,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 
 export default function TwoPowerfulPlatform() {
-  const [activeCard, setActiveCard] = useState('enterprise');
+  const [activeCard, setActiveCard] = useState("enterprise");
 
   return (
     <>
@@ -13,65 +13,101 @@ export default function TwoPowerfulPlatform() {
     </section> */}
       <section className="min-h-screen h-fit flex flex-col mt-[-90vh] max-md:mt-0 max-sm:mt-[-50vh] items-center justify-center space-y-[5vw] bg-[#f8f8f8] container max-md:min-h-fit max-md:space-y-[8vw] max-md:py-[10vw]">
         <h2 className="text-center  headingAnim relative z-10 text-primary-1 text-90 max-md:w-[90%] max-md:text-[8vw]">
-         One Intelligent Layer for your Enterprise.
+          One Intelligent Layer for your Enterprise.
         </h2>
         <div className="w-full h-full flex items-center  justify-center gap-[2.5vw] max-md:flex-col max-md:w-[90%] max-md:gap-[5vw]">
-          
-          <Link href={"/unifyai"} 
-            className="w-[40%] h-fit min-h-[20vw] overflow-hidden relative flex items-start justify-center flex-col px-[3vw] py-[2vw] text-background space-y-[3vw] border border-[#88888880] rounded-[2vw] max-md:w-full max-md:min-h-[50vw] max-md:px-[6vw] max-md:py-[6vw] max-md:space-y-[5vw] max-md:rounded-[4vw] max-md:items-center max-md:text-center"
-            onMouseEnter={() => setActiveCard('enterprise')}
-            onMouseLeave={() => setActiveCard('enterprise')}
+          <Link
+            href={"/unifyai"}
+            className="w-[40%] h-fit min-h-[20vw] overflow-hidden relative flex items-start justify-center flex-col px-[3vw] py-[2vw] text-background space-y-[3vw] border border-[#88888880] rounded-[2vw] max-md:w-full max-md:min-h-[50vw] max-md:px-[6vw] max-md:py-[6vw] max-md:space-y-[5vw] max-md:rounded-[4vw] max-md:items-center max-md:text-center fadeup"
+            onMouseEnter={() => setActiveCard("enterprise")}
+            onMouseLeave={() => setActiveCard("enterprise")}
           >
             <div
-              className={`absolute inset-0 h-full w-full bg-gradient-to-r from-light-blue to-dark-blue transition-opacity ease-in-out duration-500 ${activeCard === 'enterprise' ? "opacity-100" : "opacity-0"
-                }`}
+              className={`absolute inset-0 h-full w-full bg-gradient-to-r from-light-blue to-dark-blue transition-opacity ease-in-out duration-500 ${
+                activeCard === "enterprise" ? "opacity-100" : "opacity-0"
+              }`}
             />
-            <div className="w-[15vw] h-auto relative z-10 max-md:w-[25vw]">
+            {/* <div className="w-[15vw] h-auto relative z-10 max-md:w-[25vw]">
               <Image
                 className="h-full w-full object-contain transition-all duration-500"
-                src={activeCard === 'enterprise' ? "/assets/icons/dswUnifyWhite.png" : "/assets/icons/dswUnifyBlue.png"}
+                src={
+                  activeCard === "enterprise"
+                    ? "/assets/icons/dswUnifyWhite.png"
+                    : "/assets/icons/dswUnifyBlue.png"
+                }
+                alt="enterprise-ai-platform"
+                width={150}
+                height={60}
+              />
+            </div> */}
+             <div className="w-[13vw] h-[4vw] relative z-10 max-md:w-[25vw] max-sm:h-[10vw] max-sm:w-[40vw]">
+              <Image
+                className={`h-full w-full object-contain transition-all duration-500 absolute ${activeCard=="enterprise"?"opacity-100":"opacity-0"}`}
+                src={"/assets/icons/dswUnifyWhite.png"}
+                alt="enterprise-ai-platform"
+                width={150}
+                height={60}
+              />
+              <Image
+                className={`h-full w-full object-contain transition-all duration-500 absolute ${activeCard=="enterprise"?"opacity-0":"opacity-100"}` }
+                src={"/assets/icons/dswUnifyBlue.png"}
                 alt="enterprise-ai-platform"
                 width={150}
                 height={60}
               />
             </div>
-            <h3 className={`text-40 ${activeCard === 'enterprise' ? 'text-white' : 'text-background'} relative z-10 w-[80%] max-sm:w-full max-md:text-[6vw]`}>
+            <h3
+              className={`text-40 ${activeCard === "enterprise" ? "text-white" : "text-background"} relative z-10 w-[80%] max-sm:w-full max-md:text-[6vw] ease-in-out duration-500`}
+            >
               The Enterprise AI Platform
             </h3>
-            <p className={`w-[90%] ${activeCard === 'enterprise' ? 'text-white' : 'text-background'} relative z-10 max-md:text-[4vw]`}>
+            <p
+              className={`w-[90%] ${activeCard === "enterprise" ? "text-white" : "text-background"} relative z-10 max-md:text-[4vw] ease-in-out duration-500`}
+            >
               Your foundation for building, governing, and scaling AI/ML + GenAI
               across the enterprise.
             </p>
           </Link>
-          
-          
-          <Link href={"/agentic-ai"}
-            className="w-[40%] h-fit min-h-[20vw] overflow-hidden relative flex items-start justify-center flex-col px-[3vw] py-[2vw] text-background space-y-[3vw] border border-[#88888880] rounded-[2vw] max-md:w-full max-md:min-h-[50vw] max-md:px-[6vw] max-md:py-[6vw] max-md:space-y-[5vw] max-md:rounded-[4vw] max-md:items-center max-md:text-center"
-            onMouseEnter={() => setActiveCard('agentic')}
-            onMouseLeave={() => setActiveCard('agentic')}
+
+          <Link
+            href={"/agentic-ai"}
+            className="w-[40%] h-fit min-h-[20vw] overflow-hidden relative flex items-start justify-center flex-col px-[3vw] py-[2vw] text-background space-y-[3vw] border border-[#88888880] rounded-[2vw] max-md:w-full max-md:min-h-[50vw] max-md:px-[6vw] max-md:py-[6vw] max-md:space-y-[5vw] max-md:rounded-[4vw] max-md:items-center max-md:text-center fadeup"
+            onMouseEnter={() => setActiveCard("agentic")}
+            onMouseLeave={() => setActiveCard("agentic")}
           >
             <div
-              className={`absolute inset-0 h-full w-full bg-gradient-to-r from-light-blue to-dark-blue transition-opacity ease-in-out duration-500 ${activeCard === 'agentic' ? "opacity-100" : "opacity-0"
-                }`}
+              className={`absolute inset-0 h-full w-full bg-gradient-to-r from-light-blue to-dark-blue transition-opacity ease-in-out duration-500 ${
+                activeCard === "agentic" ? "opacity-100" : "opacity-0"
+              }`}
             />
-            <div className="w-[15vw] h-auto relative z-10 max-md:w-[25vw]">
+            <div className="w-[15vw] h-[4vw] relative z-10 max-md:w-[25vw] max-sm:h-[10vw] max-sm:w-[45vw]">
               <Image
-                className="h-full w-full object-contain transition-all duration-500"
-                src={activeCard === 'agentic' ? "/assets/icons/dswAgenticWhite.png" : "/assets/icons/dswAgencticBlueTheme.png"}
+                className={`h-full w-full object-contain transition-all duration-500 absolute ${activeCard=="agentic"?"opacity-100":"opacity-0"}`}
+                src={"/assets/icons/dswAgenticWhite.png"}
+                alt="enterprise-ai-platform"
+                width={150}
+                height={60}
+              />
+              <Image
+                className={`h-full w-full object-contain transition-all duration-500 absolute ${activeCard=="agentic"?"opacity-0":"opacity-100"}` }
+                src={"/assets/icons/dswAgencticBlueTheme.png"}
                 alt="enterprise-ai-platform"
                 width={150}
                 height={60}
               />
             </div>
-            <h3 className={`text-40 ${activeCard === 'agentic' ? 'text-white' : 'text-background'} relative z-10 max-md:text-[6vw]`}>
+            <h3
+              className={`text-40 ${activeCard === "agentic" ? "text-white" : "text-background"} relative z-10 max-md:text-[6vw] ease-in-out duration-500`}
+            >
               The Enterprise Agents Platform
             </h3>
-            <p className={`w-[100%] ${activeCard === 'agentic' ? 'text-white' : 'text-background'} relative z-10 max-md:text-[4vw]`}>
+            <p
+              className={`w-[100%] ${activeCard === "agentic" ? "text-white" : "text-background"} relative z-10 max-md:text-[4vw] ease-in-out duration-500`}
+            >
               Deploy GenAI agents, multi-agent workflows, and A2A orchestration
               in hours with full auditability.
             </p>
           </Link>
-          
         </div>
       </section>
     </>

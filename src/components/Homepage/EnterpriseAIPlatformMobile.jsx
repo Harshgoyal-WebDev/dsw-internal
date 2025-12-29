@@ -167,7 +167,7 @@ function Accordion({ title, para, link, isOpen, onToggle,img1,img2 }) {
                       src={img1}
                       height={390}
                       width={382}
-                      className="h-[14vw] w-[16vw] object-contain max-sm:h-[35vw] max-sm:w-[40vw] max-md:w-[30vw] max-md:h-[30vw]"
+                      className="h-[14vw] w-[16vw] object-cover max-sm:h-[35vw] max-sm:w-[40vw] max-md:w-[30vw] max-md:h-[30vw] "
                       alt="unify-ai-graph"
                     />
                   </div>
@@ -176,7 +176,7 @@ function Accordion({ title, para, link, isOpen, onToggle,img1,img2 }) {
                       src={img2}
                       height={247}
                       width={283}
-                      className="h-[13vw] w-[15vw] object-contain max-sm:h-[35vw] max-sm:w-[40vw]  max-md:w-[30vw] max-md:h-[30vw]"
+                      className="h-[13vw] w-[15vw] object-cover max-sm:h-[35vw] max-sm:w-[40vw]  max-md:w-[30vw] max-md:h-[30vw]"
                       alt="unify-ai-dashboard"
                     />
                   </div>

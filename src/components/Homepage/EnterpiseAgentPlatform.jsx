@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect, useLayoutEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
@@ -12,6 +12,7 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const EnterpiseAgentPlatform = () => {
+  const [mobile, setMobile] = useState(false);
   const sectionRef = useRef(null);
   const progressLineRef = useRef(null);
 
@@ -309,19 +310,28 @@ const EnterpiseAgentPlatform = () => {
     if (next) next.scrollIntoView({ behavior: "smooth" });
   };
 
+useEffect(()=>{
+  if(globalThis.innerWidth<=1024){
+    setMobile(true);
+  }
+  else{
+    setMobile(false);
+  }
+})
 
   useGSAP(() => {
-    const tl = gsap.timeline({
+    if(mobile){
+ const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#tour",
-        start: "top 100%",
+        start: `top ${mobile ? '20%' : '100%'}`,
         end: "20% 10% ",
-        markers: false,
+        markers: true,
         scrub: true,
       },
     });
     tl.fromTo(
-      "#tour, #enterpriseAgentPlatform",
+      "#tour, #enterpriseAgentPlatform,#enterpriseAgentPlatformMobile",
       {
         backgroundColor: "#ffffff",
       },
@@ -330,7 +340,7 @@ const EnterpiseAgentPlatform = () => {
       }
     );
     tl.fromTo(
-      ".tour-heading, #enterpriseAgentPlatform ",
+      ".tour-heading, #enterpriseAgentPlatform , #enterpriseAgentPlatformMobile p,#enterpriseAgentPlatformMobile h3",
       {
         color: "#111111",
       },
@@ -349,16 +359,13 @@ const EnterpiseAgentPlatform = () => {
       },
       "<"
     );
-    // gsap.to(".enterprise-bg", {
-    //   opacity: 1,
-    //   scrollTrigger: {
-    //     trigger: "#enterpriseAI",
-    //     start: "30% 50%",
-    //     end: "35% 20% ",
-    //     scrub: true,
-    //   },
-    // });
-  });
+    }
+    else{
+      
+    }
+   
+  
+  },[mobile]);
 
   return (
     <section

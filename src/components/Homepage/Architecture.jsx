@@ -129,7 +129,7 @@ export default function Architecture({ showHeading2 = false }) {
         .to(
           firstTextRef.current,
           { opacity: 1, duration: 0.3, ease: "power3.out" },
-          "-=0.15"
+          "-=0.3"
         )
 
         .to(secondLayerRef.current, {
@@ -141,7 +141,7 @@ export default function Architecture({ showHeading2 = false }) {
         .to(
           secondTextRef.current,
           { opacity: 1, duration: 0.3, ease: "power3.out" },
-          "-=0.15"
+          "-=0.3"
         )
 
         .to(thirdLayerRef.current, {
@@ -158,7 +158,7 @@ export default function Architecture({ showHeading2 = false }) {
             ease: "power3.out",
             stagger: 0.08,
           },
-          "-=0.2"
+          "-=0.3"
         )
 
         .to(fourthLayerRef.current, {
@@ -170,7 +170,7 @@ export default function Architecture({ showHeading2 = false }) {
         .to(
           fourthTextRef.current,
           { opacity: 1, duration: 0.3, ease: "power3.out" },
-          "-=0.15"
+          "-=0.3"
         )
 
         // 2) THEN ARROWS
@@ -207,12 +207,13 @@ export default function Architecture({ showHeading2 = false }) {
             ease: "power3.out",
             stagger: 0.08,
           },
-          "-=0.2"
+          "-=0.4"
         )
         .to(rightCardRef.current, {
           opacity: 1,
           y: 0,
-          duration: 0.4,
+          duration: 0.8,
+          delay:-0.2,
           ease: "power3.out",
         })
 
@@ -220,7 +221,8 @@ export default function Architecture({ showHeading2 = false }) {
         .to(industryBoxRef.current, {
           opacity: 1,
           y: 0,
-          duration: 0.4,
+          delay:-0.2,
+          duration: 0.8,
           ease: "power3.out",
         });
     }, sectionRef);
@@ -452,7 +454,7 @@ export default function Architecture({ showHeading2 = false }) {
         {/* Side cards */}
         <div
           ref={leftCardRef}
-          className="px-[2vw] max-md:px-[5vw] h-[12vw] w-[15vw] p-3 max-md:min-h-[25vw] gap-[2vw] max-md:gap-[4vw] rounded-[2vw] max-md:rounded-[3vw] background-glass text-center flex items-center justify-center flex-col max-md:py-[6vw] border border-white/20 overflow-hidden absolute top-[70%] left-[2.5%]"
+          className="px-[2vw] max-md:px-[5vw] h-[12vw] w-[17vw] p-3 max-md:min-h-[25vw] gap-[2vw] max-md:gap-[4vw] rounded-[1.2vw] max-md:rounded-[3vw] background-glass text-center flex items-center justify-center flex-col max-md:py-[6vw] border border-white/20 overflow-hidden absolute top-[70%] left-[2.5%]"
         >
           <p className="w-[100%] relative z-[2] max-md:text-[3.5vw]">
             Build deploy, monitor and manage AI/ ML models easily​
@@ -461,7 +463,7 @@ export default function Architecture({ showHeading2 = false }) {
 
         <div
           ref={rightCardRef}
-          className="px-[2vw] max-md:px-[5vw] h-[12vw] w-[15vw] p-3 max-md:min-h-[25vw] gap-[2vw] max-md:gap-[4vw] rounded-[2vw] max-md:rounded-[3vw] background-glass text-center flex items-center justify-center flex-col max-md:py-[6vw] border border-white/20 overflow-hidden absolute top-[70%] right-[4%]"
+          className="px-[2vw] max-md:px-[5vw] h-[12vw] w-[17vw] p-3 max-md:min-h-[25vw] gap-[2vw] max-md:gap-[4vw] rounded-[1.2vw] max-md:rounded-[3vw] background-glass text-center flex items-center justify-center flex-col max-md:py-[6vw] border border-white/20 overflow-hidden absolute top-[70%] right-[4%]"
         >
           <p className="w-[100%] relative z-[2] max-md:text-[3.5vw]">
             Build, deploy, orchestrate Agentic AI with RAG, MCP and A2A protocol
@@ -510,7 +512,7 @@ export default function Architecture({ showHeading2 = false }) {
         {/* Industry box */}
         <div
           ref={industryBoxRef}
-          className="px-[2vw] max-md:px-[5vw] h-fit w-fit p-3  gap-[2vw] max-md:gap-[4vw] rounded-[2vw] max-md:rounded-[3vw] background-glass text-center flex  items-center justify-center flex-col max-md:py-[6vw] border border-white/20 overflow-hidden absolute top-[-7%] right-[1%]"
+          className="p-[0.8vw] max-md:px-[5vw] h-fit w-fit gap-[2vw] max-md:gap-[4vw] rounded-[1.2vw] max-md:rounded-[3vw] background-glass text-center flex  items-center justify-center flex-col max-md:py-[6vw] border border-white/20 overflow-hidden absolute top-[-2.5vw] right-[1%]"
         >
           <div className="w-full flex flex-col gap-3 relative">
             {industries.map((industry, idx) => (
@@ -521,17 +523,17 @@ export default function Architecture({ showHeading2 = false }) {
                 className="relative"
               >
                 <div
-                  className={`w-full min-w-[15vw] h-full py-4 rounded-xl border transition-all duration-200 text-center flex items-center justify-center relative cursor-pointer ${
+                  className={`w-full min-w-[18vw] h-full py-4 rounded-xl border transition-all duration-200 text-center flex items-center justify-center relative cursor-pointer ${
                     hoveredIndustry === idx
                       ? "border-primary-1"
                       : "border-white/50"
                   }`}
                 >
                   {industry.name}
-                  <span className="h-2 w-2 bg-white absolute top-3 left-3 rounded-full" />
-                  <span className="h-2 w-2 bg-white absolute top-3 right-3 rounded-full" />
-                  <span className="h-2 w-2 bg-white absolute bottom-3 left-3 rounded-full" />
-                  <span className="h-2 w-2 bg-white absolute bottom-3 right-3 rounded-full" />
+                  <span className="h-1.5 w-1.5 bg-white absolute top-2 left-2 rounded-full" />
+                  <span className="h-1.5 w-1.5 bg-white absolute top-2 right-2 rounded-full" />
+                  <span className="h-1.5 w-1.5 bg-white absolute bottom-2 left-2 rounded-full" />
+                  <span className="h-1.5 w-1.5 bg-white absolute bottom-2 right-2 rounded-full" />
                 </div>
               </div>
             ))}

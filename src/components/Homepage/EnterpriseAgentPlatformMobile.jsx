@@ -66,56 +66,56 @@ export default function EnterpriseAgentPlatformMobile({
     ScrollTrigger.refresh();
   }, [openIndexes]);
 
-  useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#tour",
-        start: "top 100%",
-        end: "20% 10% ",
-        markers: false,
-        scrub: true,
-      },
-    });
-    tl.fromTo(
-      "#tour, #enterpriseAgentPlatformMobile",
-      {
-        backgroundColor: "#ffffff",
-      },
-      {
-        backgroundColor: "#030815",
-      }
-    );
-    tl.fromTo(
-      ".tour-heading, #enterpriseAgentPlatformMobile p",
-      {
-        color: "#111111",
-      },
-      {
-        color: "#e8e8e8",
-      },
-      "<"
-    );
-    tl.fromTo(
-      ".tour-para, #enterpriseAgentPlatformMobile h3",
-      {
-        color: "#111111",
-      },
-      {
-        color: "#e8e8e8",
-      },
-      "<"
-    );
-    // gsap.to(".enterprise-bg", {
-    //   opacity: 1,
-    //   scrollTrigger: {
-    //     trigger: "#enterpriseAI",
-    //     start: "30% 50%",
-    //     end: "35% 20% ",
-    //     scrub: true,
-    //     // markers: true,
-    //   },
-    // });
-  });
+  // useGSAP(() => {
+  //   const tl = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: "#tour",
+  //       start: "top 40%",
+  //       end: "20% 10% ",
+  //       markers: true,
+  //       scrub: true,
+  //     },
+  //   });
+  //   tl.fromTo(
+  //     "#tour, #enterpriseAgentPlatformMobile",
+  //     {
+  //       backgroundColor: "#ffffff",
+  //     },
+  //     {
+  //       backgroundColor: "#030815",
+  //     }
+  //   );
+  //   tl.fromTo(
+  //     ".tour-heading, #enterpriseAgentPlatformMobile p",
+  //     {
+  //       color: "#111111",
+  //     },
+  //     {
+  //       color: "#e8e8e8",
+  //     },
+  //     "<"
+  //   );
+  //   tl.fromTo(
+  //     ".tour-para, #enterpriseAgentPlatformMobile h3",
+  //     {
+  //       color: "#111111",
+  //     },
+  //     {
+  //       color: "#e8e8e8",
+  //     },
+  //     "<"
+  //   );
+  //   // gsap.to(".enterprise-bg", {
+  //   //   opacity: 1,
+  //   //   scrollTrigger: {
+  //   //     trigger: "#enterpriseAI",
+  //   //     start: "30% 50%",
+  //   //     end: "35% 20% ",
+  //   //     scrub: true,
+  //   //     // markers: true,
+  //   //   },
+  //   // });
+  // });
 
   return (
     <section
