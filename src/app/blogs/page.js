@@ -8,6 +8,7 @@ import { homepage } from "@/lib/util";
 import { getPageMetadata } from "@/config/metadata";
 import { getAllPosts } from "@/lib/posts";
 import InternalHero from "@/components/Common/InternalHero";
+import { fadeUp, headingAnim, lineAnim } from "@/components/Animations/gsapAnimations";
 
 export const metadata = getPageMetadata({
   title: "DSW Blog - Insights on AI & Enterprise Innovation",
@@ -35,8 +36,9 @@ export const metadata = getPageMetadata({
 });
 export default async function page() {
   const { posts } = await getAllPosts();
+
   return (
-    <> 
+    <>
       <WebpageJsonLd metadata={metadata} />
       <BreadcrumbsJSONLD pathname={metadata.url} />
       <Layout>
@@ -50,8 +52,8 @@ export default async function page() {
 }
 
 const heroData = {
-  heading: "Explore the Future of AI, One Post at a Time​ ",
-  para: "​",
+  heading: "Explore the Future of AI, One Post at a Time",
+  para: "",
   paraClass: "",
   headingWidth: "w-[60%] max-md:mt-[20vw]",
   homepage: false,

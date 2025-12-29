@@ -48,14 +48,9 @@ export function imgAnim(){
           scrollTrigger:{
             trigger:img,
             start:"top 90%",
-          
           }
-       
          })
-
       })
-
-
     })
     return()=>ctx.revert()
   })
@@ -83,6 +78,7 @@ export function paraAnim() {
       return () => ctx.revert();
     }, []);
   }
+  
   export function fadeUp() {
     // const router = useRouter();
     useEffect(() => {

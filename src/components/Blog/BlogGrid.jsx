@@ -5,6 +5,8 @@ import Image from "next/image";
 import ArrowButton from "../Button/ArrowButton";
 import { NextButton, PreviousButton } from "../Button/SliderButtons";
 import { formatDate } from "../../lib/datetime";
+import { fadeUp, headingAnim, lineAnim } from "../Animations/gsapAnimations";
+
 const BlogCard = ({ title, date, slug, featuredImage }) => {
   return (
     <>
@@ -39,9 +41,10 @@ const BlogCard = ({ title, date, slug, featuredImage }) => {
 };
 
 const BlogGrid = ({ posts = [] }) => {
+
   const [page, setPage] = useState(1);
   const [isMobile, setIsMobile] = useState(false);
-  // console.log(posts)
+  
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 640);
     checkMobile();
@@ -49,7 +52,7 @@ const BlogGrid = ({ posts = [] }) => {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  const cardsPerPage = isMobile ? 6 : 12;
+  const cardsPerPage = isMobile ? 12 : 12;
   const totalPages = Math.ceil(posts.length / cardsPerPage);
 
   const handlePrev = () => setPage((p) => Math.max(1, p - 1));
@@ -59,7 +62,7 @@ const BlogGrid = ({ posts = [] }) => {
   const currentCards = posts.slice(startIndex, startIndex + cardsPerPage);
 
   return (
-    <section className="container relative !pt-0  space-y-[7vw] h-fit max-sm:min-h-[80vh]">
+    <section className="container relative !pt-0  space-y-[7vw] h-fit">
       {/* Grid */}
       <div className="grid grid-cols-3 gap-[3vw] max-sm:gap-[9vw] max-md:grid-cols-1">
         {currentCards.map((card, idx) => (
