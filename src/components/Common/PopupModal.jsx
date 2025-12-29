@@ -67,7 +67,9 @@ const PopupModal = ({ modalOpen, setModalOpen }) => {
         modalOpen ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >
-      <div className="relative rounded-[2vw] border border-white/20 bg-black/40 p-[4vw] pt-[4vw] max-md:pt-[6vw] w-[78%] h-fit flex justify-between overflow-hidden max-sm:rounded-[6vw] max-md:w-[90%]  max-md:h-fit max-sm:px-[5vw] max-sm:py-[10%]  max-md:flex-col max-md:rounded-[4vw] max-sm:gap-[7vw] max-md:gap-[4vw]">
+      <div data-lenis-prevent className="relative  w-[78%] h-[80%] overflow-y-auto pr-2 rounded-[2vw] border border-white/20 bg-black/40 max-sm:rounded-[6vw] max-md:w-[90%]  max-md:h-[80%] max-sm:h-[75%] max-sm:px-[5vw] max-sm:py-[10%] p-[4vw] pt-[4vw] max-md:pt-[6vw] max-md:rounded-[4vw]">
+      
+      <div className="h-full w-full !overflow-y-auto pr-2 flex justify-between max-md:flex-col max-sm:gap-[7vw] max-md:gap-[4vw]">
         <div className="w-[30%] h-full space-y-[2vw] max-md:w-full max-md:space-y-[2vw]">
           {payload ? (
             <h2 className="text-90 formhead">Download Pdf</h2>
@@ -79,9 +81,10 @@ const PopupModal = ({ modalOpen, setModalOpen }) => {
           </p>
         </div>
 
-        <div className="w-[60%] max-md:w-full">
+        <div className="w-[60%] h-full max-md:w-full">
           {modalOpen ? <DemoForm /> : null}
         </div>
+      </div>
       </div>
       <div className="formfade absolute top-[3%] right-[3%] max-md:top-[2.5%] max-sm:right-[4%] max-md:right-[2.5%]">
         <div
