@@ -54,36 +54,76 @@ export async function POST(req) {
       );
     }
 
-    // Step 3: Add to Resend contact list
-    const contactListId = process.env.RESEND_CONTACT_LIST_ID;
+    // Step 3: Add to Resend segment
+    const segmentId = process.env.RESEND_NEWSLETTER_SEGMENT_ID;
 
-    if (!contactListId) {
-      console.error("RESEND_CONTACT_LIST_ID is not configured");
+    if (!segmentId) {
+      console.error("RESEND_NEWSLETTER_SEGMENT_ID is not configured");
       return new Response(
-        JSON.stringify({ error: "Newsletter service not configured" }),
+        JSON.stringify({ error: "Newsletter service not configured. Please add RESEND_NEWSLETTER_SEGMENT_ID to your .env.local file." }),
         { status: 500 }
       );
     }
 
     try {
-      // Add contact to the audience
-      const contact = await resend.contacts.create({
+      console.log("Adding contact to Resend segment:", { email, segmentId });
+
+      const { data, error } = await resend.contacts.create({
         email: email,
-        audienceId: contactListId,
+        unsubscribed: false,
+        segmentId: segmentId,
       });
+
+      console.log("Segment add result:", { data, error });
+
+      if (error) {
+        console.error("Resend Segment Error:", error);
+
+        // Check if the error is because the contact already exists in segment
+        if (error.message?.includes("already exists") ||
+          error.message?.includes("Contact already") ||
+          error.statusCode === 422) {
+          return new Response(
+            JSON.stringify({
+              error: "This email is already subscribed to our newsletter.",
+              code: "ALREADY_SUBSCRIBED"
+            }),
+            { status: 400 }
+          );
+        }
+
+        return new Response(
+          JSON.stringify({
+            error: "Failed to subscribe. Please try again later.",
+            code: "SUBSCRIPTION_FAILED",
+            details: error.message
+          }),
+          { status: 500 }
+        );
+      }
 
       return new Response(
         JSON.stringify({
           success: true,
           message: "Successfully subscribed to newsletter!",
-          contactId: contact.data?.id
+          contactId: data?.id,
+          contact: data
         }),
         { status: 200 }
       );
 
     } catch (resendError) {
+      console.error("Resend Error Details:", {
+        message: resendError.message,
+        name: resendError.name,
+        statusCode: resendError.statusCode,
+        error: resendError
+      });
+
       // Check if the error is because the contact already exists
-      if (resendError.message?.includes("already exists") || resendError.message?.includes("Contact already")) {
+      if (resendError.message?.includes("already exists") ||
+        resendError.message?.includes("Contact already") ||
+        resendError.statusCode === 422) {
         return new Response(
           JSON.stringify({
             error: "This email is already subscribed to our newsletter.",
@@ -93,11 +133,11 @@ export async function POST(req) {
         );
       }
 
-      console.error("Resend Error:", resendError);
       return new Response(
         JSON.stringify({
           error: "Failed to subscribe. Please try again later.",
-          code: "SUBSCRIPTION_FAILED"
+          code: "SUBSCRIPTION_FAILED",
+          details: resendError.message
         }),
         { status: 500 }
       );
