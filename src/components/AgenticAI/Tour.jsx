@@ -6,7 +6,7 @@ import Copy from "../Animations/Copy";
 import { useModal } from "../Common/ModalProvider";
 
 
-const AgenticTour = () => {
+const Tour = () => {
     const { openWalkThroughModal } = useModal();
   
   return (
@@ -48,4 +48,4 @@ const AgenticTour = () => {
   );
 };
 
-export default AgenticTour;
+export default Tour;

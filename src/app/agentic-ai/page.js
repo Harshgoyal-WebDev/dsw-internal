@@ -10,7 +10,8 @@ const AgenticFeatures = dynamic(
   { ssr: true }
 );
 import AgenticAi from "../../../public/assets/icons/agentic-ai.png";
-import AgenticTour from "@/components/AgenticAI/agenticTour";
+import Tour from "@/components/AgenticAI/Tour";
+
 
 const AgenticUsecase = dynamic(
   () => import("@/components/AgenticAI/AgenticUsecase"),
@@ -92,7 +93,7 @@ export default async function AgenticAI() {
         <AgenticFeatures />
         <AgenticUsecase data={usecaseData} />
         <UsecaseMobile usecaseData={usecaseData} heading='Turn proofs-of-concept into auditable, production-grade automation with explainable agents, deterministic governance, and enterprise-grade security.' headingWidth="h-[40vh]" />
-        <AgenticTour/>
+        <Tour/>
         <CoreCapabilities />
         <Results heading='BFSI Use Cases & Vertical Accelerators ' results={resultsData} />
          <AgenticAIDiagram />
