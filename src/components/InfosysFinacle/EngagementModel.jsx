@@ -5,10 +5,7 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Copy from "../Animations/Copy";
 gsap.registerPlugin(ScrollTrigger);
 
-
 const EngagementModel = () => {
-
-
   return (
     <section
       id="engagement-model"
@@ -33,7 +30,7 @@ const EngagementModel = () => {
       transition-opacity duration-500 ease-in-out"
             />
 
-            <div className="relative z-10 flex flex-col justify-between h-full max-md:space-y-[10vw]  ">
+            <div className="relative z-10 flex flex-col justify-between h-full max-md:space-y-[5vw] max-sm:space-y-[10vw]  ">
               <p
                 className="flex  justify-center items-center text-[1.5vw] border  max-md:text-[5.5vw] font-head max-md:h-[14vw] max-md:w-[14vw]
         transition-all duration-500 ease-in-out
@@ -71,7 +68,7 @@ const EngagementModel = () => {
       transition-opacity duration-500 ease-in-out"
             />
 
-            <div className="relative z-10 flex flex-col justify-between h-full max-md:space-y-[10vw]">
+            <div className="relative z-10 flex flex-col justify-between h-full max-md:space-y-[5vw] max-sm:space-y-[10vw]">
               <p
                 className="flex justify-center items-center text-[1.5vw] border max-md:text-[5.5vw] font-head max-md:h-[14vw] max-md:w-[14vw] 
         transition-all duration-500 ease-in-out
@@ -109,7 +106,7 @@ const EngagementModel = () => {
       transition-opacity duration-500 ease-in-out"
             />
 
-            <div className="relative z-10 flex flex-col justify-between h-full max-md:space-y-[10vw]">
+            <div className="relative z-10 flex flex-col justify-between h-full max-md:space-y-[5vw] max-sm:space-y-[10vw]">
               <p
                 className="flex justify-center items-center text-[1.5vw] border max-md:text-[5.5vw] font-head max-md:h-[14vw] max-md:w-[14vw] 
         transition-all duration-500 ease-in-out

@@ -42,8 +42,8 @@ const Card = ({ srcc, content, isActive, onHover }) => {
 
 const MobileCard = ({ srcc, content }) => {
   return (
-    <div className="max-md:h-[40vh] max-sm:h-fit mx-auto background-glass flex-shrink-0 max-md:w-[47%] border border-[#88888880] py-[5vw] max-sm:w-[85vw] max-sm:rounded-[6vw] max-md:rounded-[3.5vw] flex flex-col max-md:gap-[6vw] max-sm:gap-[8vw] items-start max-md:justify-between max-sm:justify-between max-sm:px-[7vw] fadeup max-md:px-[4vw] max-sm:py-[10vw]">
-      <div className="max-sm:w-[20vw] max-md:w-auto max-md:h-[15vw] max-sm:h-auto h-auto">
+    <div className="max-md:h-[35vh] max-sm:h-fit mx-auto background-glass flex-shrink-0 max-md:w-[47%] border border-[#88888880] py-[5vw] max-md:py-[6vw] max-sm:w-[85vw] max-sm:rounded-[6vw] max-md:rounded-[3.5vw] flex flex-col max-md:gap-[6vw] max-sm:gap-[8vw] items-start max-md:justify-between max-sm:justify-between max-sm:px-[7vw] fadeup max-md:px-[4vw] max-sm:py-[10vw]">
+      <div className="max-sm:w-[20vw] max-md:w-auto max-md:h-[12vw] max-sm:h-auto h-auto">
         <Image
           src={srcc}
           alt="card-svg"
@@ -129,7 +129,7 @@ const CohesiveValue = () => {
     >
       <div className="bg-primary features-div sticky max-sm:relative top-0 h-fit flex flex-col container !px-0">
         <div className="w-[60%] max-md:w-[90%] pl-[5vw] max-sm:pl-0  max-sm:mx-auto max-md:space-y-[7vw] space-y-[1.5vw] max-sm:space-y-[6vw] max-md:pl-[7vw]">
-          <h2 className="text-60 headingAnim w-[100%] max-sm:text-center text-white-200 max-md:!text-[9vw]">
+          <h2 className="text-60 headingAnim w-[100%] max-md:text-center text-white-200 max-md:!text-[9vw]">
             Bringing Cohesive Value to Banks 
           </h2>
         </div>

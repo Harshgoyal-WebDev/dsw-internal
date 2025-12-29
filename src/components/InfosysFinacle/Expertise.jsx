@@ -10,7 +10,7 @@ import { useGSAP } from "@gsap/react";
 const AwardItem = ({ img }) => {
   return (
     <>
-      <div className="flex-shrink-0 flex items-center justify-center gap-[1vw] w-[15vw] max-md:w-[70vw] max-sm:!w-[30vw]  max-md:gap-[2vw]">
+      <div className="flex-shrink-0 flex items-center justify-center gap-[1vw] w-[15vw] max-md:!w-[25vw] max-sm:!w-[30vw]  max-md:gap-[2vw]">
         <div className="w-[12vw] h-auto max-md:w-[18vw] max-sm:!w-[30vw]">
           <Image
             src={img}

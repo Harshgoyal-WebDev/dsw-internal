@@ -81,7 +81,7 @@ const Deployments = () => {
   return (
     <section
       id="insuraince"
-      className="w-screen h-full overflow-hidden container max-sm:mt-[50vw]"
+      className="w-screen h-full overflow-hidden container max-sm:mt-[50vw] max-md:mt-[25vw]"
       ref={sectionRef}
     >
       <div className="w-full space-y-[13vw] max-md:space-y-[10vw] max-sm:space-y-[12vw]">
@@ -117,14 +117,8 @@ const Card = ({ data, spanRef }) => {
   return (
     <div className="space-y-[2vw] relative group insuraince-cards  max-sm:space-y-[10vw] max-md:space-y-[10vw] max-md:w-full">
       <div className=" space-y-[3vw] max-md:flex max-md:flex-col max-md:items-center max-md:space-y-[6vw]  max-md:mt-[10vw]">
-        {/* <Image
-          src={data.icon}
-          height={98}
-          width={98}
-          alt={data.title}
-          className="w-[5vw] h-[5vw] object-contain max-md:w-[15vw] max-md:h-[15vw] max-sm:w-[20vw] max-sm:h-[20vw]"
-        /> */}
-        <div className="w-[5vw] h-[5vw] object-contain max-md:w-[15vw] max-md:h-[15vw] max-sm:w-[20vw] max-sm:h-[20vw] text-primary-1 ">
+       
+        <div className="w-[5vw] h-[5vw] object-contain max-md:w-[12vw] max-md:h-[12vw] max-sm:w-[20vw] max-sm:h-[20vw] text-primary-1 ">
             {data.icon}
 
         </div>

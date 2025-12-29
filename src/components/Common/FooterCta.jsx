@@ -88,7 +88,7 @@ const FooterCTA = ({ footerCTAData, width, paraWidth, isSubheading=false }) => {
         <Copy>
           <p
             data-para-anim
-            className={`text-[#CACACA] mb-12 ${paraWidth ? paraWidth : "w-full"}`}
+            className={`text-[#CACACA] mb-12 max-md:w-full ${paraWidth ? paraWidth : "w-full"}`}
           >
             {footerCTAData.para}
           </p>

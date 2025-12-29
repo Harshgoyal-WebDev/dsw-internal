@@ -151,64 +151,6 @@ export default function Outcomes({ aboutData }) {
     );
   }, []);
 
-  //   () => {
-  //     const tl = gsap.timeline({
-  //       scrollTrigger: {
-  //         trigger: "#finacle-expertise",
-  //         start: isMobile ? "top center" : "top 100%",
-  //         end: isMobile ? "10% center" : "10% 30%",
-  //         markers: true,
-  //         scrub: true,
-  //       },
-  //     });
-  //     // tl.fromTo(
-  //     //   "#finacle-expertise",
-  //     //   {
-  //     //     backgroundColor: "#03091D",
-  //     //   },
-  //     //   {
-  //     //     backgroundColor: "#ffffff",
-  //     //   }
-  //     // );
-  //     tl.fromTo(
-  //       "#finacle-outcomes",
-  //       {
-  //         backgroundColor: "#03091D",
-  //       },
-  //       {
-  //         backgroundColor: "#ffffff",
-  //       },
-  //       "<"
-  //     );
-
-  //     // ScrollTrigger.refresh();
-  //   },
-  //   { dependencies: [isMobile] }
-  // );
-
-  // useGSAP(() => {
-
-  // const exitTimeLine = gsap.timeline({
-  //   scrollTrigger: {
-  //     trigger: "#finacle-expertise",
-  //     start: "top 100%",
-  //     end: "bottom 30%",
-  //     markers: true,
-  //     scrub: true,
-  //   },
-  // });
-  //   exitTimeLine.fromTo(
-  //     "#finacle-outcomes, #enterpriseAgentPlatform .btncomp",
-  //     {
-  //       color: "#ffffff",
-  //     },
-  //     {
-  //       color: "#111111",
-  //     },
-  //     "<"
-  //   );
-  // });
-
   return (
     <section className="w-screen container" id="finacle-outcomes">
       <div className="w-full flex flex-col items-center justify-center gap-y-[5vw] max-sm:gap-y-[15vw]">
@@ -216,7 +158,7 @@ export default function Outcomes({ aboutData }) {
           Delivering Finacle Success Through Open-Source Expertise 
         </h2>
 
-        <p className="w-[50%] max-sm:w-[90%] text-center">
+        <p className="w-[50%] max-md:w-[90%] text-center">
           As a strategic open-source consulting partner to Infosys Finacle,  DSW
           helps global banks modernize, optimize, and scale Finacle
           deployments through enterprise-grade open-source adoption. 
