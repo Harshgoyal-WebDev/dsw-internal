@@ -91,7 +91,7 @@ const CoreCapabilities = () => {
           start: "20% bottom",
           end: "bottom 75%",
           scrub: true,
-          //   markers: true,
+            // markers: true,
         },
       });
 
@@ -160,11 +160,11 @@ const CoreCapabilities = () => {
 
       {!mob ? (
         <div
-          className="flex justify-center items-center flex-col  w-full max-md:gap-[3vw] gap-[1vw] pt-[2vw] max-sm:hidden"
+          className="flex justify-center items-center flex-col  w-full max-md:gap-[4vw] gap-[1vw] pt-[2vw] max-sm:hidden"
           ref={cardsRef}
         >
-          <div className="w-[35vw] px-[3vw] h-[11vw] max-md:h-[17vw] max-md:w-[65vw] border card-1 z-[11] bg-white/5 background-glass backdrop-blur-sm border-white/15 rounded-[2vw] max-md:rounded-3xl flex justify-center max-md:justify-between max-md:px-[3vw] max-md:gap-[4vw] gap-[2.5vw] items-center fadeup cap-top-card ">
-            <div className="h-[5.5vw] w-[20%] max-md:h-[7vw] max-md:w-[7vw]">
+          <div className="w-[35vw] px-[3vw] max-md:!pl-[4vw] max-md:py-[4vw] h-[12vw] max-md:h-[20vw] max-md:w-[90vw] border card-1 z-[11] bg-white/5 background-glass backdrop-blur-sm border-white/15 rounded-[2vw] max-md:rounded-3xl flex justify-center max-md:justify-between max-md:px-[2vw] max-md:gap-[5vw] gap-[2.5vw] max-sm:gap-[4vw] items-center fadeup cap-top-card ">
+            <div className="h-[5.5vw]  max-md:!h-[9vw] max-md:!w-auto max-sm:!h-[7vw]">
               <Image
                 src={cardsData[0].icon}
                 width={300}
@@ -175,7 +175,7 @@ const CoreCapabilities = () => {
             </div>
             <div className="flex flex-col max-md:w-full  gap-4 w-full ">
               <p className="font-body text-30">{cardsData[0].heading}</p>
-              <p className="text-white-300  !text-[1.1vw]  max-md:w-[100%]">
+              <p className="text-white-300  !text-[1.1vw] max-md:!text-[2.5vw]  max-md:w-[100%]">
                 {cardsData[0].text}
               </p>
             </div>
@@ -184,20 +184,20 @@ const CoreCapabilities = () => {
           {cardsData.slice(1).map((card, index) => (
             <div
               key={card.id}
-              className="w-[35vw] px-[3vw] h-[12vw] max-md:w-[65vw] max-md:h-[17vw] relative cap-cards border background-glass backdrop-blur-sm border-white/15 rounded-[2vw] max-md:rounded-3xl flex justify-center max-md:justify-between max-md:px-[3vw] gap-[2.5vw] items-center"
+              className="w-[35vw] px-[3vw] max-md:!pl-[4vw] max-md:py-[4vw] h-[12vw] max-md:w-[90vw] max-md:h-[20vw] relative cap-cards border background-glass backdrop-blur-sm border-white/15 rounded-[2vw] max-md:rounded-3xl flex justify-center max-md:justify-between max-md:!px-[2vw] max-md:gap-[5vw] gap-[2.5vw] max-sm:gap-[4vw] items-center"
             >
-              <div className="!h-auto  !w-[20%] max-md:h-[7vw] max-md:w-[7vw]">
+              <div className="h-[5.5vw]  max-md:!h-[10vw] max-md:!w-auto max-sm:!h-[7vw]">
                 <Image
                   src={card.icon}
                   width={300}
                   height={300}
-                  className="h-auto w-full"
+                  className="h-full w-full"
                   alt="cap-logo"
                 />
               </div>
               <div className="flex flex-col gap-4 w-full ">
                 <p className="font-body text-30">{card.heading}</p>
-                <p className="text-white-300 !text-[1.1vw]  ">{card.text}</p>
+                <p className="text-white-300 !text-[1.1vw]  max-md:!text-[2.5vw]">{card.text}</p>
               </div>
             </div>
           ))}

@@ -5,6 +5,7 @@ const About = dynamic(
   { ssr: true }
 );
 
+
 const Features = dynamic(
   () => import("@/components/Insuraince/Features"),
   { ssr: true }
@@ -115,8 +116,6 @@ export default function Home() {
 
 const heroData = {
   heading: "Deploy Insurance AI in Days. Scale Agentic AI in Hours.",
-  // img:"/assets/images/insuraince/insuraince-new.png",
-  // subheading:"Purpose-Built, Proven, and Production-Ready.",
   para: "Purpose-built and production-proven. Drive speed and accuracy across the insurance value chain with an AI solution designed for rigorous compliance.",
   paraClass: "w-[60%] max-md:w-full",
   link1: "/#",

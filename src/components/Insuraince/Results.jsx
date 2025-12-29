@@ -31,7 +31,7 @@ const Results = ({ heading, description, results }) => {
             ref={el => cardsRef.current[i] = el}
             className='flex flex-col  min-h-[20vw] pl-[1.5vw] gap-[1vw] justify-start max-sm:justify-center max-sm:mx-auto max-sm:items-center w-[30%] max-sm:w-[90%] max-md:w-[45%] fadeup'
           >
-            <div className='!w-[5vw] !h-[5vw] mb-[1vw] max-sm:!h-[24vw] max-md:h-[15vw] max-md:w-[15vw] max-sm:!w-[24vw]'>
+            <div className='!w-[5vw] !h-[5vw] mb-[1vw] max-sm:!h-[24vw] max-md:!h-[12vw] max-md:!w-[12vw] max-sm:!w-[24vw]'>
               <Image
                 src={result.src}
                 width={400}
