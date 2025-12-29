@@ -120,6 +120,7 @@ const heroData = {
   para: "Purpose-built and production-proven. Drive speed and accuracy across the insurance value chain with an AI solution designed for rigorous compliance.",
   paraClass: "w-[60%] max-md:w-full",
   link1: "/#",
+  openModalKey:"demo" ,
   btnText1: "Book a Demo",
   target: true,
   book: true,

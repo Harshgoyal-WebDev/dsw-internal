@@ -307,6 +307,7 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
               <PrimaryButton
                 href={heroData.link1 || "#"}
                 text={heroData.btnText1}
+                openModalKey={heroData.openModalKey}
                 className="max-md:min-w-[20vw] max-sm:min-w-[55vw]"
                 onClick={(e) => {
                   // only run when walkthrough is true

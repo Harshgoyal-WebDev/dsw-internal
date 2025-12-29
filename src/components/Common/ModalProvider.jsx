@@ -25,9 +25,25 @@ export function ModalProvider({ children }) {
      setOpenWalkThrough(true);
   }, []);
 
+  const openByKey = useCallback((key, p) => {
+    if (p !== undefined) setPayload(p || null);
+
+    switch (key) {
+      case "demo":
+        setOpen(true);
+        break;
+      case "walkthrough":
+        setOpenWalkThrough(true);
+        break;
+      default:
+        // no-op
+        break;
+    }
+  }, []);
+
   const value = useMemo(
-    () => ({ open, setOpen, openModal, payload, setPayload, openWith, openWalkThrough, setOpenWalkThrough, openWalkThroughModal, openWithWalkthrough }),
-    [open, openModal, payload, setPayload, openWith, openWalkThrough, setOpenWalkThrough,openWalkThroughModal, openWithWalkthrough ]
+    () => ({ open, setOpen, openModal, openByKey, payload, setPayload, openWith, openWalkThrough, setOpenWalkThrough, openWalkThroughModal, openWithWalkthrough }),
+    [open, openModal, payload, setPayload,openByKey, openWith, openWalkThrough, setOpenWalkThrough,openWalkThroughModal, openWithWalkthrough ]
   );
 
   return (
