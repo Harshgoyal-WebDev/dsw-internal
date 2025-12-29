@@ -4,19 +4,39 @@ import gsap from "gsap";
 import Image from "next/image";
 import { useLenis } from "lenis/react";
 import dynamic from "next/dynamic";
+
 const DynamicShaderComp = dynamic(() => import("./BgShader/ShaderComp"), {
   ssr: false,
 });
 
 const Loader = () => {
-
   const [hidden, setIsHidden] = useState(false);
   const [mob, setMob] = useState(false);
-   const [showLoader, setShowLoader] = useState(false);
+  const [showLoader, setShowLoader] = useState(false);
 
   const lenis = useLenis();
-  // console.log(lenis&&lenis._isStopped)
 
+  /* --------------------------------------------------
+     SCROLL LOCK — SINGLE SOURCE OF TRUTH
+  -------------------------------------------------- */
+  useEffect(() => {
+    if (!lenis) return;
+
+    const lenisRoot = document.querySelector("[data-lenis-root]");
+    if (!lenisRoot) return;
+
+    if (showLoader && !hidden) {
+      lenis.stop();
+      lenisRoot.style.overflow = "hidden";
+      lenisRoot.style.height = "100vh";
+    } else {
+      lenis.start();
+      lenisRoot.style.overflow = "";
+      lenisRoot.style.height = "";
+    }
+  }, [lenis, showLoader, hidden]);
+
+  
   useEffect(() => {
     const hasVisited = sessionStorage.getItem("hasVisited");
     if (!hasVisited) {
@@ -25,125 +45,87 @@ const Loader = () => {
     }
   }, []);
 
-  useEffect(() => {
-  if(showLoader){
-    const alreadyShown = sessionStorage.getItem("loaderShown");
 
+  useEffect(() => {
+    if (!showLoader) return;
+
+    const alreadyShown = sessionStorage.getItem("loaderShown");
     if (alreadyShown) {
-      setShowLoader(false); 
-      if (lenis) lenis.start();
+      setShowLoader(false);
       return;
     }
 
-    if (lenis) {
-      
-      lenis.stop()
-      console.log(lenis)
+    sessionStorage.setItem("loaderShown", "true");
 
-      const ctx = gsap.context(() => {
-        const tl = gsap.timeline();
-        const steps = 5; 
-        if (globalThis.innerWidth > 1024) {
-          for (let i = 1; i <= steps; i++) {
-            tl.to(".sequence-container", {
-              xPercent: i * 100,
-              ease: "power3.inOut",
-              duration: 1,
-            }).to(
-              ".number-container",
-              {
-                xPercent: i * 19.9,
-                duration: 1,
-                ease: "power3.inOut",
-              },
-              "<"
-            );
-          }
-        } else if (globalThis.innerWidth > 768) {
-          for (let i = 1; i <= steps; i++) {
-            tl.to(".sequence-container", {
-              xPercent: i * 100,
-              ease: "power3.inOut",
-              duration: 1,
-            }).to(
-              ".number-container",
-              {
-                xPercent: i * 19.9,
-                duration: 1,
-                ease: "power3.inOut",
-              },
-              "<"
-            );
-          }
-        } else {
-          for (let i = 1; i <= steps; i++) {
-            tl.to(".sequence-container", {
-              xPercent: i * 60,
-              ease: "power3.inOut",
-              duration: 1,
-            }).to(
-              ".number-container",
-              {
-                xPercent: i * 19.9,
-                duration: 1,
-                ease: "power3.inOut",
-              },
-              "<"
-            );
-          }
-        }
-        tl.to("#loader", {
-          opacity: 0,
-          filter: "blur(20px)",
-          // duration:4,
-          onComplete: () => {
-            setIsHidden(true);
-            lenis.start();
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline();
+      const steps = 5;
+
+      const isDesktop = globalThis.innerWidth > 1024;
+      const xMultiplier = isDesktop ? 100 : globalThis.innerWidth > 768 ? 100 : 60;
+
+      for (let i = 1; i <= steps; i++) {
+        tl.to(".sequence-container", {
+          xPercent: i * xMultiplier,
+          ease: "power3.inOut",
+          duration: 1,
+        }).to(
+          ".number-container",
+          {
+            xPercent: i * 19.9,
+            duration: 1,
+            ease: "power3.inOut",
           },
-        });
+          "<"
+        );
+      }
+      
+
+      tl.to("#loader", {
+        opacity: 0,
+        filter: "blur(20px)",
+        onComplete: () => {
+          setIsHidden(true);
+        },
       });
-      return () => ctx.revert();
-    }
-  }
-  }, [lenis,showLoader]);
+    });
+
+    return () => ctx.revert();
+  }, [showLoader]);
+
+  /* --------------------------------------------------
+     GRADIENT ANIMATION
+  -------------------------------------------------- */
   useEffect(() => {
     if (!showLoader) return;
-    if (globalThis.innerWidth > 1024) {
-      const ctx = gsap.context(() => {
-        gsap.to(".loader-gradient", {
-          yPercent: -10,
-          duration: 2,
-          delay: 0.2,
-          opacity: 1,
-        });
+
+    const ctx = gsap.context(() => {
+      gsap.to(".loader-gradient", {
+        yPercent: globalThis.innerWidth > 1024 ? -10 : -28,
+        duration: 2,
+        delay: 0.2,
+        opacity: 1,
       });
-      return () => ctx.revert();
-    } else {
-      const ctx = gsap.context(() => {
-        gsap.to(".loader-gradient", {
-          yPercent: -28,
-          duration: 2,
-          delay: 0.2,
-          opacity: 1,
-        });
-      });
-      return () => ctx.revert();
-    }
-  });
+    });
+
+    return () => ctx.revert();
+  }, [showLoader]);
+
+  /* --------------------------------------------------
+     MOBILE DETECTION
+  -------------------------------------------------- */
   useEffect(() => {
-    if (globalThis.innerWidth <= 1024) {
-      setMob(true);
-    } else {
-      setMob(false);
-    }
-  }, [mob]);
+    setMob(globalThis.innerWidth <= 1024);
+  }, []);
 
   if (!showLoader) return null;
 
   return (
     <div
-      className={`w-screen h-screen fixed top-0 left-0 z-[9999] bg-background text-[17vw] overflow-hidden max-sm:text-[25vw] ${hidden ? "hidden" : ""}`}
       id="loader"
+      className={`w-screen h-screen fixed top-0 left-0 z-[9999] bg-background text-[17vw] overflow-hidden max-sm:text-[25vw] ${
+        hidden ? "hidden" : ""
+      }`}
     >
       <div className="w-fit h-fit flex sequence-container relative z-[2] font-head font-medium">
         <div className="flex w-[10vw] overflow-hidden max-sm:w-[14.5vw]">
@@ -166,6 +148,7 @@ const Loader = () => {
           </div>
         </div>
       </div>
+
       <div className="loader-gradient opacity-0 relative z-[1] h-screen translate-y-[10%]">
         {!mob ? (
           <div className="absolute top-[-12%] left-0 h-screen w-screen max-sm:hidden">
@@ -176,7 +159,7 @@ const Loader = () => {
         ) : (
           <div className="w-screen h-screen absolute top-[27%] z-[10] left-0 hidden max-sm:block">
             <Image
-              src={"/assets/images/homepage/gradient-mobile.png"}
+              src="/assets/images/homepage/gradient-mobile.png"
               alt="bg-gradient"
               fetchPriority="high"
               className="w-full h-full object-cover"
@@ -186,7 +169,6 @@ const Loader = () => {
           </div>
         )}
       </div>
-      
     </div>
   );
 };
