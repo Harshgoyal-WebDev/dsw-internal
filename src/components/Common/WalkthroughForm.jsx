@@ -13,6 +13,7 @@ import { Input } from "../ui/input";
 import { PhoneInput } from "../ui/phone-input";
 import { Button } from "../ui/button";
 import { useModal } from "../Common/ModalProvider";
+import { isEmailDomainBlocked } from "@/lib/blockedEmailDomains";
 
 const formSchema = z.object({
   name: z.string().min(3, { message: "Name must be at least 3 characters." }),
@@ -43,6 +44,16 @@ export default function WalkthroughForm() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email || !emailRegex.test(email)) {
       setEmailVerified(false);
+      return false;
+    }
+
+    // Check if email domain is blocked (free email providers)
+    if (isEmailDomainBlocked(email)) {
+      setEmailVerified(false);
+      setError("email", {
+        type: "manual",
+        message: "Please use your business email address to continue.",
+      });
       return false;
     }
 
