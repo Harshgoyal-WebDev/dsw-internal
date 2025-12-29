@@ -17,8 +17,9 @@ export async function POST(req) {
     // Send notification email to your team
     const { error: teamEmailError } = await resend.emails.send({
       // from: "DSW Contact Form <onboarding@resend.dev>",
-      from:"DSW Team <onboarding@resend.dev>",
-      to: ["vidushi@weareenigma.com"],
+      // from:"DSW Team <onboarding@resend.dev>",
+      from:"Web Forms <no-reply@datasciencewizards.ai>",
+      to: ["hitesh@weareenigma.com"],
       subject: "New Contact Form Submission",
       react: ContactDetails({
         userName: name,
@@ -40,7 +41,7 @@ export async function POST(req) {
     // Send auto-response email to the user
     const { error: autoResponseError } = await resend.emails.send({
       // from: "DSW Team <onboarding@resend.dev>",
-      from:"DSW Team <onboarding@resend.dev>",
+      from:"DSW Team <no-reply@datasciencewizards.ai>",
       to: [email],
       subject: "Thank you for contacting DSW",
       react: AutoResponse({

@@ -88,7 +88,7 @@ const CohesiveValue = () => {
           scrollTrigger: {
             trigger: featuresRef.current,
             start: "top 50%",
-            end: "70% 40%",
+            end: "70% 20%",
             scrub: true,
             // markers: true,
           },
@@ -127,7 +127,7 @@ const CohesiveValue = () => {
       ref={featuresRef}
       className="h-[200vh] max-sm:mt-[5vh] max-sm:h-full w-full relative"
     >
-      <div className="bg-primary features-div sticky max-sm:relative top-0 h-fit flex flex-col container !px-0">
+      <div className="bg-primary features-div sticky max-sm:relative top-[10%] h-fit flex flex-col container !px-0">
         <div className="w-[60%] max-md:w-[90%] pl-[5vw] max-sm:pl-0  max-sm:mx-auto max-md:space-y-[7vw] space-y-[1.5vw] max-sm:space-y-[6vw] max-md:pl-[7vw]">
           <h2 className="text-60 headingAnim w-[100%] max-md:text-center text-white-200 max-md:!text-[9vw]">
             Bringing Cohesive Value to Banks 

@@ -84,7 +84,7 @@ const Deployments = () => {
       className="w-screen h-full overflow-hidden container max-sm:mt-[50vw] max-md:mt-[25vw]"
       ref={sectionRef}
     >
-      <div className="w-full space-y-[13vw] max-md:space-y-[10vw] max-sm:space-y-[12vw]">
+      <div className="w-full space-y-[7vw] max-md:space-y-[10vw] max-sm:space-y-[12vw]">
         <div className="text-center gap-y-[2.5vw] mx-auto flex flex-col items-center max-md:w-full max-sm:gap-y-[10vw]">
           <h2 className="text-60 headingAnim">
            Finacle Deployments Anchored by Open-Source Expertise 

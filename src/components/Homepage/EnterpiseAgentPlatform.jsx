@@ -12,7 +12,7 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const EnterpiseAgentPlatform = () => {
-  const [mobile, setMobile] = useState(false);
+  // const [mobile, setMobile] = useState(false);
   const sectionRef = useRef(null);
   const progressLineRef = useRef(null);
 
@@ -50,7 +50,8 @@ const EnterpiseAgentPlatform = () => {
     if (el && !imageRefs.current.includes(el)) imageRefs.current.push(el);
   };
   const addToBottomImageRefs = (el) => {
-    if (el && !bottomImageRefs.current.includes(el)) bottomImageRefs.current.push(el);
+    if (el && !bottomImageRefs.current.includes(el))
+      bottomImageRefs.current.push(el);
   };
 
   // Helper: toggle pointer-events based on active step
@@ -310,62 +311,96 @@ const EnterpiseAgentPlatform = () => {
     if (next) next.scrollIntoView({ behavior: "smooth" });
   };
 
-useEffect(()=>{
-  if(globalThis.innerWidth<=1024){
-    setMobile(true);
-  }
-  else{
-    setMobile(false);
-  }
-})
+  // useEffect(()=>{
+  //   if(globalThis.innerWidth<=1024){
+  //     setMobile(true);
+  //   }
+  //   else{
+  //     setMobile(false);
+  //   }
+  // })
 
   useGSAP(() => {
-    if(mobile){
- const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#tour",
-        start: `top ${mobile ? '20%' : '100%'}`,
-        end: "20% 10% ",
-        markers: true,
-        scrub: true,
-      },
-    });
-    tl.fromTo(
-      "#tour, #enterpriseAgentPlatform,#enterpriseAgentPlatformMobile",
-      {
-        backgroundColor: "#ffffff",
-      },
-      {
-        backgroundColor: "#030815",
-      }
-    );
-    tl.fromTo(
-      ".tour-heading, #enterpriseAgentPlatform , #enterpriseAgentPlatformMobile p,#enterpriseAgentPlatformMobile h3",
-      {
-        color: "#111111",
-      },
-      {
-        color: "#e8e8e8",
-      },
-      "<"
-    );
-    tl.fromTo(
-      ".tour-para, #enterpriseAgentPlatform .btncomp",
-      {
-        color: "#1626fd",
-      },
-      {
-        color: "#e8e8e8",
-      },
-      "<"
-    );
+    if (globalThis.innerWidth <= 1024) {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#tour",
+          start: `top 40%`,
+          end: "20% 40% ",
+          // markers: true,
+          scrub: true,
+        },
+      });
+      tl.fromTo(
+        "#tour, #enterpriseAgentPlatform,#enterpriseAgentPlatformMobile",
+        {
+          backgroundColor: "#ffffff",
+        },
+        {
+          backgroundColor: "#030815",
+        }
+      );
+      tl.fromTo(
+        ".tour-heading, #enterpriseAgentPlatform , #enterpriseAgentPlatformMobile p,#enterpriseAgentPlatformMobile h3",
+        {
+          color: "#111111",
+        },
+        {
+          color: "#e8e8e8",
+        },
+        "<"
+      );
+      tl.fromTo(
+        ".tour-para, #enterpriseAgentPlatform .btncomp",
+        {
+          color: "#1626fd",
+        },
+        {
+          color: "#e8e8e8",
+        },
+        "<"
+      );
+    } else {
+        const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#tour",
+          start: `top 100%`,
+          end: "20% 10% ",
+          // markers: true,
+          scrub: true,
+        },
+      });
+      tl.fromTo(
+        "#tour, #enterpriseAgentPlatform,#enterpriseAgentPlatformMobile",
+        {
+          backgroundColor: "#ffffff",
+        },
+        {
+          backgroundColor: "#030815",
+        }
+      );
+      tl.fromTo(
+        ".tour-heading, #enterpriseAgentPlatform , #enterpriseAgentPlatformMobile p,#enterpriseAgentPlatformMobile h3",
+        {
+          color: "#111111",
+        },
+        {
+          color: "#e8e8e8",
+        },
+        "<"
+      );
+      tl.fromTo(
+        ".tour-para, #enterpriseAgentPlatform .btncomp",
+        {
+          color: "#1626fd",
+        },
+        {
+          color: "#e8e8e8",
+        },
+        "<"
+      );
     }
-    else{
-      
-    }
-   
-  
-  },[mobile]);
+  }, []);
 
   return (
     <section
@@ -390,13 +425,16 @@ useEffect(()=>{
             </h2>
             <Copy>
               <p className="text-background  w-[100%] text-30 text-center">
-              Built for enterprises that need safe, auditable, large-scale <br /> agentic automation.
+                Built for enterprises that need safe, auditable, large-scale{" "}
+                <br /> agentic automation.
               </p>
             </Copy>
 
             <Copy>
               <p className="text-background  text-center">
-                Get governed, explainable, production-ready AI agents and orchestrated <br/> multi-agent workflows - with full oversight and operational control.​
+                Get governed, explainable, production-ready AI agents and
+                orchestrated <br /> multi-agent workflows - with full oversight
+                and operational control.​
               </p>
             </Copy>
           </div>

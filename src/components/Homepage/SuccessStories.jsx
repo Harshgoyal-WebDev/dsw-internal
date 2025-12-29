@@ -60,7 +60,7 @@ const SuccessStories = () => {
             <LinkCard
               title={"<span class='text-primary-2'> Customers In Production </span> – Canara HSBC, Manipal Cigna, Mahindra, Castler, ​Wealthright, FSS"}
               link={"#"}
-              width={"w-[80%] max-md:w-[80%] max-sm:w-[50%]"}
+              width={"w-[80%] max-md:w-[80%]"}
             />
 
             <TestimonialCard
@@ -74,7 +74,7 @@ const SuccessStories = () => {
             <LinkCard
               title={"Manipal Health Cigna in production with <span class='text-primary-2'> over 5 use cases </span> of AI/ML and GenAI"}
               link={"#"}
-              width={"w-[75%] max-md:w-[80%] max-sm:w-[60%]"}
+              width={"w-[75%] max-md:w-[80%]"}
             />
             <ImageCard
               img={"/assets/images/homepage/success-stories/testimonial-3-new.png"}

@@ -14,7 +14,7 @@ const PilotCard = React.memo(({ id, icon, title, para }) => {
   return (
     <>
       <div className=" space-y-[2vw] relative group  max-md:space-y-[10vw] w-[43%]">
-        <span className="absolute top-0 left-0 w-full h-[1px] bg-[#59595980]  lineDraw"></span>
+        <span className={`absolute top-0 left-0 w-full h-[1px] bg-[#59595980]  lineDraw ${id=="01"||id=="02"?"hidden max-md:block":""}`}></span>
         <div className=" pt-[3vw] flex gap-[4vw] items-start space-y-[3vw] max-md:flex max-md:flex-col max-md:items-center max-md:space-y-[6vw] max-md:mt-[10vw] fadeup">
           <div className="pr-[1vw]">
             <p>{id}</p>

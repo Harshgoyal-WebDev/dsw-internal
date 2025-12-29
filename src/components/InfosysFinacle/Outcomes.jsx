@@ -157,12 +157,13 @@ export default function Outcomes({ aboutData }) {
         <h2 className="text-60 headingAnim text-[#E8E8E8] max-md:text-center">
           Delivering Finacle Success Through Open-Source Expertise 
         </h2>
-
+        <Copy>
         <p className="w-[50%] max-md:w-[90%] text-center">
           As a strategic open-source consulting partner to Infosys Finacle,  DSW
           helps global banks modernize, optimize, and scale Finacle
           deployments through enterprise-grade open-source adoption. 
         </p>
+        </Copy>
 
         <div className="w-[55%] flex flex-col gap-[3vw] max-md:w-full max-md:gap-[7vw] max-sm:gap-[10vw]">
           {POINTS.map(({ id, text, width }) => (

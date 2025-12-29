@@ -185,7 +185,7 @@ const awards = [
     img: "/assets/images/infosys-finacle/open-source/Kafka_logo.png",
   },
   {
-    img: "/assets/images/infosys-finacle/open-source/kibana.png",
+    img: "/assets/images/infosys-finacle/open-source/Kibana.png",
   },
   {
     img: "/assets/images/infosys-finacle/open-source/Kubernetes_logo.png",

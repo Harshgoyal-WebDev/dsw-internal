@@ -54,15 +54,12 @@ const ContactDetails = ({ userName, userEmail, userDesignation, userCompany, use
               <Column style={columnHead}>Message</Column>
               <Column style={columnText}>{userMessage}</Column>
             </Row>
-             {/* <Row style={row}>
-                          <Column style={columnHead}>Terms</Column>
-                          <Column style={columnText}>{userTerms}</Column>
-                        </Row> */}
+            
           </Section>
         
           <Text style={paragraph}>- Team DSW</Text>
           <Hr style={hr} />
-          <Text style={footer}>India</Text>
+          {/* <Text style={footer}>India</Text> */}
         </Container>
       </Body>
     </Html>
