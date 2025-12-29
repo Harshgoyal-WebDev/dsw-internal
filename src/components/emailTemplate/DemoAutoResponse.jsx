@@ -43,7 +43,7 @@ const DemoAutoResponse = ({ userName }) => {
           </Text>
           
           <Hr style={hr} />
-          <Text style={footer}>Data Science Wizards | India</Text>
+          <Text style={footer}>Data Science Wizards</Text>
           <Text style={footer}>
             This is an automated confirmation email.
           </Text>

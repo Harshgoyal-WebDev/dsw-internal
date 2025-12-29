@@ -37,7 +37,7 @@ const WorkshopAutoResponse = ({ userName }) => {
           <Text style={footer}>
             This is an automated confirmation email.
           </Text>
-          <Text style={footer}>DSW | India</Text>
+          <Text style={footer}>Data Science Wizards</Text>
         </Container>
       </Body>
     </Html>
