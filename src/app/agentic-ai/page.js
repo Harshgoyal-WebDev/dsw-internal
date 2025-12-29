@@ -91,7 +91,7 @@ export default async function AgenticAI() {
         <AgenticHero heroData={heroData} />
         <AgenticFeatures />
         <AgenticUsecase data={usecaseData} />
-        <UsecaseMobile usecaseData={usecaseData} heading='Turn proofs-of-concept into auditable, production-grade automation with explainable agents, deterministic governance, and enterprise-grade security.' headingWidth="h-[40vh]" />
+        <UsecaseMobile usecaseData={usecaseData} heading='Turn proofs-of-concept into auditable, production-grade automation with explainable agents, deterministic governance, and enterprise-grade security.' headingWidth="h-[40vh] max-md:h-fit" />
         <AgenticTour/>
         <CoreCapabilities />
         <Results heading='BFSI Use Cases & Vertical Accelerators ' results={resultsData} />
