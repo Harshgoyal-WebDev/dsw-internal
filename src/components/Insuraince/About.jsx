@@ -62,8 +62,8 @@ export default function About() {
     const image1Y = useTransform(smoothY, (v) => v * 20);
 
     return (
-        <div ref={containerRef} className="flex items-center  justify-between h-[80vh] max-md:h-full w-screen overflow-hidden max-md:flex-col  max-sm:h-full container relative z-[20] max-sm:mt-[-30vh]" id="footer-cta">
-            <div className="relative w-1/2 max-md:w-full h-[50vw] max-sm:w-full  max-md:h-[50vh] max-sm:h-[110vw] max-md:mt-[20vh] max-sm:mt-[20vh]">
+        <div ref={containerRef} className="flex items-center  justify-between h-[80vh] max-md:h-full w-screen overflow-hidden max-md:flex-col  max-sm:h-full container relative z-[20] max-sm:mt-[-20vh]" id="footer-cta">
+            <div className="relative w-1/2 max-md:w-full h-[50vw] max-sm:w-full  max-md:h-[50vh] max-sm:h-[110vw] max-md:mt-[20vh] max-sm:mt-[10vh]">
                 <div className="absolute top-1/2 -translate-y-1/2 right-0 -z-10">
 
                 </div>
