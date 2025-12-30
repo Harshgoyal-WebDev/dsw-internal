@@ -14,11 +14,13 @@ export function OrganizationJsonLd() {
     email: "contact@datasciencewizards.ai",
     address: {
       "@type": 'PostalAddress',
-      streetAddress: '707, 7th Floor, ',
-      addressLocality: 'Lodha Supremus II Road No. 22',
-      addressRegion: 'Wagle Estate,Thane-West-400604',
-      addressCountry: 'India',
+      streetAddress: '707, 7th Floor, Lodha Supremus II Road No. 22, Wagle Estate',
+      addressLocality: 'Thane West',
+      addressRegion: 'Maharashtra',
+      postalCode: '400604',
+      addressCountry: 'IN'
     },
+    image: `${homepage}dsw-logo.png`,
     logo: `${homepage}favicons/favicon.ico`,
     sameAs: [
       "https://www.facebook.com/datasciencewizards/",
@@ -94,8 +96,8 @@ export function LocalBusiness() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Data Science Wizards",
-    "image": `https://datasciencewizards.ai/dsw-logo.png`,
-    "@id": "",
+    "image": `${homepage}dsw-logo.png`,
+    "@id": `${homepage}#localbusiness`,
     "url": `${homepage}`,
     "telephone": "+91 96640 56847",
     "address": {
@@ -232,7 +234,12 @@ export function BreadcrumbsJSONLD({ pathname }) {
 
 function stripHTML(html) {
   if (!html) return "";
-  return html.replace(/<[^>]+>/g, "").trim();
+  return html
+    .replace(/<br\s*\/?>/gi, " ") // Replace <br> tags with space
+    .replace(/<\/?(ul|ol|li|p|div|h[1-6])[^>]*>/gi, " ") // Replace block elements with space
+    .replace(/<[^>]+>/g, "") // Remove all other HTML tags
+    .replace(/\s+/g, " ") // Replace multiple spaces with single space
+    .trim();
 }
 
 export function FAQJSONLD({ faqs }) {
@@ -241,10 +248,16 @@ export function FAQJSONLD({ faqs }) {
     "@type": "FAQPage",
     "mainEntity": faqs.map((faq) => ({
       "@type": "Question",
-      "name": faq.question,
+      "name": stripHTML(faq.question),
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": faq.answer,
+        "text": stripHTML(
+          typeof faq.answer === 'string' 
+            ? faq.answer 
+            : Array.isArray(faq.answer) 
+              ? faq.answer.join(' ') 
+              : String(faq.answer)
+        ),
       },
     })),
   };
@@ -253,9 +266,9 @@ export function FAQJSONLD({ faqs }) {
     <Script
       id="faq-jsonld"
       type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify(faqJSONLD),
-      }}
-    />
+      strategy="beforeInteractive"
+    >
+      {JSON.stringify(faqJSONLD)}
+    </Script>
   );
 }
