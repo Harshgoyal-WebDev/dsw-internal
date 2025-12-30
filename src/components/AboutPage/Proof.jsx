@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Proof = () => {
   return (
-    <section className="h-[150vh] w-full  max-sm:pt-[15%] container max-sm:h-[140vh]" id="proof">
+    <section className="h-[150vh] w-full  max-sm:pt-[15%] container max-sm:h-fit" id="proof">
       <div className="w-full h-fit space-y-[7vw] max-sm:space-y-[15vw] max-md:space-y-[10vw]">
         <div className="space-y-[2.5vw] max-sm:space-y-[10vw] w-full max-md:space-y-[7vw]">
           <h2 className="text-90 headingAnim w-[40%] max-md:w-full">Proof and Recognition</h2>

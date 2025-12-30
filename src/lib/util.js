@@ -50,5 +50,5 @@ export function removeExtraSpaces(text) {
 
 
 
-export const homepage = "http://dsw-internal.vercel.app/";
+export const homepage = "https://www.datasciencewizards.ai/";
 export const faviconPath = "favicons/favicon.ico";
