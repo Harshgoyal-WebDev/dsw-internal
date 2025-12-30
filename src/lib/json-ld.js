@@ -94,7 +94,7 @@ export function LocalBusiness() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Data Science Wizards",
-    "image": `https://dsw-internal.vercel.app/dsw-logo.png`,
+    "image": `https://datasciencewizards.ai/dsw-logo.png`,
     "@id": "",
     "url": `${homepage}`,
     "telephone": "+91 96640 56847",

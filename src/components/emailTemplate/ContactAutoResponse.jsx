@@ -11,7 +11,7 @@ const AutoResponse = ({ userName }) => {
       <Body style={main}>
         <Container style={container}>
           <Img
-            src={"https://dsw-internal.vercel.app/assets/images/form-logo.png"}
+            src={"https://datasciencewizards.ai/assets/images/form-logo.png"}
             width="140"
             height="80"
             alt="DSW Logo"

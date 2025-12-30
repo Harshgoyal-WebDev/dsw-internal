@@ -103,9 +103,7 @@ export default function page() {
         <Architecture showHeading2={true}/>
         <ArchitectureMobile showHeading2={true}/>
         <Impact />
-        {/* <OnePlatform /> */}
         <UnifyTable />
-
         <SuccessStories />
         <Faqs data={faqData} />
         <FooterCTA
