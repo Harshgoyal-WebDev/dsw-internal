@@ -8,7 +8,6 @@ import { homepage } from "@/lib/util";
 import { getPageMetadata } from "@/config/metadata";
 import { getAllPosts } from "@/lib/posts";
 import InternalHero from "@/components/Common/InternalHero";
-import { fadeUp, headingAnim, lineAnim } from "@/components/Animations/gsapAnimations";
 
 export const metadata = getPageMetadata({
   title: "DSW Blog - Insights on AI & Enterprise Innovation",
@@ -44,7 +43,7 @@ export default async function page() {
       <Layout>
         <InternalHero heroData={heroData} breadcrumbs={true} />
         <FeaturedBlog posts={posts} />
-        {/* <BlogGrid posts={posts.slice(1)} /> */}
+        <BlogGrid posts={posts.slice(1)} />
         <FooterCTA footerCTAData={footerCTAData} width={"w-[95%]"} />
       </Layout>
     </>

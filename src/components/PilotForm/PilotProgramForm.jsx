@@ -30,12 +30,3 @@ const PilotProgramForm = () => {
 
 export default PilotProgramForm
 
-// import React from 'react'
-
-// const PilotProgramForm = () => {
-//   return (
-//     <div>PilotProgramForm</div>
-//   )
-// }
-
-// export default PilotProgramForm

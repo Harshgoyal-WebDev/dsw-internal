@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef, act, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Copy from "../Animations/Copy";
 import { Swiper, SwiperSlide } from "swiper/react";

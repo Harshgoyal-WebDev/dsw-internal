@@ -7,29 +7,6 @@ import { SplitText } from "gsap/SplitText";
 
 gsap.registerPlugin(SplitText);
 
-// const ProductionCard = ({ className, title, para }) => {
-//   return (
-//     <div
-//       className={`group relative rounded-[2vw] h-[22vw] w-[35vw] p-[4vw] border border-[#59595980] overflow-hidden cursor-pointer ${className} `}
-//     >
-//       {/* Gradient Background */}
-//       <div className="absolute inset-0 bg-gradient-to-r from-[#041035] to-[#1727FF] rounded-[2vw] opacity-0 group-hover:opacity-100 transition-opacity duration-500 " />
-
-//       {/* Overlay */}
-//       <div className="absolute inset-0 background-glass rounded-[2vw] backdrop-blur-sm transition-opacity duration-500 group-hover:opacity-0 z-[5]" />
-
-//       {/* Content */}
-//       <div className="relative z-10 h-full">
-//         <div className="absolute left-0 bottom-0 !leading-[1.2] text-white text-[2.8vw] font-head w-[80%] transition-transform duration-500 ease-out group-hover:-translate-y-[120px] group-hover:delay-100">
-//           {title}
-//         </div>
-//         <p className="absolute left-0 right-[1vw] bottom-0 text-white text-[1.2vw] opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100 group-hover:delay-500">
-//           {para}
-//         </p>
-//       </div>
-//     </div>
-//   );
-// };
 
 const ProductionCard = ({ className, title, para }) => {
   const cardRef = useRef(null);

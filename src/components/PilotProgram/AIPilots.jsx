@@ -2,8 +2,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import Copy from "../Animations/Copy";
 import Image from "next/image";
-import { ArrowBigLeftIcon } from "lucide-react";
-import ArrowButton from "../Button/ArrowButton";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";

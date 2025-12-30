@@ -10,7 +10,6 @@ gsap.registerPlugin(ScrollTrigger);
 export default function UseCase({
   data = [],
   allowMultiple = false,
-  isVisible = true,
 }) {
   const [openIndexes, setOpenIndexes] = useState([0]);
 
