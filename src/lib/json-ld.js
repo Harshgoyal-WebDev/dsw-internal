@@ -98,17 +98,18 @@ export function LocalBusiness() {
     "name": "Data Science Wizards",
     "image": `${homepage}dsw-logo.png`,
     "@id": `${homepage}#localbusiness`,
-    "url": `${homepage}`,
+    "url": homepage,
     "telephone": "+91 96640 56847",
     "address": {
-      "@type": 'PostalAddress',
-      "streetAddress": '707, 7th Floor, ',
-      "addressLocality" : 'Lodha Supremus II Road No. 22',
-      "addressRegion": 'Wagle Estate,Thane-West-400604',
-      "addressCountry": 'India',
+      "@type": "PostalAddress",
+      "streetAddress": "707, 7th Floor, Lodha Supremus II Road No. 22, Wagle Estate",
+      "addressLocality": "Thane West",
+      "addressRegion": "Maharashtra",
+      "postalCode": "400604",
+      "addressCountry": "IN"
     },
     "sameAs": [
-       "https://www.facebook.com/datasciencewizards/",
+      "https://www.facebook.com/datasciencewizards/",
       "https://www.linkedin.com/company/data-science-wizards/",
       "https://x.com/dswizards",
       "https://www.instagram.com/datasciencewizards/",
@@ -125,7 +126,7 @@ export function LocalBusiness() {
           "Friday"
         ],
         "opens": "09:00",
-        "closes": "06:00"
+        "closes": "18:00"
       }
     ]
   };
