@@ -6,7 +6,7 @@ import Copy from "../Animations/Copy";
 import { useModal } from "../Common/ModalProvider";
 
 const UnifyTour = () => {
-  const { openWalkThroughModal } = useModal();
+  const { openWalkthroughSmart } = useModal();
 
   return (
     <section className="w-screen h-fit container" id="tour-unify">
@@ -40,7 +40,7 @@ const UnifyTour = () => {
               href={"#"}
               onClick={(e) => {
                 e.preventDefault();
-                openWalkThroughModal();
+                openWalkthroughSmart();
               }}
             />
           </div>

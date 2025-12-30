@@ -11,19 +11,23 @@ import React, {
 const ModalContext = createContext(null);
 
 export function ModalProvider({ children }) {
-  // existing modals
-  const [open, setOpen] = useState(false);
-  const [openWalkThrough, setOpenWalkThrough] = useState(false);
+  /* -------------------------
+   * Existing modals
+   * ------------------------- */
+  const [open, setOpen] = useState(false); // demo / generic modal
+  const [openWalkThrough, setOpenWalkThrough] = useState(false); // form
+  const [openWalkthroughIframe, setOpenWalkthroughIframe] =
+    useState(false); // iframe
 
-  // 👉 NEW: walkthrough iframe modal
-  const [openWalkthroughIframe, setOpenWalkthroughIframe] = useState(false);
+  /* 🔑 Walkthrough completion state */
+  const [walkthroughCompleted, setWalkthroughCompleted] = useState(false);
 
-  // shared payload
+  /* Shared payload */
   const [payload, setPayload] = useState(null);
 
-  // -------------------------
-  // Existing helpers
-  // -------------------------
+  /* -------------------------
+   * Existing helpers
+   * ------------------------- */
   const openModal = useCallback(() => setOpen(true), []);
 
   const openWith = useCallback((p) => {
@@ -40,80 +44,102 @@ export function ModalProvider({ children }) {
     setOpenWalkThrough(true);
   }, []);
 
-  // -------------------------
-  // 👉 NEW helpers (iframe)
-  // -------------------------
   const openWalkthroughIframeModal = useCallback((p) => {
     setPayload(p || null);
     setOpenWalkthroughIframe(true);
   }, []);
 
-  // -------------------------
-  // Key based opener (extended)
-  // -------------------------
-  const openByKey = useCallback((key, p) => {
-    if (p !== undefined) setPayload(p || null);
-
-    switch (key) {
-      case "demo":
-        setOpen(true);
-        break;
-
-      case "walkthrough":
-        setOpenWalkThrough(true);
-        break;
-
-      case "walkthrough-iframe":
-        setOpenWalkthroughIframe(true);
-        break;
-
-      default:
-        // no-op
-        break;
+  /* -------------------------
+   * 🔑 SMART WALKTHROUGH OPENER
+   * ------------------------- */
+  const openWalkthroughSmart = useCallback(() => {
+    if (walkthroughCompleted) {
+      setOpenWalkthroughIframe(true);
+    } else {
+      setOpenWalkThrough(true);
     }
-  }, []);
+  }, [walkthroughCompleted]);
 
-  // -------------------------
-  // Context value
-  // -------------------------
+  /* -------------------------
+   * 🔑 openByKey (EXTENDED, NOT BROKEN)
+   * ------------------------- */
+  const openByKey = useCallback(
+    (key, p) => {
+      if (p !== undefined) setPayload(p || null);
+
+      switch (key) {
+        case "demo":
+          setOpen(true);
+          break;
+
+        case "walkthrough":
+          setOpenWalkThrough(true);
+          break;
+
+        case "walkthrough-iframe":
+          setOpenWalkthroughIframe(true);
+          break;
+
+        /* ✅ NEW: SAFE SMART KEY */
+        case "walkthrough-smart":
+          if (walkthroughCompleted) {
+            setOpenWalkthroughIframe(true);
+          } else {
+            setOpenWalkThrough(true);
+          }
+          break;
+
+        default:
+          break;
+      }
+    },
+    [walkthroughCompleted]
+  );
+
+  /* -------------------------
+   * Context value
+   * ------------------------- */
   const value = useMemo(
     () => ({
-      // demo modal
+      /* demo modal */
       open,
       setOpen,
       openModal,
       openWith,
 
-      // walkthrough form modal
+      /* walkthrough form */
       openWalkThrough,
       setOpenWalkThrough,
       openWalkThroughModal,
       openWithWalkthrough,
 
-      // 👉 walkthrough iframe modal
+      /* walkthrough iframe */
       openWalkthroughIframe,
       setOpenWalkthroughIframe,
       openWalkthroughIframeModal,
 
-      // shared
+      /* walkthrough state */
+      walkthroughCompleted,
+      setWalkthroughCompleted,
+      openWalkthroughSmart,
+
+      /* shared */
       payload,
       setPayload,
       openByKey,
     }),
     [
       open,
+      openWalkThrough,
+      openWalkthroughIframe,
+      walkthroughCompleted,
+      payload,
       openModal,
       openWith,
-
-      openWalkThrough,
       openWalkThroughModal,
       openWithWalkthrough,
-
-      openWalkthroughIframe,
       openWalkthroughIframeModal,
-
-      payload,
-      setPayload,
+      openWalkthroughSmart,
       openByKey,
     ]
   );

@@ -21,6 +21,7 @@ import {
 } from "@/components/Animations/gsapAnimations";
 import AnimatedLine from "./HeroComponents/AnimatedLine";
 import BreadCrumbs from "./HeroComponents/BreadCrumbs";
+import { useModal } from "./ModalProvider";
 
 gsap.registerPlugin(SplitText);
 
@@ -39,6 +40,7 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
   const shaderRef = useRef(null);
   const mobileGradientRef = useRef(null);
   const [mob, setMob] = useState(false);
+  const { openWalkthroughSmart,openModal } = useModal();
 
   const [hasVisited, setHasVisited] = useState(() => {
     if (typeof window !== "undefined") {
@@ -58,11 +60,11 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
   // // keep your existing base hooks (these set up global triggers, etc.)
   // useEffect(() => {
   // requestIdleCallback(() => {
-    headingAnim();
-    fadeUp();
-    lineAnim();
+  headingAnim();
+  fadeUp();
+  lineAnim();
   // });
-// }, []);
+  // }, []);
 
   // prefers-reduced-motion to skip heavy animation on users who ask for it
   const prefersReducedMotion =
@@ -252,8 +254,9 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
     >
       <div className="flex flex-col items-center justify-start w-full h-full pt-[30vh]  relative z-[12] max-md:pt-[15vh]  content-container">
         <div
-          className={`text-center space-y-6 pb-5 max-md:w-[100%] max-md:space-y-[7vw] ${heroData.headingWidth || "w-[70%]"
-            }`}
+          className={`text-center space-y-6 pb-5 max-md:w-[100%] max-md:space-y-[7vw] ${
+            heroData.headingWidth || "w-[70%]"
+          }`}
         >
           <h1
             ref={headingRef}
@@ -291,16 +294,18 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
 
           <p
             ref={paraRef}
-            className={`text-[#CACACA] font-head mx-auto overflow-hidden  ${heroData.paraClass ? heroData.paraClass : "w-full"
-              }`}
+            className={`text-[#CACACA] font-head mx-auto overflow-hidden  ${
+              heroData.paraClass ? heroData.paraClass : "w-full"
+            }`}
           >
             {heroData.para}
           </p>
 
           <div
             ref={btnsRef}
-            className={`flex items-center justify-center gap-6 mt-10 max-md:flex-col max-sm:gap-[5vw]  ${heroData.hidebtn ? "hidden" : "flex"
-              }`}
+            className={`flex items-center justify-center gap-6 mt-10 max-md:flex-col max-sm:gap-[5vw]  ${
+              heroData.hidebtn ? "hidden" : "flex"
+            }`}
           >
             {/* Primary */}
             <div className="ctaBtn">
@@ -312,6 +317,7 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
                 onClick={(e) => {
                   // only run when walkthrough is true
                   if (!heroData.walkthrough) return;
+                  
                   const href = heroData.link1 || "#";
                   if (typeof href === "string" && href.startsWith("#")) {
                     e.preventDefault();

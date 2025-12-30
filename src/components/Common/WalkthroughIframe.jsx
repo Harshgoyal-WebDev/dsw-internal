@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import { usePathname } from "next/navigation";
-import { useLenis } from "lenis/react";
 import { useModal } from "./ModalProvider";
 
 const IFRAME_MAP = {
@@ -20,9 +19,6 @@ const WalkthroughIframePopup = () => {
 
   const iframeSrc = IFRAME_MAP[pathname];
 
-//   useEffect(() => {
-//     openWalkthroughIframe ? lenis?.stop() : lenis?.start();
-//   }, [openWalkthroughIframe, lenis]);
 
   if (!iframeSrc) return null;
 
@@ -34,9 +30,12 @@ const WalkthroughIframePopup = () => {
           : "opacity-0 pointer-events-none"
       }`}
     >
+      <div className="w-screen h-screen fixed inset-0 " onClick={() => setOpenWalkthroughIframe(false)}/>
+
+      
       <div
         data-lenis-prevent
-        className="relative w-[80%] h-[80%] max-sm:w-[90%] max-sm:h-[30%] max-md:h-[40%] bg-black rounded-[1.2vw] max-sm:rounded-[2.5vw] overflow-hidden"
+        className="relative w-[80%] h-[80%] max-sm:w-[90%] max-sm:h-[30%] max-md:h-[40%] bg-black rounded-[1.2vw] max-sm:rounded-[2.5vw] overflow-hidden z-[1]"
       >
         <iframe
           src={iframeSrc}
@@ -44,7 +43,7 @@ const WalkthroughIframePopup = () => {
           allow="camera; microphone; fullscreen"
         />
       </div>
-      <div className="formfade absolute top-[3%] right-[3%] max-md:top-[2.5%] max-sm:right-[4%] max-md:right-[2.5%]">
+      <div className="formfade absolute top-[3%] right-[3%] max-md:top-[2.5%] max-sm:right-[4%] max-md:right-[2.5%] opacity-100">
 
         <div
            onClick={() => setOpenWalkthroughIframe(false)}

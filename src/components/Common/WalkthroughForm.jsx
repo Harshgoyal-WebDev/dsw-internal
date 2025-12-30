@@ -52,9 +52,10 @@ export default function WalkthroughForm() {
 
   /* 🔑 MODAL CONTROLS */
   const {
-    payload, // { pdfUrl, fileName }
+    payload,
     setOpenWalkThrough,
-    openWalkthroughIframeModal,
+    setOpenWalkthroughIframe,
+    setWalkthroughCompleted, // 👈 NEW (STATE ONLY)
   } = useModal();
 
   /* ---------------- EMAIL VERIFICATION ---------------- */
@@ -100,7 +101,6 @@ export default function WalkthroughForm() {
         });
         return false;
       } catch (error) {
-        console.error("Email verification error:", error);
         setEmailVerified(true);
         clearErrors("email");
         return true;
@@ -111,45 +111,6 @@ export default function WalkthroughForm() {
     [setError, clearErrors]
   );
 
-  const handleEmailBlur = useCallback(
-    async (email) => {
-      await verifyEmail(email);
-    },
-    [verifyEmail]
-  );
-
-  /* ---------------- PDF DOWNLOAD ---------------- */
-  const downloadPdf = async (url, fileName) => {
-    const absoluteUrl = new URL(url, window.location.origin).href;
-    const name = fileName || absoluteUrl.split("/").pop() || "download.pdf";
-
-    try {
-      const a = document.createElement("a");
-      a.style.display = "none";
-      a.href = absoluteUrl;
-      a.setAttribute("download", name);
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      return;
-    } catch {}
-
-    try {
-      const res = await fetch(absoluteUrl);
-      const blob = await res.blob();
-      const href = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = href;
-      a.setAttribute("download", name);
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(href);
-    } catch {
-      window.open(absoluteUrl, "_blank", "noopener");
-    }
-  };
-
   /* ---------------- SUBMIT ---------------- */
   const onSubmit = async (data) => {
     if (!emailVerified && !emailVerifying) {
@@ -157,65 +118,34 @@ export default function WalkthroughForm() {
       if (!ok) return;
     }
 
-    if (emailVerifying) {
-      setError("email", {
-        type: "manual",
-        message: "Please wait for email verification to complete.",
-      });
-      return;
-    }
-
-    if (!emailVerified) {
-      setError("email", {
-        type: "manual",
-        message: "Please enter a valid business email address.",
-      });
-      return;
-    }
-
     setIsLoading(true);
-
-    const pdfUrl = payload?.pdfUrl || null;
-    const pdfName =
-      payload?.fileName || (pdfUrl ? pdfUrl.split("/").pop() : null);
-
-    const formattedData = {
-      ...data,
-      pageUrl: window.location.href,
-      ...(pdfUrl && {
-        downloaded: true,
-        downloadedPdfName: pdfName,
-        downloadedPdfUrl: pdfUrl,
-      }),
-    };
 
     try {
       const res = await fetch("/api/walkthroughform", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formattedData),
+        body: JSON.stringify({
+          ...data,
+          pageUrl: window.location.href,
+        }),
       });
 
-      if (!res.ok) throw new Error("Failed to send message");
+      if (!res.ok) throw new Error("Failed");
+
+      /* 🔑 ONLY NEW LOGIC (NO UI CHANGE) */
+      setWalkthroughCompleted(true);       // mark as done
+      setOpenWalkThrough(false);            // close form
+      setTimeout(() => {
+        setOpenWalkthroughIframe(true);     // open iframe
+      }, 300);
 
       setIsSubmitted(true);
       setTimeout(() => setIsSubmitted(false), 5000);
 
       form.reset();
-      setEmailVerified(false);
-      setEmailVerifying(false);
-
-      /* ✅ CLOSE WALKTHROUGH POPUP */
-      setOpenWalkThrough(false);
-
-      /* ✅ OPEN IFRAME POPUP */
-      setTimeout(() => {
-        openWalkthroughIframeModal();
-      }, 300);
     } catch (error) {
       setIsNotSubmitted(true);
       setTimeout(() => setIsNotSubmitted(false), 5000);
-      console.error(error);
     } finally {
       setIsLoading(false);
     }
@@ -228,127 +158,7 @@ export default function WalkthroughForm() {
         className="overflow-hidden h-fit max-md:pb-[4%] max-sm:pb-0"
         id="formoem"
       >
-        {/* <div className="w-full h-full">
-          <Form {...form}>
-            <form
-              autoComplete="off"
-              className="space-y-[1vw] max-sm:space-y-[4vw] max-md:space-y-[3vw]"
-              onSubmit={handleSubmit(onSubmit)}
-            >
-              <div className="formfade">
-                <FormField
-                  name="name"
-                  control={control}
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormControl>
-                        <Input
-                          placeholder="Name*"
-                          {...field}
-                          className="pl-[2vw] bg-black/5 border border-white/30 rounded-full"
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </div>
-
-              <div className="formfade">
-                <FormField
-                  name="email"
-                  control={control}
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormControl>
-                        <div className="relative">
-                          <Input
-                            placeholder="Business Email*"
-                            {...field}
-                            onBlur={(e) =>
-                              handleEmailBlur(e.target.value)
-                            }
-                            className="pl-[2vw] bg-black/5 border border-white/30 rounded-full"
-                          />
-                          {emailVerifying && (
-                            <span className="absolute right-[2vw] top-1/2 -translate-y-1/2 text-sm">
-                              Verifying...
-                            </span>
-                          )}
-                        </div>
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </div>
-
-              <div className="formfade">
-                <FormField
-                  name="designation"
-                  control={control}
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormControl>
-                        <Input
-                          placeholder="Designation*"
-                          {...field}
-                          className="pl-[2vw] bg-black/5 border border-white/30 rounded-full"
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </div>
-
-              <div className="formfade">
-                <FormField
-                  name="company"
-                  control={control}
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormControl>
-                        <Input
-                          placeholder="Company Name*"
-                          {...field}
-                          className="pl-[2vw] bg-black/5 border border-white/30 rounded-full"
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </div>
-
-              <div className="formfade">
-                <FormField
-                  name="number"
-                  control={control}
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormControl>
-                        <PhoneInput
-                          defaultCountry="IN"
-                          international
-                          placeholder="Phone Number*"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </div>
-
-              <div className="formfade">
-                <Button type="submit">
-                  {isLoading ? "Sending..." : "Submit"}
-                </Button>
-              </div>
-            </form>
-          </Form>
-        </div> */}
+      
         <div className="w-full flex flex-col gap-[2vw]">
             <Form {...form}>
               <form
@@ -376,7 +186,7 @@ export default function WalkthroughForm() {
                         {...field}
                         onBlur={(e) => {
                           field.onBlur();
-                          handleEmailBlur(e.target.value);
+                          // handleEmailBlur(e.target.value);
                         }}
                         className="placeholder:text-[1.05vw] pl-[2vw] bg-black/5 border border-white/30 rounded-full placeholder:text-[#e8e8e8] max-sm:placeholder:text-[3.5vw] max-md:placeholder:text-[2.7vw] max-md:pl-[4vw] max-sm:pl-[5vw]"
                       />
