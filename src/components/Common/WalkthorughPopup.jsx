@@ -10,7 +10,7 @@ const WalkthroughPopup = ({ modalOpen, setModalOpen }) => {
   const lenis = useLenis();
   const { payload, setPayload } = useModal();
   const clearPayloadTimeoutRef = useRef(null);
-
+   console.log(lenis)
   // Animations + Lenis control
   useEffect(() => {
     if (!modalOpen) {

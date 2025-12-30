@@ -13,6 +13,7 @@ import PopupModal from "../Common/PopupModal";
 import { ModalProvider, useModal } from "../Common/ModalProvider";
 import ScrollToTop from "../ScrollToTop";
 import WalkthroughPopup from "../Common/WalkthorughPopup";
+import WalkthroughIframePopup from "../Common/WalkthroughIframe";
 const Header = dynamic(() => import("../Header/index"), {
   ssr: true,
 });
@@ -30,6 +31,9 @@ function GlobalWalkthroughPopup(){
   return <WalkthroughPopup modalOpen={openWalkThrough} setModalOpen={setOpenWalkThrough} />
 }
 
+function GlobalWalkthroughIframe() {
+  return <WalkthroughIframePopup />;
+}
 const Layout = ({ children }) => {
   return (
     <>
@@ -44,6 +48,7 @@ const Layout = ({ children }) => {
       <KeepScrolling />
       <GlobalPopup/>
       <GlobalWalkthroughPopup/>
+      <GlobalWalkthroughIframe />
       <Footer />
       <ScrollToTop/>
     </ModalProvider>
