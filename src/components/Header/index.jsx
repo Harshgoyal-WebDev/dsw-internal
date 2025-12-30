@@ -5,14 +5,10 @@ import dynamic from "next/dynamic";
 import gsap from "gsap";
 import { usePathname } from "next/navigation";
 import { useLenis } from "lenis/react";
-
 import PrimaryButton from "../Button/PrimaryButton";
 import NavigationLink from "../ui/NavigationLink";
 import Logo from "../ui/Logo";
-import { NAVIGATION, CTA_BUTTONS } from "@/constants/siteConfig";
-import { useModal } from "../Common/ModalProvider";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
-// import PopupModal from "../Common/PopupModal";
+import { NAVIGATION } from "@/constants/siteConfig";
 
 const MobileMenu = dynamic(() => import("./MobileMenu"), { ssr: true });
 
@@ -36,16 +32,13 @@ const Header = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [openMobileMenu, setOpenMobileMenu] = useState(false);
   const [isHoveringHeader, setIsHoveringHeader] = useState(false);
-  const [isInverted, setIsInverted] = useState(false);
   const [mob, setMob] = useState(false);
-  const { openModal } = useModal();
   const [hasVisited] = useState(() => {
     if (typeof window !== "undefined") {
       return !!sessionStorage.getItem("hasVisited");
     }
     return false;
   });
-  // const [modalOpen,setModalOpen]=useState(false)
   const headerRef = useRef(null);
   const headerWrapRef = useRef(null);
   const lenis = useLenis();
@@ -133,12 +126,7 @@ const Header = () => {
                     const hasChildren =
                       Array.isArray(link.children) && link.children.length > 0;
 
-                    const linkSlug = getSlug(link.href || "");
-                    const childMatch =
-                      hasChildren &&
-                      link.children.some(
-                        (c) => getSlug(c.href) === currentSlug
-                      );
+                   
 
                     const isActive =
                       isPathActive(pathname, link.href) ||

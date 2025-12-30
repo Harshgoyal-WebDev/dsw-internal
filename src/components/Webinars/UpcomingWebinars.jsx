@@ -2,7 +2,6 @@
 import React from "react";
 import Image from "next/image";
 import WhiteButton from "../Button/WhiteButton";
-import { headingAnim } from "../Animations/gsapAnimations";
 import Copy from "../Animations/Copy";
 import { LinkButton } from "../Button/LinkButton";
 
@@ -25,7 +24,7 @@ const secondaryAnnouncements = [
     title: "Compliance-First AI: SOC 2, ISO & Beyond",
     type: "Expert Panel",
     date: "July 18, 2025",
-    href: "/",
+    href: "#",
   },
   {
     image: "/assets/images/news/unifyai-achieves.png",
@@ -33,7 +32,7 @@ const secondaryAnnouncements = [
     title: "AI in Insurance: Roadmap to Production in 30 Days",
     type: "Workshop",
     date: "August 2, 2025",
-    href: "/",
+    href: "#",
   },
   {
     image: "/assets/images/news/unifyai-achieves.png",
@@ -41,7 +40,7 @@ const secondaryAnnouncements = [
     title: "UnifyAI Showcase: What's New This Quarter",
     type: "Product Walkthrough",
     date: "August 16, 2025",
-    href: "/",
+    href: "#",
   },
 ];
 

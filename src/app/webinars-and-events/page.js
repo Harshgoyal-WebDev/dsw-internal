@@ -9,7 +9,6 @@ import { homepage } from "@/lib/util";
 import { BreadcrumbsJSONLD, WebpageJsonLd } from "@/lib/json-ld";
 import { getPageMetadata } from "@/config/metadata";
 import Hero from "@/components/Common/Hero";
-import InternalHero from "@/components/Common/InternalHero";
 
 
 export const metadata = getPageMetadata({
@@ -67,7 +66,7 @@ const footerCTAData = {
   heading: "Looking to write about us or request an interview?",
   para: "Download our press kit or reach out directly to our media team.",
   btnText1: "Download Press Kit",
-  btnLink1: "/#",
+  btnLink1: "#",
   btnText2: "Contact",
   btnLink2: "/contact-us",
   img1: "/assets/images/footer/cta-5.png",

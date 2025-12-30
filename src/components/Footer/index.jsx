@@ -55,18 +55,7 @@ const Footer = () => {
             <div className="flex justify-between w-[60%] ml-auto gap-10 footer-content max-md:flex-col max-md:w-full">
               {/* Navigation Links */}
               <div>
-                {/* <ul className="space-y-3">
-                  {NAVIGATION_FOOTER.map((link) => (
-                    <li key={link.id} className="text-foreground content-p">
-                      <NavigationLink
-                        text={link.text}
-                        href={link.href}
-                        variant="footer"
-                        className="hover:!text-[#f16b0d]"
-                      />
-                    </li>
-                  ))}
-                </ul> */}
+                
                 <div className="grid grid-cols-2 gap-3 max-md:flex max-md:flex-col max-sm:space-y-[15vw] max-md:space-y-[10vw]">
                   <div>
                     <p className="mb-5 text-foreground content-p font-head">NAVIGATION</p>

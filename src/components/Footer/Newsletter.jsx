@@ -83,7 +83,7 @@ const Newsletter = () => {
             alt="arrow-right"
             width={10}
             height={10}
-            className="w-4 h-4 group-hover:-rotate-45 transition-all duration-300 ease"
+            className="w-4 h-4 group-hover:-rotate-45 transition-all duration-300 ease max-sm:w-2.5 max-sm:h-2.5"
           />
         </button>
         {message.text && (

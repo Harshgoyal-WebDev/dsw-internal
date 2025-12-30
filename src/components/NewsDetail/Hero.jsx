@@ -72,7 +72,7 @@ export default function Hero({ breadcrumbs, news }) {
       </h1>
 
       {breadcrumbs && (
-        <div className="breadcrumbs overflow-hidden w-full flex items-start justify-start text-[1vw] text-[#CACACA] max-md:text-[2.7vw] max-sm:text-[4vw] max-md:h-fit absolute left-[5%] bottom-[8%] max-md:bottom-[2%] z-[999] opacity-0 hero-crumb max-md:text-background">
+        <div className="breadcrumbs overflow-hidden w-full flex items-start justify-start text-[1vw] text-[#CACACA] max-md:text-[2.7vw] max-sm:text-[4vw] max-md:h-fit absolute left-[5%] bottom-[8%] max-md:bottom-[2%] z-[800] opacity-0 hero-crumb max-md:text-background">
           <div className="flex gap-3 breadcrumbsContainer items-center">
             <a href="#">Resources</a>{" "}
             <span className=" w-2 h-2">

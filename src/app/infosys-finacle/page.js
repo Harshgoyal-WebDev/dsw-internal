@@ -1,6 +1,5 @@
 import dynamic from "next/dynamic";
 import Layout from "@/components/Layout";
-
 import FooterCTA from "@/components/Common/FooterCta";
 import { FAQJSONLD, WebpageJsonLd } from "@/lib/json-ld";
 import Faqs from "@/components/Common/FAQs";

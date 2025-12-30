@@ -1,5 +1,4 @@
 "use client";
-import { useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -38,21 +37,7 @@ const POINTS = [
 ];
 
 export default function Expect() {
-  const [isMobile, setIsMobile] = useState(false);
-  // lineAnim()
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setIsMobile(window.innerWidth <= 768);
-
-      const handleResize = () => {
-        setIsMobile(window.innerWidth <= 768);
-      };
-
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }
-  }, []);
   
   return (
     <section className="w-screen container relative z-[10] " id="expect">

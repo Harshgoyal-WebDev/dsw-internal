@@ -4,7 +4,6 @@ import Hero from "@/components/Common/Hero";
 import { WebpageJsonLd } from "@/lib/json-ld";
 import { homepage } from "@/lib/util";
 import { getPageMetadata } from "@/config/metadata";
-import { Resend } from "resend";
 
 
 const Help = dynamic(

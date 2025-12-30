@@ -8,7 +8,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { NextButton, PreviousButton } from "../Button/SliderButtons";
 import ArrowButton from "../Button/ArrowButton";
-// import Copy from "../Animations/Copy";
 import Link from "next/link";
 import { formatDate } from "@/lib/datetime";
 

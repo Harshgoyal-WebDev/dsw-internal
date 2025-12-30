@@ -61,9 +61,7 @@ const FeaturedBlog = ({ posts }) => {
                 Category
               </p>
               <p className="text-white-200 text-[1.05vw] max-md:text-[2.5vw] max-sm:text-[4vw]">
-                {/* {featuredPost.categories && featuredPost.categories.length > 0 
-                  ? featuredPost.categories[0].name 
-                  : "AI"} */}
+               
                   Blog
               </p>
             </div>
