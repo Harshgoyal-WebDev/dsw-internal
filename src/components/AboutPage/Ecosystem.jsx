@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import Copy from "../Animations/Copy";
 import Image from "next/image";
 import PrimaryButton from "../Button/PrimaryButton";
@@ -36,7 +36,7 @@ const data = [
   },
 ];
 
-const PilotCard = ({ id, icon, title, para, spanRef }) => {
+const PilotCard = ({  icon, title, para, spanRef }) => {
   
   return (
     <>

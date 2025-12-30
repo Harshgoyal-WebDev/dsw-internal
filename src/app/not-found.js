@@ -29,10 +29,7 @@ export const metadata = {
   openGraph: { type: "website" },
   // add canonical/url if available
 };
-// function GlobalPopup() {
-//   const { open, setOpen } = useModal();
-//   return <PopupModal modalOpen={open} setModalOpen={setOpen} />;
-// }
+
 
 export default function NotFoundPage() {
   return (

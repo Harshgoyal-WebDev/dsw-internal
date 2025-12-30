@@ -51,7 +51,6 @@ export default async function Home() {
         <EnterpriseAIPlatformMobile />
         <EnterpiseAgentPlatform />
         <EnterpriseAgentPlatformMobile />
-        {/* <EnterpriseAI /> */}
         <Tour
           heading={"Take a Lightning Tour"}
           para={
@@ -63,15 +62,12 @@ export default async function Home() {
         <NextAIInitiative />
         <Recognized showMarquee={false} />
         <Clients showHeading={false} />
-        {/* <Connects /> */}
-        {/* <Clients /> */}
         <IntelligentUseCases sessionsData={sessionsData} />
         <Architecture />
         <ArchitectureMobile />
         <div className=" max-sm:mt-0">
           <SuccessStories />
         </div>
-        {/* <Faqs data={faqData} /> */}
         <FooterCTA footerCTAData={footerCTAData} width={"w-[95%]"} />
       </Layout>
     </>

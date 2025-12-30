@@ -1,10 +1,9 @@
 'use client'
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 
 const Mission = () => {
-  const [isVisionExpanded, setIsVisionExpanded] = useState(false);
-  const [isValuesExpanded, setIsValuesExpanded] = useState(false);
+  
 
   return (
     <section className="h-full w-screen " id="mission">

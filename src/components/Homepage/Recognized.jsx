@@ -1,7 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import Copy from "../Animations/Copy";
-import Clients from "../AboutPage/Clients";
 
 const AwardItem = ({ img, title, year  }) => {
   return (
@@ -35,12 +33,7 @@ const Recognized = ({ showMarquee = true }) => {
           <h2 className="text-60  headingAnim text-[#E8E8E8]">
             Enterprise-Grade Security & Compliance
           </h2>
-          {/* <Copy>
-            <p className=" text-[#CACACA] w-[60%] mx-auto leading-[1.5] max-md:w-full">
-              Trusted by enterprises. Validated by the world&apos;s leading
-              benchmarks
-            </p>
-          </Copy> */}
+          
         </div>
 
         <div className="w-full flex items-center justify-center px-[5vw] gap-[3vw] mt-[3vw] fadeup max-md:flex-wrap max-md:mt-[20vw] max-md:gap-y-[5vw] max-md:justify-center max-md:gap-[5vw]">
@@ -92,17 +85,7 @@ const Recognized = ({ showMarquee = true }) => {
               className="h-full w-full object-contain scale-[0.9]"
             />
           </div>
-          {/* <div className="h-[10.3vw] w-auto max-md:h-[30vw] max-md:w-[90vw]">
-            <Image
-              src={
-                "/assets/images/homepage/recognized/f6s-top-company-final.png"
-              }
-              height={178}
-              width={681}
-              alt="f6s-top-company"
-              className="h-full w-full object-contain scale-[0.9] max-sm:scale-[0.8] max-md:scale-[0.7]"
-            />
-          </div> */}
+         
         </div>
        
         {showMarquee && (

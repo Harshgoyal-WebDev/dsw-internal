@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
@@ -63,8 +63,7 @@ const EnterpiseAgentPlatform = () => {
       el.classList.toggle("pointer-events-none", !isActive);
       // Inline style (GSAP friendly + guarantees behavior)
       gsap.set(el, { pointerEvents: isActive ? "auto" : "none" });
-      // Optional a11y hint
-      // el.setAttribute("aria-hidden", isActive ? "false" : "true");
+  
     });
   };
 
@@ -311,14 +310,6 @@ const EnterpiseAgentPlatform = () => {
     if (next) next.scrollIntoView({ behavior: "smooth" });
   };
 
-  // useEffect(()=>{
-  //   if(globalThis.innerWidth<=1024){
-  //     setMobile(true);
-  //   }
-  //   else{
-  //     setMobile(false);
-  //   }
-  // })
 
   useGSAP(() => {
     if (globalThis.innerWidth <= 1024) {

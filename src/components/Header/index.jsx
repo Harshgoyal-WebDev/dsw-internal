@@ -305,7 +305,6 @@ const Header = () => {
           />
         )}
       </div>
-      {/* <PopupModal modalOpen={modalOpen} setModalOpen={setModalOpen}/> */}
     </>
   );
 };

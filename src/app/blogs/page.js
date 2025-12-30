@@ -44,7 +44,7 @@ export default async function page() {
       <Layout>
         <InternalHero heroData={heroData} breadcrumbs={true} />
         <FeaturedBlog posts={posts} />
-        <BlogGrid posts={posts.slice(1)} />
+        {/* <BlogGrid posts={posts.slice(1)} /> */}
         <FooterCTA footerCTAData={footerCTAData} width={"w-[95%]"} />
       </Layout>
     </>

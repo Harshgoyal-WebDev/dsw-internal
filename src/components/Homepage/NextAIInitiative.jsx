@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import WhiteButton from "../Button/WhiteButton";
 import PrimaryButton from "../Button/PrimaryButton";
 import Copy from "../Animations/Copy";
-import Image from "next/image";
 import { FastTrackMainIcon, FeatureCraftMainIcon, SupportAiIcon } from "../Icons";
 
 const steps = [

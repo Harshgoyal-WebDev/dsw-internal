@@ -97,14 +97,14 @@ const Tour = ({ heading, para, btnText }) => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from(".tourbtnfade", {
-        y:10,
+        y: 10,
         opacity: 0,
         duration: 1,
         ease: "power1.out",
       });
     });
     return () => ctx.revert();
-  },[activeTab]);
+  }, [activeTab]);
   return (
     <section className="w-screen h-fit container" id="tour">
       <div className="w-full flex flex-col gap-[2vw] items-center max-md:gap-[4vw]">
@@ -165,7 +165,7 @@ const Tour = ({ heading, para, btnText }) => {
               className="w-full h-full absolute top-0 left-0 unifyAI-container "
               style={{ opacity: 0, transform: "scale(0.9)" }}
             >
-              <div className="h-full w-full bg-black/50 absolute top-0 left-0"/>
+              <div className="h-full w-full bg-black/50 absolute top-0 left-0" />
               <Image
                 src={"/assets/images/homepage/unify-tour.png"}
                 alt="UnifyAI tour image"
@@ -188,10 +188,10 @@ const Tour = ({ heading, para, btnText }) => {
               text={btnText || "Start Walkthrough"}
               className=""
               href={"#"}
-               onClick={(e) => {
-  e.preventDefault();
-  openWalkThroughModal();
-}}
+              onClick={(e) => {
+                e.preventDefault();
+                openWalkThroughModal();
+              }}
             />
           </div>
 
@@ -201,7 +201,7 @@ const Tour = ({ heading, para, btnText }) => {
               className="w-full h-full absolute top-0 left-0 agenticAI-container"
               style={{ opacity: 0, transform: "scale(0.9)" }}
             >
-               <div className="h-full w-full bg-black/50 absolute top-0 left-0"/>
+              <div className="h-full w-full bg-black/50 absolute top-0 left-0" />
               <Image
                 src={"/assets/images/homepage/agentic-tour.png"}
                 alt="AgenticAI tour image"

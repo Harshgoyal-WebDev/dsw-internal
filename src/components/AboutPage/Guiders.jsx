@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import React, { useRef, useState } from "react";
-import { Icon, Linkedin } from "../ui/Icons";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";

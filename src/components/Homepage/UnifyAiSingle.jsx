@@ -3,12 +3,10 @@ import React from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useModal } from "../Common/ModalProvider";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const UnifyAiSingle = () => {
-  const {openModal} = useModal()
   useGSAP(() => {
     if(globalThis.innerWidth>1024){
       const tl = gsap.timeline({

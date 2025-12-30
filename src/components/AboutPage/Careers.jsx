@@ -1,5 +1,4 @@
 import React from 'react'
-import PrimaryButton from '../Button/PrimaryButton'
 import Copy from '../Animations/Copy'
 import Image from 'next/image'
 

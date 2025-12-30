@@ -52,7 +52,6 @@ export default function page() {
       <WebpageJsonLd metadata={metadata} />
       <Layout>
         <Hero heroData={heroData} />
-        {/* <AboutV2/> */}
         <Unifying />
         <Mission />
         <Build />
