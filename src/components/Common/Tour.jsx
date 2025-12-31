@@ -8,11 +8,10 @@ import { useModal } from "./ModalProvider";
 
 const Tour = ({ heading, para, btnText }) => {
   const [activeTab, setActiveTab] = useState("unifyAI");
-  const { openWalkThroughModal } = useModal();
-
   const handleTabClick = (tabId) => {
     setActiveTab(tabId);
   };
+  const {openWalkthroughSmart} = useModal();
 
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
@@ -104,121 +103,139 @@ const Tour = ({ heading, para, btnText }) => {
       });
     });
     return () => ctx.revert();
-  }, [activeTab]);
+  }, []);
   return (
-    <section className="w-screen h-fit container" id="tour">
-      <div className="w-full flex flex-col gap-[2vw] items-center max-md:gap-[4vw]">
-        <h2 className="text-60 headingAnim w-[40%] max-md:w-full text-center tour-heading">
-          {heading}
-        </h2>
-        <Copy>
-          <p className="text-[#CACACA] text-center tour-para">{para}</p>
-        </Copy>
+    <>
+      <section className="w-screen h-fit container" id="tour">
+        <div className="w-full flex flex-col gap-[2vw] items-center max-md:gap-[4vw]">
+          <h2 className="text-60 headingAnim w-[40%] max-md:w-full text-center tour-heading">
+            {heading}
+          </h2>
+          <Copy>
+            <p className="text-[#CACACA] text-center tour-para">{para}</p>
+          </Copy>
 
-        {/* Tab Switcher */}
-        <div className="w-fit flex rounded-full border-blue-1 border p-[0.2vw] !text-[1.15vw] fadeup relative max-sm:mt-[10vw] max-md:mt-[5vw]  max-sm:!text-[4.2vw] max-md:!text-[2.5vw] max-md:p-[0.5vw] ">
-          {/* Thumb Track */}
-          <div className="w-full h-[90%] absolute thumb-track max-md:h-[92%]">
+          {/* Tab Switcher */}
+          <div className="w-fit flex rounded-full border-blue-1 border p-[0.2vw] !text-[1.15vw] fadeup relative max-sm:mt-[10vw] max-md:mt-[5vw]  max-sm:!text-[4.2vw] max-md:!text-[2.5vw] max-md:p-[0.5vw] ">
+            {/* Thumb Track */}
+            <div className="w-full h-[90%] absolute thumb-track max-md:h-[92%]">
+              <div
+                ref={thumbButtonRef}
+                className="w-[13vw] h-full rounded-full bg-blue-1 thumb-button max-sm:w-[40vw] max-md:w-[30vw]"
+              />
+            </div>
+
+            {/* UnifyAI Tab */}
             <div
-              ref={thumbButtonRef}
-              className="w-[13vw] h-full rounded-full bg-blue-1 thumb-button max-sm:w-[40vw] max-md:w-[30vw]"
-            />
+              className="w-[13vw] px-[1.5vw] py-[1vw] flex items-center justify-center relative z-[2] cursor-pointer max-sm:w-[40vw] max-md:w-[30vw] max-md:py-[3vw]"
+              id="unifyAI"
+              onClick={() => handleTabClick("unifyAI")}
+            >
+              <p
+                style={{
+                  color: activeTab === "unifyAI" ? "#ffffff" : "#CACACA",
+                }}
+              >
+                UnifyAI
+              </p>
+            </div>
+
+            {/* AgenticAI Tab */}
+            <div
+              className="w-[13vw] px-[1.5vw] py-[1vw] flex items-center justify-center relative z-[2] cursor-pointer max-md:w-[30vw] max-sm:w-[40vw] max-md:py-[3vw]"
+              id="agenticAI"
+              onClick={() => handleTabClick("agenticAI")}
+            >
+              <p
+                style={{
+                  color: activeTab === "agenticAI" ? "#f1f1f1" : "#CACACA",
+                }}
+              >
+                AgenticAI
+              </p>
+            </div>
           </div>
 
-          {/* UnifyAI Tab */}
+          {/* Content Containers */}
           <div
-            className="w-[13vw] px-[1.5vw] py-[1vw] flex items-center justify-center relative z-[2] cursor-pointer max-sm:w-[40vw] max-md:w-[30vw] max-md:py-[3vw]"
-            id="unifyAI"
-            onClick={() => handleTabClick("unifyAI")}
+            ref={containersWrapRef}
+            className="w-[75%] h-[38vw] relative fadeup mt-[5vw] max-sm:w-full max-sm:h-[60vw] max-md:h-[40vw] max-md:w-full max-sm:mt-[12vw] rounded-lg overflow-hidden"
           >
-            <p
-              style={{ color: activeTab === "unifyAI" ? "#ffffff" : "#CACACA" }}
-            >
-              UnifyAI
-            </p>
-          </div>
+            {activeTab === "unifyAI" && (
+              <div
+                key="unifyAI"
+                className="w-full h-full absolute top-0 left-0 unifyAI-container "
+                style={{ opacity: 0, transform: "scale(0.9)" }}
+              >
+                <div className="h-full w-full bg-black/50 absolute top-0 left-0" />
+                <Image
+                  src={"/assets/images/homepage/unify-tour.png"}
+                  alt="UnifyAI tour image"
+                  fetchPriority="high"
+                  className="w-full h-full "
+                  width={900}
+                  height={400}
+                />
 
-          {/* AgenticAI Tab */}
-          <div
-            className="w-[13vw] px-[1.5vw] py-[1vw] flex items-center justify-center relative z-[2] cursor-pointer max-md:w-[30vw] max-sm:w-[40vw] max-md:py-[3vw]"
-            id="agenticAI"
-            onClick={() => handleTabClick("agenticAI")}
-          >
-            <p
-              style={{
-                color: activeTab === "agenticAI" ? "#f1f1f1" : "#CACACA",
-              }}
+                <div
+                  className="w-full h-full absolute top-0 left-0 flex justify-center items-center unifyAI-overlay"
+                  style={{ opacity: 0, transform: "translateY(20px)" }}
+                ></div>
+              </div>
+            )}
+            <div
+              className={`absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-[20] max-sm:w-full max-sm:left-[65%] ${activeTab === "agenticAI" ? "translate-y-[50%] opacity-0 pointer-events-none" : "translate-y-0 opacity-100 duration-300"}`}
             >
-              AgenticAI
-            </p>
+              <PrimaryButton
+                text={btnText || "Start Walkthrough"}
+                className=""
+                href={"#"}
+                onClick={(e) => {
+                  e.preventDefault();
+                 openWalkthroughSmart("unify") 
+                
+                }}
+              />
+            </div>
+            <div
+              className={`absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-[20] max-sm:w-full max-sm:left-[65%] ${activeTab === "unifyAI" ? " translate-y-[50%] opacity-0 pointer-events-none" : "translate-y-0 opacity-100 duration-300"}`}
+            >
+              <PrimaryButton
+                text={btnText || "Start Walkthrough"}
+                className=""
+                href={"#"}
+                onClick={(e) => {
+                  e.preventDefault();
+                  openWalkthroughSmart("agentic")
+                }}
+              />
+            </div>
+
+            {activeTab === "agenticAI" && (
+              <div
+                key="agenticAI"
+                className="w-full h-full absolute top-0 left-0 agenticAI-container"
+                style={{ opacity: 0, transform: "scale(0.9)" }}
+              >
+                <div className="h-full w-full bg-black/50 absolute top-0 left-0" />
+                <Image
+                  src={"/assets/images/homepage/agentic-tour.png"}
+                  alt="AgenticAI tour image"
+                  className="w-full h-full"
+                  width={900}
+                  height={400}
+                />
+
+                <div
+                  className="w-full h-full absolute top-0 left-0 flex justify-center items-center agenticAI-overlay"
+                  style={{ opacity: 0, transform: "translateY(20px)" }}
+                ></div>
+              </div>
+            )}
           </div>
         </div>
-
-        {/* Content Containers */}
-        <div
-          ref={containersWrapRef}
-          className="w-[75%] h-[38vw] relative fadeup mt-[5vw] max-sm:w-full max-sm:h-[60vw] max-md:h-[40vw] max-md:w-full max-sm:mt-[12vw] rounded-lg overflow-hidden"
-        >
-          {activeTab === "unifyAI" && (
-            <div
-              key="unifyAI"
-              className="w-full h-full absolute top-0 left-0 unifyAI-container "
-              style={{ opacity: 0, transform: "scale(0.9)" }}
-            >
-              <div className="h-full w-full bg-black/50 absolute top-0 left-0" />
-              <Image
-                src={"/assets/images/homepage/unify-tour.png"}
-                alt="UnifyAI tour image"
-                fetchPriority="high"
-                className="w-full h-full "
-                width={900}
-                height={400}
-              />
-
-              <div
-                className="w-full h-full absolute top-0 left-0 flex justify-center items-center unifyAI-overlay"
-                style={{ opacity: 0, transform: "translateY(20px)" }}
-              ></div>
-            </div>
-          )}
-          <div
-            className={`absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-[20] tourbtnfade max-sm:w-full max-sm:left-[65%]`}
-          >
-            <PrimaryButton
-              text={btnText || "Start Walkthrough"}
-              className=""
-              href={"#"}
-              onClick={(e) => {
-                e.preventDefault();
-                openWalkThroughModal();
-              }}
-            />
-          </div>
-
-          {activeTab === "agenticAI" && (
-            <div
-              key="agenticAI"
-              className="w-full h-full absolute top-0 left-0 agenticAI-container"
-              style={{ opacity: 0, transform: "scale(0.9)" }}
-            >
-              <div className="h-full w-full bg-black/50 absolute top-0 left-0" />
-              <Image
-                src={"/assets/images/homepage/agentic-tour.png"}
-                alt="AgenticAI tour image"
-                className="w-full h-full"
-                width={900}
-                height={400}
-              />
-
-              <div
-                className="w-full h-full absolute top-0 left-0 flex justify-center items-center agenticAI-overlay"
-                style={{ opacity: 0, transform: "translateY(20px)" }}
-              ></div>
-            </div>
-          )}
-        </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

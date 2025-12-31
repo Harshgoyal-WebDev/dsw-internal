@@ -5,38 +5,40 @@ import { usePathname } from "next/navigation";
 import { useModal } from "./ModalProvider";
 
 const IFRAME_MAP = {
-  "/unifyai": "https://app.supademo.com/embed/cm9sce4s00cy6dtm7vmvy0spa?embed_v=2",
-  "/agentic-ai": "https://app.supademo.com/embed/cm9r39rl26y0oljv58dqqn32v?embed_v=2",
+  unify: "https://app.supademo.com/embed/cm9sce4s00cy6dtm7vmvy0spa?embed_v=2",
+  agentic: "https://app.supademo.com/embed/cm9r39rl26y0oljv58dqqn32v?embed_v=2",
+  "/unifyai":
+    "https://app.supademo.com/embed/cm9sce4s00cy6dtm7vmvy0spa?embed_v=2",
+  "/agentic-ai":
+    "https://app.supademo.com/embed/cm9r39rl26y0oljv58dqqn32v?embed_v=2",
 };
 
 const WalkthroughIframePopup = () => {
   const pathname = usePathname();
-//   const lenis = useLenis();
+
   const {
     openWalkthroughIframe,
     setOpenWalkthroughIframe,
+    walkthroughTarget,
   } = useModal();
 
-  const iframeSrc = IFRAME_MAP[pathname];
-
+  const iframeKey = walkthroughTarget || pathname;
+  const iframeSrc = IFRAME_MAP[iframeKey];
 
   if (!iframeSrc) return null;
 
   return (
     <section
-      className={`fixed inset-0 z-[1000] flex items-center justify-center bg-black/50 backdrop-blur-lg transition-opacity ${
-        openWalkthroughIframe
-          ? "opacity-100"
-          : "opacity-0 pointer-events-none"
+      className={`fixed inset-0 z-[1000] bg-black/50 flex items-center justify-center ${
+        openWalkthroughIframe ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >
-      <div className="w-screen h-screen fixed inset-0 " onClick={() => setOpenWalkthroughIframe(false)}/>
-
-      
       <div
-        data-lenis-prevent
-        className="relative w-[80%] h-[80%] max-sm:w-[90%] max-sm:h-[30%] max-md:h-[40%] bg-black rounded-[1.2vw] max-sm:rounded-[2.5vw] overflow-hidden z-[1]"
-      >
+        className="absolute inset-0"
+        onClick={() => setOpenWalkthroughIframe(false)}
+      />
+
+      <div className="relative w-[80%] h-[80%] bg-black rounded-xl overflow-hidden z-[1] max-sm:h-[30%] max-md:h-[40%] max-md:w-[90%] ">
         <iframe
           src={iframeSrc}
           className="w-full h-full"

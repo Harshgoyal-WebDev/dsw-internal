@@ -23,7 +23,7 @@ const Tour = () => {
 
         <div className=" relative fadeup mt-0 max-sm:w-full max-sm:h-fit max-md:h-[40vw] max-md:w-full max-sm:mt-[8vw]  flex items-center justify-center">
           <div className="!w-[90%] h-[38vw] relative fadeup mt-[5vw] max-sm:w-full max-sm:h-[60vw] max-md:h-[40vw] max-md:w-full rounded-lg overflow-hidden">
-            <div className="w-full h-full bg-black/80 absolute top-0 left-0 z-[5]" />
+            <div className="w-full h-full bg-black/50 absolute top-0 left-0 z-[5]" />
             <Image
               src={"/assets/images/homepage/agentic-tour.png"}
               alt="Agentic tour image"
