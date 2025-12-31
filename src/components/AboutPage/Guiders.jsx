@@ -170,7 +170,7 @@ const GuidersData = [
     name: "Sharad Sanghi",
     role: "Chairman NTT",
     company:"Global Data India",
-    link:"http://linkedin.com/in/sharadsanghi"
+    link:"https://linkedin.com/in/sharadsanghi"
   },
   {
     src: "/assets/images/guiders/upendra.png",
