@@ -43,17 +43,17 @@ const FooterCTA = dynamic(
 export const metadata = getPageMetadata({
   title: "AI & GenAI Masterclass | DSW",
   description: "Join DSW’s hands-on masterclass to build enterprise AI/GenAI use cases, learn strategy, architecture, governance & deployment with domain experts.",
-  url: "resources/webinars-and-workshops/ai-and-gen-ai-masterclass",
+  url: "/dsw-workshop-deeptech-ai-genai-hands-on-masterclass",
   date_published: "2025-09-30T00:00",
   date_modified: "2025-09-30T00:00",
   alternates: {
-    canonical: "/webinars-and-workshops/ai-and-gen-ai-masterclass",
+    canonical: "/dsw-workshop-deeptech-ai-genai-hands-on-masterclass",
     languages: {
-      "en-US": "/webinars-and-workshops/ai-and-gen-ai-masterclass",
+      "en-US": "/dsw-workshop-deeptech-ai-genai-hands-on-masterclass",
     },
   },
   openGraph: {
-    url: "resources/webinars-and-workshops/ai-and-gen-ai-masterclass",
+    url: "/dsw-workshop-deeptech-ai-genai-hands-on-masterclass",
     images: [
       {
         url: `${homepage}seo/ai-and-genai.png`,

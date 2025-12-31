@@ -63,10 +63,10 @@ const nextConfig = {
 
 
     const securityHeaders = [
-      // {
-      //   key: "Content-Security-Policy",
-      //   value: csp,
-      // },
+      {
+        key: "Content-Security-Policy",
+        value: csp,
+      },
 
       // MIME-type sniffing protection
       {
@@ -150,7 +150,7 @@ const nextConfig = {
       },
       {
         source: "/resources/webinars-and-workshops/ai-and-gen-ai-masterclass",
-        destination: "/ai-and-gen-ai-masterclass",
+        destination: "/dsw-workshop-deeptech-ai-genai-hands-on-masterclass",
         permanent: true,
       },
       { source: "/resources/whitepapers", destination: "/whitepapers", permanent: true },

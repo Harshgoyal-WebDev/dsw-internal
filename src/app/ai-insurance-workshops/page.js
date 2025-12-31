@@ -15,17 +15,17 @@ export const metadata = getPageMetadata({
   title: "AI for Insurance Workshop | DSW",
   description:
     "Join our hands-on AI & GenAI workshop for insurers - build prototypes, learn compliance, and turn ideas into action in underwriting, claims & fraud.",
-  url: "resources/webinars-and-workshops/ai-for-insurance-workshop",
+  url: "/ai-insurance-workshops",
   date_published: "2025-09-30T00:00",
   date_modified: "2025-09-30T00:00",
   alternates: {
-    canonical: "/webinars-and-workshops/ai-for-insurance-workshop",
+    canonical: "/ai-insurance-workshops",
     languages: {
-      "en-US": "/webinars-and-workshops/ai-for-insurance-workshop",
+      "en-US": "/ai-insurance-workshops",
     },
   },
   openGraph: {
-    url: "resources/webinars-and-workshops/ai-for-insurance-workshop",
+    url: "/ai-insurance-workshops",
     images: [
       {
         url: `${homepage}seo/ai-for-insurance.png`,
