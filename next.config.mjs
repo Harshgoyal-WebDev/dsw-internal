@@ -15,7 +15,6 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        // hostname: "bisque-okapi-883422.hostingersite.com",
         hostname: "darkseagreen-chicken-141904.hostingersite.com",
         pathname: "/wp-content/uploads/**",
       },
@@ -34,13 +33,13 @@ const nextConfig = {
       "script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: https://va.vercel-scripts.com https://www.googletagmanager.com https://www.google-analytics.com",
 
       // ✅ Styles
-      "style-src 'self' 'unsafe-inline'",
+      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
 
       // ✅ Images (GA uses pixels)
-      "img-src 'self' data: blob: https://bisque-okapi-883422.hostingersite.com https://i.ytimg.com https://www.google-analytics.com https://www.googletagmanager.com",
+      "img-src 'self' data: blob: https://bisque-okapi-883422.hostingersite.com https://darkseagreen-chicken-141904.hostingersite.com https://i.ytimg.com https://www.google-analytics.com https://www.googletagmanager.com",
 
       // ✅ Fonts
-      "font-src 'self' data:",
+      "font-src 'self' data: https://fonts.gstatic.com",
 
       // ✅ Analytics & fetch requests
       "connect-src 'self' https: https://va.vercel-scripts.com https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net",
@@ -60,7 +59,6 @@ const nextConfig = {
       "upgrade-insecure-requests",
       "base-uri 'self'",
     ].join("; ");
-
 
     const securityHeaders = [
       {
@@ -119,43 +117,6 @@ const nextConfig = {
         source: "/:path*",
         headers: securityHeaders,
       },
-    ];
-  },
-
-  async redirects() {
-    return [
-      { source: "/unify", destination: "/unifyai", permanent: true },
-      { source: "/unify-ai", destination: "/unifyai", permanent: true },
-      { source: "/pilot-program", destination: "/production-pilot", permanent: true },
-      { source: "/resources/blog", destination: "/blogs", permanent: true },
-      { source: "/resources/blogs", destination: "/blogs", permanent: true },
-      { source: "/blog", destination: "/blogs", permanent: true },
-      { source: "/resources/news-and-pr", destination: "/news", permanent: true },
-      { source: "/resources/product-videos", destination: "/product-videos", permanent: true },
-      { source: "/resources/webinars-and-events", destination: "/webinars-and-events", permanent: true },
-      {
-        source: "/resources/webinars-and-workshops/ai-for-insurance-workshop",
-        destination: "/ai-insurance-workshops",
-        permanent: true,
-      },
-      {
-        source: "/webinars-and-workshops/ai-for-insurance-workshop",
-        destination: "/ai-insurance-workshops",
-        permanent: true,
-      },
-      {
-        source: "/webinars-and-workshops/ai-and-gen-ai-masterclass",
-        destination: "/dsw-workshop-deeptech-ai-genai-hands-on-masterclass",
-        permanent: true,
-      },
-      {
-        source: "/resources/webinars-and-workshops/ai-and-gen-ai-masterclass",
-        destination: "/dsw-workshop-deeptech-ai-genai-hands-on-masterclass",
-        permanent: true,
-      },
-      { source: "/resources/whitepapers", destination: "/whitepapers", permanent: true },
-      { source: "/about-v2", destination: "/about", permanent: true },
-      { source: "/career", destination: "/careers", permanent: true },
     ];
   },
 };
