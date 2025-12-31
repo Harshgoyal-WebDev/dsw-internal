@@ -31,13 +31,12 @@ export const metadata = {
 };
 
 export default async function Home() {
-  // const { posts } = await getAllPosts();
   return (
     <>
       <WebpageJsonLd metadata={metadata} />
       <FAQJSONLD faqs={faqData} />
       <Layout>
-        <OldHero heroData={heroData} />
+        {/* <OldHero heroData={heroData} /> */}
         <Outcomes
           marginTop="max-md:mt-[-5vw]"
           showDescription={false}

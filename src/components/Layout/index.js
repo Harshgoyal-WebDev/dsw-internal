@@ -49,7 +49,7 @@ const Layout = ({ children }) => {
       <GlobalPopup/>
       <GlobalWalkthroughPopup/>
       <GlobalWalkthroughIframe />
-      <Footer />
+      {/* <Footer /> */}
       <ScrollToTop/>
     </ModalProvider>
     </>
