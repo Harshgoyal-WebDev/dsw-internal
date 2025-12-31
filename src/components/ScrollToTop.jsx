@@ -76,7 +76,7 @@ function ScrollToTop() {
       <div className="w-[3vw] h-[3vw] min-w-10 min-h-10 rounded-full max-md:w-[8vw] max-md:h-[8vw] bg-white/70 backdrop-blur flex justify-center items-center  p-[1vw] cursor-pointer shadow-lg group-hover:bg-white duration-300  max-md:p-[3vw] opacity-0 topbtn ">
         <Image
           src="/assets/icons/arrow-left.svg"
-          alt=""
+          alt="arrow-left"
           className="w-full h-full object-contain invert rotate-90"
           width={50}
           height={50}

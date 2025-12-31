@@ -18,7 +18,7 @@ export const metadata = getPageMetadata({
   alternates: {
     canonical: "/news",
     languages: {
-      "x-default": "/news",
+      "en-US": "/news",
     },
   },
   openGraph: {

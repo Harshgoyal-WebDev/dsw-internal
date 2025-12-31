@@ -49,7 +49,7 @@ export const metadata = getPageMetadata({
   alternates: {
     canonical: "/webinars-and-workshops/ai-and-gen-ai-masterclass",
     languages: {
-      "x-default": "/webinars-and-workshops/ai-and-gen-ai-masterclass",
+      "en-US": "/webinars-and-workshops/ai-and-gen-ai-masterclass",
     },
   },
   openGraph: {

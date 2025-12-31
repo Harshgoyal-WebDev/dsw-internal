@@ -20,7 +20,7 @@ export async function getNewsBySlug(slug) {
       },
     });
   } catch (e) {
-    console.log(`[news][getNewsBySlug] Failed to query news data: ${e.message}`);
+    // console.log(`[news][getNewsBySlug] Failed to query news data: ${e.message}`);
     throw e;
   }
 
@@ -36,8 +36,8 @@ export async function getNewsBySlug(slug) {
       },
     });
   } catch (e) {
-    console.log(`[news][getNewsBySlug] Failed to query SEO plugin: ${e.message}`);
-    console.log('Is the SEO Plugin installed? If not, disable WORDPRESS_PLUGIN_SEO in next.config.js.');
+    // console.log(`[news][getNewsBySlug] Failed to query SEO plugin: ${e.message}`);
+    // console.log('Is the SEO Plugin installed? If not, disable WORDPRESS_PLUGIN_SEO in next.config.js.');
     throw e;
   }
 

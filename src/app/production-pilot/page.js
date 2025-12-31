@@ -55,7 +55,7 @@ export const metadata = getPageMetadata({
   alternates: {
     canonical: "/production-pilot",
     languages: {
-      "x-default": "/production-pilot",
+      "en-US": "/production-pilot",
     },
   },
   openGraph: {

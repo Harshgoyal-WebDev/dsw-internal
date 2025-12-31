@@ -67,7 +67,7 @@ export const metadata = getPageMetadata({
   alternates: {
     canonical: "/agentic-ai",
     languages: {
-      "x-default": "/agentic-ai",
+      "en-US": "/agentic-ai",
     },
   },
   openGraph: {

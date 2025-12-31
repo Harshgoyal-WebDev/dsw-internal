@@ -24,7 +24,7 @@ export const metadata = getPageMetadata({
   alternates: {
     canonical: "/whitepapers",
     languages: {
-      "x-default": "/whitepapers",
+      "en-US": "/whitepapers",
     },
   },
   openGraph: {

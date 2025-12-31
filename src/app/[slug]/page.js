@@ -28,7 +28,7 @@ export async function generateMetadata({ params }) {
     date_modified: post.modified || post.date,
     alternates: {
       canonical: `/${slug}`,
-      languages: { 'x-default': `/${slug}`},
+      languages: { 'en-US': `/${slug}`},
     },
     openGraph: {
       url: `/${slug}`,
@@ -75,7 +75,7 @@ export default async function Page({ params }) {
     date_modified: post.modified || post.date,
     alternates: {
       canonical: `/${slug}`,
-      languages: { 'x-default': `/${slug}`},
+      languages: { 'en-US': `/${slug}`},
     },
     openGraph: {
       url: `/${slug}`,

@@ -35,7 +35,7 @@ export const metadata = getPageMetadata({
   alternates: {
     canonical: "/contact-us",
     languages: {
-      "x-default": "/contact-us",
+      "en-US": "/contact-us",
     },
   },
   openGraph: {

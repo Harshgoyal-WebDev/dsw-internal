@@ -32,7 +32,7 @@ export const metadata = getPageMetadata({
   alternates: {
     canonical: "/about",
     languages: {
-      "x-default": "/about",
+      "en-US": "/about",
     },
   },
   openGraph: {

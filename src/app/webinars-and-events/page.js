@@ -20,7 +20,7 @@ export const metadata = getPageMetadata({
   alternates: {
     canonical: "/webinars-and-events",
     languages: {
-      "x-default": "/webinars-and-events",
+      "en-US": "/webinars-and-events",
     },
   },
   openGraph: {

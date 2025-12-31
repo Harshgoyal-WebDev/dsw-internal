@@ -14,7 +14,7 @@ export function PreviousButton({ onClick, isDisabled }) {
         width={20}
         height={20}
         className="h-full w-full relative z-10"
-        alt="Previous"
+        alt="arrow-left"
       />
     </button>
   );

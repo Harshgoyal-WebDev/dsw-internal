@@ -10,7 +10,7 @@ import NewsContentWp from "@/components/NewsDetail/NewsContentWp";
 import RelatedArticleNews from "@/components/News/RelatedArticleNews";
 
 export async function generateMetadata({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
   const { news } = await getNewsBySlug(slug);
 
   if (!news) return {};
@@ -18,12 +18,12 @@ export async function generateMetadata({ params }) {
   return getPageMetadata({
     title: news.metaTitle || news.title,
     description: stripHtml(news.metaDescription || news.excerpt),
-    url: `/${slug}`,
+    url: `/news/${slug}`,
     date_published: news.date,
     date_modified: news.modified || news.date,
     alternates: {
-      canonical: `/${slug}`,
-      languages: { "x-default": `/${slug}` },
+      canonical: `/news/${slug}`,
+      languages: { "en-US": `/${slug}` },
     },
     openGraph: {
       url: `/${slug}`,
@@ -141,7 +141,7 @@ const footerCTAData = {
 //     date_modified: news.modified || news.date,
 //     alternates: {
 //       canonical: `/news/${slug}`,
-//       languages: { 'x-default': `/news/${slug}` },
+//       languages: { 'en-US': `/news/${slug}` },
 //     },
 //     openGraph: {
 //       url: `/news/${slug}`,

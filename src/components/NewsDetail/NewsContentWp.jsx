@@ -15,7 +15,7 @@ const NewsContentWp = ({ news }) => {
   const [modifiedHtml, setModifiedHtml] = useState(news?.content || "");
   const [toc, setToc] = useState([]); // [{ id, title }]
   const contentRef = useRef(null);
-  console.log(news, "NEWS.....")
+  // console.log(news, "NEWS.....")
 
   const getHeaderOffset = () => 100;
 

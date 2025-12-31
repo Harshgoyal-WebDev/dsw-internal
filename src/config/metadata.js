@@ -1,6 +1,6 @@
 // Next.js Metadata Configuration
 export const siteMetadata = {
-  metadataBase: new URL('https://datasciencewizards.ai'),
+  metadataBase: new URL('https://www.datasciencewizards.ai/'),
   title: "DSW UnifyAI – Enterprise AI Platform for Insurance",
   description: "Launch AI use cases in days and GenAI in hours with DSW UnifyAI - insurance-domain trained, compliant, scalable, and vendor-lock-in free.",
   applicationName: "Data Science Wizards UnifyAI",
@@ -18,7 +18,7 @@ export const siteMetadata = {
   alternates: {
     canonical: "/",
     languages: {
-      "x-default": "/",
+      "en-US": "/",
     },
   },
   robots: {
@@ -63,7 +63,7 @@ export const siteMetadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://datasciencewizards.ai",
+    url: "https://www.datasciencewizards.ai/",
     siteName: "Data Science Wizards UnifyAI",
     title: "DSW UnifyAI – Enterprise AI Platform for Insurance",
     description: "Launch AI use cases in days and GenAI in hours with DSW UnifyAI - insurance-domain trained, compliant, scalable, and vendor-lock-in free.",

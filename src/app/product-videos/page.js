@@ -17,7 +17,7 @@ export const metadata = getPageMetadata({
   alternates: {
     canonical: "/product-videos",
     languages: {
-      "x-default": "/product-videos",
+      "en-US": "/product-videos",
     },
   },
   openGraph: {

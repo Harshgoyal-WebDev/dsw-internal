@@ -74,7 +74,7 @@ export const metadata = getPageMetadata({
   alternates: {
     canonical: "/unifyai",
     languages: {
-      "x-default": "/unifyai",
+      "en-US": "/unifyai",
     },
   },
   openGraph: {

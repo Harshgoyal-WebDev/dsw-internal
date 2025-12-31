@@ -19,7 +19,7 @@ export const metadata = getPageMetadata({
   alternates: {
     canonical: "resources/blog",
     languages: {
-      "x-default": "resources/blog",
+      "en-US": "resources/blog",
     },
   },
   openGraph: {

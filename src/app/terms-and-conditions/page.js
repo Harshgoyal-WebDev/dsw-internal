@@ -17,7 +17,7 @@ export const metadata = getPageMetadata({
   alternates: {
     canonical: "/terms-and-conditions",
     languages: {
-      "x-default": "/terms-and-conditions",
+      "en-US": "/terms-and-conditions",
     },
   },
   openGraph: {

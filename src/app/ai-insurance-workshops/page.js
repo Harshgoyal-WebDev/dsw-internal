@@ -21,7 +21,7 @@ export const metadata = getPageMetadata({
   alternates: {
     canonical: "/webinars-and-workshops/ai-for-insurance-workshop",
     languages: {
-      "x-default": "/webinars-and-workshops/ai-for-insurance-workshop",
+      "en-US": "/webinars-and-workshops/ai-for-insurance-workshop",
     },
   },
   openGraph: {

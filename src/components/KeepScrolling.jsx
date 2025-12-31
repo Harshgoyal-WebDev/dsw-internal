@@ -58,8 +58,8 @@ const KeepScrolling = () => {
           </span>
           <div className="flex flex-col gap-[0.5vw] w-fit h-[1vw] arrow-container max-sm:h-[3.5vw] overflow-hidden translate-y-[15%] max-sm:translate-y-[25%] max-md:translate-y-[20%] max-md:h-[2.5vw] ">
             <div className="w-fit h-fit space-y-[0.5vw] keepScrolling-arrow max-sm:space-y-[1.5vw] max-md:space-y-[1vw] ">
-            <Image src="/assets/icons/arrow-left.svg" width={20} height={20} className={`h-[1vw] w-[1vw] -rotate-90 opacity-80 relative z-10 max-sm:h-[3.5vw] max-sm:w-[3.5vw] max-md:w-[2vw] max-md:h-[2vw]  ${scrolling ? "hidden" : "translate-y-0 max-sm:translate-y-0"}`} alt="Previous" />
-            <Image src="/assets/icons/arrow-left.svg" width={20} height={20} className={`h-[1vw] w-[1vw] -rotate-90 opacity-80 relative z-10 max-sm:h-[3.5vw] max-sm:w-[3.5vw] max-md:w-[2vw] max-md:h-[2vw]`} alt="Previous" />
+            <Image src="/assets/icons/arrow-left.svg" width={20} height={20} className={`h-[1vw] w-[1vw] -rotate-90 opacity-80 relative z-10 max-sm:h-[3.5vw] max-sm:w-[3.5vw] max-md:w-[2vw] max-md:h-[2vw]  ${scrolling ? "hidden" : "translate-y-0 max-sm:translate-y-0"}`} alt="arrow-left" />
+            <Image src="/assets/icons/arrow-left.svg" width={20} height={20} className={`h-[1vw] w-[1vw] -rotate-90 opacity-80 relative z-10 max-sm:h-[3.5vw] max-sm:w-[3.5vw] max-md:w-[2vw] max-md:h-[2vw]`} alt="arrow-left" />
             </div>
           </div>
         </div>

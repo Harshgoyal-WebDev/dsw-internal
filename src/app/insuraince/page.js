@@ -74,7 +74,7 @@ export const metadata = getPageMetadata({
   alternates: {
     canonical: "/insuraince",
     languages: {
-      "x-default": "/insuraince",
+      "en-US": "/insuraince",
     },
   },
   openGraph: {

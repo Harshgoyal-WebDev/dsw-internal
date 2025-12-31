@@ -18,7 +18,7 @@ export const metadata = getPageMetadata({
   alternates: {
     canonical: "/privacy-policy",
     languages: {
-      "x-default": "/privacy-policy",
+      "en-US": "/privacy-policy",
     },
   },
   openGraph: {

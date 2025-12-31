@@ -25,7 +25,7 @@ export const metadata = getPageMetadata({
   alternates: {
     canonical: "/infosys-finacle",
     languages: {
-      "x-default": "/infosys-finacle",
+      "en-US": "/infosys-finacle",
     },
   },
   openGraph: {
