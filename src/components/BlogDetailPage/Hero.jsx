@@ -90,7 +90,7 @@ export default function Hero({ breadcrumbs, post }) {
                 return (
                   <div key={href} className="flex items-center gap-2">
                     {index > 0 && <span>&gt;</span>}
-                    <a href="#">resources</a>{" "}
+                    <a href="#">Resources</a>{" "}
                     <span className=" w-3 h-3">
                       <Image
                         src={"/assets/icons/breadcrumbs.svg"}
@@ -100,7 +100,7 @@ export default function Hero({ breadcrumbs, post }) {
                         className="w-full h-full object-contain"
                       />
                     </span>{" "}
-                    <a href="/blogs">blog</a>{" "}
+                    <a href="/blogs">Blogs</a>{" "}
                      <span className=" w-3 h-3">
                       <Image
                         src={"/assets/icons/breadcrumbs.svg"}
