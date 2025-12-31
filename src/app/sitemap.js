@@ -146,8 +146,8 @@ import { homepage as HOMEPAGE_FROM_UTIL } from '@/lib/util';
 
 // Ensure Node runtime (so `fs` works)
 export const runtime = 'nodejs';
-// Revalidate every hour to keep sitemap fresh
-export const revalidate = 3600;
+// Force static generation at build time for consistency
+export const dynamic = 'force-static';
 
 // Support both app/ and src/app/
 const APP_CANDIDATES = [
@@ -233,29 +233,45 @@ function collectStaticRoutes() {
   return Array.from(seen.values()).sort((a, b) => (a.path > b.path ? 1 : -1));
 }
 
-// Resolve base URL without hardcoding localhost:3000
+// Resolve base URL - always use production URL for consistency
 async function resolveBaseUrl() {
+  // In production, ALWAYS use the canonical URL
+  if (process.env.NODE_ENV === 'production' || process.env.VERCEL_ENV === 'production') {
+    // Use the canonical production URL regardless of which domain is being accessed
+    return 'https://www.datasciencewizards.ai/';
+  }
+
+  // In preview/development, try to infer from request headers
+  try {
+    const h = await headers();
+    const host = h.get('x-forwarded-host') || h.get('host');
+    const proto = h.get('x-forwarded-proto') || 'http';
+    if (host) {
+      const baseUrl = `${proto}://${host}/`;
+      console.log('[Sitemap] Using base URL:', baseUrl);
+      return baseUrl;
+    }
+  } catch (error) {
+    console.error('[Sitemap] Error getting headers:', error);
+  }
+
+  // Fallback to environment variables
   const candidates = [
+    process.env.NEXT_PUBLIC_HOMEPAGE,
     HOMEPAGE_FROM_UTIL,
-    `${process.env.NEXT_PUBLIC_HOMEPAGE}`,
   ].filter(Boolean);
 
   for (const c of candidates) {
-    try { return new URL(c).toString(); } catch {}
-  }
-
-  // In dev, infer from request headers (any host/port)
-  if (process.env.NODE_ENV !== 'production') {
     try {
-      const h = await headers();
-      const host = h.get('x-forwarded-host') || h.get('host');
-      const proto = h.get('x-forwarded-proto') || 'http';
-      if (host) return `${proto}://${host}/`;
+      const url = new URL(c).toString();
+      console.log('[Sitemap] Using fallback URL:', url);
+      return url;
     } catch {}
   }
 
   // Final fallback
-  return '';
+  console.warn('[Sitemap] No base URL found, using production URL as fallback');
+  return 'https://www.datasciencewizards.ai/';
 }
 
 // ============================================
@@ -263,30 +279,42 @@ async function resolveBaseUrl() {
 // ============================================
 
 async function fetchGraphQL(query) {
+  const endpoint = process.env.WORDPRESS_GRAPHQL_ENDPOINT;
+
+  if (!endpoint) {
+    console.error('[Sitemap] WORDPRESS_GRAPHQL_ENDPOINT is not defined');
+    return null;
+  }
+
   try {
-    const response = await fetch(process.env.WORDPRESS_GRAPHQL_ENDPOINT, {
+    console.log('[Sitemap] Fetching from WordPress GraphQL...');
+    const response = await fetch(endpoint, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ query }),
-      next: { revalidate: 3600 }, // Cache for 1 hour
+      cache: 'no-store', // Don't cache during build to get fresh data
     });
 
     if (!response.ok) {
-      throw new Error(`WordPress GraphQL returned ${response.status}`);
+      console.error(`[Sitemap] WordPress GraphQL returned ${response.status}: ${response.statusText}`);
+      const text = await response.text();
+      console.error('[Sitemap] Response body:', text.substring(0, 500));
+      return null;
     }
 
     const { data, errors } = await response.json();
-    
+
     if (errors) {
-      console.error('GraphQL Errors:', errors);
+      console.error('[Sitemap] GraphQL Errors:', JSON.stringify(errors, null, 2));
       return null;
     }
 
     return data;
   } catch (error) {
-    console.error('Error fetching from WordPress:', error);
+    console.error('[Sitemap] Error fetching from WordPress:', error.message);
+    console.error('[Sitemap] Stack:', error.stack);
     return null;
   }
 }
@@ -308,15 +336,19 @@ async function fetchAllNews() {
   `;
 
   const data = await fetchGraphQL(query);
-  
+
   if (!data?.allNews?.edges) {
+    console.warn('[Sitemap] No news items found or query failed');
     return [];
   }
 
-  return data.allNews.edges.map(({ node }) => ({
+  const newsItems = data.allNews.edges.map(({ node }) => ({
     slug: node.slug,
     lastModified: new Date(node.modified || node.date),
   }));
+
+  console.log(`[Sitemap] Found ${newsItems.length} news items`);
+  return newsItems;
 }
 
 // Fetch all pages for /[slug]
@@ -336,15 +368,19 @@ async function fetchAllPages() {
   `;
 
   const data = await fetchGraphQL(query);
-  
+
   if (!data?.pages?.edges) {
+    console.warn('[Sitemap] No pages found or query failed');
     return [];
   }
 
-  return data.pages.edges.map(({ node }) => ({
+  const pages = data.pages.edges.map(({ node }) => ({
     slug: node.slug,
     lastModified: new Date(node.modified || node.date),
   }));
+
+  console.log(`[Sitemap] Found ${pages.length} pages`);
+  return pages;
 }
 
 // Fetch all blog posts for /[slug] (if posts are also at root)
@@ -364,15 +400,19 @@ async function fetchAllPosts() {
   `;
 
   const data = await fetchGraphQL(query);
-  
+
   if (!data?.posts?.edges) {
+    console.warn('[Sitemap] No posts found or query failed');
     return [];
   }
 
-  return data.posts.edges.map(({ node }) => ({
+  const posts = data.posts.edges.map(({ node }) => ({
     slug: node.slug,
     lastModified: new Date(node.modified || node.date),
   }));
+
+  console.log(`[Sitemap] Found ${posts.length} posts`);
+  return posts;
 }
 
 // Collect all dynamic routes from WordPress
@@ -426,13 +466,20 @@ async function getAllDynamicRoutes() {
 // ============================================
 
 export default async function sitemap() {
+  console.log('[Sitemap] Starting sitemap generation...');
+  console.log('[Sitemap] NODE_ENV:', process.env.NODE_ENV);
+  console.log('[Sitemap] VERCEL_ENV:', process.env.VERCEL_ENV);
+
   const base = await resolveBaseUrl();
-  
+  console.log('[Sitemap] Base URL resolved to:', base);
+
   // Get static routes from file system
   const staticRoutes = collectStaticRoutes();
-  
+  console.log(`[Sitemap] Found ${staticRoutes.length} static routes`);
+
   // Get dynamic routes from WordPress GraphQL
   const dynamicRoutes = await getAllDynamicRoutes();
+  console.log(`[Sitemap] Found ${dynamicRoutes.length} dynamic routes`);
 
   // Convert static routes to sitemap format
   const staticUrls = staticRoutes.map(({ path, lastModified }) => ({
@@ -453,14 +500,19 @@ export default async function sitemap() {
   // Combine and return all URLs
   const allUrls = [...staticUrls, ...dynamicUrls];
 
+  console.log(`[Sitemap] Total URLs in sitemap: ${allUrls.length}`);
+  console.log(`[Sitemap] Static URLs: ${staticUrls.length}, Dynamic URLs: ${dynamicUrls.length}`);
+
   // If no routes found, return at least homepage
   if (!allUrls.length) {
-    return [{ 
-      url: new URL('/', base).toString(), 
-      changeFrequency: 'monthly', 
-      priority: 1.0 
+    console.warn('[Sitemap] No routes found! Returning only homepage');
+    return [{
+      url: new URL('/', base).toString(),
+      changeFrequency: 'monthly',
+      priority: 1.0
     }];
   }
 
+  console.log('[Sitemap] Generation complete!');
   return allUrls;
 }
