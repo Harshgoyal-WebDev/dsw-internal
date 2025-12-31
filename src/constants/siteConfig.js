@@ -35,7 +35,7 @@ export const NAVIGATION = [
   ]},
   { text: "InsurAInce", href: "/insuraince", id: "insuraince"},
    { text: "Pilot Program", href: "/production-pilot", id: "pilot" },
-    { text: "Resources", href: "/blog", id: "resources" ,children:[
+    { text: "Resources", href: "#", id: "resources" ,children:[
     { text: "Blogs", href :"/blogs" , id:"resources-blog"},
     { text: "News And PR", href :"/news" , id:"resources-news"},
     { text: "Videos", href :"/product-videos" , id:"resources-videos"},
@@ -55,7 +55,7 @@ export const NAVIGATION_FOOTER = [
   ]},
   { text: "InsurAInce", href: "/insuraince", id: "insuraince"},
   { text: "Pilot Program", href: "/production-pilot", id: "pilot" },
-  { text: "Resources", href: "/blog", id: "resources" ,children:[
+  { text: "Resources", href: "/blogs", id: "resources" ,children:[
     { text: "Blogs", href :"/blogs" , id:"resources-blog"},
     { text: "News And PR", href :"/news" , id:"resources-news"},
     { text: "Videos", href :"/product-videos" , id:"resources-videos"},
