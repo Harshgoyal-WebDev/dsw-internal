@@ -52,10 +52,10 @@ export default function WalkthroughForm() {
 
   /* 🔑 MODAL CONTROLS */
   const {
-    payload,
+   walkthroughTarget,
+    markWalkthroughCompleted,
     setOpenWalkThrough,
-    setOpenWalkthroughIframe,
-    setWalkthroughCompleted, // 👈 NEW (STATE ONLY)
+    setOpenWalkthroughIframe, // 👈 NEW (STATE ONLY)
   } = useModal();
 
   /* ---------------- EMAIL VERIFICATION ---------------- */
@@ -133,8 +133,8 @@ export default function WalkthroughForm() {
       if (!res.ok) throw new Error("Failed");
 
       /* 🔑 ONLY NEW LOGIC (NO UI CHANGE) */
-      setWalkthroughCompleted(true);       // mark as done
-      setOpenWalkThrough(false);            // close form
+      markWalkthroughCompleted(walkthroughTarget);
+      setOpenWalkThrough(false);         // close form
       setTimeout(() => {
         setOpenWalkthroughIframe(true);     // open iframe
       }, 300);

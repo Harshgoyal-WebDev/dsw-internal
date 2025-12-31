@@ -14,13 +14,19 @@ export function ModalProvider({ children }) {
   /* -------------------------
    * Existing modals
    * ------------------------- */
-  const [open, setOpen] = useState(false); // demo / generic modal
-  const [openWalkThrough, setOpenWalkThrough] = useState(false); // form
-  const [openWalkthroughIframe, setOpenWalkthroughIframe] =
-    useState(false); // iframe
+  const [open, setOpen] = useState(false);
+  const [openWalkThrough, setOpenWalkThrough] = useState(false);
+  const [openWalkthroughIframe, setOpenWalkthroughIframe] = useState(false);
 
-  /* 🔑 Walkthrough completion state */
-  const [walkthroughCompleted, setWalkthroughCompleted] = useState(false);
+  /* -------------------------
+   * Walkthrough state (BOTH)
+   * ------------------------- */
+  const [walkthroughTarget, setWalkthroughTarget] = useState(null); // "unify" | "agentic"
+
+  const [walkthroughCompleted, setWalkthroughCompleted] = useState({
+    unify: false,
+    agentic: false,
+  });
 
   /* Shared payload */
   const [payload, setPayload] = useState(null);
@@ -50,18 +56,33 @@ export function ModalProvider({ children }) {
   }, []);
 
   /* -------------------------
-   * 🔑 SMART WALKTHROUGH OPENER
+   * SMART WALKTHROUGH OPENER
    * ------------------------- */
-  const openWalkthroughSmart = useCallback(() => {
-    if (walkthroughCompleted) {
-      setOpenWalkthroughIframe(true);
-    } else {
-      setOpenWalkThrough(true);
-    }
-  }, [walkthroughCompleted]);
+  const openWalkthroughSmart = useCallback(
+    (target) => {
+      setWalkthroughTarget(target);
+
+      if (walkthroughCompleted[target]) {
+        setOpenWalkthroughIframe(true);
+      } else {
+        setOpenWalkThrough(true);
+      }
+    },
+    [walkthroughCompleted]
+  );
 
   /* -------------------------
-   * 🔑 openByKey (EXTENDED, NOT BROKEN)
+   * Mark walkthrough completed
+   * ------------------------- */
+  const markWalkthroughCompleted = useCallback((target) => {
+    setWalkthroughCompleted((prev) => ({
+      ...prev,
+      [target]: true,
+    }));
+  }, []);
+
+  /* -------------------------
+   * openByKey (extended safely)
    * ------------------------- */
   const openByKey = useCallback(
     (key, p) => {
@@ -80,58 +101,47 @@ export function ModalProvider({ children }) {
           setOpenWalkthroughIframe(true);
           break;
 
-        /* ✅ NEW: SAFE SMART KEY */
-        case "walkthrough-smart":
-          if (walkthroughCompleted) {
-            setOpenWalkthroughIframe(true);
-          } else {
-            setOpenWalkThrough(true);
-          }
-          break;
-
         default:
           break;
       }
     },
-    [walkthroughCompleted]
+    []
   );
 
-  /* -------------------------
-   * Context value
-   * ------------------------- */
   const value = useMemo(
     () => ({
-      /* demo modal */
       open,
       setOpen,
       openModal,
       openWith,
 
-      /* walkthrough form */
       openWalkThrough,
       setOpenWalkThrough,
       openWalkThroughModal,
       openWithWalkthrough,
 
-      /* walkthrough iframe */
       openWalkthroughIframe,
       setOpenWalkthroughIframe,
       openWalkthroughIframeModal,
 
-      /* walkthrough state */
+      walkthroughTarget,
+      setWalkthroughTarget,
+
       walkthroughCompleted,
-      setWalkthroughCompleted,
+      markWalkthroughCompleted,
+
       openWalkthroughSmart,
 
-      /* shared */
       payload,
       setPayload,
+
       openByKey,
     }),
     [
       open,
       openWalkThrough,
       openWalkthroughIframe,
+      walkthroughTarget,
       walkthroughCompleted,
       payload,
       openModal,
@@ -140,6 +150,7 @@ export function ModalProvider({ children }) {
       openWithWalkthrough,
       openWalkthroughIframeModal,
       openWalkthroughSmart,
+      markWalkthroughCompleted,
       openByKey,
     ]
   );
@@ -153,8 +164,6 @@ export function ModalProvider({ children }) {
 
 export function useModal() {
   const ctx = useContext(ModalContext);
-  if (!ctx) {
-    throw new Error("useModal must be used within <ModalProvider>");
-  }
+  if (!ctx) throw new Error("useModal must be used within ModalProvider");
   return ctx;
 }

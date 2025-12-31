@@ -162,21 +162,21 @@ function Accordion({ title, para, link, isOpen, onToggle,img1,img2 }) {
             >
               <div className="w-full flex flex-col max-sm:gap-[2vw] max-sm:pb-[10vw] max-md:items-center  max-md:pb-[5vw] max-md:gap-[3vw]">
                 <div className="w-full flex  flex-col gap-[5vw] ">
-                  <div className="rounded-2xl max-sm:rounded-2xl max-md:rounded-3xl overflow-hidden h-fit w-fit">
+                  <div className="rounded-2xl max-sm:rounded-2xl max-md:rounded-xl overflow-hidden h-fit w-fit">
                     <Image
                       src={img1}
                       height={390}
                       width={382}
-                      className="h-[14vw] w-[16vw] object-cover max-sm:h-[35vw] max-sm:w-[40vw] max-md:w-[30vw] max-md:h-[30vw] "
+                      className="h-[14vw] w-[16vw] object-cover max-sm:h-[35vw] max-sm:w-[40vw] max-md:w-[30vw] max-md:h-[25vw] "
                       alt="unify-ai-graph"
                     />
                   </div>
-                  <div className="rounded-2xl max-sm:rounded-2xl max-md:rounded-3xl overflow-hidden h-fit w-fit ml-[25vw]">
+                  <div className="rounded-2xl max-sm:rounded-2xl max-md:rounded-xl overflow-hidden h-fit w-fit ml-[25vw]">
                     <Image
                       src={img2}
                       height={247}
                       width={283}
-                      className="h-[13vw] w-[15vw] object-cover max-sm:h-[35vw] max-sm:w-[40vw]  max-md:w-[30vw] max-md:h-[30vw]"
+                      className="h-[13vw] w-[15vw] object-cover max-sm:h-[35vw] max-sm:w-[40vw]  max-md:w-[30vw] max-md:h-[25vw]"
                       alt="unify-ai-dashboard"
                     />
                   </div>

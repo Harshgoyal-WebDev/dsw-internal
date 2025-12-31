@@ -23,7 +23,7 @@ const UnifyTour = () => {
 
         <div className=" relative fadeup mt-[5vw] max-sm:w-full max-sm:h-fit max-md:h-[40vw] max-md:w-full max-sm:mt-[8vw]  flex items-center justify-center">
           <div className="!w-[95%] h-[38vw] rounded-lg overflow-hidden max-sm:w-full max-sm:h-[50vw] relative">
-            <div className="w-full h-full bg-black/80 absolute top-0 left-0 z-[5]" />
+            <div className="w-full h-full bg-black/50 absolute top-0 left-0 z-[5]" />
             <Image
               src={"/assets/images/homepage/unify-tour.png"}
               alt="UnifyAI tour image"
