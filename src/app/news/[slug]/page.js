@@ -29,7 +29,7 @@ export async function generateMetadata({ params }) {
       url: `/${slug}`,
       images: news.metaImage
         ? [{ url: news.metaImage.url, width: 1200, height: 630 }]
-        : [{ url: `${homepage}seo/blog-detail.png`, width: 1200, height: 630 }],
+        : [{ url: `${homepage}seo/news-detail.png`, width: 1200, height: 630 }],
     },
   });
 }
@@ -63,8 +63,29 @@ export default async function Page({ params }) {
       },
     }));
 
+
+    const pageMeta = getPageMetadata({
+      title: news.metaTitle || news.title,
+    description: stripHtml(news.metaDescription || news.excerpt),
+    url: `/news/${slug}`,
+    date_published: news.date,
+    date_modified: news.modified || news.date,
+    alternates: {
+      canonical: `/news/${slug}`,
+      languages: { "en-US": `/${slug}` },
+    },
+    openGraph: {
+      url: `/${slug}`,
+      images: news.metaImage
+        ? [{ url: news.metaImage.url, width: 1200, height: 630 }]
+        : [{ url: `${homepage}seo/blog-detail.png`, width: 1200, height: 630 }],
+    },
+  });
+
+
   return (
     <>
+     <WebpageJsonLd metadata={pageMeta} />
       <BreadcrumbsJSONLD pathname={`/${slug}`} />
       <Layout>
         <Hero breadcrumbs news={news} />
