@@ -410,12 +410,7 @@ export default function ContactForm() {
                         <Checkbox id="contact-checkbox" aria-label="checkbox"
                           checked={field.value}
                           onCheckedChange={field.onChange} className="data-[state=checked]:bg-[#f16b0d] mt-[0.5vw]    max-md:scale-[1.5] max-sm:scale-[1] max-md:mt-[2vw] cursor-pointer max-md:rounded-[0.5vw] border-white/60" />
-                        {/* <Checkbox
-                          aria-label="checkbox"
-                          checked={field.value}
-                          onCheckedChange={field.onChange}
-                          className=" max-md:scale-[1.5] max-sm:scale-[1] max-md:mt-[2vw] cursor-pointer max-md:rounded-[0.5vw]"
-                        /> */}
+                        
                         <label className="text-[1.15vw] mt-2   text-[#CACACA] max-sm:text-[3.5vw] max-md:text-[2.7vw] max-md:mt-5">
                           I agree to{" "}
                           <a href="/privacy-policy" className="border-b border-white/40 hover:border-primary-2 duration-300 ease-in transition-all">

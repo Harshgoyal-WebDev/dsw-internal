@@ -22,6 +22,7 @@ export default function Hero({ breadcrumbs, news }) {
   lineAnim();
 
   useEffect(() => {
+     gsap.set(".hero-overlay", { opacity: 0 });
     initSplit();
     gsap.to(".hero-img", {
       opacity: 1,
@@ -56,7 +57,7 @@ export default function Hero({ breadcrumbs, news }) {
       id="blogDetail"
       className="h-screen max-md:h-fit container flex items-center justify-center w-full relative bg-[#FEFEFE] max-md:items-start max-md:!pt-[40vh] overflow-hidden"
     >
-      <div className="absolute inset-0 h-full w-full z-0 hero-img opacity-0 max-md:h-[35vh]">
+      <div className="absolute inset-0 h-full w-full z-0 hero-img max-md:h-[35vh]">
         <Image
           width={1920}
           height={1080}
@@ -67,12 +68,12 @@ export default function Hero({ breadcrumbs, news }) {
         <div className="absolute inset-0 bg-gradient-to-b to-black/30 from-black/90 max-md:from-black/20"></div>
       </div>
 
-      <h1 className="text-100 headingAnim max-md:!text-[8vw] relative z-10 text-white-200 text-center opacity-0 hero-head w-[85%] max-md:text-background max-md:text-left max-md:w-full">
+      <h1 className="text-100 headingAnim max-md:!text-[8vw] relative z-10 text-white-200 text-center hero-head w-[85%] max-md:text-background max-md:text-left max-md:w-full">
         {news?.title}
       </h1>
 
       {breadcrumbs && (
-        <div className="breadcrumbs overflow-hidden w-full flex items-start justify-start text-[1vw] text-[#CACACA] max-md:text-[2.7vw] max-sm:text-[4vw] max-md:h-fit absolute left-[5%] bottom-[8%] max-md:bottom-[2%] z-[800] opacity-0 hero-crumb max-md:text-background">
+        <div className="breadcrumbs overflow-hidden w-full flex items-start justify-start text-[1vw] text-[#CACACA] max-md:text-[2.7vw] max-sm:text-[4vw] max-md:h-fit absolute left-[5%] bottom-[8%] max-md:bottom-[2%] z-[800] hero-crumb max-md:text-background">
           <div className="flex gap-3 breadcrumbsContainer items-center">
             <a href="#">Resources</a>{" "}
             <span className=" w-2 h-2">
@@ -117,6 +118,7 @@ export default function Hero({ breadcrumbs, news }) {
           </div>
         </div>
       )}
+        <div className="w-screen h-screen absolute inset-0 bg-background z-[999] hero-overlay pointer-events-none opacity-100" />
     </section>
   );
 }

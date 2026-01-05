@@ -21,7 +21,6 @@ import {
 } from "@/components/Animations/gsapAnimations";
 import AnimatedLine from "./HeroComponents/AnimatedLine";
 import BreadCrumbs from "./HeroComponents/BreadCrumbs";
-import { useModal } from "./ModalProvider";
 
 gsap.registerPlugin(SplitText);
 
@@ -40,7 +39,6 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
   const shaderRef = useRef(null);
   const mobileGradientRef = useRef(null);
   const [mob, setMob] = useState(false);
-  const { openWalkthroughSmart,openModal } = useModal();
 
   const [hasVisited, setHasVisited] = useState(() => {
     if (typeof window !== "undefined") {
@@ -57,14 +55,10 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
     }
   }, [mob]);
 
-  // // keep your existing base hooks (these set up global triggers, etc.)
-  // useEffect(() => {
-  // requestIdleCallback(() => {
+
   headingAnim();
   fadeUp();
   lineAnim();
-  // });
-  // }, []);
 
   // prefers-reduced-motion to skip heavy animation on users who ask for it
   const prefersReducedMotion =
