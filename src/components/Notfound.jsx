@@ -122,7 +122,8 @@ const Notfound = () => {
           <Image
             src={"/assets/images/homepage/gradient-mobile.png"}
             height={852}
-            fetchPriority="high"
+            // fetchPriority="high"
+            loading="lazy"
             width={393}
             alt="hero-bg"
             className="h-full w-full"

@@ -53,6 +53,7 @@ export default function Hero({ breadcrumbs, news }) {
   };
 
   return (
+    <>
     <section
       id="blogDetail"
       className="h-screen max-md:h-fit container flex items-center justify-center w-full relative bg-[#FEFEFE] max-md:items-start max-md:!pt-[40vh] overflow-hidden"
@@ -73,13 +74,13 @@ export default function Hero({ breadcrumbs, news }) {
       </h1>
 
       {breadcrumbs && (
-        <div className="breadcrumbs overflow-hidden w-full flex items-start justify-start text-[1vw] text-[#CACACA] max-md:text-[2.7vw] max-sm:text-[4vw] max-md:h-fit absolute left-[5%] bottom-[8%] max-md:bottom-[2%] z-[800] hero-crumb max-md:text-background">
+        <div className="breadcrumbs overflow-hidden w-full flex items-start justify-start text-[1vw] text-[#CACACA] max-md:text-[2.7vw] max-sm:text-[3vw] max-md:h-fit absolute left-[5%] bottom-[8%] max-md:bottom-[2%] max-sm:left-[7%] z-[800] hero-crumb max-md:text-background">
           <div className="flex gap-3 breadcrumbsContainer items-center">
             <a href="#">Resources</a>{" "}
             <span className=" w-2 h-2">
               <Image
                 src={"/assets/icons/breadcrumbs.svg"}
-                alt="braedcrumb icon"
+                alt="breadcrumb icon"
                 width={20}
                 height={20}
                 className="w-full h-full object-contain"
@@ -118,7 +119,9 @@ export default function Hero({ breadcrumbs, news }) {
           </div>
         </div>
       )}
-        <div className="w-screen h-screen absolute inset-0 bg-background z-[999] hero-overlay pointer-events-none opacity-100" />
     </section>
+        <div className="w-screen h-screen absolute inset-0 bg-background z-[999] hero-overlay pointer-events-none opacity-100" />
+    
+    </>
   );
 }

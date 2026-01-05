@@ -241,6 +241,7 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
   );
 
   return (
+    <>
     <section
       ref={sectionRef}
       className="min-h-screen w-screen relative bg-background max-md:h-screen max-md:px-[7vw] z-[10]"
@@ -270,7 +271,6 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
                 width={297}
                 alt="insurance"
                 className="h-full w-full object-cover"
-                // hint Next/Image for better responsive layout
                 sizes="(max-width: 640px) 50vw, (max-width: 768px) 28vw, 16vw"
                 priority={!!heroData.homepage}
               />
@@ -377,10 +377,12 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
           />
         </div>
       )}
-      <div className="w-screen h-screen absolute inset-0 bg-background z-[801] hero-overlay pointer-events-none opacity-100" />
 
       {/* Mobile gradient */}
     </section>
+      <div className="w-screen h-screen absolute inset-0 bg-background z-[9999] hero-overlay pointer-events-none opacity-100" />
+    
+    </>
   );
 });
 

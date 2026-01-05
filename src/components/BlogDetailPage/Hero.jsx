@@ -54,6 +54,7 @@ export default function Hero({ breadcrumbs, post }) {
   };
 
   return (
+    <>
     <section
       id="blogDetail"
       className="h-screen max-md:h-fit container flex items-center justify-center w-full relative bg-[#FEFEFE] max-md:items-start max-md:!pt-[40vh] overflow-hidden"
@@ -74,7 +75,7 @@ export default function Hero({ breadcrumbs, post }) {
       </h1>
 
       {breadcrumbs && (
-        <div className="breadcrumbs overflow-hidden w-full flex items-start justify-start text-[1vw] text-[#CACACA] max-md:text-[2.7vw] max-sm:text-[4vw] max-md:h-fit absolute left-[5%] bottom-[8%] max-sm:bottom-[3%] z-[999] hero-crumb max-md:text-background">
+        <div className="breadcrumbs overflow-hidden w-full flex items-start justify-start text-[1vw] text-[#CACACA] max-md:text-[2.7vw] max-sm:text-[3vw] max-md:h-fit absolute left-[5%] bottom-[8%] max-sm:bottom-[3%] max-sm:left-[7%] z-[999] hero-crumb max-md:text-background">
           <div className="flex gap-3 breadcrumbsContainer">
             {pathArray
               .filter((segment) => segment && segment.toLowerCase() !== "home")
@@ -129,7 +130,9 @@ export default function Hero({ breadcrumbs, post }) {
         </div>
       )}
 
-      <div className="w-screen h-screen absolute inset-0 bg-background z-[999] hero-overlay pointer-events-none opacity-100" />
     </section>
+      <div className="w-screen h-screen absolute inset-0 bg-background z-[9999] hero-overlay pointer-events-none opacity-100" />
+    
+    </>
   );
 }
