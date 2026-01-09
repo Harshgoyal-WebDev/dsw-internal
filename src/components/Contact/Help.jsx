@@ -12,7 +12,7 @@ const Help = () => {
       className="w-screen h-full container space-y-[3vw] !pb-[15vw] max-md:space-y-[15vw] mt-[-15vh] relative z-[50] max-md:mt-0"
     >
       <h2 className="text-90 font-head headingAnim">How can we help you?</h2>
-      <div className="flex justify-between items-center w-full max-md:gap-[4vw] max-sm:gap-[8vw] pt-[5vw] max-md:flex-col max-md:pt-0">
+      <div className="flex flex-wrap space-y-[2vw] justify-between items-center w-full max-md:gap-[4vw] max-sm:gap-[8vw] pt-[5vw] max-md:flex-col max-md:pt-0">
         <SpotlightCard className="fadeup !w-[49%] p-[3vw] py-[3.5vw]   bg-white/5 background-glass max-md:h-full max-md:!w-full  max-md:rounded-3xl max-md:justify-between max-md:px-[7vw] max-md:py-[8vw] ">
           <div className="w-full h-full space-y-[2.5vw]  relative z-[2] max-md:space-y-[7vw]">
             <h3 className="text-50 font-head">Book a Demo</h3>
@@ -42,6 +42,19 @@ const Help = () => {
             <PrimaryButton
               href="#contact-form"
               text={"Contact Sales"}
+            />
+          </div>
+        </SpotlightCard>
+        <SpotlightCard className="fadeup !w-[49%] p-[3vw] py-[3.5vw]   bg-white/5 background-glass max-md:h-full max-md:!w-full  max-md:rounded-3xl max-md:justify-between max-md:px-[7vw] max-md:py-[8vw] ">
+          <div className="w-full h-full space-y-[2.5vw]  relative z-[2] max-md:space-y-[7vw]">
+            <h3 className="text-50 font-head">Our Community</h3>
+            <p className="text-white-300 ">
+               Be part of a growing community where data scientists and AI practitioners collaborate, share insights, and build impactful solutions together. DSW is where learning meets real-world AI innovation.
+            </p>
+            <PrimaryButton
+              target="_blank"
+              href="https://chat.whatsapp.com/4UJBjd1ZjV3JcXWCgYqqRH"
+              text={"Join Our Community"}
             />
           </div>
         </SpotlightCard>

@@ -81,6 +81,7 @@ const Footer = () => {
                       {NAVIGATION_FOOTER.slice(5).map((link) => (
                         <li key={link.id} className="text-foreground content-p">
                           <NavigationLink
+                            target={link.text=="Community"?"_blank":""}
                             text={link.text}
                             href={link.href}
                             variant="footer"

@@ -41,7 +41,7 @@ const PilotCard = ({  icon, title, para, spanRef }) => {
   return (
     <>
       <div className=" space-y-[2vw] relative group  max-sm:space-y-[10vw] w-[45%] pb-[6vw] max-md:w-full max-md:h-fit max-md:space-y-[4vw]">
-        <div className=" pt-[3vw] gap-[4vw] items-start space-y-[3vw] max-sm:flex max-sm:flex-col max-sm:space-y-[6vw] max-sm:mt-[10vw] fadeup">
+        <div className=" pt-[3vw] gap-[4vw] items-start space-y-[3vw] max-sm:flex max-sm:flex-col max-sm:space-y-[6vw] max-sm:mt-[7vw] fadeup">
           <Image
             src={icon}
             height={98}
@@ -129,21 +129,21 @@ const Ecosystem = () => {
   return (
     <>
       <section
-        className="h-full w-screen container !py-[4vw] relative overflow-hidden"
+        className="h-full w-screen container !py-[4vw] relative overflow-hidden max-sm:!py-[10vw]"
       >
-        <div className="w-full h-full  relative z-[2] space-y-[1.5vw] max-md:space-y-[8vw]">
-          <div className= " flex items-center justify-center gap-[3vw] flex-col">
+        <div className="w-full h-full  relative z-[2] space-y-[1.5vw] max-md:space-y-0">
+          <div className= " flex items-center justify-center gap-[2vw] flex-col max-md:items-start">
             <h2 className="text-90 headingAnim text-center max-md:text-left">
               Our Ecosystem
             </h2>
              <Copy>
-                <p className="text-white-300 w-[40%] text-center max-md:w-full">
+                <p className="text-white-300 w-[40%] text-center max-md:w-full max-md:text-left">
                  We are intentionally building an AI ecosystem that empowers collaboration and innovation.  
                 </p>
               </Copy>
           </div>
 
-          <div className=" w-full  flex flex-wrap  mt-[7vw]  gap-x-[7vw] justify-between max-md:flex-col">
+          <div className=" w-full  flex flex-wrap  mt-[4vw]  gap-x-[7vw] justify-between max-md:flex-col">
             {data.map((card, index) => (
               <PilotCard
                 key={index}
@@ -164,9 +164,15 @@ const Ecosystem = () => {
                 </p>
               </Copy>
             </div>
+            <div className="flex gap-[2vw] max-md:flex-col max-sm:gap-[6vw] max-md:gap-[4vw]">
               <div className=" fadeup">
                 <PrimaryButton href={"/contact-us"} text={"Partner With Us"} />
               </div>
+              <div className=" fadeup">
+                <PrimaryButton target="_blank" href={"https://chat.whatsapp.com/4UJBjd1ZjV3JcXWCgYqqRH"} text={"Join Our Community"} />
+              </div>
+
+            </div>
               </div>
         </div>
       </section>

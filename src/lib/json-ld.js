@@ -14,7 +14,7 @@ export function OrganizationJsonLd() {
     email: "contact@datasciencewizards.ai",
     address: {
       "@type": 'PostalAddress',
-      streetAddress: '707, 7th Floor, Lodha Supremus II Road No. 22, Wagle Estate',
+      streetAddress: '604-605, 6th Floor, B Wing, Lodha Supremus II,Road No. 22, Wagle Industrial Estate, Thane West - 400604',
       addressLocality: 'Thane West',
       addressRegion: 'Maharashtra',
       postalCode: '400604',
@@ -102,7 +102,7 @@ export function LocalBusiness() {
     "telephone": "+91 96640 56847",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "707, 7th Floor, Lodha Supremus II Road No. 22, Wagle Estate",
+      "streetAddress": "604-605, 6th Floor, B Wing, Lodha Supremus II,Road No. 22, Wagle Industrial Estate, Thane West - 400604",
       "addressLocality": "Thane West",
       "addressRegion": "Maharashtra",
       "postalCode": "400604",

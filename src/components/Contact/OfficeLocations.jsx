@@ -12,14 +12,13 @@ const OfficeLocations = () => {
         <WorldMap />
       </div>
 
-      <div className="absolute max-md:static max-md:px-[3vw] left-[5%] bottom-[25%] w-[20%] space-y-[1vw] max-md:w-[80%]  max-md:space-y-[3vw]">
+      <div className="absolute max-md:static max-md:px-[3vw] left-[5%] bottom-[40%] w-[20%] space-y-[1vw] max-md:w-[80%]  max-md:space-y-[3vw]">
         <Copy>
-          <p className="text-head text-50"> USA</p>
+          <p className="text-head text-50"> USA </p>
         </Copy>
         <Copy>
           <p className="text-white-300">
-            Data Science Wizards Limited, Business Centre, NCI, Mayor Street,
-            IFSC, Dublin 1, D01 K6W2
+            Data Science Wizards Limited
           </p>
         </Copy>
       </div>
@@ -36,14 +35,14 @@ const OfficeLocations = () => {
         </Copy>
       </div>
 
-      <div className="absolute max-md:static max-md:px-[3vw] right-[3%] top-[47%] w-[18%] space-y-[1vw] max-md:w-[90%]  max-md:space-y-[3vw]">
+      <div className="absolute max-md:static max-md:px-[3vw] right-[7%] top-[47%] w-[22%] space-y-[1vw] max-md:w-[90%]  max-md:space-y-[3vw]">
         <Copy>
           <p className="text-head text-50"> India</p>
         </Copy>
         <Copy>
           <p className="text-white-300">
-            707, 7th Floor, Lodha Supremus II Road No. 22, Wagle Estate, Thane -
-            West - 400604
+            604-605, 6th Floor, B Wing, Lodha Supremus II,Road No. 22, Wagle
+            Industrial Estate, Thane West - 400604
           </p>
         </Copy>
       </div>

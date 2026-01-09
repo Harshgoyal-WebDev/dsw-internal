@@ -71,6 +71,7 @@ export const NAVIGATION_FOOTER = [
   { text: "About Us", href: "/about", id: "about" },
   { text: "Privacy Policy", href: "/privacy-policy", id: "privacy-policy" },
   { text: "Terms And Conditions", href: "/terms-and-conditions", id: "terms-and-conditions" },
+  { text: "Join Community", href: "https://chat.whatsapp.com/4UJBjd1ZjV3JcXWCgYqqRH", id: "community" },
 
 ];
 
