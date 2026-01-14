@@ -220,7 +220,7 @@ const Header = () => {
                                const childActive = isPathActive(pathname, child.href);
 
                                 return (
-                                  <li key={child.href}>
+                                  <li key={child.id}>
                                     <NavigationLink
                                       text={child.text}
                                       href={child.href}

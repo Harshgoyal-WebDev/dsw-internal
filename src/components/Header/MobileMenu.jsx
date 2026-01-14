@@ -54,6 +54,7 @@ export default function MobileMenu({
     productSection,
     solutionsSection,
     resourcesSection,
+    openSourceItem,
     
   } = useMemo(() => {
     const findById = (id) => NAVIGATION_FOOTER.find((i) => i.id === id) || null;
@@ -67,8 +68,11 @@ export default function MobileMenu({
       // careerItem:findById("careers"),
      termsAndConditionsItem:findById("terms-and-conditions"),
      privacyPolicyItem:findById("privacy-policy"),
-      insurainceItem: findById("insuraince"),
+     solutionsSection:findById("solutions"),
+      // insurainceItem: findById("insuraince"),
       resourcesSection: findById("resources"),
+    openSourceItem:findById("infosys-finacle")
+
     };
   }, []);
 
@@ -148,22 +152,18 @@ export default function MobileMenu({
                   toggleSection={toggleSection}
                 />
               )}
-
-              
-              {insurainceItem && (
-                <>
-                  <Link
-                    href={insurainceItem.href}
-                    {...linkProps(insurainceItem.href)}
-                    onClick={handleDirectLinkClick}
-                    className="max-sm:text-[4.5vw]"
-                  >
-                    {insurainceItem.text}
-                  </Link>
-                  <span className="bg-[#e8e8e8c5] h-[1px] w-full" />
-                </>
+              {solutionsSection && solutionsSection.children?.length > 0 && (
+                <SubmenuNavigation
+                  section={solutionsSection}
+                  openSection={openSection}
+                  setOpenSection={setOpenSection}
+                  setOpenMobileMenu={setOpenMobileMenu}
+                  navigateTo={navigateTo}
+                  toggleSection={toggleSection}
+                />
               )}
 
+          
 
             
                  {/* Pilot Program */}
@@ -176,6 +176,19 @@ export default function MobileMenu({
                     className="max-sm:text-[4.5vw]"
                   >
                     {pilotItem.text}
+                  </Link>
+                  <span className="bg-[#e8e8e8c5] h-[1px] w-full" />
+                </>
+              )}
+              {openSourceItem && (
+                <>
+                  <Link
+                    href={openSourceItem.href}
+                    {...linkProps(openSourceItem.href)}
+                    onClick={handleDirectLinkClick}
+                    className="max-sm:text-[4.5vw]"
+                  >
+                    {openSourceItem.text}
                   </Link>
                   <span className="bg-[#e8e8e8c5] h-[1px] w-full" />
                 </>
