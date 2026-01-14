@@ -16,6 +16,8 @@ import {
   HealthcareIcon,
 } from "../Icons";
 import { LinkButton } from "../Button/LinkButton";
+import { useModal } from "../Common/ModalProvider";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -136,6 +138,10 @@ const IntelligentUseCases = ({ sessionsData }) => {
   const swiperRef = useRef(null);
   const blogsRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const { openWith } = useModal();
+  const { openModal } = useModal();
+
+
   // console.log(posts)
   const handleNext = () => {
     if (swiperRef.current) {
@@ -166,6 +172,15 @@ const IntelligentUseCases = ({ sessionsData }) => {
             </p>
           </Copy>
           <LinkButton
+           onClick={(e) => {
+                        e.preventDefault();
+                        openModal();
+                        openWith({
+                          pdfUrl: "/assets/files/Gen_AI_Agents_list.pdf",
+                          fileName: "DSW insurAInce - Gen AI Agents list.pdf",
+                        });
+                      
+                      }}
           href={"#"}
           text={" Download Enterprise Use Cases"}/>
         </div>

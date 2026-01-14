@@ -2,6 +2,7 @@
 import gsap from "gsap";
 import Link from "next/link";
 import { useEffect, useMemo, useRef } from "react";
+import { useModal } from "../Common/ModalProvider";
 
 export const LinkButton = ({
   text,
@@ -9,6 +10,8 @@ export const LinkButton = ({
   className = "",
   hover,
   invert,
+  modalPayload,
+  openModalKey,
   ...props
 }) => {
   const containerRef = useRef(null);
@@ -52,14 +55,22 @@ export const LinkButton = ({
     });
   };
 
-  const handleClick = (e) => {
-    if (href?.startsWith('#')) {
+    const { openByKey } = useModal();
+    const handleClick = (e) => {
+       if (href?.startsWith('#')) {
       e.preventDefault();
       const id = href.slice(1);
       const el = document.getElementById(id);
       el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-  };
+      onClick?.(e);
+      if (e?.defaultPrevented) return;
+      if (openModalKey) {
+        e.preventDefault();
+        openByKey(openModalKey, modalPayload);
+        return;
+      }
+    };
 
   const handleMouseEnter = () => {
     animateChars(0, -15, 0, -90);
@@ -72,12 +83,13 @@ export const LinkButton = ({
   return (
     <>
       <Link
+       onClick={handleClick}
         scroll={false}
         href={href}
         {...props}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        onClick={handleClick}
+       
         className={`relative  h-fit w-fit  group cursor-pointer text-primary-2 flex items-center gap-[0.7vw] max-sm:gap-[3vw] max-md:gap-[2vw] ${className}`}
       >
         <span className="w-[0.5vw] h-[0.5vw] rounded-full bg-primary-2 block duration-500 ease-in-out max-sm:h-[2vw] max-sm:w-[2vw] max-md:w-[1.2vw] max-md:h-[1.2vw]"/>
