@@ -2,7 +2,8 @@
 import React, { useEffect, useRef } from "react";
 import { useLenis } from "lenis/react";
 import { SplitText } from "gsap/SplitText";
-import gsap from "gsap";
+// import gsap from "gsap";
+// import gsap from "gsap/src";
 import { useModal } from "./ModalProvider";
 import WalkthroughForm from "./WalkthroughForm";
 
@@ -20,23 +21,23 @@ const WalkthroughPopup = ({ modalOpen, setModalOpen }) => {
 
     lenis?.stop();
 
-    const formHead = document.querySelector(".formhead");
-    const formPara = document.querySelector(".formpara");
-    if (!formHead || !formPara) return;
+    // const formHead = document.querySelector(".formhead");
+    // const formPara = document.querySelector(".formpara");
+    // if (!formHead || !formPara) return;
 
-    const headEl = new SplitText(formHead, { type: "lines", mask: "lines" });
-    const paraEl = new SplitText(formPara, { type: "lines", mask: "lines" });
+    // const headEl = new SplitText(formHead, { type: "lines", mask: "lines" });
+    // const paraEl = new SplitText(formPara, { type: "lines", mask: "lines" });
 
-    const tl = gsap.timeline({ defaults: { ease: "power2.out", duration: 1 } });
-    tl.from(headEl.lines, { yPercent: 100, stagger: 0.1, delay: 0.3 })
-      .from(paraEl.lines, { yPercent: 100, stagger: 0.1 }, "-=0.7")
-      .from(
-        ".formfade",
-        { yPercent: 30, opacity: 0, duration: 0.7, stagger: 0.1 },
-        "-=1"
-      );
+    // const tl = gsap.timeline({ defaults: { ease: "power2.out", duration: 1 } });
+    // tl.from(headEl.lines, { yPercent: 100, stagger: 0.1, delay: 0.3 })
+    //   .from(paraEl.lines, { yPercent: 100, stagger: 0.1 }, "-=0.7")
+    //   .from(
+    //     ".formfade",
+    //     { yPercent: 30, opacity: 0, duration: 0.7, stagger: 0.1 },
+    //     "-=1"
+    //   );
 
-    return () => tl.kill();
+    // return () => tl.kill();
   }, [modalOpen, lenis]);
 
   // When modal closes => clear payload after 1s

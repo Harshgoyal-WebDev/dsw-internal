@@ -18,7 +18,6 @@ export default function Hero({ breadcrumbs, post }) {
   headingAnim();
   paraAnim();
   fadeUp();
-  fadeIn();
   lineAnim();
 
 

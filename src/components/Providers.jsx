@@ -1,15 +1,10 @@
 "use client";
 
-import React from "react";
-import KeepScrolling from "@/components/KeepScrolling";
-import Loader from "@/components/Loader";
-import ScrollToTop from "@/components/ScrollToTop";
-
-import PopupModal from "@/components/Common/PopupModal";
-import WalkthroughPopup from "@/components/Common/WalkthorughPopup";
-import WalkthroughIframePopup from "@/components/Common/WalkthroughIframe";
-
+import React, { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import { ModalProvider, useModal } from "@/components/Common/ModalProvider";
+import LenisSmoothScroll from "./LenisSmoothScroll";
+import { fadeUp, headingAnim } from "./Animations/gsapAnimations";
 
 import {
   ImageObjectJsonLd,
@@ -17,8 +12,34 @@ import {
   OrganizationJsonLd,
   WebsiteJsonLd,
 } from "@/lib/json-ld";
-import LenisSmoothScroll from "./LenisSmoothScroll";
-// import { fadeUp, headingAnim, lineAnim } from "./Animations/gsapAnimations";
+
+// Lazy UI (not needed for LCP)
+const KeepScrolling = dynamic(() => import("@/components/KeepScrolling"), {
+  ssr: false,
+  loading: () => null,
+});
+const ScrollToTop = dynamic(() => import("@/components/ScrollToTop"), {
+  ssr: false,
+  loading: () => null,
+});
+const Loader = dynamic(() => import("@/components/Loader"), {
+  ssr: false,
+  loading: () => null,
+});
+
+// Lazy modals
+const PopupModal = dynamic(() => import("@/components/Common/PopupModal"), {
+  ssr: false,
+  loading: () => null,
+});
+const WalkthroughPopup = dynamic(
+  () => import("@/components/Common/WalkthorughPopup"),
+  { ssr: false, loading: () => null },
+);
+const WalkthroughIframePopup = dynamic(
+  () => import("@/components/Common/WalkthroughIframe"),
+  { ssr: false, loading: () => null },
+);
 
 function GlobalPopup() {
   const { open, setOpen } = useModal();
@@ -39,20 +60,54 @@ function GlobalWalkthroughIframe() {
   return <WalkthroughIframePopup />;
 }
 
+function defer(cb) {
+  if (typeof window === "undefined") return;
+  if ("requestIdleCallback" in window) {
+    const id = window.requestIdleCallback(() => cb(), { timeout: 2000 });
+    return () => window.cancelIdleCallback(id);
+  }
+  const id = setTimeout(cb, 0);
+  return () => clearTimeout(id);
+}
+
 export default function Providers({ children }) {
-  // headingAnim();
-  // fadeUp();
-  // lineAnim();
+  // ✅ enable heavy wrappers after first paint/idle
+  const [enableRuntime, setEnableRuntime] = useState(false);
+
+  useEffect(() => {
+    const cleanup = defer(() => setEnableRuntime(true));
+    return () => cleanup?.();
+  }, []);
+
+  // ✅ run GSAP init once (not per render)
+
+  headingAnim();
+  fadeUp();
+
+  // ✅ keep SEO JSON-LD (if these are pure script tags, ideally make them server components later)
+  const SEO = (
+    <>
+      <OrganizationJsonLd />
+      <LocalBusiness />
+      <ImageObjectJsonLd />
+      <WebsiteJsonLd />
+    </>
+  );
+
+  if (!enableRuntime) {
+    // Fast path: no lenis, no loader, no scroll widgets, no modals
+    return (
+      <ModalProvider>
+        {SEO}
+        {children}
+      </ModalProvider>
+    );
+  }
+
   return (
     <LenisSmoothScroll>
       <ModalProvider>
-        {/* If these JSON-LD components do NOT require client hooks,
-         you can move them to a Server Component for cleaner SEO.
-         But leaving them here is fine if that’s how your lib is built. */}
-        <OrganizationJsonLd />
-        <LocalBusiness />
-        <ImageObjectJsonLd />
-        <WebsiteJsonLd />
+        {SEO}
 
         <Loader />
 

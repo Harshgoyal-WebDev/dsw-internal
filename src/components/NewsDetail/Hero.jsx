@@ -18,8 +18,6 @@ export default function Hero({ breadcrumbs, news }) {
   headingAnim();
   paraAnim();
   fadeUp();
-  fadeIn();
-  lineAnim();
 
   useEffect(() => {
      gsap.set(".hero-overlay", { opacity: 0 });

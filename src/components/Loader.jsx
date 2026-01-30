@@ -36,7 +36,6 @@ const Loader = () => {
     }
   }, [lenis, showLoader, hidden]);
 
-  
   useEffect(() => {
     const hasVisited = sessionStorage.getItem("hasVisited");
     if (!hasVisited) {
@@ -44,7 +43,6 @@ const Loader = () => {
       sessionStorage.setItem("hasVisited", "true");
     }
   }, []);
-
 
   useEffect(() => {
     if (!showLoader) return;
@@ -62,7 +60,11 @@ const Loader = () => {
       const steps = 5;
 
       const isDesktop = globalThis.innerWidth > 1024;
-      const xMultiplier = isDesktop ? 100 : globalThis.innerWidth > 768 ? 100 : 60;
+      const xMultiplier = isDesktop
+        ? 100
+        : globalThis.innerWidth > 768
+          ? 100
+          : 60;
 
       for (let i = 1; i <= steps; i++) {
         tl.to(".sequence-container", {
@@ -76,10 +78,9 @@ const Loader = () => {
             duration: 1,
             ease: "power3.inOut",
           },
-          "<"
+          "<",
         );
       }
-      
 
       tl.to("#loader", {
         opacity: 0,
@@ -155,6 +156,15 @@ const Loader = () => {
             {/* <Suspense>
               <DynamicShaderComp color={"0x1726FD"} />
             </Suspense> */}
+            <Image
+              src={"/assets/images/homepage/bg-shader-desktop.png"}
+              alt="desktop shader"
+              width={1920}
+              height={1080}
+              className="w-full h-full object-cover"
+              priority
+              fetchPriority="high"
+            />
           </div>
         ) : (
           <div className="w-screen h-screen absolute top-[27%] z-[10] left-0 hidden max-sm:block">

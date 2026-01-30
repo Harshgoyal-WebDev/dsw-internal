@@ -32,6 +32,7 @@ const Footer = () => {
             {/* <Suspense>
               <DynamicShaderComp />
             </Suspense> */}
+             <Image src={"/assets/images/homepage/bg-shader-desktop.png"} alt="desktop shader" width={1920} height={1080} className="w-full h-full object-cover" loading="lazy"/>
           </div>
         ) : (
           <div className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-md:block">

@@ -36,12 +36,11 @@ export default function NotFoundPage() {
     <>
       {/* Server-only JSON-LD keeps the 404 HTML tiny */}
       <ModalProvider>
-
+      <WebsiteJsonLd />
       <WebpageJsonLd metadata={metadata} />
       <OrganizationJsonLd />
       <LocalBusiness />
       <ImageObjectJsonLd />
-      <WebsiteJsonLd />
       <Header />
       <FancyNotFound />
       </ModalProvider>
