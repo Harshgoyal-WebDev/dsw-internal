@@ -18,6 +18,7 @@ import {
   WebsiteJsonLd,
 } from "@/lib/json-ld";
 import LenisSmoothScroll from "./LenisSmoothScroll";
+import { fadeUp, headingAnim, lineAnim } from "./Animations/gsapAnimations";
 
 function GlobalPopup() {
   const { open, setOpen } = useModal();
@@ -39,30 +40,30 @@ function GlobalWalkthroughIframe() {
 }
 
 export default function Providers({ children }) {
+  headingAnim();
+  fadeUp();
+  lineAnim();
   return (
     <LenisSmoothScroll>
-
-    <ModalProvider>
-
-      {/* If these JSON-LD components do NOT require client hooks,
+      <ModalProvider>
+        {/* If these JSON-LD components do NOT require client hooks,
          you can move them to a Server Component for cleaner SEO.
          But leaving them here is fine if that’s how your lib is built. */}
-      <OrganizationJsonLd />
-      <LocalBusiness />
-      <ImageObjectJsonLd />
-      <WebsiteJsonLd />
+        <OrganizationJsonLd />
+        <LocalBusiness />
+        <ImageObjectJsonLd />
+        <WebsiteJsonLd />
 
-      <Loader />
+        <Loader />
 
-      {children}
+        {children}
 
-      <KeepScrolling />
-      <GlobalPopup />
-      <GlobalWalkthroughPopup />
-      <GlobalWalkthroughIframe />
-      <ScrollToTop />
-    </ModalProvider>
-
+        <KeepScrolling />
+        <GlobalPopup />
+        <GlobalWalkthroughPopup />
+        <GlobalWalkthroughIframe />
+        <ScrollToTop />
+      </ModalProvider>
     </LenisSmoothScroll>
   );
 }
