@@ -8,7 +8,7 @@ import Image from "next/image";
 import PrimaryButton from "../Button/PrimaryButton";
 import WhiteButton from "../Button/WhiteButton";
 import { initSplit, SplitInLineOnly } from "../splitTextUtils";
-import { fadeUp, headingAnim, lineAnim } from "@/components/Animations/gsapAnimations";
+// import { fadeUp, headingAnim, lineAnim } from "@/components/Animations/gsapAnimations";
 import BreadCrumbs from "./HeroComponents/BreadCrumbs";
 
 gsap.registerPlugin(SplitText);
@@ -58,9 +58,9 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
   }, []);
 
   // ✅ run these only once (you had them running every render)
-    headingAnim();
-    fadeUp();
-    lineAnim();
+    // headingAnim();
+    // fadeUp();
+    // lineAnim();
     // eslint-disable-next-line react-hooks/exhaustive-deps
 
   // helper: flip any aria-hidden="true" descendants to false

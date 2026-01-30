@@ -1,14 +1,19 @@
-import dynamic from "next/dynamic";
-const Tour = dynamic(() => import("@/components/Common/Tour"));
-import Layout from "@/components/Layout";
 import { FAQJSONLD, WebpageJsonLd } from "@/lib/json-ld";
+import dynamic from "next/dynamic";
+
 import OldHero from "@/components/Common/Hero";
 import UnifyAiSingle from "@/components/Homepage/UnifyAiSingle";
+import EnterpriseAIPlatform from "@/components/Homepage/EnterpriseAIPlatform";
+import EnterpiseAgentPlatform from "@/components/Homepage/EnterpiseAgentPlatform";
+import EnterpriseAgentPlatformMobile from "@/components/Homepage/EnterpriseAgentPlatformMobile";
+import EnterpriseAIPlatformMobile from "@/components/Homepage/EnterpriseAIPlatformMobile";
+import Architecture from "@/components/Homepage/Architecture";
+import ArchitectureMobile from "@/components/Homepage/ArchitectureMobile";
+
+const Tour = dynamic(() => import("@/components/Common/Tour"));
 const Outcomes = dynamic(() => import("@/components/Workshops/Outcomes"));
 const NewTurboChargeG = dynamic(() => import("@/components/Homepage/NewTurboChargeG"));
 const RealOutcomes = dynamic(() => import("@/components/Homepage/RealOutcomes"));
-import EnterpriseAIPlatform from "@/components/Homepage/EnterpriseAIPlatform";
-import EnterpiseAgentPlatform from "@/components/Homepage/EnterpiseAgentPlatform";
 const TwoPowerfulPlatform = dynamic(() => import("@/components/Homepage/TwoPowerfulPlatform"));
 const NextAIInitiative = dynamic(() => import("@/components/Homepage/NextAIInitiative"));
 const Recognized = dynamic(() => import("@/components/Homepage/Recognized"));
@@ -16,10 +21,6 @@ const Clients = dynamic(() => import("@/components/AboutPage/Clients"));
 const IntelligentUseCases = dynamic(() => import("@/components/Homepage/IntelligentUseCases"));
 const SuccessStories = dynamic(() => import("@/components/Homepage/SuccessStories"));
 const FooterCTA = dynamic(() => import("@/components/Common/FooterCta"));
-import EnterpriseAgentPlatformMobile from "@/components/Homepage/EnterpriseAgentPlatformMobile";
-import EnterpriseAIPlatformMobile from "@/components/Homepage/EnterpriseAIPlatformMobile";
-import Architecture from "@/components/Homepage/Architecture";
-import ArchitectureMobile from "@/components/Homepage/ArchitectureMobile";
 
 export const metadata = {
   title: "DSW UnifyAI – Enterprise AI Platform for Insurance",
@@ -30,46 +31,51 @@ export const metadata = {
   date_modified: "2025-09-30T00:00",
 };
 
-export default async function Home() {
-  // const { posts } = await getAllPosts();
+export default function Home() {
   return (
     <>
       <WebpageJsonLd metadata={metadata} />
       <FAQJSONLD faqs={faqData} />
-      <Layout>
-        <OldHero heroData={heroData} />
-        <Outcomes
-          marginTop="max-md:mt-[-5vw]"
-          showDescription={false}
-          outcomesData={outcomesData}
-        />
-        <NewTurboChargeG />
-        <RealOutcomes />
-        <UnifyAiSingle />
-        <TwoPowerfulPlatform />
-        <EnterpriseAIPlatform />
-        <EnterpriseAIPlatformMobile />
-        <EnterpiseAgentPlatform />
-        <EnterpriseAgentPlatformMobile />
-        <Tour
-          heading={"Take a Lightning Tour"}
-          para={
-            "Your OS for AI-not just for today's use cases, but for tomorrow's vision."
-          }
-          img={"/assets/images/homepage/tour-img.png"}
-          btnText="See it, to believe it! ​"
-        />
-        <NextAIInitiative />
-        <Recognized showMarquee={false} />
-        <Clients showHeading={false} />
-        <IntelligentUseCases sessionsData={sessionsData} />
-        <Architecture />
-        <ArchitectureMobile />
-        <div className=" max-sm:mt-0">
-          <SuccessStories />
-        </div>
-        <FooterCTA footerCTAData={footerCTAData} width={"w-[95%]"} />
-      </Layout>
+
+      <OldHero heroData={heroData} />
+
+      <Outcomes
+        marginTop="max-md:mt-[-5vw]"
+        showDescription={false}
+        outcomesData={outcomesData}
+      />
+
+      <NewTurboChargeG />
+      <RealOutcomes />
+      <UnifyAiSingle />
+      <TwoPowerfulPlatform />
+
+      <EnterpriseAIPlatform />
+      <EnterpriseAIPlatformMobile />
+
+      <EnterpiseAgentPlatform />
+      <EnterpriseAgentPlatformMobile />
+
+      <Tour
+        heading={"Take a Lightning Tour"}
+        para={"Your OS for AI-not just for today's use cases, but for tomorrow's vision."}
+        img={"/assets/images/homepage/tour-img.png"}
+        btnText="See it, to believe it! ​"
+      />
+
+      <NextAIInitiative />
+      <Recognized showMarquee={false} />
+      <Clients showHeading={false} />
+      <IntelligentUseCases sessionsData={sessionsData} />
+
+      <Architecture />
+      <ArchitectureMobile />
+
+      <div className="max-sm:mt-0">
+        <SuccessStories />
+      </div>
+
+      <FooterCTA footerCTAData={footerCTAData} width={"w-[95%]"} />
     </>
   );
 }
