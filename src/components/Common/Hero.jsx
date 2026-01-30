@@ -1,6 +1,6 @@
 "use client";
 import React, {
-  Suspense,
+  // Suspense,
   useMemo,
   useRef,
   memo,
@@ -13,22 +13,22 @@ import gsap from "gsap";
 import { initSplit, SplitInLineOnly } from "../splitTextUtils";
 import { SplitText } from "gsap/SplitText";
 import Image from "next/image";
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 import {
   fadeUp,
   headingAnim,
   lineAnim,
 } from "@/components/Animations/gsapAnimations";
-import AnimatedLine from "./HeroComponents/AnimatedLine";
+// import AnimatedLine from "./HeroComponents/AnimatedLine";
 import BreadCrumbs from "./HeroComponents/BreadCrumbs";
 
 gsap.registerPlugin(SplitText);
 
-const DynamicShaderComp = dynamic(() => import("../BgShader/ShaderComp"), {
-  ssr: false,
-});
+// const DynamicShaderComp = dynamic(() => import("../BgShader/ShaderComp"), {
+//   ssr: false,
+// });
 
-const LINE_COUNT = 4;
+// const LINE_COUNT = 4;
 const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
   const sectionRef = useRef(null);
   const headingRef = useRef(null);
@@ -228,17 +228,17 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [heroData.homepage, prefersReducedMotion, hasVisited]);
 
-  const lineDelays = useMemo(
-    () =>
-      Array.from({ length: LINE_COUNT }, (_, i) =>
-        heroData.homepage
-          ? hasVisited
-            ? 0.5 + i * 0.2
-            : 5 + i * 0.2
-          : 0.5 + i * 0.2
-      ),
-    [heroData.homepage, hasVisited]
-  );
+  // const lineDelays = useMemo(
+  //   () =>
+  //     Array.from({ length: LINE_COUNT }, (_, i) =>
+  //       heroData.homepage
+  //         ? hasVisited
+  //           ? 0.5 + i * 0.2
+  //           : 5 + i * 0.2
+  //         : 0.5 + i * 0.2
+  //     ),
+  //   [heroData.homepage, hasVisited]
+  // );
 
   return (
     <>
@@ -347,19 +347,19 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
       {/* Shader (desktop) */}
       {!mob ? (
         <>
-          <div className="w-screen h-[55vw] absolute top-0 left-0 z-[10] flex justify-center gap-[22vw] max-md:hidden bg-lines  ">
+          {/* <div className="w-screen h-[55vw] absolute top-0 left-0 z-[10] flex justify-center gap-[22vw] max-md:hidden bg-lines  ">
             {lineDelays.map((d, i) => (
               <AnimatedLine key={i} delay={d} />
             ))}
-          </div>
-          <div
+          </div> */}
+          {/* <div
             ref={shaderRef}
             className="absolute top-[30%] left-0 h-screen w-screen max-md:hidden shader-container "
           >
             <Suspense>
               <DynamicShaderComp />
             </Suspense>
-          </div>
+          </div> */}
         </>
       ) : (
         <div

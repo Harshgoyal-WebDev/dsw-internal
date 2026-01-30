@@ -93,17 +93,7 @@ const Tour = ({ heading, para, btnText }) => {
 
     return () => ctx.revert();
   }, [activeTab]);
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(".tourbtnfade", {
-        y: 10,
-        opacity: 0,
-        duration: 1,
-        ease: "power1.out",
-      });
-    });
-    return () => ctx.revert();
-  }, []);
+ 
   return (
     <>
       <section className="w-screen h-fit container" id="tour">
@@ -171,7 +161,7 @@ const Tour = ({ heading, para, btnText }) => {
                 <Image
                   src={"/assets/images/homepage/unify-tour.png"}
                   alt="UnifyAI tour image"
-                  fetchPriority="high"
+                  // fetchPriority="high"
                   className="w-full h-full "
                   width={900}
                   height={400}
