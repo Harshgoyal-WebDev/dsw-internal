@@ -156,7 +156,7 @@ const Loader = () => {
             {/* <Suspense>
               <DynamicShaderComp color={"0x1726FD"} />
             </Suspense> */}
-            <Image
+            {/* <Image
               src={"/assets/images/homepage/bg-shader-desktop.png"}
               alt="desktop shader"
               width={1920}
@@ -164,7 +164,7 @@ const Loader = () => {
               className="w-full h-full object-cover"
               priority
               fetchPriority="high"
-            />
+            /> */}
           </div>
         ) : (
           <div className="w-screen h-screen absolute top-[27%] z-[10] left-0 hidden max-sm:block">

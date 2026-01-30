@@ -133,23 +133,23 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
   }, [prefersReducedMotion]);
 
   // ✅ If reduced motion, ensure things are visible immediately.
-  useLayoutEffect(() => {
-    if (!sectionRef.current) return;
-    if (!prefersReducedMotion) return;
+  // useLayoutEffect(() => {
+  //   if (!sectionRef.current) return;
+  //   if (!prefersReducedMotion) return;
 
-    gsap.set(".hero-overlay", { opacity: 0 });
-    gsap.set([headingRef.current, paraRef.current, subheadingRef.current], {
-      opacity: 1,
-    });
-    gsap.set(imgWrapRef.current, { opacity: 1, yPercent: 0 });
-    if (breadcrumbs) gsap.set(".breadcrumbs", { opacity: 1, y: 0 });
-    if (btnsRef.current) {
-      gsap.set(btnsRef.current.querySelectorAll(".ctaBtn"), {
-        opacity: 1,
-        y: 0,
-      });
-    }
-  }, [prefersReducedMotion, breadcrumbs]);
+  //   gsap.set(".hero-overlay", { opacity: 0 });
+  //   gsap.set([headingRef.current, paraRef.current, subheadingRef.current], {
+  //     opacity: 1,
+  //   });
+  //   gsap.set(imgWrapRef.current, { opacity: 1, yPercent: 0 });
+  //   if (breadcrumbs) gsap.set(".breadcrumbs", { opacity: 1, y: 0 });
+  //   if (btnsRef.current) {
+  //     gsap.set(btnsRef.current.querySelectorAll(".ctaBtn"), {
+  //       opacity: 1,
+  //       y: 0,
+  //     });
+  //   }
+  // }, [prefersReducedMotion, breadcrumbs]);
 
   // ✅ Main animation pipeline (deferred)
   useLayoutEffect(() => {
@@ -506,7 +506,7 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
               {/* <Suspense fallback={null}>
                 <DynamicShaderComp />
               </Suspense> */}
-              <Image src={"/assets/images/homepage/bg-shader-desktop.png"} alt="desktop shader" width={1920} height={1080} className="w-full h-full object-cover" priority fetchPriority="high"/>
+              {/* <Image src={"/assets/images/homepage/bg-shader-desktop.png"} alt="desktop shader" width={1920} height={1080} className="w-full h-full object-cover" priority fetchPriority="high"/> */}
             </div>
           </>
         ) : (

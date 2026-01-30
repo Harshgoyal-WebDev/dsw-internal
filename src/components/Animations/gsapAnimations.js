@@ -5,13 +5,16 @@ import { SplitInLine } from "../splitTextUtils";
 import { useEffect } from "react";
 
 export function headingAnim() {
-  // const router = useRouter();
   useEffect(() => {
     const ctx = gsap.context(() => {
       const headingAnim = document.querySelectorAll(".headingAnim");
       headingAnim.forEach((headingAnim) => {
         SplitInLine(headingAnim);
         const headingWord = headingAnim.querySelectorAll(".line-internal");
+        gsap.set(headingWord, {
+          maskPosition: "100% 100%",
+        });
+
         gsap.fromTo(
           headingWord,
           {
@@ -38,10 +41,10 @@ export function headingAnim() {
 export function fadeUp() {
   // const router = useRouter();
   useEffect(() => {
-    if (globalThis.innerWidth > 0) {
       const ctx = gsap.context(() => {
         const content = document.querySelectorAll(".fadeup");
         content.forEach((content) => {
+          gsap.set(content, { opacity: 0, y: 50 });
           gsap.from(content, {
             scrollTrigger: {
               trigger: content,
@@ -56,7 +59,6 @@ export function fadeUp() {
         });
       });
       return () => ctx.revert();
-    }
   }, []);
 }
 
