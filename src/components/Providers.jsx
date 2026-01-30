@@ -18,7 +18,7 @@ import {
   WebsiteJsonLd,
 } from "@/lib/json-ld";
 import LenisSmoothScroll from "./LenisSmoothScroll";
-import { fadeUp, headingAnim, lineAnim } from "./Animations/gsapAnimations";
+// import { fadeUp, headingAnim, lineAnim } from "./Animations/gsapAnimations";
 
 function GlobalPopup() {
   const { open, setOpen } = useModal();
@@ -40,9 +40,9 @@ function GlobalWalkthroughIframe() {
 }
 
 export default function Providers({ children }) {
-  headingAnim();
-  fadeUp();
-  lineAnim();
+  // headingAnim();
+  // fadeUp();
+  // lineAnim();
   return (
     <LenisSmoothScroll>
       <ModalProvider>
