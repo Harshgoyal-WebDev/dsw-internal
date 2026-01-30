@@ -101,15 +101,6 @@ const NewTurboChargeG = () => {
           },
           "<"
         )
-        // .from(
-        //   ".img-4",
-        //   {
-        //     rotateX: 45,
-        //     transformOrigin: "right center",
-        //     duration: 1,
-        //   },
-        //   "<"
-        // );
     });
     return () => ctx.revert();
   }, []);
@@ -166,8 +157,8 @@ const NewTurboChargeG = () => {
             <div className="absolute w-[53vw] h-[17vw] bottom-0 left-[20%] z-[1] img-3 turbo-img">
               <Image
                 src={"/assets/images/TurboChargeNew/dataEnigneering.png"}
-                width={500}
-                height={900}
+                width={600}
+                height={200}
                 className="w-full h-full object-contain"
                 alt="unify-ai-dashboard-details"
               />

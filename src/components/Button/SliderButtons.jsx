@@ -11,9 +11,8 @@ export function PreviousButton({ onClick, isDisabled }) {
       <span className="block w-[4vw] h-[4vw] absolute !bg-gradient-to-r !from-[#F16B0D] !to-[#E61216] group-hover:scale-100 scale-0 duration-400 rounded-full left-0 top-0 max-sm:h-[16vw] max-sm:w-[16vw] max-md:h-[10vw] max-md:w-[10vw] " />
       <Image
         src="/assets/icons/arrow-left.svg"
-        width={20}
-        height={20}
-        className="h-full w-full relative z-10"
+       fill
+        className="h-auto w-auto object-contain relative z-10"
         alt="arrow-left"
       />
     </button>

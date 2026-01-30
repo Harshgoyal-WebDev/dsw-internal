@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import React from "react";
 import KeepScrolling from "../KeepScrolling";
 import {
@@ -21,19 +21,19 @@ const Footer = dynamic(() => import("../Footer"), {
   ssr: true,
 });
 
-function GlobalPopup() {
-  const { open, setOpen } = useModal();
-  return <PopupModal modalOpen={open} setModalOpen={setOpen} />;
-}
+// function GlobalPopup() {
+//   const { open, setOpen } = useModal();
+//   return <PopupModal modalOpen={open} setModalOpen={setOpen} />;
+// }
 
-function GlobalWalkthroughPopup(){
-  const{openWalkThrough , setOpenWalkThrough}=useModal();
-  return <WalkthroughPopup modalOpen={openWalkThrough} setModalOpen={setOpenWalkThrough} />
-}
+// function GlobalWalkthroughPopup(){
+//   const{openWalkThrough , setOpenWalkThrough}=useModal();
+//   return <WalkthroughPopup modalOpen={openWalkThrough} setModalOpen={setOpenWalkThrough} />
+// }
 
-function GlobalWalkthroughIframe() {
-  return <WalkthroughIframePopup />;
-}
+// function GlobalWalkthroughIframe() {
+//   return <WalkthroughIframePopup />;
+// }
 const Layout = ({ children }) => {
   return (
     <>
@@ -46,9 +46,9 @@ const Layout = ({ children }) => {
       <Header />
       {children}
       <KeepScrolling />
-      <GlobalPopup/>
-      <GlobalWalkthroughPopup/>
-      <GlobalWalkthroughIframe />
+      {/* <GlobalPopup/> */}
+      {/* <GlobalWalkthroughPopup/> */}
+      {/* <GlobalWalkthroughIframe /> */}
       <Footer />
       <ScrollToTop/>
     </ModalProvider>

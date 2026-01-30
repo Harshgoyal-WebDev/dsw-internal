@@ -87,11 +87,11 @@ export default function Copy({ children, animateOnScroll = true, delay = 0 }) {
         stagger: 0.15,
         ease: "power4.out",
         delay,
-        onComplete: () => {
-          gsap.set(lines.current, { clearProps: "transform" });
-          // Re-assert aria after animation completes
-          elements.forEach(forceAriaVisible);
-        },
+        // onComplete: () => {
+        //   gsap.set(lines.current, { clearProps: "transform" });
+        //   // Re-assert aria after animation completes
+        //   elements.forEach(forceAriaVisible);
+        // },
       };
 
       if (animateOnScroll) {
