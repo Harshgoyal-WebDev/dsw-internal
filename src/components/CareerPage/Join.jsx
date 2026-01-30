@@ -4,7 +4,7 @@ import TiltedCard from "../Animations/TiltedCard";
 import { NextButton, PreviousButton } from "../Button/SliderButtons";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/navigation";
+//import "swiper/css/navigation";
 import {
   AdvancingIcon,
   CultureIcon,

@@ -15,22 +15,7 @@ const FooterCTA = ({ footerCTAData, width, paraWidth, isSubheading=false }) => {
   const { openModal } = useModal();
   const smoothX = useSpring(mouseX, { damping: 20, stiffness: 100 });
   const smoothY = useSpring(mouseY, { damping: 20, stiffness: 100 });
-  
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.to(".scrolling", {
-        opacity: 0,
-        scrollTrigger: {
-          trigger: "#footer",
-          start: "top 70%",
-          end: "5% 70%",
-          // markers:true,
-          scrub: true,
-        },
-      });
-    });
-    return () => ctx.revert();
-  }, []);
+
 
   useEffect(() => {
     const container = containerRef.current;

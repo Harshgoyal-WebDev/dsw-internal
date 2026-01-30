@@ -2,7 +2,7 @@
 import React, {useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/navigation";
+//import "swiper/css/navigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { NextButton, PreviousButton } from "../Button/SliderButtons";

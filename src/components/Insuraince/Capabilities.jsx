@@ -4,7 +4,7 @@ import Image from "next/image";
 import Copy from "../Animations/Copy";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/navigation";
+//import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { NextButton, PreviousButton } from "../Button/SliderButtons";
 

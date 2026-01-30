@@ -25,19 +25,7 @@ export default function TwoPowerfulPlatform() {
                 activeCard === "enterprise" ? "opacity-100" : "opacity-0"
               }`}
             />
-            {/* <div className="w-[15vw] h-auto relative z-10 max-md:w-[25vw]">
-              <Image
-                className="h-full w-full object-contain transition-all duration-500"
-                src={
-                  activeCard === "enterprise"
-                    ? "/assets/icons/dswUnifyWhite.png"
-                    : "/assets/icons/dswUnifyBlue.png"
-                }
-                alt="enterprise-ai-platform"
-                width={150}
-                height={60}
-              />
-            </div> */}
+          
              <div className="w-[13vw] h-[4vw] relative z-10 max-md:w-[25vw] max-sm:h-[10vw] max-sm:w-[40vw]">
               <Image
                 className={`h-full w-full object-contain transition-all duration-500 absolute ${activeCard=="enterprise"?"opacity-100":"opacity-0"}`}

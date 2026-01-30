@@ -17,7 +17,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${fontVariables.combined} antialiased`}>
         <AppShell>{children}</AppShell>
-
         <SpeedInsights />
         <Analytics />
         <GoogleAnalytics gaId="G-Z5CT0M9533" />

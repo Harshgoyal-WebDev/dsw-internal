@@ -1,18 +1,16 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { ModalProvider, useModal } from "@/components/Common/ModalProvider";
 import LenisSmoothScroll from "./LenisSmoothScroll";
-// import { fadeUp, headingAnim } from "./Animations/gsapAnimations";
-
 import {
   ImageObjectJsonLd,
   LocalBusiness,
   OrganizationJsonLd,
   WebsiteJsonLd,
 } from "@/lib/json-ld";
-import { useGsapScrollAnims } from "./Animations/useGsapAnim";
+import { fadeUp, headingAnim } from "./Animations/gsapAnimations";
 
 // Lazy UI (not needed for LCP)
 const KeepScrolling = dynamic(() => import("@/components/KeepScrolling"), {
@@ -80,15 +78,8 @@ export default function Providers({ children }) {
     return () => cleanup?.();
   }, []);
 
-  const rootRef = useRef(null);
-
-  // run GSAP scroll anims lazily, scoped to this subtree
-  useGsapScrollAnims({ root: rootRef, enabled: true });
-
-  // ✅ run GSAP init once (not per render)
-
-  // headingAnim();
-  // fadeUp();
+  headingAnim();
+  fadeUp();
 
   // ✅ keep SEO JSON-LD (if these are pure script tags, ideally make them server components later)
   const SEO = (
@@ -115,7 +106,7 @@ export default function Providers({ children }) {
       <ModalProvider>
         {SEO}
         <Loader />
-        <div ref={rootRef}>{children}</div>
+        {children}
         <KeepScrolling />
         <GlobalPopup />
         <GlobalWalkthroughPopup />
