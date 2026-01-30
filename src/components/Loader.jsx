@@ -3,11 +3,11 @@ import React, { Suspense, useEffect, useState } from "react";
 import gsap from "gsap";
 import Image from "next/image";
 import { useLenis } from "lenis/react";
-// import dynamic from "next/dynamic";
+import dynamic from "next/dynamic";
 
-// const DynamicShaderComp = dynamic(() => import("./BgShader/ShaderComp"), {
-//   ssr: false,
-// });
+const DynamicShaderComp = dynamic(() => import("./BgShader/ShaderComp"), {
+  ssr: false,
+});
 
 const Loader = () => {
   const [hidden, setIsHidden] = useState(false);
@@ -153,29 +153,20 @@ const Loader = () => {
       <div className="loader-gradient opacity-0 relative z-[1] h-screen translate-y-[10%]">
         {!mob ? (
           <div className="absolute top-[-12%] left-0 h-screen w-screen max-sm:hidden">
-            {/* <Suspense>
+            <Suspense>
               <DynamicShaderComp color={"0x1726FD"} />
-            </Suspense> */}
-            {/* <Image
-              src={"/assets/images/homepage/bg-shader-desktop.png"}
-              alt="desktop shader"
-              width={1920}
-              height={1080}
-              className="w-full h-full object-cover"
-              priority
-              fetchPriority="high"
-            /> */}
+            </Suspense>
           </div>
         ) : (
           <div className="w-screen h-screen absolute top-[27%] z-[10] left-0 hidden max-sm:block">
-            <Image
+            {/* <Image
               src="/assets/images/homepage/gradient-mobile.png"
               alt="bg-gradient"
               fetchPriority="high"
               className="w-full h-full object-cover"
               width={600}
               height={1080}
-            />
+            /> */}
           </div>
         )}
       </div>

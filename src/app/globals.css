@@ -236,6 +236,58 @@ h4 {
   animation-delay: 2s;
 }
 
+.card-spotlight {
+  position: relative;
+  height: 100%;
+    width: 100%;
+  border-radius: 1.5vw;
+ overflow: hidden;
+  border: 0.82px solid #88888880;
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  --spotlight-color: rgba(255, 255, 255, 0.5);
+}
+
+.card-spotlight::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at var(--mouse-x) var(--mouse-y),
+    #1626fd,
+    transparent 80%
+  );
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+  pointer-events: none;
+}
+
+.card-spotlight:hover::before,
+.card-spotlight:focus-within::before {
+  opacity: 0.6;
+}
+
+@media (max-width:1025px) {
+
+  .card-spotlight{
+border-radius: 3.5vw;
+  border: 1px solid #88888880;
+  }
+  
+}
+@media (max-width:542px) {
+
+  .card-spotlight{
+border-radius: 5vw;
+  border: 1px solid #88888880;
+  }
+  
+}
+
+
 @keyframes shimmerAnimation {
   0% {
     background-position: 100% 0%;
@@ -388,6 +440,86 @@ background-color: var(--background);
   background: #f16b0d; /* orange */
   border-radius: 999px;
 }
+
+:root {
+  --tilt-grad-duration: 750ms;
+  --tilt-grad-ease: cubic-bezier(0.19, 1, 0.22, 1); /* easeOutBack-ish */
+}
+
+.tilted-card-figure {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  perspective: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tilted-card-mobile-alert {
+  position: absolute;
+  top: 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .tilted-card-mobile-alert {
+    display: block;
+  }
+  .tilted-card-caption {
+    display: none;
+  }
+}
+.tilted-card-inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #041035 0%, #1727FF 100%);
+  opacity: 0;
+  transition: opacity var(--tilt-grad-duration) var(--tilt-grad-ease);
+  z-index: 0;
+  pointer-events: none;
+}
+.tilted-card-figure:hover .tilted-card-inner::before {
+  opacity: 1;
+}
+
+.tilted-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 2vw;
+  border: 1px solid rgba(255, 255, 255, 0.186);
+  transform-style: preserve-3d;
+  background-color: rgba(255, 255, 255, 0.045);
+ 
+}
+
+.tilted-card-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  border-radius: 15px;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.tilted-card-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  will-change: transform;
+  transform: translateZ(50px);
+}
+
 
 
 @keyframes ArrowAnim {
@@ -570,3 +702,5 @@ background-color: var(--background);
     }
   }
 }
+
+

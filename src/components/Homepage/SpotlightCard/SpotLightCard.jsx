@@ -1,6 +1,6 @@
 'use client';
 import { useRef, useEffect } from 'react';
-import './SpotlightCard.css';
+// import './SpotlightCard.css';
 
 const SpotlightCard = ({
   children,
