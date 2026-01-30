@@ -153,9 +153,9 @@ const Loader = () => {
       <div className="loader-gradient opacity-0 relative z-[1] h-screen translate-y-[10%]">
         {!mob ? (
           <div className="absolute top-[-12%] left-0 h-screen w-screen max-sm:hidden">
-            <Suspense>
+            {/* <Suspense>
               <DynamicShaderComp color={"0x1726FD"} />
-            </Suspense>
+            </Suspense> */}
           </div>
         ) : (
           <div className="w-screen h-screen absolute top-[27%] z-[10] left-0 hidden max-sm:block">
@@ -163,9 +163,9 @@ const Loader = () => {
               src="/assets/images/homepage/gradient-mob.png"
               alt="bg-gradient"
               fetchPriority="high"
-              className="w-auto h-auto object-cover"
+              className="w-full h-auto object-cover"
               width={500}
-              height={880}
+              height={680}
             />
           </div>
         )}

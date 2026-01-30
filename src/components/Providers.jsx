@@ -78,8 +78,8 @@ export default function Providers({ children }) {
     return () => cleanup?.();
   }, []);
 
-  headingAnim();
-  fadeUp();
+  // headingAnim();
+  // fadeUp();
 
   // ✅ keep SEO JSON-LD (if these are pure script tags, ideally make them server components later)
   const SEO = (

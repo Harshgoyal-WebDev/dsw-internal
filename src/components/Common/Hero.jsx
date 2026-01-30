@@ -503,9 +503,9 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
               ref={shaderRef}
               className="absolute top-[30%] left-0 h-screen w-screen max-md:hidden shader-container"
             >
-              <Suspense fallback={null}>
+              {/* <Suspense fallback={null}>
                 <DynamicShaderComp />
-              </Suspense>
+              </Suspense> */}
             </div>
           </>
         ) : (
