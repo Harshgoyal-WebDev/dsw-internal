@@ -159,14 +159,14 @@ const Loader = () => {
           </div>
         ) : (
           <div className="w-screen h-screen absolute top-[27%] z-[10] left-0 hidden max-sm:block">
-            {/* <Image
-              src="/assets/images/homepage/gradient-mobile.png"
+            <Image
+              src="/assets/images/homepage/gradient-mob.png"
               alt="bg-gradient"
               fetchPriority="high"
-              className="w-full h-full object-cover"
-              width={600}
-              height={1080}
-            /> */}
+              className="w-auto h-auto object-cover"
+              width={500}
+              height={880}
+            />
           </div>
         )}
       </div>

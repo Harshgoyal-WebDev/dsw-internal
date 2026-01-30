@@ -120,7 +120,7 @@ const Notfound = () => {
       ) : (
         <div className="absolute top-0 left-0 h-full w-screen hidden max-sm:block max-md:block mobile-shader">
           <Image
-            src={"/assets/images/homepage/gradient-mobile.png"}
+            src={"/assets/images/homepage/gradient-mob.png"}
             height={852}
             // fetchPriority="high"
             loading="lazy"

@@ -267,7 +267,7 @@ const InternalHero = memo(function Hero({ heroData, breadcrumbs }) {
           className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-md:block "
         >
           <Image
-            src={"/assets/images/homepage/gradient-mobile.png"}
+            src={"/assets/images/homepage/gradient-mob.png"}
             fetchPriority="high"
             priority={true}
             alt="shader-gradient-mobile"

@@ -277,7 +277,7 @@ const InfosysHero = memo(function Hero({ heroData, breadcrumbs }) {
           className="w-screen h-screen absolute top-[30%] left-0 z-[10]"
         >
           <Image
-            src="/assets/images/homepage/gradient-mobile.png"
+            src="/assets/images/homepage/gradient-mob.png"
             alt="mobile-gradient"
             fill
             priority

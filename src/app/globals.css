@@ -428,6 +428,7 @@ background-color: var(--background);
   animation: ArrowAnim 2s ease-in-out infinite;
 }
 
+
 /* Workshop swiper scrollbar */
 .workshop-scrollbar {
   height: 4px;

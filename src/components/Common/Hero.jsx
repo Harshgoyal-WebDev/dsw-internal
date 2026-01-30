@@ -506,7 +506,7 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
               <Suspense fallback={null}>
                 <DynamicShaderComp />
               </Suspense>
-              {/* <Image src={"/assets/images/homepage/bg-shader-desktop.png"} alt="desktop shader" width={1920} height={1080} className="w-full h-full object-cover" priority fetchPriority="high"/> */}
+              <Image src={"/assets/images/homepage/bg-shader-desktop.png"} alt="desktop shader" width={1920} height={1080} className="w-full h-full object-cover" priority fetchPriority="high"/>
             </div>
           </>
         ) : (
@@ -515,9 +515,9 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
             className="w-screen h-[100vh] absolute top-0 z-[5] left-0 hidden max-md:block"
           >
             <Image
-              src={"/assets/images/homepage/gradient-mobile.png"}
+              src={"/assets/images/homepage/gradient-mob.png"}
               alt="shader-gradient-mobile"
-              className="w-full h-full object-cover"
+              className="w-full h-auto object-cover"
               width={300}
               height={580}
               priority

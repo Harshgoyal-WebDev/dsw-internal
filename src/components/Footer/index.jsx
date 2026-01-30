@@ -37,7 +37,7 @@ const Footer = () => {
         ) : (
           <div className="w-screen h-screen absolute top-[30%] z-[10] left-0 hidden max-md:block">
             <Image
-              src={"/assets/images/homepage/gradient-mobile.png"}
+              src={"/assets/images/homepage/gradient-mob.png"}
               alt="bg-gradient"
               className="w-full h-full object-cover"
               width={600}
