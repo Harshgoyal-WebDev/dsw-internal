@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 function ScrollToTop() {
   const btnRef = useRef(null);
 
-  const showBtn = useCallback(() => {
+  const showBtn = useCallback(() => 
     if (!btnRef.current) return;
     gsap.to(btnRef.current, {
       opacity: 1,

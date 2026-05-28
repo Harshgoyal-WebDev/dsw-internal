@@ -5,9 +5,9 @@ import Image from "next/image";
 import { useLenis } from "lenis/react";
 import dynamic from "next/dynamic";
 
-const DynamicShaderComp = dynamic(() => import("./BgShader/ShaderComp"), {
-  ssr: false,
-});
+// const DynamicShaderComp = dynamic(() => import("./BgShader/ShaderComp"), {
+//   ssr: false,
+// });
 
 const Loader = () => {
   const [hidden, setIsHidden] = useState(false);
@@ -156,6 +156,7 @@ const Loader = () => {
             {/* <Suspense>
               <DynamicShaderComp color={"0x1726FD"} />
             </Suspense> */}
+                <Image src={"/assets/images/homepage/bg-shader-desktop.png"} alt="" className="w-full h-full" width={1920} height={1080}/>
           </div>
         ) : (
           <div className="w-screen h-screen absolute top-[27%] z-[10] left-0 hidden max-sm:block">

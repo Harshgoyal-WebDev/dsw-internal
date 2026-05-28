@@ -12,21 +12,19 @@ import React, {
 import gsap from "gsap";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-
 import PrimaryButton from "../Button/PrimaryButton";
 import WhiteButton from "../Button/WhiteButton";
 import { initSplit, SplitInLineOnly } from "../splitTextUtils";
 import BreadCrumbs from "./HeroComponents/BreadCrumbs";
 import AnimatedLine from "./HeroComponents/AnimatedLine";
 
-const DynamicShaderComp = dynamic(() => import("../BgShader/ShaderComp"), {
-  ssr: false,
-  // ✅ don't let shader compete with LCP
-  loading: () => null,
-});
+// const DynamicShaderComp = dynamic(() => import("../BgShader/ShaderComp"), {
+//   ssr: false,
+//   // ✅ don't let shader compete with LCP
+//   loading: () => null,
+// });
 
 const LINE_COUNT = 4;
-
 // ✅ helper: set aria-hidden=false for split wrappers (keeps accessibility)
 function forceAriaVisible(root) {
   if (!root) return;
@@ -506,6 +504,7 @@ const OldHero = memo(function Hero({ heroData, breadcrumbs }) {
               {/* <Suspense fallback={null}>
                 <DynamicShaderComp />
               </Suspense> */}
+              <Image src={"/assets/images/homepage/bg-shader-desktop.png"} alt="" className="w-full h-full" width={1920} height={1080}/>
             </div>
           </>
         ) : (
